@@ -127,7 +127,7 @@ input, select {
     <option value="cut">Сушка</option>
 </select>
 
-<button style="margin-top:15px;width:100%;" onclick="calculate()">Рассчитать</button>
+<button id="calcBtn" style="margin-top:15px;width:100%;" onclick="calculate()">Рассчитать</button>
 
 <div class="result" id="result"></div>
      
@@ -160,7 +160,8 @@ ru: {
     calories: "Калории",
     protein: "Белки",
     fats: "Жиры",
-    carbs: "Углеводы"
+    carbs: "Углеводы",
+    calcBtn: "Рассчитать"
 },
 en: {
     title: "Calories & Macros Calculator",
@@ -174,7 +175,8 @@ en: {
     calories: "Calories",
     protein: "Protein",
     fats: "Fats",
-    carbs: "Carbs"
+    carbs: "Carbs",
+    calcBtn: "Calculate"
 }
 };
      const seo = {
@@ -222,6 +224,8 @@ function setLang(l) {
     document.getElementById("weightLabel").innerText = text[l].weight;
     document.getElementById("activityLabel").innerText = text[l].activity;
     document.getElementById("goalLabel").innerText = text[l].goal;
+     document.getElementById("calcBtn").innerText = text[lang].calcBtn;
+
 
       // SEO
   document.getElementById("seoBlock").innerHTML = seo[l];
