@@ -126,6 +126,11 @@ input, select {
 <button style="margin-top:15px;width:100%;" onclick="calculate()">Рассчитать</button>
 
 <div class="result" id="result"></div>
+     
+     <div id="seoBlock" style="margin-top:18px; line-height:1.6; color:#cbd5e1;">
+  <!-- SEO content injected by JS -->
+</div>
+
 
 <div class="ad">AdSense block</div>
 
@@ -164,6 +169,37 @@ en: {
     carbs: "Carbs"
 }
 };
+     const seo = {
+  ru: `
+    <h2 style="margin:12px 0 6px;">Онлайн калькулятор калорий и БЖУ</h2>
+    <p>Этот калькулятор помогает рассчитать дневную норму калорий (TDEE) и макронутриенты: белки, жиры и углеводы. Подходит для целей: поддержка веса, набор мышечной массы и сушка.</p>
+    <h3 style="margin:12px 0 6px;">Как пользоваться</h3>
+    <ol>
+      <li>Выбери пол, введи возраст, рост и вес.</li>
+      <li>Укажи уровень активности и цель.</li>
+      <li>Нажми «Рассчитать» — получишь калории и БЖУ в граммах.</li>
+    </ol>
+    <h3 style="margin:12px 0 6px;">FAQ</h3>
+    <p><b>Что такое TDEE?</b> Это расход калорий в сутки с учётом активности.</p>
+    <p><b>Как выбрать цель?</b> Для набора — небольшой профицит, для сушки — умеренный дефицит.</p>
+    <p><b>Сколько белка нужно?</b> Обычно 1.6–2.2 г/кг в зависимости от цели и тренировок.</p>
+  `,
+  en: `
+    <h2 style="margin:12px 0 6px;">Calories & Macros Calculator Online</h2>
+    <p>This calculator estimates your daily calories (TDEE) and macros: protein, fats and carbs. It supports maintenance, muscle gain and fat loss goals.</p>
+    <h3 style="margin:12px 0 6px;">How to use</h3>
+    <ol>
+      <li>Select gender, enter age, height and weight.</li>
+      <li>Choose activity level and goal.</li>
+      <li>Click “Calculate” to get calories and macros in grams.</li>
+    </ol>
+    <h3 style="margin:12px 0 6px;">FAQ</h3>
+    <p><b>What is TDEE?</b> Your daily energy expenditure including activity.</p>
+    <p><b>Which goal should I pick?</b> Gain = small surplus, Cut = moderate deficit.</p>
+    <p><b>How much protein do I need?</b> Commonly 1.6–2.2 g/kg depending on training and goal.</p>
+  `
+};
+
 
 
 
@@ -176,6 +212,10 @@ function setLang(l) {
     document.getElementById("weightLabel").innerText = text[l].weight;
     document.getElementById("activityLabel").innerText = text[l].activity;
     document.getElementById("goalLabel").innerText = text[l].goal;
+     document.getElementById("seoBlock").innerHTML = seo[l];
+     document.getElementById("seoBlock").innerHTML = seo['ru'];
+
+
 }
 
 function calculate() {
