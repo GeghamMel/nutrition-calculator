@@ -161,7 +161,15 @@ ru: {
     protein: "Белки",
     fats: "Жиры",
     carbs: "Углеводы",
-    calcBtn: "Рассчитать"
+    calcBtn: "Рассчитать",
+     genderOptions: { male: "Мужчина", female: "Женщина" },
+    activityOptions: {
+      "1.2": "Минимальная",
+      "1.375": "Лёгкая",
+      "1.55": "Средняя",
+      "1.725": "Высокая"
+         },
+    goalOptions: { maintain: "Поддержка", bulk: "Набор массы", cut: "Сушка" }
 },
 en: {
     title: "Calories & Macros Calculator",
@@ -176,8 +184,16 @@ en: {
     protein: "Protein",
     fats: "Fats",
     carbs: "Carbs",
-    calcBtn: "Calculate"
-}
+    calcBtn: "Calculate",
+     genderOptions: { male: "Male", female: "Female" },
+    activityOptions: {
+      "1.2": "Sedentary",
+      "1.375": "Light",
+      "1.55": "Moderate",
+      "1.725": "High"
+    },
+    goalOptions: { maintain: "Maintain", bulk: "Bulking", cut: "Cutting" }
+  }
 };
      const seo = {
   ru: `
@@ -224,7 +240,11 @@ function setLang(l) {
     document.getElementById("weightLabel").innerText = text[l].weight;
     document.getElementById("activityLabel").innerText = text[l].activity;
     document.getElementById("goalLabel").innerText = text[l].goal;
-     document.getElementById("calcBtn").innerText = text[lang].calcBtn;
+    document.getElementById("calcBtn").innerText = text[lang].calcBtn;
+
+    rebuildSelectOptions("gender", text[lang].genderOptions);
+    rebuildSelectOptions("activity", text[lang].activityOptions);
+    rebuildSelectOptions("goal", text[lang].goalOptions);
 
 
       // SEO
@@ -270,6 +290,22 @@ result.innerHTML = `
 
 
 }
+     function rebuildSelectOptions(selectId, optionsMap) {
+  const sel = document.getElementById(selectId);
+  if (!sel) return;
+
+  const currentValue = sel.value; // сохраняем выбор
+
+  sel.innerHTML = Object.entries(optionsMap)
+    .map(([value, label]) => `<option value="${value}">${label}</option>`)
+    .join("");
+
+  // возвращаем выбранное значение, если оно существует
+  if ([...sel.options].some(o => o.value === currentValue)) {
+    sel.value = currentValue;
+  }
+}
+
 
 const ageInput = document.getElementById("age");
 const heightInput = document.getElementById("height");
