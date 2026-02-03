@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Calories & Macros Calculator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<meta name="description" content="Free calories and macros calculator. Calculate daily calories, protein, fats and carbs for maintenance, muscle gain or fat loss.">
+<meta name="keywords" content="calorie calculator, macros calculator, BMR, TDEE, protein intake">
+
+<!-- ==== AdSense PLACE #1 (TOP) ==== -->
+<!--
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-XXXXXXXX"
+     data-ad-slot="XXXXXXXX"
+     data-ad-format="auto"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+-->
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: #e5e7eb;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 720px;
+    margin: auto;
+    background: #020617;
+    padding: 20px;
+    border-radius: 12px;
+}
+h1 {
+    text-align: center;
+}
+.lang-switch {
+    text-align: right;
+    margin-bottom: 10px;
+}
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+button:hover {
+    background: #1d4ed8;
+}
+label {
+    display: block;
+    margin-top: 12px;
+}
+input, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: none;
+}
+.result {
+    background: #020617;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+.ad {
+    margin: 20px 0;
+    text-align: center;
+    background: #020617;
+    padding: 10px;
+    border-radius: 8px;
+    color: #64748b;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<div class="lang-switch">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+</div>
+
+<h1 id="title">Калькулятор калорий и БЖУ</h1>
+
+<label id="genderLabel">Пол</label>
+<select id="gender">
+    <option value="male">Мужчина</option>
+    <option value="female">Женщина</option>
+</select>
+
+<label id="ageLabel">Возраст</label>
+<input type="number" id="age">
+
+<label id="heightLabel">Рост (см)</label>
+<input type="number" id="height">
+
+<label id="weightLabel">Вес (кг)</label>
+<input type="number" id="weight">
+
+<label id="activityLabel">Уровень активности</label>
+<select id="activity">
+    <option value="1.2">Минимальная</option>
+    <option value="1.375">Лёгкая</option>
+    <option value="1.55">Средняя</option>
+    <option value="1.725">Высокая</option>
+</select>
+
+<label id="goalLabel">Цель</label>
+<select id="goal">
+    <option value="maintain">Поддержка</option>
+    <option value="gain">Набор массы</option>
+    <option value="cut">Сушка</option>
+</select>
+
+<button style="margin-top:15px;width:100%;" onclick="calculate()">Рассчитать</button>
+
+<div class="result" id="result"></div>
+
+<div class="ad">AdSense block</div>
+
+</div>
+
+<script>
+let lang = 'ru';
+
+const text = {
+ru: {
+title: "Калькулятор калорий и БЖУ",
+gender: "Пол",
+age: "Возраст",
+height: "Рост (см)",
+weight: "Вес (кг)",
+activity: "Уровень активности",
+goal: "Цель",
+result: "Результаты"
+},
+en: {
+title: "Calories & Macros Calculator",
+gender: "Gender",
+age: "Age",
+height: "Height (cm)",
+weight: "Weight (kg)",
+activity: "Activity level",
+goal: "Goal",
+result: "Results"
+}
+};
+
+function setLang(l) {
+    lang = l;
+    document.getElementById("title").innerText = text[l].title;
+    document.getElementById("genderLabel").innerText = text[l].gender;
+    document.getElementById("ageLabel").innerText = text[l].age;
+    document.getElementById("heightLabel").innerText = text[l].height;
+    document.getElementById("weightLabel").innerText = text[l].weight;
+    document.getElementById("activityLabel").innerText = text[l].activity;
+    document.getElementById("goalLabel").innerText = text[l].goal;
+}
+
+function calculate() {
+    let age = +ageInput.value;
+    let height = +heightInput.value;
+    let weight = +weightInput.value;
+    let activity = +activityInput.value;
+    let gender = genderSelect.value;
+    let goal = goalSelect.value;
+
+    let bmr = gender === "male"
+        ? 10 * weight + 6.25 * height - 5 * age + 5
+        : 10 * weight + 6.25 * height - 5 * age - 161;
+
+    let calories = bmr * activity;
+
+    if (goal === "gain") calories += 300;
+    if (goal === "cut") calories -= 400;
+
+    let protein = weight * (goal === "gain" ? 2.2 : 1.8);
+    let fats = calories * 0.25 / 9;
+    let carbs = (calories - (protein * 4 + fats * 9)) / 4;
+
+    result.innerHTML = `
+    <h3>${text[lang].result}</h3>
+    <p><b>Calories:</b> ${Math.round(calories)} kcal</p>
+    <p><b>Protein:</b> ${Math.round(protein)} g</p>
+    <p><b>Fats:</b> ${Math.round(fats)} g</p>
+    <p><b>Carbs:</b> ${Math.round(carbs)} g</p>
+    `;
+}
+
+const ageInput = document.getElementById("age");
+const heightInput = document.getElementById("height");
+const weightInput = document.getElementById("weight");
+const activityInput = document.getElementById("activity");
+const genderSelect = document.getElementById("gender");
+const goalSelect = document.getElementById("goal");
+
+setLang('ru');
+</script>
+
+</body>
+</html>
