@@ -194,7 +194,25 @@ en: {
     },
     goalOptions: { maintain: "Maintain", bulk: "Bulking", cut: "Cutting" }
   }
+}
 };
+
+          function rebuildSelectOptions(selectId, optionsMap) {
+  const sel = document.getElementById(selectId);
+  if (!sel) return;
+
+  const currentValue = sel.value; // сохраняем выбор
+
+  sel.innerHTML = Object.entries(optionsMap)
+    .map(([value, label]) => `<option value="${value}">${label}</option>`)
+    .join("");
+
+  // возвращаем выбранное значение, если оно существует
+  if ([...sel.options].some(o => o.value === currentValue)) {
+    sel.value = currentValue;
+  }
+}
+     
      const seo = {
   ru: `
     <h2 style="margin:12px 0 6px;">Онлайн калькулятор калорий и БЖУ</h2>
@@ -289,21 +307,6 @@ result.innerHTML = `
 `;
 
 
-}
-     function rebuildSelectOptions(selectId, optionsMap) {
-  const sel = document.getElementById(selectId);
-  if (!sel) return;
-
-  const currentValue = sel.value; // сохраняем выбор
-
-  sel.innerHTML = Object.entries(optionsMap)
-    .map(([value, label]) => `<option value="${value}">${label}</option>`)
-    .join("");
-
-  // возвращаем выбранное значение, если оно существует
-  if ([...sel.options].some(o => o.value === currentValue)) {
-    sel.value = currentValue;
-  }
 }
 
 
