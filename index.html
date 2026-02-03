@@ -199,13 +199,14 @@ function calculate() {
     let fats = calories * 0.25 / 9;
     let carbs = (calories - (protein * 4 + fats * 9)) / 4;
 
-    result.innerHTML = `
+result.innerHTML = `
 <h3>${text[lang].result}</h3>
 <p><b>${text[lang].calories}:</b> ${Math.round(calories)} kcal</p>
 <p><b>${text[lang].protein}:</b> ${Math.round(protein)} g</p>
 <p><b>${text[lang].fats}:</b> ${Math.round(fats)} g</p>
 <p><b>${text[lang].carbs}:</b> ${Math.round(carbs)} g</p>
 `;
+
 
 }
 
