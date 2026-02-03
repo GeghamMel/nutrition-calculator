@@ -213,6 +213,8 @@ en: {
 
 function setLang(l) {
     lang = l;
+
+     // обновляем интерфейс
     document.getElementById("title").innerText = text[l].title;
     document.getElementById("genderLabel").innerText = text[l].gender;
     document.getElementById("ageLabel").innerText = text[l].age;
@@ -220,7 +222,14 @@ function setLang(l) {
     document.getElementById("weightLabel").innerText = text[l].weight;
     document.getElementById("activityLabel").innerText = text[l].activity;
     document.getElementById("goalLabel").innerText = text[l].goal;
-     document.getElementById("seoBlock").innerHTML = seo[l];
+
+      // SEO
+  document.getElementById("seoBlock").innerHTML = seo[l];
+
+  // 🔥 ВАЖНО: если результат уже есть — пересчитать
+  if (document.getElementById("result").innerHTML.trim() !== "") {
+    calculate();
+  }
 
 
 
