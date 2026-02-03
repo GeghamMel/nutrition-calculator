@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy | Nutrition Calculator</title>
+<meta name="description" content="Privacy Policy for Nutrition Calculator website." />
+<style>
+  body{font-family:Arial,sans-serif;background:#0f172a;color:#e5e7eb;margin:0;padding:20px;}
+  .container{max-width:820px;margin:auto;background:#020617;padding:20px;border-radius:12px;line-height:1.65;}
+  a{color:#60a5fa;text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .lang{display:flex;gap:8px;justify-content:flex-end;margin-bottom:10px;}
+  button{background:#2563eb;color:#fff;border:0;padding:10px 12px;border-radius:8px;cursor:pointer;}
+  button:hover{background:#1d4ed8;}
+  h1{margin-top:0;}
+  .muted{color:#94a3b8;font-size:14px;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="lang">
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
+
+  <h1 id="t_title">Privacy Policy</h1>
+  <p class="muted" id="t_updated">Last updated: <span id="date"></span></p>
+
+  <div id="content"></div>
+
+  <hr style="border:0;border-top:1px solid #1f2937;margin:18px 0;">
+  <p class="muted">
+    <a href="./index.html" id="t_back">Back to calculator</a>
+  </p>
+</div>
+
+<script>
+const blocks = {
+  en: `
+    <p>This Privacy Policy explains how this website ("Nutrition Calculator") collects and uses information.</p>
+
+    <h2>Information we collect</h2>
+    <ul>
+      <li><b>Non-personal data</b>: basic analytics (e.g., page views) may be collected by hosting providers or analytics tools.</li>
+      <li><b>Ad data</b>: if ads are enabled, advertising partners (such as Google) may use cookies or similar technologies to show ads.</li>
+    </ul>
+
+    <h2>Cookies and advertising</h2>
+    <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Users may opt out of personalized advertising by visiting Google Ads Settings.</p>
+
+    <h2>How we use information</h2>
+    <ul>
+      <li>To provide and improve the calculator experience.</li>
+      <li>To display advertisements (if enabled).</li>
+      <li>To understand site usage and performance.</li>
+    </ul>
+
+    <h2>Third-party links</h2>
+    <p>This website may contain links to third-party sites. We are not responsible for the content or privacy practices of those sites.</p>
+
+    <h2>Contact</h2>
+    <p>If you have any questions about this Privacy Policy, you can contact the site owner.</p>
+  `,
+  ru: `
+    <p>Эта Политика конфиденциальности объясняет, как сайт ("Калькулятор питания") собирает и использует информацию.</p>
+
+    <h2>Какие данные мы можем собирать</h2>
+    <ul>
+      <li><b>Неперсональные данные</b>: базовая статистика (например, просмотры страниц) может собираться хостингом или инструментами аналитики.</li>
+      <li><b>Рекламные данные</b>: если реклама включена, рекламные партнёры (например, Google) могут использовать cookie и похожие технологии для показа объявлений.</li>
+    </ul>
+
+    <h2>Cookie и реклама</h2>
+    <p>Сторонние поставщики, включая Google, используют cookie для показа рекламы на основе прошлых посещений этого сайта или других сайтов. Пользователь может отключить персонализированную рекламу в настройках рекламы Google.</p>
+
+    <h2>Как мы используем информацию</h2>
+    <ul>
+      <li>Для работы и улучшения калькулятора.</li>
+      <li>Для показа рекламы (если включена).</li>
+      <li>Для понимания статистики использования и производительности.</li>
+    </ul>
+
+    <h2>Ссылки на сторонние сайты</h2>
+    <p>На сайте могут быть ссылки на сторонние ресурсы. Мы не отвечаем за их контент и политику конфиденциальности.</p>
+
+    <h2>Контакты</h2>
+    <p>Если у вас есть вопросы по этой политике, вы можете связаться с владельцем сайта.</p>
+  `
+};
+
+const ui = {
+  en: { title: "Privacy Policy", updated: "Last updated:", back: "Back to calculator" },
+  ru: { title: "Политика конфиденциальности", updated: "Последнее обновление:", back: "Назад к калькулятору" }
+};
+
+function setLang(l){
+  document.documentElement.lang = l;
+  document.getElementById("t_title").innerText = ui[l].title;
+  document.getElementById("t_updated").innerHTML = ui[l].updated + ' <span id="date"></span>';
+  document.getElementById("t_back").innerText = ui[l].back;
+  document.getElementById("content").innerHTML = blocks[l];
+  document.getElementById("date").innerText = new Date().toISOString().slice(0,10);
+}
+setLang('en'); // default EN
+</script>
+</body>
+</html>
