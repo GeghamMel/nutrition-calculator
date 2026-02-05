@@ -176,14 +176,14 @@ let lang = 'ru';
 
 const text = {
 ru: {
-    linkPrivacy: "Политика конфиденциальности",
-    linkAbout: "О сайте",
-    linkTerms: "Условия использования",
-    linkContact: "Контакты",
     articlesTitle: "Статьи",
     art1: "Калории для похудения",
     art2: "БЖУ для набора мышц",
     art3: "Поддерживающая норма калорий",
+    linkPrivacy: "Политика конфиденциальности",
+    linkAbout: "О сайте",
+    linkTerms: "Условия использования",
+    linkContact: "Контакты",
     navAbout: "О нас",
     navTerms: "Условия",
     navPrivacy: "Политика",
@@ -211,14 +211,14 @@ ru: {
     goalOptions: { maintain: "Поддержка", bulk: "Набор массы", cut: "Сушка" }
 },
 en: {
-    linkPrivacy: "Privacy Policy",
-    linkAbout: "About",
-    linkTerms: "Terms",
-    linkContact: "Contact",
     articlesTitle: "Articles",
     art1: "Calories for Weight Loss",
     art2: "Macros for Muscle Gain",
     art3: "Maintenance Calories Explained",
+    linkPrivacy: "Privacy Policy",
+    linkAbout: "About",
+    linkTerms: "Terms",
+    linkContact: "Contact",
     navAbout: "About",
     navTerms: "Terms",
     navPrivacy: "Privacy",
@@ -320,16 +320,17 @@ function setLang(l) {
     document.getElementById("seoBlock").innerHTML = seo[l];
 
      // Articles
-    document.getElementById('articlesTitle').textContent = t.articlesTitle;
-    document.getElementById('art1').textContent = t.art1;
-    document.getElementById('art2').textContent = t.art2;
-    document.getElementById('art3').textContent = t.art3;
+   document.getElementById('articlesTitle').textContent = t.articlesTitle;
+   document.getElementById('art1').textContent = t.art1;
+   document.getElementById('art2').textContent = t.art2;
+   document.getElementById('art3').textContent = t.art3;
 
-// Footer links
-    document.getElementById('linkPrivacy').textContent = t.linkPrivacy;
-    document.getElementById('linkAbout').textContent = t.linkAbout;
-    document.getElementById('linkTerms').textContent = t.linkTerms;
-    document.getElementById('linkContact').textContent = t.linkContact;
+     // Footer links
+   document.getElementById('linkPrivacy').textContent = t.linkPrivacy;
+   document.getElementById('linkAbout').textContent = t.linkAbout;
+   document.getElementById('linkTerms').textContent = t.linkTerms;
+   document.getElementById('linkContact').textContent = t.linkContact;
+
 
      
     document.getElementById('linkAbout').textContent = t.navAbout;
