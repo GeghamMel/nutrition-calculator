@@ -1,55 +1,148 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Maintenance Calories Explained</title>
-<meta name="description" content="What are maintenance calories and why they matter.">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="canonical" href="https://calories-macros.com/blog/maintenance-calories.html">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Maintenance Calories Explained • Calories & Macros</title>
+<meta name="description" content="What are maintenance calories and how to calculate them. Learn how to maintain body weight properly."/>
+<link rel="canonical" href="https://calories-macros.com/blog/maintenance-calories.html"/>
 <style>
-body{margin:0;font-family:system-ui;background:#0A1022;color:#fff;line-height:1.7}
-.wrap{max-width:900px;margin:auto;padding:20px}
-a{color:#9db7ff}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;background:#0A1022;color:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:18px 14px 56px}
+.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+a{color:#9db7ff;text-decoration:none}
+.seg{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.seg button{border:0;background:transparent;color:rgba(255,255,255,.7);padding:7px 10px;border-radius:999px;font-weight:800;cursor:pointer}
+.seg button.active{background:linear-gradient(135deg,#5B8CFF,#7C5CFF);color:#fff}
+.card{margin-top:14px;padding:16px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+h1{margin:10px 0 6px;font-size:28px}
+h2{margin:18px 0 8px;font-size:18px}
+p{margin:0 0 12px;color:rgba(255,255,255,.86)}
+ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
+footer{margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
 </style>
 </head>
 <body>
+
 <div class="wrap">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('ru')">RU</button>
 
-<h1 id="title">Maintenance Calories</h1>
-<div id="content"></div>
+<div class="top">
+  <a href="/" id="homeLink">← Home</a>
+  <div class="seg">
+    <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+    <button id="btnRU" onclick="setLang('ru')">RU</button>
+  </div>
+</div>
 
-<p><a href="/">← Home</a></p>
+<div class="card">
+<h1 id="tTitle">Maintenance Calories Explained</h1>
+
+<p id="p1">
+Maintenance calories are the number of calories you need each day to maintain your current body weight.
+Eating this amount keeps your weight stable over time.
+</p>
+
+<h2 id="h2a">What are maintenance calories?</h2>
+<p id="p2">
+Your maintenance level is based on your basal metabolic rate (BMR) and daily activity.
+It represents the balance point where calories consumed equal calories burned.
+</p>
+
+<h2 id="h2b">Why maintenance calories matter</h2>
+<ul id="list1">
+  <li>Helps stabilize body weight</li>
+  <li>Useful for diet breaks and recovery phases</li>
+  <li>Forms the baseline for cutting or bulking</li>
+</ul>
+
+<h2 id="h2c">Maintenance vs weight loss or gain</h2>
+<p id="p3">
+If you eat below maintenance, you lose weight.
+If you eat above maintenance, you gain weight.
+Maintenance calories are the neutral reference point for all nutrition goals.
+</p>
+
+<h2 id="h2d">Using the Calories & Macros calculator</h2>
+<p id="p4">
+When selecting the maintenance goal, the calculator estimates your total daily energy expenditure (TDEE)
+and distributes macros to support stable energy levels and overall health.
+</p>
+</div>
+
+<footer>
+<a href="/privacy.html" id="fPrivacy">Privacy</a>
+<a href="/terms.html" id="fTerms">Terms</a>
+<a href="/contact.html" id="fContact">Contact</a>
+<span>© <span id="year"></span> calories-macros.com</span>
+</footer>
+
 </div>
 
 <script>
-const c={
-en:`
-<p>Maintenance calories are the number of calories your body needs to maintain its current weight.</p>
+document.getElementById('year').textContent=new Date().getFullYear();
+let lang='en';
 
-<p>They depend on factors such as age, gender, height, weight, and activity level.</p>
-
-<p>Knowing your maintenance calories helps you plan weight loss or muscle gain more accurately.</p>
-
-<p>Calorie calculators provide estimates and should be adjusted based on real-world results.</p>
-`,
-ru:`
-<p>Калории поддержки — это количество калорий, необходимое для сохранения текущего веса.</p>
-
-<p>Они зависят от возраста, пола, роста, веса и уровня активности.</p>
-
-<p>Знание калорий поддержки помогает точнее планировать похудение или набор массы.</p>
-
-<p>Калькуляторы дают ориентировочные значения, которые нужно корректировать на практике.</p>
-`
+const tr={
+en:{
+home:"← Home",
+title:"Maintenance Calories Explained",
+p1:"Maintenance calories are the number of calories you need each day to maintain your current body weight. Eating this amount keeps your weight stable over time.",
+h2a:"What are maintenance calories?",
+p2:"Your maintenance level is based on your basal metabolic rate (BMR) and daily activity. It represents the balance point where calories consumed equal calories burned.",
+h2b:"Why maintenance calories matter",
+list1:[
+"Helps stabilize body weight",
+"Useful for diet breaks and recovery phases",
+"Forms the baseline for cutting or bulking"
+],
+h2c:"Maintenance vs weight loss or gain",
+p3:"If you eat below maintenance, you lose weight. If you eat above maintenance, you gain weight. Maintenance calories are the neutral reference point for all nutrition goals.",
+h2d:"Using the Calories & Macros calculator",
+p4:"When selecting the maintenance goal, the calculator estimates your total daily energy expenditure (TDEE) and distributes macros to support stable energy levels and overall health.",
+fp:"Privacy",ft:"Terms",fc:"Contact"
+},
+ru:{
+home:"← На главную",
+title:"Поддерживающая норма калорий",
+p1:"Поддерживающая норма калорий — это количество калорий, необходимое для сохранения текущего веса тела. При таком питании вес остаётся стабильным.",
+h2a:"Что такое поддерживающие калории?",
+p2:"Поддерживающий уровень рассчитывается на основе базового обмена веществ (BMR) и уровня активности. Это точка баланса между потреблёнными и сожжёнными калориями.",
+h2b:"Зачем знать поддерживающую норму",
+list1:[
+"Помогает удерживать стабильный вес",
+"Полезно для пауз между диетами",
+"Является основой для сушки или набора массы"
+],
+h2c:"Поддержка vs похудение или набор",
+p3:"Если есть ниже поддержки — вес снижается. Если выше — увеличивается. Поддержка — это отправная точка для любых целей питания.",
+h2d:"Использование калькулятора Calories & Macros",
+p4:"При выборе цели поддержания калькулятор оценивает TDEE и распределяет БЖУ для стабильной энергии и здоровья.",
+fp:"Политика",ft:"Условия",fc:"Контакты"
+}
 };
+
 function setLang(l){
-document.getElementById("content").innerHTML=c[l];
-document.getElementById("title").textContent=
-l==="en"?"Maintenance Calories":"Калории поддержки";
+lang=l;
+btnEN.classList.toggle('active',l==='en');
+btnRU.classList.toggle('active',l==='ru');
+const t=tr[l];
+homeLink.textContent=t.home;
+tTitle.textContent=t.title;
+p1.textContent=t.p1;
+h2a.textContent=t.h2a;
+p2.textContent=t.p2;
+h2b.textContent=t.h2b;
+list1.innerHTML=t.list1.map(x=>`<li>${x}</li>`).join("");
+h2c.textContent=t.h2c;
+p3.textContent=t.p3;
+h2d.textContent=t.h2d;
+p4.textContent=t.p4;
+fPrivacy.textContent=t.fp;
+fTerms.textContent=t.ft;
+fContact.textContent=t.fc;
 }
 setLang('en');
 </script>
+
 </body>
 </html>
