@@ -1,63 +1,159 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Calories for Weight Loss</title>
-<meta name="description" content="Learn how to calculate calories for weight loss in a healthy and sustainable way.">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="canonical" href="https://calories-macros.com/blog/calories-for-weight-loss.html">
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Calories for Weight Loss • Calories & Macros</title>
+<meta name="description" content="Learn how to calculate calories for weight loss. Understand deficits, metabolism and sustainable fat loss."/>
+<link rel="canonical" href="https://calories-macros.com/blog/calories-for-weight-loss.html"/>
 <style>
-body{margin:0;font-family:system-ui;background:#0A1022;color:#fff;line-height:1.7}
-.wrap{max-width:900px;margin:auto;padding:20px}
-a{color:#9db7ff}
-.lang button{margin-right:6px}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;background:#0A1022;color:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:18px 14px 56px}
+.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+a{color:#9db7ff;text-decoration:none}
+.seg{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.seg button{border:0;background:transparent;color:rgba(255,255,255,.7);padding:7px 10px;border-radius:999px;font-weight:800;cursor:pointer}
+.seg button.active{background:linear-gradient(135deg,#5B8CFF,#7C5CFF);color:#fff}
+.card{margin-top:14px;padding:16px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+h1{margin:10px 0 6px;font-size:28px}
+h2{margin:18px 0 8px;font-size:18px}
+p{margin:0 0 12px;color:rgba(255,255,255,.86)}
+ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
+footer{margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
 </style>
 </head>
 <body>
+
 <div class="wrap">
-<div class="lang">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('ru')">RU</button>
+
+<div class="top">
+  <a href="/" id="homeLink">← Home</a>
+  <div class="seg">
+    <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+    <button id="btnRU" onclick="setLang('ru')">RU</button>
+  </div>
 </div>
 
-<h1 id="title">Calories for Weight Loss</h1>
+<div class="card">
+<h1 id="tTitle">Calories for Weight Loss</h1>
 
-<div id="content"></div>
+<p id="p1">
+Weight loss happens when your body burns more calories than it consumes. This is known as a calorie deficit.
+Understanding how to calculate and manage this deficit is the key to sustainable fat loss.
+</p>
 
-<p><a href="/">← Home</a></p>
+<h2 id="h2a">What is a calorie deficit?</h2>
+<p id="p2">
+A calorie deficit means eating fewer calories than your Total Daily Energy Expenditure (TDEE).
+When maintained consistently, your body uses stored fat as energy.
+</p>
+
+<h2 id="h2b">How big should the deficit be?</h2>
+<ul id="list1">
+  <li>Small deficit (200–300 kcal): slow but sustainable fat loss</li>
+  <li>Moderate deficit (400–500 kcal): balanced and effective for most people</li>
+  <li>Large deficit (700+ kcal): faster loss but harder to maintain</li>
+</ul>
+
+<h2 id="h2c">Common mistakes</h2>
+<ul id="list2">
+  <li>Cutting calories too aggressively</li>
+  <li>Ignoring protein intake</li>
+  <li>Not accounting for activity level</li>
+  <li>Expecting rapid results</li>
+</ul>
+
+<h2 id="h2d">Using the Calories & Macros calculator</h2>
+<p id="p3">
+Our calculator estimates your daily calorie needs based on age, weight, height, activity level, and goal.
+For weight loss, it applies a moderate deficit to support fat loss while preserving muscle.
+</p>
+</div>
+
+<footer>
+<a href="/privacy.html" id="fPrivacy">Privacy</a>
+<a href="/terms.html" id="fTerms">Terms</a>
+<a href="/contact.html" id="fContact">Contact</a>
+<span>© <span id="year"></span> calories-macros.com</span>
+</footer>
+
 </div>
 
 <script>
-const c={
-en:`
-<p>Weight loss occurs when you consistently consume fewer calories than your body burns. This is known as a calorie deficit.</p>
+document.getElementById('year').textContent=new Date().getFullYear();
+let lang='en';
 
-<p>To lose weight safely, it is important to calculate your maintenance calories first. Maintenance calories are the number of calories your body needs to maintain its current weight.</p>
-
-<p>A moderate calorie deficit of 300–500 calories per day is considered sustainable for most people. Extreme calorie restriction is not recommended.</p>
-
-<p>Weight loss is not only about calories. Protein intake, physical activity, sleep quality, and stress levels all play important roles.</p>
-
-<p>Use calorie calculators as estimation tools, not strict rules. Everyone’s metabolism is different.</p>
-`,
-ru:`
-<p>Снижение веса происходит тогда, когда вы потребляете меньше калорий, чем тратит ваш организм. Это называется дефицитом калорий.</p>
-
-<p>Для безопасного похудения важно сначала определить калории поддержки — количество калорий, необходимое для сохранения текущего веса.</p>
-
-<p>Умеренный дефицит 300–500 калорий в день считается безопасным и устойчивым для большинства людей. Жёсткие ограничения не рекомендуются.</p>
-
-<p>Похудение — это не только калории. Белок, физическая активность, сон и уровень стресса также играют важную роль.</p>
-
-<p>Калькуляторы калорий дают оценку, а не точные значения. Обмен веществ у всех разный.</p>
-`
+const tr={
+en:{
+home:"← Home",
+title:"Calories for Weight Loss",
+p1:"Weight loss happens when your body burns more calories than it consumes. This is known as a calorie deficit. Understanding how to calculate and manage this deficit is the key to sustainable fat loss.",
+h2a:"What is a calorie deficit?",
+p2:"A calorie deficit means eating fewer calories than your Total Daily Energy Expenditure (TDEE). When maintained consistently, your body uses stored fat as energy.",
+h2b:"How big should the deficit be?",
+list1:[
+"Small deficit (200–300 kcal): slow but sustainable fat loss",
+"Moderate deficit (400–500 kcal): balanced and effective for most people",
+"Large deficit (700+ kcal): faster loss but harder to maintain"
+],
+h2c:"Common mistakes",
+list2:[
+"Cutting calories too aggressively",
+"Ignoring protein intake",
+"Not accounting for activity level",
+"Expecting rapid results"
+],
+h2d:"Using the Calories & Macros calculator",
+p3:"Our calculator estimates your daily calorie needs based on age, weight, height, activity level, and goal. For weight loss, it applies a moderate deficit to support fat loss while preserving muscle.",
+fp:"Privacy",ft:"Terms",fc:"Contact"
+},
+ru:{
+home:"← На главную",
+title:"Калории для похудения",
+p1:"Похудение происходит тогда, когда организм расходует больше калорий, чем получает. Это называется дефицитом калорий. Понимание и контроль этого дефицита — ключ к устойчивому снижению жира.",
+h2a:"Что такое дефицит калорий?",
+p2:"Дефицит калорий означает потребление меньшего количества калорий, чем ваш суточный расход энергии (TDEE). При стабильном дефиците организм начинает использовать жировые запасы.",
+h2b:"Каким должен быть дефицит?",
+list1:[
+"Небольшой дефицит (200–300 ккал): медленно, но устойчиво",
+"Умеренный дефицит (400–500 ккал): оптимальный вариант для большинства",
+"Большой дефицит (700+ ккал): быстрее, но сложнее поддерживать"
+],
+h2c:"Частые ошибки",
+list2:[
+"Слишком резкое сокращение калорий",
+"Недостаток белка",
+"Игнорирование уровня активности",
+"Ожидание мгновенных результатов"
+],
+h2d:"Использование калькулятора Calories & Macros",
+p3:"Калькулятор оценивает суточную норму калорий с учётом возраста, веса, роста, активности и цели. Для похудения применяется умеренный дефицит, помогающий сохранить мышечную массу.",
+fp:"Политика",ft:"Условия",fc:"Контакты"
+}
 };
+
 function setLang(l){
-document.getElementById("content").innerHTML=c[l];
-document.getElementById("title").textContent=
-l==="en"?"Calories for Weight Loss":"Калории для похудения";
+lang=l;
+btnEN.classList.toggle('active',l==='en');
+btnRU.classList.toggle('active',l==='ru');
+const t=tr[l];
+homeLink.textContent=t.home;
+tTitle.textContent=t.title;
+p1.textContent=t.p1;
+h2a.textContent=t.h2a;
+p2.textContent=t.p2;
+h2b.textContent=t.h2b;
+list1.innerHTML=t.list1.map(x=>`<li>${x}</li>`).join("");
+h2c.textContent=t.h2c;
+list2.innerHTML=t.list2.map(x=>`<li>${x}</li>`).join("");
+h2d.textContent=t.h2d;
+p3.textContent=t.p3;
+fPrivacy.textContent=t.fp;
+fTerms.textContent=t.ft;
+fContact.textContent=t.fc;
 }
 setLang('en');
 </script>
+
 </body>
 </html>
