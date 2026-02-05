@@ -1,1 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="480" viewBox="0 0 1200 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Calories and macros illustration">
+  <defs>
+    <linearGradient id="gAccent" x1="180" y1="70" x2="1040" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5B8CFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#7C5CFF" stop-opacity="0.95"/>
+    </linearGradient>
 
+    <radialGradient id="gGlow1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(270 120) rotate(30) scale(360 220)">
+      <stop stop-color="#5B8CFF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#5B8CFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="gGlow2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(930 120) rotate(-20) scale(360 240)">
+      <stop stop-color="#7C5CFF" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#7C5CFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="gGlass" x1="240" y1="90" x2="980" y2="420" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.04"/>
+    </linearGradient>
+
+    <filter id="fSoft" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+
+    <filter id="fShadow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+
+    <filter id="fStrokeGlow" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background (matches site vibe) -->
+  <rect width="1200" height="480" fill="#0A1022"/>
+  <ellipse cx="260" cy="120" rx="360" ry="220" fill="url(#gGlow1)"/>
+  <ellipse cx="950" cy="120" rx="380" ry="240" fill="url(#gGlow2)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.10">
+    <path d="M80 96H1120" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.10"/>
+    <path d="M80 156H1120" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08"/>
+    <path d="M80 216H1120" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.06"/>
+    <path d="M80 276H1120" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.06"/>
+    <path d="M80 336H1120" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.08"/>
+    <path d="M80 396H1120" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.10"/>
+  </g>
+
+  <!-- Main glass panel -->
+  <g filter="url(#fShadow)">
+    <rect x="90" y="70" width="1020" height="340" rx="22" fill="url(#gGlass)" stroke="#FFFFFF" stroke-opacity="0.14"/>
+  </g>
+
+  <!-- Accent ribbon -->
+  <g opacity="0.35" filter="url(#fSoft)">
+    <path d="M120 110C220 70 420 70 520 110C640 158 780 158 900 110C980 78 1060 78 1090 95V170H120V110Z" fill="url(#gAccent)"/>
+  </g>
+
+  <!-- Left: “macro donut” -->
+  <g transform="translate(170 152)">
+    <!-- base ring -->
+    <circle cx="90" cy="90" r="64" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="18"/>
+    <!-- segments -->
+    <path d="M90 26A64 64 0 0 1 150.7 108.9" stroke="#5B8CFF" stroke-width="18" stroke-linecap="round" opacity="0.95"/>
+    <path d="M150.7 108.9A64 64 0 0 1 77.2 152.8" stroke="#7C5CFF" stroke-width="18" stroke-linecap="round" opacity="0.95"/>
+    <path d="M77.2 152.8A64 64 0 0 1 90 26" stroke="#46D17A" stroke-width="18" stroke-linecap="round" opacity="0.75"/>
+    <!-- inner glass -->
+    <circle cx="90" cy="90" r="44" fill="#0A1022" fill-opacity="0.65" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    <!-- small spark -->
+    <circle cx="138" cy="52" r="5" fill="#FFFFFF" opacity="0.35"/>
+  </g>
+
+  <!-- Center: small “calculator card” -->
+  <g transform="translate(420 142)">
+    <rect x="0" y="0" width="360" height="196" rx="18" fill="#0A1022" fill-opacity="0.40" stroke="#FFFFFF" stroke-opacity="0.14"/>
+
+    <!-- input rows -->
+    <g opacity="0.95">
+      <rect x="22" y="26" width="316" height="34" rx="10" fill="#000000" fill-opacity="0.20" stroke="#FFFFFF" stroke-opacity="0.10"/>
+      <rect x="22" y="72" width="316" height="34" rx="10" fill="#000000" fill-opacity="0.20" stroke="#FFFFFF" stroke-opacity="0.10"/>
+      <rect x="22" y="118" width="200" height="34" rx="10" fill="#000000" fill-opacity="0.20" stroke="#FFFFFF" stroke-opacity="0.10"/>
+      <rect x="232" y="118" width="106" height="34" rx="10" fill="#000000" fill-opacity="0.20" stroke="#FFFFFF" stroke-opacity="0.10"/>
+    </g>
+
+    <!-- button -->
+    <g filter="url(#fStrokeGlow)">
+      <rect x="22" y="160" width="316" height="26" rx="13" fill="url(#gAccent)" opacity="0.85"/>
+    </g>
+
+    <!-- tiny dots (no text to avoid SEO weirdness) -->
+    <circle cx="40" cy="43" r="4" fill="#FFFFFF" opacity="0.22"/>
+    <circle cx="40" cy="89" r="4" fill="#FFFFFF" opacity="0.22"/>
+    <circle cx="40" cy="135" r="4" fill="#FFFFFF" opacity="0.22"/>
+  </g>
+
+  <!-- Right: “progress bars” -->
+  <g transform="translate(840 148)">
+    <rect x="0" y="0" width="260" height="184" rx="18" fill="#0A1022" fill-opacity="0.35" stroke="#FFFFFF" stroke-opacity="0.14"/>
+    <!-- bars -->
+    <rect x="24" y="38" width="212" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.08"/>
+    <rect x="24" y="38" width="168" height="14" rx="7" fill="#5B8CFF" fill-opacity="0.80"/>
+
+    <rect x="24" y="78" width="212" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.08"/>
+    <rect x="24" y="78" width="132" height="14" rx="7" fill="#7C5CFF" fill-opacity="0.78"/>
+
+    <rect x="24" y="118" width="212" height="14" rx="7" fill="#FFFFFF" fill-opacity="0.08"/>
+    <rect x="24" y="118" width="96" height="14" rx="7" fill="#46D17A" fill-opacity="0.62"/>
+
+    <!-- mini chart -->
+    <g opacity="0.9">
+      <rect x="24" y="150" width="10" height="18" rx="3" fill="#5B8CFF" fill-opacity="0.85"/>
+      <rect x="40" y="142" width="10" height="26" rx="3" fill="#7C5CFF" fill-opacity="0.80"/>
+      <rect x="56" y="156" width="10" height="12" rx="3" fill="#46D17A" fill-opacity="0.55"/>
+      <rect x="72" y="136" width="10" height="32" rx="3" fill="#5B8CFF" fill-opacity="0.70"/>
+      <rect x="88" y="146" width="10" height="22" rx="3" fill="#7C5CFF" fill-opacity="0.66"/>
+    </g>
+  </g>
+
+  <!-- Bottom subtle highlight -->
+  <path d="M110 392C270 420 480 428 600 428C720 428 940 420 1090 392" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="2"/>
+
+</svg>
