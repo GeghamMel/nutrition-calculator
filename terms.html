@@ -1,184 +1,134 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Page title</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Terms of Use • Calories & Macros</title>
+<meta name="description" content="Terms of use for Calories & Macros calculator."/>
+<link rel="canonical" href="https://calories-macros.com/terms.html"/>
 <style>
-:root{
-  --bg0:#070A12;
-  --bg1:#0A1022;
-  --card:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.12);
-  --text:rgba(255,255,255,.92);
-  --muted:rgba(255,255,255,.62);
-  --accent:#5B8CFF;
-  --radius:18px;
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(900px 520px at 15% 0%, rgba(91,140,255,.22), transparent 60%),
-    radial-gradient(880px 520px at 85% 18%, rgba(124,92,255,.18), transparent 60%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
-}
-
-.wrap{
-  max-width:900px;
-  margin:0 auto;
-  padding:24px 16px 60px;
-}
-
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:14px;
-}
-
-.top a{
-  color:var(--accent);
-  text-decoration:none;
-  font-size:14px;
-}
-
-.lang button{
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  font-weight:700;
-  cursor:pointer;
-}
-.lang button.active{
-  color:white;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  padding:22px;
-}
-
-h1{
-  margin-top:0;
-  font-size:28px;
-}
-
-p, li{
-  color:var(--muted);
-  line-height:1.7;
-  font-size:15px;
-}
-
-footer{
-  margin-top:22px;
-  padding-top:14px;
-  border-top:1px solid var(--stroke);
-  font-size:13px;
-  color:var(--muted);
-}
-footer a{
-  color:var(--accent);
-  text-decoration:none;
-  margin-right:10px;
-}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;background:#0A1022;color:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:18px 14px 56px}
+.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+a{color:#9db7ff;text-decoration:none}
+.seg{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.seg button{border:0;background:transparent;color:rgba(255,255,255,.7);padding:7px 10px;border-radius:999px;font-weight:800;cursor:pointer}
+.seg button.active{background:linear-gradient(135deg,#5B8CFF,#7C5CFF);color:#fff}
+.card{margin-top:14px;padding:16px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+h1{margin:10px 0 6px;font-size:28px}
+h2{margin:18px 0 8px;font-size:18px}
+p{margin:0 0 12px;color:rgba(255,255,255,.86)}
+ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
+footer{margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
 </style>
 </head>
-
 <body>
+
 <div class="wrap">
 
-  <div class="top">
-    <a href="/">← Home</a>
-    <div class="lang">
-      <button onclick="setLang('en')" id="btnEN">EN</button>
-      <button onclick="setLang('ru')" id="btnRU">RU</button>
-    </div>
+<div class="top">
+  <a href="/" id="homeLink">← Home</a>
+  <div class="seg">
+    <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+    <button id="btnRU" onclick="setLang('ru')">RU</button>
   </div>
-
-  <div class="card" id="content">
-   
-<div id="terms-en">
-  <h1>Terms of Service</h1>
-
-  <p>
-    Calories & Macros provides informational tools for estimating daily calorie and
-    macronutrient needs.
-  </p>
-
-  <p>
-    The information on this website is for educational purposes only and should not
-    be considered medical or professional advice.
-  </p>
-
-  <p>
-    By using this website, you agree that you are responsible for how you interpret
-    and apply the information provided.
-  </p>
-
-  <p>
-    We do not guarantee specific results from using the calculator.
-  </p>
 </div>
 
-<div id="terms-ru" style="display:none">
-  <h1>Условия использования</h1>
+<div class="card">
+<h1 id="tTitle">Terms of Use</h1>
 
-  <p>
-    Calories & Macros предоставляет информационные инструменты для оценки калорий и БЖУ.
-  </p>
+<p id="p1">
+By using the Calories & Macros website, you agree to these terms. If you do not agree, please do not use this site.
+</p>
 
-  <p>
-    Информация на сайте носит исключительно ознакомительный характер и не является
-    медицинской консультацией.
-  </p>
+<h2 id="h2a">Educational purpose</h2>
+<p id="p2">
+All calculators and content provided on this website are for informational and educational purposes only.
+They are not intended as medical, nutritional, or professional advice.
+</p>
 
-  <p>
-    Используя сайт, вы соглашаетесь с тем, что самостоятельно несёте ответственность
-    за применение полученной информации.
-  </p>
+<h2 id="h2b">No guarantees</h2>
+<p id="p3">
+We do not guarantee the accuracy, completeness, or suitability of the results.
+Use the information at your own risk.
+</p>
 
-  <p>
-    Сайт не гарантирует конкретные результаты.
-  </p>
+<h2 id="h2c">Limitation of liability</h2>
+<p id="p4">
+The website owner is not responsible for any losses, injuries, or damages resulting from the use of this site.
+</p>
+
+<h2 id="h2d">Changes to terms</h2>
+<p id="p5">
+These terms may be updated at any time without notice. Continued use of the site means acceptance of the updated terms.
+</p>
 </div>
 
-  </div>
-
-  <footer>
-    <a href="/privacy.html" id="fPrivacy">Privacy</a>
-    <a href="/terms.html" id="fTerms">Terms</a>
-    <a href="/contact.html" id="fContact">Contact</a>
-    © 2026 calories-macros.com
-  </footer>
+<footer>
+<a href="/privacy.html" id="fPrivacy">Privacy</a>
+<a href="/terms.html" id="fTerms">Terms</a>
+<a href="/contact.html" id="fContact">Contact</a>
+<span>© <span id="year"></span> calories-macros.com</span>
+</footer>
 
 </div>
 
 <script>
-let lang = 'en';
+document.getElementById('year').textContent=new Date().getFullYear();
+let lang='en';
 
-const footerText = {
-  en:{privacy:"Privacy",terms:"Terms",contact:"Contact"},
-  ru:{privacy:"Политика",terms:"Условия",contact:"Контакты"}
+const tr={
+en:{
+home:"← Home",
+title:"Terms of Use",
+p1:"By using the Calories & Macros website, you agree to these terms. If you do not agree, please do not use this site.",
+h2a:"Educational purpose",
+p2:"All calculators and content provided on this website are for informational and educational purposes only. They are not intended as medical, nutritional, or professional advice.",
+h2b:"No guarantees",
+p3:"We do not guarantee the accuracy, completeness, or suitability of the results. Use the information at your own risk.",
+h2c:"Limitation of liability",
+p4:"The website owner is not responsible for any losses, injuries, or damages resulting from the use of this site.",
+h2d:"Changes to terms",
+p5:"These terms may be updated at any time without notice. Continued use of the site means acceptance of the updated terms.",
+fp:"Privacy",ft:"Terms",fc:"Contact"
+},
+ru:{
+home:"← На главную",
+title:"Условия использования",
+p1:"Используя сайт Calories & Macros, вы соглашаетесь с этими условиями. Если вы не согласны — пожалуйста, не используйте сайт.",
+h2a:"Образовательный характер",
+p2:"Все калькуляторы и материалы на сайте предназначены исключительно для информационных и образовательных целей и не являются медицинской или профессиональной консультацией.",
+h2b:"Отсутствие гарантий",
+p3:"Мы не гарантируем точность или применимость результатов. Вы используете информацию на свой риск.",
+h2c:"Ограничение ответственности",
+p4:"Владелец сайта не несёт ответственности за любые убытки или ущерб, возникшие в результате использования сайта.",
+h2d:"Изменения условий",
+p5:"Условия могут быть изменены в любое время без уведомления. Продолжение использования сайта означает согласие с обновлёнными условиями.",
+fp:"Политика",ft:"Условия",fc:"Контакты"
+}
 };
 
 function setLang(l){
-  lang=l;
-  document.getElementById("btnEN").classList.toggle("active",l==="en");
-  document.getElementById("btnRU").classList.toggle("active",l==="ru");
-
-  document.getElementById("fPrivacy").textContent = footerText[l].privacy;
-  document.getElementById("fTerms").textContent   = footerText[l].terms;
-  document.getElementById("fContact").textContent = footerText[l].contact;
-
-  renderContent();
+lang=l;
+btnEN.classList.toggle('active',l==='en');
+btnRU.classList.toggle('active',l==='ru');
+const t=tr[l];
+homeLink.textContent=t.home;
+tTitle.textContent=t.title;
+p1.textContent=t.p1;
+h2a.textContent=t.h2a;
+p2.textContent=t.p2;
+h2b.textContent=t.h2b;
+p3.textContent=t.p3;
+h2c.textContent=t.h2c;
+p4.textContent=t.p4;
+h2d.textContent=t.h2d;
+p5.textContent=t.p5;
+fPrivacy.textContent=t.fp;
+fTerms.textContent=t.ft;
+fContact.textContent=t.fc;
 }
+setLang('en');
 </script>
 
 </body>
