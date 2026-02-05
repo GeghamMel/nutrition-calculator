@@ -139,6 +139,11 @@ input, select {
 <div class="ad">AdSense block</div>
      <p style="text-align:center; margin-top:14px; font-size:14px; color:#94a3b8;">
   <a href="./privacy.html" style="color:#60a5fa; text-decoration:none;">Privacy Policy</a>
+  <a id="linkAbout" href="/about.html">About</a>
+  <a id="linkTerms" href="/terms.html">Terms</a>
+  <a id="linkPrivacy" href="/privacy.html">Privacy</a>
+  <a id="linkContact" href="/contact.html">Contact</a>
+
 </p>
 
 
@@ -149,6 +154,10 @@ let lang = 'ru';
 
 const text = {
 ru: {
+    navAbout: "О нас",
+    navTerms: "Условия",
+    navPrivacy: "Политика",
+    navContact: "Контакты",
     title: "Калькулятор калорий и БЖУ",
     gender: "Пол",
     age: "Возраст",
@@ -172,6 +181,10 @@ ru: {
     goalOptions: { maintain: "Поддержка", bulk: "Набор массы", cut: "Сушка" }
 },
 en: {
+    navAbout: "About",
+    navTerms: "Terms",
+    navPrivacy: "Privacy",
+    navContact: "Contact",
     title: "Calories & Macros Calculator",
     gender: "Gender",
     age: "Age",
@@ -258,6 +271,11 @@ function setLang(l) {
     document.getElementById("activityLabel").innerText = text[l].activity;
     document.getElementById("goalLabel").innerText = text[l].goal;
     document.getElementById("calcBtn").innerText = text[lang].calcBtn;
+    document.getElementById('linkAbout').textContent = t.navAbout;
+    document.getElementById('linkTerms').textContent = t.navTerms;
+    document.getElementById('linkPrivacy').textContent = t.navPrivacy;
+    document.getElementById('linkContact').textContent = t.navContact;
+
 
     rebuildSelectOptions("gender", text[lang].genderOptions);
     rebuildSelectOptions("activity", text[lang].activityOptions);
