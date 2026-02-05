@@ -1,1 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Macros for Muscle Gain</title>
+<meta name="description" content="Understand macronutrients and how they support muscle growth.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://calories-macros.com/blog/macros-for-muscle-gain.html">
+<style>
+body{margin:0;font-family:system-ui;background:#0A1022;color:#fff;line-height:1.7}
+.wrap{max-width:900px;margin:auto;padding:20px}
+a{color:#9db7ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('ru')">RU</button>
 
+<h1 id="title">Macros for Muscle Gain</h1>
+<div id="content"></div>
+
+<p><a href="/">← Home</a></p>
+</div>
+
+<script>
+const c={
+en:`
+<p>Macronutrients include protein, carbohydrates, and fats. All three are important for muscle growth.</p>
+
+<p>Protein supports muscle repair and recovery. People aiming to gain muscle often consume higher protein intake.</p>
+
+<p>Carbohydrates provide energy for workouts and help replenish glycogen stores.</p>
+
+<p>Fats support hormone production and overall health. They should not be eliminated.</p>
+
+<p>Muscle gain requires a calorie surplus, combined with resistance training and proper recovery.</p>
+`,
+ru:`
+<p>Макронутриенты — это белки, углеводы и жиры. Все они важны для роста мышц.</p>
+
+<p>Белок помогает восстановлению и росту мышечной ткани. Для набора мышц обычно требуется повышенное потребление белка.</p>
+
+<p>Углеводы обеспечивают энергию для тренировок и восполняют запасы гликогена.</p>
+
+<p>Жиры поддерживают гормональный баланс и общее здоровье. Их нельзя полностью исключать.</p>
+
+<p>Рост мышц требует профицита калорий, силовых тренировок и полноценного восстановления.</p>
+`
+};
+function setLang(l){
+document.getElementById("content").innerHTML=c[l];
+document.getElementById("title").textContent=
+l==="en"?"Macros for Muscle Gain":"Макросы для набора мышц";
+}
+setLang('en');
+</script>
+</body>
+</html>
