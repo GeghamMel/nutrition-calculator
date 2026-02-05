@@ -1,1 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Maintenance Calories Explained</title>
+<meta name="description" content="What are maintenance calories and why they matter.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://calories-macros.com/blog/maintenance-calories.html">
+<style>
+body{margin:0;font-family:system-ui;background:#0A1022;color:#fff;line-height:1.7}
+.wrap{max-width:900px;margin:auto;padding:20px}
+a{color:#9db7ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('ru')">RU</button>
 
+<h1 id="title">Maintenance Calories</h1>
+<div id="content"></div>
+
+<p><a href="/">← Home</a></p>
+</div>
+
+<script>
+const c={
+en:`
+<p>Maintenance calories are the number of calories your body needs to maintain its current weight.</p>
+
+<p>They depend on factors such as age, gender, height, weight, and activity level.</p>
+
+<p>Knowing your maintenance calories helps you plan weight loss or muscle gain more accurately.</p>
+
+<p>Calorie calculators provide estimates and should be adjusted based on real-world results.</p>
+`,
+ru:`
+<p>Калории поддержки — это количество калорий, необходимое для сохранения текущего веса.</p>
+
+<p>Они зависят от возраста, пола, роста, веса и уровня активности.</p>
+
+<p>Знание калорий поддержки помогает точнее планировать похудение или набор массы.</p>
+
+<p>Калькуляторы дают ориентировочные значения, которые нужно корректировать на практике.</p>
+`
+};
+function setLang(l){
+document.getElementById("content").innerHTML=c[l];
+document.getElementById("title").textContent=
+l==="en"?"Maintenance Calories":"Калории поддержки";
+}
+setLang('en');
+</script>
+</body>
+</html>
