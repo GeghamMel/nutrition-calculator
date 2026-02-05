@@ -4,7 +4,8 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Privacy Policy • Calories & Macros</title>
-<meta name="description" content="Privacy policy of Calories & Macros calculator."/>
+<meta name="description" content="Privacy policy for Calories & Macros calculator."/>
+<link rel="canonical" href="https://calories-macros.com/privacy.html"/>
 <style>
 body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;background:#0A1022;color:#fff}
 .wrap{max-width:900px;margin:0 auto;padding:18px 14px 56px}
@@ -15,64 +16,103 @@ a{color:#9db7ff;text-decoration:none}
 .seg button.active{background:linear-gradient(135deg,#5B8CFF,#7C5CFF);color:#fff}
 .card{margin-top:14px;padding:16px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
 h1{margin:10px 0 6px;font-size:28px}
+h2{margin:18px 0 8px;font-size:18px}
 p{margin:0 0 12px;color:rgba(255,255,255,.86)}
-footer{margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:rgba(255,255,255,.6);display:flex;gap:10px;flex-wrap:wrap}
+ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
+footer{margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
 </style>
 </head>
-
 <body>
 <div class="wrap">
-  <div class="top">
-    <a href="/" id="home">← Home</a>
-    <div class="seg">
-      <button id="en" class="active" onclick="setLang('en')">EN</button>
-      <button id="ru" onclick="setLang('ru')">RU</button>
-    </div>
-  </div>
 
-  <div class="card">
-    <h1 id="title">Privacy Policy</h1>
-    <p id="p1">This website does not collect personal data.</p>
-    <p id="p2">All calculations are performed locally in your browser.</p>
-    <p id="p3">We may use Google AdSense which may use cookies.</p>
-    <p id="p4">By using this website, you agree to this policy.</p>
+<div class="top">
+  <a href="/" id="homeLink">← Home</a>
+  <div class="seg">
+    <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+    <button id="btnRU" onclick="setLang('ru')">RU</button>
   </div>
+</div>
 
-  <footer>
-    <a href="/privacy.html" id="f1">Privacy</a>
-    <a href="/terms.html" id="f2">Terms</a>
-    <a href="/contact.html" id="f3">Contact</a>
-    <span>© <span id="year"></span> calories-macros.com</span>
-  </footer>
+<div class="card">
+<h1 id="tTitle">Privacy Policy</h1>
+
+<p id="p1">
+We respect your privacy. This website does not collect, store or process personal data.
+All calculations are performed locally in your browser.
+</p>
+
+<h2 id="h2a">Information we do not collect</h2>
+<ul id="list1">
+<li>No names, emails or accounts</li>
+<li>No health data or personal identifiers</li>
+<li>No stored calculation results</li>
+</ul>
+
+<h2 id="h2b">Third-party services</h2>
+<p id="p2">
+We may use Google AdSense. These services may use cookies according to their own privacy policies.
+</p>
+
+<h2 id="h2c">Contact</h2>
+<p id="p3">
+If you have questions, visit the <a href="/contact.html">contact page</a>.
+</p>
+</div>
+
+<footer>
+<a href="/privacy.html" id="fPrivacy">Privacy</a>
+<a href="/terms.html" id="fTerms">Terms</a>
+<a href="/contact.html" id="fContact">Contact</a>
+<span>© <span id="year"></span> calories-macros.com</span>
+</footer>
+
 </div>
 
 <script>
-document.getElementById("year").textContent=new Date().getFullYear();
-const t={
+document.getElementById('year').textContent=new Date().getFullYear();
+let lang='en';
+const tr={
 en:{
 home:"← Home",
 title:"Privacy Policy",
-p1:"This website does not collect personal data.",
-p2:"All calculations are performed locally in your browser.",
-p3:"We may use Google AdSense which may use cookies.",
-p4:"By using this website, you agree to this policy.",
-f1:"Privacy",f2:"Terms",f3:"Contact"
+p1:"We respect your privacy. This website does not collect, store or process personal data. All calculations are performed locally in your browser.",
+h2a:"Information we do not collect",
+list1:["No names, emails or accounts","No health data or personal identifiers","No stored calculation results"],
+h2b:"Third-party services",
+p2:"We may use Google AdSense. These services may use cookies according to their own privacy policies.",
+h2c:"Contact",
+p3:"If you have questions, visit the contact page.",
+fp:"Privacy",ft:"Terms",fc:"Contact"
 },
 ru:{
 home:"← На главную",
 title:"Политика конфиденциальности",
-p1:"Сайт не собирает персональные данные.",
-p2:"Все расчёты выполняются локально в браузере.",
-p3:"Мы можем использовать Google AdSense с cookie.",
-p4:"Используя сайт, вы соглашаетесь с политикой.",
-f1:"Политика",f2:"Условия",f3:"Контакты"
+p1:"Мы уважаем вашу конфиденциальность. Сайт не собирает, не хранит и не обрабатывает персональные данные. Все расчёты выполняются локально в браузере.",
+h2a:"Какие данные мы не собираем",
+list1:["Имена, email или аккаунты","Медицинские данные","Результаты расчётов"],
+h2b:"Сторонние сервисы",
+p2:"На сайте может использоваться Google AdSense, который применяет cookies по своей политике.",
+h2c:"Контакты",
+p3:"Если у вас есть вопросы — перейдите на страницу контактов.",
+fp:"Политика",ft:"Условия",fc:"Контакты"
 }};
 function setLang(l){
-document.getElementById("en").classList.toggle("active",l==="en");
-document.getElementById("ru").classList.toggle("active",l==="ru");
-for(const k in t[l])document.getElementById(k)?.textContent=t[l][k];
+lang=l;
+const t=tr[l];
+btnEN.classList.toggle('active',l==='en');
+btnRU.classList.toggle('active',l==='ru');
+homeLink.textContent=t.home;
+tTitle.textContent=t.title;
+p1.textContent=t.p1;
+h2a.textContent=t.h2a;
+list1.innerHTML=t.list1.map(x=>`<li>${x}</li>`).join("");
+h2b.textContent=t.h2b;
+p2.textContent=t.p2;
+h2c.textContent=t.h2c;
+p3.innerHTML=t.p3.replace("contact page",'<a href="/contact.html">contact page</a>').replace("страницу контактов",'<a href="/contact.html">страницу контактов</a>');
+fPrivacy.textContent=t.fp;fTerms.textContent=t.ft;fContact.textContent=t.fc;
 }
-setLang("en");
+setLang('en');
 </script>
 </body>
 </html>
