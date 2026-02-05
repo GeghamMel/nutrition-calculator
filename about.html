@@ -1,1 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About • Calories & Macros</title>
+  <meta name="description" content="About Calories & Macros calculator. Learn how it works and what it provides." />
+  <link rel="canonical" href="https://calories-macros.com/about.html" />
+  <style>
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;background:#0A1022;color:#fff}
+    .wrap{max-width:900px;margin:0 auto;padding:18px 14px 56px}
+    .top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+    a{color:#9db7ff;text-decoration:none}
+    .seg{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+    .seg button{border:0;background:transparent;color:rgba(255,255,255,.7);padding:7px 10px;border-radius:999px;font-weight:800;cursor:pointer}
+    .seg button.active{background:linear-gradient(135deg,#5B8CFF,#7C5CFF);color:#fff}
+    .card{margin-top:14px;padding:16px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+    h1{margin:10px 0 6px;font-size:28px}
+    h2{margin:18px 0 8px;font-size:18px}
+    p{margin:0 0 12px;color:rgba(255,255,255,.86)}
+    ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
+    footer{margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="/" id="homeLink">← Home</a>
+      </div>
+      <div class="seg" aria-label="Language">
+        <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+        <button id="btnRU" onclick="setLang('ru')">RU</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1 id="tTitle">About</h1>
+
+      <p id="tP1">
+        Calories & Macros is a simple calculator that helps you estimate daily calories and macronutrients (protein, carbs, fat).
+        It’s designed to be fast, clear, and easy to use on mobile.
+      </p>
+
+      <h2 id="tH2a">What the calculator provides</h2>
+      <ul id="tList1">
+        <li>Estimated daily calories (maintenance / goal-based, depending on your inputs)</li>
+        <li>Suggested macro split (protein, carbs, fat)</li>
+        <li>Quick guidance on how to use the result</li>
+      </ul>
+
+      <h2 id="tH2b">Important note</h2>
+      <p id="tP2">
+        This website provides educational estimates only. It is not medical advice.
+        For health conditions or specific dietary plans, consult a qualified professional.
+      </p>
+
+      <h2 id="tH2c">Contact</h2>
+      <p id="tP3">
+        If you want to report a bug or suggest an improvement, use the <a href="/contact.html" id="contactLink">contact page</a>.
+      </p>
+    </div>
+
+    <footer>
+      <a href="/privacy.html" id="fPrivacy">Privacy</a>
+      <a href="/terms.html" id="fTerms">Terms</a>
+      <a href="/contact.html" id="fContact">Contact</a>
+      <span>© <span id="year"></span> calories-macros.com</span>
+    </footer>
+  </div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  let lang = 'en';
+
+  const tr = {
+    en: {
+      home: "← Home",
+      title: "About",
+      p1: "Calories & Macros is a simple calculator that helps you estimate daily calories and macronutrients (protein, carbs, fat). It’s designed to be fast, clear, and easy to use on mobile.",
+      h2a: "What the calculator provides",
+      list1: [
+        "Estimated daily calories (maintenance / goal-based, depending on your inputs)",
+        "Suggested macro split (protein, carbs, fat)",
+        "Quick guidance on how to use the result"
+      ],
+      h2b: "Important note",
+      p2: "This website provides educational estimates only. It is not medical advice. For health conditions or specific dietary plans, consult a qualified professional.",
+      h2c: "Contact",
+      p3: "If you want to report a bug or suggest an improvement, use the contact page.",
+      footerPrivacy: "Privacy",
+      footerTerms: "Terms",
+      footerContact: "Contact"
+    },
+    ru: {
+      home: "← На главную",
+      title: "О нас",
+      p1: "Calories & Macros — это простой калькулятор, который помогает оценить дневные калории и макронутриенты (белки, углеводы, жиры). Он сделан так, чтобы работать быстро, понятно и удобно на телефоне.",
+      h2a: "Что показывает калькулятор",
+      list1: [
+        "Оценку дневных калорий (поддержание / цель — в зависимости от ввода)",
+        "Рекомендуемое распределение БЖУ (белки, углеводы, жиры)",
+        "Короткие подсказки по использованию результата"
+      ],
+      h2b: "Важно",
+      p2: "Сайт предоставляет только образовательные оценки и не является медицинской консультацией. При заболеваниях или индивидуальных планах питания обратитесь к специалисту.",
+      h2c: "Контакты",
+      p3: "Если хотите сообщить об ошибке или предложить улучшение — используйте страницу контактов.",
+      footerPrivacy: "Политика",
+      footerTerms: "Условия",
+      footerContact: "Контакты"
+    }
+  };
+
+  function setLang(l){
+    lang = l;
+    document.getElementById('btnEN').classList.toggle('active', l==='en');
+    document.getElementById('btnRU').classList.toggle('active', l==='ru');
+
+    const t = tr[lang];
+    document.getElementById('homeLink').textContent = t.home;
+    document.getElementById('tTitle').textContent = t.title;
+    document.getElementById('tP1').textContent = t.p1;
+    document.getElementById('tH2a').textContent = t.h2a;
+
+    const ul = document.getElementById('tList1');
+    ul.innerHTML = t.list1.map(x => `<li>${x}</li>`).join("");
+
+    document.getElementById('tH2b').textContent = t.h2b;
+    document.getElementById('tP2').textContent = t.p2;
+    document.getElementById('tH2c').textContent = t.h2c;
+
+    // preserve link
+    const p3 = document.getElementById('tP3');
+    p3.innerHTML = t.p3.replace("contact page", `<a href="/contact.html" id="contactLink">contact page</a>`)
+                       .replace("страницу контактов", `<a href="/contact.html" id="contactLink">страницу контактов</a>`);
+
+    document.getElementById('fPrivacy').textContent = t.footerPrivacy;
+    document.getElementById('fTerms').textContent = t.footerTerms;
+    document.getElementById('fContact').textContent = t.footerContact;
+  }
+
+  setLang('en');
+</script>
+</body>
+</html>
 
