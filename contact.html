@@ -1,1 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact • Calories & Macros</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://calories-macros.com/contact.html">
+<style>
+body{margin:0;font-family:system-ui;background:#0A1022;color:#fff}
+.wrap{max-width:800px;margin:auto;padding:20px}
+a{color:#9db7ff}
+</style>
+</head>
+<body>
+<div class="wrap">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('ru')">RU</button>
+
+<h1 id="title">Contact</h1>
+<p id="p1">For questions or suggestions, contact us at:</p>
+<p><strong>support@calories-macros.com</strong></p>
+<p><a href="/">← Home</a></p>
+</div>
+
+<script>
+const t={
+en:{title:"Contact",p1:"For questions or suggestions, contact us at:"},
+ru:{title:"Контакты",p1:"По вопросам и предложениям пишите на:"}
+};
+function setLang(l){
+document.getElementById("title").textContent=t[l].title;
+document.getElementById("p1").textContent=t[l].p1;
+}
+</script>
+</body>
+</html>
 
