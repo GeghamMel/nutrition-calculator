@@ -170,25 +170,6 @@ label {
   overflow: hidden;
 }
 
-.hero {
-  max-height: 260px;          /* было больше — станет компактнее */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.hero img,
-.hero svg {
-  max-width: 520px;           /* уменьшаем ширину */
-  width: 100%;
-  height: auto;
-  opacity: 0.95;              /* чуть мягче */
-}
-
-
-
-
 </style>
 </head>
 
@@ -210,7 +191,7 @@ label {
     <div class="card">
 
          <div class="hero">
-          <img src="/assets/hero.png.png" alt="Calories and macros illustration" loading="lazy">
+          <img src="/assets/hero.png.png" alt="Calories and macros illustration" loading="lazy" style="max-width:420px;width:100%;margin:0 auto 10px;display:block;>
       </div>
          
       <h1 id="title">Калькулятор калорий и БЖУ</h1>
@@ -275,8 +256,8 @@ label {
         <!-- SEO content injected by JS -->
       </div>
      
-     <div class="hero">
-          <img src="/assets/hero.svg" alt="Calories and macros illustration" loading="lazy">
+     <div class="hero2">
+          <img src="/assets/hero.svg" alt="Calories and macros illustration" loading="lazy" style="max-width:600px;width:100%;opacity:0.9;margin:20px auto;display:block;">
       </div>
 
       <div class="ad">AdSense block</div>
