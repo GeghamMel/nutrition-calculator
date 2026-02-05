@@ -1,1 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Calories for Weight Loss</title>
+<meta name="description" content="Learn how to calculate calories for weight loss in a healthy and sustainable way.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://calories-macros.com/blog/calories-for-weight-loss.html">
+<style>
+body{margin:0;font-family:system-ui;background:#0A1022;color:#fff;line-height:1.7}
+.wrap{max-width:900px;margin:auto;padding:20px}
+a{color:#9db7ff}
+.lang button{margin-right:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="lang">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('ru')">RU</button>
+</div>
 
+<h1 id="title">Calories for Weight Loss</h1>
+
+<div id="content"></div>
+
+<p><a href="/">← Home</a></p>
+</div>
+
+<script>
+const c={
+en:`
+<p>Weight loss occurs when you consistently consume fewer calories than your body burns. This is known as a calorie deficit.</p>
+
+<p>To lose weight safely, it is important to calculate your maintenance calories first. Maintenance calories are the number of calories your body needs to maintain its current weight.</p>
+
+<p>A moderate calorie deficit of 300–500 calories per day is considered sustainable for most people. Extreme calorie restriction is not recommended.</p>
+
+<p>Weight loss is not only about calories. Protein intake, physical activity, sleep quality, and stress levels all play important roles.</p>
+
+<p>Use calorie calculators as estimation tools, not strict rules. Everyone’s metabolism is different.</p>
+`,
+ru:`
+<p>Снижение веса происходит тогда, когда вы потребляете меньше калорий, чем тратит ваш организм. Это называется дефицитом калорий.</p>
+
+<p>Для безопасного похудения важно сначала определить калории поддержки — количество калорий, необходимое для сохранения текущего веса.</p>
+
+<p>Умеренный дефицит 300–500 калорий в день считается безопасным и устойчивым для большинства людей. Жёсткие ограничения не рекомендуются.</p>
+
+<p>Похудение — это не только калории. Белок, физическая активность, сон и уровень стресса также играют важную роль.</p>
+
+<p>Калькуляторы калорий дают оценку, а не точные значения. Обмен веществ у всех разный.</p>
+`
+};
+function setLang(l){
+document.getElementById("content").innerHTML=c[l];
+document.getElementById("title").textContent=
+l==="en"?"Calories for Weight Loss":"Калории для похудения";
+}
+setLang('en');
+</script>
+</body>
+</html>
