@@ -1,71 +1,186 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Privacy Policy • Calories & Macros</title>
-  <meta name="description" content="Privacy Policy for Calories & Macros calculator.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="https://calories-macros.com/privacy.html">
-  <style>
-    body{margin:0;font-family:system-ui,Arial,sans-serif;background:#0A1022;color:#fff;line-height:1.7}
-    .wrap{max-width:900px;margin:auto;padding:20px}
-    a{color:#9db7ff;text-decoration:none}
-    .lang{margin-bottom:14px}
-    button{margin-right:6px;padding:6px 10px;border-radius:999px;border:0;cursor:pointer}
-    button.active{background:#5B8CFF;color:#fff}
-  </style>
+<meta charset="UTF-8" />
+<title>Page title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<style>
+:root{
+  --bg0:#070A12;
+  --bg1:#0A1022;
+  --card:rgba(255,255,255,.06);
+  --stroke:rgba(255,255,255,.12);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.62);
+  --accent:#5B8CFF;
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 15% 0%, rgba(91,140,255,.22), transparent 60%),
+    radial-gradient(880px 520px at 85% 18%, rgba(124,92,255,.18), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+.wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:24px 16px 60px;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.top a{
+  color:var(--accent);
+  text-decoration:none;
+  font-size:14px;
+}
+
+.lang button{
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-weight:700;
+  cursor:pointer;
+}
+.lang button.active{
+  color:white;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  padding:22px;
+}
+
+h1{
+  margin-top:0;
+  font-size:28px;
+}
+
+p, li{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:15px;
+}
+
+footer{
+  margin-top:22px;
+  padding-top:14px;
+  border-top:1px solid var(--stroke);
+  font-size:13px;
+  color:var(--muted);
+}
+footer a{
+  color:var(--accent);
+  text-decoration:none;
+  margin-right:10px;
+}
+</style>
 </head>
+
 <body>
 <div class="wrap">
-  <div class="lang">
-    <button id="en" class="active" onclick="setLang('en')">EN</button>
-    <button id="ru" onclick="setLang('ru')">RU</button>
+
+  <div class="top">
+    <a href="/">← Home</a>
+    <div class="lang">
+      <button onclick="setLang('en')" id="btnEN">EN</button>
+      <button onclick="setLang('ru')" id="btnRU">RU</button>
+    </div>
   </div>
 
-  <h1 id="title">Privacy Policy</h1>
+  <div class="card" id="content">
+   
+<div id="privacy-en">
+  <h1>Privacy Policy</h1>
 
-  <p id="p1">
-    Calories & Macros respects your privacy. This website does not collect personal data such as names,
-    emails, or payment information.
+  <p>
+    Calories & Macros respects your privacy. This website does not collect personal
+    information such as names, emails, or payment details.
   </p>
 
-  <p id="p2">
-    All calculations are performed locally in your browser. We do not store or transmit your input data.
+  <p>
+    All calculations are performed locally in your browser. We do not store,
+    process, or transmit your input data to our servers.
   </p>
 
-  <p id="p3">
-    We may use third-party services such as Google AdSense. These services may use cookies to display
-    relevant advertisements.
+  <p>
+    We may use third-party services such as Google AdSense to display advertisements.
+    These services may use cookies to show relevant ads based on user interests.
   </p>
 
-  <p id="p4">
+  <p>
     By using this website, you agree to this Privacy Policy.
   </p>
+</div>
 
-  <p><a href="/">← Home</a></p>
+<div id="privacy-ru" style="display:none">
+  <h1>Политика конфиденциальности</h1>
+
+  <p>
+    Calories & Macros уважает вашу конфиденциальность. Сайт не собирает персональные
+    данные, такие как имя, электронная почта или платёжная информация.
+  </p>
+
+  <p>
+    Все расчёты выполняются локально в вашем браузере. Мы не сохраняем и не передаём
+    введённые данные.
+  </p>
+
+  <p>
+    Мы можем использовать сторонние сервисы, такие как Google AdSense, для показа
+    рекламы. Эти сервисы могут использовать файлы cookie.
+  </p>
+
+  <p>
+    Используя сайт, вы соглашаетесь с данной политикой конфиденциальности.
+  </p>
+</div>
+
+  </div>
+
+  <footer>
+    <a href="/privacy.html" id="fPrivacy">Privacy</a>
+    <a href="/terms.html" id="fTerms">Terms</a>
+    <a href="/contact.html" id="fContact">Contact</a>
+    © 2026 calories-macros.com
+  </footer>
+
 </div>
 
 <script>
-const t={
-en:{
-title:"Privacy Policy",
-p1:"Calories & Macros respects your privacy. This website does not collect personal data such as names, emails, or payment information.",
-p2:"All calculations are performed locally in your browser. We do not store or transmit your input data.",
-p3:"We may use third-party services such as Google AdSense. These services may use cookies to display relevant advertisements.",
-p4:"By using this website, you agree to this Privacy Policy."
-},
-ru:{
-title:"Политика конфиденциальности",
-p1:"Сайт Calories & Macros уважает вашу конфиденциальность. Мы не собираем персональные данные, такие как имя, email или платежная информация.",
-p2:"Все расчёты выполняются локально в вашем браузере. Мы не сохраняем и не передаём введённые данные.",
-p3:"Мы можем использовать сторонние сервисы, такие как Google AdSense. Они могут применять cookies для показа рекламы.",
-p4:"Используя этот сайт, вы соглашаетесь с данной Политикой конфиденциальности."
-}};
+let lang = 'en';
+
+const footerText = {
+  en:{privacy:"Privacy",terms:"Terms",contact:"Contact"},
+  ru:{privacy:"Политика",terms:"Условия",contact:"Контакты"}
+};
+
 function setLang(l){
-document.getElementById("en").classList.toggle("active",l==="en");
-document.getElementById("ru").classList.toggle("active",l==="ru");
-for(let k in t[l])document.getElementById(k).textContent=t[l][k];
+  lang=l;
+  document.getElementById("btnEN").classList.toggle("active",l==="en");
+  document.getElementById("btnRU").classList.toggle("active",l==="ru");
+
+  document.getElementById("fPrivacy").textContent = footerText[l].privacy;
+  document.getElementById("fTerms").textContent   = footerText[l].terms;
+  document.getElementById("fContact").textContent = footerText[l].contact;
+
+  renderContent();
 }
 </script>
+
 </body>
 </html>
