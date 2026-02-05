@@ -307,16 +307,16 @@ function setLang(l) {
 
 
       // SEO
-  document.getElementById("seoBlock").innerHTML = seo[l];
-      document.getElementById('linkAbout').textContent = t.navAbout;
-    document.getElementById('linkTerms').textContent = t.navTerms;
-    document.getElementById('linkPrivacy').textContent = t.navPrivacy;
-    document.getElementById('linkContact').textContent = t.navContact;
-
+    document.getElementById("seoBlock").innerHTML = seo[l];
     document.getElementById('blogTitle').textContent = t.blogTitle;
     document.getElementById('blog1').textContent = t.blog1;
     document.getElementById('blog2').textContent = t.blog2;
     document.getElementById('blog3').textContent = t.blog3;
+     
+    document.getElementById('linkAbout').textContent = t.navAbout;
+    document.getElementById('linkTerms').textContent = t.navTerms;
+    document.getElementById('linkPrivacy').textContent = t.navPrivacy;
+    document.getElementById('linkContact').textContent = t.navContact;
 
   // 🔥 ВАЖНО: если результат уже есть — пересчитать
   if (document.getElementById("result").innerHTML.trim() !== "") {
