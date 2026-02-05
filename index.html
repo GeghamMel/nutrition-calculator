@@ -300,6 +300,8 @@ en: {
 function setLang(l) {
     lang = l;
 
+     const t = text[l];
+
      // обновляем интерфейс
     document.getElementById("title").innerText = text[l].title;
     document.getElementById("genderLabel").innerText = text[l].gender;
@@ -330,12 +332,6 @@ function setLang(l) {
    document.getElementById('linkAbout').textContent = t.linkAbout;
    document.getElementById('linkTerms').textContent = t.linkTerms;
    document.getElementById('linkContact').textContent = t.linkContact;
-
-      
-    document.getElementById('linkAbout').textContent = t.navAbout;
-    document.getElementById('linkTerms').textContent = t.navTerms;
-    document.getElementById('linkPrivacy').textContent = t.navPrivacy;
-    document.getElementById('linkContact').textContent = t.navContact;
 
 
 
