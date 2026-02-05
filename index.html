@@ -368,36 +368,109 @@ en: {
   }
 }
      
-     const seo = {
+const seo = {
   ru: `
     <h2 style="margin:12px 0 6px;">Онлайн калькулятор калорий и БЖУ</h2>
-    <p>Этот калькулятор помогает рассчитать дневную норму калорий (TDEE) и макронутриенты: белки, жиры и углеводы. Подходит для целей: поддержка веса, набор мышечной массы и сушка.</p>
+    <p>
+      Этот калькулятор помогает оценить дневную норму калорий (TDEE) и макронутриенты: белки, жиры и углеводы.
+      Подходит для целей: поддержание веса, набор мышечной массы и снижение веса.
+    </p>
+    <p>
+      Все значения являются ориентировочными. Реальные потребности зависят от активности, состава тела, сна, стресса и питания.
+      Используйте результат как стартовую точку и корректируйте по динамике веса и самочувствию.
+    </p>
+
+    <h3 style="margin:12px 0 6px;">Что именно считает калькулятор</h3>
+    <ul>
+      <li><b>BMR</b> (базовый обмен) — сколько энергии нужно телу в покое.</li>
+      <li><b>TDEE</b> — суточный расход калорий с учётом активности (BMR × коэффициент активности).</li>
+      <li><b>Коррекция под цель</b> — небольшой профицит для набора или умеренный дефицит для сушки.</li>
+      <li><b>Макросы (БЖУ)</b> — белки, жиры и углеводы в граммах на день.</li>
+    </ul>
+
     <h3 style="margin:12px 0 6px;">Как пользоваться</h3>
     <ol>
-      <li>Выбери пол, введи возраст, рост и вес.</li>
-      <li>Укажи уровень активности и цель.</li>
+      <li>Выбери пол и введи возраст, рост и вес.</li>
+      <li>Укажи уровень активности и цель (поддержка / набор / сушка).</li>
       <li>Нажми «Рассчитать» — получишь калории и БЖУ в граммах.</li>
     </ol>
+
+    <h3 style="margin:12px 0 6px;">Как мы рассчитываем БЖУ</h3>
+    <p>
+      Белок рассчитывается в граммах на кг массы тела (для набора обычно выше, чем для поддержания/сушки).
+      Жиры берём как долю от калорийности, а углеводы — это оставшиеся калории.
+      Это простой и понятный способ получить рабочую “базу”, которую можно подстроить под себя.
+    </p>
+
     <h3 style="margin:12px 0 6px;">FAQ</h3>
-    <p><b>Что такое TDEE?</b> Это расход калорий в сутки с учётом активности.</p>
-    <p><b>Как выбрать цель?</b> Для набора — небольшой профицит, для сушки — умеренный дефицит.</p>
-    <p><b>Сколько белка нужно?</b> Обычно 1.6–2.2 г/кг в зависимости от цели и тренировок.</p>
+    <p><b>Что такое TDEE?</b> Это расход калорий в сутки с учётом активности: тренировки, ходьба, работа и т.д.</p>
+    <p><b>Как выбрать цель?</b> Набор = небольшой профицит, Сушка = умеренный дефицит, Поддержка = около TDEE.</p>
+    <p><b>Сколько белка нужно?</b> Часто используют диапазон 1.6–2.2 г/кг в зависимости от цели и тренировок.</p>
+    <p><b>Это медицинская рекомендация?</b> Нет. Это справочная оценка. При заболеваниях и специальных диетах лучше обратиться к специалисту.</p>
+
+    <h3 style="margin:12px 0 6px;">Полезные материалы</h3>
+    <ul>
+      <li><a href="/blog/calories-for-weight-loss.html">Калории для похудения</a></li>
+      <li><a href="/blog/macros-for-muscle-gain.html">БЖУ для набора мышц</a></li>
+      <li><a href="/blog/maintenance-calories.html">Поддерживающая норма калорий</a></li>
+    </ul>
+
+    <p style="margin-top:10px;">
+      Также смотрите: <a href="/privacy.html">Политика конфиденциальности</a> и <a href="/terms.html">Условия использования</a>.
+    </p>
   `,
   en: `
     <h2 style="margin:12px 0 6px;">Calories & Macros Calculator Online</h2>
-    <p>This calculator estimates your daily calories (TDEE) and macros: protein, fats and carbs. It supports maintenance, muscle gain and fat loss goals.</p>
+    <p>
+      This calculator estimates your daily calories (TDEE) and macros: protein, fats, and carbs.
+      It supports maintenance, muscle gain, and fat loss goals.
+    </p>
+    <p>
+      All results are estimates. Real needs vary based on activity, body composition, sleep, stress, and diet adherence.
+      Use this as a starting point and adjust based on weekly progress.
+    </p>
+
+    <h3 style="margin:12px 0 6px;">What the calculator provides</h3>
+    <ul>
+      <li><b>BMR</b> — calories your body needs at rest.</li>
+      <li><b>TDEE</b> — daily energy expenditure including activity (BMR × activity factor).</li>
+      <li><b>Goal adjustment</b> — a small surplus for bulking or a moderate deficit for cutting.</li>
+      <li><b>Macros</b> — daily protein, fats, and carbs in grams.</li>
+    </ul>
+
     <h3 style="margin:12px 0 6px;">How to use</h3>
     <ol>
-      <li>Select gender, enter age, height and weight.</li>
-      <li>Choose activity level and goal.</li>
+      <li>Select gender, then enter age, height, and weight.</li>
+      <li>Choose activity level and goal (maintain / gain / cut).</li>
       <li>Click “Calculate” to get calories and macros in grams.</li>
     </ol>
+
+    <h3 style="margin:12px 0 6px;">How macros are estimated</h3>
+    <p>
+      Protein is calculated per kg of body weight (typically higher for gaining).
+      Fats are estimated as a portion of total calories, and carbs fill the remaining calories.
+      This gives a practical baseline you can personalize over time.
+    </p>
+
     <h3 style="margin:12px 0 6px;">FAQ</h3>
-    <p><b>What is TDEE?</b> Your daily energy expenditure including activity.</p>
-    <p><b>Which goal should I pick?</b> Gain = small surplus, Cut = moderate deficit.</p>
-    <p><b>How much protein do I need?</b> Commonly 1.6–2.2 g/kg depending on training and goal.</p>
+    <p><b>What is TDEE?</b> Your daily energy expenditure including activity (walking, workouts, daily tasks).</p>
+    <p><b>Which goal should I pick?</b> Gain = small surplus, Cut = moderate deficit, Maintain = around TDEE.</p>
+    <p><b>How much protein do I need?</b> Common ranges are 1.6–2.2 g/kg depending on training and goal.</p>
+    <p><b>Is this medical advice?</b> No. It’s for educational estimates only. For medical conditions, consult a professional.</p>
+
+    <h3 style="margin:12px 0 6px;">Read next</h3>
+    <ul>
+      <li><a href="/blog/calories-for-weight-loss.html">Calories for Weight Loss</a></li>
+      <li><a href="/blog/macros-for-muscle-gain.html">Macros for Muscle Gain</a></li>
+      <li><a href="/blog/maintenance-calories.html">Maintenance Calories Explained</a></li>
+    </ul>
+
+    <p style="margin-top:10px;">
+      Also see: <a href="/privacy.html">Privacy Policy</a> and <a href="/terms.html">Terms of Service</a>.
+    </p>
   `
 };
+
 
 function setLang(l) {
     lang = l;
