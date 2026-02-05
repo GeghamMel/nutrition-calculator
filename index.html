@@ -268,10 +268,6 @@ function setLang(l) {
     document.getElementById("activityLabel").innerText = text[l].activity;
     document.getElementById("goalLabel").innerText = text[l].goal;
     document.getElementById("calcBtn").innerText = text[lang].calcBtn;
-    document.getElementById('linkAbout').textContent = t.navAbout;
-    document.getElementById('linkTerms').textContent = t.navTerms;
-    document.getElementById('linkPrivacy').textContent = t.navPrivacy;
-    document.getElementById('linkContact').textContent = t.navContact;
 
 
     rebuildSelectOptions("gender", text[lang].genderOptions);
@@ -281,6 +277,10 @@ function setLang(l) {
 
       // SEO
   document.getElementById("seoBlock").innerHTML = seo[l];
+      document.getElementById('linkAbout').textContent = t.navAbout;
+    document.getElementById('linkTerms').textContent = t.navTerms;
+    document.getElementById('linkPrivacy').textContent = t.navPrivacy;
+    document.getElementById('linkContact').textContent = t.navContact;
 
   // 🔥 ВАЖНО: если результат уже есть — пересчитать
   if (document.getElementById("result").innerHTML.trim() !== "") {
