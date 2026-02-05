@@ -170,6 +170,21 @@ label {
   overflow: hidden;
 }
 
+.hero2 {
+  max-height: 260px;          /* было больше — станет компактнее */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.hero2 svg {
+  max-width: 520px;           /* уменьшаем ширину */
+  width: 100%;
+  height: auto;
+  opacity: 0.95;              /* чуть мягче */
+}
+
 </style>
 </head>
 
@@ -257,7 +272,7 @@ label {
       </div>
      
      <div class="hero2">
-          <img src="/assets/hero.svg" alt="Calories and macros illustration" loading="lazy" style="max-width:600px;width:100%;opacity:0.9;margin:20px auto;display:block;">
+          <img src="/assets/hero.svg" alt="Calories and macros illustration" loading="lazy">
       </div>
 
       <div class="ad">AdSense block</div>
