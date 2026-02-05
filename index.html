@@ -160,6 +160,31 @@ label {
   color: rgba(255,255,255,.85);
 }
 
+     /* ===== HARD FIX FOR LABEL OVERFLOW ===== */
+
+/* ограничиваем ВСЕ поля формы */
+.field {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* фикс самих label */
+.field label {
+  display: block;
+  max-width: 100%;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+/* защита карточки */
+.card {
+  overflow: hidden;
+}
+
+
 
 </style>
 </head>
