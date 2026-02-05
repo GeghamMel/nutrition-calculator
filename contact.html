@@ -1,36 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Contact • Calories & Macros</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="canonical" href="https://calories-macros.com/contact.html">
+<meta charset="UTF-8" />
+<title>Page title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <style>
-body{margin:0;font-family:system-ui;background:#0A1022;color:#fff}
-.wrap{max-width:800px;margin:auto;padding:20px}
-a{color:#9db7ff}
+:root{
+  --bg0:#070A12;
+  --bg1:#0A1022;
+  --card:rgba(255,255,255,.06);
+  --stroke:rgba(255,255,255,.12);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.62);
+  --accent:#5B8CFF;
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(900px 520px at 15% 0%, rgba(91,140,255,.22), transparent 60%),
+    radial-gradient(880px 520px at 85% 18%, rgba(124,92,255,.18), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+}
+
+.wrap{
+  max-width:900px;
+  margin:0 auto;
+  padding:24px 16px 60px;
+}
+
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+
+.top a{
+  color:var(--accent);
+  text-decoration:none;
+  font-size:14px;
+}
+
+.lang button{
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-weight:700;
+  cursor:pointer;
+}
+.lang button.active{
+  color:white;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  padding:22px;
+}
+
+h1{
+  margin-top:0;
+  font-size:28px;
+}
+
+p, li{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:15px;
+}
+
+footer{
+  margin-top:22px;
+  padding-top:14px;
+  border-top:1px solid var(--stroke);
+  font-size:13px;
+  color:var(--muted);
+}
+footer a{
+  color:var(--accent);
+  text-decoration:none;
+  margin-right:10px;
+}
 </style>
 </head>
+
 <body>
 <div class="wrap">
-<button onclick="setLang('en')">EN</button>
-<button onclick="setLang('ru')">RU</button>
 
-<h1 id="title">Contact</h1>
-<p id="p1">For questions or suggestions, contact us at:</p>
-<p><strong>support@calories-macros.com</strong></p>
-<p><a href="/">← Home</a></p>
+  <div class="top">
+    <a href="/">← Home</a>
+    <div class="lang">
+      <button onclick="setLang('en')" id="btnEN">EN</button>
+      <button onclick="setLang('ru')" id="btnRU">RU</button>
+    </div>
+  </div>
+
+  <div class="card" id="content">
+    
+<div id="contact-en">
+  <h1>Contact</h1>
+
+  <p>
+    If you have questions, suggestions, or want to report an issue, feel free to
+    contact us.
+  </p>
+
+  <p>
+    Email: <b>support@calories-macros.com</b>
+  </p>
+</div>
+
+<div id="contact-ru" style="display:none">
+  <h1>Контакты</h1>
+
+  <p>
+    Если у вас есть вопросы, предложения или вы нашли ошибку, свяжитесь с нами.
+  </p>
+
+  <p>
+    Email: <b>support@calories-macros.com</b>
+  </p>
+</div>
+
+  </div>
+
+  <footer>
+    <a href="/privacy.html" id="fPrivacy">Privacy</a>
+    <a href="/terms.html" id="fTerms">Terms</a>
+    <a href="/contact.html" id="fContact">Contact</a>
+    © 2026 calories-macros.com
+  </footer>
+
 </div>
 
 <script>
-const t={
-en:{title:"Contact",p1:"For questions or suggestions, contact us at:"},
-ru:{title:"Контакты",p1:"По вопросам и предложениям пишите на:"}
+let lang = 'en';
+
+const footerText = {
+  en:{privacy:"Privacy",terms:"Terms",contact:"Contact"},
+  ru:{privacy:"Политика",terms:"Условия",contact:"Контакты"}
 };
+
 function setLang(l){
-document.getElementById("title").textContent=t[l].title;
-document.getElementById("p1").textContent=t[l].p1;
+  lang=l;
+  document.getElementById("btnEN").classList.toggle("active",l==="en");
+  document.getElementById("btnRU").classList.toggle("active",l==="ru");
+
+  document.getElementById("fPrivacy").textContent = footerText[l].privacy;
+  document.getElementById("fTerms").textContent   = footerText[l].terms;
+  document.getElementById("fContact").textContent = footerText[l].contact;
+
+  renderContent();
 }
 </script>
+
 </body>
 </html>
