@@ -27,149 +27,218 @@
 -->
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #0f172a;
-    color: #e5e7eb;
-    margin: 0;
-    padding: 20px;
+/* ====== ABOUT-LIKE STYLE (same vibe as about.html) ====== */
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  line-height:1.7;
+  background:#0A1022;
+  color:#fff;
 }
-.container {
-    max-width: 720px;
-    margin: auto;
-    background: #020617;
-    padding: 20px;
-    border-radius: 12px;
+.wrap{max-width:900px;margin:0 auto;padding:18px 14px 56px}
+.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+a{color:#9db7ff;text-decoration:none}
+.seg{
+  display:inline-flex;gap:4px;padding:4px;border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12)
 }
-h1 {
-    text-align: center;
+.seg button{
+  border:0;background:transparent;color:rgba(255,255,255,.7);
+  padding:7px 10px;border-radius:999px;font-weight:800;cursor:pointer
 }
-.lang-switch {
-    text-align: right;
-    margin-bottom: 10px;
+.seg button:hover{filter:brightness(1.06)}
+.card{
+  margin-top:14px;
+  padding:16px;
+  border-radius:18px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12)
 }
-button {
-    background: #2563eb;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
+h1{margin:10px 0 6px;font-size:28px}
+h2{margin:18px 0 8px;font-size:18px}
+p{margin:0 0 12px;color:rgba(255,255,255,.86)}
+ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
+
+/* ====== form styling, but logic untouched ====== */
+label{
+  display:block;
+  margin-top:12px;
+  font-weight:700;
+  color:rgba(255,255,255,.86);
+  font-size:14px;
 }
-button:hover {
-    background: #1d4ed8;
+input, select{
+  width:100%;
+  padding:10px 10px;
+  margin-top:6px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(0,0,0,.20);
+  color:rgba(255,255,255,.92);
+  outline:none;
+  font-size:14px;
 }
-label {
-    display: block;
-    margin-top: 12px;
+input:focus, select:focus{
+  border-color:rgba(91,140,255,.55);
+  box-shadow:0 0 0 4px rgba(91,140,255,.16);
 }
-input, select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 6px;
-    border: none;
+button{
+  background:linear-gradient(135deg,#5B8CFF,#7C5CFF);
+  color:#fff;
+  border:none;
+  padding:10px 12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:800;
 }
-.result {
-    background: #020617;
-    padding: 15px;
-    margin-top: 20px;
-    border-radius: 10px;
+button:active{transform:translateY(1px)}
+button:hover{filter:brightness(1.06)}
+
+.result{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  padding:14px;
+  margin-top:16px;
+  border-radius:14px;
 }
-.ad {
-    margin: 20px 0;
-    text-align: center;
-    background: #020617;
-    padding: 10px;
-    border-radius: 8px;
-    color: #64748b;
+.ad{
+  margin:18px 0;
+  text-align:center;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.12);
+  padding:12px;
+  border-radius:14px;
+  color:rgba(255,255,255,.62);
 }
+
+/* footer like about */
+footer{
+  margin-top:18px;
+  padding-top:12px;
+  border-top:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.6);
+  font-size:12px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:center;
+}
+footer a{color:#9db7ff}
+.smallNote{color:rgba(255,255,255,.62);font-size:12px;margin:0}
+
+/* links section */
+.linksRow{
+  text-align:center;
+  margin-top:14px;
+  font-size:14px;
+  color:rgba(255,255,255,.62);
+}
+.linksRow a{color:#9db7ff}
 </style>
 </head>
 
 <body>
-<div class="container">
+  <div class="wrap">
 
-<div class="lang-switch">
-    <button onclick="setLang('ru')">RU</button>
-    <button onclick="setLang('en')">EN</button>
-</div>
+    <div class="top">
+      <div style="color:rgba(255,255,255,.86);font-weight:800;">
+        calories-macros.com
+      </div>
 
-<h1 id="title">Калькулятор калорий и БЖУ</h1>
+      <!-- оставил те же кнопки/onclick, просто стиль как в About -->
+      <div class="seg lang-switch">
+        <button onclick="setLang('ru')">RU</button>
+        <button onclick="setLang('en')">EN</button>
+      </div>
+    </div>
 
-<label id="genderLabel">Пол</label>
-<select id="gender">
-    <option value="male">Мужчина</option>
-    <option value="female">Женщина</option>
-</select>
+    <div class="card">
 
-<label id="ageLabel">Возраст</label>
-<input type="number" id="age">
+      <h1 id="title">Калькулятор калорий и БЖУ</h1>
 
-<label id="heightLabel">Рост (см)</label>
-<input type="number" id="height">
+      <label id="genderLabel">Пол</label>
+      <select id="gender">
+          <option value="male">Мужчина</option>
+          <option value="female">Женщина</option>
+      </select>
 
-<label id="weightLabel">Вес (кг)</label>
-<input type="number" id="weight">
+      <label id="ageLabel">Возраст</label>
+      <input type="number" id="age">
 
-<label id="activityLabel">Уровень активности</label>
-<select id="activity">
-    <option value="1.2">Минимальная</option>
-    <option value="1.375">Лёгкая</option>
-    <option value="1.55">Средняя</option>
-    <option value="1.725">Высокая</option>
-</select>
+      <label id="heightLabel">Рост (см)</label>
+      <input type="number" id="height">
 
-<label id="goalLabel">Цель</label>
-<select id="goal">
-    <option value="maintain">Поддержка</option>
-    <option value="gain">Набор массы</option>
-    <option value="cut">Сушка</option>
-</select>
+      <label id="weightLabel">Вес (кг)</label>
+      <input type="number" id="weight">
 
-<button id="calcBtn" style="margin-top:15px;width:100%;" onclick="calculate()">Рассчитать</button>
+      <label id="activityLabel">Уровень активности</label>
+      <select id="activity">
+          <option value="1.2">Минимальная</option>
+          <option value="1.375">Лёгкая</option>
+          <option value="1.55">Средняя</option>
+          <option value="1.725">Высокая</option>
+      </select>
 
-<div class="result" id="result"></div>
+      <label id="goalLabel">Цель</label>
+      <select id="goal">
+          <option value="maintain">Поддержка</option>
+          <option value="gain">Набор массы</option>
+          <option value="cut">Сушка</option>
+      </select>
 
-   <section style="margin-top:40px">
-  <h2 id="articlesTitle">Articles</h2>
+      <button id="calcBtn" style="margin-top:15px;width:100%;" onclick="calculate()">Рассчитать</button>
 
-  <ul style="line-height:1.8">
-    <li>
-      <a href="/blog/calories-for-weight-loss.html" id="art1" style="color:#60a5fa; text-decoration:none;">
-        Calories for Weight Loss
-      </a>
-    </li>
-    <li>
-      <a href="/blog/macros-for-muscle-gain.html" id="art2" style="color:#60a5fa; text-decoration:none;">
-        Macros for Muscle Gain
-      </a>
-    </li>
-    <li>
-      <a href="/blog/maintenance-calories.html" id="art3" style="color:#60a5fa; text-decoration:none;">
-        Maintenance Calories Explained
-      </a>
-    </li>
-  </ul>
-</section>
+      <div class="result" id="result"></div>
 
+      <section style="margin-top:40px">
+        <h2 id="articlesTitle">Articles</h2>
 
+        <ul style="line-height:1.8">
+          <li>
+            <a href="/blog/calories-for-weight-loss.html" id="art1" style="text-decoration:none;">
+              Calories for Weight Loss
+            </a>
+          </li>
+          <li>
+            <a href="/blog/macros-for-muscle-gain.html" id="art2" style="text-decoration:none;">
+              Macros for Muscle Gain
+            </a>
+          </li>
+          <li>
+            <a href="/blog/maintenance-calories.html" id="art3" style="text-decoration:none;">
+              Maintenance Calories Explained
+            </a>
+          </li>
+        </ul>
+      </section>
 
-     
-     <div id="seoBlock" style="margin-top:18px; line-height:1.6; color:#cbd5e1;">
-  <!-- SEO content injected by JS -->
-</div>
+      <div id="seoBlock" style="margin-top:18px; line-height:1.6; color:rgba(255,255,255,.86);">
+        <!-- SEO content injected by JS -->
+      </div>
 
+      <div class="ad">AdSense block</div>
 
-<div class="ad">AdSense block</div>
-     <p style="text-align:center; margin-top:14px; font-size:14px; color:#94a3b8;">
-     <a id="linkPrivacy" href="/privacy.html" style="color:#60a5fa; text-decoration:none;">Privacy Policy</a> 
-      | <a id="linkAbout" href="/about.html" style="color:#60a5fa; text-decoration:none;">About</a> 
-      | <a id="linkTerms" href="/terms.html" style="color:#60a5fa; text-decoration:none;">Terms</a> 
-      | <a id="linkContact" href="/contact.html" style="color:#60a5fa; text-decoration:none;">Contact</a>
-     </p>
+      <p class="linksRow">
+        <a id="linkPrivacy" href="/privacy.html" style="text-decoration:none;">Privacy Policy</a>
+        &nbsp;|&nbsp;
+        <a id="linkAbout" href="/about.html" style="text-decoration:none;">About</a>
+        &nbsp;|&nbsp;
+        <a id="linkTerms" href="/terms.html" style="text-decoration:none;">Terms</a>
+        &nbsp;|&nbsp;
+        <a id="linkContact" href="/contact.html" style="text-decoration:none;">Contact</a>
+      </p>
 
-</div>
+      <footer>
+        <a href="/privacy.html" id="fPrivacy">Privacy</a>
+        <a href="/terms.html" id="fTerms">Terms</a>
+        <a href="/contact.html" id="fContact">Contact</a>
+        <span>© calories-macros.com</span>
+      </footer>
+
+    </div>
+  </div>
 
 <script>
 let lang = 'ru';
@@ -294,9 +363,6 @@ en: {
   `
 };
 
-
-
-
 function setLang(l) {
     lang = l;
 
@@ -312,36 +378,29 @@ function setLang(l) {
     document.getElementById("goalLabel").innerText = text[l].goal;
     document.getElementById("calcBtn").innerText = text[lang].calcBtn;
 
-
     rebuildSelectOptions("gender", text[lang].genderOptions);
     rebuildSelectOptions("activity", text[lang].activityOptions);
     rebuildSelectOptions("goal", text[lang].goalOptions);
 
-
-      // SEO
+    // SEO
     document.getElementById("seoBlock").innerHTML = seo[l];
 
-     // Articles
-   document.getElementById('articlesTitle').textContent = t.articlesTitle;
-   document.getElementById('art1').textContent = t.art1;
-   document.getElementById('art2').textContent = t.art2;
-   document.getElementById('art3').textContent = t.art3;
+    // Articles
+    document.getElementById('articlesTitle').textContent = t.articlesTitle;
+    document.getElementById('art1').textContent = t.art1;
+    document.getElementById('art2').textContent = t.art2;
+    document.getElementById('art3').textContent = t.art3;
 
-     // Footer links
-   document.getElementById('linkPrivacy').textContent = t.linkPrivacy;
-   document.getElementById('linkAbout').textContent = t.linkAbout;
-   document.getElementById('linkTerms').textContent = t.linkTerms;
-   document.getElementById('linkContact').textContent = t.linkContact;
-
-
+    // Footer links (оставлено как у тебя)
+    document.getElementById('linkPrivacy').textContent = t.linkPrivacy;
+    document.getElementById('linkAbout').textContent = t.linkAbout;
+    document.getElementById('linkTerms').textContent = t.linkTerms;
+    document.getElementById('linkContact').textContent = t.linkContact;
 
   // 🔥 ВАЖНО: если результат уже есть — пересчитать
   if (document.getElementById("result").innerHTML.trim() !== "") {
     calculate();
   }
-
-
-
 }
 
 function calculate() {
@@ -372,10 +431,7 @@ result.innerHTML = `
 <p><b>${text[lang].fats}:</b> ${Math.round(fats)} g</p>
 <p><b>${text[lang].carbs}:</b> ${Math.round(carbs)} g</p>
 `;
-
-
 }
-
 
 const ageInput = document.getElementById("age");
 const heightInput = document.getElementById("height");
