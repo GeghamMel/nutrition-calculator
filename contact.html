@@ -1,164 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Page title</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Contact • Calories & Macros</title>
+<meta name="description" content="Contact Calories & Macros. Get in touch for feedback or questions."/>
+<link rel="canonical" href="https://calories-macros.com/contact.html"/>
 <style>
-:root{
-  --bg0:#070A12;
-  --bg1:#0A1022;
-  --card:rgba(255,255,255,.06);
-  --stroke:rgba(255,255,255,.12);
-  --text:rgba(255,255,255,.92);
-  --muted:rgba(255,255,255,.62);
-  --accent:#5B8CFF;
-  --radius:18px;
-}
-
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color:var(--text);
-  background:
-    radial-gradient(900px 520px at 15% 0%, rgba(91,140,255,.22), transparent 60%),
-    radial-gradient(880px 520px at 85% 18%, rgba(124,92,255,.18), transparent 60%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
-}
-
-.wrap{
-  max-width:900px;
-  margin:0 auto;
-  padding:24px 16px 60px;
-}
-
-.top{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:14px;
-}
-
-.top a{
-  color:var(--accent);
-  text-decoration:none;
-  font-size:14px;
-}
-
-.lang button{
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  font-weight:700;
-  cursor:pointer;
-}
-.lang button.active{
-  color:white;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--stroke);
-  border-radius:var(--radius);
-  padding:22px;
-}
-
-h1{
-  margin-top:0;
-  font-size:28px;
-}
-
-p, li{
-  color:var(--muted);
-  line-height:1.7;
-  font-size:15px;
-}
-
-footer{
-  margin-top:22px;
-  padding-top:14px;
-  border-top:1px solid var(--stroke);
-  font-size:13px;
-  color:var(--muted);
-}
-footer a{
-  color:var(--accent);
-  text-decoration:none;
-  margin-right:10px;
-}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;background:#0A1022;color:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:18px 14px 56px}
+.top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:center}
+a{color:#9db7ff;text-decoration:none}
+.seg{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.seg button{border:0;background:transparent;color:rgba(255,255,255,.7);padding:7px 10px;border-radius:999px;font-weight:800;cursor:pointer}
+.seg button.active{background:linear-gradient(135deg,#5B8CFF,#7C5CFF);color:#fff}
+.card{margin-top:14px;padding:16px;border-radius:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+h1{margin:10px 0 6px;font-size:28px}
+h2{margin:18px 0 8px;font-size:18px}
+p{margin:0 0 12px;color:rgba(255,255,255,.86)}
+ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
+footer{margin-top:18px;padding-top:12px;border-top:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
 </style>
 </head>
-
 <body>
+
 <div class="wrap">
 
-  <div class="top">
-    <a href="/">← Home</a>
-    <div class="lang">
-      <button onclick="setLang('en')" id="btnEN">EN</button>
-      <button onclick="setLang('ru')" id="btnRU">RU</button>
-    </div>
+<div class="top">
+  <a href="/" id="homeLink">← Home</a>
+  <div class="seg">
+    <button id="btnEN" class="active" onclick="setLang('en')">EN</button>
+    <button id="btnRU" onclick="setLang('ru')">RU</button>
   </div>
-
-  <div class="card" id="content">
-    
-<div id="contact-en">
-  <h1>Contact</h1>
-
-  <p>
-    If you have questions, suggestions, or want to report an issue, feel free to
-    contact us.
-  </p>
-
-  <p>
-    Email: <b>support@calories-macros.com</b>
-  </p>
 </div>
 
-<div id="contact-ru" style="display:none">
-  <h1>Контакты</h1>
+<div class="card">
+<h1 id="tTitle">Contact</h1>
 
-  <p>
-    Если у вас есть вопросы, предложения или вы нашли ошибку, свяжитесь с нами.
-  </p>
+<p id="p1">
+If you have questions, feedback, or suggestions about the Calories & Macros calculator, you can contact us using the information below.
+</p>
 
-  <p>
-    Email: <b>support@calories-macros.com</b>
-  </p>
+<h2 id="h2a">How to reach us</h2>
+<ul id="list1">
+  <li>Email support regarding site functionality or errors</li>
+  <li>Suggestions for improving the calculator</li>
+  <li>General feedback about usability or content</li>
+</ul>
+
+<h2 id="h2b">Important note</h2>
+<p id="p2">
+We do not provide personal nutrition plans or medical consultations.
+Please consult a qualified professional for health-related advice.
+</p>
+
+<h2 id="h2c">Response time</h2>
+<p id="p3">
+We try to review messages as soon as possible, but response times may vary.
+</p>
 </div>
 
-  </div>
-
-  <footer>
-    <a href="/privacy.html" id="fPrivacy">Privacy</a>
-    <a href="/terms.html" id="fTerms">Terms</a>
-    <a href="/contact.html" id="fContact">Contact</a>
-    © 2026 calories-macros.com
-  </footer>
+<footer>
+<a href="/privacy.html" id="fPrivacy">Privacy</a>
+<a href="/terms.html" id="fTerms">Terms</a>
+<a href="/contact.html" id="fContact">Contact</a>
+<span>© <span id="year"></span> calories-macros.com</span>
+</footer>
 
 </div>
 
 <script>
-let lang = 'en';
+document.getElementById('year').textContent=new Date().getFullYear();
+let lang='en';
 
-const footerText = {
-  en:{privacy:"Privacy",terms:"Terms",contact:"Contact"},
-  ru:{privacy:"Политика",terms:"Условия",contact:"Контакты"}
+const tr={
+en:{
+home:"← Home",
+title:"Contact",
+p1:"If you have questions, feedback, or suggestions about the Calories & Macros calculator, you can contact us using the information below.",
+h2a:"How to reach us",
+list1:[
+"Email support regarding site functionality or errors",
+"Suggestions for improving the calculator",
+"General feedback about usability or content"
+],
+h2b:"Important note",
+p2:"We do not provide personal nutrition plans or medical consultations. Please consult a qualified professional for health-related advice.",
+h2c:"Response time",
+p3:"We try to review messages as soon as possible, but response times may vary.",
+fp:"Privacy",ft:"Terms",fc:"Contact"
+},
+ru:{
+home:"← На главную",
+title:"Контакты",
+p1:"Если у вас есть вопросы, отзывы или предложения по работе калькулятора Calories & Macros, вы можете связаться с нами.",
+h2a:"Как с нами связаться",
+list1:[
+"Сообщения об ошибках или проблемах с сайтом",
+"Предложения по улучшению калькулятора",
+"Общие отзывы об удобстве и контенте"
+],
+h2b:"Важно",
+p2:"Мы не предоставляем индивидуальные планы питания или медицинские консультации. По вопросам здоровья обращайтесь к специалисту.",
+h2c:"Срок ответа",
+p3:"Мы стараемся просматривать сообщения как можно быстрее, однако срок ответа может отличаться.",
+fp:"Политика",ft:"Условия",fc:"Контакты"
+}
 };
 
 function setLang(l){
-  lang=l;
-  document.getElementById("btnEN").classList.toggle("active",l==="en");
-  document.getElementById("btnRU").classList.toggle("active",l==="ru");
-
-  document.getElementById("fPrivacy").textContent = footerText[l].privacy;
-  document.getElementById("fTerms").textContent   = footerText[l].terms;
-  document.getElementById("fContact").textContent = footerText[l].contact;
-
-  renderContent();
+lang=l;
+btnEN.classList.toggle('active',l==='en');
+btnRU.classList.toggle('active',l==='ru');
+const t=tr[l];
+homeLink.textContent=t.home;
+tTitle.textContent=t.title;
+p1.textContent=t.p1;
+h2a.textContent=t.h2a;
+list1.innerHTML=t.list1.map(x=>`<li>${x}</li>`).join("");
+h2b.textContent=t.h2b;
+p2.textContent=t.p2;
+h2c.textContent=t.h2c;
+p3.textContent=t.p3;
+fPrivacy.textContent=t.fp;
+fTerms.textContent=t.ft;
+fContact.textContent=t.fc;
 }
+setLang('en');
 </script>
 
 </body>
