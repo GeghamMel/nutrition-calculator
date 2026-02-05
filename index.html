@@ -47,6 +47,11 @@ a{color:#9db7ff;text-decoration:none}
   border:0;background:transparent;color:rgba(255,255,255,.7);
   padding:7px 10px;border-radius:999px;font-weight:800;cursor:pointer
 }
+  .seg button.active{
+  background:linear-gradient(135deg,#5B8CFF,#7C5CFF);
+  color:#fff;
+}
+
 .seg button:hover{filter:brightness(1.06)}
 .card{
   margin-top:14px;
@@ -63,7 +68,6 @@ ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
 /* ====== form styling, but logic untouched ====== */
 label{
   display:block;
-  width:100%;
   margin-top:12px;
   font-weight:700;
   color:rgba(255,255,255,.86);
@@ -366,6 +370,11 @@ en: {
 
 function setLang(l) {
     lang = l;
+
+     // language buttons highlight (like About page)
+   document.getElementById('btnEN').classList.toggle('active', l === 'en');
+   document.getElementById('btnRU').classList.toggle('active', l === 'ru');
+
 
      const t = text[l];
 
