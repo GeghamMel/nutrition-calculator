@@ -67,11 +67,13 @@ ul{margin:0 0 12px;padding-left:20px;color:rgba(255,255,255,.86)}
 
 /* ====== form styling, but logic untouched ====== */
 label{
-  display:block;
-  margin-top:12px;
-  font-weight:700;
-  color:rgba(255,255,255,.86);
-  font-size:14px;
+  display: block;
+  max-width: 100%;
+  word-wrap: break-word;
+  white-space: normal;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: rgba(255,255,255,.85);
 }
 input, select{
   width:100%;
@@ -141,6 +143,27 @@ footer a{color:#9db7ff}
   color:rgba(255,255,255,.62);
 }
 .linksRow a{color:#9db7ff}
+
+     /* ===== SELECT & OPTIONS FIX ===== */
+select {
+  background-color: #0b1225;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,.15);
+}
+
+/* список options */
+select option {
+  background-color: #0b1225;
+  color: #ffffff;
+}
+
+/* option при наведении / выборе */
+select option:checked,
+select option:hover {
+  background-color: #5B8CFF;
+  color: #ffffff;
+}
+
 </style>
 </head>
 
