@@ -130,6 +130,29 @@ input, select {
 <button id="calcBtn" style="margin-top:15px;width:100%;" onclick="calculate()">Рассчитать</button>
 
 <div class="result" id="result"></div>
+
+     <section style="margin-top:40px">
+  <h2 id="blogTitle">Articles</h2>
+
+  <ul style="line-height:1.8">
+    <li>
+      <a href="/blog/calories-for-weight-loss.html" id="blog1">
+        Calories for Weight Loss
+      </a>
+    </li>
+    <li>
+      <a href="/blog/macros-for-muscle-gain.html" id="blog2">
+        Macros for Muscle Gain
+      </a>
+    </li>
+    <li>
+      <a href="/blog/maintenance-calories.html" id="blog3">
+        Maintenance Calories Explained
+      </a>
+    </li>
+  </ul>
+</section>
+
      
      <div id="seoBlock" style="margin-top:18px; line-height:1.6; color:#cbd5e1;">
   <!-- SEO content injected by JS -->
@@ -151,6 +174,10 @@ let lang = 'ru';
 
 const text = {
 ru: {
+    blogTitle: "Статьи",
+    blog1: "Калории для похудения",
+    blog2: "Макросы для набора мышц",
+    blog3: "Калории поддержки",
     navAbout: "О нас",
     navTerms: "Условия",
     navPrivacy: "Политика",
@@ -178,6 +205,10 @@ ru: {
     goalOptions: { maintain: "Поддержка", bulk: "Набор массы", cut: "Сушка" }
 },
 en: {
+    blogTitle: "Articles",
+    blog1: "Calories for Weight Loss",
+    blog2: "Macros for Muscle Gain",
+    blog3: "Maintenance Calories Explained",
     navAbout: "About",
     navTerms: "Terms",
     navPrivacy: "Privacy",
@@ -273,6 +304,12 @@ function setLang(l) {
     rebuildSelectOptions("gender", text[lang].genderOptions);
     rebuildSelectOptions("activity", text[lang].activityOptions);
     rebuildSelectOptions("goal", text[lang].goalOptions);
+
+    document.getElementById('blogTitle').textContent = t.blogTitle;
+    document.getElementById('blog1').textContent = t.blog1;
+    document.getElementById('blog2').textContent = t.blog2;
+    document.getElementById('blog3').textContent = t.blog3;
+
 
 
       // SEO
