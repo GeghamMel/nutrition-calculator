@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Water Intake Calculator — Daily Water Needs | Calories & Macros</title>
+  <meta name="description" content="Calculate how much water you should drink per day based on your weight, activity level, and climate. Free daily water intake calculator." />
+  <link rel="canonical" href="https://calories-macros.com/water-intake-calculator.html" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <div class="header-lang" id="headerLang">
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
+    </div>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Free Health Calculator" data-ru="Бесплатный калькулятор здоровья">Free Health Calculator</div>
+    <h1 data-en="Water Intake Calculator — <em>Daily Hydration</em>" data-ru="Калькулятор воды — <em>суточная норма</em>">Water Intake Calculator — <em>Daily Hydration</em></h1>
+    <p data-en="Find out exactly how much water you should drink per day based on your weight, activity, and climate." data-ru="Узнайте точную суточную норму воды с учётом веса, активности и климата.">Find out exactly how much water you should drink per day based on your weight, activity, and climate.</p>
+    <a href="#calculator" class="btn-scroll" data-en="Calculate Water Needs ↓" data-ru="Рассчитать норму воды ↓">Calculate Water Needs ↓</a>
+  </div>
+</section>
+
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="section-label" data-en="Water Intake Calculator" data-ru="Калькулятор воды">Water Intake Calculator</div>
+    <h2 class="section-title" data-en="Enter your details" data-ru="Введите данные">Enter your details</h2>
+    <p class="section-sub" data-en="Based on the standard 35 ml/kg formula adjusted for activity and climate." data-ru="На основе формулы 35 мл/кг, скорректированной по активности и климату.">Based on the standard 35 ml/kg formula adjusted for activity and climate.</p>
+
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="field">
+          <label for="weight" data-en="Weight (kg)" data-ru="Вес (кг)">Weight (kg)</label>
+          <input type="number" id="weight" min="20" max="300" placeholder="e.g. 75" />
+        </div>
+        <div class="field">
+          <label for="activity" data-en="Activity level" data-ru="Уровень активности">Activity level</label>
+          <select id="activity">
+            <option value="1.0" data-en="Sedentary (little or no exercise)" data-ru="Минимальная (нет тренировок)">Sedentary (little or no exercise)</option>
+            <option value="1.1" data-en="Light (1–3 workouts/week)" data-ru="Лёгкая (1–3 тренировки/нед.)">Light (1–3 workouts/week)</option>
+            <option value="1.2" selected data-en="Moderate (3–5 workouts/week)" data-ru="Средняя (3–5 тренировок/нед.)">Moderate (3–5 workouts/week)</option>
+            <option value="1.35" data-en="Active (6–7 workouts/week)" data-ru="Высокая (6–7 тренировок/нед.)">Active (6–7 workouts/week)</option>
+            <option value="1.5" data-en="Very active (physical job + training)" data-ru="Очень высокая (физический труд)">Very active (physical job + training)</option>
+          </select>
+        </div>
+        <div class="field" style="grid-column:1/-1;">
+          <label for="climate" data-en="Climate / environment" data-ru="Климат / среда">Climate / environment</label>
+          <select id="climate">
+            <option value="0" data-en="Cool / temperate (office, mild weather)" data-ru="Прохладный / умеренный (офис, мягкая погода)">Cool / temperate (office, mild weather)</option>
+            <option value="200" selected data-en="Warm (typical outdoor environment)" data-ru="Тёплый (обычная уличная среда)">Warm (typical outdoor environment)</option>
+            <option value="400" data-en="Hot / humid (summer, tropical climate)" data-ru="Жаркий / влажный (лето, тропики)">Hot / humid (summer, tropical climate)</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn-calc" id="calcBtn" data-en="Calculate →" data-ru="Рассчитать →">Calculate →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please enter your weight." data-ru="Пожалуйста, введите вес.">Please enter your weight.</p>
+
+      <div class="calc-results" id="calcResults">
+        <div class="calories-display">
+          <div class="kcal-number" id="waterLitres">—</div>
+          <div class="kcal-label" data-en="litres per day" data-ru="литров в день">litres per day</div>
+        </div>
+        <div class="macros-grid">
+          <div class="macro-item">
+            <div class="macro-value" id="waterMl">—</div>
+            <div class="macro-name" data-en="ml / day" data-ru="мл / день">ml / day</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-value" id="waterGlasses">—</div>
+            <div class="macro-name" data-en="glasses (250ml)" data-ru="стаканов (250мл)">glasses (250ml)</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-value" id="waterBottles">—</div>
+            <div class="macro-name" data-en="bottles (500ml)" data-ru="бутылок (500мл)">bottles (500ml)</div>
+          </div>
+        </div>
+        <div class="result-note" id="resultNote"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="Hydration tips" data-ru="Советы по гидратации">Hydration tips</div>
+    <h2 class="section-title" data-en="How to stay hydrated" data-ru="Как поддерживать водный баланс">How to stay hydrated</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">💧</div>
+        <h3 data-en="Start your morning" data-ru="Начните утро">Start your morning</h3>
+        <p data-en="Drink 400–500 ml of water first thing in the morning to replenish overnight losses." data-ru="Выпивайте 400–500 мл воды сразу после пробуждения, чтобы восполнить ночные потери.">Drink 400–500 ml of water first thing in the morning to replenish overnight losses.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">🏋️</div>
+        <h3 data-en="Around workouts" data-ru="Вокруг тренировок">Around workouts</h3>
+        <p data-en="Drink 500 ml before exercise and 200–300 ml every 15–20 minutes during training." data-ru="Пейте 500 мл до тренировки и 200–300 мл каждые 15–20 минут во время неё.">Drink 500 ml before exercise and 200–300 ml every 15–20 minutes during training.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">🍽️</div>
+        <h3 data-en="With meals" data-ru="С едой">With meals</h3>
+        <p data-en="Drinking water with meals aids digestion and helps you feel fuller, naturally reducing calorie intake." data-ru="Вода за едой улучшает пищеварение и помогает насытиться, снижая потребление калорий.">Drinking water with meals aids digestion and helps you feel fuller, naturally reducing calorie intake.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">🌡️</div>
+        <h3 data-en="Hot weather" data-ru="Жара">Hot weather</h3>
+        <p data-en="In hot or humid conditions, increase your intake by 500–1000 ml per day above your baseline." data-ru="В жаркую или влажную погоду увеличьте норму на 500–1000 мл в день.">In hot or humid conditions, increase your intake by 500–1000 ml per day above your baseline.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="blog-grid">
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-ru="Получите суточную норму калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-ru="Проверьте, соответствует ли ваш вес норме.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="ideal-weight-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Weight" data-ru="Вес">Weight</span><h3 data-en="Ideal Weight Calculator" data-ru="Калькулятор идеального веса">Ideal Weight Calculator</h3><p data-en="Find your ideal body weight range." data-ru="Узнайте диапазон вашего идеального веса.">Find your ideal body weight range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="body-fat-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Body Fat" data-ru="% жира">Body Fat</span><h3 data-en="Body Fat % Calculator" data-ru="Калькулятор % жира">Body Fat % Calculator</h3><p data-en="Estimate your body fat percentage." data-ru="Оцените процент жира в теле.">Estimate your body fat percentage.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links"><a href="about.html" data-en="About" data-ru="О сайте">About</a><a href="blog/" data-en="Blog" data-ru="Блог">Blog</a><a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a><a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a><a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('siteNav').classList.toggle('open'); });
+let currentLang = 'en';
+function applyLang(lang) {
+  currentLang = lang; document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) { var t=el.getAttribute('data-'+lang); if(t) el.innerHTML=t; });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt){ var t=opt.getAttribute('data-'+lang); if(t) opt.textContent=t; });
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+(function(){ var hEN=document.getElementById('headerLangEN'),hRU=document.getElementById('headerLangRU'); if(sl==='ru'){hRU.classList.add('active');hEN.classList.remove('active');} hEN.addEventListener('click',function(){document.getElementById('langEN').click();hEN.classList.add('active');hRU.classList.remove('active');}); hRU.addEventListener('click',function(){document.getElementById('langRU').click();hRU.classList.add('active');hEN.classList.remove('active');}); })();
+
+const noteText = {
+  en: 'This is your estimated daily water intake. Remember that food also provides about 20% of total water intake. Adjust upward if you feel thirsty, your urine is dark, or you exercise heavily.',
+  ru: 'Это ваша расчётная суточная норма воды. Помните, что ещё около 20% воды поступает из еды. Увеличивайте норму, если чувствуете жажду, моча тёмная или вы много тренируетесь.'
+};
+
+document.getElementById('calcBtn').addEventListener('click', function() {
+  const weight = parseFloat(document.getElementById('weight').value);
+  const activity = parseFloat(document.getElementById('activity').value);
+  const climate = parseFloat(document.getElementById('climate').value);
+  const err = document.getElementById('calcError');
+  if (!weight || weight < 20) { err.style.display='block'; return; }
+  err.style.display = 'none';
+  const ml = Math.round((weight * 35 * activity + climate) / 50) * 50;
+  document.getElementById('waterLitres').textContent = (ml/1000).toFixed(1);
+  document.getElementById('waterMl').textContent = ml.toLocaleString();
+  document.getElementById('waterGlasses').textContent = Math.round(ml/250);
+  document.getElementById('waterBottles').textContent = Math.round(ml/500);
+  document.getElementById('resultNote').textContent = noteText[currentLang];
+  document.getElementById('calcResults').classList.add('visible');
+  setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+});
+</script>
+</body>
+</html>

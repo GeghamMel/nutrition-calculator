@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Fat Percentage Calculator | Calories & Macros</title>
+  <meta name="description" content="Estimate your body fat percentage using the US Navy method. Enter your measurements to get your body fat % and lean mass. Free calculator." />
+  <link rel="canonical" href="https://calories-macros.com/body-fat-calculator.html" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <div class="header-lang" id="headerLang"><button class="active" id="headerLangEN">EN</button><button id="headerLangRU">RU</button></div>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Free Health Calculator" data-ru="Бесплатный калькулятор здоровья">Free Health Calculator</div>
+    <h1 data-en="Body Fat <em>Percentage</em> Calculator" data-ru="Калькулятор <em>процента жира</em> в теле">Body Fat <em>Percentage</em> Calculator</h1>
+    <p data-en="Estimate your body fat percentage using the US Navy method — no equipment needed, just a tape measure." data-ru="Оцените процент жира методом ВМС США — нужна только сантиметровая лента.">Estimate your body fat percentage using the US Navy method — no equipment needed, just a tape measure.</p>
+    <a href="#calculator" class="btn-scroll" data-en="Calculate Body Fat ↓" data-ru="Рассчитать % жира ↓">Calculate Body Fat ↓</a>
+  </div>
+</section>
+
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="section-label" data-en="Body Fat Calculator" data-ru="Калькулятор % жира">Body Fat Calculator</div>
+    <h2 class="section-title" data-en="Enter your measurements" data-ru="Введите замеры">Enter your measurements</h2>
+    <p class="section-sub" data-en="Measure at the widest point. Use a flexible tape measure and measure in the morning." data-ru="Измеряйте в самом широком месте. Используйте гибкую ленту, лучше утром.">Measure at the widest point. Use a flexible tape measure and measure in the morning.</p>
+
+    <div class="calc-card">
+      <div class="field" style="margin-bottom:20px;">
+        <label data-en="Sex" data-ru="Пол">Sex</label>
+        <div class="gender-toggle">
+          <button class="gender-btn active" id="genderMale" data-en="♂ Male" data-ru="♂ Мужской">♂ Male</button>
+          <button class="gender-btn" id="genderFemale" data-en="♀ Female" data-ru="♀ Женский">♀ Female</button>
+        </div>
+      </div>
+      <div class="calc-grid">
+        <div class="field">
+          <label for="height" data-en="Height (cm)" data-ru="Рост (см)">Height (cm)</label>
+          <input type="number" id="height" min="100" max="250" placeholder="e.g. 175" />
+        </div>
+        <div class="field">
+          <label for="weight" data-en="Weight (kg)" data-ru="Вес (кг)">Weight (kg)</label>
+          <input type="number" id="weight" min="30" max="300" placeholder="e.g. 80" />
+        </div>
+        <div class="field">
+          <label for="neck" data-en="Neck circumference (cm)" data-ru="Обхват шеи (см)">Neck circumference (cm)</label>
+          <input type="number" id="neck" min="20" max="70" placeholder="e.g. 38" />
+        </div>
+        <div class="field">
+          <label for="waist" data-en="Waist circumference (cm)" data-ru="Обхват талии (см)">Waist circumference (cm)</label>
+          <input type="number" id="waist" min="40" max="200" placeholder="e.g. 85" />
+        </div>
+        <div class="field" id="hipField" style="display:none; grid-column:1/-1;">
+          <label for="hip" data-en="Hip circumference (cm) — women only" data-ru="Обхват бёдер (см) — только для женщин">Hip circumference (cm) — women only</label>
+          <input type="number" id="hip" min="50" max="200" placeholder="e.g. 95" />
+        </div>
+      </div>
+      <button class="btn-calc" id="calcBtn" data-en="Calculate Body Fat →" data-ru="Рассчитать % жира →">Calculate Body Fat →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please fill in all fields correctly." data-ru="Пожалуйста, заполните все поля правильно.">Please fill in all fields correctly.</p>
+
+      <div class="calc-results" id="calcResults">
+        <div class="calories-display" id="bfDisplay">
+          <div class="kcal-number" id="bfPct">—</div>
+          <div class="kcal-label" data-en="body fat percentage" data-ru="процент жира в теле">body fat percentage</div>
+        </div>
+        <div style="text-align:center; margin-bottom:20px;">
+          <span style="display:inline-block; background:var(--green); color:white; padding:6px 20px; border-radius:20px; font-weight:600;" id="bfCategory">—</span>
+        </div>
+        <div class="macros-grid">
+          <div class="macro-item"><div class="macro-value" id="fatMass">—</div><div class="macro-name" data-en="Fat mass (kg)" data-ru="Жировая масса (кг)">Fat mass (kg)</div></div>
+          <div class="macro-item"><div class="macro-value" id="leanMass">—</div><div class="macro-name" data-en="Lean mass (kg)" data-ru="Сухая масса (кг)">Lean mass (kg)</div></div>
+        </div>
+        <div class="result-note" id="resultNote"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="Body fat ranges" data-ru="Диапазоны % жира">Body fat ranges</div>
+    <h2 class="section-title" data-en="What is a healthy body fat percentage?" data-ru="Какой % жира считается нормой?">What is a healthy body fat percentage?</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">🏅</div><h3 data-en="Essential fat" data-ru="Незаменимый жир">Essential fat</h3><p data-en="Men: 2–5% | Women: 10–13%. The minimum required for basic physiological functions. Below this is dangerous." data-ru="Мужчины: 2–5% | Женщины: 10–13%. Минимум для базовых физиологических функций. Ниже — опасно.">Men: 2–5% | Women: 10–13%. Minimum for basic physiological functions.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">🏃</div><h3 data-en="Athletic" data-ru="Спортивный">Athletic</h3><p data-en="Men: 6–13% | Women: 14–20%. Typical range for competitive athletes and highly active individuals." data-ru="Мужчины: 6–13% | Женщины: 14–20%. Типичный диапазон для спортсменов и очень активных людей.">Men: 6–13% | Women: 14–20%. Typical for athletes and highly active individuals.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">✅</div><h3 data-en="Fitness" data-ru="Фитнес">Fitness</h3><p data-en="Men: 14–17% | Women: 21–24%. Good fitness level with a healthy appearance for most adults." data-ru="Мужчины: 14–17% | Женщины: 21–24%. Хороший уровень физической формы для большинства взрослых.">Men: 14–17% | Women: 21–24%. Good fitness level for most adults.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">⚠️</div><h3 data-en="Overweight / obese" data-ru="Избыток / ожирение">Overweight / obese</h3><p data-en="Men: 25%+ | Women: 32%+. Elevated health risks. Dietary changes and exercise are recommended." data-ru="Мужчины: 25%+ | Женщины: 32%+. Повышенный риск для здоровья. Рекомендуется изменить питание и начать тренироваться.">Men: 25%+ | Women: 32%+. Elevated health risks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="blog-grid">
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-ru="Суточная норма калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-ru="ИМТ — индекс массы тела.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="water-intake-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Hydration" data-ru="Вода">Hydration</span><h3 data-en="Water Intake Calculator" data-ru="Калькулятор воды">Water Intake Calculator</h3><p data-en="Daily water intake based on your weight." data-ru="Суточная норма воды.">Daily water intake based on your weight.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="ideal-weight-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Weight" data-ru="Вес">Weight</span><h3 data-en="Ideal Weight Calculator" data-ru="Идеальный вес">Ideal Weight Calculator</h3><p data-en="Find your ideal body weight range." data-ru="Идеальный вес по 4 формулам.">Find your ideal body weight range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links"><a href="about.html" data-en="About" data-ru="О сайте">About</a><a href="blog/" data-en="Blog" data-ru="Блог">Blog</a><a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a><a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a><a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('hamburger').addEventListener('click', function(){document.getElementById('siteNav').classList.toggle('open');});
+let gender='male';
+document.getElementById('genderMale').addEventListener('click',function(){gender='male';this.classList.add('active');document.getElementById('genderFemale').classList.remove('active');document.getElementById('hipField').style.display='none';});
+document.getElementById('genderFemale').addEventListener('click',function(){gender='female';this.classList.add('active');document.getElementById('genderMale').classList.remove('active');document.getElementById('hipField').style.display='block';});
+let currentLang='en';
+function applyLang(lang){currentLang=lang;document.documentElement.lang=lang;document.querySelectorAll('[data-en]').forEach(function(el){var t=el.getAttribute('data-'+lang);if(t)el.innerHTML=t;});localStorage.setItem('lang',lang);}
+document.getElementById('langEN').addEventListener('click',function(){this.classList.add('active');document.getElementById('langRU').classList.remove('active');applyLang('en');});
+document.getElementById('langRU').addEventListener('click',function(){this.classList.add('active');document.getElementById('langEN').classList.remove('active');applyLang('ru');});
+var sl=localStorage.getItem('lang');if(sl==='ru'){document.getElementById('langRU').classList.add('active');document.getElementById('langEN').classList.remove('active');applyLang('ru');}
+(function(){var hEN=document.getElementById('headerLangEN'),hRU=document.getElementById('headerLangRU');if(sl==='ru'){hRU.classList.add('active');hEN.classList.remove('active');}hEN.addEventListener('click',function(){document.getElementById('langEN').click();hEN.classList.add('active');hRU.classList.remove('active');});hRU.addEventListener('click',function(){document.getElementById('langRU').click();hRU.classList.add('active');hEN.classList.remove('active');});})();
+
+const cats={
+  male:[{max:5,label:'Essential fat',labelRu:'Незаменимый жир',color:'#60a5fa'},{max:13,label:'Athletic',labelRu:'Спортивный',color:'#34d399'},{max:17,label:'Fitness',labelRu:'Фитнес',color:'#a3e635'},{max:24,label:'Average',labelRu:'Средний',color:'#fbbf24'},{max:999,label:'Obese',labelRu:'Ожирение',color:'#f87171'}],
+  female:[{max:13,label:'Essential fat',labelRu:'Незаменимый жир',color:'#60a5fa'},{max:20,label:'Athletic',labelRu:'Спортивный',color:'#34d399'},{max:24,label:'Fitness',labelRu:'Фитнес',color:'#a3e635'},{max:31,label:'Average',labelRu:'Средний',color:'#fbbf24'},{max:999,label:'Obese',labelRu:'Ожирение',color:'#f87171'}]
+};
+const noteText={en:'This estimate uses the US Navy circumference method (error ±3–4%). For precise measurement, consider DEXA scan or hydrostatic weighing.',ru:'Оценка по методу ВМС США (погрешность ±3–4%). Для точного измерения используйте DEXA-сканирование или гидростатическое взвешивание.'};
+
+document.getElementById('calcBtn').addEventListener('click',function(){
+  const h=parseFloat(document.getElementById('height').value);
+  const w=parseFloat(document.getElementById('weight').value);
+  const neck=parseFloat(document.getElementById('neck').value);
+  const waist=parseFloat(document.getElementById('waist').value);
+  const hip=parseFloat(document.getElementById('hip').value)||0;
+  const err=document.getElementById('calcError');
+  if(!h||!w||!neck||!waist||(gender==='female'&&!hip)){err.style.display='block';return;}
+  err.style.display='none';
+  let bf;
+  if(gender==='male'){
+    bf=495/(1.0324-0.19077*Math.log10(waist-neck)+0.15456*Math.log10(h))-450;
+  } else {
+    bf=495/(1.29579-0.35004*Math.log10(waist+hip-neck)+0.22100*Math.log10(h))-450;
+  }
+  bf=Math.round(bf*10)/10;
+  const catList=cats[gender];
+  let cat=catList[catList.length-1];
+  for(let c of catList){if(bf<c.max){cat=c;break;}}
+  const catLabel=currentLang==='ru'?cat.labelRu:cat.label;
+  const fatMass=Math.round(w*bf/100*10)/10;
+  const leanMass=Math.round((w-fatMass)*10)/10;
+  document.getElementById('bfPct').textContent=bf+'%';
+  document.getElementById('bfCategory').textContent=catLabel;
+  document.getElementById('bfCategory').style.background=cat.color;
+  document.getElementById('bfCategory').style.color=cat.color==='#fbbf24'||cat.color==='#a3e635'?'#1a1a18':'white';
+  document.getElementById('bfDisplay').style.background=cat.color+'22';
+  document.getElementById('fatMass').textContent=fatMass+' kg';
+  document.getElementById('leanMass').textContent=leanMass+' kg';
+  document.getElementById('resultNote').textContent=noteText[currentLang];
+  document.getElementById('calcResults').classList.add('visible');
+  setTimeout(()=>document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}),100);
+});
+</script>
+</body>
+</html>
