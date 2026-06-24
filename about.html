@@ -44,20 +44,21 @@
       </div>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav">
-      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="about.html" class="active" data-en="About" data-ru="О сайте">About</a>
-      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="/" data-en="Calculator" data-hy="Հաշվիչ" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-hy="Բլոգ" data-ru="Блог">Blog</a>
+      <a href="about.html" class="active" data-en="About" data-hy="Մեր մասին" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-hy="Կապ" data-ru="Контакт">Contact</a>
       <div class="lang-toggle">
         <button class="active" id="langEN">EN</button>
         <button id="langRU">RU</button>
+        <button id="langHY">ՀՅ</button>
       </div>
     </nav>
   </div>
 </header>
 <main>
   <div class="static-body">
-    <a href="/" class="back-link" data-en="← Back to Calculator" data-ru="← На калькулятор">← Back to Calculator</a>
+    <a href="/" class="back-link" data-en="← Back to Calculator" data-hy="← Վերադառնալ հաշվիչ" data-ru="← На калькулятор">← Back to Calculator</a>
     <h1 data-en="About Calories &amp; Macros" data-ru="О сайте Calories &amp; Macros">About Calories &amp; Macros</h1>
     <p class="intro" data-en="A free, science-based nutrition calculator built for people who want clear, honest estimates — without paywalls or required sign-ups." data-ru="Бесплатный научно обоснованный калькулятор питания для тех, кто хочет понятные и честные результаты — без платных подписок и регистрации.">A free, science-based nutrition calculator built for people who want clear, honest estimates — without paywalls or required sign-ups.</p>
 
@@ -77,7 +78,7 @@
     <h2 data-en="Important disclaimer" data-ru="Важное предупреждение">Important disclaimer</h2>
     <p data-en="The results produced by this calculator are estimates based on population-average formulas. The information provided here is for educational purposes only and does not constitute medical or nutritional advice. If you have a health condition, please consult a qualified healthcare professional before changing your diet." data-ru="Результаты калькулятора — это оценки на основе среднестатистических формул. Информация на сайте предназначена исключительно для образовательных целей и не является медицинской или диетологической консультацией. При наличии заболеваний проконсультируйтесь с врачом перед изменением рациона.">The results produced by this calculator are estimates based on population-average formulas. The information provided here is for educational purposes only and does not constitute medical or nutritional advice. If you have a health condition, please consult a qualified healthcare professional before changing your diet.</p>
 
-    <h2 data-en="Contact" data-ru="Контакт">Contact</h2>
+    <h2 data-en="Contact" data-hy="Կապ" data-ru="Контакт">Contact</h2>
     <p><span data-en="Have a question or found a bug? Visit our " data-ru="Есть вопрос или нашли ошибку? Перейдите на ">Have a question or found a bug? Visit our </span><a href="contact.html" data-en="contact page" data-ru="страницу контактов">contact page</a><span data-en="." data-ru=".">.</span></p>
   </div>
 </main>
@@ -85,14 +86,14 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-      <p data-en="Free calorie and macro calculator. Not medical advice." data-ru="Бесплатный калькулятор калорий и БЖУ. Не медицинский совет.">Free calorie and macro calculator. Not medical advice.</p>
+      <p data-en="Free calorie and macro calculator. Not medical advice." data-hy="Անվճար կալորիաների և մակրոների հաշվիչ: Ոչ բժշկական խորհուրդ:" data-ru="Бесплатный калькулятор калорий и БЖУ. Не медицинский совет.">Free calorie and macro calculator. Not medical advice.</p>
     </div>
     <div class="footer-links">
-      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
-      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+      <a href="about.html" data-en="About" data-hy="Մեր մասին" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-hy="Բլոգ" data-ru="Блог">Blog</a>
+      <a href="contact.html" data-en="Contact" data-hy="Կապ" data-ru="Контакт">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-hy="Գաղտնիության քաղաքականություն" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms of Use" data-hy="Օգտագործման պայմաններ" data-ru="Условия использования">Terms of Use</a>
     </div>
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
@@ -110,8 +111,9 @@ function applyLang(lang) {
   });
   localStorage.setItem('lang', lang);
 }
-document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
-document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+document.getElementById('langEN').addEventListener('click', function() { document.getElementById('langRU').classList.remove('active'); document.getElementById('langHY') && document.getElementById('langHY').classList.remove('active'); this.classList.add('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { document.getElementById('langEN').classList.remove('active'); document.getElementById('langHY').classList.remove('active'); this.classList.add('active'); applyLang('ru'); });
+document.getElementById('langHY').addEventListener('click', function() { document.getElementById('langEN').classList.remove('active'); document.getElementById('langRU').classList.remove('active'); this.classList.add('active'); applyLang('hy'); });
 const savedLang = localStorage.getItem('lang');
 if (savedLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
 

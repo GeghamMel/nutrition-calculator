@@ -592,8 +592,8 @@ a:hover { text-decoration: underline; }
 
 @media (max-width: 680px) {
   .hamburger { display: flex !important; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; min-width: 32px; gap: 0; }
-  .header-lang { display: flex; flex-shrink: 0; }
-  .header-lang button { padding: 2px 8px; font-size: 0.75rem; }
+  .header-lang { display: flex; flex-shrink: 0; gap: 4px; }
+  .header-lang button { padding: 2px 7px; font-size: 0.72rem; }
   .site-logo { font-size: 1rem; }
   .site-logo .logo-icon { font-size: 1.1rem; }
   /* Hide lang toggle inside nav on mobile */
