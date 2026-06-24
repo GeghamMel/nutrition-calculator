@@ -1,4 +1,92 @@
-User-agent: *
-Allow: /
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Calories & Macros Calculator</title>
+  <meta name="description" content="Privacy policy for calories-macros.com. Learn how we handle your data." />
+  <link rel="canonical" href="https://calories-macros.com/privacy.html" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-Sitemap: https://calories-macros.com/sitemap.xml
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/">Calculator</a>
+      <a href="blog/">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="static-body">
+    <a href="/" class="back-link">← Back</a>
+    <h1>Privacy Policy</h1>
+    <p class="intro">Last updated: June 2025</p>
+
+    <p>This Privacy Policy describes how calories-macros.com ("we", "us", or "our") collects, uses, and shares information when you use our website.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>The calculator on this site runs entirely in your browser. Data you enter (age, weight, height, etc.) is <strong>never sent to our servers</strong> and is not stored or transmitted anywhere.</p>
+    <p>We may collect limited, non-personal technical data through analytics tools, including:</p>
+    <ul>
+      <li>Pages visited and time on site</li>
+      <li>General geographic region (country/city level)</li>
+      <li>Browser type and operating system</li>
+      <li>Referring website</li>
+    </ul>
+    <p>This data is aggregated and anonymous — it cannot be used to identify you personally.</p>
+
+    <h2>2. Cookies</h2>
+    <p>We use cookies for the following purposes:</p>
+    <ul>
+      <li><strong>Analytics:</strong> To understand how visitors use the site (e.g. Google Analytics)</li>
+      <li><strong>Advertising:</strong> If Google AdSense ads are displayed, Google may set cookies to serve relevant ads. You can opt out via <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google's Ad Settings</a>.</li>
+    </ul>
+    <p>You can control or disable cookies through your browser settings at any time.</p>
+
+    <h2>3. Google AdSense</h2>
+    <p>This site may display advertisements served by Google AdSense. Google uses cookies and web beacons to serve ads based on users' prior visits to this website and other sites. For more information about how Google uses data, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's Privacy & Terms</a>.</p>
+
+    <h2>4. Third-Party Links</h2>
+    <p>Our blog may contain links to external websites. We are not responsible for the privacy practices or content of those sites.</p>
+
+    <h2>5. Children's Privacy</h2>
+    <p>This site is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+
+    <h2>6. Your Rights</h2>
+    <p>Depending on your location, you may have rights to access, correct, or delete personal data we hold about you. Since we do not collect personally identifiable information through the calculator, this primarily applies to any contact form submissions. To make a request, email us via the <a href="contact.html">contact page</a>.</p>
+
+    <h2>7. Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+
+    <h2>8. Contact</h2>
+    <p>Questions about this policy? Use our <a href="contact.html">contact form</a>.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+      <p>Free calorie and macro calculator.</p>
+    </div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> calories-macros.com</span>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});</script>
+</body>
+</html>

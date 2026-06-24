@@ -1,11 +1,161 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://calories-macros.com/</loc></url>
-  <url><loc>https://calories-macros.com/about.html</loc></url>
-  <url><loc>https://calories-macros.com/privacy.html</loc></url>
-  <url><loc>https://calories-macros.com/terms.html</loc></url>
-  <url><loc>https://calories-macros.com/contact.html</loc></url>
-  <url><loc>https://calories-macros.com/blog/calories-for-weight-loss.html</loc></url>
-  <url><loc>https://calories-macros.com/blog/macros-for-muscle-gain.html</loc></url>
-  <url><loc>https://calories-macros.com/blog/maintenance-calories.html</loc></url>
-</urlset>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Count Macros: Beginner's Guide — Calories & Macros</title>
+  <meta name="description" content="A complete beginner's guide to counting macros. Learn how to set targets, track your food, choose an app, and stay consistent without obsessing over every gram." />
+  <link rel="canonical" href="https://calories-macros.com/blog/how-to-count-macros.html" />
+  <link rel="stylesheet" href="../style.css" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"How to Count Macros: A Complete Beginner's Guide","url":"https://calories-macros.com/blog/how-to-count-macros.html","publisher":{"@type":"Organization","name":"Calories & Macros"}}
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/">Calculator</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Beginner Guide</div>
+    <h1>How to Count Macros: A Complete Beginner's Guide</h1>
+    <div class="meta">10 min read · Beginner Guide · Updated June 2025</div>
+  </div>
+</div>
+
+<main>
+  <article class="article-body">
+
+    <p>Counting macros — tracking your daily intake of protein, carbohydrates, and fat — is one of the most effective tools for achieving specific body composition goals. Unlike simple calorie counting, macro tracking gives you both the total energy target and the nutritional quality breakdown, making it a more complete approach to nutrition management.</p>
+
+    <p>This guide walks you through everything you need to start tracking macros, from setting your targets to building habits that are sustainable long-term.</p>
+
+    <h2>What are macros?</h2>
+
+    <p>Macronutrients ("macros") are the three major categories of nutrients that provide energy:</p>
+
+    <ul>
+      <li><strong>Protein</strong> — 4 calories per gram. Essential for muscle building, repair, immune function, and satiety. Found in meat, fish, dairy, eggs, legumes, and tofu.</li>
+      <li><strong>Carbohydrates</strong> — 4 calories per gram. The body's primary energy source, especially for high-intensity activity. Found in grains, fruits, vegetables, legumes, and sugar.</li>
+      <li><strong>Fat</strong> — 9 calories per gram. Critical for hormone production, vitamin absorption, and cell function. Found in oils, nuts, seeds, dairy, meat, and fish.</li>
+    </ul>
+
+    <p>Understanding these values is important: a gram of fat provides more than twice the calories of a gram of protein or carbohydrate, which is why high-fat foods are calorie-dense.</p>
+
+    <h2>Step 1: Calculate your macro targets</h2>
+
+    <p>Before you can track anything, you need numbers to track towards. Use our <a href="/">Calories &amp; Macros calculator</a> to get your personalised daily targets based on your body stats and goal. The calculator will give you:</p>
+    <ul>
+      <li>Total daily calories</li>
+      <li>Grams of protein, carbohydrates, and fat per day</li>
+    </ul>
+
+    <p>Write these numbers down or save them somewhere accessible — you'll refer to them every day during tracking.</p>
+
+    <h2>Step 2: Choose a tracking app</h2>
+
+    <p>Manual tracking with pen and paper is possible but impractical for most people. A food tracking app automates the calculations and has databases of thousands of foods. The most widely used options:</p>
+
+    <table>
+      <thead><tr><th>App</th><th>Best for</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td>Cronometer</td><td>Micronutrient detail, accuracy</td><td>Free (premium available)</td></tr>
+        <tr><td>MyFitnessPal</td><td>Large food database, barcode scanning</td><td>Free (premium available)</td></tr>
+        <tr><td>MacroFactor</td><td>Adaptive calorie recommendations</td><td>Paid subscription</td></tr>
+        <tr><td>Lose It!</td><td>Simple interface for beginners</td><td>Free (premium available)</td></tr>
+      </tbody>
+    </table>
+
+    <p>For most people starting out, the free version of Cronometer or MyFitnessPal is sufficient. Set up your account, enter your macro targets manually (using the numbers from our calculator), and you're ready to start logging.</p>
+
+    <h2>Step 3: Get a food scale</h2>
+
+    <p>This is the single most impactful tool for accurate macro tracking. Kitchen scales cost very little and remove one of the biggest sources of error in nutrition tracking: estimating portion sizes.</p>
+
+    <p>Research consistently shows that people underestimate their calorie intake by 20–40% when estimating by eye. A food scale removes this error almost entirely. Weigh everything initially — within a few weeks, you'll develop a strong intuition for portion sizes and can rely on estimation more often.</p>
+
+    <div class="callout">
+      <strong>Tip:</strong> Weigh food in its raw state whenever possible. Cooked weights vary significantly depending on how much water is absorbed or lost during cooking. Most food databases list nutritional values for raw food.
+    </div>
+
+    <h2>Step 4: Log your food throughout the day</h2>
+
+    <p>The easiest habit is to log food as you eat it, rather than trying to remember everything at the end of the day. Most apps have a barcode scanner for packaged foods and a large database for unpackaged items.</p>
+
+    <p>Some people find it useful to pre-log the entire day's food in the morning ("meal planning and logging in advance"), then adjust during the day as needed. This approach helps you spot potential macro imbalances before they happen rather than discovering them at 9pm.</p>
+
+    <h2>Step 5: Prioritise protein first</h2>
+
+    <p>When building your meals each day, always start by planning around your protein target. Protein is the most difficult macro to hit consistently, and it is the most consequential for body composition.</p>
+
+    <p>Once your protein is covered, fill remaining calories with carbohydrates and fat in a ratio that suits your preferences and energy needs. People who train intensively generally do better with more carbohydrates; those who are more sedentary or follow lower-carb approaches may prefer a higher fat ratio.</p>
+
+    <h2>How precise do you need to be?</h2>
+
+    <p>Beginners often worry about hitting macros exactly. In practice, being within 5–10 grams of your protein target and 50–100 calories of your total daily target is more than sufficient. The body responds to averages over days and weeks, not to minute-by-minute precision.</p>
+
+    <p>A useful framework: treat protein as a floor (always hit it), total calories as a range (stay within ±100 kcal), and carbohydrates and fat as flexible (they can balance each other within reason).</p>
+
+    <h2>How long should you track?</h2>
+
+    <p>Most people benefit from strict tracking for 6–12 weeks. Over this period, you develop a clear picture of what your meals contain, learn which foods are protein-dense and which are calorie-dense, and build the intuition to eat well without always tracking.</p>
+
+    <p>Many experienced nutrition trackers transition to flexible or intuitive eating after a tracking phase, dipping back into precise tracking when they are in a specific phase (a fat loss cut, for example) or when results have stalled.</p>
+
+    <h2>Common beginner mistakes</h2>
+
+    <ul>
+      <li><strong>Not weighing cooking oils and sauces:</strong> A tablespoon of oil adds 120 calories and 14g of fat. These small additions add up quickly and are easy to miss.</li>
+      <li><strong>Forgetting drinks:</strong> Milk in coffee, juice, protein shakes, and alcohol all carry calories and macros. Log everything you consume.</li>
+      <li><strong>Obsessing over perfection:</strong> Tracking is a tool, not a religion. Missing a day or being slightly off target does not derail progress — inconsistency over weeks does.</li>
+      <li><strong>Choosing food solely based on macros:</strong> Micronutrients (vitamins, minerals, fibre) matter too. A diet that hits macros but consists entirely of processed food is not a healthy diet.</li>
+    </ul>
+
+    <h2>Getting started today</h2>
+
+    <p>The best time to start tracking is now. Use our <a href="/">calculator</a> to find your targets, download Cronometer or MyFitnessPal, order a food scale, and log your food for the next three days. Within a week, you'll have learned more about your actual eating habits than you have in years of intuitive eating — and you'll have a clear system for making changes.</p>
+
+    <div class="callout">
+      <strong>Your starting point:</strong> Use the <a href="/">Calories &amp; Macros Calculator</a> to get your daily calorie and macro targets in under a minute. Then open your tracking app and enter those numbers as your goal.
+    </div>
+
+  </article>
+</main>
+
+<div class="container">
+  <div style="margin:0 0 48px; padding-top:40px; border-top:1px solid var(--border);">
+    <p style="color:var(--muted);font-size:0.85rem;margin-bottom:6px;">Continue reading</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="protein-intake-guide.html" style="color:var(--green);font-size:0.92rem;">How Much Protein Do You Need? →</a>
+      <a href="maintenance-calories.html" style="color:var(--green);font-size:0.92rem;">Maintenance Calories Explained →</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+      <p>Free calorie and macro calculator. Not medical advice.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/about.html">About</a><a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});</script>
+</body>
+</html>
