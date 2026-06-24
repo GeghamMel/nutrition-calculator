@@ -7,6 +7,14 @@
   <link rel="canonical" href="https://calories-macros.com/ideal-weight-calculator.html" />
   <link rel="stylesheet" href="style.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXLXM57ZKH');
+  </script>
 </head>
 <body>
 <header class="site-header">
@@ -142,6 +150,30 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   document.getElementById('calcResults').classList.add('visible');
   setTimeout(()=>document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}),100);
 });
+</script>
+
+<!-- Scroll to top button + Reading progress -->
+<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green,#2D6A4F);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;transition:opacity 0.3s,transform 0.3s;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green,#2D6A4F);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+(function(){
+  var btn = document.getElementById('scrollTop');
+  var bar = document.getElementById('readProgress');
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollY / docH * 100) : 0;
+    bar.style.width = pct + '%';
+    if (scrollY > 400) {
+      btn.style.display = 'flex';
+      btn.style.opacity = '1';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  btn.addEventListener('mouseenter', function(){ this.style.transform='scale(1.1)'; });
+  btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
+})();
 </script>
 </body>
 </html>
