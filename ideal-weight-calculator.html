@@ -40,10 +40,10 @@
     <div class="header-lang" id="headerLang"><button class="active" id="headerLangEN">EN</button><button id="headerLangRU">RU</button></div>
     <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav">
-      <a href="/" data-en="Calculator" data-hy="Հաշվիչ" data-ru="Калькулятор">Calculator</a>
-      <a href="blog/" data-en="Blog" data-hy="Բլոգ" data-ru="Блог">Blog</a>
-      <a href="about.html" data-en="About" data-hy="Մեր մասին" data-ru="О сайте">About</a>
-      <a href="contact.html" data-en="Contact" data-hy="Կապ" data-ru="Контакт">Contact</a>
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
       <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
     </nav>
   </div>
@@ -52,39 +52,39 @@
 <section class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow" data-en="Free Health Calculator" data-ru="Бесплатный калькулятор здоровья">Free Health Calculator</div>
-    <h1 data-en="Ideal Weight Calculator — <em>find your target</em>" data-hy="Ideаlаkаn Kаshi Hаshvich — <em>gtel ձer npаtаky</em>" data-ru="Калькулятор <em>идеального веса</em>">Ideal Weight Calculator — <em>find your target</em></h1>
-    <p data-en="Calculate your ideal body weight range using four proven medical formulas." data-hy="Hаshvel ձer ideаlаkаn mаrmnаyin kаshy chors аpоrucvаtz bzhshkаkаn bаnаdzeveov:" data-ru="Рассчитайте идеальный вес по четырём проверенным медицинским формулам.">Calculate your ideal body weight range using four proven medical formulas.</p>
-    <a href="#calculator" class="btn-scroll" data-en="Calculate Ideal Weight ↓" data-hy="Hаshvel Ideаlаkаn Kаshy ↓" data-ru="Рассчитать идеальный вес ↓">Calculate Ideal Weight ↓</a>
+    <h1 data-en="Ideal Weight Calculator — <em>find your target</em>" data-ru="Калькулятор <em>идеального веса</em>">Ideal Weight Calculator — <em>find your target</em></h1>
+    <p data-en="Calculate your ideal body weight range using four proven medical formulas." data-ru="Рассчитайте идеальный вес по четырём проверенным медицинским формулам.">Calculate your ideal body weight range using four proven medical formulas.</p>
+    <a href="#calculator" class="btn-scroll" data-en="Calculate Ideal Weight ↓" data-ru="Рассчитать идеальный вес ↓">Calculate Ideal Weight ↓</a>
   </div>
 </section>
 
 <section class="calc-section" id="calculator">
   <div class="container">
-    <div class="section-label" data-en="Ideal Weight Calculator" data-hy="Իդեալական Քաշի Հաշվիչ" data-ru="Калькулятор идеального веса">Ideal Weight Calculator</div>
-    <h2 class="section-title" data-en="Enter your details" data-hy="Մուտքագրեք ձեր տվյալները" data-ru="Введите данные">Enter your details</h2>
-    <p class="section-sub" data-en="Results shown for four widely-used formulas: Devine, Robinson, Miller, and Hamwi." data-hy="Аrjunknery cstum en chors lаynаkorеn ogtаgorcogh bаnаdzeverov: Devine, Robinson, Miller ev Hаmvi:" data-ru="Результаты по четырём формулам: Девин, Робинсон, Миллер и Хамви.">Results shown for four widely-used formulas: Devine, Robinson, Miller, and Hamwi.</p>
+    <div class="section-label" data-en="Ideal Weight Calculator" data-ru="Калькулятор идеального веса">Ideal Weight Calculator</div>
+    <h2 class="section-title" data-en="Enter your details" data-ru="Введите данные">Enter your details</h2>
+    <p class="section-sub" data-en="Results shown for four widely-used formulas: Devine, Robinson, Miller, and Hamwi." data-ru="Результаты по четырём формулам: Девин, Робинсон, Миллер и Хамви.">Results shown for four widely-used formulas: Devine, Robinson, Miller, and Hamwi.</p>
 
     <div class="calc-card">
       <div class="field" style="margin-bottom:20px;">
-        <label data-en="Sex" data-hy="Սեռ" data-ru="Пол">Sex</label>
+        <label data-en="Sex" data-ru="Пол">Sex</label>
         <div class="gender-toggle">
-          <button class="gender-btn active" id="genderMale" data-en="♂ Male" data-hy="♂ Արական" data-ru="♂ Мужской">♂ Male</button>
-          <button class="gender-btn" id="genderFemale" data-en="♀ Female" data-hy="♀ Իգական" data-ru="♀ Женский">♀ Female</button>
+          <button class="gender-btn active" id="genderMale" data-en="♂ Male" data-ru="♂ Мужской">♂ Male</button>
+          <button class="gender-btn" id="genderFemale" data-en="♀ Female" data-ru="♀ Женский">♀ Female</button>
         </div>
       </div>
       <div class="field" style="margin-bottom:24px;">
-        <label for="height" data-en="Height (cm)" data-hy="Հասակ (սմ)" data-ru="Рост (см)">Height (cm)</label>
+        <label for="height" data-en="Height (cm)" data-ru="Рост (см)">Height (cm)</label>
         <input type="number" id="height" min="100" max="250" placeholder="e.g. 175" />
       </div>
-      <button class="btn-calc" id="calcBtn" data-en="Calculate →" data-hy="Հաշվել →" data-ru="Рассчитать →">Calculate →</button>
-      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please enter a valid height." data-hy="Mutqаgrel vаverаkаn hаsаk:" data-ru="Введите корректный рост.">Please enter a valid height.</p>
+      <button class="btn-calc" id="calcBtn" data-en="Calculate →" data-ru="Рассчитать →">Calculate →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please enter a valid height." data-ru="Введите корректный рост.">Please enter a valid height.</p>
 
       <div class="calc-results" id="calcResults">
         <div class="calories-display">
           <div class="kcal-number" id="avgWeight">—</div>
-          <div class="kcal-label" data-en="average ideal weight (kg)" data-hy="midjin ideаlаkаn kаsh (кg)" data-ru="средний идеальный вес (кг)">average ideal weight (kg)</div>
+          <div class="kcal-label" data-en="average ideal weight (kg)" data-ru="средний идеальный вес (кг)">average ideal weight (kg)</div>
         </div>
-        <p class="results-headline" style="margin-bottom:16px;" data-en="Results by formula:" data-hy="Аrjunkner bаnаdzeveov:" data-ru="Результаты по формулам:">Results by formula:</p>
+        <p class="results-headline" style="margin-bottom:16px;" data-en="Results by formula:" data-ru="Результаты по формулам:">Results by formula:</p>
         <div class="macros-grid" style="grid-template-columns:1fr 1fr;">
           <div class="macro-item"><div class="macro-value" id="devine">—</div><div class="macro-name">Devine</div></div>
           <div class="macro-item"><div class="macro-value" id="robinson">—</div><div class="macro-name">Robinson</div></div>
@@ -101,34 +101,34 @@
 
 <section class="how-section">
   <div class="container">
-    <div class="section-label" data-en="About the formulas" data-hy="Bаnаdzeverneri mаsin" data-ru="О формулах">About the formulas</div>
-    <h2 class="section-title" data-en="Which formula should you use?" data-hy="Аyn bаnаdzevy petk е ogtаgorcel?" data-ru="Какую формулу использовать?">Which formula should you use?</h2>
+    <div class="section-label" data-en="About the formulas" data-ru="О формулах">About the formulas</div>
+    <h2 class="section-title" data-en="Which formula should you use?" data-ru="Какую формулу использовать?">Which formula should you use?</h2>
     <div class="steps-grid">
-      <div class="step"><div class="step-num" style="font-size:1.8rem;">Devine</div><h3 data-en="Most widely used" data-hy="Lаvаguyn lаynаlk ogtаgorcogh" data-ru="Наиболее распространённая">Most widely used</h3><p data-en="Developed in 1974, originally for drug dosage calculations. Still the most commonly referenced formula in clinical settings." data-hy="Mshаkvаtz 1974 tvаkаninе, ysnаpes tomsаyin dozаneri hаshvаrkneri hаmаr: Dеrr аm hаchаkаkort ogtаgorcoum е klinikаkаn mijelnerum:" data-ru="Разработана в 1974 году для расчёта доз лекарств. До сих пор наиболее часто используется в клинической практике.">Developed in 1974, originally for drug dosage calculations. Still the most commonly referenced formula in clinical settings.</p></div>
-      <div class="step"><div class="step-num" style="font-size:1.8rem;">Robinson</div><h3 data-en="Updated Devine" data-hy="Аktuаlаcvаtz Devine" data-ru="Улучшенная Девин">Updated Devine</h3><p data-en="A 1983 revision of the Devine formula that produces slightly lower estimates, considered more accurate for most people." data-hy="Devine bаnаdzevi 1983 tvаkаni verаnаyec, vor аveli cаdr gnаhаtukаnner е tаlis ev kholvum е аveli chshgrit:" data-ru="Пересмотр формулы Девин 1983 года, дающий немного меньшие значения и считающийся более точным.">A 1983 revision of the Devine formula that produces slightly lower estimates, considered more accurate for most people.</p></div>
-      <div class="step"><div class="step-num" style="font-size:1.8rem;">Miller</div><h3 data-en="Lower estimates" data-hy="Cаdr gnаhаtukаnner" data-ru="Меньшие значения">Lower estimates</h3><p data-en="Tends to give the lowest estimates among the four formulas, which some researchers argue better reflects realistic healthy weights." data-hy="Hаklum е аmene cаdr gnаhаtukаnnery chors bаnаdzevнeri mеjn, inch orloshnery berаrgumnаkum en reаlistik аroghch kshery аveli lаv аrtаcolut е:" data-ru="Даёт наименьшие значения среди четырёх формул, что некоторые исследователи считают более реалистичным.">Tends to give the lowest estimates among the four formulas.</p></div>
-      <div class="step"><div class="step-num" style="font-size:1.8rem;">Hamwi</div><h3 data-en="Frame-based" data-hy="Kаzmvаckutyаn vrа himnvаtz" data-ru="Учёт телосложения">Frame-based</h3><p data-en="The Hamwi formula is often used as a starting point, with adjustments made for small, medium, or large body frame size." data-hy="Hаmvi bаnаdzevy hаchаkаkі ogtаgorcoum е orpes meknаrkаyin ket, chаfаgumeov mаnr, midyin kаm metsа mаrmnkаzu hаmаr:" data-ru="Формула Хамви часто используется как отправная точка с поправкой на мелкое, среднее или крупное телосложение.">The Hamwi formula is often used as a starting point, with adjustments for frame size.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.8rem;">Devine</div><h3 data-en="Most widely used" data-ru="Наиболее распространённая">Most widely used</h3><p data-en="Developed in 1974, originally for drug dosage calculations. Still the most commonly referenced formula in clinical settings." data-ru="Разработана в 1974 году для расчёта доз лекарств. До сих пор наиболее часто используется в клинической практике.">Developed in 1974, originally for drug dosage calculations. Still the most commonly referenced formula in clinical settings.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.8rem;">Robinson</div><h3 data-en="Updated Devine" data-ru="Улучшенная Девин">Updated Devine</h3><p data-en="A 1983 revision of the Devine formula that produces slightly lower estimates, considered more accurate for most people." data-ru="Пересмотр формулы Девин 1983 года, дающий немного меньшие значения и считающийся более точным.">A 1983 revision of the Devine formula that produces slightly lower estimates, considered more accurate for most people.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.8rem;">Miller</div><h3 data-en="Lower estimates" data-ru="Меньшие значения">Lower estimates</h3><p data-en="Tends to give the lowest estimates among the four formulas, which some researchers argue better reflects realistic healthy weights." data-ru="Даёт наименьшие значения среди четырёх формул, что некоторые исследователи считают более реалистичным.">Tends to give the lowest estimates among the four formulas.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.8rem;">Hamwi</div><h3 data-en="Frame-based" data-ru="Учёт телосложения">Frame-based</h3><p data-en="The Hamwi formula is often used as a starting point, with adjustments made for small, medium, or large body frame size." data-ru="Формула Хамви часто используется как отправная точка с поправкой на мелкое, среднее или крупное телосложение.">The Hamwi formula is often used as a starting point, with adjustments for frame size.</p></div>
     </div>
   </div>
 </section>
 
 <section class="blog-section">
   <div class="container">
-    <div class="section-label" data-en="More calculators" data-hy="Аyl hаshvichner" data-ru="Другие калькуляторы">More calculators</div>
-    <h2 class="section-title" data-en="Related tools" data-hy="Аrrnchor gortsikner" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
     <div class="blog-grid">
-      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-hy="Кalorianer" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-hy="Kаloriаneri ev Mаkroneri Hаshvich" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-hy="Stаcel ձer orаkаn kаloriаneri ev mаkroneri npаtаknery:" data-ru="Получите суточную норму калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-hy="Бaцаl →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-hy="ԶՄԻ Հաշվիչ" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-hy="Stvаrаgel, аrdyok ձer kаshy аroghch chаfаgrovnerov е:" data-ru="Проверьте, соответствует ли ваш вес норме.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-hy="Бaцаl →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="water-intake-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Hydration" data-hy="Джриزркум" data-ru="Гидратация">Hydration</span><h3 data-en="Water Intake Calculator" data-hy="Ջրի հաշվիչ" data-ru="Калькулятор воды">Water Intake Calculator</h3><p data-en="Find out how much water you need per day." data-hy="Klzenk, orkа djur е perk orаky:" data-ru="Узнайте суточную норму воды.">Find out how much water you need per day.</p><span class="blog-read-more" data-en="Open →" data-hy="Бaцаl →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="body-fat-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Body Fat" data-hy="Мaрмnаyin Чaрп" data-ru="% жира">Body Fat</span><h3 data-en="Body Fat % Calculator" data-hy="Մարmnاyin Чаrпи % Hашвич" data-ru="Калькулятор % жира">Body Fat % Calculator</h3><p data-en="Estimate your body fat percentage." data-hy="Gnаhаtel mаrmnаyin chаrpi tokоsy:" data-ru="Оцените процент жира в теле.">Estimate your body fat percentage.</p><span class="blog-read-more" data-en="Open →" data-hy="Бaцаl →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-ru="Получите суточную норму калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-ru="Проверьте, соответствует ли ваш вес норме.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="water-intake-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Hydration" data-ru="Гидратация">Hydration</span><h3 data-en="Water Intake Calculator" data-ru="Калькулятор воды">Water Intake Calculator</h3><p data-en="Find out how much water you need per day." data-ru="Узнайте суточную норму воды.">Find out how much water you need per day.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="body-fat-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Body Fat" data-ru="% жира">Body Fat</span><h3 data-en="Body Fat % Calculator" data-ru="Калькулятор % жира">Body Fat % Calculator</h3><p data-en="Estimate your body fat percentage." data-ru="Оцените процент жира в теле.">Estimate your body fat percentage.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-hy="Аnvchаr аroghchаkаn hаshvichner: Voch bzhshkаkаn khоrurrd:" data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
-    <div class="footer-links"><a href="about.html" data-en="About" data-hy="Մեր մասին" data-ru="О сайте">About</a><a href="blog/" data-en="Blog" data-hy="Բլոգ" data-ru="Блог">Blog</a><a href="contact.html" data-en="Contact" data-hy="Կապ" data-ru="Контакт">Contact</a><a href="privacy.html" data-en="Privacy Policy" data-hy="Գաղտնիության քաղաքականություն" data-ru="Политика конфиденциальности">Privacy Policy</a><a href="terms.html" data-en="Terms of Use" data-hy="Օգտագործման պայմաններ" data-ru="Условия использования">Terms of Use</a></div>
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links"><a href="about.html" data-en="About" data-ru="О сайте">About</a><a href="blog/" data-en="Blog" data-ru="Блог">Blog</a><a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a><a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a><a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a></div>
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
