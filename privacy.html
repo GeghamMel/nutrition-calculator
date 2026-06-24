@@ -9,73 +9,94 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
 <header class="site-header">
   <div class="inner">
     <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
     <div class="header-lang" id="headerLang">
-        <button class="active" id="headerLangEN">EN</button>
-        <button id="headerLangRU">RU</button>
-      </div>
-      <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
+    </div>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav">
       <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
       <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
       <a href="about.html" data-en="About" data-ru="О сайте">About</a>
       <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-      <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
-      <a href="/">Calculator</a>
-      <a href="blog/">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <div class="lang-toggle">
+        <button class="active" id="langEN">EN</button>
+        <button id="langRU">RU</button>
+      </div>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="static-body">
-    <a href="/" class="back-link">← Back</a>
-    <h1>Privacy Policy</h1>
-    <p class="intro">Last updated: June 2025</p>
+    <a href="/" class="back-link" data-en="← Back" data-ru="← Назад">← Back</a>
+    <h1 data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</h1>
+    <p class="intro" data-en="Last updated: June 2025" data-ru="Последнее обновление: июнь 2025">Last updated: June 2025</p>
 
-    <p>This Privacy Policy describes how calories-macros.com ("we", "us", or "our") collects, uses, and shares information when you use our website.</p>
+    <div id="content-en">
+      <p>This Privacy Policy describes how calories-macros.com ("we", "us", or "our") collects, uses, and shares information when you use our website.</p>
+      <h2>1. Information We Collect</h2>
+      <p>The calculator on this site runs entirely in your browser. Data you enter (age, weight, height, etc.) is <strong>never sent to our servers</strong> and is not stored or transmitted anywhere.</p>
+      <p>We may collect limited, non-personal technical data through analytics tools, including:</p>
+      <ul>
+        <li>Pages visited and time on site</li>
+        <li>General geographic region (country/city level)</li>
+        <li>Browser type and operating system</li>
+        <li>Referring website</li>
+      </ul>
+      <p>This data is aggregated and anonymous — it cannot be used to identify you personally.</p>
+      <h2>2. Cookies</h2>
+      <p>We use cookies for the following purposes:</p>
+      <ul>
+        <li><strong>Analytics:</strong> To understand how visitors use the site (e.g. Google Analytics)</li>
+        <li><strong>Advertising:</strong> If Google AdSense ads are displayed, Google may set cookies to serve relevant ads. You can opt out via <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google's Ad Settings</a>.</li>
+      </ul>
+      <p>You can control or disable cookies through your browser settings at any time.</p>
+      <h2>3. Google AdSense</h2>
+      <p>This site may display advertisements served by Google AdSense. Google uses cookies to serve ads based on users' prior visits. For more information visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's Privacy & Terms</a>.</p>
+      <h2>4. Third-Party Links</h2>
+      <p>Our blog may contain links to external websites. We are not responsible for the privacy practices of those sites.</p>
+      <h2>5. Children's Privacy</h2>
+      <p>This site is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+      <h2>6. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
+      <h2>7. Contact</h2>
+      <p>Questions about this policy? Use our <a href="contact.html">contact form</a>.</p>
+    </div>
 
-    <h2>1. Information We Collect</h2>
-    <p>The calculator on this site runs entirely in your browser. Data you enter (age, weight, height, etc.) is <strong>never sent to our servers</strong> and is not stored or transmitted anywhere.</p>
-    <p>We may collect limited, non-personal technical data through analytics tools, including:</p>
-    <ul>
-      <li>Pages visited and time on site</li>
-      <li>General geographic region (country/city level)</li>
-      <li>Browser type and operating system</li>
-      <li>Referring website</li>
-    </ul>
-    <p>This data is aggregated and anonymous — it cannot be used to identify you personally.</p>
-
-    <h2>2. Cookies</h2>
-    <p>We use cookies for the following purposes:</p>
-    <ul>
-      <li><strong>Analytics:</strong> To understand how visitors use the site (e.g. Google Analytics)</li>
-      <li><strong>Advertising:</strong> If Google AdSense ads are displayed, Google may set cookies to serve relevant ads. You can opt out via <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google's Ad Settings</a>.</li>
-    </ul>
-    <p>You can control or disable cookies through your browser settings at any time.</p>
-
-    <h2>3. Google AdSense</h2>
-    <p>This site may display advertisements served by Google AdSense. Google uses cookies and web beacons to serve ads based on users' prior visits to this website and other sites. For more information about how Google uses data, visit <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's Privacy & Terms</a>.</p>
-
-    <h2>4. Third-Party Links</h2>
-    <p>Our blog may contain links to external websites. We are not responsible for the privacy practices or content of those sites.</p>
-
-    <h2>5. Children's Privacy</h2>
-    <p>This site is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
-
-    <h2>6. Your Rights</h2>
-    <p>Depending on your location, you may have rights to access, correct, or delete personal data we hold about you. Since we do not collect personally identifiable information through the calculator, this primarily applies to any contact form submissions. To make a request, email us via the <a href="contact.html">contact page</a>.</p>
-
-    <h2>7. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date. Continued use of the site after changes constitutes acceptance of the updated policy.</p>
-
-    <h2>8. Contact</h2>
-    <p>Questions about this policy? Use our <a href="contact.html">contact form</a>.</p>
+    <div id="content-ru" style="display:none;">
+      <p>Настоящая Политика конфиденциальности описывает, как calories-macros.com («мы», «нас» или «наш») собирает, использует и передаёт информацию при использовании нашего сайта.</p>
+      <h2>1. Какие данные мы собираем</h2>
+      <p>Калькулятор на этом сайте работает полностью в вашем браузере. Данные, которые вы вводите (возраст, вес, рост и т.д.), <strong>никогда не передаются на наши серверы</strong> и нигде не сохраняются.</p>
+      <p>Мы можем собирать ограниченные, неличные технические данные через аналитические инструменты, включая:</p>
+      <ul>
+        <li>Посещённые страницы и время на сайте</li>
+        <li>Общий географический регион (уровень страны/города)</li>
+        <li>Тип браузера и операционная система</li>
+        <li>Реферальный сайт</li>
+      </ul>
+      <p>Эти данные агрегированы и анонимны — они не могут быть использованы для вашей идентификации.</p>
+      <h2>2. Файлы cookie</h2>
+      <p>Мы используем файлы cookie в следующих целях:</p>
+      <ul>
+        <li><strong>Аналитика:</strong> Для понимания того, как посетители используют сайт (например, Google Analytics)</li>
+        <li><strong>Реклама:</strong> Если отображается реклама Google AdSense, Google может устанавливать файлы cookie. Вы можете отказаться через <a href="https://adssettings.google.com" target="_blank" rel="noopener">настройки рекламы Google</a>.</li>
+      </ul>
+      <p>Вы можете управлять файлами cookie или отключить их в настройках браузера.</p>
+      <h2>3. Google AdSense</h2>
+      <p>На сайте может отображаться реклама Google AdSense. Google использует файлы cookie для показа рекламы на основе предыдущих посещений. Подробнее на странице <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Конфиденциальность и условия Google</a>.</p>
+      <h2>4. Ссылки на сторонние ресурсы</h2>
+      <p>Наш блог может содержать ссылки на внешние сайты. Мы не несём ответственности за их политику конфиденциальности.</p>
+      <h2>5. Конфиденциальность детей</h2>
+      <p>Сайт не предназначен для детей до 13 лет. Мы намеренно не собираем персональные данные детей.</p>
+      <h2>6. Изменения политики</h2>
+      <p>Мы можем периодически обновлять настоящую Политику. Продолжение использования сайта после внесения изменений означает согласие с обновлённой политикой.</p>
+      <h2>7. Контакт</h2>
+      <p>Вопросы по этой политике? Воспользуйтесь нашей <a href="contact.html">контактной формой</a>.</p>
+    </div>
   </div>
 </main>
 
@@ -83,36 +104,39 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-      <p>Free calorie and macro calculator.</p>
+      <p data-en="Free calorie and macro calculator." data-ru="Бесплатный калькулятор калорий и БЖУ.">Free calorie and macro calculator.</p>
     </div>
     <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© <span id="year"></span> calories-macros.com</span>
-  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
-<script>document.getElementById("year").textContent=new Date().getFullYear();document.getElementById("hamburger").addEventListener("click",function(){document.getElementById("siteNav").classList.toggle("open");});function applyLang(lang){document.documentElement.lang=lang;document.querySelectorAll("[data-en]").forEach(function(el){var t=el.getAttribute("data-"+lang);if(t)el.innerHTML=t;});localStorage.setItem("lang",lang);}document.getElementById("langEN").addEventListener("click",function(){this.classList.add("active");document.getElementById("langRU").classList.remove("active");applyLang("en");});document.getElementById("langRU").addEventListener("click",function(){this.classList.add("active");document.getElementById("langEN").classList.remove("active");applyLang("ru");});var sl=localStorage.getItem("lang");if(sl==="ru"){document.getElementById("langRU").classList.add("active");document.getElementById("langEN").classList.remove("active");applyLang("ru");}
-// Sync header-lang buttons (always visible on mobile)
-(function() {
-  var hEN = document.getElementById('headerLangEN');
-  var hRU = document.getElementById('headerLangRU');
-  if (!hEN || !hRU) return;
-  // Set initial state
-  var sl = localStorage.getItem('lang');
-  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
-  hEN.addEventListener('click', function() {
-    document.getElementById('langEN') && document.getElementById('langEN').click();
-    hEN.classList.add('active'); hRU.classList.remove('active');
-  });
-  hRU.addEventListener('click', function() {
-    document.getElementById('langRU') && document.getElementById('langRU').click();
-    hRU.classList.add('active'); hEN.classList.remove('active');
-  });
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('siteNav').classList.toggle('open'); });
+let currentLang = 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) { var t=el.getAttribute('data-'+lang); if(t) el.innerHTML=t; });
+  document.getElementById('content-en').style.display = lang==='ru' ? 'none' : 'block';
+  document.getElementById('content-ru').style.display = lang==='ru' ? 'block' : 'none';
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
 })();
 </script>
 </body>
