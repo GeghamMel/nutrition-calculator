@@ -12,7 +12,11 @@
 <header class="site-header">
   <div class="inner">
     <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <div class="header-lang" id="headerLang">
+        <button class="active" id="headerLangEN">EN</button>
+        <button id="headerLangRU">RU</button>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav">
       <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
       <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
@@ -105,6 +109,24 @@ document.getElementById('submitBtn').addEventListener('click', function() {
   if (!name||!email||!subject||!message||!email.includes('@')) { err.style.display='block'; return; }
   err.style.display='none'; document.getElementById('formWrap').style.display='none'; document.getElementById('formSuccess').style.display='block';
 });
+
+// Sync header-lang buttons (always visible on mobile)
+(function() {
+  var hEN = document.getElementById('headerLangEN');
+  var hRU = document.getElementById('headerLangRU');
+  if (!hEN || !hRU) return;
+  // Set initial state
+  var sl = localStorage.getItem('lang');
+  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function() {
+    document.getElementById('langEN') && document.getElementById('langEN').click();
+    hEN.classList.add('active'); hRU.classList.remove('active');
+  });
+  hRU.addEventListener('click', function() {
+    document.getElementById('langRU') && document.getElementById('langRU').click();
+    hRU.classList.add('active'); hEN.classList.remove('active');
+  });
+})();
 </script>
 </body>
 </html>

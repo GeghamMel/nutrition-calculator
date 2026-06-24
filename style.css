@@ -568,8 +568,29 @@ a:hover { text-decoration: underline; }
   background: var(--ink); margin: 5px 0; border-radius: 2px;
   transition: all 0.3s;
 }
+
+/* Lang toggle always visible in header on mobile */
+.header-lang {
+  display: none;
+  gap: 6px;
+  align-items: center;
+}
+.header-lang button {
+  background: none; border: 1px solid var(--border);
+  padding: 3px 10px; border-radius: 20px;
+  font-size: 0.8rem; cursor: pointer; color: var(--muted);
+  font-family: var(--font-body);
+  transition: all 0.2s;
+}
+.header-lang button.active, .header-lang button:hover {
+  background: var(--green); color: white; border-color: var(--green);
+}
+
 @media (max-width: 680px) {
-  .hamburger { display: block; }
+  .hamburger { display: flex; align-items: center; }
+  .header-lang { display: flex; }
+  /* Hide lang toggle inside nav on mobile (it's now in header) */
+  .site-nav .lang-toggle { display: none; }
   .site-nav {
     display: none;
     position: fixed; inset: 60px 0 0 0;
@@ -579,7 +600,6 @@ a:hover { text-decoration: underline; }
   }
   .site-nav.open { display: flex; }
   .site-nav a { font-size: 1.1rem; }
-  .lang-toggle { margin-left: 0; margin-top: 8px; }
 }
 
 /* =========================================

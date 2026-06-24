@@ -20,7 +20,11 @@
 <header class="site-header">
   <div class="inner">
     <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <div class="header-lang" id="headerLang">
+        <button class="active" id="headerLangEN">EN</button>
+        <button id="headerLangRU">RU</button>
+      </div>
+      <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav">
       <a href="/" class="active" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
       <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
@@ -435,6 +439,24 @@ function calculate() {
   results.classList.add('visible');
   setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 }
+
+// Sync header-lang buttons (always visible on mobile)
+(function() {
+  var hEN = document.getElementById('headerLangEN');
+  var hRU = document.getElementById('headerLangRU');
+  if (!hEN || !hRU) return;
+  // Set initial state
+  var sl = localStorage.getItem('lang');
+  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function() {
+    document.getElementById('langEN') && document.getElementById('langEN').click();
+    hEN.classList.add('active'); hRU.classList.remove('active');
+  });
+  hRU.addEventListener('click', function() {
+    document.getElementById('langRU') && document.getElementById('langRU').click();
+    hRU.classList.add('active'); hEN.classList.remove('active');
+  });
+})();
 </script>
 </body>
 </html>
