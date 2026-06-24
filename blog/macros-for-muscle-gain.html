@@ -255,6 +255,7 @@ function applyLangBlog(lang) {
     if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru') ? metaEl.getAttribute('data-en') : metaEl.innerHTML;
     if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-en');
   }
+  document.querySelectorAll('[data-en]').forEach(function(el){var t=el.getAttribute('data-'+lang);if(t)el.innerHTML=t;});
   localStorage.setItem('lang', lang);
 }
 document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLangBlog('en'); });
