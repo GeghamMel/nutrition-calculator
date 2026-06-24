@@ -32,14 +32,15 @@
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Muscle Gain</div>
-    <h1>The Best Macro Split for Building Muscle</h1>
-    <div class="meta">9 min read · Muscle Gain · Updated June 2025</div>
+    <div class="breadcrumb" data-en='<a href="/">Home</a> › <a href="/blog/">Blog</a> › Muscle Gain' data-ru='<a href="/">Главная</a> › <a href="/blog/">Блог</a> › Набор массы'><a href="/">Home</a> › <a href="/blog/">Blog</a> › Muscle Gain</div>
+    <h1 data-en="The Best Macro Split for Building Muscle" data-ru="Лучшее соотношение БЖУ для набора мышц">The Best Macro Split for Building Muscle</h1>
+    <div class="meta" data-en="9 min read · Muscle Gain · Updated June 2025" data-ru="9 мин чтения · Набор массы · Обновлено июнь 2025">9 min read · Muscle Gain · Updated June 2025</div>
   </div>
 </div>
 
 <main>
   <article class="article-body">
+<div id="article-en">
 
     <p>Building muscle requires two things working together: a sufficient training stimulus and the right nutritional environment. Macronutrients — protein, carbohydrates, and fat — each play a distinct role in supporting muscle growth, recovery, and performance. Getting the balance right can meaningfully accelerate your results.</p>
 
@@ -121,7 +122,27 @@
       <strong>Get your personalised targets:</strong> Our <a href="/">calculator</a> will give you specific calorie and macro goals for muscle gain based on your age, weight, height, and activity level.
     </div>
 
-  </article>
+  
+</div>
+<div id="article-ru" style="display:none;">
+<p>Набор мышечной массы требует двух вещей одновременно: достаточного тренировочного стимула и правильной питательной среды. Макронутриенты — белки, углеводы и жиры — каждый играют свою роль в поддержке роста мышц, восстановления и производительности.</p>
+<h2>Начните с профицита калорий</h2>
+<p>Мышечная ткань не может формироваться без достаточного количества энергии. Исследования указывают на <strong>умеренный профицит 200–350 калорий выше нормы поддержания</strong> (~10–15% выше TDEE) как оптимальный диапазон для «чистого» набора мышц. Больший профицит не ускоряет рост мышц — он лишь увеличивает накопление жира.</p>
+<h2>Белок: самый важный макронутриент</h2>
+<p>Белок обеспечивает аминокислоты для строительства и восстановления мышечной ткани. Текущий научный консенсус: <strong>1,6–2,2 г белка на кг массы тела в день</strong> максимизирует синтез мышечного белка у большинства людей, занимающихся силовыми тренировками.</p>
+<h2>Углеводы: топливо для тренировок</h2>
+<p>Углеводы — основной источник топлива для высокоинтенсивных силовых тренировок. Для набора мышц углеводы должны составлять наибольшую долю калорий после покрытия потребности в белке — обычно <strong>40–55% от общей калорийности</strong>.</p>
+<h2>Жиры: необходимы, но не доминируют</h2>
+<p>Жиры критически важны для выработки гормонов, включая тестостерон. Здоровый минимум — около <strong>0,7–1,0 г жира на кг массы тела в день</strong>, что составляет примерно 20–30% от общей калорийности.</p>
+<h2>Практическое соотношение БЖУ для набора мышц</h2>
+<ul>
+<li><strong>Белок:</strong> 25–30% калорий</li>
+<li><strong>Углеводы:</strong> 45–55% калорий</li>
+<li><strong>Жиры:</strong> 20–25% калорий</li>
+</ul>
+<div class="callout"><strong>Получите персональные цифры:</strong> Наш <a href="/">калькулятор</a> рассчитает конкретные цели по калориям и БЖУ для набора мышц на основе ваших данных.</div>
+</div>
+</article>
 </main>
 
 <div class="container">
@@ -147,6 +168,46 @@
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
+
+<script>
+// Language switcher for blog articles
+var currentLang = 'en';
+function applyLangBlog(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var enContent = document.getElementById('article-en');
+  var ruContent = document.getElementById('article-ru');
+  var titleEl = document.querySelector('.page-hero h1');
+  var metaEl = document.querySelector('.page-hero .meta');
+  var breadEl = document.querySelector('.breadcrumb');
+  if (lang === 'ru') {
+    if (enContent) enContent.style.display = 'none';
+    if (ruContent) ruContent.style.display = 'block';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-ru');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru');
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-ru');
+  } else {
+    if (enContent) enContent.style.display = 'block';
+    if (ruContent) ruContent.style.display = 'none';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-en');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru') ? metaEl.getAttribute('data-en') : metaEl.innerHTML;
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-en');
+  }
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLangBlog('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (!hEN || !hRU) return;
+  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+</script>
+
 <script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});
 // Sync header-lang buttons (always visible on mobile)
 (function() {

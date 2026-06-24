@@ -39,14 +39,15 @@
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Weight Loss</div>
-    <h1>How Many Calories Do You Need to Lose Weight?</h1>
-    <div class="meta">8 min read · Weight Loss · Updated June 2025</div>
+    <div class="breadcrumb" data-en='<a href="/">Home</a> › <a href="/blog/">Blog</a> › Weight Loss' data-ru='<a href="/">Главная</a> › <a href="/blog/">Блог</a> › Похудение'><a href="/">Home</a> › <a href="/blog/">Blog</a> › Weight Loss</div>
+    <h1 data-en="How Many Calories Do You Need to Lose Weight?" data-ru="Сколько калорий нужно для похудения?">How Many Calories Do You Need to Lose Weight?</h1>
+    <div class="meta" data-en="8 min read · Weight Loss · Updated June 2025" data-ru="8 мин чтения · Похудение · Обновлено июнь 2025">8 min read · Weight Loss · Updated June 2025</div>
   </div>
 </div>
 
 <main>
   <article class="article-body">
+<div id="article-en">
 
     <p>Weight loss comes down to one fundamental principle: consuming fewer calories than your body burns. This is called a <strong>calorie deficit</strong>, and it is the mechanism behind every effective fat loss approach — regardless of whether you follow keto, intermittent fasting, or a balanced diet.</p>
 
@@ -138,7 +139,36 @@
       <strong>Ready to find your numbers?</strong> Use our free <a href="/">Calories &amp; Macros Calculator</a> to get your personalised daily calorie and macro targets based on your body stats and goal.
     </div>
 
-  </article>
+  
+</div>
+<div id="article-ru" style="display:none;">
+<p>Похудение основано на одном фундаментальном принципе: потреблять меньше калорий, чем сжигает ваш организм. Это называется <strong>дефицитом калорий</strong> — механизм, лежащий в основе любого эффективного подхода к снижению веса, будь то кето, интервальное голодание или сбалансированная диета.</p>
+<p>Но понимание того, <em>как</em> создать дефицит и насколько он должен быть большим, — это разница между устойчивым прогрессом и разочарованием. Это руководство расскажет вам всё необходимое.</p>
+<h2>Что такое дефицит калорий?</h2>
+<p>Дефицит калорий возникает, когда потребление энергии (калории из еды и напитков) ниже вашего суточного расхода энергии (TDEE) — общего количества калорий, которое ваш организм сжигает за день через базовый обмен веществ, пищеварение и физическую активность.</p>
+<p>При постоянном поддержании дефицита организм использует жировые запасы как альтернативный источник топлива. Дефицит около 3 500 калорий в целом соответствует потере около 0,45 кг жира.</p>
+<div class="callout"><strong>Ключевой момент:</strong> Без дефицита калорий похудеть невозможно, независимо от того, какие продукты вы едите. Качество питания важно для здоровья и насыщения, но общее количество калорий определяет потерю веса.</div>
+<h2>Как найти свой TDEE</h2>
+<p>Прежде чем создавать дефицит, нужно знать калории поддержания — количество калорий, необходимое для сохранения текущего веса. Это ваш TDEE. Используйте наш <a href="/">калькулятор калорий и БЖУ</a> для расчёта.</p>
+<h2>Каким должен быть дефицит?</h2>
+<h3>Небольшой дефицит (200–300 ккал/день)</h3>
+<p>Медленная, но очень устойчивая потеря жира — около 0,2–0,3 кг в неделю. Подходит людям, близким к целевому весу, или тем, кто с трудом придерживается большего дефицита.</p>
+<h3>Умеренный дефицит (400–500 ккал/день)</h3>
+<p>Наиболее рекомендуемый подход, дающий около 0,4–0,5 кг потери жира в неделю. Именно этот дефицит применяет наш калькулятор для цели «Похудение».</p>
+<h3>Большой дефицит (700+ ккал/день)</h3>
+<p>Быстрая начальная потеря веса, но со значительными издержками: потеря мышц, сильный голод, дефицит питательных веществ. Как правило, не рекомендуется без наблюдения специалиста.</p>
+<h2>Роль белка при дефиците калорий</h2>
+<p>При дефиците питания организм теряет и жир, и часть мышечной массы. Достаточное потребление белка — главный фактор минимизации потери мышц. Рекомендация: <strong>1,6–2,4 г белка на кг массы тела в день</strong>.</p>
+<h2>Частые ошибки, замедляющие похудение</h2>
+<ul>
+<li>Недооценка размеров порций</li>
+<li>Слишком агрессивный дефицит</li>
+<li>Забытые жидкие калории (сок, кофе с молоком, алкоголь)</li>
+<li>Ожидание линейного прогресса — вес колеблется ежедневно на 1–3 кг</li>
+</ul>
+<div class="callout"><strong>Готовы узнать свои цифры?</strong> Используйте наш <a href="/">Калькулятор калорий и БЖУ</a>, чтобы получить персональную суточную норму калорий и макронутриентов.</div>
+</div>
+</article>
 </main>
 
 <div class="container">
@@ -170,6 +200,46 @@
     <span>Educational estimates only.</span>
   </div>
 </footer>
+
+<script>
+// Language switcher for blog articles
+var currentLang = 'en';
+function applyLangBlog(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var enContent = document.getElementById('article-en');
+  var ruContent = document.getElementById('article-ru');
+  var titleEl = document.querySelector('.page-hero h1');
+  var metaEl = document.querySelector('.page-hero .meta');
+  var breadEl = document.querySelector('.breadcrumb');
+  if (lang === 'ru') {
+    if (enContent) enContent.style.display = 'none';
+    if (ruContent) ruContent.style.display = 'block';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-ru');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru');
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-ru');
+  } else {
+    if (enContent) enContent.style.display = 'block';
+    if (ruContent) ruContent.style.display = 'none';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-en');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru') ? metaEl.getAttribute('data-en') : metaEl.innerHTML;
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-en');
+  }
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLangBlog('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (!hEN || !hRU) return;
+  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+</script>
+
 <script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});
 // Sync header-lang buttons (always visible on mobile)
 (function() {

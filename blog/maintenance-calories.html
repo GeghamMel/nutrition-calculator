@@ -32,14 +32,15 @@
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Maintenance</div>
-    <h1>Maintenance Calories: What They Are and Why They Matter</h1>
-    <div class="meta">7 min read · Nutrition Fundamentals · Updated June 2025</div>
+    <div class="breadcrumb" data-en='<a href="/">Home</a> › <a href="/blog/">Blog</a> › Maintenance' data-ru='<a href="/">Главная</a> › <a href="/blog/">Блог</a> › Поддержание'><a href="/">Home</a> › <a href="/blog/">Blog</a> › Maintenance</div>
+    <h1 data-en="Maintenance Calories: What They Are and Why They Matter" data-ru="Калории поддержания: что это и зачем знать">Maintenance Calories: What They Are and Why They Matter</h1>
+    <div class="meta" data-en="7 min read · Nutrition Fundamentals · Updated June 2025" data-ru="7 мин чтения · Основы питания · Обновлено июнь 2025">7 min read · Nutrition Fundamentals · Updated June 2025</div>
   </div>
 </div>
 
 <main>
   <article class="article-body">
+<div id="article-en">
 
     <p>Before you can successfully lose fat, build muscle, or optimise your nutrition for health and performance, you need to know one number: your maintenance calories. Everything else in nutrition planning is derived from this single figure.</p>
 
@@ -122,7 +123,28 @@
       <strong>Bottom line:</strong> Knowing your maintenance calories turns nutrition from guesswork into a system. It takes 2–3 weeks to verify accurately, but once you have it, you have the foundation for every future nutrition phase — whether cutting, bulking, or maintaining.
     </div>
 
-  </article>
+  
+</div>
+<div id="article-ru" style="display:none;">
+<p>Прежде чем успешно худеть, набирать мышцы или оптимизировать питание для здоровья, вам нужно знать одну цифру: ваши калории поддержания. Всё остальное в планировании питания вытекает из этой единственной величины.</p>
+<h2>Что такое калории поддержания?</h2>
+<p>Калории поддержания — также называемые суточным расходом энергии (TDEE) — это количество калорий, которое нужно потреблять каждый день, чтобы вес оставался стабильным. При таком потреблении «приход» равен «расходу».</p>
+<h2>Из чего складывается TDEE?</h2>
+<h3>Базальный обмен веществ (BMR)</h3>
+<p>Самый большой компонент — обычно 60–75% от общего расхода энергии. BMR — калории, которые организм использует в состоянии полного покоя для поддержания жизненно важных функций: дыхания, кровообращения, восстановления клеток.</p>
+<h3>Термический эффект пищи (TEF)</h3>
+<p>Организм расходует энергию на переваривание, всасывание и метаболизм пищи — около 10% от общего расхода. Белок имеет самый высокий термический эффект (20–30% своих калорий).</p>
+<h3>Нетренировочная активность (NEAT)</h3>
+<p>Калории, сжигаемые при движении, не являющемся тренировкой: ходьба, уборка, набор текста. NEAT сильно варьируется между людьми — разница может достигать 2 000 ккал/день.</p>
+<h2>Как использовать калории поддержания</h2>
+<ul>
+<li><strong>Похудение:</strong> минус 15–20% от TDEE</li>
+<li><strong>Набор мышц:</strong> плюс 10–15% к TDEE</li>
+<li><strong>Рекомпозиция тела:</strong> питание на уровне TDEE с акцентом на белок и силовые тренировки</li>
+</ul>
+<div class="callout"><strong>Итог:</strong> Знание калорий поддержания превращает питание из угадывания в систему. Используйте наш <a href="/">калькулятор</a>, чтобы найти свой TDEE и получить цель по калориям для вашей задачи.</div>
+</div>
+</article>
 </main>
 
 <div class="container">
@@ -148,6 +170,46 @@
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
+
+<script>
+// Language switcher for blog articles
+var currentLang = 'en';
+function applyLangBlog(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var enContent = document.getElementById('article-en');
+  var ruContent = document.getElementById('article-ru');
+  var titleEl = document.querySelector('.page-hero h1');
+  var metaEl = document.querySelector('.page-hero .meta');
+  var breadEl = document.querySelector('.breadcrumb');
+  if (lang === 'ru') {
+    if (enContent) enContent.style.display = 'none';
+    if (ruContent) ruContent.style.display = 'block';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-ru');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru');
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-ru');
+  } else {
+    if (enContent) enContent.style.display = 'block';
+    if (ruContent) ruContent.style.display = 'none';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-en');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru') ? metaEl.getAttribute('data-en') : metaEl.innerHTML;
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-en');
+  }
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLangBlog('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (!hEN || !hRU) return;
+  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+</script>
+
 <script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});
 // Sync header-lang buttons (always visible on mobile)
 (function() {

@@ -32,14 +32,15 @@
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Protein</div>
-    <h1>How Much Protein Do You Actually Need?</h1>
-    <div class="meta">9 min read · Protein · Updated June 2025</div>
+    <div class="breadcrumb" data-en='<a href="/">Home</a> › <a href="/blog/">Blog</a> › Protein' data-ru='<a href="/">Главная</a> › <a href="/blog/">Блог</a> › Белок'><a href="/">Home</a> › <a href="/blog/">Blog</a> › Protein</div>
+    <h1 data-en="How Much Protein Do You Actually Need?" data-ru="Сколько белка вам на самом деле нужно?">How Much Protein Do You Actually Need?</h1>
+    <div class="meta" data-en="9 min read · Protein · Updated June 2025" data-ru="9 мин чтения · Белок · Обновлено июнь 2025">9 min read · Protein · Updated June 2025</div>
   </div>
 </div>
 
 <main>
   <article class="article-body">
+<div id="article-en">
 
     <p>Protein is the most discussed macronutrient in fitness, and for good reason: it plays a central role in building and maintaining muscle, managing hunger, and supporting metabolic health. But the question of how much protein you actually need is surrounded by contradictory advice, from government guidelines that seem too low to gym culture maximums that seem impossibly high.</p>
 
@@ -113,7 +114,28 @@
 
     <p>Use our <a href="/">calculator</a> to get a personalised daily protein target alongside your full calorie and macro breakdown.</p>
 
-  </article>
+  
+</div>
+<div id="article-ru" style="display:none;">
+<p>Белок — самый обсуждаемый макронутриент в фитнесе, и не без причины: он играет ключевую роль в наращивании и сохранении мышц, контроле голода и метаболическом здоровье. Но вопрос о том, сколько белка вам на самом деле нужно, окружён противоречивыми советами.</p>
+<h2>Официальная норма vs. что говорит наука</h2>
+<p>Официально рекомендуемая суточная норма белка в большинстве стран — <strong>0,8 г на кг массы тела</strong>. Но эта цифра описывает минимум для предотвращения дефицита у малоподвижных людей, а не оптимальное количество для здоровья и производительности.</p>
+<p>Крупный метаанализ 2018 года в British Journal of Sports Medicine (49 исследований) показал, что рост мышц максимизируется при примерно <strong>1,62 г белка на кг массы тела в день</strong>, после чего отдача снижается.</p>
+<div class="callout"><strong>Научно обоснованный диапазон:</strong> Для большинства активных людей — независимо от цели — <strong>1,6–2,2 г белка на кг массы тела</strong> охватывает практически все сценарии.</div>
+<h2>Потребность в белке по целям</h2>
+<h3>При похудении</h3>
+<p>При дефиците калорий рекомендуется <strong>1,8–2,4 г/кг</strong>. Высокое потребление белка помогает сохранить мышечную массу и управлять голодом.</p>
+<h3>При наборе мышц</h3>
+<p>При профиците калорий достаточно <strong>1,6–2,0 г/кг</strong> для максимизации синтеза мышечного белка.</p>
+<h3>Для поддержания и общего здоровья</h3>
+<p>Для умеренно активных людей достаточно <strong>1,2–1,6 г/кг</strong> для сохранения мышечной массы.</p>
+<h2>Имеет ли значение источник белка?</h2>
+<p>Животные белки (мясо, рыба, яйца, молочные продукты) — «полноценные» белки, содержащие все незаменимые аминокислоты. Растительные белки нужно комбинировать в течение дня. Хорошие источники: курица (31 г/100 г), тунец (29 г/100 г), яйца (13 г/100 г), чечевица (9 г/100 г), тофу (8 г/100 г).</p>
+<h2>Вредно ли есть много белка?</h2>
+<p>Для здоровых взрослых с нормальной функцией почек высокое потребление белка (до 3 г/кг и выше) не вызывает повреждения почек по данным клинических исследований. Миф о вреде белка происходит из исследований людей с уже существующими заболеваниями почек.</p>
+<div class="callout"><strong>Получите персональную норму белка:</strong> Используйте наш <a href="/">калькулятор</a>, чтобы получить суточную цель по белку вместе с полным расчётом калорий и БЖУ.</div>
+</div>
+</article>
 </main>
 
 <div class="container">
@@ -139,6 +161,46 @@
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
+
+<script>
+// Language switcher for blog articles
+var currentLang = 'en';
+function applyLangBlog(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var enContent = document.getElementById('article-en');
+  var ruContent = document.getElementById('article-ru');
+  var titleEl = document.querySelector('.page-hero h1');
+  var metaEl = document.querySelector('.page-hero .meta');
+  var breadEl = document.querySelector('.breadcrumb');
+  if (lang === 'ru') {
+    if (enContent) enContent.style.display = 'none';
+    if (ruContent) ruContent.style.display = 'block';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-ru');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru');
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-ru');
+  } else {
+    if (enContent) enContent.style.display = 'block';
+    if (ruContent) ruContent.style.display = 'none';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-en');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru') ? metaEl.getAttribute('data-en') : metaEl.innerHTML;
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-en');
+  }
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLangBlog('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (!hEN || !hRU) return;
+  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+</script>
+
 <script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});
 // Sync header-lang buttons (always visible on mobile)
 (function() {

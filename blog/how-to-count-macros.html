@@ -32,14 +32,15 @@
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a> › <a href="/blog/">Blog</a> › Beginner Guide</div>
-    <h1>How to Count Macros: A Complete Beginner's Guide</h1>
-    <div class="meta">10 min read · Beginner Guide · Updated June 2025</div>
+    <div class="breadcrumb" data-en='<a href="/">Home</a> › <a href="/blog/">Blog</a> › Beginner Guide' data-ru='<a href="/">Главная</a> › <a href="/blog/">Блог</a> › Для начинающих'><a href="/">Home</a> › <a href="/blog/">Blog</a> › Beginner Guide</div>
+    <h1 data-en="How to Count Macros: A Complete Beginner's Guide" data-ru="Как считать БЖУ: полное руководство для начинающих">How to Count Macros: A Complete Beginner's Guide</h1>
+    <div class="meta" data-en="10 min read · Beginner Guide · Updated June 2025" data-ru="10 мин чтения · Для начинающих · Обновлено июнь 2025">10 min read · Beginner Guide · Updated June 2025</div>
   </div>
 </div>
 
 <main>
   <article class="article-body">
+<div id="article-en">
 
     <p>Counting macros — tracking your daily intake of protein, carbohydrates, and fat — is one of the most effective tools for achieving specific body composition goals. Unlike simple calorie counting, macro tracking gives you both the total energy target and the nutritional quality breakdown, making it a more complete approach to nutrition management.</p>
 
@@ -134,7 +135,29 @@
       <strong>Your starting point:</strong> Use the <a href="/">Calories &amp; Macros Calculator</a> to get your daily calorie and macro targets in under a minute. Then open your tracking app and enter those numbers as your goal.
     </div>
 
-  </article>
+  
+</div>
+<div id="article-ru" style="display:none;">
+<p>Подсчёт БЖУ — отслеживание суточного потребления белков, углеводов и жиров — один из самых эффективных инструментов для достижения конкретных целей в составе тела. В отличие от простого подсчёта калорий, трекинг макросов даёт и общую цель по энергии, и качественный состав питания.</p>
+<h2>Что такое макронутриенты?</h2>
+<ul>
+<li><strong>Белок</strong> — 4 ккал на грамм. Необходим для роста и восстановления мышц, иммунитета и насыщения.</li>
+<li><strong>Углеводы</strong> — 4 ккал на грамм. Основной источник энергии, особенно при высокоинтенсивных тренировках.</li>
+<li><strong>Жиры</strong> — 9 ккал на грамм. Критически важны для выработки гормонов и усвоения витаминов.</li>
+</ul>
+<h2>Шаг 1: Рассчитайте свои цели по макросам</h2>
+<p>Используйте наш <a href="/">Калькулятор калорий и БЖУ</a>, чтобы получить персональные суточные цели на основе ваших данных и задачи.</p>
+<h2>Шаг 2: Выберите приложение для трекинга</h2>
+<p>Самые популярные: <strong>Cronometer</strong> (точность, микронутриенты) и <strong>MyFitnessPal</strong> (большая база продуктов, сканер штрихкодов). Оба бесплатны в базовой версии.</p>
+<h2>Шаг 3: Купите кухонные весы</h2>
+<p>Это самый важный инструмент для точного трекинга. Исследования показывают, что люди занижают потребление калорий на 20–40% при оценке «на глаз». Взвешивайте продукты в сыром виде.</p>
+<h2>Шаг 4: Расставьте приоритеты</h2>
+<p>Сначала планируйте блюда вокруг белка — его сложнее всего набрать, и он важнее всего для состава тела. Затем заполните оставшиеся калории углеводами и жирами.</p>
+<h2>Как долго нужно считать БЖУ?</h2>
+<p>Большинству людей достаточно 6–12 недель строгого трекинга. За это время вы развиваете интуицию о составе блюд и можете переходить к более гибкому подходу.</p>
+<div class="callout"><strong>Начните сейчас:</strong> Используйте <a href="/">Калькулятор калорий и БЖУ</a>, чтобы получить цели, затем введите их в Cronometer или MyFitnessPal и начните трекинг сегодня.</div>
+</div>
+</article>
 </main>
 
 <div class="container">
@@ -160,6 +183,46 @@
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
+
+<script>
+// Language switcher for blog articles
+var currentLang = 'en';
+function applyLangBlog(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  var enContent = document.getElementById('article-en');
+  var ruContent = document.getElementById('article-ru');
+  var titleEl = document.querySelector('.page-hero h1');
+  var metaEl = document.querySelector('.page-hero .meta');
+  var breadEl = document.querySelector('.breadcrumb');
+  if (lang === 'ru') {
+    if (enContent) enContent.style.display = 'none';
+    if (ruContent) ruContent.style.display = 'block';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-ru');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru');
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-ru');
+  } else {
+    if (enContent) enContent.style.display = 'block';
+    if (ruContent) ruContent.style.display = 'none';
+    if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-en');
+    if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru') ? metaEl.getAttribute('data-en') : metaEl.innerHTML;
+    if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-en');
+  }
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLangBlog('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (!hEN || !hRU) return;
+  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+</script>
+
 <script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});
 // Sync header-lang buttons (always visible on mobile)
 (function() {
