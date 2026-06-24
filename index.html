@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calories & Macros Calculator — Free TDEE & Macro Planner</title>
+  <meta name="description" content="Calculate your daily calories and macros (protein, carbs, fat) based on your body stats and goal. Free TDEE calculator for weight loss, muscle gain, and maintenance." />
+  <meta name="keywords" content="calorie calculator, macro calculator, TDEE calculator, BMR, protein intake, weight loss calories, muscle gain macros" />
+  <link rel="canonical" href="https://calories-macros.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Calories & Macros Calculator" />
+  <meta property="og:description" content="Free calorie and macro calculator. Get your personalized daily nutrition targets in seconds." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calories-macros.com/" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Calories & Macros Calculator",
+    "url": "https://calories-macros.com/",
+    "description": "Free calculator for daily calorie and macronutrient needs based on body stats and fitness goal.",
+    "applicationCategory": "HealthApplication",
+    "operatingSystem": "All"
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo">
+      <span class="logo-icon">🥦</span> Calories &amp; Macros
+    </a>
+    <button class="hamburger" aria-label="Open menu" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" class="active">Calculator</a>
+      <a href="blog/">Blog</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <div class="lang-toggle">
+        <button class="active" id="langEN">EN</button>
+        <button id="langRU">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Free Nutrition Calculator</div>
+    <h1>Your daily <em>calories &amp; macros</em>, calculated in seconds</h1>
+    <p>Enter your stats and goal — get a personalized breakdown of calories, protein, carbs, and fat.</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <strong>3</strong>
+        <span>Goals supported</span>
+      </div>
+      <div class="hero-stat">
+        <strong>5</strong>
+        <span>Activity levels</span>
+      </div>
+      <div class="hero-stat">
+        <strong>100%</strong>
+        <span>Free, no signup</span>
+      </div>
+    </div>
+    <a href="#calculator" class="btn-scroll">Calculate My Macros ↓</a>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="section-label">Step-by-step calculator</div>
+    <h2 class="section-title">Enter your details</h2>
+    <p class="section-sub">We use the Mifflin-St Jeor formula — the most accurate method for estimating BMR.</p>
+
+    <div class="calc-card">
+      <!-- Gender -->
+      <div class="field" style="margin-bottom:20px;">
+        <label>Sex</label>
+        <div class="gender-toggle">
+          <button class="gender-btn active" data-gender="male" id="genderMale">♂ Male</button>
+          <button class="gender-btn" data-gender="female" id="genderFemale">♀ Female</button>
+        </div>
+      </div>
+
+      <div class="calc-grid">
+        <div class="field">
+          <label for="age">Age</label>
+          <input type="number" id="age" min="14" max="99" placeholder="e.g. 28" />
+        </div>
+        <div class="field">
+          <label for="weight">Weight (kg)</label>
+          <input type="number" id="weight" min="30" max="300" placeholder="e.g. 75" />
+        </div>
+        <div class="field">
+          <label for="height">Height (cm)</label>
+          <input type="number" id="height" min="100" max="250" placeholder="e.g. 175" />
+        </div>
+        <div class="field">
+          <label for="activity">Activity level</label>
+          <select id="activity">
+            <option value="1.2">Sedentary (desk job, no exercise)</option>
+            <option value="1.375">Light (1–3 workouts/week)</option>
+            <option value="1.55" selected>Moderate (3–5 workouts/week)</option>
+            <option value="1.725">Active (6–7 workouts/week)</option>
+            <option value="1.9">Very active (physical job + training)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field" style="margin-bottom:24px;">
+        <label for="goal">Your goal</label>
+        <select id="goal">
+          <option value="maintain">Maintain weight</option>
+          <option value="loss">Lose fat (moderate deficit)</option>
+          <option value="gain">Build muscle (moderate surplus)</option>
+        </select>
+      </div>
+
+      <button class="btn-calc" id="calcBtn">Calculate →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please fill in all fields correctly.</p>
+
+      <!-- Results -->
+      <div class="calc-results" id="calcResults">
+        <p class="results-headline" id="resultsHeadline">Your daily nutrition target:</p>
+
+        <div class="calories-display">
+          <div class="kcal-number" id="kcalDisplay">—</div>
+          <div class="kcal-label">calories per day</div>
+        </div>
+
+        <div class="macros-grid">
+          <div class="macro-item">
+            <div class="macro-value" id="proteinG">—</div>
+            <div class="macro-name">Protein</div>
+            <div class="macro-pct" id="proteinPct">—%</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-value" id="carbsG">—</div>
+            <div class="macro-name">Carbs</div>
+            <div class="macro-pct" id="carbsPct">—%</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-value" id="fatG">—</div>
+            <div class="macro-name">Fat</div>
+            <div class="macro-pct" id="fatPct">—%</div>
+          </div>
+        </div>
+
+        <div class="macro-bars">
+          <div class="macro-bar-row">
+            <span>Protein</span>
+            <div class="macro-bar-track"><div class="macro-bar-fill bar-protein" id="barProtein" style="width:0%"></div></div>
+            <span id="barProteinPct">0%</span>
+          </div>
+          <div class="macro-bar-row">
+            <span>Carbs</span>
+            <div class="macro-bar-track"><div class="macro-bar-fill bar-carbs" id="barCarbs" style="width:0%"></div></div>
+            <span id="barCarbsPct">0%</span>
+          </div>
+          <div class="macro-bar-row">
+            <span>Fat</span>
+            <div class="macro-bar-track"><div class="macro-bar-fill bar-fat" id="barFat" style="width:0%"></div></div>
+            <span id="barFatPct">0%</span>
+          </div>
+        </div>
+
+        <div class="result-note" id="resultNote">
+          These are estimates based on population averages. Individual needs vary — treat this as a starting point and adjust after 2–3 weeks based on results.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AD SLOT (leaderboard) -->
+<div class="container">
+  <div class="ad-slot ad-slot--leaderboard" id="ad-top">
+    <!-- Google AdSense will go here -->
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-label">Methodology</div>
+    <h2 class="section-title">How the calculator works</h2>
+    <p class="section-sub">We follow the same formulas used by registered dietitians and sports nutritionists.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Calculate BMR</h3>
+        <p>Basal Metabolic Rate — the calories your body needs at complete rest — is calculated using the Mifflin-St Jeor equation.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Apply activity multiplier</h3>
+        <p>BMR is multiplied by your activity factor to get TDEE — Total Daily Energy Expenditure, or your maintenance calories.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Adjust for your goal</h3>
+        <p>We apply a 15–20% deficit for fat loss or a 10–15% surplus for muscle gain, based on evidence-based guidelines.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Split into macros</h3>
+        <p>Calories are split into protein, carbohydrates, and fat using goal-specific ratios to support your outcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label">Learn more</div>
+    <h2 class="section-title">Nutrition guides</h2>
+    <p class="section-sub">Practical articles to help you understand and apply your results.</p>
+
+    <div class="blog-grid">
+      <a href="blog/calories-for-weight-loss.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Weight Loss</span>
+          <h3>How Many Calories Do You Need to Lose Weight?</h3>
+          <p>Understand calorie deficits, how large they should be, and the mistakes that derail progress.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+      <a href="blog/macros-for-muscle-gain.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Muscle Gain</span>
+          <h3>The Best Macro Split for Building Muscle</h3>
+          <p>How much protein, carbs, and fat you actually need when training for hypertrophy.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+      <a href="blog/maintenance-calories.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Maintenance</span>
+          <h3>Maintenance Calories: What They Are and Why They Matter</h3>
+          <p>Your TDEE is the foundation of all nutrition planning. Here's how to find and use it.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+      <a href="blog/how-to-count-macros.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Beginner Guide</span>
+          <h3>How to Count Macros: A Complete Beginner's Guide</h3>
+          <p>Step-by-step instructions for tracking your macronutrients without obsessing over every gram.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+      <a href="blog/protein-intake-guide.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Protein</span>
+          <h3>How Much Protein Do You Actually Need?</h3>
+          <p>What the research says about optimal protein intake for fat loss, muscle building, and general health.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label">Common questions</div>
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list" id="faqList">
+
+      <div class="faq-item">
+        <button class="faq-question">What is the difference between BMR and TDEE?</button>
+        <div class="faq-answer">BMR (Basal Metabolic Rate) is the number of calories your body burns at rest to maintain basic functions like breathing and circulation. TDEE (Total Daily Energy Expenditure) includes your BMR plus the calories you burn through daily activity and exercise. TDEE is the number you should use for nutrition planning.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How accurate is this calculator?</button>
+        <div class="faq-answer">The Mifflin-St Jeor formula used here is considered one of the most accurate BMR equations available, with an average error of around 10% for healthy adults. However, individual metabolism can vary due to muscle mass, hormones, and genetics. Use the result as a starting point and adjust by 100–150 kcal based on your real-world results after 2–3 weeks.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How much protein do I need per day?</button>
+        <div class="faq-answer">The general evidence-based recommendation for active individuals is 1.6–2.2 grams of protein per kilogram of body weight. The calculator sets protein to approximately 2g/kg for muscle gain and fat loss goals, and slightly lower for maintenance. You can read our full protein guide for more detail.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Should I eat at my maintenance calories first before cutting?</button>
+        <div class="faq-answer">If you have never tracked calories before, it can be helpful to eat at maintenance for 1–2 weeks first. This gives you a real-world baseline, helps you understand your eating habits, and makes the transition to a deficit much smoother and more sustainable.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Are these calculations suitable for people with health conditions?</button>
+        <div class="faq-answer">This calculator is designed for generally healthy adults. If you have a medical condition such as diabetes, kidney disease, thyroid disorders, or are pregnant, please consult a registered dietitian or your healthcare provider before making significant dietary changes. The information on this site is educational only and does not constitute medical advice.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+      <p>A free tool to estimate your daily calorie and macronutrient needs. Not a substitute for professional nutrition advice.</p>
+    </div>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="blog/">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> calories-macros.com</span>
+    <span>Educational estimates only — not medical advice.</span>
+  </div>
+</footer>
+
+<script>
+// --- Year ---
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// --- Hamburger ---
+document.getElementById('hamburger').addEventListener('click', function() {
+  document.getElementById('siteNav').classList.toggle('open');
+});
+
+// --- Gender toggle ---
+let gender = 'male';
+document.getElementById('genderMale').addEventListener('click', function() {
+  gender = 'male';
+  this.classList.add('active');
+  document.getElementById('genderFemale').classList.remove('active');
+});
+document.getElementById('genderFemale').addEventListener('click', function() {
+  gender = 'female';
+  this.classList.add('active');
+  document.getElementById('genderMale').classList.remove('active');
+});
+
+// --- FAQ accordion ---
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// --- Lang toggle ---
+document.getElementById('langEN').addEventListener('click', function() {
+  this.classList.add('active'); document.getElementById('langRU').classList.remove('active');
+});
+document.getElementById('langRU').addEventListener('click', function() {
+  this.classList.add('active'); document.getElementById('langEN').classList.remove('active');
+  alert('Russian version coming soon!');
+});
+
+// --- Calculator ---
+document.getElementById('calcBtn').addEventListener('click', calculate);
+
+function calculate() {
+  const age    = parseFloat(document.getElementById('age').value);
+  const weight = parseFloat(document.getElementById('weight').value);
+  const height = parseFloat(document.getElementById('height').value);
+  const activity = parseFloat(document.getElementById('activity').value);
+  const goal   = document.getElementById('goal').value;
+  const err    = document.getElementById('calcError');
+
+  if (!age || !weight || !height || age < 14 || age > 99 || weight < 30 || height < 100) {
+    err.style.display = 'block'; return;
+  }
+  err.style.display = 'none';
+
+  // Mifflin-St Jeor
+  let bmr;
+  if (gender === 'male') {
+    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+  } else {
+    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+  }
+  let tdee = bmr * activity;
+
+  let calories, proteinRatio, carbRatio, fatRatio, noteText;
+
+  if (goal === 'loss') {
+    calories = Math.round(tdee * 0.82);
+    proteinRatio = 0.35; carbRatio = 0.40; fatRatio = 0.25;
+    noteText = 'This is a moderate calorie deficit (~18% below maintenance). Aim for at least 0.8g of protein per pound of body weight to preserve muscle while losing fat.';
+  } else if (goal === 'gain') {
+    calories = Math.round(tdee * 1.12);
+    proteinRatio = 0.30; carbRatio = 0.45; fatRatio = 0.25;
+    noteText = 'This is a lean bulk with a ~12% calorie surplus. A controlled surplus minimises unnecessary fat gain while supporting muscle growth.';
+  } else {
+    calories = Math.round(tdee);
+    proteinRatio = 0.25; carbRatio = 0.50; fatRatio = 0.25;
+    noteText = 'Maintenance calories — eating at this level should keep your weight stable. Great for body recomposition or as a long-term baseline.';
+  }
+
+  const proteinCals = calories * proteinRatio;
+  const carbCals    = calories * carbRatio;
+  const fatCals     = calories * fatRatio;
+
+  const proteinG = Math.round(proteinCals / 4);
+  const carbsG   = Math.round(carbCals / 4);
+  const fatG     = Math.round(fatCals / 9);
+
+  const pPct = Math.round(proteinRatio * 100);
+  const cPct = Math.round(carbRatio * 100);
+  const fPct = Math.round(fatRatio * 100);
+
+  document.getElementById('kcalDisplay').textContent  = calories.toLocaleString();
+  document.getElementById('proteinG').textContent     = proteinG + 'g';
+  document.getElementById('carbsG').textContent       = carbsG + 'g';
+  document.getElementById('fatG').textContent         = fatG + 'g';
+  document.getElementById('proteinPct').textContent   = pPct + '%';
+  document.getElementById('carbsPct').textContent     = cPct + '%';
+  document.getElementById('fatPct').textContent       = fPct + '%';
+
+  document.getElementById('barProtein').style.width   = pPct + '%';
+  document.getElementById('barCarbs').style.width     = cPct + '%';
+  document.getElementById('barFat').style.width       = fPct + '%';
+  document.getElementById('barProteinPct').textContent = pPct + '%';
+  document.getElementById('barCarbsPct').textContent  = cPct + '%';
+  document.getElementById('barFatPct').textContent    = fPct + '%';
+
+  document.getElementById('resultNote').textContent   = noteText;
+  document.getElementById('resultsHeadline').textContent = 'Your daily nutrition target (' + (goal === 'loss' ? 'fat loss' : goal === 'gain' ? 'muscle gain' : 'maintenance') + '):';
+
+  const results = document.getElementById('calcResults');
+  results.classList.add('visible');
+  setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+}
+</script>
+
+</body>
+</html>
