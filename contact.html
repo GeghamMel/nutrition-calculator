@@ -4,109 +4,106 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Calories & Macros Calculator</title>
-  <meta name="description" content="Contact the Calories & Macros team. Report a bug, suggest a feature, or ask a question about the calculator." />
+  <meta name="description" content="Contact the Calories & Macros team. Report a bug, suggest a feature, or ask a question." />
   <link rel="canonical" href="https://calories-macros.com/contact.html" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
 <header class="site-header">
   <div class="inner">
     <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav">
-      <a href="/">Calculator</a>
-      <a href="blog/">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" class="active" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle">
+        <button class="active" id="langEN">EN</button>
+        <button id="langRU">RU</button>
+      </div>
     </nav>
   </div>
 </header>
-
 <main>
   <div class="static-body">
-    <a href="/" class="back-link">← Back to Calculator</a>
-    <h1>Contact Us</h1>
-    <p class="intro">Have a question, spotted a bug, or want to suggest an improvement? We'd love to hear from you.</p>
-
+    <a href="/" class="back-link" data-en="← Back to Calculator" data-ru="← На калькулятор">← Back to Calculator</a>
+    <h1 data-en="Contact Us" data-ru="Свяжитесь с нами">Contact Us</h1>
+    <p class="intro" data-en="Have a question, spotted a bug, or want to suggest an improvement? We'd love to hear from you." data-ru="Есть вопрос, нашли ошибку или хотите предложить улучшение? Напишите нам.">Have a question, spotted a bug, or want to suggest an improvement? We'd love to hear from you.</p>
     <div id="formWrap">
       <form class="contact-form" id="contactForm" novalidate>
         <div class="field">
-          <label for="cname">Your name</label>
-          <input type="text" id="cname" placeholder="Jane Smith" autocomplete="name" />
+          <label for="cname" data-en="Your name" data-ru="Ваше имя">Your name</label>
+          <input type="text" id="cname" placeholder="Jane Smith" />
         </div>
         <div class="field">
-          <label for="cemail">Email address</label>
-          <input type="email" id="cemail" placeholder="jane@example.com" autocomplete="email" />
+          <label for="cemail" data-en="Email address" data-ru="Электронная почта">Email address</label>
+          <input type="email" id="cemail" placeholder="jane@example.com" />
         </div>
         <div class="field">
-          <label for="csubject">Subject</label>
+          <label for="csubject" data-en="Subject" data-ru="Тема">Subject</label>
           <select id="csubject">
-            <option value="">Select a topic…</option>
-            <option value="bug">Bug report</option>
-            <option value="suggestion">Feature suggestion</option>
-            <option value="question">Question about results</option>
-            <option value="other">Other</option>
+            <option value="" data-en="Select a topic…" data-ru="Выберите тему…">Select a topic…</option>
+            <option value="bug" data-en="Bug report" data-ru="Сообщение об ошибке">Bug report</option>
+            <option value="suggestion" data-en="Feature suggestion" data-ru="Предложение">Feature suggestion</option>
+            <option value="question" data-en="Question about results" data-ru="Вопрос о результатах">Question about results</option>
+            <option value="other" data-en="Other" data-ru="Другое">Other</option>
           </select>
         </div>
         <div class="field">
-          <label for="cmessage">Message</label>
-          <textarea id="cmessage" placeholder="Describe your question or issue…"></textarea>
+          <label for="cmessage" data-en="Message" data-ru="Сообщение">Message</label>
+          <textarea id="cmessage" data-en-placeholder="Describe your question or issue…" data-ru-placeholder="Опишите ваш вопрос или проблему…" placeholder="Describe your question or issue…"></textarea>
         </div>
-        <p id="formError" style="color:#dc2626;font-size:0.85rem;margin-bottom:12px;display:none;">Please fill in all required fields.</p>
-        <button type="button" class="btn-submit" id="submitBtn">Send Message</button>
+        <p id="formError" style="color:#dc2626;font-size:0.85rem;margin-bottom:12px;display:none;" data-en="Please fill in all required fields." data-ru="Пожалуйста, заполните все обязательные поля.">Please fill in all required fields.</p>
+        <button type="button" class="btn-submit" id="submitBtn" data-en="Send Message" data-ru="Отправить">Send Message</button>
       </form>
     </div>
-
     <div id="formSuccess" style="display:none; background:var(--green-pale); border-radius:10px; padding:28px; margin-top:20px;">
-      <p style="font-weight:600; color:var(--green); margin-bottom:8px;">✓ Message sent!</p>
-      <p style="color:var(--muted); font-size:0.9rem;">Thanks for reaching out. We typically respond within 1–2 business days.</p>
-    </div>
-
-    <div style="margin-top:48px; padding-top:32px; border-top:1px solid var(--border);">
-      <h2>Before you write</h2>
-      <p>You might find your answer in our <a href="blog/">nutrition guides</a> or the FAQ section on the <a href="/">homepage</a>. We also can't provide personalised medical or dietary advice — please consult a registered dietitian for that.</p>
+      <p style="font-weight:600; color:var(--green); margin-bottom:8px;" data-en="✓ Message sent!" data-ru="✓ Сообщение отправлено!">✓ Message sent!</p>
+      <p style="color:var(--muted); font-size:0.9rem;" data-en="Thanks for reaching out. We typically respond within 1–2 business days." data-ru="Спасибо за обращение. Обычно мы отвечаем в течение 1–2 рабочих дней.">Thanks for reaching out. We typically respond within 1–2 business days.</p>
     </div>
   </div>
 </main>
-
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-      <p>Free calorie and macro calculator. Not a substitute for professional nutrition advice.</p>
+      <p data-en="Free calorie and macro calculator. Not medical advice." data-ru="Бесплатный калькулятор калорий и БЖУ.">Free calorie and macro calculator. Not medical advice.</p>
     </div>
     <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="blog/">Blog</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <span>© <span id="year"></span> calories-macros.com</span>
-    <span>Educational estimates only.</span>
-  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
-
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('hamburger').addEventListener('click', function() {
-  document.getElementById('siteNav').classList.toggle('open');
-});
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('siteNav').classList.toggle('open'); });
+function applyLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    const text = el.getAttribute('data-' + lang);
+    if (text) el.innerHTML = text;
+  });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    const text = opt.getAttribute('data-' + lang); if (text) opt.textContent = text;
+  });
+  const ta = document.getElementById('cmessage');
+  ta.placeholder = ta.getAttribute('data-' + lang + '-placeholder') || ta.placeholder;
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+const savedLang = localStorage.getItem('lang');
+if (savedLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
 document.getElementById('submitBtn').addEventListener('click', function() {
-  const name    = document.getElementById('cname').value.trim();
-  const email   = document.getElementById('cemail').value.trim();
-  const subject = document.getElementById('csubject').value;
-  const message = document.getElementById('cmessage').value.trim();
-  const err     = document.getElementById('formError');
-  if (!name || !email || !subject || !message || !email.includes('@')) {
-    err.style.display = 'block'; return;
-  }
-  err.style.display = 'none';
-  document.getElementById('formWrap').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  const name=document.getElementById('cname').value.trim(), email=document.getElementById('cemail').value.trim(), subject=document.getElementById('csubject').value, message=document.getElementById('cmessage').value.trim(), err=document.getElementById('formError');
+  if (!name||!email||!subject||!message||!email.includes('@')) { err.style.display='block'; return; }
+  err.style.display='none'; document.getElementById('formWrap').style.display='none'; document.getElementById('formSuccess').style.display='block';
 });
 </script>
 </body>

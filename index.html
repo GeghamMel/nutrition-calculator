@@ -5,46 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calories & Macros Calculator — Free TDEE & Macro Planner</title>
   <meta name="description" content="Calculate your daily calories and macros (protein, carbs, fat) based on your body stats and goal. Free TDEE calculator for weight loss, muscle gain, and maintenance." />
-  <meta name="keywords" content="calorie calculator, macro calculator, TDEE calculator, BMR, protein intake, weight loss calories, muscle gain macros" />
   <link rel="canonical" href="https://calories-macros.com/" />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Calories & Macros Calculator" />
   <meta property="og:description" content="Free calorie and macro calculator. Get your personalized daily nutrition targets in seconds." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://calories-macros.com/" />
-
-  <!-- Schema.org -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Calories & Macros Calculator",
-    "url": "https://calories-macros.com/",
-    "description": "Free calculator for daily calorie and macronutrient needs based on body stats and fitness goal.",
-    "applicationCategory": "HealthApplication",
-    "operatingSystem": "All"
-  }
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Calories & Macros Calculator","url":"https://calories-macros.com/","description":"Free calculator for daily calorie and macronutrient needs.","applicationCategory":"HealthApplication","operatingSystem":"All"}
   </script>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="inner">
-    <a href="/" class="site-logo">
-      <span class="logo-icon">🥦</span> Calories &amp; Macros
-    </a>
-    <button class="hamburger" aria-label="Open menu" id="hamburger">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav">
-      <a href="/" class="active">Calculator</a>
-      <a href="blog/">Blog</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="/" class="active" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
       <div class="lang-toggle">
         <button class="active" id="langEN">EN</button>
         <button id="langRU">RU</button>
@@ -53,286 +34,246 @@
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-eyebrow">Free Nutrition Calculator</div>
-    <h1>Your daily <em>calories &amp; macros</em>, calculated in seconds</h1>
-    <p>Enter your stats and goal — get a personalized breakdown of calories, protein, carbs, and fat.</p>
+    <div class="hero-eyebrow" data-en="Free Nutrition Calculator" data-ru="Бесплатный калькулятор питания">Free Nutrition Calculator</div>
+    <h1 data-en="Your daily <em>calories &amp; macros</em>, calculated in seconds" data-ru="Ваши <em>калории и БЖУ</em> — за несколько секунд">Your daily <em>calories &amp; macros</em>, calculated in seconds</h1>
+    <p data-en="Enter your stats and goal — get a personalized breakdown of calories, protein, carbs, and fat." data-ru="Введите параметры и цель — получите персональный расчёт калорий, белков, углеводов и жиров.">Enter your stats and goal — get a personalized breakdown of calories, protein, carbs, and fat.</p>
     <div class="hero-stats">
-      <div class="hero-stat">
-        <strong>3</strong>
-        <span>Goals supported</span>
-      </div>
-      <div class="hero-stat">
-        <strong>5</strong>
-        <span>Activity levels</span>
-      </div>
-      <div class="hero-stat">
-        <strong>100%</strong>
-        <span>Free, no signup</span>
-      </div>
+      <div class="hero-stat"><strong>3</strong><span data-en="Goals supported" data-ru="Цели">Goals supported</span></div>
+      <div class="hero-stat"><strong>5</strong><span data-en="Activity levels" data-ru="Уровни активности">Activity levels</span></div>
+      <div class="hero-stat"><strong>100%</strong><span data-en="Free, no signup" data-ru="Бесплатно">Free, no signup</span></div>
     </div>
-    <a href="#calculator" class="btn-scroll">Calculate My Macros ↓</a>
+    <a href="#calculator" class="btn-scroll" data-en="Calculate My Macros ↓" data-ru="Рассчитать БЖУ ↓">Calculate My Macros ↓</a>
   </div>
 </section>
 
-<!-- CALCULATOR -->
 <section class="calc-section" id="calculator">
   <div class="container">
-    <div class="section-label">Step-by-step calculator</div>
-    <h2 class="section-title">Enter your details</h2>
-    <p class="section-sub">We use the Mifflin-St Jeor formula — the most accurate method for estimating BMR.</p>
+    <div class="section-label" data-en="Step-by-step calculator" data-ru="Пошаговый калькулятор">Step-by-step calculator</div>
+    <h2 class="section-title" data-en="Enter your details" data-ru="Введите данные">Enter your details</h2>
+    <p class="section-sub" data-en="We use the Mifflin-St Jeor formula — the most accurate method for estimating BMR." data-ru="Используем формулу Миффлина-Сан Жеора — наиболее точный метод расчёта BMR.">We use the Mifflin-St Jeor formula — the most accurate method for estimating BMR.</p>
 
     <div class="calc-card">
-      <!-- Gender -->
       <div class="field" style="margin-bottom:20px;">
-        <label>Sex</label>
+        <label data-en="Sex" data-ru="Пол">Sex</label>
         <div class="gender-toggle">
-          <button class="gender-btn active" data-gender="male" id="genderMale">♂ Male</button>
-          <button class="gender-btn" data-gender="female" id="genderFemale">♀ Female</button>
+          <button class="gender-btn active" data-gender="male" id="genderMale" data-en="♂ Male" data-ru="♂ Мужской">♂ Male</button>
+          <button class="gender-btn" data-gender="female" id="genderFemale" data-en="♀ Female" data-ru="♀ Женский">♀ Female</button>
         </div>
       </div>
-
       <div class="calc-grid">
         <div class="field">
-          <label for="age">Age</label>
+          <label for="age" data-en="Age" data-ru="Возраст">Age</label>
           <input type="number" id="age" min="14" max="99" placeholder="e.g. 28" />
         </div>
         <div class="field">
-          <label for="weight">Weight (kg)</label>
+          <label for="weight" data-en="Weight (kg)" data-ru="Вес (кг)">Weight (kg)</label>
           <input type="number" id="weight" min="30" max="300" placeholder="e.g. 75" />
         </div>
         <div class="field">
-          <label for="height">Height (cm)</label>
+          <label for="height" data-en="Height (cm)" data-ru="Рост (см)">Height (cm)</label>
           <input type="number" id="height" min="100" max="250" placeholder="e.g. 175" />
         </div>
         <div class="field">
-          <label for="activity">Activity level</label>
+          <label for="activity" data-en="Activity level" data-ru="Уровень активности">Activity level</label>
           <select id="activity">
-            <option value="1.2">Sedentary (desk job, no exercise)</option>
-            <option value="1.375">Light (1–3 workouts/week)</option>
-            <option value="1.55" selected>Moderate (3–5 workouts/week)</option>
-            <option value="1.725">Active (6–7 workouts/week)</option>
-            <option value="1.9">Very active (physical job + training)</option>
+            <option value="1.2"   data-en="Sedentary (desk job, no exercise)"        data-ru="Минимальная (сидячая работа, нет тренировок)">Sedentary (desk job, no exercise)</option>
+            <option value="1.375" data-en="Light (1–3 workouts/week)"                 data-ru="Лёгкая (1–3 тренировки в неделю)">Light (1–3 workouts/week)</option>
+            <option value="1.55"  data-en="Moderate (3–5 workouts/week)" selected     data-ru="Средняя (3–5 тренировок в неделю)">Moderate (3–5 workouts/week)</option>
+            <option value="1.725" data-en="Active (6–7 workouts/week)"                data-ru="Высокая (6–7 тренировок в неделю)">Active (6–7 workouts/week)</option>
+            <option value="1.9"   data-en="Very active (physical job + training)"     data-ru="Очень высокая (физический труд + тренировки)">Very active (physical job + training)</option>
           </select>
         </div>
       </div>
-
       <div class="field" style="margin-bottom:24px;">
-        <label for="goal">Your goal</label>
+        <label for="goal" data-en="Your goal" data-ru="Ваша цель">Your goal</label>
         <select id="goal">
-          <option value="maintain">Maintain weight</option>
-          <option value="loss">Lose fat (moderate deficit)</option>
-          <option value="gain">Build muscle (moderate surplus)</option>
+          <option value="maintain" data-en="Maintain weight"        data-ru="Поддержание веса">Maintain weight</option>
+          <option value="loss"     data-en="Lose fat (moderate deficit)" data-ru="Похудение (умеренный дефицит)">Lose fat (moderate deficit)</option>
+          <option value="gain"     data-en="Build muscle (moderate surplus)" data-ru="Набор массы (умеренный профицит)">Build muscle (moderate surplus)</option>
         </select>
       </div>
 
-      <button class="btn-calc" id="calcBtn">Calculate →</button>
-      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please fill in all fields correctly.</p>
+      <button class="btn-calc" id="calcBtn" data-en="Calculate →" data-ru="Рассчитать →">Calculate →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please fill in all fields correctly." data-ru="Пожалуйста, заполните все поля правильно.">Please fill in all fields correctly.</p>
 
-      <!-- Results -->
       <div class="calc-results" id="calcResults">
         <p class="results-headline" id="resultsHeadline">Your daily nutrition target:</p>
-
         <div class="calories-display">
           <div class="kcal-number" id="kcalDisplay">—</div>
-          <div class="kcal-label">calories per day</div>
+          <div class="kcal-label" data-en="calories per day" data-ru="калорий в день">calories per day</div>
         </div>
-
         <div class="macros-grid">
           <div class="macro-item">
             <div class="macro-value" id="proteinG">—</div>
-            <div class="macro-name">Protein</div>
+            <div class="macro-name" data-en="Protein" data-ru="Белок">Protein</div>
             <div class="macro-pct" id="proteinPct">—%</div>
           </div>
           <div class="macro-item">
             <div class="macro-value" id="carbsG">—</div>
-            <div class="macro-name">Carbs</div>
+            <div class="macro-name" data-en="Carbs" data-ru="Углеводы">Carbs</div>
             <div class="macro-pct" id="carbsPct">—%</div>
           </div>
           <div class="macro-item">
             <div class="macro-value" id="fatG">—</div>
-            <div class="macro-name">Fat</div>
+            <div class="macro-name" data-en="Fat" data-ru="Жиры">Fat</div>
             <div class="macro-pct" id="fatPct">—%</div>
           </div>
         </div>
-
         <div class="macro-bars">
           <div class="macro-bar-row">
-            <span>Protein</span>
+            <span data-en="Protein" data-ru="Белок">Protein</span>
             <div class="macro-bar-track"><div class="macro-bar-fill bar-protein" id="barProtein" style="width:0%"></div></div>
             <span id="barProteinPct">0%</span>
           </div>
           <div class="macro-bar-row">
-            <span>Carbs</span>
+            <span data-en="Carbs" data-ru="Углеводы">Carbs</span>
             <div class="macro-bar-track"><div class="macro-bar-fill bar-carbs" id="barCarbs" style="width:0%"></div></div>
             <span id="barCarbsPct">0%</span>
           </div>
           <div class="macro-bar-row">
-            <span>Fat</span>
+            <span data-en="Fat" data-ru="Жиры">Fat</span>
             <div class="macro-bar-track"><div class="macro-bar-fill bar-fat" id="barFat" style="width:0%"></div></div>
             <span id="barFatPct">0%</span>
           </div>
         </div>
-
-        <div class="result-note" id="resultNote">
-          These are estimates based on population averages. Individual needs vary — treat this as a starting point and adjust after 2–3 weeks based on results.
-        </div>
+        <div class="result-note" id="resultNote"></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- AD SLOT (leaderboard) -->
 <div class="container">
-  <div class="ad-slot ad-slot--leaderboard" id="ad-top">
-    <!-- Google AdSense will go here -->
-  </div>
+  <div class="ad-slot ad-slot--leaderboard"></div>
 </div>
 
-<!-- HOW IT WORKS -->
 <section class="how-section">
   <div class="container">
-    <div class="section-label">Methodology</div>
-    <h2 class="section-title">How the calculator works</h2>
-    <p class="section-sub">We follow the same formulas used by registered dietitians and sports nutritionists.</p>
+    <div class="section-label" data-en="Methodology" data-ru="Методология">Methodology</div>
+    <h2 class="section-title" data-en="How the calculator works" data-ru="Как работает калькулятор">How the calculator works</h2>
+    <p class="section-sub" data-en="We follow the same formulas used by registered dietitians and sports nutritionists." data-ru="Используем формулы, применяемые дипломированными диетологами и спортивными нутрициологами.">We follow the same formulas used by registered dietitians and sports nutritionists.</p>
     <div class="steps-grid">
       <div class="step">
         <div class="step-num">1</div>
-        <h3>Calculate BMR</h3>
-        <p>Basal Metabolic Rate — the calories your body needs at complete rest — is calculated using the Mifflin-St Jeor equation.</p>
+        <h3 data-en="Calculate BMR" data-ru="Расчёт BMR">Calculate BMR</h3>
+        <p data-en="Basal Metabolic Rate — calories your body needs at complete rest — calculated using the Mifflin-St Jeor equation." data-ru="Базальный обмен веществ — калории, необходимые организму в покое — рассчитывается по формуле Миффлина-Сан Жеора.">Basal Metabolic Rate — calories your body needs at complete rest — calculated using the Mifflin-St Jeor equation.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <h3>Apply activity multiplier</h3>
-        <p>BMR is multiplied by your activity factor to get TDEE — Total Daily Energy Expenditure, or your maintenance calories.</p>
+        <h3 data-en="Apply activity multiplier" data-ru="Коэффициент активности">Apply activity multiplier</h3>
+        <p data-en="BMR is multiplied by your activity factor to get TDEE — your total daily energy expenditure." data-ru="BMR умножается на коэффициент активности, чтобы получить TDEE — суточный расход энергии.">BMR is multiplied by your activity factor to get TDEE — your total daily energy expenditure.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <h3>Adjust for your goal</h3>
-        <p>We apply a 15–20% deficit for fat loss or a 10–15% surplus for muscle gain, based on evidence-based guidelines.</p>
+        <h3 data-en="Adjust for your goal" data-ru="Корректировка под цель">Adjust for your goal</h3>
+        <p data-en="We apply a 15–20% deficit for fat loss or a 10–15% surplus for muscle gain, based on evidence-based guidelines." data-ru="Применяем дефицит 15–20% для похудения или профицит 10–15% для набора массы.">We apply a 15–20% deficit for fat loss or a 10–15% surplus for muscle gain, based on evidence-based guidelines.</p>
       </div>
       <div class="step">
         <div class="step-num">4</div>
-        <h3>Split into macros</h3>
-        <p>Calories are split into protein, carbohydrates, and fat using goal-specific ratios to support your outcome.</p>
+        <h3 data-en="Split into macros" data-ru="Разбивка по БЖУ">Split into macros</h3>
+        <p data-en="Calories are split into protein, carbohydrates, and fat using goal-specific ratios." data-ru="Калории делятся на белки, углеводы и жиры в пропорциях, соответствующих вашей цели.">Calories are split into protein, carbohydrates, and fat using goal-specific ratios.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BLOG -->
 <section class="blog-section">
   <div class="container">
-    <div class="section-label">Learn more</div>
-    <h2 class="section-title">Nutrition guides</h2>
-    <p class="section-sub">Practical articles to help you understand and apply your results.</p>
-
+    <div class="section-label" data-en="Learn more" data-ru="Статьи">Learn more</div>
+    <h2 class="section-title" data-en="Nutrition guides" data-ru="Гиды по питанию">Nutrition guides</h2>
+    <p class="section-sub" data-en="Practical articles to help you understand and apply your results." data-ru="Практические статьи, которые помогут понять и применить результаты калькулятора.">Practical articles to help you understand and apply your results.</p>
     <div class="blog-grid">
       <a href="blog/calories-for-weight-loss.html" class="blog-card" style="text-decoration:none;color:inherit;">
         <div class="blog-card-body">
-          <span class="blog-tag">Weight Loss</span>
-          <h3>How Many Calories Do You Need to Lose Weight?</h3>
-          <p>Understand calorie deficits, how large they should be, and the mistakes that derail progress.</p>
-          <span class="blog-read-more">Read article →</span>
+          <span class="blog-tag" data-en="Weight Loss" data-ru="Похудение">Weight Loss</span>
+          <h3 data-en="How Many Calories Do You Need to Lose Weight?" data-ru="Сколько калорий нужно для похудения?">How Many Calories Do You Need to Lose Weight?</h3>
+          <p data-en="Understand calorie deficits, how large they should be, and the mistakes that derail progress." data-ru="Всё о дефиците калорий: какой он должен быть и какие ошибки мешают прогрессу.">Understand calorie deficits, how large they should be, and the mistakes that derail progress.</p>
+          <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
         </div>
       </a>
       <a href="blog/macros-for-muscle-gain.html" class="blog-card" style="text-decoration:none;color:inherit;">
         <div class="blog-card-body">
-          <span class="blog-tag">Muscle Gain</span>
-          <h3>The Best Macro Split for Building Muscle</h3>
-          <p>How much protein, carbs, and fat you actually need when training for hypertrophy.</p>
-          <span class="blog-read-more">Read article →</span>
+          <span class="blog-tag" data-en="Muscle Gain" data-ru="Набор массы">Muscle Gain</span>
+          <h3 data-en="The Best Macro Split for Building Muscle" data-ru="Лучшее соотношение БЖУ для набора мышц">The Best Macro Split for Building Muscle</h3>
+          <p data-en="How much protein, carbs, and fat you actually need when training for hypertrophy." data-ru="Сколько белков, углеводов и жиров нужно при тренировках на гипертрофию.">How much protein, carbs, and fat you actually need when training for hypertrophy.</p>
+          <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
         </div>
       </a>
       <a href="blog/maintenance-calories.html" class="blog-card" style="text-decoration:none;color:inherit;">
         <div class="blog-card-body">
-          <span class="blog-tag">Maintenance</span>
-          <h3>Maintenance Calories: What They Are and Why They Matter</h3>
-          <p>Your TDEE is the foundation of all nutrition planning. Here's how to find and use it.</p>
-          <span class="blog-read-more">Read article →</span>
+          <span class="blog-tag" data-en="Maintenance" data-ru="Поддержание">Maintenance</span>
+          <h3 data-en="Maintenance Calories: What They Are and Why They Matter" data-ru="Калории поддержания: что это и зачем знать">Maintenance Calories: What They Are and Why They Matter</h3>
+          <p data-en="Your TDEE is the foundation of all nutrition planning." data-ru="TDEE — основа любого плана питания. Как его найти и использовать.">Your TDEE is the foundation of all nutrition planning.</p>
+          <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
         </div>
       </a>
       <a href="blog/how-to-count-macros.html" class="blog-card" style="text-decoration:none;color:inherit;">
         <div class="blog-card-body">
-          <span class="blog-tag">Beginner Guide</span>
-          <h3>How to Count Macros: A Complete Beginner's Guide</h3>
-          <p>Step-by-step instructions for tracking your macronutrients without obsessing over every gram.</p>
-          <span class="blog-read-more">Read article →</span>
+          <span class="blog-tag" data-en="Beginner Guide" data-ru="Для начинающих">Beginner Guide</span>
+          <h3 data-en="How to Count Macros: A Complete Beginner's Guide" data-ru="Как считать БЖУ: полное руководство для начинающих">How to Count Macros: A Complete Beginner's Guide</h3>
+          <p data-en="Step-by-step instructions for tracking your macronutrients without obsessing over every gram." data-ru="Пошаговые инструкции по отслеживанию макронутриентов без лишних сложностей.">Step-by-step instructions for tracking your macronutrients without obsessing over every gram.</p>
+          <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
         </div>
       </a>
       <a href="blog/protein-intake-guide.html" class="blog-card" style="text-decoration:none;color:inherit;">
         <div class="blog-card-body">
-          <span class="blog-tag">Protein</span>
-          <h3>How Much Protein Do You Actually Need?</h3>
-          <p>What the research says about optimal protein intake for fat loss, muscle building, and general health.</p>
-          <span class="blog-read-more">Read article →</span>
+          <span class="blog-tag" data-en="Protein" data-ru="Белок">Protein</span>
+          <h3 data-en="How Much Protein Do You Actually Need?" data-ru="Сколько белка вам на самом деле нужно?">How Much Protein Do You Actually Need?</h3>
+          <p data-en="What the research says about optimal protein intake for fat loss, muscle building, and general health." data-ru="Что говорит наука об оптимальном потреблении белка для похудения, роста мышц и здоровья.">What the research says about optimal protein intake for fat loss, muscle building, and general health.</p>
+          <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
         </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="faq-section">
   <div class="container">
-    <div class="section-label">Common questions</div>
-    <h2 class="section-title">Frequently asked questions</h2>
-    <div class="faq-list" id="faqList">
-
+    <div class="section-label" data-en="Common questions" data-ru="Частые вопросы">Common questions</div>
+    <h2 class="section-title" data-en="Frequently asked questions" data-ru="Часто задаваемые вопросы">Frequently asked questions</h2>
+    <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question">What is the difference between BMR and TDEE?</button>
-        <div class="faq-answer">BMR (Basal Metabolic Rate) is the number of calories your body burns at rest to maintain basic functions like breathing and circulation. TDEE (Total Daily Energy Expenditure) includes your BMR plus the calories you burn through daily activity and exercise. TDEE is the number you should use for nutrition planning.</div>
+        <button class="faq-question" data-en="What is the difference between BMR and TDEE?" data-ru="В чём разница между BMR и TDEE?">What is the difference between BMR and TDEE?</button>
+        <div class="faq-answer" data-en="BMR (Basal Metabolic Rate) is the calories your body burns at rest. TDEE (Total Daily Energy Expenditure) includes BMR plus calories burned through daily activity and exercise. TDEE is the number to use for nutrition planning." data-ru="BMR (базальный обмен) — калории, которые организм сжигает в покое. TDEE (суточный расход энергии) включает BMR плюс калории, сожжённые при активности и тренировках. TDEE — число, которое нужно использовать при планировании питания.">BMR (Basal Metabolic Rate) is the calories your body burns at rest. TDEE (Total Daily Energy Expenditure) includes BMR plus calories burned through daily activity and exercise. TDEE is the number to use for nutrition planning.</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">How accurate is this calculator?</button>
-        <div class="faq-answer">The Mifflin-St Jeor formula used here is considered one of the most accurate BMR equations available, with an average error of around 10% for healthy adults. However, individual metabolism can vary due to muscle mass, hormones, and genetics. Use the result as a starting point and adjust by 100–150 kcal based on your real-world results after 2–3 weeks.</div>
+        <button class="faq-question" data-en="How accurate is this calculator?" data-ru="Насколько точен этот калькулятор?">How accurate is this calculator?</button>
+        <div class="faq-answer" data-en="The Mifflin-St Jeor formula has an average error of around 10% for healthy adults. Use the result as a starting point and adjust by 100–150 kcal based on real-world results after 2–3 weeks." data-ru="Формула Миффлина-Сан Жеора имеет среднюю погрешность около 10% для здоровых взрослых. Используйте результат как отправную точку и корректируйте на 100–150 ккал по реальным результатам через 2–3 недели.">The Mifflin-St Jeor formula has an average error of around 10% for healthy adults. Use the result as a starting point and adjust by 100–150 kcal based on real-world results after 2–3 weeks.</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">How much protein do I need per day?</button>
-        <div class="faq-answer">The general evidence-based recommendation for active individuals is 1.6–2.2 grams of protein per kilogram of body weight. The calculator sets protein to approximately 2g/kg for muscle gain and fat loss goals, and slightly lower for maintenance. You can read our full protein guide for more detail.</div>
+        <button class="faq-question" data-en="How much protein do I need per day?" data-ru="Сколько белка мне нужно в день?">How much protein do I need per day?</button>
+        <div class="faq-answer" data-en="For active individuals, 1.6–2.2 grams of protein per kilogram of body weight is the evidence-based recommendation. The calculator sets protein to approximately 2g/kg for muscle gain and fat loss goals." data-ru="Для активных людей научно обоснованная рекомендация — 1,6–2,2 г белка на кг массы тела. Калькулятор устанавливает ~2 г/кг для целей набора мышц и похудения.">For active individuals, 1.6–2.2 grams of protein per kilogram of body weight is the evidence-based recommendation. The calculator sets protein to approximately 2g/kg for muscle gain and fat loss goals.</div>
       </div>
-
       <div class="faq-item">
-        <button class="faq-question">Should I eat at my maintenance calories first before cutting?</button>
-        <div class="faq-answer">If you have never tracked calories before, it can be helpful to eat at maintenance for 1–2 weeks first. This gives you a real-world baseline, helps you understand your eating habits, and makes the transition to a deficit much smoother and more sustainable.</div>
+        <button class="faq-question" data-en="Are these calculations suitable for people with health conditions?" data-ru="Подходят ли расчёты людям с заболеваниями?">Are these calculations suitable for people with health conditions?</button>
+        <div class="faq-answer" data-en="This calculator is designed for generally healthy adults. If you have a medical condition such as diabetes or kidney disease, please consult a registered dietitian before making significant dietary changes." data-ru="Калькулятор предназначен для здоровых взрослых. Если у вас есть заболевания (диабет, болезни почек и т.д.), проконсультируйтесь с врачом или диетологом перед изменением питания.">This calculator is designed for generally healthy adults. If you have a medical condition such as diabetes or kidney disease, please consult a registered dietitian before making significant dietary changes.</div>
       </div>
-
-      <div class="faq-item">
-        <button class="faq-question">Are these calculations suitable for people with health conditions?</button>
-        <div class="faq-answer">This calculator is designed for generally healthy adults. If you have a medical condition such as diabetes, kidney disease, thyroid disorders, or are pregnant, please consult a registered dietitian or your healthcare provider before making significant dietary changes. The information on this site is educational only and does not constitute medical advice.</div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-      <p>A free tool to estimate your daily calorie and macronutrient needs. Not a substitute for professional nutrition advice.</p>
+      <p data-en="A free tool to estimate your daily calorie and macronutrient needs. Not a substitute for professional nutrition advice." data-ru="Бесплатный инструмент для расчёта суточной нормы калорий и БЖУ. Не заменяет консультацию специалиста.">A free tool to estimate your daily calorie and macronutrient needs. Not a substitute for professional nutrition advice.</p>
     </div>
     <div class="footer-links">
-      <a href="about.html">About</a>
-      <a href="blog/">Blog</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Use</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© <span id="year"></span> calories-macros.com</span>
-    <span>Educational estimates only — not medical advice.</span>
+    <span data-en="Educational estimates only — not medical advice." data-ru="Только образовательные оценки — не медицинский совет.">Educational estimates only — not medical advice.</span>
   </div>
 </footer>
 
 <script>
-// --- Year ---
 document.getElementById('year').textContent = new Date().getFullYear();
 
 // --- Hamburger ---
@@ -343,17 +284,13 @@ document.getElementById('hamburger').addEventListener('click', function() {
 // --- Gender toggle ---
 let gender = 'male';
 document.getElementById('genderMale').addEventListener('click', function() {
-  gender = 'male';
-  this.classList.add('active');
-  document.getElementById('genderFemale').classList.remove('active');
+  gender = 'male'; this.classList.add('active'); document.getElementById('genderFemale').classList.remove('active');
 });
 document.getElementById('genderFemale').addEventListener('click', function() {
-  gender = 'female';
-  this.classList.add('active');
-  document.getElementById('genderMale').classList.remove('active');
+  gender = 'female'; this.classList.add('active'); document.getElementById('genderMale').classList.remove('active');
 });
 
-// --- FAQ accordion ---
+// --- FAQ ---
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {
     const item = this.closest('.faq-item');
@@ -363,17 +300,90 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 
-// --- Lang toggle ---
+// --- Language ---
+let currentLang = 'en';
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    const text = el.getAttribute('data-' + lang);
+    if (!text) return;
+    // For elements with innerHTML (h1 with em tags etc)
+    if (el.querySelector('em') || text.includes('<')) {
+      el.innerHTML = text;
+    } else {
+      el.textContent = text;
+    }
+  });
+  // Select options
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    const text = opt.getAttribute('data-' + lang);
+    if (text) opt.textContent = text;
+  });
+  // Update page title and meta
+  if (lang === 'ru') {
+    document.title = 'Калькулятор калорий и БЖУ — бесплатный расчёт TDEE';
+    document.querySelector('meta[name="description"]').setAttribute('content', 'Рассчитайте суточную норму калорий и БЖУ (белки, углеводы, жиры) по вашим параметрам и цели. Бесплатный калькулятор TDEE.');
+  } else {
+    document.title = 'Calories & Macros Calculator — Free TDEE & Macro Planner';
+    document.querySelector('meta[name="description"]').setAttribute('content', 'Calculate your daily calories and macros based on your body stats and goal. Free TDEE calculator for weight loss, muscle gain, and maintenance.');
+  }
+  // Re-show results in new language if visible
+  if (document.getElementById('calcResults').classList.contains('visible')) {
+    updateResultLabels();
+  }
+  localStorage.setItem('lang', lang);
+}
+
 document.getElementById('langEN').addEventListener('click', function() {
   this.classList.add('active'); document.getElementById('langRU').classList.remove('active');
+  applyLang('en');
 });
 document.getElementById('langRU').addEventListener('click', function() {
   this.classList.add('active'); document.getElementById('langEN').classList.remove('active');
-  alert('Russian version coming soon!');
+  applyLang('ru');
 });
+
+// Restore saved language
+const savedLang = localStorage.getItem('lang');
+if (savedLang === 'ru') {
+  document.getElementById('langRU').classList.add('active');
+  document.getElementById('langEN').classList.remove('active');
+  applyLang('ru');
+}
 
 // --- Calculator ---
 document.getElementById('calcBtn').addEventListener('click', calculate);
+
+const notes = {
+  en: {
+    loss: 'This is a moderate calorie deficit (~18% below maintenance). Aim for at least 0.8g of protein per pound of body weight to preserve muscle while losing fat.',
+    gain: 'This is a lean bulk with a ~12% calorie surplus. A controlled surplus minimises unnecessary fat gain while supporting muscle growth.',
+    maintain: 'Maintenance calories — eating at this level should keep your weight stable. Great for body recomposition or as a long-term baseline.'
+  },
+  ru: {
+    loss: 'Это умеренный дефицит калорий (~18% ниже нормы поддержания). Старайтесь употреблять не менее 2 г белка на кг веса, чтобы сохранить мышцы.',
+    gain: 'Это «чистый» набор массы с профицитом ~12%. Контролируемый профицит минимизирует набор жира и поддерживает рост мышц.',
+    maintain: 'Калории поддержания — при таком потреблении вес должен оставаться стабильным. Отлично подходит для рекомпозиции тела.'
+  }
+};
+
+const headlineText = {
+  en: { loss: 'fat loss', gain: 'muscle gain', maintain: 'maintenance' },
+  ru: { loss: 'похудение', gain: 'набор массы', maintain: 'поддержание' }
+};
+
+let lastGoal = 'maintain';
+
+function updateResultLabels() {
+  const l = currentLang;
+  const prefix = l === 'ru' ? 'Ваша суточная цель (' : 'Your daily nutrition target (';
+  const suffix = l === 'ru' ? '):' : '):';
+  document.getElementById('resultsHeadline').textContent = prefix + headlineText[l][lastGoal] + suffix;
+  document.getElementById('resultNote').textContent = notes[l][lastGoal];
+  document.getElementById('kcalDisplay').parentElement.querySelector('.kcal-label').textContent = l === 'ru' ? 'калорий в день' : 'calories per day';
+}
 
 function calculate() {
   const age    = parseFloat(document.getElementById('age').value);
@@ -387,67 +397,44 @@ function calculate() {
     err.style.display = 'block'; return;
   }
   err.style.display = 'none';
+  lastGoal = goal;
 
-  // Mifflin-St Jeor
-  let bmr;
-  if (gender === 'male') {
-    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
-  } else {
-    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
-  }
+  let bmr = gender === 'male'
+    ? 10 * weight + 6.25 * height - 5 * age + 5
+    : 10 * weight + 6.25 * height - 5 * age - 161;
   let tdee = bmr * activity;
 
-  let calories, proteinRatio, carbRatio, fatRatio, noteText;
+  let calories, proteinRatio, carbRatio, fatRatio;
+  if (goal === 'loss')    { calories = Math.round(tdee * 0.82); proteinRatio=0.35; carbRatio=0.40; fatRatio=0.25; }
+  else if (goal === 'gain') { calories = Math.round(tdee * 1.12); proteinRatio=0.30; carbRatio=0.45; fatRatio=0.25; }
+  else                    { calories = Math.round(tdee);         proteinRatio=0.25; carbRatio=0.50; fatRatio=0.25; }
 
-  if (goal === 'loss') {
-    calories = Math.round(tdee * 0.82);
-    proteinRatio = 0.35; carbRatio = 0.40; fatRatio = 0.25;
-    noteText = 'This is a moderate calorie deficit (~18% below maintenance). Aim for at least 0.8g of protein per pound of body weight to preserve muscle while losing fat.';
-  } else if (goal === 'gain') {
-    calories = Math.round(tdee * 1.12);
-    proteinRatio = 0.30; carbRatio = 0.45; fatRatio = 0.25;
-    noteText = 'This is a lean bulk with a ~12% calorie surplus. A controlled surplus minimises unnecessary fat gain while supporting muscle growth.';
-  } else {
-    calories = Math.round(tdee);
-    proteinRatio = 0.25; carbRatio = 0.50; fatRatio = 0.25;
-    noteText = 'Maintenance calories — eating at this level should keep your weight stable. Great for body recomposition or as a long-term baseline.';
-  }
-
-  const proteinCals = calories * proteinRatio;
-  const carbCals    = calories * carbRatio;
-  const fatCals     = calories * fatRatio;
-
-  const proteinG = Math.round(proteinCals / 4);
-  const carbsG   = Math.round(carbCals / 4);
-  const fatG     = Math.round(fatCals / 9);
-
+  const proteinG = Math.round(calories * proteinRatio / 4);
+  const carbsG   = Math.round(calories * carbRatio / 4);
+  const fatG     = Math.round(calories * fatRatio / 9);
   const pPct = Math.round(proteinRatio * 100);
   const cPct = Math.round(carbRatio * 100);
   const fPct = Math.round(fatRatio * 100);
 
-  document.getElementById('kcalDisplay').textContent  = calories.toLocaleString();
-  document.getElementById('proteinG').textContent     = proteinG + 'g';
-  document.getElementById('carbsG').textContent       = carbsG + 'g';
-  document.getElementById('fatG').textContent         = fatG + 'g';
-  document.getElementById('proteinPct').textContent   = pPct + '%';
-  document.getElementById('carbsPct').textContent     = cPct + '%';
-  document.getElementById('fatPct').textContent       = fPct + '%';
-
-  document.getElementById('barProtein').style.width   = pPct + '%';
-  document.getElementById('barCarbs').style.width     = cPct + '%';
-  document.getElementById('barFat').style.width       = fPct + '%';
+  document.getElementById('kcalDisplay').textContent = calories.toLocaleString();
+  document.getElementById('proteinG').textContent = proteinG + 'g';
+  document.getElementById('carbsG').textContent   = carbsG + 'g';
+  document.getElementById('fatG').textContent     = fatG + 'g';
+  document.getElementById('proteinPct').textContent = pPct + '%';
+  document.getElementById('carbsPct').textContent   = cPct + '%';
+  document.getElementById('fatPct').textContent     = fPct + '%';
+  document.getElementById('barProtein').style.width = pPct + '%';
+  document.getElementById('barCarbs').style.width   = cPct + '%';
+  document.getElementById('barFat').style.width     = fPct + '%';
   document.getElementById('barProteinPct').textContent = pPct + '%';
-  document.getElementById('barCarbsPct').textContent  = cPct + '%';
-  document.getElementById('barFatPct').textContent    = fPct + '%';
+  document.getElementById('barCarbsPct').textContent   = cPct + '%';
+  document.getElementById('barFatPct').textContent     = fPct + '%';
 
-  document.getElementById('resultNote').textContent   = noteText;
-  document.getElementById('resultsHeadline').textContent = 'Your daily nutrition target (' + (goal === 'loss' ? 'fat loss' : goal === 'gain' ? 'muscle gain' : 'maintenance') + '):';
-
+  updateResultLabels();
   const results = document.getElementById('calcResults');
   results.classList.add('visible');
   setTimeout(() => results.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
 }
 </script>
-
 </body>
 </html>
