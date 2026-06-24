@@ -226,6 +226,159 @@
   </div>
 </section>
 
+
+<!-- TOP 10 PROTEIN FOODS SECTION -->
+<section class="how-section" style="background:var(--cream);">
+  <div class="container">
+    <div class="section-label" data-en="Quick reference" data-ru="Быстрый справочник">Quick reference</div>
+    <h2 class="section-title" data-en="Top 10 High-Protein Foods" data-ru="Топ-10 продуктов с высоким содержанием белка">Top 10 High-Protein Foods</h2>
+    <p class="section-sub" data-en="Protein content per 100g — sorted by grams of protein. Click a row to see more details." data-ru="Содержание белка на 100г — отсортировано по граммам белка. Нажмите на строку для подробностей.">Protein content per 100g — sorted by grams of protein. Click a row to see more details.</p>
+
+    <!-- Filter tabs -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="protein-filter active" data-filter="all" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--green);background:var(--green);color:white;font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="All" data-ru="Все">All</button>
+      <button class="protein-filter" data-filter="animal" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="🥩 Animal" data-ru="🥩 Животные">🥩 Animal</button>
+      <button class="protein-filter" data-filter="plant" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="🌱 Plant-based" data-ru="🌱 Растительные">🌱 Plant-based</button>
+      <button class="protein-filter" data-filter="dairy" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="🥛 Dairy" data-ru="🥛 Молочные">🥛 Dairy</button>
+    </div>
+
+    <div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.9rem;" id="proteinTable">
+        <thead>
+          <tr style="background:var(--green);color:white;">
+            <th style="padding:12px 16px;text-align:left;font-weight:600;" data-en="#" data-ru="#">#</th>
+            <th style="padding:12px 16px;text-align:left;font-weight:600;" data-en="Food" data-ru="Продукт">Food</th>
+            <th style="padding:12px 16px;text-align:left;font-weight:600;" data-en="Type" data-ru="Тип">Type</th>
+            <th style="padding:12px 16px;text-align:right;font-weight:600;" data-en="Protein" data-ru="Белок">Protein</th>
+            <th style="padding:12px 16px;text-align:right;font-weight:600;" data-en="Calories" data-ru="Калории">Calories</th>
+            <th style="padding:12px 16px;text-align:right;font-weight:600;" data-en="Protein/kcal" data-ru="Белок/ккал">Protein/kcal</th>
+          </tr>
+        </thead>
+        <tbody id="proteinTbody">
+          <!-- Rows injected by JS -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Expanded detail panel -->
+    <div id="proteinDetail" style="display:none;margin-top:16px;background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+        <h3 id="detailName" style="font-size:1.1rem;font-weight:600;"></h3>
+        <button onclick="document.getElementById('proteinDetail').style.display='none'" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);">×</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;" id="detailGrid"></div>
+      <p id="detailNote" style="margin-top:16px;font-size:0.85rem;color:var(--muted);border-left:3px solid var(--green-light);padding-left:12px;"></p>
+    </div>
+
+    <div style="margin-top:20px;text-align:center;">
+      <a href="blog/high-protein-foods.html" style="display:inline-block;padding:11px 28px;background:var(--green);color:white;border-radius:40px;font-weight:600;font-size:0.9rem;text-decoration:none;" data-en="See all 50 high-protein foods →" data-ru="Смотреть все 50 продуктов →">See all 50 high-protein foods →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var foods = [
+    { rank:1, name_en:'Whey protein powder', name_ru:'Сывороточный протеин', type:'dairy', protein:80, calories:400, fat:4, carbs:8, note_en:'The most concentrated protein source. Best used as a supplement to fill protein gaps, not as a meal replacement.', note_ru:'Самый концентрированный источник белка. Лучше использовать как добавку для восполнения нормы белка.' },
+    { rank:2, name_en:'Chicken breast (cooked)', name_ru:'Куриная грудка (варёная)', type:'animal', protein:31, calories:165, fat:3.6, carbs:0, note_en:'The gold standard for lean protein. Low in fat and carbs, high in leucine which directly stimulates muscle protein synthesis.', note_ru:'Золотой стандарт нежирного белка. Мало жира и углеводов, много лейцина для синтеза мышечного белка.' },
+    { rank:3, name_en:'Turkey breast (cooked)', name_ru:'Индейка (варёная)', type:'animal', protein:30, calories:157, fat:1, carbs:0, note_en:'Similar to chicken but slightly leaner. Great for variety and meal prep.', note_ru:'Похожа на курицу, но немного нежирнее. Отлично подходит для разнообразия и приготовления на неделю.' },
+    { rank:4, name_en:'Tuna (canned in water)', name_ru:'Тунец (консервированный в воде)', type:'animal', protein:29, calories:116, fat:1, carbs:0, note_en:'Excellent protein-to-calorie ratio. One of the most cost-effective high-protein options available.', note_ru:'Отличное соотношение белка и калорий. Один из самых доступных по цене источников белка.' },
+    { rank:5, name_en:'Hemp seeds', name_ru:'Семена конопли', type:'plant', protein:32, calories:553, fat:49, carbs:8, note_en:'A complete plant protein containing all essential amino acids. Also rich in omega-3 fatty acids.', note_ru:'Полноценный растительный белок со всеми незаменимыми аминокислотами. Богат омега-3.' },
+    { rank:6, name_en:'Pumpkin seeds', name_ru:'Семена тыквы', type:'plant', protein:30, calories:559, fat:49, carbs:11, note_en:'High in protein and rich in zinc and magnesium, which support testosterone and recovery.', note_ru:'Богаты белком, цинком и магнием, поддерживающими тестостерон и восстановление.' },
+    { rank:7, name_en:'Parmesan cheese', name_ru:'Пармезан', type:'dairy', protein:36, calories:431, fat:29, carbs:4, note_en:'The highest-protein cheese. High in calories though — best used as a flavour booster in small amounts.', note_ru:'Самый белковый сыр. Высококалорийный — лучше использовать в небольших количествах для вкуса.' },
+    { rank:8, name_en:'Salmon (cooked)', name_ru:'Лосось (варёный)', type:'animal', protein:25, calories:208, fat:13, carbs:0, note_en:'Protein plus omega-3 fatty acids EPA and DHA, which reduce inflammation and support cardiovascular health.', note_ru:'Белок плюс омега-3 (ЭПК и ДГК), снижающие воспаление и поддерживающие сердце.' },
+    { rank:9, name_en:'Cottage cheese (low fat)', name_ru:'Творог (нежирный)', type:'dairy', protein:11, calories:72, fat:1, carbs:3.4, note_en:'Mostly casein protein, which digests slowly — ideal before bed to support overnight muscle repair.', note_ru:'Преимущественно казеиновый белок с медленным усвоением — идеален перед сном для восстановления мышц.' },
+    { rank:10, name_en:'Tempeh', name_ru:'Темпе', type:'plant', protein:19, calories:193, fat:11, carbs:9, note_en:'The highest-protein whole food plant source. Fermented, making it easier to digest than regular soy products.', note_ru:'Лучший цельный растительный источник белка. Ферментированный — лучше усваивается, чем обычные продукты из сои.' }
+  ];
+
+  var currentLang = localStorage.getItem("lang") || "en";
+  var currentFilter = "all";
+
+  function renderTable(filter) {
+    var tbody = document.getElementById("proteinTbody");
+    tbody.innerHTML = "";
+    var filtered = filter === "all" ? foods : foods.filter(function(f){ return f.type === filter; });
+    filtered.forEach(function(f, i) {
+      var name = currentLang === "ru" ? f.name_ru : f.name_en;
+      var typeLabel = f.type === "animal" ? (currentLang==="ru"?"🥩 Животный":"🥩 Animal") : f.type === "plant" ? (currentLang==="ru"?"🌱 Растит.":"🌱 Plant") : (currentLang==="ru"?"🥛 Молочный":"🥛 Dairy");
+      var ratio = (f.protein / f.calories * 100).toFixed(1);
+      var barW = Math.round(f.protein / 80 * 100);
+      var tr = document.createElement("tr");
+      tr.style.cssText = "cursor:pointer;transition:background 0.15s;border-bottom:1px solid #E5E7EB;";
+      tr.addEventListener("mouseenter", function(){ this.style.background="#F9F6F0"; });
+      tr.addEventListener("mouseleave", function(){ this.style.background=""; });
+      tr.innerHTML = '<td style="padding:12px 16px;color:var(--muted);font-weight:600;">' + (i+1) + '</td>' +
+        '<td style="padding:12px 16px;font-weight:500;">' + name + '</td>' +
+        '<td style="padding:12px 16px;color:var(--muted);font-size:0.82rem;">' + typeLabel + '</td>' +
+        '<td style="padding:12px 16px;text-align:right;">' +
+          '<div style="display:flex;align-items:center;justify-content:flex-end;gap:8px;">' +
+            '<div style="width:60px;height:6px;background:#E5E7EB;border-radius:3px;overflow:hidden;">' +
+              '<div style="width:' + barW + '%;height:100%;background:var(--green-light);border-radius:3px;"></div>' +
+            '</div>' +
+            '<strong style="color:var(--green);min-width:36px;">' + f.protein + 'g</strong>' +
+          '</div>' +
+        '</td>' +
+        '<td style="padding:12px 16px;text-align:right;color:var(--muted);">' + f.calories + ' kcal</td>' +
+        '<td style="padding:12px 16px;text-align:right;color:var(--muted);font-size:0.82rem;">' + ratio + 'g/%</td>';
+      tr.addEventListener("click", function(){ showDetail(f); });
+      tbody.appendChild(tr);
+    });
+  }
+
+  function showDetail(f) {
+    var lang = currentLang;
+    document.getElementById("detailName").textContent = lang==="ru" ? f.name_ru : f.name_en;
+    var items = [
+      { label: lang==="ru"?"Белок":"Protein", value: f.protein+"g" },
+      { label: lang==="ru"?"Калории":"Calories", value: f.calories+" kcal" },
+      { label: lang==="ru"?"Жиры":"Fat", value: f.fat+"g" },
+      { label: lang==="ru"?"Углеводы":"Carbs", value: f.carbs+"g" },
+      { label: lang==="ru"?"Белок/ккал":"Protein/kcal", value: (f.protein/f.calories*100).toFixed(1)+"g/%" }
+    ];
+    var grid = document.getElementById("detailGrid");
+    grid.innerHTML = items.map(function(item){
+      return '<div style="background:var(--cream);border-radius:8px;padding:12px;text-align:center;">' +
+        '<div style="font-family:var(--font-display);font-size:1.4rem;color:var(--green);">' + item.value + '</div>' +
+        '<div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:2px;">' + item.label + '</div>' +
+      '</div>';
+    }).join("");
+    document.getElementById("detailNote").textContent = lang==="ru" ? f.note_ru : f.note_en;
+    document.getElementById("proteinDetail").style.display = "block";
+    document.getElementById("proteinDetail").scrollIntoView({ behavior:"smooth", block:"nearest" });
+  }
+
+  document.querySelectorAll(".protein-filter").forEach(function(btn) {
+    btn.addEventListener("click", function() {
+      currentFilter = this.getAttribute("data-filter");
+      document.querySelectorAll(".protein-filter").forEach(function(b){
+        b.style.background = "white"; b.style.color = "var(--muted)"; b.style.borderColor = "var(--border)";
+        b.classList.remove("active");
+      });
+      this.style.background = "var(--green)"; this.style.color = "white"; this.style.borderColor = "var(--green)";
+      this.classList.add("active");
+      renderTable(currentFilter);
+      document.getElementById("proteinDetail").style.display = "none";
+    });
+  });
+
+  // Re-render on lang change
+  var origApplyLang = window.applyLang;
+  document.addEventListener("langChanged", function(e) {
+    currentLang = e.detail;
+    renderTable(currentFilter);
+  });
+
+  // Hook into lang switcher
+  var observer = new MutationObserver(function() {
+    var newLang = localStorage.getItem("lang") || "en";
+    if (newLang !== currentLang) { currentLang = newLang; renderTable(currentFilter); }
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
+
+  renderTable("all");
+})();
+</script>
+
 <section class="blog-section">
   <div class="container">
     <div class="section-label" data-en="Learn more" data-ru="Статьи">Learn more</div>
