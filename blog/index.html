@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nutrition Blog — Calories & Macros</title>
+  <meta name="description" content="Evidence-based articles on calories, macros, fat loss, muscle building, and nutrition fundamentals." />
+  <link rel="canonical" href="https://calories-macros.com/blog/" />
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/">Calculator</a>
+      <a href="/blog/" class="active">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="blog-header container">
+    <a href="/" class="back-link">← Back to Calculator</a>
+    <div class="section-label" style="margin-top:16px;">Knowledge base</div>
+    <h1 class="section-title" style="margin-bottom:8px;">Nutrition Guides</h1>
+    <p class="section-sub">Evidence-based articles on calories, macros, and how to use your results.</p>
+  </div>
+
+  <div class="blog-listing container">
+    <div class="blog-grid">
+
+      <a href="calories-for-weight-loss.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Weight Loss</span>
+          <h3>How Many Calories Do You Need to Lose Weight?</h3>
+          <p>Understand calorie deficits, how large they should be, the role of TDEE, and the most common mistakes that derail progress.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+
+      <a href="macros-for-muscle-gain.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Muscle Gain</span>
+          <h3>The Best Macro Split for Building Muscle</h3>
+          <p>How much protein, carbs, and fat you actually need when training for hypertrophy — and how to hit those targets without overcomplicating it.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+
+      <a href="maintenance-calories.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Maintenance</span>
+          <h3>Maintenance Calories: What They Are and Why They Matter</h3>
+          <p>Your TDEE is the foundation of all nutrition planning. Here's how to find it, verify it, and use it effectively.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+
+      <a href="how-to-count-macros.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Beginner Guide</span>
+          <h3>How to Count Macros: A Complete Beginner's Guide</h3>
+          <p>Step-by-step instructions for tracking your macronutrients, choosing an app, and staying consistent without obsessing over every gram.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+
+      <a href="protein-intake-guide.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag">Protein</span>
+          <h3>How Much Protein Do You Actually Need?</h3>
+          <p>What the research says about optimal protein intake for fat loss, muscle building, and general health — and where the myths come from.</p>
+          <span class="blog-read-more">Read article →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+      <p>Free calorie and macro calculator. Not medical advice.</p>
+    </div>
+    <div class="footer-links">
+      <a href="/about.html">About</a>
+      <a href="/blog/">Blog</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> calories-macros.com</span>
+    <span>Educational estimates only.</span>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});</script>
+</body>
+</html>
