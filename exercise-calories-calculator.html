@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise Calories Burned Calculator — Calories & Macros</title>
+  <meta name="description" content="Calculate how many calories you burn during exercise. Free calculator for running, cycling, swimming, walking and 20+ other activities." />
+  <link rel="canonical" href="https://calories-macros.com/exercise-calories-calculator.html" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+  <link rel="alternate" hreflang="en" href="https://calories-macros.com/exercise-calories-calculator.html" />
+  <link rel="alternate" hreflang="ru" href="https://calories-macros.com/exercise-calories-calculator.html" />
+  <link rel="alternate" hreflang="x-default" href="https://calories-macros.com/exercise-calories-calculator.html" />
+  <meta property="og:title" content="Exercise Calories Burned Calculator" />
+  <meta property="og:description" content="Calculate calories burned during exercise. Free calculator for 20+ activities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calories-macros.com/exercise-calories-calculator.html" />
+  <meta property="og:image" content="https://calories-macros.com/og-image.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <div class="header-lang" id="headerLang">
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
+    </div>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle">
+        <button class="active" id="langEN">EN</button>
+        <button id="langRU">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Free Fitness Calculator" data-ru="Бесплатный фитнес-калькулятор">Free Fitness Calculator</div>
+    <h1 data-en="Exercise <em>Calories Burned</em> Calculator" data-ru="Калькулятор <em>сожжённых калорий</em> при упражнениях">Exercise <em>Calories Burned</em> Calculator</h1>
+    <p data-en="Find out how many calories you burn during any workout. Supports 20+ activities including running, cycling, swimming, and more." data-ru="Узнайте, сколько калорий вы сжигаете во время тренировки. Поддерживает 20+ видов активности: бег, велосипед, плавание и другие.">Find out how many calories you burn during any workout. Supports 20+ activities including running, cycling, swimming, and more.</p>
+    <a href="#calculator" class="btn-scroll" data-en="Calculate Calories Burned ↓" data-ru="Рассчитать сожжённые калории ↓">Calculate Calories Burned ↓</a>
+  </div>
+</section>
+
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="section-label" data-en="Exercise Calculator" data-ru="Калькулятор упражнений">Exercise Calculator</div>
+    <h2 class="section-title" data-en="Enter your workout details" data-ru="Введите данные о тренировке">Enter your workout details</h2>
+    <p class="section-sub" data-en="Based on MET (Metabolic Equivalent of Task) values from the Compendium of Physical Activities." data-ru="Основано на значениях МЕТ (метаболический эквивалент) из Сборника физических активностей.">Based on MET (Metabolic Equivalent of Task) values from the Compendium of Physical Activities.</p>
+
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="field">
+          <label for="weight" data-en="Your weight (kg)" data-ru="Ваш вес (кг)">Your weight (kg)</label>
+          <input type="number" id="weight" min="30" max="300" placeholder="e.g. 75" />
+        </div>
+        <div class="field">
+          <label for="duration" data-en="Duration (minutes)" data-ru="Продолжительность (минуты)">Duration (minutes)</label>
+          <input type="number" id="duration" min="1" max="600" placeholder="e.g. 45" />
+        </div>
+        <div class="field" style="grid-column:1/-1;">
+          <label for="activity" data-en="Activity type" data-ru="Тип активности">Activity type</label>
+          <select id="activity">
+            <optgroup label="🏃 Running / Walking" data-en="🏃 Running / Walking" data-ru="🏃 Бег / Ходьба">
+              <option value="3.5" data-en="Walking (slow, 3 km/h)" data-ru="Ходьба (медленно, 3 км/ч)">Walking (slow, 3 km/h)</option>
+              <option value="4.3" data-en="Walking (moderate, 5 km/h)" data-ru="Ходьба (умеренно, 5 км/ч)">Walking (moderate, 5 km/h)</option>
+              <option value="5.0" data-en="Walking (brisk, 6 km/h)" data-ru="Ходьба (быстро, 6 км/ч)">Walking (brisk, 6 km/h)</option>
+              <option value="7.0" data-en="Running (8 km/h)" data-ru="Бег (8 км/ч)">Running (8 km/h)</option>
+              <option value="9.8" data-en="Running (10 km/h)" data-ru="Бег (10 км/ч)">Running (10 km/h)</option>
+              <option value="11.0" data-en="Running (12 km/h)" data-ru="Бег (12 км/ч)">Running (12 km/h)</option>
+              <option value="13.5" data-en="Running (fast, 14+ km/h)" data-ru="Бег (быстро, 14+ км/ч)">Running (fast, 14+ km/h)</option>
+            </optgroup>
+            <optgroup label="🚴 Cycling" data-en="🚴 Cycling" data-ru="🚴 Велоспорт">
+              <option value="4.0" data-en="Cycling (leisurely, <16 km/h)" data-ru="Велосипед (неспешно, <16 км/ч)">Cycling (leisurely, &lt;16 km/h)</option>
+              <option value="6.8" data-en="Cycling (moderate, 16–19 km/h)" data-ru="Велосипед (умеренно, 16–19 км/ч)">Cycling (moderate, 16–19 km/h)</option>
+              <option value="10.0" data-en="Cycling (vigorous, 20–22 km/h)" data-ru="Велосипед (интенсивно, 20–22 км/ч)">Cycling (vigorous, 20–22 km/h)</option>
+              <option value="12.0" data-en="Cycling (racing, 23+ km/h)" data-ru="Велосипед (гонка, 23+ км/ч)">Cycling (racing, 23+ km/h)</option>
+              <option value="8.5" data-en="Stationary bike (moderate)" data-ru="Велотренажёр (умеренно)">Stationary bike (moderate)</option>
+            </optgroup>
+            <optgroup label="🏊 Swimming" data-en="🏊 Swimming" data-ru="🏊 Плавание">
+              <option value="5.8" data-en="Swimming (leisurely)" data-ru="Плавание (неспешно)">Swimming (leisurely)</option>
+              <option value="8.3" data-en="Swimming (freestyle, moderate)" data-ru="Плавание (кроль, умеренно)">Swimming (freestyle, moderate)</option>
+              <option value="10.0" data-en="Swimming (freestyle, vigorous)" data-ru="Плавание (кроль, интенсивно)">Swimming (freestyle, vigorous)</option>
+            </optgroup>
+            <optgroup label="💪 Gym / Strength" data-en="💪 Gym / Strength" data-ru="💪 Зал / Силовые">
+              <option value="3.5" data-en="Weight training (light)" data-ru="Силовые тренировки (лёгкие)">Weight training (light)</option>
+              <option value="5.0" data-en="Weight training (moderate)" data-ru="Силовые тренировки (умеренные)">Weight training (moderate)</option>
+              <option value="6.0" data-en="Weight training (vigorous)" data-ru="Силовые тренировки (интенсивные)">Weight training (vigorous)</option>
+              <option value="8.0" data-en="Circuit training" data-ru="Круговые тренировки">Circuit training</option>
+              <option value="7.0" data-en="CrossFit" data-ru="Кроссфит">CrossFit</option>
+            </optgroup>
+            <optgroup label="🧘 Cardio / Classes" data-en="🧘 Cardio / Classes" data-ru="🧘 Кардио / Классы">
+              <option value="7.5" data-en="HIIT" data-ru="ВИИТ">HIIT</option>
+              <option value="5.0" data-en="Aerobics (low impact)" data-ru="Аэробика (низкая интенсивность)">Aerobics (low impact)</option>
+              <option value="7.3" data-en="Aerobics (high impact)" data-ru="Аэробика (высокая интенсивность)">Aerobics (high impact)</option>
+              <option value="3.0" data-en="Yoga" data-ru="Йога">Yoga</option>
+              <option value="4.0" data-en="Pilates" data-ru="Пилатес">Pilates</option>
+              <option value="7.8" data-en="Jump rope (moderate)" data-ru="Скакалка (умеренно)">Jump rope (moderate)</option>
+              <option value="4.5" data-en="Dancing" data-ru="Танцы">Dancing</option>
+            </optgroup>
+            <optgroup label="⚽ Sports" data-en="⚽ Sports" data-ru="⚽ Спорт">
+              <option value="7.0" data-en="Football / Soccer" data-ru="Футбол">Football / Soccer</option>
+              <option value="8.0" data-en="Basketball" data-ru="Баскетбол">Basketball</option>
+              <option value="7.0" data-en="Tennis (singles)" data-ru="Теннис (одиночный)">Tennis (singles)</option>
+              <option value="6.0" data-en="Volleyball" data-ru="Волейбол">Volleyball</option>
+              <option value="9.0" data-en="Boxing (sparring)" data-ru="Бокс (спарринг)">Boxing (sparring)</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+
+      <button class="btn-calc" id="calcBtn" data-en="Calculate Calories Burned →" data-ru="Рассчитать сожжённые калории →">Calculate Calories Burned →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please fill in all fields correctly." data-ru="Пожалуйста, заполните все поля правильно.">Please fill in all fields correctly.</p>
+
+      <div class="calc-results" id="calcResults">
+        <div class="calories-display">
+          <div class="kcal-number" id="caloriesDisplay">—</div>
+          <div class="kcal-label" id="caloriesLabel" data-en="calories burned" data-ru="калорий сожжено">calories burned</div>
+        </div>
+
+        <div class="macros-grid">
+          <div class="macro-item">
+            <div class="macro-value" id="perMinute">—</div>
+            <div class="macro-name" data-en="kcal per minute" data-ru="ккал в минуту">kcal per minute</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-value" id="perHour">—</div>
+            <div class="macro-name" data-en="kcal per hour" data-ru="ккал в час">kcal per hour</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-value" id="fatBurned">—</div>
+            <div class="macro-name" data-en="grams of fat" data-ru="грамм жира">grams of fat</div>
+          </div>
+        </div>
+
+        <!-- Equivalents -->
+        <div style="background:var(--cream);border-radius:10px;padding:20px;margin-bottom:16px;">
+          <p style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;" data-en="That's equivalent to burning off:" data-ru="Это эквивалентно сжиганию:">That's equivalent to burning off:</p>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;">
+            <div style="text-align:center;background:white;border-radius:8px;padding:12px;">
+              <div style="font-size:1.5rem;">🍫</div>
+              <div style="font-weight:600;color:var(--green);" id="eq1">—</div>
+              <div style="font-size:0.75rem;color:var(--muted);" data-en="chocolate bars" data-ru="шоколадки">chocolate bars</div>
+            </div>
+            <div style="text-align:center;background:white;border-radius:8px;padding:12px;">
+              <div style="font-size:1.5rem;">🍕</div>
+              <div style="font-weight:600;color:var(--green);" id="eq2">—</div>
+              <div style="font-size:0.75rem;color:var(--muted);" data-en="pizza slices" data-ru="кусков пиццы">pizza slices</div>
+            </div>
+            <div style="text-align:center;background:white;border-radius:8px;padding:12px;">
+              <div style="font-size:1.5rem;">🍎</div>
+              <div style="font-weight:600;color:var(--green);" id="eq3">—</div>
+              <div style="font-size:0.75rem;color:var(--muted);" data-en="apples" data-ru="яблок">apples</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="result-note" id="resultNote"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="How it works" data-ru="Как работает">How it works</div>
+    <h2 class="section-title" data-en="The science behind the calculation" data-ru="Наука за расчётом">The science behind the calculation</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3 data-en="MET value" data-ru="Значение МЕТ">MET value</h3>
+        <p data-en="Each activity has a MET (Metabolic Equivalent of Task) value — a measure of how intense it is relative to rest." data-ru="Каждая активность имеет значение МЕТ — показатель интенсивности относительно состояния покоя.">Each activity has a MET value — a measure of how intense it is relative to rest.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3 data-en="Your weight" data-ru="Ваш вес">Your weight</h3>
+        <p data-en="Heavier people burn more calories doing the same activity, because it takes more energy to move a larger body." data-ru="Люди с большим весом сжигают больше калорий при той же активности, потому что для движения тела большей массы требуется больше энергии.">Heavier people burn more calories doing the same activity.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3 data-en="Duration" data-ru="Продолжительность">Duration</h3>
+        <p data-en="The longer you exercise, the more calories you burn. The formula is: Calories = MET × weight (kg) × duration (hours)." data-ru="Чем дольше тренируетесь, тем больше калорий сжигаете. Формула: Калории = МЕТ × вес (кг) × продолжительность (часы).">The formula is: Calories = MET × weight (kg) × duration (hours).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="blog-grid">
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Calculate your daily calorie and macro targets." data-ru="Рассчитайте суточную норму калорий и БЖУ.">Calculate your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-ru="Проверьте, соответствует ли ваш вес норме.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="water-intake-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Hydration" data-ru="Вода">Hydration</span><h3 data-en="Water Intake Calculator" data-ru="Калькулятор воды">Water Intake Calculator</h3><p data-en="How much water do you need per day?" data-ru="Сколько воды нужно в день?">How much water do you need per day?</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="body-fat-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Body Fat" data-ru="% жира">Body Fat</span><h3 data-en="Body Fat % Calculator" data-ru="Калькулятор % жира">Body Fat % Calculator</h3><p data-en="Estimate your body fat percentage." data-ru="Оцените процент жира в теле.">Estimate your body fat percentage.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links">
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span><span data-en="Educational estimates only." data-ru="Только образовательные оценки.">Educational estimates only.</span></div>
+</footer>
+
+<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('siteNav').classList.toggle('open'); });
+window.addEventListener('scroll', function(){
+  var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+  document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+});
+
+let currentLang = 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+    else el.textContent = t;
+  });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    var t = opt.getAttribute('data-' + lang); if (t) opt.textContent = t;
+  });
+  if (document.getElementById('calcResults').classList.contains('visible')) updateLabels();
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+const notes = {
+  en: 'This is an estimate based on MET values. Actual calorie burn varies based on fitness level, age, muscle mass, and exercise intensity. Heart rate monitors provide more accurate measurements.',
+  ru: 'Это приблизительная оценка на основе значений МЕТ. Реальный расход калорий зависит от уровня физической подготовки, возраста, мышечной массы и интенсивности упражнений. Пульсометры дают более точные показания.'
+};
+
+function updateLabels() {
+  document.getElementById('caloriesLabel').textContent = currentLang === 'ru' ? 'калорий сожжено' : 'calories burned';
+  document.getElementById('resultNote').textContent = notes[currentLang];
+}
+
+document.getElementById('calcBtn').addEventListener('click', function() {
+  const weight = parseFloat(document.getElementById('weight').value);
+  const duration = parseFloat(document.getElementById('duration').value);
+  const met = parseFloat(document.getElementById('activity').value);
+  const err = document.getElementById('calcError');
+
+  if (!weight || !duration || weight < 30 || duration < 1) { err.style.display = 'block'; return; }
+  err.style.display = 'none';
+
+  // Calories = MET × weight(kg) × duration(hours)
+  const hours = duration / 60;
+  const calories = Math.round(met * weight * hours);
+  const perMinute = (met * weight / 60).toFixed(1);
+  const perHour = Math.round(met * weight);
+  const fatGrams = (calories / 7.7).toFixed(1);
+
+  document.getElementById('caloriesDisplay').textContent = calories.toLocaleString();
+  document.getElementById('perMinute').textContent = perMinute;
+  document.getElementById('perHour').textContent = perHour;
+  document.getElementById('fatBurned').textContent = fatGrams + 'g';
+
+  // Food equivalents
+  document.getElementById('eq1').textContent = (calories / 235).toFixed(1);  // chocolate bar ~235 kcal
+  document.getElementById('eq2').textContent = (calories / 285).toFixed(1);  // pizza slice ~285 kcal
+  document.getElementById('eq3').textContent = (calories / 80).toFixed(1);   // apple ~80 kcal
+
+  updateLabels();
+  const results = document.getElementById('calcResults');
+  results.classList.add('visible');
+  setTimeout(() => results.scrollIntoView({behavior:'smooth',block:'start'}), 100);
+});
+</script>
+</body>
+</html>
