@@ -16,7 +16,11 @@
 <header class="site-header">
   <div class="inner">
     <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <div class="header-lang" id="headerLang">
+        <button class="active" id="headerLangEN">EN</button>
+        <button id="headerLangRU">RU</button>
+      </div>
+      <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
     <nav class="site-nav" id="siteNav">
       <a href="/">Calculator</a>
       <a href="/blog/" class="active">Blog</a>
@@ -144,6 +148,24 @@
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});</script>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});
+// Sync header-lang buttons (always visible on mobile)
+(function() {
+  var hEN = document.getElementById('headerLangEN');
+  var hRU = document.getElementById('headerLangRU');
+  if (!hEN || !hRU) return;
+  // Set initial state
+  var sl = localStorage.getItem('lang');
+  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function() {
+    document.getElementById('langEN') && document.getElementById('langEN').click();
+    hEN.classList.add('active'); hRU.classList.remove('active');
+  });
+  hRU.addEventListener('click', function() {
+    document.getElementById('langRU') && document.getElementById('langRU').click();
+    hRU.classList.add('active'); hEN.classList.remove('active');
+  });
+})();
+</script>
 </body>
 </html>
