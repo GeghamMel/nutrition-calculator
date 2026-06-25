@@ -738,7 +738,7 @@ function printResults() {
 }
 
 // Check for saved results on load
-(function() {
+window.addEventListener('load', function() {
   var saved = localStorage.getItem('cm_saved_results');
   if (!saved) return;
   try {
@@ -749,8 +749,9 @@ function printResults() {
     var text = (l==='ru' ? 'Цель: ' : 'Goal: ') + (goalMap[data.goal]||data.goal) + ' · ' + data.kcal + ' ' + (l==='ru'?'ккал/день':'kcal/day') + ' · ' + (l==='ru'?'Сохранено: ':'Saved: ') + data.savedAt;
     document.getElementById('savedBannerText').textContent = text;
     document.getElementById('savedBanner').style.display = 'block';
-  } catch(e) {}
-})();
+    document.getElementById('savedBanner').scrollIntoView({behavior:'smooth', block:'nearest'});
+  } catch(e) { console.log('Banner error:', e); }
+});
 
 // --- Hamburger ---
 document.getElementById('hamburger').addEventListener('click', function() {
