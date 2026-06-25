@@ -226,7 +226,12 @@ function applyLang(lang) {
     else el.textContent = t;
   });
   document.querySelectorAll('select option[data-en]').forEach(function(opt) {
-    var t = opt.getAttribute('data-' + lang); if (t) opt.textContent = t;
+    var t = opt.getAttribute('data-' + lang);
+    if (t) {
+      var v = opt.value; // save value
+      opt.textContent = t;
+      opt.value = v; // restore value
+    }
   });
   updateResults();
   localStorage.setItem('lang', lang);
