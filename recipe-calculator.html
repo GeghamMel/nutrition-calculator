@@ -69,8 +69,9 @@
       <div class="calc-grid" style="margin-bottom:16px;">
         <div class="field" style="position:relative;">
           <label for="ingredientSearch" data-en="Search ingredient" data-ru="Поиск ингредиента">Search ingredient</label>
-          <input type="text" id="ingredientSearch" placeholder="e.g. chicken breast, oats..." autocomplete="off" />
+          <input type="text" id="ingredientSearch" placeholder="e.g. chicken, oats, banana..." autocomplete="off" style="border-color:var(--green-light);" />
           <div id="searchDropdown" style="display:none;position:absolute;top:100%;left:0;right:0;background:white;border:1.5px solid var(--border);border-radius:8px;max-height:220px;overflow-y:auto;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.12);margin-top:4px;"></div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:6px;" data-en="⬆ Type to search, then click a result to select" data-ru="⬆ Начните вводить название, затем выберите из списка">⬆ Type to search, then click a result to select</p>
         </div>
         <div class="field">
           <label for="ingredientGrams" data-en="Weight (grams)" data-ru="Вес (граммы)">Weight (grams)</label>
@@ -297,6 +298,29 @@ var ingredients = [];
 var selectedFood = null;
 
 // Search
+document.getElementById('ingredientSearch').addEventListener('focus', function() {
+  if (!this.value) {
+    var dd = document.getElementById('searchDropdown');
+    var popular = ['Chicken breast (cooked)', 'Egg (whole)', 'White rice (cooked)', 'Oats (dry)', 'Banana', 'Greek yoghurt (0% fat)', 'Salmon (raw)', 'Broccoli', 'Olive oil', 'Pasta (cooked)'];
+    dd.innerHTML = '';
+    var header = document.createElement('div');
+    header.style.cssText = 'padding:8px 14px;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;background:var(--cream);border-bottom:1px solid var(--border);';
+    header.textContent = currentLang === 'ru' ? 'Популярные продукты:' : 'Popular foods:';
+    dd.appendChild(header);
+    popular.forEach(function(f) {
+      var displayName = currentLang === 'ru' ? (FOODS_RU[f] || f) : f;
+      var item = document.createElement('div');
+      item.style.cssText = 'padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border);font-size:0.9rem;';
+      item.textContent = displayName;
+      item.addEventListener('mouseenter', function(){ this.style.background = 'var(--cream)'; });
+      item.addEventListener('mouseleave', function(){ this.style.background = ''; });
+      item.addEventListener('mousedown', function(e) { e.preventDefault(); selectFood(f); });
+      dd.appendChild(item);
+    });
+    dd.style.display = 'block';
+  }
+});
+
 document.getElementById('ingredientSearch').addEventListener('input', function() {
   var q = this.value.toLowerCase().trim();
   var dd = document.getElementById('searchDropdown');
