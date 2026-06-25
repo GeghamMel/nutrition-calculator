@@ -50,6 +50,14 @@
     <p data-en="Find out how many calories you burn during any workout. Supports 20+ activities including running, cycling, swimming, and more." data-ru="Узнайте, сколько калорий вы сжигаете во время тренировки. Поддерживает 20+ видов активности: бег, велосипед, плавание и другие.">Find out how many calories you burn during any workout. Supports 20+ activities including running, cycling, swimming, and more.</p>
     <a href="#calculator" class="btn-scroll" data-en="Calculate Calories Burned ↓" data-ru="Рассчитать сожжённые калории ↓">Calculate Calories Burned ↓</a>
   </div>
+
+<div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;max-width:680px;margin:16px auto 0;border-radius:0 8px 8px 0;">
+  <p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;" data-en="Your saved exercise result:" data-ru="Ваш сохранённый результат тренировки:">Your saved exercise result:</p>
+  <p style="font-size:0.85rem;color:var(--muted);" id="savedBannerText"></p>
+  <div style="display:flex;gap:10px;margin-top:10px;">
+    <button onclick="document.getElementById('savedBanner').style.display='none'" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);" data-en="Dismiss" data-ru="Закрыть">Dismiss</button>
+  </div>
+</div>
 </section>
 
 <section class="calc-section" id="calculator">
@@ -236,15 +244,33 @@
 
 function savePageResults() {
   var results = {};
-  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value').forEach(function(el, i) {
-    results['val_' + i] = el.textContent;
+  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct').forEach(function(el, i) {
+    if (el.textContent && el.textContent !== '—') results['val_' + i] = el.textContent;
   });
+  // Get main result text
+  var mainEl = document.querySelector('.calc-results .kcal-number, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct');
+  if (mainEl) results.mainValue = mainEl.textContent;
   results.savedAt = new Date().toLocaleDateString();
-  var key = 'cm_saved_' + window.location.pathname.replace(/[^a-z]/gi,'_');
-  localStorage.setItem(key, JSON.stringify(results));
+  localStorage.setItem('cm_saved_exercise', JSON.stringify(results));
   var msg = document.getElementById('saveMsg');
   if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
 }
+
+// Show saved banner on load
+window.addEventListener('load', function() {
+  var saved = localStorage.getItem('cm_saved_exercise');
+  if (!saved) return;
+  try {
+    var data = JSON.parse(saved);
+    if (!data.mainValue) return;
+    var banner = document.getElementById('savedBanner');
+    var bannerText = document.getElementById('savedBannerText');
+    if (!banner || !bannerText) return;
+    var l = localStorage.getItem('lang') || 'en';
+    bannerText.textContent = (l==='ru' ? 'Результат: ' : 'Result: ') + data.mainValue + ' · ' + (l==='ru' ? 'Сохранено: ' : 'Saved: ') + data.savedAt;
+    banner.style.display = 'block';
+  } catch(e) {}
+});
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('siteNav').classList.toggle('open'); });
 window.addEventListener('scroll', function(){
