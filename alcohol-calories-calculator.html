@@ -215,83 +215,73 @@ window.addEventListener('scroll', function(){
   document.getElementById('scrollTop').style.display=s>400?'flex':'none';
 });
 
-let currentLang = 'en';
+var currentLang = localStorage.getItem('lang') || 'en';
+var drinks = [];
+
+// Language switcher
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-en]').forEach(function(el) {
     var t = el.getAttribute('data-' + lang);
     if (!t) return;
-    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
-    else el.textContent = t;
+    if (el.tagName === 'BUTTON' || el.tagName === 'SPAN' || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'LABEL' || el.tagName === 'DIV') {
+      if (t.includes('<')) el.innerHTML = t; else el.textContent = t;
+    }
   });
   document.querySelectorAll('select option[data-en]').forEach(function(opt) {
     var t = opt.getAttribute('data-' + lang);
-    if (t) {
-      var v = opt.value; // save value
-      opt.textContent = t;
-      opt.value = v; // restore value
-    }
+    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
   });
   updateResults();
   localStorage.setItem('lang', lang);
 }
-document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
-document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
-var sl = localStorage.getItem('lang');
-if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+
+document.getElementById('langEN').addEventListener('click', function() {
+  this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en');
+});
+document.getElementById('langRU').addEventListener('click', function() {
+  this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru');
+});
 (function(){
   var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
-  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
-  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
-  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+  if (currentLang==='ru') {
+    document.getElementById('langRU').classList.add('active');
+    document.getElementById('langEN').classList.remove('active');
+    hRU.classList.add('active'); hEN.classList.remove('active');
+    applyLang('ru');
+  }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); });
 })();
 
 // Show/hide custom fields
 document.getElementById('drinkType').addEventListener('change', function() {
-  document.getElementById('customFields').style.display = this.value.startsWith('custom') ? 'block' : 'none';
+  document.getElementById('customFields').style.display = this.value === 'custom|0|0' ? 'block' : 'none';
 });
 
-let drinks = [];
-
+// Add drink button
 document.getElementById('addBtn').addEventListener('click', function() {
-  const select = document.getElementById('drinkType');
-  const qty = parseInt(document.getElementById('quantity').value) || 1;
-  const val = select.value;
+  var select = document.getElementById('drinkType');
+  var qty = parseInt(document.getElementById('quantity').value) || 1;
+  var val = select.value;
+  var name, kcal;
 
-  let name, kcal;
-  if (val.startsWith('custom')) {
-    name = document.getElementById('customName').value || (currentLang === 'ru' ? 'Свой напиток' : 'Custom drink');
+  if (val === 'custom|0|0') {
+    name = document.getElementById('customName').value.trim();
     kcal = parseInt(document.getElementById('customKcal').value) || 0;
+    if (!name) { name = currentLang === 'ru' ? 'Свой напиток' : 'Custom drink'; }
   } else {
-    const parts = val.split('|');
-    name = select.options[select.selectedIndex].getAttribute('data-' + currentLang) || select.options[select.selectedIndex].text;
-    kcal = parseInt(parts[2]);
+    var parts = val.split('|');
+    kcal = parseInt(parts[2]) || 0;
+    var opt = select.options[select.selectedIndex];
+    name = opt.getAttribute('data-' + currentLang) || opt.text;
   }
 
-  drinks.push({ name, kcal, qty });
+  drinks.push({ name: name, kcal: kcal, qty: qty });
   renderDrinks();
   updateResults();
 });
-
-function renderDrinks() {
-  const list = document.getElementById('drinksItems');
-  const container = document.getElementById('drinksList');
-  if (drinks.length === 0) { container.style.display = 'none'; return; }
-  container.style.display = 'block';
-  list.innerHTML = drinks.map((d, i) => `
-    <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--cream);border-radius:8px;margin-bottom:8px;">
-      <div>
-        <span style="font-weight:600;font-size:0.9rem;">${d.name}</span>
-        ${d.qty > 1 ? `<span style="color:var(--muted);font-size:0.82rem;"> × ${d.qty}</span>` : ''}
-      </div>
-      <div style="display:flex;align-items:center;gap:12px;">
-        <span style="color:var(--green);font-weight:600;">${d.kcal * d.qty} kcal</span>
-        <button onclick="removeDrink(${i})" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;">×</button>
-      </div>
-    </div>
-  `).join('');
-}
 
 function removeDrink(i) {
   drinks.splice(i, 1);
@@ -305,23 +295,39 @@ function clearAll() {
   updateResults();
 }
 
+function renderDrinks() {
+  var list = document.getElementById('drinksItems');
+  var container = document.getElementById('drinksList');
+  if (drinks.length === 0) { container.style.display = 'none'; return; }
+  container.style.display = 'block';
+  list.innerHTML = drinks.map(function(d, i) {
+    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--cream);border-radius:8px;margin-bottom:8px;">' +
+      '<div><span style="font-weight:600;font-size:0.9rem;">' + d.name + '</span>' +
+      (d.qty > 1 ? '<span style="color:var(--muted);font-size:0.82rem;"> × ' + d.qty + '</span>' : '') +
+      '</div><div style="display:flex;align-items:center;gap:12px;">' +
+      '<span style="color:var(--green);font-weight:600;">' + (d.kcal * d.qty) + ' kcal</span>' +
+      '<button onclick="removeDrink(' + i + ')" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;padding:0 4px;">×</button>' +
+      '</div></div>';
+  }).join('');
+}
+
 function updateResults() {
-  const total = drinks.reduce((sum, d) => sum + d.kcal * d.qty, 0);
+  var total = drinks.reduce(function(sum, d) { return sum + d.kcal * d.qty; }, 0);
   document.getElementById('totalCalories').textContent = total.toLocaleString();
   document.getElementById('totalAlcohol').textContent = Math.round(total / 7) + 'g';
   document.getElementById('workoutMin').textContent = Math.round(total / 10) + ' min';
   document.getElementById('pctOfDailyTarget').textContent = Math.round(total / 20) + '%';
 
-  const l = currentLang;
-  let note = '';
+  var l = currentLang;
+  var note = '';
   if (total === 0) {
     note = l === 'ru' ? 'Добавьте напитки выше, чтобы рассчитать общее количество калорий.' : 'Add drinks above to calculate your total calorie intake.';
   } else if (total < 200) {
-    note = l === 'ru' ? 'Умеренное потребление. Это вписывается в большинство диет при подсчёте в суточном балансе.' : 'Moderate intake. This fits into most diets when accounted for in your daily balance.';
+    note = l === 'ru' ? 'Умеренное потребление. Вписывается в большинство диет при подсчёте в суточном балансе.' : 'Moderate intake. This fits into most diets when accounted for in your daily balance.';
   } else if (total < 500) {
-    note = l === 'ru' ? 'Заметное количество калорий. Алкоголь не содержит питательных веществ — эти калории не насыщают и не дают нутриентов.' : 'Notable calorie amount. Alcohol provides no nutrients — these calories don\'t fill you up or support recovery.';
+    note = l === 'ru' ? 'Заметное количество калорий. Алкоголь не содержит питательных веществ.' : "Notable calorie amount. Alcohol provides no nutrients — these calories don't fill you up.";
   } else {
-    note = l === 'ru' ? 'Высокое потребление калорий из алкоголя. Помните: алкоголь также замедляет жиросжигание и ухудшает восстановление после тренировок.' : 'High calorie intake from alcohol. Note: alcohol also slows fat burning and impairs workout recovery.';
+    note = l === 'ru' ? 'Высокое потребление калорий из алкоголя. Алкоголь также замедляет жиросжигание.' : 'High calorie intake from alcohol. Note: alcohol also slows fat burning and impairs recovery.';
   }
   document.getElementById('resultNote').textContent = note;
   document.getElementById('calcResults').classList.add('visible');
