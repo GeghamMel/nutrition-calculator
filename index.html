@@ -406,6 +406,143 @@
 })();
 </script>
 
+
+<!-- CARBS TABLE SECTION -->
+<section class="how-section" style="background:var(--white);">
+  <div class="container">
+    <div class="section-label" data-en="Quick reference" data-ru="Быстрый справочник">Quick reference</div>
+    <h2 class="section-title" data-en="Carbohydrates in Common Foods" data-ru="Углеводы в популярных продуктах">Carbohydrates in Common Foods</h2>
+    <p class="section-sub" data-en="Net carbs per 100g — sorted by carbohydrate content. Click a row for details." data-ru="Углеводы на 100г — отсортировано по содержанию. Нажмите на строку для подробностей.">Net carbs per 100g — sorted by carbohydrate content. Click a row for details.</p>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
+      <button class="carb-filter active" data-filter="all" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--green);background:var(--green);color:white;font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="All" data-ru="Все">All</button>
+      <button class="carb-filter" data-filter="grains" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="🌾 Grains" data-ru="🌾 Злаки">🌾 Grains</button>
+      <button class="carb-filter" data-filter="fruits" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="🍎 Fruits" data-ru="🍎 Фрукты">🍎 Fruits</button>
+      <button class="carb-filter" data-filter="veggies" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="🥦 Vegetables" data-ru="🥦 Овощи">🥦 Vegetables</button>
+      <button class="carb-filter" data-filter="legumes" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;" data-en="🫘 Legumes" data-ru="🫘 Бобовые">🫘 Legumes</button>
+    </div>
+
+    <div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;">
+      <table style="width:100%;min-width:480px;border-collapse:collapse;font-size:0.9rem;">
+        <thead>
+          <tr style="background:var(--green);color:white;">
+            <th style="padding:12px 16px;text-align:left;font-weight:600;" data-en="#" data-ru="#">#</th>
+            <th style="padding:12px 16px;text-align:left;font-weight:600;" data-en="Food" data-ru="Продукт">Food</th>
+            <th style="padding:12px 16px;text-align:left;font-weight:600;" data-en="Category" data-ru="Категория">Category</th>
+            <th style="padding:12px 16px;text-align:right;font-weight:600;" data-en="Carbs" data-ru="Углеводы">Carbs</th>
+            <th style="padding:12px 16px;text-align:right;font-weight:600;" data-en="Calories" data-ru="Калории">Calories</th>
+            <th style="padding:12px 16px;text-align:right;font-weight:600;" data-en="Fibre" data-ru="Клетчатка">Fibre</th>
+          </tr>
+        </thead>
+        <tbody id="carbsTbody"></tbody>
+      </table>
+    </div>
+
+    <div id="carbsDetail" style="display:none;margin-top:16px;background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
+        <h3 id="carbsDetailName" style="font-size:1.1rem;font-weight:600;"></h3>
+        <button onclick="document.getElementById('carbsDetail').style.display='none'" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);">×</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;" id="carbsDetailGrid"></div>
+      <p id="carbsDetailNote" style="margin-top:16px;font-size:0.85rem;color:var(--muted);border-left:3px solid var(--green-light);padding-left:12px;"></p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var carbFoods = [
+    { name_en:'White rice (cooked)', name_ru:'Белый рис (варёный)', cat:'grains', carbs:28, cal:130, fibre:0.4, gi:'High', note_en:'Fast-digesting carb. Good for pre/post workout. Spike in blood sugar is quicker than brown rice.', note_ru:'Быстроусвояемый углевод. Подходит до/после тренировки. Быстрее повышает сахар, чем бурый рис.' },
+    { name_en:'Brown rice (cooked)', name_ru:'Бурый рис (варёный)', cat:'grains', carbs:23, cal:112, fibre:1.8, gi:'Medium', note_en:'More fibre and micronutrients than white rice. Slower digestion keeps you fuller longer.', note_ru:'Больше клетчатки и микронутриентов, чем белый рис. Медленнее переваривается — дольше насыщает.' },
+    { name_en:'Oats (dry)', name_ru:'Овсянка (сухая)', cat:'grains', carbs:66, cal:389, fibre:10.6, gi:'Low', note_en:'Excellent source of beta-glucan fibre. Helps lower cholesterol and provides sustained energy.', note_ru:'Отличный источник бета-глюкана. Снижает холестерин и даёт устойчивую энергию.' },
+    { name_en:'Whole wheat bread', name_ru:'Хлеб из цельного зерна', cat:'grains', carbs:41, cal:247, fibre:6.0, gi:'Medium', note_en:'Higher fibre than white bread. A good everyday carb choice for most diets.', note_ru:'Больше клетчатки, чем белый хлеб. Хороший повседневный выбор углеводов.' },
+    { name_en:'White bread', name_ru:'Белый хлеб', cat:'grains', carbs:49, cal:265, fibre:2.7, gi:'High', note_en:'Low in fibre and nutrients. Convenient but not ideal for blood sugar management.', note_ru:'Мало клетчатки. Удобен, но не идеален для контроля сахара в крови.' },
+    { name_en:'Pasta (cooked)', name_ru:'Паста (варёная)', cat:'grains', carbs:25, cal:131, fibre:1.8, gi:'Medium', note_en:'Al dente pasta has a lower GI than well-cooked pasta. Portion size matters more than type.', note_ru:'Паста аль денте имеет более низкий ГИ. Размер порции важнее вида пасты.' },
+    { name_en:'Quinoa (cooked)', name_ru:'Киноа (варёная)', cat:'grains', carbs:21, cal:120, fibre:2.8, gi:'Low', note_en:'Complete protein + carb combo. One of the few plant foods with all essential amino acids.', note_ru:'Сочетание полноценного белка и углеводов. Одно из редких растений со всеми аминокислотами.' },
+    { name_en:'Banana', name_ru:'Банан', cat:'fruits', carbs:23, cal:89, fibre:2.6, gi:'Medium', note_en:'Great pre-workout fruit. Riper bananas have higher sugar content and GI.', note_ru:'Отличный фрукт перед тренировкой. У более спелых бананов выше сахар и ГИ.' },
+    { name_en:'Apple', name_ru:'Яблоко', cat:'fruits', carbs:14, cal:52, fibre:2.4, gi:'Low', note_en:'Low GI fruit rich in pectin fibre. Good for gut health and appetite control.', note_ru:'Фрукт с низким ГИ, богатый пектином. Полезен для кишечника и контроля аппетита.' },
+    { name_en:'Mango', name_ru:'Манго', cat:'fruits', carbs:15, cal:60, fibre:1.6, gi:'Medium', note_en:'Rich in vitamins A and C. Higher in sugar than most berries but still nutrient-dense.', note_ru:'Богат витаминами А и С. Больше сахара, чем в ягодах, но насыщен нутриентами.' },
+    { name_en:'Grapes', name_ru:'Виноград', cat:'fruits', carbs:18, cal:69, fibre:0.9, gi:'Medium', note_en:'High in natural sugars. Easy to overeat — stick to a 100–150g portion.', note_ru:'Много натурального сахара. Легко переесть — придерживайтесь порции 100–150г.' },
+    { name_en:'Blueberries', name_ru:'Черника', cat:'fruits', carbs:14, cal:57, fibre:2.4, gi:'Low', note_en:'One of the best fruit options on a diet. Low GI, high in antioxidants and fibre.', note_ru:'Один из лучших фруктов на диете. Низкий ГИ, много антиоксидантов и клетчатки.' },
+    { name_en:'Strawberries', name_ru:'Клубника', cat:'fruits', carbs:8, cal:33, fibre:2.0, gi:'Low', note_en:'Very low in calories and carbs. Great option when dieting — high volume, low calorie.', note_ru:'Очень мало калорий и углеводов. Отличный вариант на диете — большой объём, мало калорий.' },
+    { name_en:'Sweet potato (cooked)', name_ru:'Батат (варёный)', cat:'veggies', carbs:20, cal:86, fibre:3.0, gi:'Medium', note_en:'Nutrient-dense carb source. High in vitamin A and potassium. Better micronutrient profile than white potato.', note_ru:'Питательный источник углеводов. Много витамина А и калия. Лучше белого картофеля по микронутриентам.' },
+    { name_en:'White potato (cooked)', name_ru:'Картофель (варёный)', cat:'veggies', carbs:17, cal:77, fibre:1.8, gi:'High', note_en:'Most filling food per calorie in studies. High GI but very satiating when boiled.', note_ru:'Самый насыщающий продукт на калорию по исследованиям. Высокий ГИ, но очень сытный в варёном виде.' },
+    { name_en:'Carrot', name_ru:'Морковь', cat:'veggies', carbs:10, cal:41, fibre:2.8, gi:'Low', note_en:'Despite sweet taste, carrots have a low GI. Rich in beta-carotene (vitamin A precursor).', note_ru:'Несмотря на сладкий вкус, низкий ГИ. Богата бета-каротином (предшественник витамина А).' },
+    { name_en:'Broccoli', name_ru:'Брокколи', cat:'veggies', carbs:7, cal:34, fibre:2.6, gi:'Low', note_en:'Very low carb vegetable. Excellent source of vitamin C and K. Great for filling volume without calories.', note_ru:'Очень мало углеводов. Отличный источник витаминов С и К. Хорошо заполняет объём без калорий.' },
+    { name_en:'Lentils (cooked)', name_ru:'Чечевица (варёная)', cat:'legumes', carbs:20, cal:116, fibre:7.9, gi:'Low', note_en:'Excellent carb + protein + fibre combo. One of the best foods for blood sugar management.', note_ru:'Отличное сочетание углеводов, белка и клетчатки. Один из лучших продуктов для контроля сахара.' },
+    { name_en:'Chickpeas (cooked)', name_ru:'Нут (варёный)', cat:'legumes', carbs:27, cal:164, fibre:7.6, gi:'Low', note_en:'Versatile low-GI carb. The base of hummus. High in both protein and fibre.', note_ru:'Универсальный низкогликемический углевод. Основа хумуса. Много белка и клетчатки.' },
+    { name_en:'Black beans (cooked)', name_ru:'Чёрная фасоль (варёная)', cat:'legumes', carbs:24, cal:132, fibre:8.7, gi:'Low', note_en:'High fibre content makes the net carbs relatively low. Excellent for gut health.', note_ru:'Много клетчатки делает нетто-углеводы относительно низкими. Отлично для кишечника.' },
+  ];
+
+  var currentLangCarbs = localStorage.getItem('lang') || 'en';
+  var currentFilterCarbs = 'all';
+
+  function renderCarbs(filter) {
+    var tbody = document.getElementById('carbsTbody');
+    tbody.innerHTML = '';
+    var filtered = filter === 'all' ? carbFoods : carbFoods.filter(function(f){ return f.cat === filter; });
+    filtered.sort(function(a,b){ return b.carbs - a.carbs; });
+    filtered.forEach(function(f, i) {
+      var name = currentLangCarbs === 'ru' ? f.name_ru : f.name_en;
+      var catLabel = { grains: currentLangCarbs==='ru'?'🌾 Злаки':'🌾 Grains', fruits: currentLangCarbs==='ru'?'🍎 Фрукты':'🍎 Fruits', veggies: currentLangCarbs==='ru'?'🥦 Овощи':'🥦 Vegetables', legumes: currentLangCarbs==='ru'?'🫘 Бобовые':'🫘 Legumes' }[f.cat];
+      var barW = Math.round(f.carbs / 70 * 100);
+      var tr = document.createElement('tr');
+      tr.style.cssText = 'cursor:pointer;transition:background 0.15s;border-bottom:1px solid #E5E7EB;';
+      tr.addEventListener('mouseenter', function(){ this.style.background='#F9F6F0'; });
+      tr.addEventListener('mouseleave', function(){ this.style.background=''; });
+      tr.innerHTML =
+        '<td style="padding:12px 16px;color:var(--muted);font-weight:600;">' + (i+1) + '</td>' +
+        '<td style="padding:12px 16px;font-weight:500;">' + name + '</td>' +
+        '<td style="padding:12px 16px;color:var(--muted);font-size:0.82rem;">' + catLabel + '</td>' +
+        '<td style="padding:12px 16px;text-align:right;"><div style="display:flex;align-items:center;justify-content:flex-end;gap:8px;"><div style="width:60px;height:6px;background:#E5E7EB;border-radius:3px;overflow:hidden;"><div style="width:' + barW + '%;height:100%;background:#F4A261;border-radius:3px;"></div></div><strong style="color:#d97706;min-width:36px;">' + f.carbs + 'g</strong></div></td>' +
+        '<td style="padding:12px 16px;text-align:right;color:var(--muted);">' + f.cal + ' kcal</td>' +
+        '<td style="padding:12px 16px;text-align:right;color:var(--muted);">' + f.fibre + 'g</td>';
+      tr.addEventListener('click', function(){ showCarbDetail(f); });
+      tbody.appendChild(tr);
+    });
+  }
+
+  function showCarbDetail(f) {
+    var l = currentLangCarbs;
+    document.getElementById('carbsDetailName').textContent = l==='ru' ? f.name_ru : f.name_en;
+    var items = [
+      { label: l==='ru'?'Углеводы':'Carbs', value: f.carbs+'g' },
+      { label: l==='ru'?'Калории':'Calories', value: f.cal+' kcal' },
+      { label: l==='ru'?'Клетчатка':'Fibre', value: f.fibre+'g' },
+      { label: l==='ru'?'ГИ':'GI', value: f.gi },
+      { label: l==='ru'?'Чистые углеводы':'Net carbs', value: (f.carbs - f.fibre).toFixed(1)+'g' }
+    ];
+    document.getElementById('carbsDetailGrid').innerHTML = items.map(function(item){
+      return '<div style="background:var(--cream);border-radius:8px;padding:12px;text-align:center;"><div style="font-family:var(--font-display);font-size:1.4rem;color:var(--green);">' + item.value + '</div><div style="font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:2px;">' + item.label + '</div></div>';
+    }).join('');
+    document.getElementById('carbsDetailNote').textContent = l==='ru' ? f.note_ru : f.note_en;
+    document.getElementById('carbsDetail').style.display = 'block';
+    document.getElementById('carbsDetail').scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }
+
+  document.querySelectorAll('.carb-filter').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      currentFilterCarbs = this.getAttribute('data-filter');
+      document.querySelectorAll('.carb-filter').forEach(function(b){
+        b.style.background='white'; b.style.color='var(--muted)'; b.style.borderColor='var(--border)';
+      });
+      this.style.background='var(--green)'; this.style.color='white'; this.style.borderColor='var(--green)';
+      renderCarbs(currentFilterCarbs);
+      document.getElementById('carbsDetail').style.display='none';
+    });
+  });
+
+  // Sync with page lang switcher
+  var observer = new MutationObserver(function() {
+    var newLang = localStorage.getItem('lang') || 'en';
+    if (newLang !== currentLangCarbs) { currentLangCarbs = newLang; renderCarbs(currentFilterCarbs); }
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+  renderCarbs('all');
+})();
+</script>
+
 <section class="blog-section">
   <div class="container">
     <div class="section-label" data-en="Learn more" data-ru="Статьи">Learn more</div>
