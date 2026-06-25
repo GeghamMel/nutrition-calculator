@@ -372,6 +372,12 @@ function addIngredient() {
   selectedFood = null;
   renderIngredients();
   updateResults();
+  // Reset selection
+  selectedFood = null;
+  document.getElementById('selectedDisplay').textContent = currentLang === 'ru' ? '— нажмите на продукт выше —' : '— click a food above —';
+  document.getElementById('selectedDisplay').style.color = 'var(--muted)';
+  document.getElementById('selectedDisplay').style.borderColor = 'var(--border)';
+  document.querySelectorAll('#foodGrid button').forEach(function(b){ b.style.background='white'; b.style.color='var(--muted)'; b.style.borderColor='var(--border)'; });
 }
 
 function removeIngredient(i) {
