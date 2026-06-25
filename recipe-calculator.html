@@ -66,12 +66,18 @@
       </div>
 
       <!-- Ingredient search -->
+      <div class="field" style="margin-bottom:8px;">
+        <label for="ingredientSearch" data-en="Search ingredient" data-ru="Поиск ингредиента">Search ingredient</label>
+        <input type="text" id="ingredientSearch" placeholder="e.g. chicken, banana, oats..." autocomplete="off" />
+      </div>
+
+      <!-- Food buttons grid -->
+      <div id="foodGrid" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;max-height:180px;overflow-y:auto;padding:4px 0;"></div>
+
       <div class="calc-grid" style="margin-bottom:16px;">
-        <div class="field" style="position:relative;">
-          <label for="ingredientSearch" data-en="Search ingredient" data-ru="Поиск ингредиента">Search ingredient</label>
-          <input type="text" id="ingredientSearch" placeholder="e.g. chicken, oats, banana..." autocomplete="off" style="border-color:var(--green-light);" />
-          <div id="searchDropdown" style="display:none;position:absolute;top:100%;left:0;right:0;background:white;border:1.5px solid var(--border);border-radius:8px;max-height:220px;overflow-y:auto;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.12);margin-top:4px;"></div>
-          <p style="font-size:0.78rem;color:var(--muted);margin-top:6px;" data-en="⬆ Type to search, then click a result to select" data-ru="⬆ Начните вводить название, затем выберите из списка">⬆ Type to search, then click a result to select</p>
+        <div class="field">
+          <label data-en="Selected food:" data-ru="Выбранный продукт:">Selected food:</label>
+          <div id="selectedDisplay" style="padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--cream);color:var(--muted);font-size:0.9rem;min-height:44px;" data-en="— click a food button above —" data-ru="— нажмите на кнопку продукта выше —">— click a food button above —</div>
         </div>
         <div class="field">
           <label for="ingredientGrams" data-en="Weight (grams)" data-ru="Вес (граммы)">Weight (grams)</label>
@@ -80,7 +86,7 @@
       </div>
 
       <button class="btn-calc" onclick="addIngredient()" data-en="+ Add Ingredient" data-ru="+ Добавить ингредиент">+ Add Ingredient</button>
-      <p id="addError" style="color:#dc2626;font-size:0.85rem;margin-top:8px;display:none;" data-en="Please select an ingredient and enter weight." data-ru="Выберите ингредиент и введите вес.">Please select an ingredient and enter weight.</p>
+      <p id="addError" style="color:#dc2626;font-size:0.85rem;margin-top:8px;display:none;" data-en="Please click a food button and enter weight." data-ru="Нажмите на кнопку продукта и введите вес.">Please click a food button and enter weight.</p>
 
       <!-- Ingredients list -->
       <div id="ingredientsList" style="display:none;margin-top:24px;">
