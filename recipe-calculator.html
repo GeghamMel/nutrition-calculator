@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe Nutrition Calculator — Calories & Macros</title>
+  <meta name="description" content="Calculate the calories, protein, carbs and fat in any recipe. Add ingredients and get full nutritional breakdown instantly." />
+  <link rel="canonical" href="https://calories-macros.com/recipe-calculator.html" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+  <meta property="og:title" content="Recipe Nutrition Calculator" />
+  <meta property="og:description" content="Calculate calories and macros in any recipe instantly." />
+  <meta property="og:image" content="https://calories-macros.com/og-image.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <div class="header-lang" id="headerLang">
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
+    </div>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle">
+        <button class="active" id="langEN">EN</button>
+        <button id="langRU">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Free Nutrition Calculator" data-ru="Бесплатный калькулятор питания">Free Nutrition Calculator</div>
+    <h1 data-en="Recipe <em>Nutrition</em> Calculator" data-ru="Калькулятор <em>питательности</em> рецептов">Recipe <em>Nutrition</em> Calculator</h1>
+    <p data-en="Add ingredients with their weights and get the full nutritional breakdown of your recipe — calories, protein, carbs, and fat per serving." data-ru="Добавьте ингредиенты с граммами и получите полный расчёт питательности рецепта — калории, белок, углеводы и жиры на порцию.">Add ingredients with their weights and get the full nutritional breakdown of your recipe.</p>
+    <a href="#calculator" class="btn-scroll" data-en="Start calculating ↓" data-ru="Начать расчёт ↓">Start calculating ↓</a>
+  </div>
+</section>
+
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="section-label" data-en="Recipe Calculator" data-ru="Калькулятор рецептов">Recipe Calculator</div>
+    <h2 class="section-title" data-en="Add your ingredients" data-ru="Добавьте ингредиенты">Add your ingredients</h2>
+    <p class="section-sub" data-en="Search from 100+ common foods. Enter the weight in grams for accurate results." data-ru="Поиск из 100+ продуктов. Введите вес в граммах для точного результата.">Search from 100+ common foods. Enter the weight in grams for accurate results.</p>
+
+    <div class="calc-card">
+      <!-- Recipe name & servings -->
+      <div class="calc-grid" style="margin-bottom:20px;">
+        <div class="field">
+          <label for="recipeName" data-en="Recipe name (optional)" data-ru="Название рецепта (необязательно)">Recipe name (optional)</label>
+          <input type="text" id="recipeName" placeholder="e.g. Chicken salad" />
+        </div>
+        <div class="field">
+          <label for="servings" data-en="Number of servings" data-ru="Количество порций">Number of servings</label>
+          <input type="number" id="servings" min="1" max="50" value="1" />
+        </div>
+      </div>
+
+      <!-- Ingredient search -->
+      <div style="position:relative;margin-bottom:16px;">
+        <div class="calc-grid">
+          <div class="field">
+            <label for="ingredientSearch" data-en="Search ingredient" data-ru="Поиск ингредиента">Search ingredient</label>
+            <input type="text" id="ingredientSearch" placeholder="e.g. chicken breast, oats..." autocomplete="off" />
+            <div id="searchDropdown" style="display:none;position:absolute;top:100%;left:0;right:50%;background:white;border:1.5px solid var(--border);border-radius:8px;max-height:200px;overflow-y:auto;z-index:50;box-shadow:var(--shadow);"></div>
+          </div>
+          <div class="field">
+            <label for="ingredientGrams" data-en="Weight (grams)" data-ru="Вес (граммы)">Weight (grams)</label>
+            <input type="number" id="ingredientGrams" min="1" max="5000" placeholder="e.g. 150" />
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-calc" onclick="addIngredient()" data-en="+ Add Ingredient" data-ru="+ Добавить ингредиент">+ Add Ingredient</button>
+      <p id="addError" style="color:#dc2626;font-size:0.85rem;margin-top:8px;display:none;" data-en="Please select an ingredient and enter weight." data-ru="Выберите ингредиент и введите вес.">Please select an ingredient and enter weight.</p>
+
+      <!-- Ingredients list -->
+      <div id="ingredientsList" style="display:none;margin-top:24px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+          <h3 style="font-size:1rem;font-weight:600;" id="ingredientsTitle" data-en="Ingredients:" data-ru="Ингредиенты:">Ingredients:</h3>
+          <button onclick="clearRecipe()" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:0.85rem;font-family:var(--font-body);" data-en="Clear all" data-ru="Очистить всё">Clear all</button>
+        </div>
+        <div id="ingredientsItems"></div>
+      </div>
+
+      <!-- Results -->
+      <div id="recipeResults" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:28px;">
+        <p class="results-headline" id="resultsTitle" style="margin-bottom:20px;"></p>
+
+        <!-- Per serving -->
+        <div style="margin-bottom:20px;">
+          <p style="font-size:0.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;" id="perServingLabel" data-en="Per serving:" data-ru="На порцию:">Per serving:</p>
+          <div class="calories-display" style="margin-bottom:16px;">
+            <div class="kcal-number" id="kcalPerServing">—</div>
+            <div class="kcal-label" data-en="calories" data-ru="калорий">calories</div>
+          </div>
+          <div class="macros-grid">
+            <div class="macro-item">
+              <div class="macro-value" id="proteinPerServing">—</div>
+              <div class="macro-name" data-en="Protein" data-ru="Белок">Protein</div>
+            </div>
+            <div class="macro-item">
+              <div class="macro-value" id="carbsPerServing">—</div>
+              <div class="macro-name" data-en="Carbs" data-ru="Углеводы">Carbs</div>
+            </div>
+            <div class="macro-item">
+              <div class="macro-value" id="fatPerServing">—</div>
+              <div class="macro-name" data-en="Fat" data-ru="Жиры">Fat</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total recipe -->
+        <div style="background:var(--cream);border-radius:10px;padding:16px 20px;">
+          <p style="font-size:0.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;" id="totalLabel" data-en="Total recipe:" data-ru="Весь рецепт:">Total recipe:</p>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center;">
+            <div><div style="font-family:var(--font-display);font-size:1.3rem;color:var(--green);" id="totalKcal">—</div><div style="font-size:0.75rem;color:var(--muted);" data-en="kcal" data-ru="ккал">kcal</div></div>
+            <div><div style="font-family:var(--font-display);font-size:1.3rem;" id="totalProtein">—</div><div style="font-size:0.75rem;color:var(--muted);" data-en="protein" data-ru="белок">protein</div></div>
+            <div><div style="font-family:var(--font-display);font-size:1.3rem;" id="totalCarbs">—</div><div style="font-size:0.75rem;color:var(--muted);" data-en="carbs" data-ru="углеводы">carbs</div></div>
+            <div><div style="font-family:var(--font-display);font-size:1.3rem;" id="totalFat">—</div><div style="font-size:0.75rem;color:var(--muted);" data-en="fat" data-ru="жиры">fat</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="How it works" data-ru="Как работает">How it works</div>
+    <h2 class="section-title" data-en="Calculate any recipe in 3 steps" data-ru="Рассчитайте любой рецепт за 3 шага">Calculate any recipe in 3 steps</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">1</div><h3 data-en="Search ingredients" data-ru="Найдите ингредиенты">Search ingredients</h3><p data-en="Type the name of any food and select it from the dropdown list." data-ru="Введите название продукта и выберите его из выпадающего списка.">Type the name of any food and select it from the dropdown.</p></div>
+      <div class="step"><div class="step-num">2</div><h3 data-en="Enter weight in grams" data-ru="Введите вес в граммах">Enter weight in grams</h3><p data-en="Weigh your ingredients on a kitchen scale for the most accurate results." data-ru="Взвесьте ингредиенты на кухонных весах для наиболее точных результатов.">Weigh your ingredients on a kitchen scale for best accuracy.</p></div>
+      <div class="step"><div class="step-num">3</div><h3 data-en="Get instant results" data-ru="Получите мгновенный результат">Get instant results</h3><p data-en="See calories and macros for the whole recipe and per serving automatically." data-ru="Автоматически видите калории и БЖУ для всего рецепта и на порцию.">See calories and macros for the whole recipe and per serving.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="blog-grid">
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-ru="Получите суточную норму калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="exercise-calories-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Exercise" data-ru="Тренировки">Exercise</span><h3 data-en="Exercise Calories Calculator" data-ru="Калькулятор тренировок">Exercise Calories Calculator</h3><p data-en="How many calories do you burn working out?" data-ru="Сколько калорий сжигается на тренировке?">How many calories do you burn working out?</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="alcohol-calories-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Alcohol" data-ru="Алкоголь">Alcohol</span><h3 data-en="Alcohol Calories Calculator" data-ru="Калькулятор алкоголя">Alcohol Calories Calculator</h3><p data-en="Calories in beer, wine, spirits and cocktails." data-ru="Калории в пиве, вине, крепком алкоголе и коктейлях.">Calories in beer, wine, spirits and cocktails.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links">
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+
+<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('siteNav').classList.toggle('open'); });
+window.addEventListener('scroll', function(){
+  var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+  document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+});
+
+var currentLang = localStorage.getItem('lang') || 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+    else el.textContent = t;
+  });
+  updateResults();
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+if (currentLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (currentLang==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+// Food database (per 100g): [kcal, protein, carbs, fat]
+var FOODS = {
+  // Meat & Fish
+  'Chicken breast (raw)': [120, 22.5, 0, 2.6], 'Chicken breast (cooked)': [165, 31, 0, 3.6],
+  'Ground beef (lean)': [215, 26, 0, 12], 'Salmon (raw)': [208, 20, 0, 13],
+  'Tuna (canned in water)': [116, 26, 0, 1], 'Egg (whole)': [155, 13, 1.1, 11],
+  'Egg whites': [52, 11, 0.7, 0.2], 'Shrimp': [99, 24, 0.2, 0.3],
+  'Turkey breast': [157, 30, 0, 1], 'Cod': [105, 23, 0, 0.9],
+  // Dairy
+  'Greek yoghurt (0% fat)': [59, 10, 3.6, 0.4], 'Cottage cheese (low fat)': [72, 11, 3.4, 1],
+  'Milk (whole)': [61, 3.2, 4.8, 3.3], 'Milk (skimmed)': [35, 3.4, 5, 0.1],
+  'Cheddar cheese': [403, 25, 1.3, 33], 'Mozzarella': [280, 28, 3.1, 17],
+  'Butter': [717, 0.9, 0.1, 81], 'Cream cheese': [342, 6, 4.1, 34],
+  // Grains
+  'White rice (dry)': [365, 7, 80, 0.7], 'Brown rice (dry)': [370, 7.9, 77, 2.9],
+  'White rice (cooked)': [130, 2.7, 28, 0.3], 'Brown rice (cooked)': [112, 2.6, 23, 0.9],
+  'Oats (dry)': [389, 17, 66, 7], 'Pasta (dry)': [371, 13, 74, 1.5],
+  'Pasta (cooked)': [131, 5, 25, 1.1], 'White bread': [265, 9, 49, 3.2],
+  'Whole wheat bread': [247, 13, 41, 4.2], 'Quinoa (cooked)': [120, 4.4, 21, 1.9],
+  'Tortilla (flour)': [312, 8, 51, 7.8],
+  // Vegetables
+  'Broccoli': [34, 2.8, 7, 0.4], 'Spinach': [23, 2.9, 3.6, 0.4],
+  'Sweet potato (raw)': [86, 1.6, 20, 0.1], 'White potato (raw)': [77, 2, 17, 0.1],
+  'Carrot': [41, 0.9, 10, 0.2], 'Tomato': [18, 0.9, 3.9, 0.2],
+  'Cucumber': [15, 0.7, 3.6, 0.1], 'Bell pepper': [31, 1, 6, 0.3],
+  'Onion': [40, 1.1, 9.3, 0.1], 'Garlic': [149, 6.4, 33, 0.5],
+  'Avocado': [160, 2, 9, 15], 'Mushrooms': [22, 3.1, 3.3, 0.3],
+  'Lettuce': [15, 1.4, 2.9, 0.2], 'Corn (cooked)': [96, 3.4, 21, 1.5],
+  // Legumes
+  'Lentils (cooked)': [116, 9, 20, 0.4], 'Chickpeas (cooked)': [164, 9, 27, 2.6],
+  'Black beans (cooked)': [132, 8.9, 24, 0.5], 'Kidney beans (cooked)': [127, 8.7, 23, 0.5],
+  'Tofu (firm)': [76, 8, 1.9, 4.8], 'Edamame': [121, 11, 9, 5.2],
+  // Nuts & Seeds
+  'Almonds': [579, 21, 22, 50], 'Walnuts': [654, 15, 14, 65],
+  'Peanut butter': [588, 25, 20, 50], 'Chia seeds': [486, 17, 42, 31],
+  'Flaxseeds': [534, 18, 29, 42], 'Sunflower seeds': [584, 21, 20, 51],
+  // Fruits
+  'Banana': [89, 1.1, 23, 0.3], 'Apple': [52, 0.3, 14, 0.2],
+  'Blueberries': [57, 0.7, 14, 0.3], 'Strawberries': [33, 0.7, 8, 0.3],
+  'Orange': [47, 0.9, 12, 0.1], 'Mango': [60, 0.8, 15, 0.4],
+  'Grapes': [69, 0.7, 18, 0.2], 'Watermelon': [30, 0.6, 7.6, 0.2],
+  // Oils & Fats
+  'Olive oil': [884, 0, 0, 100], 'Coconut oil': [862, 0, 0, 100],
+  'Vegetable oil': [884, 0, 0, 100],
+  // Other
+  'Honey': [304, 0.3, 82, 0], 'Sugar (white)': [387, 0, 100, 0],
+  'Dark chocolate (70%)': [598, 8, 46, 43], 'Protein powder (whey)': [400, 80, 8, 4],
+};
+
+var FOODS_RU = {
+  'Chicken breast (raw)': 'Куриная грудка (сырая)', 'Chicken breast (cooked)': 'Куриная грудка (варёная)',
+  'Ground beef (lean)': 'Говяжий фарш (нежирный)', 'Salmon (raw)': 'Лосось (сырой)',
+  'Tuna (canned in water)': 'Тунец (консервированный)', 'Egg (whole)': 'Яйцо (целое)',
+  'Egg whites': 'Яичные белки', 'Shrimp': 'Креветки',
+  'Turkey breast': 'Индейка', 'Cod': 'Треска',
+  'Greek yoghurt (0% fat)': 'Греческий йогурт (0%)', 'Cottage cheese (low fat)': 'Творог (нежирный)',
+  'Milk (whole)': 'Молоко (цельное)', 'Milk (skimmed)': 'Молоко (обезжиренное)',
+  'Cheddar cheese': 'Сыр чеддер', 'Mozzarella': 'Моцарелла',
+  'Butter': 'Сливочное масло', 'Cream cheese': 'Сливочный сыр',
+  'White rice (dry)': 'Белый рис (сухой)', 'Brown rice (dry)': 'Бурый рис (сухой)',
+  'White rice (cooked)': 'Белый рис (варёный)', 'Brown rice (cooked)': 'Бурый рис (варёный)',
+  'Oats (dry)': 'Овсянка (сухая)', 'Pasta (dry)': 'Паста (сухая)',
+  'Pasta (cooked)': 'Паста (варёная)', 'White bread': 'Белый хлеб',
+  'Whole wheat bread': 'Цельнозерновой хлеб', 'Quinoa (cooked)': 'Киноа (варёная)',
+  'Tortilla (flour)': 'Тортилья',
+  'Broccoli': 'Брокколи', 'Spinach': 'Шпинат',
+  'Sweet potato (raw)': 'Батат (сырой)', 'White potato (raw)': 'Картофель (сырой)',
+  'Carrot': 'Морковь', 'Tomato': 'Томат',
+  'Cucumber': 'Огурец', 'Bell pepper': 'Болгарский перец',
+  'Onion': 'Лук', 'Garlic': 'Чеснок',
+  'Avocado': 'Авокадо', 'Mushrooms': 'Грибы',
+  'Lettuce': 'Салат листовой', 'Corn (cooked)': 'Кукуруза (варёная)',
+  'Lentils (cooked)': 'Чечевица (варёная)', 'Chickpeas (cooked)': 'Нут (варёный)',
+  'Black beans (cooked)': 'Чёрная фасоль', 'Kidney beans (cooked)': 'Красная фасоль',
+  'Tofu (firm)': 'Тофу (твёрдый)', 'Edamame': 'Эдамаме',
+  'Almonds': 'Миндаль', 'Walnuts': 'Грецкий орех',
+  'Peanut butter': 'Арахисовая паста', 'Chia seeds': 'Семена чиа',
+  'Flaxseeds': 'Льняные семена', 'Sunflower seeds': 'Семена подсолнечника',
+  'Banana': 'Банан', 'Apple': 'Яблоко',
+  'Blueberries': 'Черника', 'Strawberries': 'Клубника',
+  'Orange': 'Апельсин', 'Mango': 'Манго',
+  'Grapes': 'Виноград', 'Watermelon': 'Арбуз',
+  'Olive oil': 'Оливковое масло', 'Coconut oil': 'Кокосовое масло',
+  'Vegetable oil': 'Растительное масло',
+  'Honey': 'Мёд', 'Sugar (white)': 'Сахар',
+  'Dark chocolate (70%)': 'Тёмный шоколад (70%)', 'Protein powder (whey)': 'Сывороточный протеин',
+};
+
+var ingredients = [];
+var selectedFood = null;
+
+// Search
+document.getElementById('ingredientSearch').addEventListener('input', function() {
+  var q = this.value.toLowerCase().trim();
+  var dd = document.getElementById('searchDropdown');
+  if (q.length < 2) { dd.style.display = 'none'; return; }
+  var matches = Object.keys(FOODS).filter(function(f) {
+    var ruName = FOODS_RU[f] || '';
+    return f.toLowerCase().includes(q) || ruName.toLowerCase().includes(q);
+  }).slice(0, 8);
+  if (matches.length === 0) { dd.style.display = 'none'; return; }
+  dd.innerHTML = matches.map(function(f) {
+    var displayName = currentLang === 'ru' ? (FOODS_RU[f] || f) : f;
+    return '<div style="padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border);font-size:0.9rem;" onmouseenter="this.style.background=\'var(--cream)\'" onmouseleave="this.style.background=\'\'" onclick="selectFood(\'' + f.replace(/'/g, "\\'") + '\')">' + displayName + '</div>';
+  }).join('');
+  dd.style.display = 'block';
+});
+
+function selectFood(name) {
+  selectedFood = name;
+  var displayName = currentLang === 'ru' ? (FOODS_RU[name] || name) : name;
+  document.getElementById('ingredientSearch').value = displayName;
+  document.getElementById('searchDropdown').style.display = 'none';
+  document.getElementById('ingredientGrams').focus();
+}
+
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('#ingredientSearch') && !e.target.closest('#searchDropdown')) {
+    document.getElementById('searchDropdown').style.display = 'none';
+  }
+});
+
+function addIngredient() {
+  var grams = parseFloat(document.getElementById('ingredientGrams').value);
+  var err = document.getElementById('addError');
+  if (!selectedFood || !grams || grams <= 0) { err.style.display = 'block'; return; }
+  err.style.display = 'none';
+  var data = FOODS[selectedFood];
+  var factor = grams / 100;
+  ingredients.push({
+    name_en: selectedFood,
+    name_ru: FOODS_RU[selectedFood] || selectedFood,
+    grams: grams,
+    kcal: Math.round(data[0] * factor),
+    protein: Math.round(data[1] * factor * 10) / 10,
+    carbs: Math.round(data[2] * factor * 10) / 10,
+    fat: Math.round(data[3] * factor * 10) / 10,
+  });
+  document.getElementById('ingredientSearch').value = '';
+  document.getElementById('ingredientGrams').value = '';
+  selectedFood = null;
+  renderIngredients();
+  updateResults();
+}
+
+function removeIngredient(i) {
+  ingredients.splice(i, 1);
+  renderIngredients();
+  updateResults();
+}
+
+function clearRecipe() {
+  ingredients = [];
+  renderIngredients();
+  updateResults();
+}
+
+function renderIngredients() {
+  var list = document.getElementById('ingredientsItems');
+  var container = document.getElementById('ingredientsList');
+  if (ingredients.length === 0) { container.style.display = 'none'; return; }
+  container.style.display = 'block';
+  list.innerHTML = ingredients.map(function(ing, i) {
+    var name = currentLang === 'ru' ? ing.name_ru : ing.name_en;
+    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--cream);border-radius:8px;margin-bottom:8px;flex-wrap:wrap;gap:8px;">' +
+      '<div><span style="font-weight:600;font-size:0.9rem;">' + name + '</span><span style="color:var(--muted);font-size:0.82rem;"> — ' + ing.grams + 'g</span></div>' +
+      '<div style="display:flex;align-items:center;gap:12px;font-size:0.82rem;color:var(--muted);">' +
+      '<span style="color:var(--green);font-weight:600;">' + ing.kcal + ' kcal</span>' +
+      '<span>P: ' + ing.protein + 'g</span><span>C: ' + ing.carbs + 'g</span><span>F: ' + ing.fat + 'g</span>' +
+      '<button onclick="removeIngredient(' + i + ')" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;padding:0 4px;">×</button>' +
+      '</div></div>';
+  }).join('');
+}
+
+function updateResults() {
+  var results = document.getElementById('recipeResults');
+  if (ingredients.length === 0) { results.style.display = 'none'; return; }
+  results.style.display = 'block';
+  var servings = parseFloat(document.getElementById('servings').value) || 1;
+  var totKcal = ingredients.reduce(function(s,i){ return s+i.kcal; }, 0);
+  var totP = ingredients.reduce(function(s,i){ return s+i.protein; }, 0);
+  var totC = ingredients.reduce(function(s,i){ return s+i.carbs; }, 0);
+  var totF = ingredients.reduce(function(s,i){ return s+i.fat; }, 0);
+  document.getElementById('totalKcal').textContent = Math.round(totKcal);
+  document.getElementById('totalProtein').textContent = totP.toFixed(1) + 'g';
+  document.getElementById('totalCarbs').textContent = totC.toFixed(1) + 'g';
+  document.getElementById('totalFat').textContent = totF.toFixed(1) + 'g';
+  document.getElementById('kcalPerServing').textContent = Math.round(totKcal / servings);
+  document.getElementById('proteinPerServing').textContent = (totP / servings).toFixed(1) + 'g';
+  document.getElementById('carbsPerServing').textContent = (totC / servings).toFixed(1) + 'g';
+  document.getElementById('fatPerServing').textContent = (totF / servings).toFixed(1) + 'g';
+  var name = document.getElementById('recipeName').value;
+  var l = currentLang;
+  var title = name
+    ? (l === 'ru' ? 'Результаты для «' + name + '»:' : 'Results for "' + name + '":')
+    : (l === 'ru' ? 'Результаты рецепта:' : 'Recipe results:');
+  document.getElementById('resultsTitle').textContent = title;
+}
+
+document.getElementById('servings').addEventListener('input', updateResults);
+</script>
+</body>
+</html>
