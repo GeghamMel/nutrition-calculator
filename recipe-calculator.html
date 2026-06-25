@@ -163,6 +163,12 @@
   </div>
 </section>
 
+
+<div style="max-width:680px;margin:0 auto 32px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;">
+  <button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save results" data-ru="💾 Сохранить результаты">💾 Save results</button>
+  <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+  <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;width:100%;text-align:center;" data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
+</div>
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
@@ -181,6 +187,18 @@
 <div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
 
 <script>
+
+function savePageResults() {
+  var results = {};
+  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value').forEach(function(el, i) {
+    results['val_' + i] = el.textContent;
+  });
+  results.savedAt = new Date().toLocaleDateString();
+  var key = 'cm_saved_' + window.location.pathname.replace(/[^a-z]/gi,'_');
+  localStorage.setItem(key, JSON.stringify(results));
+  var msg = document.getElementById('saveMsg');
+  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
+}
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('siteNav').classList.toggle('open'); });
 window.addEventListener('scroll', function(){

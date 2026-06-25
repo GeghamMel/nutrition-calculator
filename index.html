@@ -64,6 +64,15 @@
   </div>
 </section>
 
+<div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;margin:0 20px;border-radius:0 8px 8px 0;max-width:680px;margin:16px auto 0;">
+  <p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;" id="savedBannerTitle" data-en="Welcome back! Your saved results:" data-ru="С возвращением! Ваши сохранённые результаты:">Welcome back! Your saved results:</p>
+  <p style="font-size:0.85rem;color:var(--muted);" id="savedBannerText"></p>
+  <div style="display:flex;gap:10px;margin-top:10px;">
+    <button onclick="loadSaved()" style="padding:6px 16px;background:var(--green);color:white;border:none;border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;" data-en="Load saved results" data-ru="Загрузить результаты">Load saved results</button>
+    <button onclick="dismissBanner()" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);" data-en="Dismiss" data-ru="Закрыть">Dismiss</button>
+  </div>
+</div>
+
 <section class="calc-section" id="calculator">
   <div class="container">
     <div class="section-label" data-en="Step-by-step calculator" data-ru="Пошаговый калькулятор">Step-by-step calculator</div>
@@ -155,6 +164,12 @@
           </div>
         </div>
         <div class="result-note" id="resultNote"></div>
+
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+          <button id="saveBtn" onclick="saveResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save my results" data-ru="💾 Сохранить результаты">💾 Save my results</button>
+          <button onclick="printResults()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print results" data-ru="🖨 Распечатать">🖨 Print results</button>
+        </div>
+        <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;" data-en="✓ Results saved! They'll appear next time you visit." data-ru="✓ Результаты сохранены! Появятся при следующем визите.">✓ Results saved!</p>
       </div>
     </div>
   </div>
@@ -673,6 +688,69 @@
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// --- Save / Load results ---
+function saveResults() {
+  var data = {
+    kcal: document.getElementById('kcalDisplay').textContent,
+    protein: document.getElementById('proteinG').textContent,
+    carbs: document.getElementById('carbsG').textContent,
+    fat: document.getElementById('fatG').textContent,
+    goal: document.getElementById('goal').value,
+    weight: document.getElementById('weight').value,
+    age: document.getElementById('age').value,
+    height: document.getElementById('height').value,
+    gender: gender,
+    activity: document.getElementById('activity').value,
+    lang: currentLang,
+    savedAt: new Date().toLocaleDateString()
+  };
+  localStorage.setItem('cm_saved_results', JSON.stringify(data));
+  var msg = document.getElementById('saveMsg');
+  msg.style.display = 'block';
+  setTimeout(function(){ msg.style.display = 'none'; }, 3000);
+}
+
+function loadSaved() {
+  var saved = localStorage.getItem('cm_saved_results');
+  if (!saved) return;
+  var data = JSON.parse(saved);
+  if (data.weight) document.getElementById('weight').value = data.weight;
+  if (data.age) document.getElementById('age').value = data.age;
+  if (data.height) document.getElementById('height').value = data.height;
+  if (data.activity) document.getElementById('activity').value = data.activity;
+  if (data.goal) document.getElementById('goal').value = data.goal;
+  if (data.gender) {
+    gender = data.gender;
+    document.getElementById(data.gender === 'male' ? 'genderMale' : 'genderFemale').classList.add('active');
+    document.getElementById(data.gender === 'male' ? 'genderFemale' : 'genderMale').classList.remove('active');
+  }
+  dismissBanner();
+  document.getElementById('calcBtn').click();
+}
+
+function dismissBanner() {
+  document.getElementById('savedBanner').style.display = 'none';
+}
+
+function printResults() {
+  window.print();
+}
+
+// Check for saved results on load
+(function() {
+  var saved = localStorage.getItem('cm_saved_results');
+  if (!saved) return;
+  try {
+    var data = JSON.parse(saved);
+    if (!data.kcal) return;
+    var l = currentLang;
+    var goalMap = { maintain: l==='ru'?'поддержание':'maintenance', loss: l==='ru'?'похудение':'fat loss', gain: l==='ru'?'набор массы':'muscle gain' };
+    var text = (l==='ru' ? 'Цель: ' : 'Goal: ') + (goalMap[data.goal]||data.goal) + ' · ' + data.kcal + ' ' + (l==='ru'?'ккал/день':'kcal/day') + ' · ' + (l==='ru'?'Сохранено: ':'Saved: ') + data.savedAt;
+    document.getElementById('savedBannerText').textContent = text;
+    document.getElementById('savedBanner').style.display = 'block';
+  } catch(e) {}
+})();
 
 // --- Hamburger ---
 document.getElementById('hamburger').addEventListener('click', function() {
