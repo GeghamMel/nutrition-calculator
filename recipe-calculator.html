@@ -184,6 +184,67 @@ window.addEventListener('scroll', function(){
 });
 
 var currentLang = localStorage.getItem('lang') || 'en';
+var FOODS = {
+  'Chicken breast (raw)':[120,22.5,0,2.6],'Chicken breast (cooked)':[165,31,0,3.6],
+  'Ground beef (lean)':[215,26,0,12],'Salmon (raw)':[208,20,0,13],
+  'Tuna (canned in water)':[116,26,0,1],'Egg (whole)':[155,13,1.1,11],
+  'Egg whites':[52,11,0.7,0.2],'Shrimp':[99,24,0.2,0.3],
+  'Turkey breast':[157,30,0,1],'Cod':[105,23,0,0.9],
+  'Greek yoghurt (0% fat)':[59,10,3.6,0.4],'Cottage cheese (low fat)':[72,11,3.4,1],
+  'Milk (whole)':[61,3.2,4.8,3.3],'Cheddar cheese':[403,25,1.3,33],
+  'Butter':[717,0.9,0.1,81],'White rice (cooked)':[130,2.7,28,0.3],
+  'Brown rice (cooked)':[112,2.6,23,0.9],'Oats (dry)':[389,17,66,7],
+  'Pasta (cooked)':[131,5,25,1.1],'White bread':[265,9,49,3.2],
+  'Whole wheat bread':[247,13,41,4.2],'Quinoa (cooked)':[120,4.4,21,1.9],
+  'Broccoli':[34,2.8,7,0.4],'Spinach':[23,2.9,3.6,0.4],
+  'Sweet potato (raw)':[86,1.6,20,0.1],'White potato (raw)':[77,2,17,0.1],
+  'Carrot':[41,0.9,10,0.2],'Tomato':[18,0.9,3.9,0.2],
+  'Cucumber':[15,0.7,3.6,0.1],'Bell pepper':[31,1,6,0.3],
+  'Onion':[40,1.1,9.3,0.1],'Garlic':[149,6.4,33,0.5],
+  'Avocado':[160,2,9,15],'Mushrooms':[22,3.1,3.3,0.3],
+  'Lentils (cooked)':[116,9,20,0.4],'Chickpeas (cooked)':[164,9,27,2.6],
+  'Black beans (cooked)':[132,8.9,24,0.5],'Tofu (firm)':[76,8,1.9,4.8],
+  'Almonds':[579,21,22,50],'Peanut butter':[588,25,20,50],
+  'Chia seeds':[486,17,42,31],'Banana':[89,1.1,23,0.3],
+  'Apple':[52,0.3,14,0.2],'Blueberries':[57,0.7,14,0.3],
+  'Strawberries':[33,0.7,8,0.3],'Orange':[47,0.9,12,0.1],
+  'Mango':[60,0.8,15,0.4],'Olive oil':[884,0,0,100],
+  'Honey':[304,0.3,82,0],'Sugar (white)':[387,0,100,0],
+  'Dark chocolate (70%)':[598,8,46,43],'Protein powder (whey)':[400,80,8,4],
+};
+var FOODS_RU = {
+  'Chicken breast (raw)':'Куриная грудка (сырая)','Chicken breast (cooked)':'Куриная грудка (варёная)',
+  'Ground beef (lean)':'Говяжий фарш (нежирный)','Salmon (raw)':'Лосось (сырой)',
+  'Tuna (canned in water)':'Тунец (консервированный)','Egg (whole)':'Яйцо (целое)',
+  'Egg whites':'Яичные белки','Shrimp':'Креветки',
+  'Turkey breast':'Индейка','Cod':'Треска',
+  'Greek yoghurt (0% fat)':'Греческий йогурт (0%)','Cottage cheese (low fat)':'Творог (нежирный)',
+  'Milk (whole)':'Молоко (цельное)','Cheddar cheese':'Сыр чеддер',
+  'Butter':'Сливочное масло','White rice (cooked)':'Белый рис (варёный)',
+  'Brown rice (cooked)':'Бурый рис (варёный)','Oats (dry)':'Овсянка (сухая)',
+  'Pasta (cooked)':'Паста (варёная)','White bread':'Белый хлеб',
+  'Whole wheat bread':'Цельнозерновой хлеб','Quinoa (cooked)':'Киноа (варёная)',
+  'Broccoli':'Брокколи','Spinach':'Шпинат',
+  'Sweet potato (raw)':'Батат (сырой)','White potato (raw)':'Картофель (сырой)',
+  'Carrot':'Морковь','Tomato':'Томат',
+  'Cucumber':'Огурец','Bell pepper':'Болгарский перец',
+  'Onion':'Лук','Garlic':'Чеснок',
+  'Avocado':'Авокадо','Mushrooms':'Грибы',
+  'Lentils (cooked)':'Чечевица (варёная)','Chickpeas (cooked)':'Нут (варёный)',
+  'Black beans (cooked)':'Чёрная фасоль','Tofu (firm)':'Тофу (твёрдый)',
+  'Almonds':'Миндаль','Peanut butter':'Арахисовая паста',
+  'Chia seeds':'Семена чиа','Banana':'Банан',
+  'Apple':'Яблоко','Blueberries':'Черника',
+  'Strawberries':'Клубника','Orange':'Апельсин',
+  'Mango':'Манго','Olive oil':'Оливковое масло',
+  'Honey':'Мёд','Sugar (white)':'Сахар',
+  'Dark chocolate (70%)':'Тёмный шоколад (70%)','Protein powder (whey)':'Сывороточный протеин',
+};
+
+var ingredients = [];
+var selectedFood = null;
+
+// Language
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -193,12 +254,14 @@ function applyLang(lang) {
     if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
     else el.textContent = t;
   });
+  renderFoodGrid(document.getElementById('ingredientSearch').value);
+  renderIngredients();
   updateResults();
   localStorage.setItem('lang', lang);
 }
 document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
 document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
-if (currentLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+if (currentLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); }
 (function(){
   var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
   if (currentLang==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
@@ -206,150 +269,43 @@ if (currentLang === 'ru') { document.getElementById('langRU').classList.add('act
   hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
 })();
 
-// Food database (per 100g): [kcal, protein, carbs, fat]
-var FOODS = {
-  // Meat & Fish
-  'Chicken breast (raw)': [120, 22.5, 0, 2.6], 'Chicken breast (cooked)': [165, 31, 0, 3.6],
-  'Ground beef (lean)': [215, 26, 0, 12], 'Salmon (raw)': [208, 20, 0, 13],
-  'Tuna (canned in water)': [116, 26, 0, 1], 'Egg (whole)': [155, 13, 1.1, 11],
-  'Egg whites': [52, 11, 0.7, 0.2], 'Shrimp': [99, 24, 0.2, 0.3],
-  'Turkey breast': [157, 30, 0, 1], 'Cod': [105, 23, 0, 0.9],
-  // Dairy
-  'Greek yoghurt (0% fat)': [59, 10, 3.6, 0.4], 'Cottage cheese (low fat)': [72, 11, 3.4, 1],
-  'Milk (whole)': [61, 3.2, 4.8, 3.3], 'Milk (skimmed)': [35, 3.4, 5, 0.1],
-  'Cheddar cheese': [403, 25, 1.3, 33], 'Mozzarella': [280, 28, 3.1, 17],
-  'Butter': [717, 0.9, 0.1, 81], 'Cream cheese': [342, 6, 4.1, 34],
-  // Grains
-  'White rice (dry)': [365, 7, 80, 0.7], 'Brown rice (dry)': [370, 7.9, 77, 2.9],
-  'White rice (cooked)': [130, 2.7, 28, 0.3], 'Brown rice (cooked)': [112, 2.6, 23, 0.9],
-  'Oats (dry)': [389, 17, 66, 7], 'Pasta (dry)': [371, 13, 74, 1.5],
-  'Pasta (cooked)': [131, 5, 25, 1.1], 'White bread': [265, 9, 49, 3.2],
-  'Whole wheat bread': [247, 13, 41, 4.2], 'Quinoa (cooked)': [120, 4.4, 21, 1.9],
-  'Tortilla (flour)': [312, 8, 51, 7.8],
-  // Vegetables
-  'Broccoli': [34, 2.8, 7, 0.4], 'Spinach': [23, 2.9, 3.6, 0.4],
-  'Sweet potato (raw)': [86, 1.6, 20, 0.1], 'White potato (raw)': [77, 2, 17, 0.1],
-  'Carrot': [41, 0.9, 10, 0.2], 'Tomato': [18, 0.9, 3.9, 0.2],
-  'Cucumber': [15, 0.7, 3.6, 0.1], 'Bell pepper': [31, 1, 6, 0.3],
-  'Onion': [40, 1.1, 9.3, 0.1], 'Garlic': [149, 6.4, 33, 0.5],
-  'Avocado': [160, 2, 9, 15], 'Mushrooms': [22, 3.1, 3.3, 0.3],
-  'Lettuce': [15, 1.4, 2.9, 0.2], 'Corn (cooked)': [96, 3.4, 21, 1.5],
-  // Legumes
-  'Lentils (cooked)': [116, 9, 20, 0.4], 'Chickpeas (cooked)': [164, 9, 27, 2.6],
-  'Black beans (cooked)': [132, 8.9, 24, 0.5], 'Kidney beans (cooked)': [127, 8.7, 23, 0.5],
-  'Tofu (firm)': [76, 8, 1.9, 4.8], 'Edamame': [121, 11, 9, 5.2],
-  // Nuts & Seeds
-  'Almonds': [579, 21, 22, 50], 'Walnuts': [654, 15, 14, 65],
-  'Peanut butter': [588, 25, 20, 50], 'Chia seeds': [486, 17, 42, 31],
-  'Flaxseeds': [534, 18, 29, 42], 'Sunflower seeds': [584, 21, 20, 51],
-  // Fruits
-  'Banana': [89, 1.1, 23, 0.3], 'Apple': [52, 0.3, 14, 0.2],
-  'Blueberries': [57, 0.7, 14, 0.3], 'Strawberries': [33, 0.7, 8, 0.3],
-  'Orange': [47, 0.9, 12, 0.1], 'Mango': [60, 0.8, 15, 0.4],
-  'Grapes': [69, 0.7, 18, 0.2], 'Watermelon': [30, 0.6, 7.6, 0.2],
-  // Oils & Fats
-  'Olive oil': [884, 0, 0, 100], 'Coconut oil': [862, 0, 0, 100],
-  'Vegetable oil': [884, 0, 0, 100],
-  // Other
-  'Honey': [304, 0.3, 82, 0], 'Sugar (white)': [387, 0, 100, 0],
-  'Dark chocolate (70%)': [598, 8, 46, 43], 'Protein powder (whey)': [400, 80, 8, 4],
-};
-
-var FOODS_RU = {
-  'Chicken breast (raw)': 'Куриная грудка (сырая)', 'Chicken breast (cooked)': 'Куриная грудка (варёная)',
-  'Ground beef (lean)': 'Говяжий фарш (нежирный)', 'Salmon (raw)': 'Лосось (сырой)',
-  'Tuna (canned in water)': 'Тунец (консервированный)', 'Egg (whole)': 'Яйцо (целое)',
-  'Egg whites': 'Яичные белки', 'Shrimp': 'Креветки',
-  'Turkey breast': 'Индейка', 'Cod': 'Треска',
-  'Greek yoghurt (0% fat)': 'Греческий йогурт (0%)', 'Cottage cheese (low fat)': 'Творог (нежирный)',
-  'Milk (whole)': 'Молоко (цельное)', 'Milk (skimmed)': 'Молоко (обезжиренное)',
-  'Cheddar cheese': 'Сыр чеддер', 'Mozzarella': 'Моцарелла',
-  'Butter': 'Сливочное масло', 'Cream cheese': 'Сливочный сыр',
-  'White rice (dry)': 'Белый рис (сухой)', 'Brown rice (dry)': 'Бурый рис (сухой)',
-  'White rice (cooked)': 'Белый рис (варёный)', 'Brown rice (cooked)': 'Бурый рис (варёный)',
-  'Oats (dry)': 'Овсянка (сухая)', 'Pasta (dry)': 'Паста (сухая)',
-  'Pasta (cooked)': 'Паста (варёная)', 'White bread': 'Белый хлеб',
-  'Whole wheat bread': 'Цельнозерновой хлеб', 'Quinoa (cooked)': 'Киноа (варёная)',
-  'Tortilla (flour)': 'Тортилья',
-  'Broccoli': 'Брокколи', 'Spinach': 'Шпинат',
-  'Sweet potato (raw)': 'Батат (сырой)', 'White potato (raw)': 'Картофель (сырой)',
-  'Carrot': 'Морковь', 'Tomato': 'Томат',
-  'Cucumber': 'Огурец', 'Bell pepper': 'Болгарский перец',
-  'Onion': 'Лук', 'Garlic': 'Чеснок',
-  'Avocado': 'Авокадо', 'Mushrooms': 'Грибы',
-  'Lettuce': 'Салат листовой', 'Corn (cooked)': 'Кукуруза (варёная)',
-  'Lentils (cooked)': 'Чечевица (варёная)', 'Chickpeas (cooked)': 'Нут (варёный)',
-  'Black beans (cooked)': 'Чёрная фасоль', 'Kidney beans (cooked)': 'Красная фасоль',
-  'Tofu (firm)': 'Тофу (твёрдый)', 'Edamame': 'Эдамаме',
-  'Almonds': 'Миндаль', 'Walnuts': 'Грецкий орех',
-  'Peanut butter': 'Арахисовая паста', 'Chia seeds': 'Семена чиа',
-  'Flaxseeds': 'Льняные семена', 'Sunflower seeds': 'Семена подсолнечника',
-  'Banana': 'Банан', 'Apple': 'Яблоко',
-  'Blueberries': 'Черника', 'Strawberries': 'Клубника',
-  'Orange': 'Апельсин', 'Mango': 'Манго',
-  'Grapes': 'Виноград', 'Watermelon': 'Арбуз',
-  'Olive oil': 'Оливковое масло', 'Coconut oil': 'Кокосовое масло',
-  'Vegetable oil': 'Растительное масло',
-  'Honey': 'Мёд', 'Sugar (white)': 'Сахар',
-  'Dark chocolate (70%)': 'Тёмный шоколад (70%)', 'Protein powder (whey)': 'Сывороточный протеин',
-};
-
-var ingredients = [];
-var selectedFood = null;
-
-// Search
-document.getElementById('ingredientSearch').addEventListener('focus', function() {
-  if (!this.value) {
-    var dd = document.getElementById('searchDropdown');
-    var popular = ['Chicken breast (cooked)', 'Egg (whole)', 'White rice (cooked)', 'Oats (dry)', 'Banana', 'Greek yoghurt (0% fat)', 'Salmon (raw)', 'Broccoli', 'Olive oil', 'Pasta (cooked)'];
-    dd.innerHTML = '';
-    var header = document.createElement('div');
-    header.style.cssText = 'padding:8px 14px;font-size:0.75rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;background:var(--cream);border-bottom:1px solid var(--border);';
-    header.textContent = currentLang === 'ru' ? 'Популярные продукты:' : 'Popular foods:';
-    dd.appendChild(header);
-    popular.forEach(function(f) {
-      var displayName = currentLang === 'ru' ? (FOODS_RU[f] || f) : f;
-      var item = document.createElement('div');
-      item.style.cssText = 'padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border);font-size:0.9rem;';
-      item.textContent = displayName;
-      item.addEventListener('mouseenter', function(){ this.style.background = 'var(--cream)'; });
-      item.addEventListener('mouseleave', function(){ this.style.background = ''; });
-      item.addEventListener('mousedown', function(e) { e.preventDefault(); selectFood(f); });
-      dd.appendChild(item);
-    });
-    dd.style.display = 'block';
-  }
-});
+// Food grid
+function renderFoodGrid(query) {
+  var grid = document.getElementById('foodGrid');
+  if (!grid) return;
+  var q = (query || '').toLowerCase().trim();
+  var allFoods = Object.keys(FOODS);
+  var filtered = q ? allFoods.filter(function(f) {
+    return f.toLowerCase().includes(q) || (FOODS_RU[f]||'').toLowerCase().includes(q);
+  }) : allFoods;
+  grid.innerHTML = '';
+  filtered.slice(0,50).forEach(function(f) {
+    var name = currentLang === 'ru' ? (FOODS_RU[f]||f) : f;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = name;
+    var isSelected = selectedFood === f;
+    btn.style.cssText = 'padding:6px 12px;border-radius:20px;border:1.5px solid ' + (isSelected?'var(--green)':'var(--border)') + ';background:' + (isSelected?'var(--green)':'white') + ';color:' + (isSelected?'white':'var(--muted)') + ';cursor:pointer;font-size:0.82rem;font-family:var(--font-body);white-space:nowrap;';
+    btn.onclick = function() { selectFood(f); };
+    grid.appendChild(btn);
+  });
+}
 
 document.getElementById('ingredientSearch').addEventListener('input', function() {
-  var q = this.value.toLowerCase().trim();
-  var dd = document.getElementById('searchDropdown');
-  if (q.length < 1) { dd.style.display = 'none'; return; }
-  var matches = Object.keys(FOODS).filter(function(f) {
-    var ruName = FOODS_RU[f] || '';
-    return f.toLowerCase().includes(q) || ruName.toLowerCase().includes(q);
-  }).slice(0, 8);
-  if (matches.length === 0) { dd.style.display = 'none'; return; }
-  dd.innerHTML = matches.map(function(f) {
-    var displayName = currentLang === 'ru' ? (FOODS_RU[f] || f) : f;
-    return '<div style="padding:10px 14px;cursor:pointer;border-bottom:1px solid var(--border);font-size:0.9rem;" onmouseenter="this.style.background=\'var(--cream)\'" onmouseleave="this.style.background=\'\'" onclick="selectFood(\'' + f.replace(/'/g, "\\'") + '\')">' + displayName + '</div>';
-  }).join('');
-  dd.style.display = 'block';
+  renderFoodGrid(this.value);
 });
 
 function selectFood(name) {
   selectedFood = name;
-  var displayName = currentLang === 'ru' ? (FOODS_RU[name] || name) : name;
-  document.getElementById('ingredientSearch').value = displayName;
-  document.getElementById('searchDropdown').style.display = 'none';
+  var displayName = currentLang === 'ru' ? (FOODS_RU[name]||name) : name;
+  var disp = document.getElementById('selectedDisplay');
+  disp.textContent = '✓ ' + displayName;
+  disp.style.color = 'var(--green)';
+  disp.style.fontWeight = '600';
+  disp.style.borderColor = 'var(--green-light)';
+  renderFoodGrid(document.getElementById('ingredientSearch').value);
   document.getElementById('ingredientGrams').focus();
 }
-
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('#ingredientSearch') && !e.target.closest('#searchDropdown')) {
-    document.getElementById('searchDropdown').style.display = 'none';
-  }
-});
 
 function addIngredient() {
   var grams = parseFloat(document.getElementById('ingredientGrams').value);
@@ -359,25 +315,23 @@ function addIngredient() {
   var data = FOODS[selectedFood];
   var factor = grams / 100;
   ingredients.push({
-    name_en: selectedFood,
-    name_ru: FOODS_RU[selectedFood] || selectedFood,
+    name_en: selectedFood, name_ru: FOODS_RU[selectedFood]||selectedFood,
     grams: grams,
-    kcal: Math.round(data[0] * factor),
-    protein: Math.round(data[1] * factor * 10) / 10,
-    carbs: Math.round(data[2] * factor * 10) / 10,
-    fat: Math.round(data[3] * factor * 10) / 10,
+    kcal: Math.round(data[0]*factor),
+    protein: Math.round(data[1]*factor*10)/10,
+    carbs: Math.round(data[2]*factor*10)/10,
+    fat: Math.round(data[3]*factor*10)/10,
   });
-  document.getElementById('ingredientSearch').value = '';
-  document.getElementById('ingredientGrams').value = '';
+  // Reset
   selectedFood = null;
+  document.getElementById('ingredientGrams').value = '';
+  document.getElementById('selectedDisplay').textContent = currentLang==='ru' ? '— нажмите на продукт выше —' : '— click a food above —';
+  document.getElementById('selectedDisplay').style.color = 'var(--muted)';
+  document.getElementById('selectedDisplay').style.fontWeight = 'normal';
+  document.getElementById('selectedDisplay').style.borderColor = 'var(--border)';
+  renderFoodGrid(document.getElementById('ingredientSearch').value);
   renderIngredients();
   updateResults();
-  // Reset selection
-  selectedFood = null;
-  document.getElementById('selectedDisplay').textContent = currentLang === 'ru' ? '— нажмите на продукт выше —' : '— click a food above —';
-  document.getElementById('selectedDisplay').style.color = 'var(--muted)';
-  document.getElementById('selectedDisplay').style.borderColor = 'var(--border)';
-  document.querySelectorAll('#foodGrid button').forEach(function(b){ b.style.background='white'; b.style.color='var(--muted)'; b.style.borderColor='var(--border)'; });
 }
 
 function removeIngredient(i) {
@@ -395,15 +349,16 @@ function clearRecipe() {
 function renderIngredients() {
   var list = document.getElementById('ingredientsItems');
   var container = document.getElementById('ingredientsList');
+  if (!list) return;
   if (ingredients.length === 0) { container.style.display = 'none'; return; }
   container.style.display = 'block';
   list.innerHTML = ingredients.map(function(ing, i) {
     var name = currentLang === 'ru' ? ing.name_ru : ing.name_en;
     return '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--cream);border-radius:8px;margin-bottom:8px;flex-wrap:wrap;gap:8px;">' +
       '<div><span style="font-weight:600;font-size:0.9rem;">' + name + '</span><span style="color:var(--muted);font-size:0.82rem;"> — ' + ing.grams + 'g</span></div>' +
-      '<div style="display:flex;align-items:center;gap:12px;font-size:0.82rem;color:var(--muted);">' +
+      '<div style="display:flex;align-items:center;gap:10px;font-size:0.82rem;">' +
       '<span style="color:var(--green);font-weight:600;">' + ing.kcal + ' kcal</span>' +
-      '<span>P: ' + ing.protein + 'g</span><span>C: ' + ing.carbs + 'g</span><span>F: ' + ing.fat + 'g</span>' +
+      '<span style="color:var(--muted);">P:' + ing.protein + 'g C:' + ing.carbs + 'g F:' + ing.fat + 'g</span>' +
       '<button onclick="removeIngredient(' + i + ')" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;padding:0 4px;">×</button>' +
       '</div></div>';
   }).join('');
@@ -411,6 +366,7 @@ function renderIngredients() {
 
 function updateResults() {
   var results = document.getElementById('recipeResults');
+  if (!results) return;
   if (ingredients.length === 0) { results.style.display = 'none'; return; }
   results.style.display = 'block';
   var servings = parseFloat(document.getElementById('servings').value) || 1;
@@ -422,19 +378,22 @@ function updateResults() {
   document.getElementById('totalProtein').textContent = totP.toFixed(1) + 'g';
   document.getElementById('totalCarbs').textContent = totC.toFixed(1) + 'g';
   document.getElementById('totalFat').textContent = totF.toFixed(1) + 'g';
-  document.getElementById('kcalPerServing').textContent = Math.round(totKcal / servings);
-  document.getElementById('proteinPerServing').textContent = (totP / servings).toFixed(1) + 'g';
-  document.getElementById('carbsPerServing').textContent = (totC / servings).toFixed(1) + 'g';
-  document.getElementById('fatPerServing').textContent = (totF / servings).toFixed(1) + 'g';
+  document.getElementById('kcalPerServing').textContent = Math.round(totKcal/servings);
+  document.getElementById('proteinPerServing').textContent = (totP/servings).toFixed(1) + 'g';
+  document.getElementById('carbsPerServing').textContent = (totC/servings).toFixed(1) + 'g';
+  document.getElementById('fatPerServing').textContent = (totF/servings).toFixed(1) + 'g';
   var name = document.getElementById('recipeName').value;
   var l = currentLang;
-  var title = name
-    ? (l === 'ru' ? 'Результаты для «' + name + '»:' : 'Results for "' + name + '":')
-    : (l === 'ru' ? 'Результаты рецепта:' : 'Recipe results:');
-  document.getElementById('resultsTitle').textContent = title;
+  document.getElementById('resultsTitle').textContent = name
+    ? (l==='ru' ? 'Результаты для «'+name+'»:' : 'Results for "'+name+'":')
+    : (l==='ru' ? 'Результаты рецепта:' : 'Recipe results:');
 }
 
 document.getElementById('servings').addEventListener('input', updateResults);
+
+// Init
+renderFoodGrid('');
+if (currentLang === 'ru') applyLang('ru');
 </script>
 </body>
 </html>
