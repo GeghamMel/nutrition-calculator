@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7-Day Meal Plan — Calories & Macros</title>
+  <meta name="description" content="Free 7-day meal plans for weight loss, muscle gain, and maintenance. Complete weekly nutrition plans with calories and macros." />
+  <link rel="canonical" href="https://calories-macros.com/meal-plan.html" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+  <meta property="og:title" content="Free 7-Day Meal Plan" />
+  <meta property="og:description" content="Complete weekly meal plans for weight loss, muscle gain, and maintenance." />
+  <meta property="og:image" content="https://calories-macros.com/og-image.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .goal-tabs { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px; }
+    .goal-tab { padding:10px 24px; border-radius:24px; border:1.5px solid var(--border); background:white; color:var(--muted); font-family:var(--font-body); font-size:0.9rem; font-weight:600; cursor:pointer; transition:all 0.2s; }
+    .goal-tab.active { background:var(--green); color:white; border-color:var(--green); }
+    .day-card { background:white; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:16px; overflow:hidden; }
+    .day-header { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; background:var(--green); color:white; cursor:pointer; }
+    .day-header h3 { font-family:var(--font-display); font-size:1.1rem; font-weight:400; }
+    .day-macros { display:flex; gap:16px; font-size:0.82rem; opacity:0.85; }
+    .day-body { display:none; padding:20px; }
+    .day-body.open { display:block; }
+    .meal-row { display:grid; grid-template-columns:100px 1fr auto; gap:12px; align-items:start; padding:12px 0; border-bottom:1px solid var(--border); }
+    .meal-row:last-child { border-bottom:none; }
+    .meal-type { font-size:0.75rem; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:var(--green); }
+    .meal-name { font-weight:500; font-size:0.92rem; }
+    .meal-desc { font-size:0.82rem; color:var(--muted); margin-top:2px; }
+    .meal-kcal { font-size:0.85rem; font-weight:600; color:var(--muted); white-space:nowrap; }
+    .plan-summary { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; background:var(--green-pale); border-radius:10px; padding:20px; margin-bottom:24px; text-align:center; }
+    .plan-summary-item .val { font-family:var(--font-display); font-size:1.6rem; color:var(--green); }
+    .plan-summary-item .lbl { font-size:0.75rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; }
+    @media(max-width:600px) {
+      .meal-row { grid-template-columns:80px 1fr; }
+      .meal-kcal { grid-column:2; }
+      .plan-summary { grid-template-columns:repeat(2,1fr); }
+      .day-macros { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <div class="header-lang" id="headerLang">
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
+    </div>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle">
+        <button class="active" id="langEN">EN</button>
+        <button id="langRU">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Free Nutrition Plans" data-ru="Бесплатные планы питания">Free Nutrition Plans</div>
+    <h1 data-en="7-Day <em>Meal Plans</em> for Every Goal" data-ru="7-дневные <em>планы питания</em> для каждой цели">7-Day <em>Meal Plans</em> for Every Goal</h1>
+    <p data-en="Ready-made weekly meal plans for weight loss, muscle gain, and maintenance. Each plan includes calories and macros for every meal." data-ru="Готовые недельные планы питания для похудения, набора мышц и поддержания веса. Каждый план включает калории и БЖУ для каждого приёма пищи.">Ready-made weekly meal plans for weight loss, muscle gain, and maintenance.</p>
+    <a href="#plans" class="btn-scroll" data-en="View Meal Plans ↓" data-ru="Смотреть планы ↓">View Meal Plans ↓</a>
+  </div>
+</section>
+
+<section class="calc-section" id="plans">
+  <div class="container">
+    <div class="section-label" data-en="Choose your goal" data-ru="Выберите цель">Choose your goal</div>
+    <h2 class="section-title" data-en="Select a meal plan" data-ru="Выберите план питания">Select a meal plan</h2>
+
+    <div class="goal-tabs">
+      <button class="goal-tab active" data-goal="loss" data-en="🔥 Weight Loss (~1600 kcal)" data-ru="🔥 Похудение (~1600 ккал)">🔥 Weight Loss (~1600 kcal)</button>
+      <button class="goal-tab" data-goal="gain" data-en="💪 Muscle Gain (~2800 kcal)" data-ru="💪 Набор мышц (~2800 ккал)">💪 Muscle Gain (~2800 kcal)</button>
+      <button class="goal-tab" data-goal="maintain" data-en="⚖️ Maintenance (~2100 kcal)" data-ru="⚖️ Поддержание (~2100 ккал)">⚖️ Maintenance (~2100 kcal)</button>
+    </div>
+
+    <!-- Plan summary -->
+    <div class="plan-summary" id="planSummary">
+      <div class="plan-summary-item"><div class="val" id="sumKcal">1600</div><div class="lbl" data-en="kcal/day" data-ru="ккал/день">kcal/day</div></div>
+      <div class="plan-summary-item"><div class="val" id="sumProtein">130g</div><div class="lbl" data-en="protein" data-ru="белок">protein</div></div>
+      <div class="plan-summary-item"><div class="val" id="sumCarbs">160g</div><div class="lbl" data-en="carbs" data-ru="углеводы">carbs</div></div>
+      <div class="plan-summary-item"><div class="val" id="sumFat">45g</div><div class="lbl" data-en="fat" data-ru="жиры">fat</div></div>
+    </div>
+
+    <div id="mealPlanContainer"></div>
+
+    <div style="margin-top:24px;padding:16px 20px;background:var(--cream);border-radius:10px;border-left:4px solid var(--green-light);">
+      <p style="font-size:0.85rem;color:var(--muted);" id="planNote" data-en="These are sample meal plans for a moderately active adult woman. Adjust portion sizes based on your personal calorie target from our calculator. Use our Recipe Calculator to check the macros of any meal." data-ru="Это примерные планы питания для умеренно активной взрослой женщины. Скорректируйте размеры порций исходя из вашей личной нормы калорий из нашего калькулятора.">These are sample meal plans for a moderately active adult. Adjust portion sizes based on your personal calorie target.</p>
+      <a href="/" style="display:inline-block;margin-top:10px;font-size:0.85rem;font-weight:600;color:var(--green);" data-en="→ Calculate my personal calorie target" data-ru="→ Рассчитать мою личную норму калорий">→ Calculate my personal calorie target</a>
+    </div>
+  </div>
+</section>
+
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="Tips" data-ru="Советы">Tips</div>
+    <h2 class="section-title" data-en="How to follow this meal plan" data-ru="Как следовать плану питания">How to follow this meal plan</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3 data-en="Find your calorie target" data-ru="Найдите норму калорий">Find your calorie target</h3>
+        <p data-en="Use our Calorie Calculator to find your personal daily calorie and macro targets based on your body stats and goal." data-ru="Используйте наш калькулятор для расчёта личной нормы калорий и БЖУ на основе ваших данных.">Use our Calorie Calculator to find your personal daily targets.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3 data-en="Scale portions to your target" data-ru="Скорректируйте порции">Scale portions to your target</h3>
+        <p data-en="If your target is 1800 kcal but the plan is 1600 kcal, add one extra snack or increase portion sizes proportionally." data-ru="Если ваша норма 1800 ккал, а план на 1600 — добавьте перекус или увеличьте порции пропорционально.">If your target differs from the plan, scale portions proportionally.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3 data-en="Swap freely within categories" data-ru="Меняйте блюда внутри категорий">Swap freely within categories</h3>
+        <p data-en="You can swap any protein for another (chicken for fish), any grain for another (rice for pasta), and any vegetable freely." data-ru="Любой белок можно заменить на другой (курица на рыбу), любую крупу на другую (рис на пасту), овощи — свободно.">Swap proteins for proteins, grains for grains, vegetables freely.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3 data-en="Track with our Recipe Calculator" data-ru="Отслеживайте через калькулятор рецептов">Track with our Recipe Calculator</h3>
+        <p data-en="Use our Recipe Nutrition Calculator to check the exact macros of any meal you cook, even if you change ingredients." data-ru="Используйте наш калькулятор рецептов для проверки точных БЖУ любого блюда, даже если вы меняете ингредиенты.">Use our Recipe Calculator to check macros of any meal you cook.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label" data-en="Related tools" data-ru="Связанные инструменты">Related tools</div>
+    <h2 class="section-title" data-en="Plan your nutrition" data-ru="Планируйте питание">Plan your nutrition</h2>
+    <div class="blog-grid">
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Find your personal daily calorie and macro targets." data-ru="Найдите личную норму калорий и БЖУ.">Find your personal daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="recipe-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Recipe" data-ru="Рецепт">Recipe</span><h3 data-en="Recipe Nutrition Calculator" data-ru="Калькулятор рецептов">Recipe Nutrition Calculator</h3><p data-en="Calculate calories and macros for any recipe." data-ru="Рассчитайте калории и БЖУ любого рецепта.">Calculate calories and macros for any recipe.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="blog/how-to-count-macros.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Guide" data-ru="Гид">Guide</span><h3 data-en="How to Count Macros" data-ru="Как считать БЖУ">How to Count Macros</h3><p data-en="Step-by-step guide to tracking your macronutrients." data-ru="Пошаговое руководство по отслеживанию макронутриентов.">Step-by-step guide to tracking your macronutrients.</p><span class="blog-read-more" data-en="Read →" data-ru="Читать →">Read →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links">
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+
+<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('siteNav').classList.toggle('open'); });
+window.addEventListener('scroll', function(){
+  var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+  document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+});
+
+var currentLang = localStorage.getItem('lang') || 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+    else el.textContent = t;
+  });
+  renderPlan(currentGoal);
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+if (currentLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (currentLang==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+// Meal plan data
+var PLANS = {
+  loss: {
+    kcal: 1600, protein: '130g', carbs: '160g', fat: '45g',
+    days: [
+      { day_en: 'Monday', day_ru: 'Понедельник', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Greek yoghurt with berries & oats', name_ru:'Греческий йогурт с ягодами и овсянкой', desc_en:'200g 0% Greek yoghurt, 40g oats, 80g mixed berries', desc_ru:'200г йогурта 0%, 40г овсянки, 80г ягод', kcal:320 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Chicken & quinoa salad', name_ru:'Салат с курицей и киноа', desc_en:'150g grilled chicken breast, 80g quinoa (dry), cucumber, tomato, olive oil', desc_ru:'150г куриной грудки на гриле, 80г киноа (сухой), огурец, томат, оливковое масло', kcal:480 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Apple & cottage cheese', name_ru:'Яблоко и творог', desc_en:'1 medium apple, 150g low-fat cottage cheese', desc_ru:'1 яблоко, 150г нежирного творога', kcal:210 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Baked salmon with broccoli', name_ru:'Запечённый лосось с брокколи', desc_en:'150g salmon fillet, 200g broccoli, lemon, herbs', desc_ru:'150г филе лосося, 200г брокколи, лимон, зелень', kcal:390 },
+      ]},
+      { day_en: 'Tuesday', day_ru: 'Вторник', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Scrambled eggs with spinach', name_ru:'Яичница со шпинатом', desc_en:'3 eggs, 80g spinach, 1 slice whole wheat toast', desc_ru:'3 яйца, 80г шпината, 1 ломтик цельнозернового хлеба', kcal:340 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Turkey & vegetable wrap', name_ru:'Ролл с индейкой и овощами', desc_en:'120g turkey breast, wholemeal tortilla, lettuce, tomato, mustard', desc_ru:'120г индейки, цельнозерновая лепёшка, листовой салат, томат, горчица', kcal:420 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Protein shake', name_ru:'Протеиновый коктейль', desc_en:'1 scoop whey protein (25g), 250ml skimmed milk', desc_ru:'1 мерная ложка сывороточного протеина (25г), 250мл обезжиренного молока', kcal:200 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Lentil soup with whole grain bread', name_ru:'Чечевичный суп с цельнозерновым хлебом', desc_en:'300ml lentil soup, 1 slice whole grain bread, side salad', desc_ru:'300мл чечевичного супа, 1 ломтик цельнозернового хлеба, салат', kcal:430 },
+      ]},
+      { day_en: 'Wednesday', day_ru: 'Среда', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Overnight oats', name_ru:'Овсянка на ночь', desc_en:'60g oats, 200ml skimmed milk, 1 tbsp chia seeds, 100g strawberries', desc_ru:'60г овсянки, 200мл обезжиренного молока, 1 ст.л. семян чиа, 100г клубники', kcal:350 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Tuna & brown rice bowl', name_ru:'Боул с тунцом и бурым рисом', desc_en:'1 can tuna in water, 80g brown rice (dry), cucumber, corn, low-fat mayo', desc_ru:'1 банка тунца в воде, 80г бурого риса (сухой), огурец, кукуруза, нежирный майонез', kcal:470 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Carrots with hummus', name_ru:'Морковь с хумусом', desc_en:'150g carrot sticks, 50g hummus', desc_ru:'150г морковных палочек, 50г хумуса', kcal:170 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Chicken stir-fry with vegetables', name_ru:'Курица с овощами стир-фрай', desc_en:'150g chicken breast, mixed peppers, broccoli, soy sauce, 60g rice noodles', desc_ru:'150г куриной грудки, болгарский перец, брокколи, соевый соус, 60г рисовой лапши', kcal:420 },
+      ]},
+      { day_en: 'Thursday', day_ru: 'Четверг', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Protein pancakes', name_ru:'Протеиновые панкейки', desc_en:'2 eggs, 40g oats, 1 scoop protein powder, banana, blended', desc_ru:'2 яйца, 40г овсянки, 1 ложка протеина, банан — всё в блендере', kcal:380 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Chickpea & spinach curry', name_ru:'Карри из нута со шпинатом', desc_en:'200g chickpeas, 100g spinach, tomatoes, curry spices, 60g basmati rice', desc_ru:'200г нута, 100г шпината, томаты, карри, 60г риса басмати', kcal:450 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Boiled eggs', name_ru:'Варёные яйца', desc_en:'2 hard-boiled eggs', desc_ru:'2 варёных яйца', kcal:155 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Baked cod with sweet potato', name_ru:'Запечённая треска с бататом', desc_en:'180g cod fillet, 200g sweet potato, green beans, lemon', desc_ru:'180г трески, 200г батата, стручковая фасоль, лимон', kcal:410 },
+      ]},
+      { day_en: 'Friday', day_ru: 'Пятница', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Smoothie bowl', name_ru:'Смузи-боул', desc_en:'150g banana, 100g frozen berries, 150g Greek yoghurt, 30g granola', desc_ru:'150г банана, 100г замороженных ягод, 150г греческого йогурта, 30г гранолы', kcal:370 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Grilled chicken Caesar salad', name_ru:'Салат Цезарь с гриль-курицей', desc_en:'150g grilled chicken, romaine lettuce, 20g parmesan, light Caesar dressing', desc_ru:'150г гриль-курицы, романо, 20г пармезана, лёгкий соус Цезарь', kcal:420 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Skyr with almonds', name_ru:'Скир с миндалём', desc_en:'200g skyr, 15g almonds', desc_ru:'200г скира, 15г миндаля', kcal:210 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Turkey meatballs with pasta', name_ru:'Тефтели из индейки с пастой', desc_en:'150g turkey meatballs, 70g pasta (dry), tomato sauce, basil', desc_ru:'150г тефтелей из индейки, 70г пасты (сухой), томатный соус, базилик', kcal:490 },
+      ]},
+      { day_en: 'Saturday', day_ru: 'Суббота', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Avocado toast with poached eggs', name_ru:'Тост с авокадо и яйцом пашот', desc_en:'2 slices whole grain bread, ½ avocado, 2 poached eggs, chilli flakes', desc_ru:'2 ломтика цельнозернового хлеба, ½ авокадо, 2 яйца пашот, перец чили', kcal:420 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Shrimp & vegetable stir-fry', name_ru:'Креветки с овощами', desc_en:'200g shrimp, mixed vegetables, soy sauce, ginger, 70g rice', desc_ru:'200г креветок, смесь овощей, соевый соус, имбирь, 70г риса', kcal:430 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Fruit & nut mix', name_ru:'Фруктово-ореховая смесь', desc_en:'1 orange, 20g mixed nuts', desc_ru:'1 апельсин, 20г смеси орехов', kcal:180 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Beef & vegetable soup', name_ru:'Говяжий суп с овощами', desc_en:'100g lean beef, carrots, celery, potato, onion, herbs', desc_ru:'100г нежирной говядины, морковь, сельдерей, картофель, лук, зелень', kcal:380 },
+      ]},
+      { day_en: 'Sunday', day_ru: 'Воскресенье', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Egg white omelette', name_ru:'Омлет из белков', desc_en:'5 egg whites, mushrooms, spinach, tomato, herbs', desc_ru:'5 яичных белков, грибы, шпинат, томат, зелень', kcal:180 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Salmon & avocado sushi bowl', name_ru:'Суши-боул с лосося и авокадо', desc_en:'150g salmon, 80g rice, ½ avocado, cucumber, soy sauce, sesame', desc_ru:'150г лосося, 80г риса, ½ авокадо, огурец, соевый соус, кунжут', kcal:520 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Protein shake', name_ru:'Протеиновый коктейль', desc_en:'1 scoop whey protein, 300ml water or skimmed milk', desc_ru:'1 ложка сывороточного протеина, 300мл воды или обезжиренного молока', kcal:150 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Grilled chicken with roasted vegetables', name_ru:'Гриль-курица с запечёнными овощами', desc_en:'180g chicken breast, courgette, aubergine, peppers, olive oil, herbs', desc_ru:'180г куриной грудки, кабачок, баклажан, перец, оливковое масло, зелень', kcal:390 },
+      ]},
+    ]
+  },
+  gain: {
+    kcal: 2800, protein: '200g', carbs: '320g', fat: '80g',
+    days: [
+      { day_en: 'Monday', day_ru: 'Понедельник', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Oats with banana & peanut butter', name_ru:'Овсянка с бананом и арахисовой пастой', desc_en:'100g oats, 1 banana, 2 tbsp peanut butter, 300ml whole milk', desc_ru:'100г овсянки, 1 банан, 2 ст.л. арахисовой пасты, 300мл цельного молока', kcal:680 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Chicken rice & broccoli', name_ru:'Курица с рисом и брокколи', desc_en:'250g chicken breast, 120g white rice (dry), 200g broccoli, olive oil', desc_ru:'250г куриной грудки, 120г белого риса (сухой), 200г брокколи, оливковое масло', kcal:750 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Mass gainer shake', name_ru:'Гейнер-коктейль', desc_en:'2 scoops whey protein, 300ml whole milk, 1 banana, 30g oats', desc_ru:'2 ложки протеина, 300мл цельного молока, 1 банан, 30г овсянки', kcal:580 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Beef stir-fry with noodles', name_ru:'Говядина с лапшой', desc_en:'200g lean beef, 100g egg noodles, mixed vegetables, soy sauce', desc_ru:'200г нежирной говядины, 100г яичной лапши, овощи, соевый соус', kcal:680 },
+      ]},
+      { day_en: 'Tuesday', day_ru: 'Вторник', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Whole egg scramble with toast', name_ru:'Яичница с тостами', desc_en:'4 whole eggs, 2 slices whole wheat toast, avocado, orange juice', desc_ru:'4 яйца, 2 тоста из цельнозернового хлеба, авокадо, апельсиновый сок', kcal:650 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Salmon pasta', name_ru:'Паста с лосося', desc_en:'200g salmon, 100g pasta (dry), cherry tomatoes, olive oil, garlic', desc_ru:'200г лосося, 100г пасты (сухой), черри, оливковое масло, чеснок', kcal:720 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Greek yoghurt with granola & honey', name_ru:'Греческий йогурт с гранолой и мёдом', desc_en:'300g Greek yoghurt, 50g granola, 1 tbsp honey', desc_ru:'300г греческого йогурта, 50г гранолы, 1 ст.л. мёда', kcal:520 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Turkey rice with sweet potato', name_ru:'Индейка с рисом и бататом', desc_en:'250g turkey mince, 100g rice, 200g sweet potato, olive oil', desc_ru:'250г фарша индейки, 100г риса, 200г батата, оливковое масло', kcal:720 },
+      ]},
+      { day_en: 'Wednesday', day_ru: 'Среда', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Protein oatmeal', name_ru:'Протеиновая овсянка', desc_en:'100g oats, 1 scoop protein, 300ml whole milk, blueberries, almonds', desc_ru:'100г овсянки, 1 ложка протеина, 300мл молока, черника, миндаль', kcal:660 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Chicken & quinoa power bowl', name_ru:'Пауэр-боул с курицей и киноа', desc_en:'250g chicken, 100g quinoa (dry), avocado, roasted vegetables', desc_ru:'250г курицы, 100г киноа (сухой), авокадо, запечённые овощи', kcal:740 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Peanut butter banana shake', name_ru:'Коктейль с арахисовой пастой и бананом', desc_en:'2 bananas, 3 tbsp peanut butter, 300ml whole milk, 1 scoop protein', desc_ru:'2 банана, 3 ст.л. арахисовой пасты, 300мл молока, 1 ложка протеина', kcal:680 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Tuna pasta bake', name_ru:'Запечённая паста с тунцом', desc_en:'2 cans tuna, 120g pasta, tomato sauce, cheese, herbs', desc_ru:'2 банки тунца, 120г пасты, томатный соус, сыр, зелень', kcal:620 },
+      ]},
+      { day_en: 'Thursday', day_ru: 'Четверг', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'French toast with fruit', name_ru:'Французские тосты с фруктами', desc_en:'3 slices whole wheat bread, 2 eggs, 200ml milk, banana, maple syrup', desc_ru:'3 ломтика хлеба, 2 яйца, 200мл молока, банан, кленовый сироп', kcal:620 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Beef burrito bowl', name_ru:'Буррито-боул с говядиной', desc_en:'200g ground beef, 100g rice, black beans, corn, salsa, sour cream', desc_ru:'200г говяжьего фарша, 100г риса, чёрная фасоль, кукуруза, сальса, сметана', kcal:780 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Cottage cheese with fruit', name_ru:'Творог с фруктами', desc_en:'300g cottage cheese, 1 banana, 20g almonds, honey', desc_ru:'300г творога, 1 банан, 20г миндаля, мёд', kcal:480 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Salmon with roasted potatoes', name_ru:'Лосось с запечённым картофелем', desc_en:'200g salmon, 300g potatoes, green beans, olive oil, garlic', desc_ru:'200г лосося, 300г картофеля, стручковая фасоль, оливковое масло, чеснок', kcal:720 },
+      ]},
+      { day_en: 'Friday', day_ru: 'Пятница', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Big smoothie bowl', name_ru:'Большой смузи-боул', desc_en:'2 bananas, 200g berries, 200g Greek yoghurt, 50g granola, nut butter', desc_ru:'2 банана, 200г ягод, 200г греческого йогурта, 50г гранолы, ореховая паста', kcal:680 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Chicken pasta with cheese sauce', name_ru:'Паста с курицей и сырным соусом', desc_en:'220g chicken, 120g pasta, cheese sauce, spinach, sun-dried tomatoes', desc_ru:'220г курицы, 120г пасты, сырный соус, шпинат, вяленые томаты', kcal:760 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Rice cakes with peanut butter', name_ru:'Рисовые хлебцы с арахисовой пастой', desc_en:'4 rice cakes, 3 tbsp peanut butter, banana', desc_ru:'4 рисовых хлебца, 3 ст.л. арахисовой пасты, банан', kcal:480 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Turkey & sweet potato curry', name_ru:'Карри из индейки с бататом', desc_en:'250g turkey, 250g sweet potato, coconut milk, curry, 80g rice', desc_ru:'250г индейки, 250г батата, кокосовое молоко, карри, 80г риса', kcal:720 },
+      ]},
+      { day_en: 'Saturday', day_ru: 'Суббота', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Egg & cheese breakfast sandwich', name_ru:'Яичный сэндвич с сыром', desc_en:'3 eggs, 2 slices cheese, 2 whole grain rolls, tomato, lettuce', desc_ru:'3 яйца, 2 ломтика сыра, 2 цельнозерновые булочки, томат, листовой салат', kcal:640 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Tuna & chickpea salad', name_ru:'Салат с тунцом и нутом', desc_en:'2 cans tuna, 200g chickpeas, cucumber, tomato, olive oil, pitta bread', desc_ru:'2 банки тунца, 200г нута, огурец, томат, оливковое масло, питта', kcal:680 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Mass shake', name_ru:'Масс-коктейль', desc_en:'2 scoops protein, 400ml whole milk, 2 tbsp peanut butter, oats', desc_ru:'2 ложки протеина, 400мл цельного молока, 2 ст.л. арахисовой пасты, овсянка', kcal:680 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Beef & vegetable stew with bread', name_ru:'Говяжье рагу с овощами и хлебом', desc_en:'200g beef, carrots, potatoes, onion, tomatoes, 2 slices bread', desc_ru:'200г говядины, морковь, картофель, лук, томаты, 2 ломтика хлеба', kcal:720 },
+      ]},
+      { day_en: 'Sunday', day_ru: 'Воскресенье', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Protein waffles', name_ru:'Протеиновые вафли', desc_en:'3 eggs, 80g oats, 1 scoop protein, banana, blueberries, maple syrup', desc_ru:'3 яйца, 80г овсянки, 1 ложка протеина, банан, черника, кленовый сироп', kcal:660 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Big chicken rice bowl', name_ru:'Большой боул с курицей и рисом', desc_en:'300g chicken, 130g rice, edamame, corn, avocado, teriyaki sauce', desc_ru:'300г курицы, 130г риса, эдамаме, кукуруза, авокадо, соус терияки', kcal:820 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Fruit & cottage cheese bowl', name_ru:'Творог с фруктами', desc_en:'250g cottage cheese, mango, kiwi, granola', desc_ru:'250г творога, манго, киви, гранола', kcal:420 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Salmon & prawn pasta', name_ru:'Паста с лососем и креветками', desc_en:'150g salmon, 150g prawns, 120g pasta, cream sauce, spinach', desc_ru:'150г лосося, 150г креветок, 120г пасты, сливочный соус, шпинат', kcal:780 },
+      ]},
+    ]
+  },
+  maintain: {
+    kcal: 2100, protein: '160g', carbs: '240g', fat: '65g',
+    days: [
+      { day_en: 'Monday', day_ru: 'Понедельник', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Porridge with banana & honey', name_ru:'Каша с бананом и мёдом', desc_en:'70g oats, 250ml milk, 1 banana, 1 tsp honey, cinnamon', desc_ru:'70г овсянки, 250мл молока, 1 банан, 1 ч.л. мёда, корица', kcal:450 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Chicken & vegetable pasta', name_ru:'Паста с курицей и овощами', desc_en:'180g chicken breast, 80g pasta, courgette, peppers, tomato sauce', desc_ru:'180г куриной грудки, 80г пасты, кабачок, перец, томатный соус', kcal:580 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Apple with peanut butter', name_ru:'Яблоко с арахисовой пастой', desc_en:'1 large apple, 1.5 tbsp peanut butter', desc_ru:'1 большое яблоко, 1,5 ст.л. арахисовой пасты', kcal:250 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Baked chicken with sweet potato & greens', name_ru:'Запечённая курица с бататом и зеленью', desc_en:'200g chicken breast, 180g sweet potato, broccoli, olive oil', desc_ru:'200г куриной грудки, 180г батата, брокколи, оливковое масло', kcal:520 },
+      ]},
+      { day_en: 'Tuesday', day_ru: 'Вторник', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Eggs on toast with avocado', name_ru:'Яйца на тосте с авокадо', desc_en:'2 eggs (any style), 2 whole grain toast, ½ avocado', desc_ru:'2 яйца (любые), 2 цельнозерновых тоста, ½ авокадо', kcal:480 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Tuna & rice salad', name_ru:'Салат с тунцом и рисом', desc_en:'1 can tuna, 80g brown rice, cucumber, tomato, sweetcorn, olive oil', desc_ru:'1 банка тунца, 80г бурого риса, огурец, томат, кукуруза, оливковое масло', kcal:510 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Greek yoghurt with berries', name_ru:'Греческий йогурт с ягодами', desc_en:'200g Greek yoghurt, 100g mixed berries', desc_ru:'200г греческого йогурта, 100г ягод', kcal:190 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Salmon with quinoa & spinach', name_ru:'Лосось с киноа и шпинатом', desc_en:'180g salmon, 80g quinoa (dry), 100g spinach, lemon, olive oil', desc_ru:'180г лосося, 80г киноа (сухой), 100г шпината, лимон, оливковое масло', kcal:580 },
+      ]},
+      { day_en: 'Wednesday', day_ru: 'Среда', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Smoothie with protein', name_ru:'Смузи с протеином', desc_en:'1 banana, 150g berries, 1 scoop protein, 250ml milk, 1 tbsp chia seeds', desc_ru:'1 банан, 150г ягод, 1 ложка протеина, 250мл молока, 1 ст.л. чиа', kcal:420 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Turkey & lentil soup', name_ru:'Суп из индейки и чечевицы', desc_en:'150g turkey, 100g lentils, carrots, celery, onion, herbs, bread', desc_ru:'150г индейки, 100г чечевицы, морковь, сельдерей, лук, зелень, хлеб', kcal:540 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Handful of mixed nuts & orange', name_ru:'Орехи и апельсин', desc_en:'25g mixed nuts, 1 orange', desc_ru:'25г смеси орехов, 1 апельсин', kcal:220 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Beef stir-fry with rice', name_ru:'Говядина стир-фрай с рисом', desc_en:'180g lean beef, 80g rice, broccoli, peppers, soy sauce, ginger', desc_ru:'180г нежирной говядины, 80г риса, брокколи, перец, соевый соус, имбирь', kcal:580 },
+      ]},
+      { day_en: 'Thursday', day_ru: 'Четверг', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Cottage cheese pancakes', name_ru:'Панкейки из творога', desc_en:'200g cottage cheese, 2 eggs, 50g oats, banana, blueberries', desc_ru:'200г творога, 2 яйца, 50г овсянки, банан, черника', kcal:460 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Chickpea Buddha bowl', name_ru:'Будда-боул с нутом', desc_en:'200g chickpeas, 80g quinoa, roasted vegetables, tahini dressing', desc_ru:'200г нута, 80г киноа, запечённые овощи, заправка тахини', kcal:560 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Protein bar or shake', name_ru:'Протеиновый батончик или коктейль', desc_en:'1 protein bar (20-25g protein) or 1 scoop whey in water', desc_ru:'1 протеиновый батончик (20–25г белка) или 1 ложка протеина на воде', kcal:200 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Baked cod with potatoes & salad', name_ru:'Запечённая треска с картофелем и салатом', desc_en:'200g cod, 200g roasted potatoes, mixed salad, olive oil dressing', desc_ru:'200г трески, 200г запечённого картофеля, овощной салат, оливковое масло', kcal:520 },
+      ]},
+      { day_en: 'Friday', day_ru: 'Пятница', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Bircher muesli', name_ru:'Мюсли Бирхер', desc_en:'70g oats, 200ml milk, grated apple, 30g raisins, cinnamon, overnight soak', desc_ru:'70г овсянки, 200мл молока, тёртое яблоко, 30г изюма, корица, замачивание на ночь', kcal:440 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Prawn & avocado salad', name_ru:'Салат с креветками и авокадо', desc_en:'200g prawns, 1 avocado, mixed leaves, cherry tomatoes, lemon dressing, bread roll', desc_ru:'200г креветок, 1 авокадо, листовой салат, черри, лимонная заправка, булочка', kcal:530 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Banana & almond butter', name_ru:'Банан с миндальной пастой', desc_en:'1 banana, 1.5 tbsp almond butter', desc_ru:'1 банан, 1,5 ст.л. миндальной пасты', kcal:230 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Chicken fajitas', name_ru:'Куриные фахитас', desc_en:'200g chicken, peppers, onion, fajita spices, 2 tortillas, salsa, yoghurt', desc_ru:'200г курицы, перец, лук, специи, 2 лепёшки, сальса, йогурт', kcal:620 },
+      ]},
+      { day_en: 'Saturday', day_ru: 'Суббота', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Full healthy breakfast', name_ru:'Полноценный завтрак', desc_en:'2 eggs, 2 turkey sausages, grilled tomato, mushrooms, whole grain toast', desc_ru:'2 яйца, 2 сосиски из индейки, гриль томат, грибы, цельнозерновой тост', kcal:520 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Lentil & vegetable dhal', name_ru:'Дал из чечевицы с овощами', desc_en:'150g red lentils, spinach, tomatoes, curry spices, 70g basmati rice, naan', desc_ru:'150г красной чечевицы, шпинат, томаты, карри, 70г риса басмати, наан', kcal:580 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Dark chocolate & walnuts', name_ru:'Тёмный шоколад и грецкий орех', desc_en:'25g dark chocolate (70%+), 20g walnuts', desc_ru:'25г тёмного шоколада (70%+), 20г грецкого ореха', kcal:220 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Salmon & asparagus with new potatoes', name_ru:'Лосось со спаржей и молодым картофелем', desc_en:'200g salmon, asparagus, 200g new potatoes, lemon butter sauce', desc_ru:'200г лосося, спаржа, 200г молодого картофеля, лимонно-масляный соус', kcal:580 },
+      ]},
+      { day_en: 'Sunday', day_ru: 'Воскресенье', meals: [
+        { type_en:'Breakfast', type_ru:'Завтрак', name_en:'Pancakes with fruit', name_ru:'Панкейки с фруктами', desc_en:'Whole grain pancakes, 200g mixed fruit, Greek yoghurt, maple syrup', desc_ru:'Цельнозерновые панкейки, 200г фруктов, греческий йогурт, кленовый сироп', kcal:490 },
+        { type_en:'Lunch', type_ru:'Обед', name_en:'Sunday roast chicken', name_ru:'Воскресная запечённая курица', desc_en:'200g roast chicken breast, roasted vegetables, 150g potatoes, gravy', desc_ru:'200г запечённой куриной грудки, запечённые овощи, 150г картофеля, соус', kcal:620 },
+        { type_en:'Snack', type_ru:'Перекус', name_en:'Hummus with vegetables', name_ru:'Хумус с овощами', desc_en:'60g hummus, carrot sticks, cucumber, bell pepper', desc_ru:'60г хумуса, морковные палочки, огурец, болгарский перец', kcal:180 },
+        { type_en:'Dinner', type_ru:'Ужин', name_en:'Light pasta primavera', name_ru:'Лёгкая паста примавера', desc_en:'80g pasta, courgette, asparagus, peas, parmesan, olive oil, garlic', desc_ru:'80г пасты, кабачок, спаржа, горошек, пармезан, оливковое масло, чеснок', kcal:480 },
+      ]},
+    ]
+  }
+};
+
+var currentGoal = 'loss';
+
+function renderPlan(goal) {
+  currentGoal = goal;
+  var plan = PLANS[goal];
+  var l = currentLang;
+
+  // Update summary
+  document.getElementById('sumKcal').textContent = plan.kcal;
+  document.getElementById('sumProtein').textContent = plan.protein;
+  document.getElementById('sumCarbs').textContent = plan.carbs;
+  document.getElementById('sumFat').textContent = plan.fat;
+
+  var container = document.getElementById('mealPlanContainer');
+  container.innerHTML = '';
+
+  plan.days.forEach(function(day, di) {
+    var dayName = l === 'ru' ? day.day_ru : day.day_en;
+    var totalKcal = day.meals.reduce(function(s,m){ return s+m.kcal; }, 0);
+
+    var card = document.createElement('div');
+    card.className = 'day-card';
+
+    var header = document.createElement('div');
+    header.className = 'day-header';
+    header.innerHTML = '<h3>' + dayName + '</h3>' +
+      '<div class="day-macros"><span>' + totalKcal + ' kcal</span></div>' +
+      '<span style="font-size:1.2rem;transition:transform 0.3s;" id="arrow_' + di + '">▼</span>';
+
+    var body = document.createElement('div');
+    body.className = 'day-body' + (di === 0 ? ' open' : '');
+
+    var mealsHtml = day.meals.map(function(meal) {
+      var mealType = l === 'ru' ? meal.type_ru : meal.type_en;
+      var mealName = l === 'ru' ? meal.name_ru : meal.name_en;
+      var mealDesc = l === 'ru' ? meal.desc_ru : meal.desc_en;
+      return '<div class="meal-row">' +
+        '<div class="meal-type">' + mealType + '</div>' +
+        '<div><div class="meal-name">' + mealName + '</div><div class="meal-desc">' + mealDesc + '</div></div>' +
+        '<div class="meal-kcal">' + meal.kcal + ' kcal</div>' +
+        '</div>';
+    }).join('');
+
+    body.innerHTML = mealsHtml;
+
+    header.addEventListener('click', function() {
+      var isOpen = body.classList.contains('open');
+      body.classList.toggle('open');
+      document.getElementById('arrow_' + di).style.transform = isOpen ? '' : 'rotate(180deg)';
+    });
+
+    if (di === 0) {
+      document.getElementById('arrow_' + di) && (document.getElementById('arrow_' + di).style.transform = 'rotate(180deg)');
+    }
+
+    card.appendChild(header);
+    card.appendChild(body);
+    container.appendChild(card);
+
+    // Fix arrow on first render
+    setTimeout(function() {
+      var arr = document.getElementById('arrow_0');
+      if (arr) arr.style.transform = 'rotate(180deg)';
+    }, 50);
+  });
+}
+
+document.querySelectorAll('.goal-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.goal-tab').forEach(function(t){ t.classList.remove('active'); });
+    this.classList.add('active');
+    renderPlan(this.getAttribute('data-goal'));
+  });
+});
+
+renderPlan('loss');
+</script>
+</body>
+</html>
