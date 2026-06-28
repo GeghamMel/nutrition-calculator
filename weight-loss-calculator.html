@@ -1,283 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Weight Loss Calculator — How Long to Lose Weight | Calories & Macros</title>
-  <meta name="description" content="Calculate how long it will take to reach your goal weight. Enter your current weight, goal weight and calorie deficit to get a realistic timeline." />
+  <meta name="description"
+    content="Calculate how long it will take to reach your goal weight. Enter your current weight, goal weight and calorie deficit to get a realistic timeline." />
   <link rel="canonical" href="https://calories-macros.com/weight-loss-calculator.html" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"
+    crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-RXLXM57ZKH');</script>
   <meta property="og:title" content="Weight Loss Calculator — How Long to Reach Goal Weight" />
-  <meta property="og:description" content="Calculate how long it will take to lose weight based on your calorie deficit." />
+  <meta property="og:description"
+    content="Calculate how long it will take to lose weight based on your calorie deficit." />
   <meta property="og:image" content="https://calories-macros.com/og-image.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="inner">
-    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-    <a href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search" aria-label="Search">🔍</a>
-    <div class="header-lang" id="headerLang">
-      <button class="active" id="headerLangEN">EN</button>
-      <button id="headerLangRU">RU</button>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+      <a href="/search.html"
+        style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;"
+        title="Search" aria-label="Search">🔍</a>
+      <div class="header-lang" id="headerLang">
+        <button class="active" id="headerLangEN">EN</button>
+        <button id="headerLangRU">RU</button>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="siteNav">
+        <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+        <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+        <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+        <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+        <div class="lang-toggle">
+          <button class="active" id="langEN">EN</button>
+          <button id="langRU">RU</button>
+        </div>
+      </nav>
     </div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-    <nav class="site-nav" id="siteNav">
-      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-      <div class="lang-toggle">
-        <button class="active" id="langEN">EN</button>
-        <button id="langRU">RU</button>
-      </div>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow" data-en="Free Weight Loss Calculator" data-ru="Бесплатный калькулятор похудения">Free Weight Loss Calculator</div>
-    <h1 data-en="How Long Will It Take to <em>Lose Weight?</em>" data-ru="Сколько времени займёт <em>похудение?</em>">How Long Will It Take to <em>Lose Weight?</em></h1>
-    <p data-en="Enter your current weight, goal weight, and daily calorie deficit to get a realistic timeline and weekly milestones for reaching your goal." data-ru="Введите текущий вес, целевой вес и ежедневный дефицит калорий, чтобы получить реалистичный план и еженедельные вехи на пути к цели.">Get a realistic timeline and milestones for reaching your goal weight.</p>
-    <a href="#calculator" class="btn-scroll" data-en="Calculate Timeline ↓" data-ru="Рассчитать сроки ↓">Calculate Timeline ↓</a>
-  </div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-en="Free Weight Loss Calculator" data-ru="Бесплатный калькулятор похудения">Free
+        Weight Loss Calculator</div>
+      <h1 data-en="How Long Will It Take to <em>Lose Weight?</em>" data-ru="Сколько времени займёт <em>похудение?</em>">
+        How Long Will It Take to <em>Lose Weight?</em></h1>
+      <p data-en="Enter your current weight, goal weight, and daily calorie deficit to get a realistic timeline and weekly milestones for reaching your goal."
+        data-ru="Введите текущий вес, целевой вес и ежедневный дефицит калорий, чтобы получить реалистичный план и еженедельные вехи на пути к цели.">
+        Get a realistic timeline and milestones for reaching your goal weight.</p>
+      <a href="#calculator" class="btn-scroll" data-en="Calculate Timeline ↓" data-ru="Рассчитать сроки ↓">Calculate
+        Timeline ↓</a>
+    </div>
+  </section>
 
-<section class="calc-section" id="calculator">
-  <div class="container">
-    <div class="section-label" data-en="Weight Loss Timeline" data-ru="Сроки похудения">Weight Loss Timeline</div>
-    <h2 class="section-title" data-en="Enter your details" data-ru="Введите ваши данные">Enter your details</h2>
+  <section class="calc-section" id="calculator">
+    <div class="container">
+      <div class="section-label" data-en="Weight Loss Timeline" data-ru="Сроки похудения">Weight Loss Timeline</div>
+      <h2 class="section-title" data-en="Enter your details" data-ru="Введите ваши данные">Enter your details</h2>
 
-    <div class="calc-card">
-      <div class="calc-grid">
-        <div class="field">
-          <label for="currentWeight" data-en="Current weight (kg)" data-ru="Текущий вес (кг)">Current weight (kg)</label>
-          <input type="number" id="currentWeight" min="40" max="300" placeholder="e.g. 85" />
-        </div>
-        <div class="field">
-          <label for="goalWeight" data-en="Goal weight (kg)" data-ru="Целевой вес (кг)">Goal weight (kg)</label>
-          <input type="number" id="goalWeight" min="40" max="300" placeholder="e.g. 70" />
-        </div>
-        <div class="field">
-          <label for="tdee" data-en="Your TDEE (kcal/day)" data-ru="Ваш TDEE (ккал/день)">Your TDEE (kcal/day)</label>
-          <input type="number" id="tdee" min="1000" max="5000" placeholder="e.g. 2200" />
-          <small style="color:var(--muted);font-size:0.78rem;" data-en="Don't know your TDEE? Calculate it first →" data-ru="Не знаете TDEE? Рассчитайте сначала →"><a href="/" style="color:var(--green);" data-en="Calculate your TDEE first →" data-ru="Рассчитайте TDEE сначала →">Calculate your TDEE first →</a></small>
-        </div>
-        <div class="field">
-          <label for="deficit" data-en="Daily calorie deficit" data-ru="Ежедневный дефицит калорий">Daily calorie deficit</label>
-          <select id="deficit">
-            <option value="250" data-en="250 kcal — very gentle (0.25 kg/week)" data-ru="250 ккал — очень мягкий (0,25 кг/нед)">250 kcal — very gentle (0.25 kg/week)</option>
-            <option value="500" selected data-en="500 kcal — moderate (0.5 kg/week)" data-ru="500 ккал — умеренный (0,5 кг/нед)">500 kcal — moderate (0.5 kg/week)</option>
-            <option value="750" data-en="750 kcal — aggressive (0.75 kg/week)" data-ru="750 ккал — агрессивный (0,75 кг/нед)">750 kcal — aggressive (0.75 kg/week)</option>
-            <option value="1000" data-en="1000 kcal — very aggressive (1 kg/week)" data-ru="1000 ккал — очень агрессивный (1 кг/нед)">1000 kcal — very aggressive (1 kg/week)</option>
-          </select>
-        </div>
-      </div>
-
-      <button class="btn-calc" onclick="calculate()" data-en="Calculate My Timeline →" data-ru="Рассчитать мой план →">Calculate My Timeline →</button>
-      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please fill in all fields correctly. Goal weight must be less than current weight." data-ru="Заполните все поля. Целевой вес должен быть меньше текущего.">Please fill in all fields correctly.</p>
-
-      <div id="results" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:28px;">
-
-        <!-- Summary -->
-        <div class="calories-display">
-          <div class="kcal-number" id="weeksDisplay">—</div>
-          <div class="kcal-label" id="weeksLabel" data-en="weeks to reach goal" data-ru="недель до цели">weeks to reach goal</div>
-        </div>
-
-        <div class="macros-grid" style="margin-top:16px;">
-          <div class="macro-item">
-            <div class="macro-value" id="targetDate">—</div>
-            <div class="macro-name" data-en="Target date" data-ru="Дата достижения цели">Target date</div>
+      <div class="calc-card">
+        <div class="calc-grid">
+          <div class="field">
+            <label for="currentWeight" data-en="Current weight (kg)" data-ru="Текущий вес (кг)">Current weight
+              (kg)</label>
+            <input type="number" id="currentWeight" min="40" max="300" placeholder="e.g. 85" />
           </div>
-          <div class="macro-item">
-            <div class="macro-value" id="tolose">—</div>
-            <div class="macro-name" data-en="kg to lose" data-ru="кг сбросить">kg to lose</div>
+          <div class="field">
+            <label for="goalWeight" data-en="Goal weight (kg)" data-ru="Целевой вес (кг)">Goal weight (kg)</label>
+            <input type="number" id="goalWeight" min="40" max="300" placeholder="e.g. 70" />
           </div>
-          <div class="macro-item">
-            <div class="macro-value" id="dailyKcal">—</div>
-            <div class="macro-name" data-en="daily calories" data-ru="калорий в день">daily calories</div>
+          <div class="field">
+            <label for="tdee" data-en="Your TDEE (kcal/day)" data-ru="Ваш TDEE (ккал/день)">Your TDEE (kcal/day)</label>
+            <input type="number" id="tdee" min="1000" max="5000" placeholder="e.g. 2200" />
+            <small style="color:var(--muted);font-size:0.78rem;" data-en="Don't know your TDEE? Calculate it first →"
+              data-ru="Не знаете TDEE? Рассчитайте сначала →"><a href="/" style="color:var(--green);"
+                data-en="Calculate your TDEE first →" data-ru="Рассчитайте TDEE сначала →">Calculate your TDEE first
+                →</a></small>
+          </div>
+          <div class="field">
+            <label for="deficit" data-en="Daily calorie deficit" data-ru="Ежедневный дефицит калорий">Daily calorie
+              deficit</label>
+            <select id="deficit">
+              <option value="250" data-en="250 kcal — very gentle (0.25 kg/week)"
+                data-ru="250 ккал — очень мягкий (0,25 кг/нед)">250 kcal — very gentle (0.25 kg/week)</option>
+              <option value="500" selected data-en="500 kcal — moderate (0.5 kg/week)"
+                data-ru="500 ккал — умеренный (0,5 кг/нед)">500 kcal — moderate (0.5 kg/week)</option>
+              <option value="750" data-en="750 kcal — aggressive (0.75 kg/week)"
+                data-ru="750 ккал — агрессивный (0,75 кг/нед)">750 kcal — aggressive (0.75 kg/week)</option>
+              <option value="1000" data-en="1000 kcal — very aggressive (1 kg/week)"
+                data-ru="1000 ккал — очень агрессивный (1 кг/нед)">1000 kcal — very aggressive (1 kg/week)</option>
+            </select>
           </div>
         </div>
 
-        <!-- Milestones -->
-        <div style="margin-top:28px;">
-          <p style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;" data-en="Your milestones:" data-ru="Ваши вехи:">Your milestones:</p>
-          <div id="milestones"></div>
+        <button class="btn-calc" onclick="calculate()" data-en="Calculate My Timeline →"
+          data-ru="Рассчитать мой план →">Calculate My Timeline →</button>
+        <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;"
+          data-en="Please fill in all fields correctly. Goal weight must be less than current weight."
+          data-ru="Заполните все поля. Целевой вес должен быть меньше текущего.">Please fill in all fields correctly.
+        </p>
+
+        <div id="results" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:28px;">
+
+          <!-- Summary -->
+          <div class="calories-display">
+            <div class="kcal-number" id="weeksDisplay">—</div>
+            <div class="kcal-label" id="weeksLabel" data-en="weeks to reach goal" data-ru="недель до цели">weeks to
+              reach goal</div>
+          </div>
+
+          <div class="macros-grid" style="margin-top:16px;">
+            <div class="macro-item">
+              <div class="macro-value" id="targetDate">—</div>
+              <div class="macro-name" data-en="Target date" data-ru="Дата достижения цели">Target date</div>
+            </div>
+            <div class="macro-item">
+              <div class="macro-value" id="tolose">—</div>
+              <div class="macro-name" data-en="kg to lose" data-ru="кг сбросить">kg to lose</div>
+            </div>
+            <div class="macro-item">
+              <div class="macro-value" id="dailyKcal">—</div>
+              <div class="macro-name" data-en="daily calories" data-ru="калорий в день">daily calories</div>
+            </div>
+          </div>
+
+          <!-- Milestones -->
+          <div style="margin-top:28px;">
+            <p style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;"
+              data-en="Your milestones:" data-ru="Ваши вехи:">Your milestones:</p>
+            <div id="milestones"></div>
+          </div>
+
+          <div id="resultNote" class="result-note" style="margin-top:16px;"></div>
+
+          <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+            <button onclick="savePageResults()"
+              style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;"
+              data-en="💾 Save results" data-ru="💾 Сохранить">💾 Save results</button>
+            <button onclick="window.print()"
+              style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;"
+              data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+          </div>
+          <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;"
+            data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div id="resultNote" class="result-note" style="margin-top:16px;"></div>
-
-        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
-          <button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save results" data-ru="💾 Сохранить">💾 Save results</button>
-          <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+  <section class="how-section">
+    <div class="container">
+      <div class="section-label" data-en="How it works" data-ru="Как работает">How it works</div>
+      <h2 class="section-title" data-en="The science of weight loss timelines" data-ru="Наука сроков похудения">The
+        science of weight loss timelines</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3 data-en="7700 kcal = 1 kg of fat" data-ru:"7700 ккал=1 кг жира" data-ru="7700 ккал = 1 кг жира">7700 kcal
+            = 1 kg of fat</h3>
+          <p data-en="One kilogram of body fat contains approximately 7700 kcal of stored energy. To lose 1 kg, you need to create a total calorie deficit of 7700 kcal."
+            data-ru="Один килограмм жира содержит около 7700 ккал запасённой энергии. Чтобы сбросить 1 кг, нужно создать суммарный дефицит 7700 ккал.">
+            1 kg of fat = ~7700 kcal deficit needed to lose it.</p>
         </div>
-        <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;" data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3 data-en="Safe rate: 0.5–1% body weight/week" data-ru="Безопасный темп: 0,5–1% веса/нед">Safe rate: 0.5–1%
+            body weight/week</h3>
+          <p data-en="Research shows losing 0.5–1% of body weight per week minimises muscle loss. For an 80 kg person this is 0.4–0.8 kg per week — achievable with a 400–800 kcal daily deficit."
+            data-ru="Исследования показывают: потеря 0,5–1% веса в неделю минимизирует потерю мышц. Для человека 80 кг это 0,4–0,8 кг/нед — достижимо при дефиците 400–800 ккал.">
+            Losing 0.5–1% of body weight per week minimises muscle loss.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3 data-en="Real results vary" data-ru="Реальные результаты варьируются">Real results vary</h3>
+          <p data-en="In the first 1–2 weeks, weight loss is often faster due to water weight reduction. After that, results settle to the expected rate. Expect some weeks with no change — this is normal."
+            data-ru="В первые 1–2 недели снижение веса часто быстрее из-за потери воды. Затем темп выравнивается. Ожидайте недели без изменений — это нормально.">
+            First weeks may be faster due to water loss — then results settle to expected rate.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="how-section">
-  <div class="container">
-    <div class="section-label" data-en="How it works" data-ru="Как работает">How it works</div>
-    <h2 class="section-title" data-en="The science of weight loss timelines" data-ru="Наука сроков похудения">The science of weight loss timelines</h2>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3 data-en="7700 kcal = 1 kg of fat" data-ru:"7700 ккал = 1 кг жира" data-ru="7700 ккал = 1 кг жира">7700 kcal = 1 kg of fat</h3>
-        <p data-en="One kilogram of body fat contains approximately 7700 kcal of stored energy. To lose 1 kg, you need to create a total calorie deficit of 7700 kcal." data-ru="Один килограмм жира содержит около 7700 ккал запасённой энергии. Чтобы сбросить 1 кг, нужно создать суммарный дефицит 7700 ккал.">1 kg of fat = ~7700 kcal deficit needed to lose it.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3 data-en="Safe rate: 0.5–1% body weight/week" data-ru="Безопасный темп: 0,5–1% веса/нед">Safe rate: 0.5–1% body weight/week</h3>
-        <p data-en="Research shows losing 0.5–1% of body weight per week minimises muscle loss. For an 80 kg person this is 0.4–0.8 kg per week — achievable with a 400–800 kcal daily deficit." data-ru="Исследования показывают: потеря 0,5–1% веса в неделю минимизирует потерю мышц. Для человека 80 кг это 0,4–0,8 кг/нед — достижимо при дефиците 400–800 ккал.">Losing 0.5–1% of body weight per week minimises muscle loss.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3 data-en="Real results vary" data-ru="Реальные результаты варьируются">Real results vary</h3>
-        <p data-en="In the first 1–2 weeks, weight loss is often faster due to water weight reduction. After that, results settle to the expected rate. Expect some weeks with no change — this is normal." data-ru="В первые 1–2 недели снижение веса часто быстрее из-за потери воды. Затем темп выравнивается. Ожидайте недели без изменений — это нормально.">First weeks may be faster due to water loss — then results settle to expected rate.</p>
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-label" data-en="Related tools" data-ru="Связанные инструменты">Related tools</div>
+      <h2 class="section-title" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</h2>
+      <div class="blog-grid">
+        <a href="/" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span>
+            <h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3>
+            <p data-en="Find your TDEE — needed for this calculator."
+              data-ru="Найдите ваш TDEE для этого калькулятора.">Find your TDEE — needed for this calculator.</p><span
+              class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span>
+          </div>
+        </a>
+        <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag">BMI</span>
+            <h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3>
+            <p data-en="Check your BMI to set a realistic goal weight."
+              data-ru="Проверьте ИМТ для постановки реалистичной цели.">Check your BMI to set a realistic goal weight.
+            </p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span>
+          </div>
+        </a>
+        <a href="blog/calorie-deficit-guide.html" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag" data-en="Guide" data-ru="Гид">Guide</span>
+            <h3 data-en="Calorie Deficit Guide" data-ru="Руководство по дефициту">Calorie Deficit Guide</h3>
+            <p data-en="How to create a calorie deficit without starving."
+              data-ru="Как создать дефицит калорий без голода.">How to create a deficit without starving.</p><span
+              class="blog-read-more" data-en="Read →" data-ru="Читать →">Read →</span>
+          </div>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="blog-section">
-  <div class="container">
-    <div class="section-label" data-en="Related tools" data-ru="Связанные инструменты">Related tools</div>
-    <h2 class="section-title" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</h2>
-    <div class="blog-grid">
-      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Find your TDEE — needed for this calculator." data-ru="Найдите ваш TDEE для этого калькулятора.">Find your TDEE — needed for this calculator.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check your BMI to set a realistic goal weight." data-ru="Проверьте ИМТ для постановки реалистичной цели.">Check your BMI to set a realistic goal weight.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="blog/calorie-deficit-guide.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Guide" data-ru="Гид">Guide</span><h3 data-en="Calorie Deficit Guide" data-ru="Руководство по дефициту">Calorie Deficit Guide</h3><p data-en="How to create a calorie deficit without starving." data-ru="Как создать дефицит калорий без голода.">How to create a deficit without starving.</p><span class="blog-read-more" data-en="Read →" data-ru="Читать →">Read →</span></div></a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp;
+          Macros</a>
+        <p data-en="Free health calculators. Not medical advice."
+          data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+        <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="all-calculators.html" data-en="All Calculators" data-ru="Все калькуляторы">All Calculators</a>
+        <a href="fast-food-calories.html" data-en="Fast Food Calories" data-ru="Калории в фастфуде">Fast Food</a>
+        <a href="alcohol-calories-list.html" data-en="Alcohol Calories" data-ru="Калории в алкоголе">Alcohol</a>
+        <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      </div>
     </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+  </footer>
+
+  <div id="scrollTop"
+    style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+  <div id="readProgress"
+    style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;">
   </div>
-</section>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="faq.html">FAQ</a>
-      <a href="all-calculators.html" data-en="All Calculators" data-ru="Все калькуляторы">All Calculators</a>
-      <a href="fast-food-calories.html" data-en="Fast Food Calories" data-ru="Калории в фастфуде">Fast Food</a>
-      <a href="alcohol-calories-list.html" data-en="Alcohol Calories" data-ru="Калории в алкоголе">Alcohol</a>
-      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
-    </div>
-  </div>
-  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
-</footer>
+  <script>
+    var currentLang = localStorage.getItem('lang') || 'en';
 
-<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+    function applyLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        var t = el.getAttribute('data-' + lang);
+        if (!t) return;
+        if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+        else el.textContent = t;
+      });
+      document.querySelectorAll('select option[data-en]').forEach(function (opt) {
+        var t = opt.getAttribute('data-' + lang);
+        if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
+      });
+      localStorage.setItem('lang', lang);
+    }
 
-<script>
-var currentLang = localStorage.getItem('lang') || 'en';
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('hamburger').addEventListener('click', function () { document.getElementById('siteNav').classList.toggle('open'); });
+      window.addEventListener('scroll', function () {
+        var s = window.scrollY, d = document.documentElement.scrollHeight - window.innerHeight;
+        document.getElementById('readProgress').style.width = (d > 0 ? s / d * 100 : 0) + '%';
+        document.getElementById('scrollTop').style.display = s > 400 ? 'flex' : 'none';
+      });
+      document.getElementById('langEN').addEventListener('click', function () { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+      document.getElementById('langRU').addEventListener('click', function () { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+      var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
+      hEN.addEventListener('click', function () { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+      hRU.addEventListener('click', function () { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+      if (currentLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+    });
 
-function applyLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-en]').forEach(function(el) {
-    var t = el.getAttribute('data-' + lang);
-    if (!t) return;
-    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
-    else el.textContent = t;
-  });
-  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
-    var t = opt.getAttribute('data-' + lang);
-    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
-  });
-  localStorage.setItem('lang', lang);
-}
+    function calculate() {
+      var current = parseFloat(document.getElementById('currentWeight').value);
+      var goal = parseFloat(document.getElementById('goalWeight').value);
+      var tdee = parseFloat(document.getElementById('tdee').value);
+      var deficit = parseFloat(document.getElementById('deficit').value);
+      var l = currentLang;
+      var err = document.getElementById('calcError');
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('siteNav').classList.toggle('open'); });
-  window.addEventListener('scroll', function(){
-    var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
-    document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
-    document.getElementById('scrollTop').style.display=s>400?'flex':'none';
-  });
-  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
-  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
-  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
-  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
-  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
-  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
-});
+      if (!current || !goal || !tdee || goal >= current || current < 40 || goal < 40 || tdee < 1000) {
+        err.style.display = 'block'; return;
+      }
+      err.style.display = 'none';
 
-function calculate() {
-  var current = parseFloat(document.getElementById('currentWeight').value);
-  var goal = parseFloat(document.getElementById('goalWeight').value);
-  var tdee = parseFloat(document.getElementById('tdee').value);
-  var deficit = parseFloat(document.getElementById('deficit').value);
-  var l = currentLang;
-  var err = document.getElementById('calcError');
+      var toLose = Math.round((current - goal) * 10) / 10;
+      var totalDeficitNeeded = toLose * 7700;
+      var weeks = Math.ceil(totalDeficitNeeded / (deficit * 7));
+      var dailyKcal = Math.round(tdee - deficit);
+      var targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + weeks * 7);
+      var dateStr = targetDate.toLocaleDateString(l === 'ru' ? 'ru-RU' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
-  if (!current || !goal || !tdee || goal >= current || current < 40 || goal < 40 || tdee < 1000) {
-    err.style.display = 'block'; return;
-  }
-  err.style.display = 'none';
+      document.getElementById('weeksDisplay').textContent = weeks;
+      document.getElementById('targetDate').textContent = dateStr;
+      document.getElementById('tolose').textContent = toLose + ' kg';
+      document.getElementById('dailyKcal').textContent = dailyKcal;
 
-  var toLose = Math.round((current - goal) * 10) / 10;
-  var totalDeficitNeeded = toLose * 7700;
-  var weeks = Math.ceil(totalDeficitNeeded / (deficit * 7));
-  var dailyKcal = Math.round(tdee - deficit);
-  var targetDate = new Date();
-  targetDate.setDate(targetDate.getDate() + weeks * 7);
-  var dateStr = targetDate.toLocaleDateString(l === 'ru' ? 'ru-RU' : 'en-GB', { day:'numeric', month:'long', year:'numeric' });
+      // Milestones
+      var milestoneWeights = [];
+      var step = toLose / 4;
+      for (var i = 1; i <= 4; i++) {
+        var w = Math.round((current - step * i) * 10) / 10;
+        var wks = Math.ceil((step * i * 7700) / (deficit * 7));
+        var d = new Date();
+        d.setDate(d.getDate() + wks * 7);
+        milestoneWeights.push({ weight: w, weeks: wks, date: d.toLocaleDateString(l === 'ru' ? 'ru-RU' : 'en-GB', { day: 'numeric', month: 'short' }) });
+      }
 
-  document.getElementById('weeksDisplay').textContent = weeks;
-  document.getElementById('targetDate').textContent = dateStr;
-  document.getElementById('tolose').textContent = toLose + ' kg';
-  document.getElementById('dailyKcal').textContent = dailyKcal;
+      var ms = document.getElementById('milestones');
+      ms.innerHTML = milestoneWeights.map(function (m, i) {
+        var pct = Math.round((i + 1) / 4 * 100);
+        var isGoal = i === 3;
+        return '<div style="display:grid;grid-template-columns:80px 1fr 100px;gap:12px;align-items:center;margin-bottom:10px;">' +
+          '<div style="text-align:center;background:' + (isGoal ? 'var(--green)' : 'var(--green-pale)') + ';color:' + (isGoal ? 'white' : 'var(--green)') + ';border-radius:8px;padding:8px;font-weight:700;font-size:0.9rem;">' + m.weight + ' kg</div>' +
+          '<div style="background:#E5E7EB;border-radius:4px;height:20px;overflow:hidden;">' +
+          '<div style="width:' + pct + '%;height:100%;background:' + (isGoal ? 'var(--green)' : 'var(--green-light)') + ';border-radius:4px;"></div>' +
+          '</div>' +
+          '<div style="font-size:0.82rem;color:var(--muted);">' + m.date + ' (' + (l === 'ru' ? 'нед.' : 'wk') + ' ' + m.weeks + ')</div>' +
+          '</div>';
+      }).join('');
 
-  // Milestones
-  var milestoneWeights = [];
-  var step = toLose / 4;
-  for (var i = 1; i <= 4; i++) {
-    var w = Math.round((current - step * i) * 10) / 10;
-    var wks = Math.ceil((step * i * 7700) / (deficit * 7));
-    var d = new Date();
-    d.setDate(d.getDate() + wks * 7);
-    milestoneWeights.push({ weight: w, weeks: wks, date: d.toLocaleDateString(l === 'ru' ? 'ru-RU' : 'en-GB', { day:'numeric', month:'short' }) });
-  }
+      var note_en = 'This is an estimate based on a consistent ' + deficit + ' kcal/day deficit. Real weight loss varies week to week due to water retention, hormones, and other factors. Aim for 0.5–1% of body weight per week for sustainable fat loss with minimal muscle loss.';
+      var note_ru = 'Это оценка при стабильном дефиците ' + deficit + ' ккал/день. Реальное снижение веса варьируется из-за задержки воды, гормонов. Стремитесь к 0,5–1% веса в неделю для устойчивого похудения с минимальной потерей мышц.';
+      document.getElementById('resultNote').textContent = l === 'ru' ? note_ru : note_en;
 
-  var ms = document.getElementById('milestones');
-  ms.innerHTML = milestoneWeights.map(function(m, i) {
-    var pct = Math.round((i + 1) / 4 * 100);
-    var isGoal = i === 3;
-    return '<div style="display:grid;grid-template-columns:80px 1fr 100px;gap:12px;align-items:center;margin-bottom:10px;">' +
-      '<div style="text-align:center;background:' + (isGoal?'var(--green)':'var(--green-pale)') + ';color:' + (isGoal?'white':'var(--green)') + ';border-radius:8px;padding:8px;font-weight:700;font-size:0.9rem;">' + m.weight + ' kg</div>' +
-      '<div style="background:#E5E7EB;border-radius:4px;height:20px;overflow:hidden;">' +
-        '<div style="width:' + pct + '%;height:100%;background:' + (isGoal?'var(--green)':'var(--green-light)') + ';border-radius:4px;"></div>' +
-      '</div>' +
-      '<div style="font-size:0.82rem;color:var(--muted);">' + m.date + ' (' + (l==='ru'?'нед.':'wk') + ' ' + m.weeks + ')</div>' +
-      '</div>';
-  }).join('');
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
-  var note_en = 'This is an estimate based on a consistent ' + deficit + ' kcal/day deficit. Real weight loss varies week to week due to water retention, hormones, and other factors. Aim for 0.5–1% of body weight per week for sustainable fat loss with minimal muscle loss.';
-  var note_ru = 'Это оценка при стабильном дефиците ' + deficit + ' ккал/день. Реальное снижение веса варьируется из-за задержки воды, гормонов. Стремитесь к 0,5–1% веса в неделю для устойчивого похудения с минимальной потерей мышц.';
-  document.getElementById('resultNote').textContent = l === 'ru' ? note_ru : note_en;
+    function savePageResults() {
+      var weeks = document.getElementById('weeksDisplay').textContent;
+      if (!weeks || weeks === '—') return;
+      localStorage.setItem('cm_saved_weightloss', JSON.stringify({ mainValue: weeks + ' wks', savedAt: new Date().toLocaleDateString() }));
+      var msg = document.getElementById('saveMsg');
+      msg.style.display = 'block';
+      setTimeout(function () { msg.style.display = 'none'; }, 3000);
+    }
+  </script>
 
-  document.getElementById('results').style.display = 'block';
-  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function savePageResults() {
-  var weeks = document.getElementById('weeksDisplay').textContent;
-  if (!weeks || weeks === '—') return;
-  localStorage.setItem('cm_saved_weightloss', JSON.stringify({ mainValue: weeks + ' wks', savedAt: new Date().toLocaleDateString() }));
-  var msg = document.getElementById('saveMsg');
-  msg.style.display = 'block';
-  setTimeout(function(){ msg.style.display = 'none'; }, 3000);
-}
-</script>
 </body>
+
 </html>

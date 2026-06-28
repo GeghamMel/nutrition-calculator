@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alcohol Calories Calculator — Calories & Macros</title>
-  <meta name="description" content="Calculate how many calories are in alcoholic drinks. Beer, wine, spirits, cocktails — find out how alcohol fits into your daily calorie budget." />
+  <meta name="description"
+    content="Calculate how many calories are in alcoholic drinks. Beer, wine, spirits, cocktails — find out how alcohol fits into your daily calorie budget." />
   <link rel="canonical" href="https://calories-macros.com/alcohol-calories-calculator.html" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"
+    crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-RXLXM57ZKH');</script>
   <link rel="alternate" hreflang="en" href="https://calories-macros.com/alcohol-calories-calculator.html" />
   <link rel="alternate" hreflang="ru" href="https://calories-macros.com/alcohol-calories-calculator.html" />
   <link rel="alternate" hreflang="x-default" href="https://calories-macros.com/alcohol-calories-calculator.html" />
@@ -19,341 +22,468 @@
   <meta property="og:image" content="https://calories-macros.com/og-image.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="inner">
-    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-    <a href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search" aria-label="Search">🔍</a>
-    <div class="header-lang" id="headerLang">
-      <button class="active" id="headerLangEN">EN</button>
-      <button id="headerLangRU">RU</button>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+      <a href="/search.html"
+        style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;"
+        title="Search" aria-label="Search">🔍</a>
+      <div class="header-lang" id="headerLang">
+        <button class="active" id="headerLangEN">EN</button>
+        <button id="headerLangRU">RU</button>
+      </div>
+      <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="siteNav">
+        <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+        <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+        <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+        <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+        <div class="lang-toggle">
+          <button class="active" id="langEN">EN</button>
+          <button id="langRU">RU</button>
+        </div>
+      </nav>
     </div>
-    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
-    <nav class="site-nav" id="siteNav">
-      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-      <div class="lang-toggle">
-        <button class="active" id="langEN">EN</button>
-        <button id="langRU">RU</button>
-      </div>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow" data-en="Free Nutrition Calculator" data-ru="Бесплатный калькулятор питания">Free Nutrition Calculator</div>
-    <h1 data-en="Alcohol <em>Calories</em> Calculator" data-ru="Калькулятор <em>калорий</em> в алкоголе">Alcohol <em>Calories</em> Calculator</h1>
-    <p data-en="Find out how many calories are in your favourite drinks — beer, wine, spirits, and cocktails. See how alcohol fits into your daily calorie budget." data-ru="Узнайте, сколько калорий в ваших любимых напитках — пиво, вино, крепкий алкоголь, коктейли. Посмотрите, как алкоголь вписывается в суточный бюджет калорий.">Find out how many calories are in your favourite drinks — beer, wine, spirits, and cocktails.</p>
-    <a href="#calculator" class="btn-scroll" data-en="Calculate Alcohol Calories ↓" data-ru="Рассчитать калории алкоголя ↓">Calculate Alcohol Calories ↓</a>
-  </div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-en="Free Nutrition Calculator" data-ru="Бесплатный калькулятор питания">Free
+        Nutrition Calculator</div>
+      <h1 data-en="Alcohol <em>Calories</em> Calculator" data-ru="Калькулятор <em>калорий</em> в алкоголе">Alcohol
+        <em>Calories</em> Calculator</h1>
+      <p data-en="Find out how many calories are in your favourite drinks — beer, wine, spirits, and cocktails. See how alcohol fits into your daily calorie budget."
+        data-ru="Узнайте, сколько калорий в ваших любимых напитках — пиво, вино, крепкий алкоголь, коктейли. Посмотрите, как алкоголь вписывается в суточный бюджет калорий.">
+        Find out how many calories are in your favourite drinks — beer, wine, spirits, and cocktails.</p>
+      <a href="#calculator" class="btn-scroll" data-en="Calculate Alcohol Calories ↓"
+        data-ru="Рассчитать калории алкоголя ↓">Calculate Alcohol Calories ↓</a>
+    </div>
+  </section>
 
-<section class="calc-section" id="calculator">
-  <div class="container">
-    <div class="section-label" data-en="Alcohol Calculator" data-ru="Калькулятор алкоголя">Alcohol Calculator</div>
-    <h2 class="section-title" data-en="Select your drink" data-ru="Выберите напиток">Select your drink</h2>
-    <p class="section-sub" data-en="Add multiple drinks to calculate your total calorie intake for the evening." data-ru="Добавляйте несколько напитков, чтобы рассчитать общее потребление калорий за вечер.">Add multiple drinks to calculate your total calorie intake for the evening.</p>
+  <section class="calc-section" id="calculator">
+    <div class="container">
+      <div class="section-label" data-en="Alcohol Calculator" data-ru="Калькулятор алкоголя">Alcohol Calculator</div>
+      <h2 class="section-title" data-en="Select your drink" data-ru="Выберите напиток">Select your drink</h2>
+      <p class="section-sub" data-en="Add multiple drinks to calculate your total calorie intake for the evening."
+        data-ru="Добавляйте несколько напитков, чтобы рассчитать общее потребление калорий за вечер.">Add multiple
+        drinks to calculate your total calorie intake for the evening.</p>
 
-    <div class="calc-card">
-      <!-- Drink selector -->
-      <div class="calc-grid">
-        <div class="field">
-          <label for="drinkType" data-en="Drink type" data-ru="Тип напитка">Drink type</label>
-          <select id="drinkType">
-            <option value="beer_light|330|103" data-en="Beer — Light (330ml)" data-ru="Пиво — Лёгкое (330мл)">Beer — Light (330ml)</option>
-            <option value="beer_regular|330|153" data-en="Beer — Regular (330ml)" data-ru="Пиво — Обычное (330мл)">Beer — Regular (330ml)</option>
-            <option value="beer_strong|330|198" data-en="Beer — Strong (500ml)" data-ru="Пиво — Крепкое (500мл)">Beer — Strong (500ml)</option>
-            <option value="wine_white|150|121" data-en="Wine — White (150ml glass)" data-ru="Вино — Белое (150мл)">Wine — White (150ml glass)</option>
-            <option value="wine_red|150|125" data-en="Wine — Red (150ml glass)" data-ru="Вино — Красное (150мл)">Wine — Red (150ml glass)</option>
-            <option value="wine_rose|150|121" data-en="Wine — Rosé (150ml glass)" data-ru="Вино — Розовое (150мл)">Wine — Rosé (150ml glass)</option>
-            <option value="wine_sparkling|150|118" data-en="Champagne / Prosecco (150ml)" data-ru="Шампанское / Просекко (150мл)">Champagne / Prosecco (150ml)</option>
-            <option value="vodka|40|96" data-en="Vodka (40ml shot)" data-ru="Водка (40мл рюмка)">Vodka (40ml shot)</option>
-            <option value="whisky|40|96" data-en="Whisky / Scotch (40ml)" data-ru="Виски (40мл)">Whisky / Scotch (40ml)</option>
-            <option value="rum|40|96" data-en="Rum (40ml)" data-ru="Ром (40мл)">Rum (40ml)</option>
-            <option value="gin|40|96" data-en="Gin (40ml)" data-ru="Джин (40мл)">Gin (40ml)</option>
-            <option value="tequila|40|96" data-en="Tequila (40ml)" data-ru="Текила (40мл)">Tequila (40ml)</option>
-            <option value="cocktail_mojito|250|168" data-en="Cocktail — Mojito (250ml)" data-ru="Коктейль — Мохито (250мл)">Cocktail — Mojito (250ml)</option>
-            <option value="cocktail_margarita|200|274" data-en="Cocktail — Margarita (200ml)" data-ru="Коктейль — Маргарита (200мл)">Cocktail — Margarita (200ml)</option>
-            <option value="cocktail_cosmo|150|213" data-en="Cocktail — Cosmopolitan (150ml)" data-ru="Коктейль — Космополитен (150мл)">Cocktail — Cosmopolitan (150ml)</option>
-            <option value="cocktail_gb|250|182" data-en="Gin & Tonic (250ml)" data-ru="Джин-тоник (250мл)">Gin & Tonic (250ml)</option>
-            <option value="cocktail_vod_soda|250|96" data-en="Vodka Soda (250ml)" data-ru="Водка с содой (250мл)">Vodka Soda (250ml)</option>
-            <option value="cider|330|155" data-en="Cider (330ml)" data-ru="Сидр (330мл)">Cider (330ml)</option>
-            <option value="custom|0|0" data-en="Custom drink..." data-ru="Свой напиток...">Custom drink...</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="quantity" data-en="Quantity" data-ru="Количество">Quantity</label>
-          <input type="number" id="quantity" min="1" max="20" value="1" />
-        </div>
-      </div>
-
-      <!-- Custom drink fields -->
-      <div id="customFields" style="display:none;">
-        <div class="calc-grid" style="margin-top:0;">
+      <div class="calc-card">
+        <!-- Drink selector -->
+        <div class="calc-grid">
           <div class="field">
-            <label for="customName" data-en="Drink name" data-ru="Название напитка">Drink name</label>
-            <input type="text" id="customName" placeholder="e.g. My cocktail" />
+            <label for="drinkType" data-en="Drink type" data-ru="Тип напитка">Drink type</label>
+            <select id="drinkType">
+              <option value="beer_light|330|103" data-en="Beer — Light (330ml)" data-ru="Пиво — Лёгкое (330мл)">Beer —
+                Light (330ml)</option>
+              <option value="beer_regular|330|153" data-en="Beer — Regular (330ml)" data-ru="Пиво — Обычное (330мл)">
+                Beer — Regular (330ml)</option>
+              <option value="beer_strong|330|198" data-en="Beer — Strong (500ml)" data-ru="Пиво — Крепкое (500мл)">Beer
+                — Strong (500ml)</option>
+              <option value="wine_white|150|121" data-en="Wine — White (150ml glass)" data-ru="Вино — Белое (150мл)">
+                Wine — White (150ml glass)</option>
+              <option value="wine_red|150|125" data-en="Wine — Red (150ml glass)" data-ru="Вино — Красное (150мл)">Wine
+                — Red (150ml glass)</option>
+              <option value="wine_rose|150|121" data-en="Wine — Rosé (150ml glass)" data-ru="Вино — Розовое (150мл)">
+                Wine — Rosé (150ml glass)</option>
+              <option value="wine_sparkling|150|118" data-en="Champagne / Prosecco (150ml)"
+                data-ru="Шампанское / Просекко (150мл)">Champagne / Prosecco (150ml)</option>
+              <option value="vodka|40|96" data-en="Vodka (40ml shot)" data-ru="Водка (40мл рюмка)">Vodka (40ml shot)
+              </option>
+              <option value="whisky|40|96" data-en="Whisky / Scotch (40ml)" data-ru="Виски (40мл)">Whisky / Scotch
+                (40ml)</option>
+              <option value="rum|40|96" data-en="Rum (40ml)" data-ru="Ром (40мл)">Rum (40ml)</option>
+              <option value="gin|40|96" data-en="Gin (40ml)" data-ru="Джин (40мл)">Gin (40ml)</option>
+              <option value="tequila|40|96" data-en="Tequila (40ml)" data-ru="Текила (40мл)">Tequila (40ml)</option>
+              <option value="cocktail_mojito|250|168" data-en="Cocktail — Mojito (250ml)"
+                data-ru="Коктейль — Мохито (250мл)">Cocktail — Mojito (250ml)</option>
+              <option value="cocktail_margarita|200|274" data-en="Cocktail — Margarita (200ml)"
+                data-ru="Коктейль — Маргарита (200мл)">Cocktail — Margarita (200ml)</option>
+              <option value="cocktail_cosmo|150|213" data-en="Cocktail — Cosmopolitan (150ml)"
+                data-ru="Коктейль — Космополитен (150мл)">Cocktail — Cosmopolitan (150ml)</option>
+              <option value="cocktail_gb|250|182" data-en="Gin & Tonic (250ml)" data-ru="Джин-тоник (250мл)">Gin & Tonic
+                (250ml)</option>
+              <option value="cocktail_vod_soda|250|96" data-en="Vodka Soda (250ml)" data-ru="Водка с содой (250мл)">
+                Vodka Soda (250ml)</option>
+              <option value="cider|330|155" data-en="Cider (330ml)" data-ru="Сидр (330мл)">Cider (330ml)</option>
+              <option value="custom|0|0" data-en="Custom drink..." data-ru="Свой напиток...">Custom drink...</option>
+            </select>
           </div>
           <div class="field">
-            <label for="customKcal" data-en="Calories per serving" data-ru="Калорий на порцию">Calories per serving</label>
-            <input type="number" id="customKcal" min="0" placeholder="e.g. 150" />
+            <label for="quantity" data-en="Quantity" data-ru="Количество">Quantity</label>
+            <input type="number" id="quantity" min="1" max="20" value="1" />
           </div>
+        </div>
+
+        <!-- Custom drink fields -->
+        <div id="customFields" style="display:none;">
+          <div class="calc-grid" style="margin-top:0;">
+            <div class="field">
+              <label for="customName" data-en="Drink name" data-ru="Название напитка">Drink name</label>
+              <input type="text" id="customName" placeholder="e.g. My cocktail" />
+            </div>
+            <div class="field">
+              <label for="customKcal" data-en="Calories per serving" data-ru="Калорий на порцию">Calories per
+                serving</label>
+              <input type="number" id="customKcal" min="0" placeholder="e.g. 150" />
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-calc" id="addBtn" onclick="addDrink()" data-en="+ Add Drink" data-ru="+ Добавить напиток">+
+          Add Drink</button>
+
+        <!-- Drinks list -->
+        <div id="drinksList" style="display:none;margin-top:24px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+            <h3 style="font-size:1rem;font-weight:600;" data-en="Your drinks tonight:" data-ru="Ваши напитки сегодня:">
+              Your drinks tonight:</h3>
+            <button onclick="clearAll()"
+              style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:0.85rem;font-family:var(--font-body);"
+              data-en="Clear all" data-ru="Очистить всё">Clear all</button>
+          </div>
+          <div id="drinksItems"></div>
+        </div>
+
+        <!-- Results -->
+        <div id="calcResults" style="margin-top:24px;border-top:1px solid var(--border);padding-top:28px;">
+          <div class="calories-display">
+            <div class="kcal-number" id="totalCalories">0</div>
+            <div class="kcal-label" data-en="total calories" data-ru="калорий всего">total calories</div>
+          </div>
+
+          <div class="macros-grid">
+            <div class="macro-item">
+              <div class="macro-value" id="totalAlcohol">0g</div>
+              <div class="macro-name" data-en="Pure alcohol (g)" data-ru="Чистый спирт (г)">Pure alcohol (g)</div>
+            </div>
+            <div class="macro-item">
+              <div class="macro-value" id="workoutMin">0</div>
+              <div class="macro-name" data-en="Min of running to burn off" data-ru="Мин бега для сжигания">Min of
+                running to burn off</div>
+            </div>
+            <div class="macro-item">
+              <div class="macro-value" id="pctOfDailyTarget" style="color:var(--accent);">0%</div>
+              <div class="macro-name" data-en="of 2000 kcal daily target" data-ru="от суточной нормы 2000 ккал">of 2000
+                kcal daily target</div>
+            </div>
+          </div>
+
+          <div class="result-note" id="resultNote"></div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <button class="btn-calc" id="addBtn" onclick="addDrink()" data-en="+ Add Drink" data-ru="+ Добавить напиток">+ Add Drink</button>
+  <!-- Calories table -->
+  <section class="how-section">
+    <div class="container">
+      <div class="section-label" data-en="Quick reference" data-ru="Справочник">Quick reference</div>
+      <h2 class="section-title" data-en="Calories in common drinks" data-ru="Калории в популярных напитках">Calories in
+        common drinks</h2>
+      <p class="section-sub"
+        data-en="Alcohol contains 7 calories per gram — more than protein and carbs (4 kcal/g each), but less than fat (9 kcal/g)."
+        data-ru="Алкоголь содержит 7 калорий на грамм — больше, чем белок и углеводы (4 ккал/г), но меньше, чем жир (9 ккал/г).">
+        Alcohol contains 7 calories per gram — more than protein and carbs, but less than fat.</p>
 
-      <!-- Drinks list -->
-      <div id="drinksList" style="display:none;margin-top:24px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-          <h3 style="font-size:1rem;font-weight:600;" data-en="Your drinks tonight:" data-ru="Ваши напитки сегодня:">Your drinks tonight:</h3>
-          <button onclick="clearAll()" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:0.85rem;font-family:var(--font-body);" data-en="Clear all" data-ru="Очистить всё">Clear all</button>
-        </div>
-        <div id="drinksItems"></div>
+      <div
+        style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;">
+        <table style="width:100%;min-width:480px;border-collapse:collapse;font-size:0.9rem;">
+          <thead>
+            <tr style="background:var(--green);color:white;">
+              <th style="padding:12px 16px;text-align:left;" data-en="Drink" data-ru="Напиток">Drink</th>
+              <th style="padding:12px 16px;text-align:left;" data-en="Serving" data-ru="Порция">Serving</th>
+              <th style="padding:12px 16px;text-align:right;" data-en="Calories" data-ru="Калории">Calories</th>
+              <th style="padding:12px 16px;text-align:right;" data-en="Alcohol (g)" data-ru="Спирт (г)">Alcohol (g)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;" data-en="Beer (light)" data-ru="Пиво (лёгкое)">Beer (light)</td>
+              <td style="padding:12px 16px;color:var(--muted);">330ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">103</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">11g</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--cream);">
+              <td style="padding:12px 16px;" data-en="Beer (regular, 5%)" data-ru="Пиво (обычное, 5%)">Beer (regular,
+                5%)</td>
+              <td style="padding:12px 16px;color:var(--muted);">330ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">153</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">13g</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;" data-en="Red wine" data-ru="Красное вино">Red wine</td>
+              <td style="padding:12px 16px;color:var(--muted);">150ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">125</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">17g</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--cream);">
+              <td style="padding:12px 16px;" data-en="White wine" data-ru="Белое вино">White wine</td>
+              <td style="padding:12px 16px;color:var(--muted);">150ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">121</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">16g</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;" data-en="Champagne" data-ru="Шампанское">Champagne</td>
+              <td style="padding:12px 16px;color:var(--muted);">150ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">118</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">17g</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--cream);">
+              <td style="padding:12px 16px;" data-en="Vodka / Gin / Rum" data-ru="Водка / Джин / Ром">Vodka / Gin / Rum
+              </td>
+              <td style="padding:12px 16px;color:var(--muted);">40ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">96</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">13g</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;" data-en="Gin & Tonic" data-ru="Джин-тоник">Gin & Tonic</td>
+              <td style="padding:12px 16px;color:var(--muted);">250ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">182</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">13g</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);background:var(--cream);">
+              <td style="padding:12px 16px;" data-en="Mojito" data-ru="Мохито">Mojito</td>
+              <td style="padding:12px 16px;color:var(--muted);">250ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">168</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">13g</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border);">
+              <td style="padding:12px 16px;" data-en="Margarita" data-ru="Маргарита">Margarita</td>
+              <td style="padding:12px 16px;color:var(--muted);">200ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">274</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">20g</td>
+            </tr>
+            <tr style="background:var(--cream);">
+              <td style="padding:12px 16px;" data-en="Cider" data-ru="Сидр">Cider</td>
+              <td style="padding:12px 16px;color:var(--muted);">330ml</td>
+              <td style="padding:12px 16px;text-align:right;font-weight:600;">155</td>
+              <td style="padding:12px 16px;text-align:right;color:var(--muted);">15g</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+    </div>
+  </section>
 
-      <!-- Results -->
-      <div id="calcResults" style="margin-top:24px;border-top:1px solid var(--border);padding-top:28px;">
-        <div class="calories-display">
-          <div class="kcal-number" id="totalCalories">0</div>
-          <div class="kcal-label" data-en="total calories" data-ru="калорий всего">total calories</div>
-        </div>
-
-        <div class="macros-grid">
-          <div class="macro-item">
-            <div class="macro-value" id="totalAlcohol">0g</div>
-            <div class="macro-name" data-en="Pure alcohol (g)" data-ru="Чистый спирт (г)">Pure alcohol (g)</div>
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+      <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
+      <div class="blog-grid">
+        <a href="/" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span>
+            <h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3>
+            <p data-en="Get your daily calorie and macro targets." data-ru="Получите суточную норму калорий и БЖУ.">Get
+              your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →"
+              data-ru="Открыть →">Open →</span>
           </div>
-          <div class="macro-item">
-            <div class="macro-value" id="workoutMin">0</div>
-            <div class="macro-name" data-en="Min of running to burn off" data-ru="Мин бега для сжигания">Min of running to burn off</div>
+        </a>
+        <a href="exercise-calories-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag" data-en="Exercise" data-ru="Тренировки">Exercise</span>
+            <h3 data-en="Exercise Calories Calculator" data-ru="Калькулятор тренировок">Exercise Calories Calculator
+            </h3>
+            <p data-en="How many calories do you burn working out?" data-ru="Сколько калорий сжигается на тренировке?">
+              How many calories do you burn working out?</p><span class="blog-read-more" data-en="Open →"
+              data-ru="Открыть →">Open →</span>
           </div>
-          <div class="macro-item">
-            <div class="macro-value" id="pctOfDailyTarget" style="color:var(--accent);">0%</div>
-            <div class="macro-name" data-en="of 2000 kcal daily target" data-ru="от суточной нормы 2000 ккал">of 2000 kcal daily target</div>
+        </a>
+        <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag">BMI</span>
+            <h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3>
+            <p data-en="Check if your weight is in a healthy range." data-ru="Проверьте соответствие веса норме.">Check
+              if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →"
+              data-ru="Открыть →">Open →</span>
           </div>
-        </div>
-
-        <div class="result-note" id="resultNote"></div>
+        </a>
       </div>
     </div>
+  </section>
+
+
+  <div style="max-width:680px;margin:0 auto 32px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;">
+    <button onclick="savePageResults()"
+      style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;"
+      data-en="💾 Save results" data-ru="💾 Сохранить результаты">💾 Save results</button>
+    <button onclick="window.print()"
+      style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;"
+      data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+    <p id="saveMsg"
+      style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;width:100%;text-align:center;"
+      data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
   </div>
-</section>
-
-<!-- Calories table -->
-<section class="how-section">
-  <div class="container">
-    <div class="section-label" data-en="Quick reference" data-ru="Справочник">Quick reference</div>
-    <h2 class="section-title" data-en="Calories in common drinks" data-ru="Калории в популярных напитках">Calories in common drinks</h2>
-    <p class="section-sub" data-en="Alcohol contains 7 calories per gram — more than protein and carbs (4 kcal/g each), but less than fat (9 kcal/g)." data-ru="Алкоголь содержит 7 калорий на грамм — больше, чем белок и углеводы (4 ккал/г), но меньше, чем жир (9 ккал/г).">Alcohol contains 7 calories per gram — more than protein and carbs, but less than fat.</p>
-
-    <div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;">
-      <table style="width:100%;min-width:480px;border-collapse:collapse;font-size:0.9rem;">
-        <thead>
-          <tr style="background:var(--green);color:white;">
-            <th style="padding:12px 16px;text-align:left;" data-en="Drink" data-ru="Напиток">Drink</th>
-            <th style="padding:12px 16px;text-align:left;" data-en="Serving" data-ru="Порция">Serving</th>
-            <th style="padding:12px 16px;text-align:right;" data-en="Calories" data-ru="Калории">Calories</th>
-            <th style="padding:12px 16px;text-align:right;" data-en="Alcohol (g)" data-ru="Спирт (г)">Alcohol (g)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;" data-en="Beer (light)" data-ru="Пиво (лёгкое)">Beer (light)</td><td style="padding:12px 16px;color:var(--muted);">330ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">103</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">11g</td></tr>
-          <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:12px 16px;" data-en="Beer (regular, 5%)" data-ru="Пиво (обычное, 5%)">Beer (regular, 5%)</td><td style="padding:12px 16px;color:var(--muted);">330ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">153</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">13g</td></tr>
-          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;" data-en="Red wine" data-ru="Красное вино">Red wine</td><td style="padding:12px 16px;color:var(--muted);">150ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">125</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">17g</td></tr>
-          <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:12px 16px;" data-en="White wine" data-ru="Белое вино">White wine</td><td style="padding:12px 16px;color:var(--muted);">150ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">121</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">16g</td></tr>
-          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;" data-en="Champagne" data-ru="Шампанское">Champagne</td><td style="padding:12px 16px;color:var(--muted);">150ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">118</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">17g</td></tr>
-          <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:12px 16px;" data-en="Vodka / Gin / Rum" data-ru="Водка / Джин / Ром">Vodka / Gin / Rum</td><td style="padding:12px 16px;color:var(--muted);">40ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">96</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">13g</td></tr>
-          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;" data-en="Gin & Tonic" data-ru="Джин-тоник">Gin & Tonic</td><td style="padding:12px 16px;color:var(--muted);">250ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">182</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">13g</td></tr>
-          <tr style="border-bottom:1px solid var(--border);background:var(--cream);"><td style="padding:12px 16px;" data-en="Mojito" data-ru="Мохито">Mojito</td><td style="padding:12px 16px;color:var(--muted);">250ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">168</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">13g</td></tr>
-          <tr style="border-bottom:1px solid var(--border);"><td style="padding:12px 16px;" data-en="Margarita" data-ru="Маргарита">Margarita</td><td style="padding:12px 16px;color:var(--muted);">200ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">274</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">20g</td></tr>
-          <tr style="background:var(--cream);"><td style="padding:12px 16px;" data-en="Cider" data-ru="Сидр">Cider</td><td style="padding:12px 16px;color:var(--muted);">330ml</td><td style="padding:12px 16px;text-align:right;font-weight:600;">155</td><td style="padding:12px 16px;text-align:right;color:var(--muted);">15g</td></tr>
-        </tbody>
-      </table>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp;
+          Macros</a>
+        <p data-en="Free health calculators. Not medical advice."
+          data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+        <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+        <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+        <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+        <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+        <a href="faq.html" data-en="FAQ" data-ru="FAQ">FAQ</a>
+      </div>
     </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+  </footer>
+
+  <div id="scrollTop"
+    style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+  <div id="readProgress"
+    style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;">
   </div>
-</section>
 
-<section class="blog-section">
-  <div class="container">
-    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
-    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
-    <div class="blog-grid">
-      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-ru="Получите суточную норму калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="exercise-calories-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Exercise" data-ru="Тренировки">Exercise</span><h3 data-en="Exercise Calories Calculator" data-ru="Калькулятор тренировок">Exercise Calories Calculator</h3><p data-en="How many calories do you burn working out?" data-ru="Сколько калорий сжигается на тренировке?">How many calories do you burn working out?</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-ru="Проверьте соответствие веса норме.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
-    </div>
-  </div>
-</section>
+  <script>
 
-
-<div style="max-width:680px;margin:0 auto 32px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;">
-  <button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save results" data-ru="💾 Сохранить результаты">💾 Save results</button>
-  <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
-  <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;width:100%;text-align:center;" data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
-</div>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
-      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
-      <a href="faq.html" data-en="FAQ" data-ru="FAQ">FAQ</a>
-    </div>
-  </div>
-  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
-</footer>
-
-<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
-
-<script>
-
-function savePageResults() {
-  var results = {};
-  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value').forEach(function(el, i) {
-    results['val_' + i] = el.textContent;
-  });
-  results.savedAt = new Date().toLocaleDateString();
-  var key = 'cm_saved_' + window.location.pathname.replace(/[^a-z]/gi,'_');
-  localStorage.setItem(key, JSON.stringify(results));
-  var msg = document.getElementById('saveMsg');
-  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
-}
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('siteNav').classList.toggle('open'); });
-window.addEventListener('scroll', function(){
-  var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
-  document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
-  document.getElementById('scrollTop').style.display=s>400?'flex':'none';
-});
-
-var currentLang = localStorage.getItem('lang') || 'en';
-var drinks = [];
-
-// Language switcher
-function applyLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-en]').forEach(function(el) {
-    var t = el.getAttribute('data-' + lang);
-    if (!t) return;
-    if (el.tagName === 'BUTTON' || el.tagName === 'SPAN' || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'LABEL' || el.tagName === 'DIV') {
-      if (t.includes('<')) el.innerHTML = t; else el.textContent = t;
+    function savePageResults() {
+      var results = {};
+      document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value').forEach(function (el, i) {
+        results['val_' + i] = el.textContent;
+      });
+      results.savedAt = new Date().toLocaleDateString();
+      var key = 'cm_saved_' + window.location.pathname.replace(/[^a-z]/gi, '_');
+      localStorage.setItem(key, JSON.stringify(results));
+      var msg = document.getElementById('saveMsg');
+      if (msg) { msg.style.display = 'block'; setTimeout(function () { msg.style.display = 'none'; }, 3000); }
     }
-  });
-  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
-    var t = opt.getAttribute('data-' + lang);
-    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
-  });
-  updateResults();
-  localStorage.setItem('lang', lang);
-}
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('hamburger').addEventListener('click', function () { document.getElementById('siteNav').classList.toggle('open'); });
+    window.addEventListener('scroll', function () {
+      var s = window.scrollY, d = document.documentElement.scrollHeight - window.innerHeight;
+      document.getElementById('readProgress').style.width = (d > 0 ? s / d * 100 : 0) + '%';
+      document.getElementById('scrollTop').style.display = s > 400 ? 'flex' : 'none';
+    });
 
-document.getElementById('langEN').addEventListener('click', function() {
-  this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en');
-});
-document.getElementById('langRU').addEventListener('click', function() {
-  this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru');
-});
-(function(){
-  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
-  if (currentLang==='ru') {
-    document.getElementById('langRU').classList.add('active');
-    document.getElementById('langEN').classList.remove('active');
-    hRU.classList.add('active'); hEN.classList.remove('active');
-    applyLang('ru');
-  }
-  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); });
-  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); });
-})();
+    var currentLang = localStorage.getItem('lang') || 'en';
+    var drinks = [];
 
-// Show/hide custom fields
-document.getElementById('drinkType').addEventListener('change', function() {
-  document.getElementById('customFields').style.display = this.value === 'custom|0|0' ? 'block' : 'none';
-});
+    // Language switcher
+    function applyLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        var t = el.getAttribute('data-' + lang);
+        if (!t) return;
+        if (el.tagName === 'BUTTON' || el.tagName === 'SPAN' || el.tagName === 'P' || el.tagName === 'H1' || el.tagName === 'H2' || el.tagName === 'H3' || el.tagName === 'LABEL' || el.tagName === 'DIV') {
+          if (t.includes('<')) el.innerHTML = t; else el.textContent = t;
+        }
+      });
+      document.querySelectorAll('select option[data-en]').forEach(function (opt) {
+        var t = opt.getAttribute('data-' + lang);
+        if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
+      });
+      updateResults();
+      localStorage.setItem('lang', lang);
+    }
 
-// Add drink button
-function addDrink() {
-  var select = document.getElementById('drinkType');
-  var qty = parseInt(document.getElementById('quantity').value) || 1;
-  var val = select.value;
-  var name, kcal;
+    document.getElementById('langEN').addEventListener('click', function () {
+      this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en');
+    });
+    document.getElementById('langRU').addEventListener('click', function () {
+      this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru');
+    });
+    (function () {
+      var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
+      if (currentLang === 'ru') {
+        document.getElementById('langRU').classList.add('active');
+        document.getElementById('langEN').classList.remove('active');
+        hRU.classList.add('active'); hEN.classList.remove('active');
+        applyLang('ru');
+      }
+      hEN.addEventListener('click', function () { document.getElementById('langEN').click(); });
+      hRU.addEventListener('click', function () { document.getElementById('langRU').click(); });
+    })();
 
-  if (val === 'custom|0|0') {
-    name = document.getElementById('customName').value.trim();
-    kcal = parseInt(document.getElementById('customKcal').value) || 0;
-    if (!name) { name = currentLang === 'ru' ? 'Свой напиток' : 'Custom drink'; }
-  } else {
-    var parts = val.split('|');
-    kcal = parseInt(parts[2]) || 0;
-    var opt = select.options[select.selectedIndex];
-    name = opt.getAttribute('data-' + currentLang) || opt.text;
-  }
+    // Show/hide custom fields
+    document.getElementById('drinkType').addEventListener('change', function () {
+      document.getElementById('customFields').style.display = this.value === 'custom|0|0' ? 'block' : 'none';
+    });
 
-  drinks.push({ name: name, kcal: kcal, qty: qty });
-  renderDrinks();
-  updateResults();
-}
+    // Add drink button
+    function addDrink() {
+      var select = document.getElementById('drinkType');
+      var qty = parseInt(document.getElementById('quantity').value) || 1;
+      var val = select.value;
+      var name, kcal;
 
-function removeDrink(i) {
-  drinks.splice(i, 1);
-  renderDrinks();
-  updateResults();
-}
+      if (val === 'custom|0|0') {
+        name = document.getElementById('customName').value.trim();
+        kcal = parseInt(document.getElementById('customKcal').value) || 0;
+        if (!name) { name = currentLang === 'ru' ? 'Свой напиток' : 'Custom drink'; }
+      } else {
+        var parts = val.split('|');
+        kcal = parseInt(parts[2]) || 0;
+        var opt = select.options[select.selectedIndex];
+        name = opt.getAttribute('data-' + currentLang) || opt.text;
+      }
 
-function clearAll() {
-  drinks = [];
-  renderDrinks();
-  updateResults();
-}
+      drinks.push({ name: name, kcal: kcal, qty: qty });
+      renderDrinks();
+      updateResults();
+    }
 
-function renderDrinks() {
-  var list = document.getElementById('drinksItems');
-  var container = document.getElementById('drinksList');
-  if (drinks.length === 0) { container.style.display = 'none'; return; }
-  container.style.display = 'block';
-  list.innerHTML = drinks.map(function(d, i) {
-    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--cream);border-radius:8px;margin-bottom:8px;">' +
-      '<div><span style="font-weight:600;font-size:0.9rem;">' + d.name + '</span>' +
-      (d.qty > 1 ? '<span style="color:var(--muted);font-size:0.82rem;"> × ' + d.qty + '</span>' : '') +
-      '</div><div style="display:flex;align-items:center;gap:12px;">' +
-      '<span style="color:var(--green);font-weight:600;">' + (d.kcal * d.qty) + ' kcal</span>' +
-      '<button onclick="removeDrink(' + i + ')" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;padding:0 4px;">×</button>' +
-      '</div></div>';
-  }).join('');
-}
+    function removeDrink(i) {
+      drinks.splice(i, 1);
+      renderDrinks();
+      updateResults();
+    }
 
-function updateResults() {
-  var total = drinks.reduce(function(sum, d) { return sum + d.kcal * d.qty; }, 0);
-  document.getElementById('totalCalories').textContent = total.toLocaleString();
-  document.getElementById('totalAlcohol').textContent = Math.round(total / 7) + 'g';
-  document.getElementById('workoutMin').textContent = Math.round(total / 10) + ' min';
-  document.getElementById('pctOfDailyTarget').textContent = Math.round(total / 20) + '%';
+    function clearAll() {
+      drinks = [];
+      renderDrinks();
+      updateResults();
+    }
 
-  var l = currentLang;
-  var note = '';
-  if (total === 0) {
-    note = l === 'ru' ? 'Добавьте напитки выше, чтобы рассчитать общее количество калорий.' : 'Add drinks above to calculate your total calorie intake.';
-  } else if (total < 200) {
-    note = l === 'ru' ? 'Умеренное потребление. Вписывается в большинство диет при подсчёте в суточном балансе.' : 'Moderate intake. This fits into most diets when accounted for in your daily balance.';
-  } else if (total < 500) {
-    note = l === 'ru' ? 'Заметное количество калорий. Алкоголь не содержит питательных веществ.' : "Notable calorie amount. Alcohol provides no nutrients — these calories don't fill you up.";
-  } else {
-    note = l === 'ru' ? 'Высокое потребление калорий из алкоголя. Алкоголь также замедляет жиросжигание.' : 'High calorie intake from alcohol. Note: alcohol also slows fat burning and impairs recovery.';
-  }
-  document.getElementById('resultNote').textContent = note;
-  document.getElementById('calcResults').classList.add('visible');
-}
+    function renderDrinks() {
+      var list = document.getElementById('drinksItems');
+      var container = document.getElementById('drinksList');
+      if (drinks.length === 0) { container.style.display = 'none'; return; }
+      container.style.display = 'block';
+      list.innerHTML = drinks.map(function (d, i) {
+        return '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--cream);border-radius:8px;margin-bottom:8px;">' +
+          '<div><span style="font-weight:600;font-size:0.9rem;">' + d.name + '</span>' +
+          (d.qty > 1 ? '<span style="color:var(--muted);font-size:0.82rem;"> × ' + d.qty + '</span>' : '') +
+          '</div><div style="display:flex;align-items:center;gap:12px;">' +
+          '<span style="color:var(--green);font-weight:600;">' + (d.kcal * d.qty) + ' kcal</span>' +
+          '<button onclick="removeDrink(' + i + ')" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;padding:0 4px;">×</button>' +
+          '</div></div>';
+      }).join('');
+    }
 
-updateResults();
-</script>
+    function updateResults() {
+      var total = drinks.reduce(function (sum, d) { return sum + d.kcal * d.qty; }, 0);
+      document.getElementById('totalCalories').textContent = total.toLocaleString();
+      document.getElementById('totalAlcohol').textContent = Math.round(total / 7) + 'g';
+      document.getElementById('workoutMin').textContent = Math.round(total / 10) + ' min';
+      document.getElementById('pctOfDailyTarget').textContent = Math.round(total / 20) + '%';
+
+      var l = currentLang;
+      var note = '';
+      if (total === 0) {
+        note = l === 'ru' ? 'Добавьте напитки выше, чтобы рассчитать общее количество калорий.' : 'Add drinks above to calculate your total calorie intake.';
+      } else if (total < 200) {
+        note = l === 'ru' ? 'Умеренное потребление. Вписывается в большинство диет при подсчёте в суточном балансе.' : 'Moderate intake. This fits into most diets when accounted for in your daily balance.';
+      } else if (total < 500) {
+        note = l === 'ru' ? 'Заметное количество калорий. Алкоголь не содержит питательных веществ.' : "Notable calorie amount. Alcohol provides no nutrients — these calories don't fill you up.";
+      } else {
+        note = l === 'ru' ? 'Высокое потребление калорий из алкоголя. Алкоголь также замедляет жиросжигание.' : 'High calorie intake from alcohol. Note: alcohol also slows fat burning and impairs recovery.';
+      }
+      document.getElementById('resultNote').textContent = note;
+      document.getElementById('calcResults').classList.add('visible');
+    }
+
+    updateResults();
+  </script>
+
 </body>
+
 </html>

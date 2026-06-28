@@ -1,431 +1,543 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily Vitamin & Mineral Calculator — Calories & Macros</title>
-  <meta name="description" content="Calculate your daily recommended intake of vitamins and minerals based on age and gender. Free vitamin calculator with RDA values for all key nutrients." />
+  <meta name="description"
+    content="Calculate your daily recommended intake of vitamins and minerals based on age and gender. Free vitamin calculator with RDA values for all key nutrients." />
   <link rel="canonical" href="https://calories-macros.com/vitamin-calculator.html" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"
+    crossorigin="anonymous"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-RXLXM57ZKH');</script>
   <meta property="og:title" content="Daily Vitamin & Mineral Calculator" />
-  <meta property="og:description" content="Find your recommended daily intake of vitamins and minerals by age and gender." />
+  <meta property="og:description"
+    content="Find your recommended daily intake of vitamins and minerals by age and gender." />
   <meta property="og:image" content="https://calories-macros.com/og-image.png" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    .vitamin-table { width:100%; border-collapse:collapse; font-size:0.88rem; }
-    .vitamin-table th { padding:10px 14px; background:var(--green); color:white; font-weight:600; text-align:left; }
-    .vitamin-table td { padding:10px 14px; border-bottom:1px solid var(--border); }
-    .vitamin-table tr:hover { background:var(--cream); }
-    .vitamin-table td:nth-child(3) { font-weight:700; color:var(--green); }
-    .cat-header td { background:var(--green-pale); font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--green); padding:8px 14px; }
-    .bar-wrap { display:flex; align-items:center; gap:8px; }
-    .bar-bg { flex:1; height:6px; background:#E5E7EB; border-radius:3px; overflow:hidden; max-width:80px; }
-    .bar-fill { height:100%; background:var(--green-light); border-radius:3px; }
+    .vitamin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .vitamin-table th {
+      padding: 10px 14px;
+      background: var(--green);
+      color: white;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .vitamin-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .vitamin-table tr:hover {
+      background: var(--cream);
+    }
+
+    .vitamin-table td:nth-child(3) {
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .cat-header td {
+      background: var(--green-pale);
+      font-weight: 700;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--green);
+      padding: 8px 14px;
+    }
+
+    .bar-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bar-bg {
+      flex: 1;
+      height: 6px;
+      background: #E5E7EB;
+      border-radius: 3px;
+      overflow: hidden;
+      max-width: 80px;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--green-light);
+      border-radius: 3px;
+    }
   </style>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="inner">
-    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-    <a href="search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;">🔍</a>
-    <div class="header-lang" id="headerLang">
-      <button class="active" id="headerLangEN">EN</button>
-      <button id="headerLangRU">RU</button>
+  <header class="site-header">
+    <div class="inner">
+      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+      <a href="search.html"
+        style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;">🔍</a>
+      <div class="header-lang" id="headerLang">
+        <button class="active" id="headerLangEN">EN</button>
+        <button id="headerLangRU">RU</button>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      <nav class="site-nav" id="siteNav">
+        <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+        <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+        <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+        <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+        <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
+      </nav>
     </div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-    <nav class="site-nav" id="siteNav">
-      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-      <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
-    </nav>
-  </div>
-</header>
+  </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow" data-en="Free Nutrition Calculator" data-ru="Бесплатный калькулятор питания">Free Nutrition Calculator</div>
-    <h1 data-en="Daily <em>Vitamin & Mineral</em> Calculator" data-ru="Калькулятор суточной нормы <em>витаминов и минералов</em>">Daily <em>Vitamin & Mineral</em> Calculator</h1>
-    <p data-en="Find your recommended daily intake (RDA) of all key vitamins and minerals based on your age and gender. Based on WHO and NIH guidelines." data-ru="Узнайте рекомендуемую суточную норму (РСН) всех ключевых витаминов и минералов по возрасту и полу. На основе рекомендаций ВОЗ и NIH.">Find your recommended daily intake for all key vitamins and minerals.</p>
-    <a href="#calculator" class="btn-scroll" data-en="Calculate My Needs ↓" data-ru="Рассчитать мои нормы ↓">Calculate My Needs ↓</a>
-  </div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow" data-en="Free Nutrition Calculator" data-ru="Бесплатный калькулятор питания">Free
+        Nutrition Calculator</div>
+      <h1 data-en="Daily <em>Vitamin & Mineral</em> Calculator"
+        data-ru="Калькулятор суточной нормы <em>витаминов и минералов</em>">Daily <em>Vitamin & Mineral</em> Calculator
+      </h1>
+      <p data-en="Find your recommended daily intake (RDA) of all key vitamins and minerals based on your age and gender. Based on WHO and NIH guidelines."
+        data-ru="Узнайте рекомендуемую суточную норму (РСН) всех ключевых витаминов и минералов по возрасту и полу. На основе рекомендаций ВОЗ и NIH.">
+        Find your recommended daily intake for all key vitamins and minerals.</p>
+      <a href="#calculator" class="btn-scroll" data-en="Calculate My Needs ↓" data-ru="Рассчитать мои нормы ↓">Calculate
+        My Needs ↓</a>
+    </div>
+  </section>
 
-<section class="calc-section" id="calculator">
-  <div class="container">
-    <div class="section-label" data-en="Vitamin Calculator" data-ru="Калькулятор витаминов">Vitamin Calculator</div>
-    <h2 class="section-title" data-en="Select your profile" data-ru="Выберите ваш профиль">Select your profile</h2>
+  <section class="calc-section" id="calculator">
+    <div class="container">
+      <div class="section-label" data-en="Vitamin Calculator" data-ru="Калькулятор витаминов">Vitamin Calculator</div>
+      <h2 class="section-title" data-en="Select your profile" data-ru="Выберите ваш профиль">Select your profile</h2>
 
-    <div class="calc-card">
-      <div class="calc-grid">
-        <div class="field">
-          <label data-en="Gender" data-ru="Пол">Gender</label>
-          <div class="gender-toggle">
-            <button class="gender-btn active" id="genderMale" data-en="♂ Male" data-ru="♂ Мужской">♂ Male</button>
-            <button class="gender-btn" id="genderFemale" data-en="♀ Female" data-ru="♀ Женский">♀ Female</button>
+      <div class="calc-card">
+        <div class="calc-grid">
+          <div class="field">
+            <label data-en="Gender" data-ru="Пол">Gender</label>
+            <div class="gender-toggle">
+              <button class="gender-btn active" id="genderMale" data-en="♂ Male" data-ru="♂ Мужской">♂ Male</button>
+              <button class="gender-btn" id="genderFemale" data-en="♀ Female" data-ru="♀ Женский">♀ Female</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="ageGroup" data-en="Age group" data-ru="Возрастная группа">Age group</label>
+            <select id="ageGroup">
+              <option value="19-30" data-en="19–30 years" data-ru="19–30 лет">19–30 years</option>
+              <option value="31-50" data-en="31–50 years" data-ru="31–50 лет" selected>31–50 years</option>
+              <option value="51-70" data-en="51–70 years" data-ru="51–70 лет">51–70 years</option>
+              <option value="70+" data-en="71+ years" data-ru="71+ лет">71+ years</option>
+            </select>
+          </div>
+          <div class="field" id="pregnantField" style="display:none;">
+            <label data-en="Pregnancy / Breastfeeding" data-ru="Беременность / Кормление">Pregnancy /
+              Breastfeeding</label>
+            <div class="gender-toggle">
+              <button class="gender-btn active" id="notPregnant" data-en="No" data-ru="Нет">No</button>
+              <button class="gender-btn" id="isPregnant" data-en="Pregnant" data-ru="Беременная">Pregnant</button>
+              <button class="gender-btn" id="isBreastfeeding" data-en="Breastfeeding"
+                data-ru="Кормящая">Breastfeeding</button>
+            </div>
           </div>
         </div>
-        <div class="field">
-          <label for="ageGroup" data-en="Age group" data-ru="Возрастная группа">Age group</label>
-          <select id="ageGroup">
-            <option value="19-30" data-en="19–30 years" data-ru="19–30 лет">19–30 years</option>
-            <option value="31-50" data-en="31–50 years" data-ru="31–50 лет" selected>31–50 years</option>
-            <option value="51-70" data-en="51–70 years" data-ru="51–70 лет">51–70 years</option>
-            <option value="70+" data-en="71+ years" data-ru="71+ лет">71+ years</option>
-          </select>
-        </div>
-        <div class="field" id="pregnantField" style="display:none;">
-          <label data-en="Pregnancy / Breastfeeding" data-ru="Беременность / Кормление">Pregnancy / Breastfeeding</label>
-          <div class="gender-toggle">
-            <button class="gender-btn active" id="notPregnant" data-en="No" data-ru="Нет">No</button>
-            <button class="gender-btn" id="isPregnant" data-en="Pregnant" data-ru="Беременная">Pregnant</button>
-            <button class="gender-btn" id="isBreastfeeding" data-en="Breastfeeding" data-ru="Кормящая">Breastfeeding</button>
+
+        <button class="btn-calc" onclick="calculate()" data-en="Show My Daily Vitamin Needs →"
+          data-ru="Показать мои нормы витаминов →">Show My Daily Vitamin Needs →</button>
+
+        <!-- Results -->
+        <div id="results" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:24px;">
+          <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px;" id="profileLabel"></p>
+          <div style="overflow-x:auto;">
+            <table class="vitamin-table">
+              <thead>
+                <tr>
+                  <th data-en="Nutrient" data-ru="Нутриент">Nutrient</th>
+                  <th data-en="Daily RDA" data-ru="Суточная норма">Daily RDA</th>
+                  <th data-en="Unit" data-ru="Единица">Unit</th>
+                  <th data-en="Best Food Sources" data-ru="Лучшие источники">Best Food Sources</th>
+                </tr>
+              </thead>
+              <tbody id="vitaminTbody"></tbody>
+            </table>
           </div>
+          <p style="font-size:0.78rem;color:var(--muted);margin-top:12px;"
+            data-en="RDA = Recommended Dietary Allowance. Source: NIH Office of Dietary Supplements, WHO. Values are for healthy adults — consult a doctor for medical conditions."
+            data-ru="РСН = Рекомендуемая суточная норма. Источник: NIH, ВОЗ. Значения для здоровых взрослых — при заболеваниях проконсультируйтесь с врачом.">
+            RDA values. Source: NIH, WHO. Consult a doctor for medical conditions.</p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <button class="btn-calc" onclick="calculate()" data-en="Show My Daily Vitamin Needs →" data-ru="Показать мои нормы витаминов →">Show My Daily Vitamin Needs →</button>
-
-      <!-- Results -->
-      <div id="results" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:24px;">
-        <p style="font-size:0.85rem;color:var(--muted);margin-bottom:16px;" id="profileLabel"></p>
-        <div style="overflow-x:auto;">
-          <table class="vitamin-table">
-            <thead>
-              <tr>
-                <th data-en="Nutrient" data-ru="Нутриент">Nutrient</th>
-                <th data-en="Daily RDA" data-ru="Суточная норма">Daily RDA</th>
-                <th data-en="Unit" data-ru="Единица">Unit</th>
-                <th data-en="Best Food Sources" data-ru="Лучшие источники">Best Food Sources</th>
-              </tr>
-            </thead>
-            <tbody id="vitaminTbody"></tbody>
-          </table>
+  <section class="how-section">
+    <div class="container">
+      <div class="section-label" data-en="Key nutrients" data-ru="Ключевые нутриенты">Key nutrients</div>
+      <h2 class="section-title" data-en="Most important vitamins & minerals" data-ru="Самые важные витамины и минералы">
+        Most important vitamins & minerals</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">D</div>
+          <h3 data-en="Vitamin D — the sunshine vitamin" data-ru="Витамин D — витамин солнца">Vitamin D — the sunshine
+            vitamin</h3>
+          <p data-en="Most people are deficient in vitamin D, especially in northern latitudes. Essential for calcium absorption, immune function, and mood regulation. Fatty fish, fortified dairy, and sunlight are primary sources."
+            data-ru="У большинства людей дефицит витамина D, особенно в северных широтах. Необходим для усвоения кальция, иммунитета и настроения. Источники: жирная рыба, обогащённые молочные продукты, солнце.">
+            Most deficient nutrient globally. Essential for bones, immunity, and mood.</p>
         </div>
-        <p style="font-size:0.78rem;color:var(--muted);margin-top:12px;" data-en="RDA = Recommended Dietary Allowance. Source: NIH Office of Dietary Supplements, WHO. Values are for healthy adults — consult a doctor for medical conditions." data-ru="РСН = Рекомендуемая суточная норма. Источник: NIH, ВОЗ. Значения для здоровых взрослых — при заболеваниях проконсультируйтесь с врачом.">RDA values. Source: NIH, WHO. Consult a doctor for medical conditions.</p>
+        <div class="step">
+          <div class="step-num">B12</div>
+          <h3 data-en="Vitamin B12 — critical for vegans" data-ru="Витамин B12 — важен для веганов">Vitamin B12 —
+            critical for vegans</h3>
+          <p data-en="Found almost exclusively in animal products. Deficiency causes anaemia and neurological damage. Vegans and vegetarians should supplement B12 or eat B12-fortified foods regularly."
+            data-ru="Содержится почти исключительно в животных продуктах. Дефицит вызывает анемию и неврологические нарушения. Веганам необходимо принимать добавки или есть обогащённые продукты.">
+            Found only in animal foods — vegans must supplement B12.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Fe</div>
+          <h3 data-en="Iron — especially important for women" data-ru="Железо — особенно важно для женщин">Iron —
+            especially important for women</h3>
+          <p data-en="Women of reproductive age need significantly more iron than men due to menstrual losses. Iron deficiency is the world's most common nutrient deficiency. Red meat, legumes, and dark leafy greens are top sources."
+            data-ru="Женщины репродуктивного возраста нуждаются в значительно большем количестве железа из-за менструальных потерь. Дефицит железа — самый распространённый в мире. Источники: красное мясо, бобовые, тёмная зелень.">
+            Women need much more iron than men. Most common deficiency worldwide.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Mg</div>
+          <h3 data-en="Magnesium — the relaxation mineral" data-ru="Магний — минерал расслабления">Magnesium — the
+            relaxation mineral</h3>
+          <p data-en="Involved in 300+ enzymatic reactions. Supports sleep, muscle recovery, and stress response. Commonly under-consumed. Best sources: dark chocolate, nuts, seeds, leafy greens, and whole grains."
+            data-ru="Участвует в 300+ ферментативных реакциях. Поддерживает сон, восстановление мышц и стрессовую реакцию. Источники: тёмный шоколад, орехи, семена, зелень, цельные злаки.">
+            Involved in 300+ body reactions — supports sleep and muscle recovery.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="how-section">
-  <div class="container">
-    <div class="section-label" data-en="Key nutrients" data-ru="Ключевые нутриенты">Key nutrients</div>
-    <h2 class="section-title" data-en="Most important vitamins & minerals" data-ru="Самые важные витамины и минералы">Most important vitamins & minerals</h2>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">D</div>
-        <h3 data-en="Vitamin D — the sunshine vitamin" data-ru="Витамин D — витамин солнца">Vitamin D — the sunshine vitamin</h3>
-        <p data-en="Most people are deficient in vitamin D, especially in northern latitudes. Essential for calcium absorption, immune function, and mood regulation. Fatty fish, fortified dairy, and sunlight are primary sources." data-ru="У большинства людей дефицит витамина D, особенно в северных широтах. Необходим для усвоения кальция, иммунитета и настроения. Источники: жирная рыба, обогащённые молочные продукты, солнце.">Most deficient nutrient globally. Essential for bones, immunity, and mood.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">B12</div>
-        <h3 data-en="Vitamin B12 — critical for vegans" data-ru="Витамин B12 — важен для веганов">Vitamin B12 — critical for vegans</h3>
-        <p data-en="Found almost exclusively in animal products. Deficiency causes anaemia and neurological damage. Vegans and vegetarians should supplement B12 or eat B12-fortified foods regularly." data-ru="Содержится почти исключительно в животных продуктах. Дефицит вызывает анемию и неврологические нарушения. Веганам необходимо принимать добавки или есть обогащённые продукты.">Found only in animal foods — vegans must supplement B12.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">Fe</div>
-        <h3 data-en="Iron — especially important for women" data-ru="Железо — особенно важно для женщин">Iron — especially important for women</h3>
-        <p data-en="Women of reproductive age need significantly more iron than men due to menstrual losses. Iron deficiency is the world's most common nutrient deficiency. Red meat, legumes, and dark leafy greens are top sources." data-ru="Женщины репродуктивного возраста нуждаются в значительно большем количестве железа из-за менструальных потерь. Дефицит железа — самый распространённый в мире. Источники: красное мясо, бобовые, тёмная зелень.">Women need much more iron than men. Most common deficiency worldwide.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">Mg</div>
-        <h3 data-en="Magnesium — the relaxation mineral" data-ru="Магний — минерал расслабления">Magnesium — the relaxation mineral</h3>
-        <p data-en="Involved in 300+ enzymatic reactions. Supports sleep, muscle recovery, and stress response. Commonly under-consumed. Best sources: dark chocolate, nuts, seeds, leafy greens, and whole grains." data-ru="Участвует в 300+ ферментативных реакциях. Поддерживает сон, восстановление мышц и стрессовую реакцию. Источники: тёмный шоколад, орехи, семена, зелень, цельные злаки.">Involved in 300+ body reactions — supports sleep and muscle recovery.</p>
+  <section class="blog-section">
+    <div class="container">
+      <div class="section-label" data-en="Related tools" data-ru="Связанные инструменты">Related tools</div>
+      <h2 class="section-title" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</h2>
+      <div class="blog-grid">
+        <a href="/" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span>
+            <h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3>
+            <p data-en="Get your daily calorie and macro targets." data-ru="Суточная норма калорий и БЖУ.">Get your
+              daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open
+              →</span>
+          </div>
+        </a>
+        <a href="pregnancy-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag" data-en="Pregnancy" data-ru="Беременность">Pregnancy</span>
+            <h3 data-en="Pregnancy Nutrition Calculator" data-ru="Калькулятор беременности">Pregnancy Nutrition
+              Calculator</h3>
+            <p data-en="Extra calories and nutrients during pregnancy."
+              data-ru="Дополнительные калории и нутриенты при беременности.">Extra calories and nutrients during
+              pregnancy.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span>
+          </div>
+        </a>
+        <a href="calories-in-foods.html" class="blog-card" style="text-decoration:none;color:inherit;">
+          <div class="blog-card-body"><span class="blog-tag" data-en="Reference" data-ru="Справочник">Reference</span>
+            <h3 data-en="Calories in Foods Table" data-ru="Таблица калорийности">Calories in Foods Table</h3>
+            <p data-en="Full nutrition for 150+ foods." data-ru="Питательность 150+ продуктов.">Full nutrition for 150+
+              foods.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span>
+          </div>
+        </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="blog-section">
-  <div class="container">
-    <div class="section-label" data-en="Related tools" data-ru="Связанные инструменты">Related tools</div>
-    <h2 class="section-title" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</h2>
-    <div class="blog-grid">
-      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-ru="Суточная норма калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="pregnancy-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Pregnancy" data-ru="Беременность">Pregnancy</span><h3 data-en="Pregnancy Nutrition Calculator" data-ru="Калькулятор беременности">Pregnancy Nutrition Calculator</h3><p data-en="Extra calories and nutrients during pregnancy." data-ru="Дополнительные калории и нутриенты при беременности.">Extra calories and nutrients during pregnancy.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="calories-in-foods.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Reference" data-ru="Справочник">Reference</span><h3 data-en="Calories in Foods Table" data-ru="Таблица калорийности">Calories in Foods Table</h3><p data-en="Full nutrition for 150+ foods." data-ru="Питательность 150+ продуктов.">Full nutrition for 150+ foods.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp;
+          Macros</a>
+        <p data-en="Free health calculators. Not medical advice."
+          data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+        <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="all-calculators.html" data-en="All Calculators" data-ru="Все калькуляторы">All Calculators</a>
+        <a href="fast-food-calories.html" data-en="Fast Food Calories" data-ru="Калории в фастфуде">Fast Food</a>
+        <a href="alcohol-calories-list.html" data-en="Alcohol Calories" data-ru="Калории в алкоголе">Alcohol</a>
+        <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      </div>
     </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+  </footer>
+
+  <div id="scrollTop"
+    style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+  <div id="readProgress"
+    style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;">
   </div>
-</section>
 
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
-    <div class="footer-links">
-      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="faq.html">FAQ</a>
-      <a href="all-calculators.html" data-en="All Calculators" data-ru="Все калькуляторы">All Calculators</a>
-      <a href="fast-food-calories.html" data-en="Fast Food Calories" data-ru="Калории в фастфуде">Fast Food</a>
-      <a href="alcohol-calories-list.html" data-en="Alcohol Calories" data-ru="Калории в алкоголе">Alcohol</a>
-      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
-    </div>
-  </div>
-  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
-</footer>
+  <script>
+    var currentLang = localStorage.getItem('lang') || 'en';
+    var gender = 'male';
+    var specialStatus = 'none';
 
-<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+    // RDA data: [male_19-30, male_31-50, male_51-70, male_70+, female_19-30, female_31-50, female_51-70, female_70+, pregnant, breastfeeding]
+    var VITAMINS = [
+      // VITAMINS
+      {
+        cat_en: 'Fat-Soluble Vitamins', cat_ru: 'Жирорастворимые витамины', isHeader: true
+      },
+      {
+        name_en: 'Vitamin A', name_ru: 'Витамин A', unit: 'mcg RAE',
+        rda: [900, 900, 900, 900, 700, 700, 700, 700, 770, 1300],
+        sources_en: 'Liver, sweet potato, carrot, spinach, eggs',
+        sources_ru: 'Печень, батат, морковь, шпинат, яйца'
+      },
+      {
+        name_en: 'Vitamin D', name_ru: 'Витамин D', unit: 'IU',
+        rda: [600, 600, 600, 800, 600, 600, 600, 800, 600, 600],
+        sources_en: 'Fatty fish, fortified milk, egg yolks, sunlight',
+        sources_ru: 'Жирная рыба, обогащённое молоко, желтки, солнце'
+      },
+      {
+        name_en: 'Vitamin E', name_ru: 'Витамин E', unit: 'mg',
+        rda: [15, 15, 15, 15, 15, 15, 15, 15, 15, 19],
+        sources_en: 'Sunflower seeds, almonds, spinach, olive oil',
+        sources_ru: 'Семена подсолнечника, миндаль, шпинат, оливковое масло'
+      },
+      {
+        name_en: 'Vitamin K', name_ru: 'Витамин K', unit: 'mcg',
+        rda: [120, 120, 120, 120, 90, 90, 90, 90, 90, 90],
+        sources_en: 'Kale, spinach, broccoli, Brussels sprouts',
+        sources_ru: 'Кале, шпинат, брокколи, брюссельская капуста'
+      },
+      {
+        cat_en: 'Water-Soluble Vitamins', cat_ru: 'Водорастворимые витамины', isHeader: true
+      },
+      {
+        name_en: 'Vitamin C', name_ru: 'Витамин C', unit: 'mg',
+        rda: [90, 90, 90, 90, 75, 75, 75, 75, 85, 120],
+        sources_en: 'Bell peppers, citrus, kiwi, strawberries, broccoli',
+        sources_ru: 'Болгарский перец, цитрусы, киви, клубника, брокколи'
+      },
+      {
+        name_en: 'Vitamin B1 (Thiamine)', name_ru: 'Витамин B1 (Тиамин)', unit: 'mg',
+        rda: [1.2, 1.2, 1.2, 1.2, 1.1, 1.1, 1.1, 1.1, 1.4, 1.4],
+        sources_en: 'Whole grains, pork, legumes, nuts',
+        sources_ru: 'Цельные злаки, свинина, бобовые, орехи'
+      },
+      {
+        name_en: 'Vitamin B2 (Riboflavin)', name_ru: 'Витамин B2 (Рибофлавин)', unit: 'mg',
+        rda: [1.3, 1.3, 1.3, 1.3, 1.1, 1.1, 1.1, 1.1, 1.4, 1.6],
+        sources_en: 'Dairy, eggs, lean meat, almonds, leafy greens',
+        sources_ru: 'Молочные, яйца, нежирное мясо, миндаль, зелень'
+      },
+      {
+        name_en: 'Vitamin B3 (Niacin)', name_ru: 'Витамин B3 (Ниацин)', unit: 'mg',
+        rda: [16, 16, 16, 16, 14, 14, 14, 14, 18, 17],
+        sources_en: 'Chicken, tuna, turkey, peanuts, mushrooms',
+        sources_ru: 'Курица, тунец, индейка, арахис, грибы'
+      },
+      {
+        name_en: 'Vitamin B6', name_ru: 'Витамин B6', unit: 'mg',
+        rda: [1.3, 1.3, 1.7, 1.7, 1.3, 1.3, 1.5, 1.5, 1.9, 2.0],
+        sources_en: 'Chicken, fish, potatoes, bananas, chickpeas',
+        sources_ru: 'Курица, рыба, картофель, бананы, нут'
+      },
+      {
+        name_en: 'Folate (B9)', name_ru: 'Фолиевая кислота (B9)', unit: 'mcg DFE',
+        rda: [400, 400, 400, 400, 400, 400, 400, 400, 600, 500],
+        sources_en: 'Leafy greens, legumes, fortified cereals, liver',
+        sources_ru: 'Листовая зелень, бобовые, обогащённые злаки, печень'
+      },
+      {
+        name_en: 'Vitamin B12', name_ru: 'Витамин B12', unit: 'mcg',
+        rda: [2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.4, 2.6, 2.8],
+        sources_en: 'Meat, fish, dairy, eggs (not in plants)',
+        sources_ru: 'Мясо, рыба, молочные, яйца (нет в растениях)'
+      },
+      {
+        name_en: 'Biotin (B7)', name_ru: 'Биотин (B7)', unit: 'mcg',
+        rda: [30, 30, 30, 30, 30, 30, 30, 30, 30, 35],
+        sources_en: 'Eggs, liver, nuts, seeds, salmon',
+        sources_ru: 'Яйца, печень, орехи, семена, лосось'
+      },
+      {
+        cat_en: 'Minerals', cat_ru: 'Минералы', isHeader: true
+      },
+      {
+        name_en: 'Calcium', name_ru: 'Кальций', unit: 'mg',
+        rda: [1000, 1000, 1000, 1200, 1000, 1000, 1200, 1200, 1000, 1000],
+        sources_en: 'Dairy, fortified plant milks, sardines, kale, tofu',
+        sources_ru: 'Молочные, обогащённые растительные напитки, сардины, кале, тофу'
+      },
+      {
+        name_en: 'Iron', name_ru: 'Железо', unit: 'mg',
+        rda: [8, 8, 8, 8, 18, 18, 8, 8, 27, 9],
+        sources_en: 'Red meat, lentils, spinach, tofu, fortified cereals',
+        sources_ru: 'Красное мясо, чечевица, шпинат, тофу, обогащённые злаки'
+      },
+      {
+        name_en: 'Magnesium', name_ru: 'Магний', unit: 'mg',
+        rda: [400, 420, 420, 420, 310, 320, 320, 320, 350, 310],
+        sources_en: 'Dark chocolate, almonds, spinach, pumpkin seeds, black beans',
+        sources_ru: 'Тёмный шоколад, миндаль, шпинат, семена тыквы, чёрная фасоль'
+      },
+      {
+        name_en: 'Zinc', name_ru: 'Цинк', unit: 'mg',
+        rda: [11, 11, 11, 11, 8, 8, 8, 8, 11, 12],
+        sources_en: 'Oysters, beef, pumpkin seeds, chickpeas, cashews',
+        sources_ru: 'Устрицы, говядина, семена тыквы, нут, кешью'
+      },
+      {
+        name_en: 'Potassium', name_ru: 'Калий', unit: 'mg',
+        rda: [3400, 3400, 3400, 3400, 2600, 2600, 2600, 2600, 2900, 2800],
+        sources_en: 'Bananas, potato, avocado, spinach, lentils',
+        sources_ru: 'Бананы, картофель, авокадо, шпинат, чечевица'
+      },
+      {
+        name_en: 'Phosphorus', name_ru: 'Фосфор', unit: 'mg',
+        rda: [700, 700, 700, 700, 700, 700, 700, 700, 700, 700],
+        sources_en: 'Dairy, meat, fish, nuts, legumes',
+        sources_ru: 'Молочные, мясо, рыба, орехи, бобовые'
+      },
+      {
+        name_en: 'Sodium', name_ru: 'Натрий', unit: 'mg',
+        rda: [1500, 1500, 1300, 1200, 1500, 1500, 1300, 1200, 1500, 1500],
+        sources_en: 'Table salt, processed foods (limit to <2300mg/day)',
+        sources_ru: 'Поваренная соль, переработанные продукты (ограничить до <2300мг/день)'
+      },
+      {
+        name_en: 'Selenium', name_ru: 'Селен', unit: 'mcg',
+        rda: [55, 55, 55, 55, 55, 55, 55, 55, 60, 70],
+        sources_en: 'Brazil nuts (1-2/day = RDA), tuna, sardines, eggs',
+        sources_ru: 'Бразильский орех (1-2/день = норма), тунец, сардины, яйца'
+      },
+      {
+        name_en: 'Iodine', name_ru: 'Йод', unit: 'mcg',
+        rda: [150, 150, 150, 150, 150, 150, 150, 150, 220, 290],
+        sources_en: 'Iodised salt, seafood, dairy, seaweed',
+        sources_ru: 'Йодированная соль, морепродукты, молочные, водоросли'
+      },
+    ];
 
-<script>
-var currentLang = localStorage.getItem('lang') || 'en';
-var gender = 'male';
-var specialStatus = 'none';
+    var AGE_INDEX = { '19-30': 0, '31-50': 1, '51-70': 2, '70+': 3 };
 
-// RDA data: [male_19-30, male_31-50, male_51-70, male_70+, female_19-30, female_31-50, female_51-70, female_70+, pregnant, breastfeeding]
-var VITAMINS = [
-  // VITAMINS
-  {
-    cat_en:'Fat-Soluble Vitamins', cat_ru:'Жирорастворимые витамины', isHeader:true
-  },
-  {
-    name_en:'Vitamin A', name_ru:'Витамин A', unit:'mcg RAE',
-    rda:[900,900,900,900,700,700,700,700,770,1300],
-    sources_en:'Liver, sweet potato, carrot, spinach, eggs',
-    sources_ru:'Печень, батат, морковь, шпинат, яйца'
-  },
-  {
-    name_en:'Vitamin D', name_ru:'Витамин D', unit:'IU',
-    rda:[600,600,600,800,600,600,600,800,600,600],
-    sources_en:'Fatty fish, fortified milk, egg yolks, sunlight',
-    sources_ru:'Жирная рыба, обогащённое молоко, желтки, солнце'
-  },
-  {
-    name_en:'Vitamin E', name_ru:'Витамин E', unit:'mg',
-    rda:[15,15,15,15,15,15,15,15,15,19],
-    sources_en:'Sunflower seeds, almonds, spinach, olive oil',
-    sources_ru:'Семена подсолнечника, миндаль, шпинат, оливковое масло'
-  },
-  {
-    name_en:'Vitamin K', name_ru:'Витамин K', unit:'mcg',
-    rda:[120,120,120,120,90,90,90,90,90,90],
-    sources_en:'Kale, spinach, broccoli, Brussels sprouts',
-    sources_ru:'Кале, шпинат, брокколи, брюссельская капуста'
-  },
-  {
-    cat_en:'Water-Soluble Vitamins', cat_ru:'Водорастворимые витамины', isHeader:true
-  },
-  {
-    name_en:'Vitamin C', name_ru:'Витамин C', unit:'mg',
-    rda:[90,90,90,90,75,75,75,75,85,120],
-    sources_en:'Bell peppers, citrus, kiwi, strawberries, broccoli',
-    sources_ru:'Болгарский перец, цитрусы, киви, клубника, брокколи'
-  },
-  {
-    name_en:'Vitamin B1 (Thiamine)', name_ru:'Витамин B1 (Тиамин)', unit:'mg',
-    rda:[1.2,1.2,1.2,1.2,1.1,1.1,1.1,1.1,1.4,1.4],
-    sources_en:'Whole grains, pork, legumes, nuts',
-    sources_ru:'Цельные злаки, свинина, бобовые, орехи'
-  },
-  {
-    name_en:'Vitamin B2 (Riboflavin)', name_ru:'Витамин B2 (Рибофлавин)', unit:'mg',
-    rda:[1.3,1.3,1.3,1.3,1.1,1.1,1.1,1.1,1.4,1.6],
-    sources_en:'Dairy, eggs, lean meat, almonds, leafy greens',
-    sources_ru:'Молочные, яйца, нежирное мясо, миндаль, зелень'
-  },
-  {
-    name_en:'Vitamin B3 (Niacin)', name_ru:'Витамин B3 (Ниацин)', unit:'mg',
-    rda:[16,16,16,16,14,14,14,14,18,17],
-    sources_en:'Chicken, tuna, turkey, peanuts, mushrooms',
-    sources_ru:'Курица, тунец, индейка, арахис, грибы'
-  },
-  {
-    name_en:'Vitamin B6', name_ru:'Витамин B6', unit:'mg',
-    rda:[1.3,1.3,1.7,1.7,1.3,1.3,1.5,1.5,1.9,2.0],
-    sources_en:'Chicken, fish, potatoes, bananas, chickpeas',
-    sources_ru:'Курица, рыба, картофель, бананы, нут'
-  },
-  {
-    name_en:'Folate (B9)', name_ru:'Фолиевая кислота (B9)', unit:'mcg DFE',
-    rda:[400,400,400,400,400,400,400,400,600,500],
-    sources_en:'Leafy greens, legumes, fortified cereals, liver',
-    sources_ru:'Листовая зелень, бобовые, обогащённые злаки, печень'
-  },
-  {
-    name_en:'Vitamin B12', name_ru:'Витамин B12', unit:'mcg',
-    rda:[2.4,2.4,2.4,2.4,2.4,2.4,2.4,2.4,2.6,2.8],
-    sources_en:'Meat, fish, dairy, eggs (not in plants)',
-    sources_ru:'Мясо, рыба, молочные, яйца (нет в растениях)'
-  },
-  {
-    name_en:'Biotin (B7)', name_ru:'Биотин (B7)', unit:'mcg',
-    rda:[30,30,30,30,30,30,30,30,30,35],
-    sources_en:'Eggs, liver, nuts, seeds, salmon',
-    sources_ru:'Яйца, печень, орехи, семена, лосось'
-  },
-  {
-    cat_en:'Minerals', cat_ru:'Минералы', isHeader:true
-  },
-  {
-    name_en:'Calcium', name_ru:'Кальций', unit:'mg',
-    rda:[1000,1000,1000,1200,1000,1000,1200,1200,1000,1000],
-    sources_en:'Dairy, fortified plant milks, sardines, kale, tofu',
-    sources_ru:'Молочные, обогащённые растительные напитки, сардины, кале, тофу'
-  },
-  {
-    name_en:'Iron', name_ru:'Железо', unit:'mg',
-    rda:[8,8,8,8,18,18,8,8,27,9],
-    sources_en:'Red meat, lentils, spinach, tofu, fortified cereals',
-    sources_ru:'Красное мясо, чечевица, шпинат, тофу, обогащённые злаки'
-  },
-  {
-    name_en:'Magnesium', name_ru:'Магний', unit:'mg',
-    rda:[400,420,420,420,310,320,320,320,350,310],
-    sources_en:'Dark chocolate, almonds, spinach, pumpkin seeds, black beans',
-    sources_ru:'Тёмный шоколад, миндаль, шпинат, семена тыквы, чёрная фасоль'
-  },
-  {
-    name_en:'Zinc', name_ru:'Цинк', unit:'mg',
-    rda:[11,11,11,11,8,8,8,8,11,12],
-    sources_en:'Oysters, beef, pumpkin seeds, chickpeas, cashews',
-    sources_ru:'Устрицы, говядина, семена тыквы, нут, кешью'
-  },
-  {
-    name_en:'Potassium', name_ru:'Калий', unit:'mg',
-    rda:[3400,3400,3400,3400,2600,2600,2600,2600,2900,2800],
-    sources_en:'Bananas, potato, avocado, spinach, lentils',
-    sources_ru:'Бананы, картофель, авокадо, шпинат, чечевица'
-  },
-  {
-    name_en:'Phosphorus', name_ru:'Фосфор', unit:'mg',
-    rda:[700,700,700,700,700,700,700,700,700,700],
-    sources_en:'Dairy, meat, fish, nuts, legumes',
-    sources_ru:'Молочные, мясо, рыба, орехи, бобовые'
-  },
-  {
-    name_en:'Sodium', name_ru:'Натрий', unit:'mg',
-    rda:[1500,1500,1300,1200,1500,1500,1300,1200,1500,1500],
-    sources_en:'Table salt, processed foods (limit to <2300mg/day)',
-    sources_ru:'Поваренная соль, переработанные продукты (ограничить до <2300мг/день)'
-  },
-  {
-    name_en:'Selenium', name_ru:'Селен', unit:'mcg',
-    rda:[55,55,55,55,55,55,55,55,60,70],
-    sources_en:'Brazil nuts (1-2/day = RDA), tuna, sardines, eggs',
-    sources_ru:'Бразильский орех (1-2/день = норма), тунец, сардины, яйца'
-  },
-  {
-    name_en:'Iodine', name_ru:'Йод', unit:'mcg',
-    rda:[150,150,150,150,150,150,150,150,220,290],
-    sources_en:'Iodised salt, seafood, dairy, seaweed',
-    sources_ru:'Йодированная соль, морепродукты, молочные, водоросли'
-  },
-];
+    function calculate() {
+      var ageGroup = document.getElementById('ageGroup').value;
+      var l = currentLang;
+      var ageIdx = AGE_INDEX[ageGroup];
+      var genderOffset = gender === 'female' ? 4 : 0;
+      var statusIdx = genderOffset + ageIdx;
+      if (specialStatus === 'pregnant') statusIdx = 8;
+      if (specialStatus === 'breastfeeding') statusIdx = 9;
 
-var AGE_INDEX = {'19-30':0,'31-50':1,'51-70':2,'70+':3};
+      var profileText = '';
+      if (l === 'ru') {
+        profileText = (gender === 'male' ? 'Мужчина' : 'Женщина') + ', ' + ageGroup + ' лет';
+        if (specialStatus === 'pregnant') profileText = 'Беременная женщина';
+        if (specialStatus === 'breastfeeding') profileText = 'Кормящая женщина';
+      } else {
+        profileText = (gender === 'male' ? 'Male' : 'Female') + ', age ' + ageGroup;
+        if (specialStatus === 'pregnant') profileText = 'Pregnant woman';
+        if (specialStatus === 'breastfeeding') profileText = 'Breastfeeding woman';
+      }
+      document.getElementById('profileLabel').textContent = (l === 'ru' ? 'Показаны нормы для: ' : 'Showing RDA for: ') + profileText;
 
-function calculate() {
-  var ageGroup = document.getElementById('ageGroup').value;
-  var l = currentLang;
-  var ageIdx = AGE_INDEX[ageGroup];
-  var genderOffset = gender === 'female' ? 4 : 0;
-  var statusIdx = genderOffset + ageIdx;
-  if (specialStatus === 'pregnant') statusIdx = 8;
-  if (specialStatus === 'breastfeeding') statusIdx = 9;
+      var tbody = document.getElementById('vitaminTbody');
+      tbody.innerHTML = '';
 
-  var profileText = '';
-  if (l === 'ru') {
-    profileText = (gender==='male'?'Мужчина':'Женщина') + ', ' + ageGroup + ' лет';
-    if (specialStatus === 'pregnant') profileText = 'Беременная женщина';
-    if (specialStatus === 'breastfeeding') profileText = 'Кормящая женщина';
-  } else {
-    profileText = (gender==='male'?'Male':'Female') + ', age ' + ageGroup;
-    if (specialStatus === 'pregnant') profileText = 'Pregnant woman';
-    if (specialStatus === 'breastfeeding') profileText = 'Breastfeeding woman';
-  }
-  document.getElementById('profileLabel').textContent = (l==='ru'?'Показаны нормы для: ':'Showing RDA for: ') + profileText;
+      VITAMINS.forEach(function (item) {
+        if (item.isHeader) {
+          var tr = document.createElement('tr');
+          tr.className = 'cat-header';
+          tr.innerHTML = '<td colspan="4">' + (l === 'ru' ? item.cat_ru : item.cat_en) + '</td>';
+          tbody.appendChild(tr);
+          return;
+        }
+        var rda = item.rda[statusIdx];
+        var maxRda = Math.max.apply(null, item.rda);
+        var barW = Math.round(rda / maxRda * 100);
+        var sources = l === 'ru' ? item.sources_ru : item.sources_en;
+        var name = l === 'ru' ? item.name_ru : item.name_en;
+        var tr = document.createElement('tr');
+        tr.innerHTML =
+          '<td style="font-weight:500;">' + name + '</td>' +
+          '<td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:' + barW + '%;"></div></div><strong>' + rda + '</strong></div></td>' +
+          '<td style="color:var(--muted);font-size:0.82rem;">' + item.unit + '</td>' +
+          '<td style="font-size:0.82rem;color:var(--muted);">' + sources + '</td>';
+        tbody.appendChild(tr);
+      });
 
-  var tbody = document.getElementById('vitaminTbody');
-  tbody.innerHTML = '';
-
-  VITAMINS.forEach(function(item) {
-    if (item.isHeader) {
-      var tr = document.createElement('tr');
-      tr.className = 'cat-header';
-      tr.innerHTML = '<td colspan="4">' + (l==='ru'?item.cat_ru:item.cat_en) + '</td>';
-      tbody.appendChild(tr);
-      return;
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-    var rda = item.rda[statusIdx];
-    var maxRda = Math.max.apply(null, item.rda);
-    var barW = Math.round(rda / maxRda * 100);
-    var sources = l==='ru' ? item.sources_ru : item.sources_en;
-    var name = l==='ru' ? item.name_ru : item.name_en;
-    var tr = document.createElement('tr');
-    tr.innerHTML =
-      '<td style="font-weight:500;">' + name + '</td>' +
-      '<td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:' + barW + '%;"></div></div><strong>' + rda + '</strong></div></td>' +
-      '<td style="color:var(--muted);font-size:0.82rem;">' + item.unit + '</td>' +
-      '<td style="font-size:0.82rem;color:var(--muted);">' + sources + '</td>';
-    tbody.appendChild(tr);
-  });
 
-  document.getElementById('results').style.display = 'block';
-  document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
-}
+    function applyLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-en]').forEach(function (el) {
+        var t = el.getAttribute('data-' + lang);
+        if (!t) return;
+        if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+        else el.textContent = t;
+      });
+      document.querySelectorAll('select option[data-en]').forEach(function (opt) {
+        var t = opt.getAttribute('data-' + lang);
+        if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
+      });
+      localStorage.setItem('lang', lang);
+    }
 
-function applyLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-en]').forEach(function(el) {
-    var t = el.getAttribute('data-' + lang);
-    if (!t) return;
-    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
-    else el.textContent = t;
-  });
-  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
-    var t = opt.getAttribute('data-' + lang);
-    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
-  });
-  localStorage.setItem('lang', lang);
-}
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('hamburger').addEventListener('click', function () { document.getElementById('siteNav').classList.toggle('open'); });
+      window.addEventListener('scroll', function () {
+        var s = window.scrollY, d = document.documentElement.scrollHeight - window.innerHeight;
+        document.getElementById('readProgress').style.width = (d > 0 ? s / d * 100 : 0) + '%';
+        document.getElementById('scrollTop').style.display = s > 400 ? 'flex' : 'none';
+      });
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('siteNav').classList.toggle('open'); });
-  window.addEventListener('scroll', function(){
-    var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
-    document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
-    document.getElementById('scrollTop').style.display=s>400?'flex':'none';
-  });
+      document.getElementById('genderMale').addEventListener('click', function () {
+        gender = 'male'; this.classList.add('active'); document.getElementById('genderFemale').classList.remove('active');
+        document.getElementById('pregnantField').style.display = 'none';
+        specialStatus = 'none';
+      });
+      document.getElementById('genderFemale').addEventListener('click', function () {
+        gender = 'female'; this.classList.add('active'); document.getElementById('genderMale').classList.remove('active');
+        document.getElementById('pregnantField').style.display = 'block';
+      });
+      document.getElementById('notPregnant').addEventListener('click', function () {
+        specialStatus = 'none';
+        document.querySelectorAll('#pregnantField .gender-btn').forEach(function (b) { b.classList.remove('active'); });
+        this.classList.add('active');
+      });
+      document.getElementById('isPregnant').addEventListener('click', function () {
+        specialStatus = 'pregnant';
+        document.querySelectorAll('#pregnantField .gender-btn').forEach(function (b) { b.classList.remove('active'); });
+        this.classList.add('active');
+      });
+      document.getElementById('isBreastfeeding').addEventListener('click', function () {
+        specialStatus = 'breastfeeding';
+        document.querySelectorAll('#pregnantField .gender-btn').forEach(function (b) { b.classList.remove('active'); });
+        this.classList.add('active');
+      });
 
-  document.getElementById('genderMale').addEventListener('click', function(){
-    gender='male'; this.classList.add('active'); document.getElementById('genderFemale').classList.remove('active');
-    document.getElementById('pregnantField').style.display='none';
-    specialStatus='none';
-  });
-  document.getElementById('genderFemale').addEventListener('click', function(){
-    gender='female'; this.classList.add('active'); document.getElementById('genderMale').classList.remove('active');
-    document.getElementById('pregnantField').style.display='block';
-  });
-  document.getElementById('notPregnant').addEventListener('click', function(){
-    specialStatus='none';
-    document.querySelectorAll('#pregnantField .gender-btn').forEach(function(b){ b.classList.remove('active'); });
-    this.classList.add('active');
-  });
-  document.getElementById('isPregnant').addEventListener('click', function(){
-    specialStatus='pregnant';
-    document.querySelectorAll('#pregnantField .gender-btn').forEach(function(b){ b.classList.remove('active'); });
-    this.classList.add('active');
-  });
-  document.getElementById('isBreastfeeding').addEventListener('click', function(){
-    specialStatus='breastfeeding';
-    document.querySelectorAll('#pregnantField .gender-btn').forEach(function(b){ b.classList.remove('active'); });
-    this.classList.add('active');
-  });
+      document.getElementById('langEN').addEventListener('click', function () { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+      document.getElementById('langRU').addEventListener('click', function () { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+      var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
+      hEN.addEventListener('click', function () { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+      hRU.addEventListener('click', function () { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+      if (currentLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+    });
+  </script>
 
-  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
-  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
-  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
-  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
-  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
-  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
-});
-</script>
 </body>
+
 </html>
