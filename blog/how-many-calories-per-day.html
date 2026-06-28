@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How Many Calories Should You Eat Per Day? — Calories & Macros</title>
-  <meta name="description"
-    content="How many calories should you eat per day? Learn the exact daily calorie needs for men and women based on age, weight, and activity level." />
+  <meta name="description" content="How many calories should you eat per day? Learn the exact daily calorie needs for men and women based on age, weight, and activity level." />
   <link rel="canonical" href="https://calories-macros.com/blog/how-many-calories-per-day.html" />
-  <script
-    type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How Many Calories Should You Eat Per Day?","url":"https://calories-macros.com/blog/how-many-calories-per-day.html","publisher":{"@type":"Organization","name":"Calories & Macros"}}</script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"
-    crossorigin="anonymous"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How Many Calories Should You Eat Per Day?","url":"https://calories-macros.com/blog/how-many-calories-per-day.html","publisher":{"@type":"Organization","name":"Calories & Macros"}}</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="../style.css" />
-  <!-- Google Analytics -->
+<!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-RXLXM57ZKH');
   </script>
@@ -26,8 +22,7 @@
   <link rel="alternate" hreflang="x-default" href="https://calories-macros.com/blog/how-many-calories-per-day.html" />
   <!-- Open Graph -->
   <meta property="og:title" content="Calories & Macros Calculator — Free TDEE & Macro Planner" />
-  <meta property="og:description"
-    content="Free calorie and macro calculator. Get your personalized daily nutrition targets in seconds." />
+  <meta property="og:description" content="Free calorie and macro calculator. Get your personalized daily nutrition targets in seconds." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://calories-macros.com/" />
   <meta property="og:image" content="https://calories-macros.com/og-image.png" />
@@ -37,506 +32,307 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Calories & Macros Calculator — Free TDEE & Macro Planner" />
-  <meta name="twitter:description"
-    content="Free calorie and macro calculator. Get your personalized daily nutrition targets in seconds." />
+  <meta name="twitter:description" content="Free calorie and macro calculator. Get your personalized daily nutrition targets in seconds." />
   <meta name="twitter:image" content="https://calories-macros.com/og-image.png" />
 </head>
-
 <body>
-  <header class="site-header">
-    <div class="inner">
-      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-      <a href="../search.html"
-        style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;"
-        title="Search" aria-label="Search">🔍</a>
-      <div class="header-lang" id="headerLang">
-        <button class="active" id="headerLangEN">EN</button>
-        <button id="headerLangRU">RU</button>
-      </div>
-      <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
-      <nav class="site-nav" id="siteNav">
-        <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
-        <a href="/blog/" class="active" data-en="Blog" data-ru="Блог">Blog</a>
-        <a href="/about.html" data-en="About" data-ru="О сайте">About</a>
-        <a href="/contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-        <div class="lang-toggle">
-          <button class="active" id="langEN">EN</button>
-          <button id="langRU">RU</button>
-        </div>
-      </nav>
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <a href="../search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search" aria-label="Search">🔍</a>
+    <div class="header-lang" id="headerLang">
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
     </div>
-  </header>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="/blog/" class="active" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="/about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="/contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle">
+        <button class="active" id="langEN">EN</button>
+        <button id="langRU">RU</button>
+      </div>
+    </nav>
+  </div>
+</header>
 
-  <div class="page-hero">
-    <div class="container">
-      <div class="breadcrumb" data-en='<a href="/">Home</a> › <a href="/blog/">Blog</a> › Nutrition'
-        data-ru='<a href="/">Главная</a> › <a href="/blog/">Блог</a> › Питание'><a href="/">Home</a> › <a
-          href="/blog/">Blog</a> › Nutrition</div>
-      <h1 data-en="How Many Calories Should You Eat Per Day?" data-ru="Сколько калорий нужно есть в день?">How Many
-        Calories Should You Eat Per Day?</h1>
-      <div class="meta" data-en="9 min read · Nutrition · Updated June 2025"
-        data-ru="9 мин чтения · Питание · Обновлено июнь 2025">9 min read · Nutrition · Updated June 2025</div>
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb" data-en='<a href="/">Home</a> › <a href="/blog/">Blog</a> › Nutrition' data-ru='<a href="/">Главная</a> › <a href="/blog/">Блог</a> › Питание'><a href="/">Home</a> › <a href="/blog/">Blog</a> › Nutrition</div>
+    <h1 data-en="How Many Calories Should You Eat Per Day?" data-ru="Сколько калорий нужно есть в день?">How Many Calories Should You Eat Per Day?</h1>
+    <div class="meta" data-en="9 min read · Nutrition · Updated June 2025" data-ru="9 мин чтения · Питание · Обновлено июнь 2025">9 min read · Nutrition · Updated June 2025</div>
+  </div>
+</div>
+
+<main>
+  <article class="article-body">
+    <div id="article-en">
+      <p>How many calories you should eat per day depends on your age, sex, height, weight, and activity level. There is no single universal number — a 25-year-old male athlete and a 60-year-old sedentary woman have vastly different calorie needs. This guide explains how to find your personal daily calorie target.</p>
+
+      <h2>General calorie guidelines</h2>
+      <p>As a starting point, health organisations provide broad recommendations based on average adults:</p>
+      <table>
+        <thead><tr><th>Group</th><th>Sedentary</th><th>Moderately active</th><th>Very active</th></tr></thead>
+        <tbody>
+          <tr><td>Women (19–30)</td><td>1,800–2,000</td><td>2,000–2,200</td><td>2,400</td></tr>
+          <tr><td>Women (31–50)</td><td>1,800</td><td>2,000</td><td>2,200</td></tr>
+          <tr><td>Women (51+)</td><td>1,600</td><td>1,800</td><td>2,000–2,200</td></tr>
+          <tr><td>Men (19–30)</td><td>2,400–2,600</td><td>2,600–2,800</td><td>3,000</td></tr>
+          <tr><td>Men (31–50)</td><td>2,200–2,400</td><td>2,400–2,600</td><td>2,800–3,000</td></tr>
+          <tr><td>Men (51+)</td><td>2,000–2,200</td><td>2,200–2,400</td><td>2,400–2,800</td></tr>
+        </tbody>
+      </table>
+      <p>These are averages. Your personal needs may be significantly higher or lower depending on your body composition, metabolism, and lifestyle.</p>
+
+      <h2>How to calculate your exact calorie needs</h2>
+      <p>The most accurate way to find your daily calorie target is to calculate your Total Daily Energy Expenditure (TDEE) using a validated formula. The process has two steps:</p>
+
+      <h3>Step 1: Calculate your BMR</h3>
+      <p>Basal Metabolic Rate (BMR) is the number of calories your body needs at complete rest. The Mifflin-St Jeor equation — the most accurate formula for healthy adults — calculates it as follows:</p>
+      <div class="callout">
+        <strong>Men:</strong> BMR = (10 × weight in kg) + (6.25 × height in cm) − (5 × age) + 5<br>
+        <strong>Women:</strong> BMR = (10 × weight in kg) + (6.25 × height in cm) − (5 × age) − 161
+      </div>
+
+      <h3>Step 2: Multiply by your activity factor</h3>
+      <p>Your BMR is then multiplied by an activity factor to give your TDEE:</p>
+      <table>
+        <thead><tr><th>Activity level</th><th>Description</th><th>Multiplier</th></tr></thead>
+        <tbody>
+          <tr><td>Sedentary</td><td>Desk job, little exercise</td><td>× 1.2</td></tr>
+          <tr><td>Lightly active</td><td>1–3 workouts/week</td><td>× 1.375</td></tr>
+          <tr><td>Moderately active</td><td>3–5 workouts/week</td><td>× 1.55</td></tr>
+          <tr><td>Very active</td><td>6–7 workouts/week</td><td>× 1.725</td></tr>
+          <tr><td>Extremely active</td><td>Physical job + training</td><td>× 1.9</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Calorie needs by goal</h2>
+      <h3>To maintain weight</h3>
+      <p>Eat at your TDEE. This keeps your weight stable over time. Use our <a href="/">calculator</a> to find your exact maintenance calories.</p>
+
+      <h3>To lose weight</h3>
+      <p>Eat 300–500 calories below your TDEE. This creates a moderate deficit that produces 0.3–0.5 kg of fat loss per week without excessive hunger or muscle loss. Avoid going more than 500–700 calories below maintenance — larger deficits increase muscle loss and metabolic adaptation.</p>
+
+      <h3>To gain muscle</h3>
+      <p>Eat 200–350 calories above your TDEE. This moderate surplus supports muscle growth while minimising unnecessary fat gain. More aggressive surpluses do not accelerate muscle building — they only add more fat.</p>
+
+      <h2>Why calorie needs change over time</h2>
+      <p>Your daily calorie needs are not fixed. They change when:</p>
+      <ul>
+        <li><strong>Your weight changes</strong> — as you lose or gain mass, your BMR adjusts accordingly</li>
+        <li><strong>Your activity level changes</strong> — more movement means more calories burned</li>
+        <li><strong>You age</strong> — BMR tends to decline gradually with age, primarily due to muscle loss</li>
+        <li><strong>You diet for extended periods</strong> — metabolic adaptation reduces calorie burn during prolonged restriction</li>
+      </ul>
+      <p>Recalculate your calorie target every 4–6 weeks, or whenever your weight changes by more than 4–5 kg.</p>
+
+      <h2>Common calorie mistakes</h2>
+      <h3>Eating too little</h3>
+      <p>Very low calorie diets (under 1,200 kcal for women, 1,500 kcal for men) often cause muscle loss, nutrient deficiencies, fatigue, and metabolic slowdown. They are rarely necessary and difficult to sustain.</p>
+
+      <h3>Underestimating intake</h3>
+      <p>Research shows people underestimate their calorie intake by 20–40% on average. Using a food scale and tracking app for even a few weeks dramatically improves awareness.</p>
+
+      <h3>Not accounting for liquid calories</h3>
+      <p>Drinks — including coffee with milk, fruit juice, smoothies, sports drinks, and alcohol — can add 300–800 calories per day without contributing much to satiety.</p>
+
+      <div class="callout">
+        <strong>Find your personal number:</strong> Use our free <a href="/">Calories & Macros Calculator</a> to get your exact daily calorie target based on your body stats and goal — in under 60 seconds.
+      </div>
+    </div>
+
+    <div id="article-ru" style="display:none;">
+      <p>Количество калорий, которое вам нужно потреблять в день, зависит от возраста, пола, роста, веса и уровня активности. Универсальной цифры не существует — у 25-летнего спортсмена и 60-летней малоподвижной женщины потребности в калориях кардинально различаются. Это руководство поможет найти вашу личную суточную норму.</p>
+
+      <h2>Общие ориентиры по калориям</h2>
+      <p>В качестве отправной точки организации здравоохранения дают общие рекомендации для среднестатистических взрослых:</p>
+      <table>
+        <thead><tr><th>Группа</th><th>Малоподвижный образ жизни</th><th>Умеренная активность</th><th>Высокая активность</th></tr></thead>
+        <tbody>
+          <tr><td>Женщины (19–30 лет)</td><td>1 800–2 000</td><td>2 000–2 200</td><td>2 400</td></tr>
+          <tr><td>Женщины (31–50 лет)</td><td>1 800</td><td>2 000</td><td>2 200</td></tr>
+          <tr><td>Женщины (51+ лет)</td><td>1 600</td><td>1 800</td><td>2 000–2 200</td></tr>
+          <tr><td>Мужчины (19–30 лет)</td><td>2 400–2 600</td><td>2 600–2 800</td><td>3 000</td></tr>
+          <tr><td>Мужчины (31–50 лет)</td><td>2 200–2 400</td><td>2 400–2 600</td><td>2 800–3 000</td></tr>
+          <tr><td>Мужчины (51+ лет)</td><td>2 000–2 200</td><td>2 200–2 400</td><td>2 400–2 800</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Как рассчитать точную потребность в калориях</h2>
+      <p>Наиболее точный способ — рассчитать суточный расход энергии (TDEE) по проверенной формуле. Процесс состоит из двух шагов:</p>
+
+      <h3>Шаг 1: Рассчитайте BMR</h3>
+      <p>Базальный обмен веществ (BMR) — калории, необходимые организму в полном покое. Формула Миффлина-Сан Жеора:</p>
+      <div class="callout">
+        <strong>Мужчины:</strong> BMR = (10 × вес в кг) + (6,25 × рост в см) − (5 × возраст) + 5<br>
+        <strong>Женщины:</strong> BMR = (10 × вес в кг) + (6,25 × рост в см) − (5 × возраст) − 161
+      </div>
+
+      <h3>Шаг 2: Умножьте на коэффициент активности</h3>
+      <table>
+        <thead><tr><th>Уровень активности</th><th>Описание</th><th>Коэффициент</th></tr></thead>
+        <tbody>
+          <tr><td>Минимальный</td><td>Сидячая работа, нет тренировок</td><td>× 1,2</td></tr>
+          <tr><td>Лёгкий</td><td>1–3 тренировки в неделю</td><td>× 1,375</td></tr>
+          <tr><td>Умеренный</td><td>3–5 тренировок в неделю</td><td>× 1,55</td></tr>
+          <tr><td>Высокий</td><td>6–7 тренировок в неделю</td><td>× 1,725</td></tr>
+          <tr><td>Очень высокий</td><td>Физический труд + тренировки</td><td>× 1,9</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Норма калорий по целям</h2>
+      <h3>Поддержание веса</h3>
+      <p>Ешьте на уровне TDEE. Используйте наш <a href="/">калькулятор</a> для точного расчёта.</p>
+
+      <h3>Похудение</h3>
+      <p>Ешьте на 300–500 ккал ниже TDEE. Это создаёт умеренный дефицит — 0,3–0,5 кг потери жира в неделю без сильного голода и потери мышц.</p>
+
+      <h3>Набор мышечной массы</h3>
+      <p>Ешьте на 200–350 ккал выше TDEE. Умеренный профицит поддерживает рост мышц при минимальном накоплении жира.</p>
+
+      <h2>Частые ошибки</h2>
+      <ul>
+        <li><strong>Слишком мало калорий</strong> — менее 1 200 ккал для женщин и 1 500 для мужчин вызывают потерю мышц и замедление метаболизма</li>
+        <li><strong>Недооценка потребления</strong> — люди занижают калорийность на 20–40% в среднем</li>
+        <li><strong>Жидкие калории</strong> — кофе с молоком, сок, алкоголь добавляют 300–800 ккал незаметно</li>
+      </ul>
+
+      <div class="callout">
+        <strong>Найдите свою норму:</strong> Используйте наш бесплатный <a href="/">Калькулятор калорий и БЖУ</a> — получите точную суточную норму за 60 секунд.
+      </div>
+    </div>
+  </article>
+
+  <div class="container" style="padding-bottom:48px; padding-top:40px; border-top:1px solid var(--border);">
+    <p style="color:var(--muted);font-size:0.85rem;margin-bottom:8px;" data-en="Continue reading" data-ru="Читать далее">Continue reading</p>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;">
+      <a href="calories-for-weight-loss.html" style="color:var(--green);font-size:0.92rem;" data-en="Calories for Weight Loss →" data-ru="Калории для похудения →">Calories for Weight Loss →</a>
+      <a href="high-protein-foods.html" style="color:var(--green);font-size:0.92rem;" data-en="High Protein Foods List →" data-ru="Список продуктов с высоким содержанием белка →">High Protein Foods List →</a>
     </div>
   </div>
 
-  <main>
-    <article class="article-body">
-      <div id="article-en">
-        <p>How many calories you should eat per day depends on your age, sex, height, weight, and activity level. There
-          is no single universal number — a 25-year-old male athlete and a 60-year-old sedentary woman have vastly
-          different calorie needs. This guide explains how to find your personal daily calorie target.</p>
-
-        <h2>General calorie guidelines</h2>
-        <p>As a starting point, health organisations provide broad recommendations based on average adults:</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Group</th>
-              <th>Sedentary</th>
-              <th>Moderately active</th>
-              <th>Very active</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Women (19–30)</td>
-              <td>1,800–2,000</td>
-              <td>2,000–2,200</td>
-              <td>2,400</td>
-            </tr>
-            <tr>
-              <td>Women (31–50)</td>
-              <td>1,800</td>
-              <td>2,000</td>
-              <td>2,200</td>
-            </tr>
-            <tr>
-              <td>Women (51+)</td>
-              <td>1,600</td>
-              <td>1,800</td>
-              <td>2,000–2,200</td>
-            </tr>
-            <tr>
-              <td>Men (19–30)</td>
-              <td>2,400–2,600</td>
-              <td>2,600–2,800</td>
-              <td>3,000</td>
-            </tr>
-            <tr>
-              <td>Men (31–50)</td>
-              <td>2,200–2,400</td>
-              <td>2,400–2,600</td>
-              <td>2,800–3,000</td>
-            </tr>
-            <tr>
-              <td>Men (51+)</td>
-              <td>2,000–2,200</td>
-              <td>2,200–2,400</td>
-              <td>2,400–2,800</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>These are averages. Your personal needs may be significantly higher or lower depending on your body
-          composition, metabolism, and lifestyle.</p>
-
-        <h2>How to calculate your exact calorie needs</h2>
-        <p>The most accurate way to find your daily calorie target is to calculate your Total Daily Energy Expenditure
-          (TDEE) using a validated formula. The process has two steps:</p>
-
-        <h3>Step 1: Calculate your BMR</h3>
-        <p>Basal Metabolic Rate (BMR) is the number of calories your body needs at complete rest. The Mifflin-St Jeor
-          equation — the most accurate formula for healthy adults — calculates it as follows:</p>
-        <div class="callout">
-          <strong>Men:</strong> BMR = (10 × weight in kg) + (6.25 × height in cm) − (5 × age) + 5<br>
-          <strong>Women:</strong> BMR = (10 × weight in kg) + (6.25 × height in cm) − (5 × age) − 161
+<!-- Related Calculators -->
+<section style="background:var(--cream);padding:40px 20px;border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label" data-en="Try these tools" data-ru="Попробуйте эти инструменты">Try these tools</div>
+    <h2 class="section-title" style="margin-bottom:24px;font-size:1.4rem;" data-en="Related calculators" data-ru="Связанные калькуляторы">Related calculators</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;">
+      
+      <a href="/" style="display:flex;align-items:flex-start;gap:14px;background:white;border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform 0.2s;" onmouseenter="this.style.transform='translateY(-2px)'" onmouseleave="this.style.transform=''">
+        <div style="width:40px;height:40px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🧮</div>
+        <div>
+          <div style="font-weight:600;font-size:0.95rem;color:var(--green);margin-bottom:3px;" data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</div>
+          <div style="font-size:0.82rem;color:var(--muted);" data-en="Calculate your exact daily calorie needs" data-ru="Рассчитайте точную суточную норму калорий">Calculate your exact daily calorie needs</div>
         </div>
-
-        <h3>Step 2: Multiply by your activity factor</h3>
-        <p>Your BMR is then multiplied by an activity factor to give your TDEE:</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Activity level</th>
-              <th>Description</th>
-              <th>Multiplier</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Sedentary</td>
-              <td>Desk job, little exercise</td>
-              <td>× 1.2</td>
-            </tr>
-            <tr>
-              <td>Lightly active</td>
-              <td>1–3 workouts/week</td>
-              <td>× 1.375</td>
-            </tr>
-            <tr>
-              <td>Moderately active</td>
-              <td>3–5 workouts/week</td>
-              <td>× 1.55</td>
-            </tr>
-            <tr>
-              <td>Very active</td>
-              <td>6–7 workouts/week</td>
-              <td>× 1.725</td>
-            </tr>
-            <tr>
-              <td>Extremely active</td>
-              <td>Physical job + training</td>
-              <td>× 1.9</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>Calorie needs by goal</h2>
-        <h3>To maintain weight</h3>
-        <p>Eat at your TDEE. This keeps your weight stable over time. Use our <a href="/">calculator</a> to find your
-          exact maintenance calories.</p>
-
-        <h3>To lose weight</h3>
-        <p>Eat 300–500 calories below your TDEE. This creates a moderate deficit that produces 0.3–0.5 kg of fat loss
-          per week without excessive hunger or muscle loss. Avoid going more than 500–700 calories below maintenance —
-          larger deficits increase muscle loss and metabolic adaptation.</p>
-
-        <h3>To gain muscle</h3>
-        <p>Eat 200–350 calories above your TDEE. This moderate surplus supports muscle growth while minimising
-          unnecessary fat gain. More aggressive surpluses do not accelerate muscle building — they only add more fat.
-        </p>
-
-        <h2>Why calorie needs change over time</h2>
-        <p>Your daily calorie needs are not fixed. They change when:</p>
-        <ul>
-          <li><strong>Your weight changes</strong> — as you lose or gain mass, your BMR adjusts accordingly</li>
-          <li><strong>Your activity level changes</strong> — more movement means more calories burned</li>
-          <li><strong>You age</strong> — BMR tends to decline gradually with age, primarily due to muscle loss</li>
-          <li><strong>You diet for extended periods</strong> — metabolic adaptation reduces calorie burn during
-            prolonged restriction</li>
-        </ul>
-        <p>Recalculate your calorie target every 4–6 weeks, or whenever your weight changes by more than 4–5 kg.</p>
-
-        <h2>Common calorie mistakes</h2>
-        <h3>Eating too little</h3>
-        <p>Very low calorie diets (under 1,200 kcal for women, 1,500 kcal for men) often cause muscle loss, nutrient
-          deficiencies, fatigue, and metabolic slowdown. They are rarely necessary and difficult to sustain.</p>
-
-        <h3>Underestimating intake</h3>
-        <p>Research shows people underestimate their calorie intake by 20–40% on average. Using a food scale and
-          tracking app for even a few weeks dramatically improves awareness.</p>
-
-        <h3>Not accounting for liquid calories</h3>
-        <p>Drinks — including coffee with milk, fruit juice, smoothies, sports drinks, and alcohol — can add 300–800
-          calories per day without contributing much to satiety.</p>
-
-        <div class="callout">
-          <strong>Find your personal number:</strong> Use our free <a href="/">Calories & Macros Calculator</a> to get
-          your exact daily calorie target based on your body stats and goal — in under 60 seconds.
+      </a>
+      <a href="/bmi-calculator.html" style="display:flex;align-items:flex-start;gap:14px;background:white;border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform 0.2s;" onmouseenter="this.style.transform='translateY(-2px)'" onmouseleave="this.style.transform=''">
+        <div style="width:40px;height:40px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🧮</div>
+        <div>
+          <div style="font-weight:600;font-size:0.95rem;color:var(--green);margin-bottom:3px;" data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</div>
+          <div style="font-size:0.82rem;color:var(--muted);" data-en="Check your BMI" data-ru="Проверьте ваш ИМТ">Check your BMI</div>
         </div>
-      </div>
-
-      <div id="article-ru" style="display:none;">
-        <p>Количество калорий, которое вам нужно потреблять в день, зависит от возраста, пола, роста, веса и уровня
-          активности. Универсальной цифры не существует — у 25-летнего спортсмена и 60-летней малоподвижной женщины
-          потребности в калориях кардинально различаются. Это руководство поможет найти вашу личную суточную норму.</p>
-
-        <h2>Общие ориентиры по калориям</h2>
-        <p>В качестве отправной точки организации здравоохранения дают общие рекомендации для среднестатистических
-          взрослых:</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Группа</th>
-              <th>Малоподвижный образ жизни</th>
-              <th>Умеренная активность</th>
-              <th>Высокая активность</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Женщины (19–30 лет)</td>
-              <td>1 800–2 000</td>
-              <td>2 000–2 200</td>
-              <td>2 400</td>
-            </tr>
-            <tr>
-              <td>Женщины (31–50 лет)</td>
-              <td>1 800</td>
-              <td>2 000</td>
-              <td>2 200</td>
-            </tr>
-            <tr>
-              <td>Женщины (51+ лет)</td>
-              <td>1 600</td>
-              <td>1 800</td>
-              <td>2 000–2 200</td>
-            </tr>
-            <tr>
-              <td>Мужчины (19–30 лет)</td>
-              <td>2 400–2 600</td>
-              <td>2 600–2 800</td>
-              <td>3 000</td>
-            </tr>
-            <tr>
-              <td>Мужчины (31–50 лет)</td>
-              <td>2 200–2 400</td>
-              <td>2 400–2 600</td>
-              <td>2 800–3 000</td>
-            </tr>
-            <tr>
-              <td>Мужчины (51+ лет)</td>
-              <td>2 000–2 200</td>
-              <td>2 200–2 400</td>
-              <td>2 400–2 800</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>Как рассчитать точную потребность в калориях</h2>
-        <p>Наиболее точный способ — рассчитать суточный расход энергии (TDEE) по проверенной формуле. Процесс состоит из
-          двух шагов:</p>
-
-        <h3>Шаг 1: Рассчитайте BMR</h3>
-        <p>Базальный обмен веществ (BMR) — калории, необходимые организму в полном покое. Формула Миффлина-Сан Жеора:
-        </p>
-        <div class="callout">
-          <strong>Мужчины:</strong> BMR = (10 × вес в кг) + (6,25 × рост в см) − (5 × возраст) + 5<br>
-          <strong>Женщины:</strong> BMR = (10 × вес в кг) + (6,25 × рост в см) − (5 × возраст) − 161
+      </a>
+      <a href="/water-intake-calculator.html" style="display:flex;align-items:flex-start;gap:14px;background:white;border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform 0.2s;" onmouseenter="this.style.transform='translateY(-2px)'" onmouseleave="this.style.transform=''">
+        <div style="width:40px;height:40px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">🧮</div>
+        <div>
+          <div style="font-weight:600;font-size:0.95rem;color:var(--green);margin-bottom:3px;" data-en="Water Intake Calculator" data-ru="Калькулятор воды">Water Intake Calculator</div>
+          <div style="font-size:0.82rem;color:var(--muted);" data-en="Calculate daily water intake" data-ru="Рассчитайте суточную норму воды">Calculate daily water intake</div>
         </div>
-
-        <h3>Шаг 2: Умножьте на коэффициент активности</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Уровень активности</th>
-              <th>Описание</th>
-              <th>Коэффициент</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Минимальный</td>
-              <td>Сидячая работа, нет тренировок</td>
-              <td>× 1,2</td>
-            </tr>
-            <tr>
-              <td>Лёгкий</td>
-              <td>1–3 тренировки в неделю</td>
-              <td>× 1,375</td>
-            </tr>
-            <tr>
-              <td>Умеренный</td>
-              <td>3–5 тренировок в неделю</td>
-              <td>× 1,55</td>
-            </tr>
-            <tr>
-              <td>Высокий</td>
-              <td>6–7 тренировок в неделю</td>
-              <td>× 1,725</td>
-            </tr>
-            <tr>
-              <td>Очень высокий</td>
-              <td>Физический труд + тренировки</td>
-              <td>× 1,9</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h2>Норма калорий по целям</h2>
-        <h3>Поддержание веса</h3>
-        <p>Ешьте на уровне TDEE. Используйте наш <a href="/">калькулятор</a> для точного расчёта.</p>
-
-        <h3>Похудение</h3>
-        <p>Ешьте на 300–500 ккал ниже TDEE. Это создаёт умеренный дефицит — 0,3–0,5 кг потери жира в неделю без сильного
-          голода и потери мышц.</p>
-
-        <h3>Набор мышечной массы</h3>
-        <p>Ешьте на 200–350 ккал выше TDEE. Умеренный профицит поддерживает рост мышц при минимальном накоплении жира.
-        </p>
-
-        <h2>Частые ошибки</h2>
-        <ul>
-          <li><strong>Слишком мало калорий</strong> — менее 1 200 ккал для женщин и 1 500 для мужчин вызывают потерю
-            мышц и замедление метаболизма</li>
-          <li><strong>Недооценка потребления</strong> — люди занижают калорийность на 20–40% в среднем</li>
-          <li><strong>Жидкие калории</strong> — кофе с молоком, сок, алкоголь добавляют 300–800 ккал незаметно</li>
-        </ul>
-
-        <div class="callout">
-          <strong>Найдите свою норму:</strong> Используйте наш бесплатный <a href="/">Калькулятор калорий и БЖУ</a> —
-          получите точную суточную норму за 60 секунд.
-        </div>
-      </div>
-    </article>
-
-    <div class="container" style="padding-bottom:48px; padding-top:40px; border-top:1px solid var(--border);">
-      <p style="color:var(--muted);font-size:0.85rem;margin-bottom:8px;" data-en="Continue reading"
-        data-ru="Читать далее">Continue reading</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;">
-        <a href="calories-for-weight-loss.html" style="color:var(--green);font-size:0.92rem;"
-          data-en="Calories for Weight Loss →" data-ru="Калории для похудения →">Calories for Weight Loss →</a>
-        <a href="high-protein-foods.html" style="color:var(--green);font-size:0.92rem;"
-          data-en="High Protein Foods List →" data-ru="Список продуктов с высоким содержанием белка →">High Protein
-          Foods List →</a>
-      </div>
+      </a>
     </div>
-
-    <!-- Related Calculators -->
-    <section style="background:var(--cream);padding:40px 20px;border-top:1px solid var(--border);">
-      <div class="container">
-        <div class="section-label" data-en="Try these tools" data-ru="Попробуйте эти инструменты">Try these tools</div>
-        <h2 class="section-title" style="margin-bottom:24px;font-size:1.4rem;" data-en="Related calculators"
-          data-ru="Связанные калькуляторы">Related calculators</h2>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;">
-
-          <a href="/"
-            style="display:flex;align-items:flex-start;gap:14px;background:white;border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform 0.2s;"
-            onmouseenter="this.style.transform='translateY(-2px)'" onmouseleave="this.style.transform=''">
-            <div
-              style="width:40px;height:40px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">
-              🧮</div>
-            <div>
-              <div style="font-weight:600;font-size:0.95rem;color:var(--green);margin-bottom:3px;"
-                data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator
-              </div>
-              <div style="font-size:0.82rem;color:var(--muted);" data-en="Calculate your exact daily calorie needs"
-                data-ru="Рассчитайте точную суточную норму калорий">Calculate your exact daily calorie needs</div>
-            </div>
-          </a>
-          <a href="/bmi-calculator.html"
-            style="display:flex;align-items:flex-start;gap:14px;background:white;border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform 0.2s;"
-            onmouseenter="this.style.transform='translateY(-2px)'" onmouseleave="this.style.transform=''">
-            <div
-              style="width:40px;height:40px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">
-              🧮</div>
-            <div>
-              <div style="font-weight:600;font-size:0.95rem;color:var(--green);margin-bottom:3px;"
-                data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</div>
-              <div style="font-size:0.82rem;color:var(--muted);" data-en="Check your BMI" data-ru="Проверьте ваш ИМТ">
-                Check your BMI</div>
-            </div>
-          </a>
-          <a href="/water-intake-calculator.html"
-            style="display:flex;align-items:flex-start;gap:14px;background:white;border-radius:var(--radius);padding:18px 20px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:transform 0.2s;"
-            onmouseenter="this.style.transform='translateY(-2px)'" onmouseleave="this.style.transform=''">
-            <div
-              style="width:40px;height:40px;background:var(--green-pale);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem;">
-              🧮</div>
-            <div>
-              <div style="font-weight:600;font-size:0.95rem;color:var(--green);margin-bottom:3px;"
-                data-en="Water Intake Calculator" data-ru="Калькулятор воды">Water Intake Calculator</div>
-              <div style="font-size:0.82rem;color:var(--muted);" data-en="Calculate daily water intake"
-                data-ru="Рассчитайте суточную норму воды">Calculate daily water intake</div>
-            </div>
-          </a>
+  </div>
+</section>
+<!-- Related Articles -->
+<section style="background:var(--cream);padding:48px 20px;border-top:1px solid var(--border);">
+  <div class="container">
+    <div class="section-label" data-en="Continue reading" data-ru="Читать далее">Continue reading</div>
+    <h2 class="section-title" style="margin-bottom:32px;" data-en="Related articles" data-ru="Похожие статьи">Related articles</h2>
+    <div class="blog-grid">
+      
+      <a href="calories-for-weight-loss.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" style="background:var(--green-pale);color:var(--green);" data-en="Weight Loss" data-ru="Похудение">Weight Loss</span>
+          <h3 data-en="Calories for Weight Loss" data-ru="Калории для похудения">Calories for Weight Loss</h3>
+          <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
         </div>
-      </div>
-    </section>
-    <!-- Related Articles -->
-    <section style="background:var(--cream);padding:48px 20px;border-top:1px solid var(--border);">
-      <div class="container">
-        <div class="section-label" data-en="Continue reading" data-ru="Читать далее">Continue reading</div>
-        <h2 class="section-title" style="margin-bottom:32px;" data-en="Related articles" data-ru="Похожие статьи">
-          Related articles</h2>
-        <div class="blog-grid">
-
-          <a href="calories-for-weight-loss.html" class="blog-card" style="text-decoration:none;color:inherit;">
-            <div class="blog-card-body">
-              <span class="blog-tag" style="background:var(--green-pale);color:var(--green);" data-en="Weight Loss"
-                data-ru="Похудение">Weight Loss</span>
-              <h3 data-en="Calories for Weight Loss" data-ru="Калории для похудения">Calories for Weight Loss</h3>
-              <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
-            </div>
-          </a>
-          <a href="calorie-deficit-guide.html" class="blog-card" style="text-decoration:none;color:inherit;">
-            <div class="blog-card-body">
-              <span class="blog-tag" style="background:var(--green-pale);color:var(--green);" data-en="Weight Loss"
-                data-ru="Похудение">Weight Loss</span>
-              <h3 data-en="Calorie Deficit Without Starving" data-ru="Дефицит калорий без голода">Calorie Deficit
-                Without Starving</h3>
-              <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
-            </div>
-          </a>
-          <a href="maintenance-calories.html" class="blog-card" style="text-decoration:none;color:inherit;">
-            <div class="blog-card-body">
-              <span class="blog-tag" style="background:var(--green-pale);color:var(--green);" data-en="Maintenance"
-                data-ru="Поддержание">Maintenance</span>
-              <h3 data-en="Maintenance Calories Explained" data-ru="Калории поддержания">Maintenance Calories Explained
-              </h3>
-              <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
-            </div>
-          </a>
+      </a>
+      <a href="calorie-deficit-guide.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" style="background:var(--green-pale);color:var(--green);" data-en="Weight Loss" data-ru="Похудение">Weight Loss</span>
+          <h3 data-en="Calorie Deficit Without Starving" data-ru="Дефицит калорий без голода">Calorie Deficit Without Starving</h3>
+          <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
         </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp;
-          Macros</a>
-        <p data-en="Free calorie and macro calculator. Not medical advice."
-          data-ru="Бесплатный калькулятор калорий и БЖУ. Не медицинский совет.">Free calorie and macro calculator. Not
-          medical advice.</p>
-      </div>
-      <div class="footer-links">
-        <a href="/about.html" data-en="About" data-ru="О сайте">About</a>
-        <a href="/blog/" data-en="Blog" data-ru="Блог">Blog</a>
-        <a href="/contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-        <a href="/privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
-        <a href="/terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
-      </div>
+      </a>
+      <a href="maintenance-calories.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" style="background:var(--green-pale);color:var(--green);" data-en="Maintenance" data-ru="Поддержание">Maintenance</span>
+          <h3 data-en="Maintenance Calories Explained" data-ru="Калории поддержания">Maintenance Calories Explained</h3>
+          <span class="blog-read-more" data-en="Read article →" data-ru="Читать →">Read article →</span>
+        </div>
+      </a>
     </div>
-    <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
-  </footer>
+  </div>
+</section>
+</main>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('hamburger').addEventListener('click', function () { document.getElementById('siteNav').classList.toggle('open'); });
-    var currentLang = 'en';
-    function applyLangBlog(lang) {
-      currentLang = lang; document.documentElement.lang = lang;
-      var enC = document.getElementById('article-en'), ruC = document.getElementById('article-ru');
-      var titleEl = document.querySelector('.page-hero h1'), metaEl = document.querySelector('.page-hero .meta'), breadEl = document.querySelector('.breadcrumb');
-      if (lang === 'ru') { if (enC) enC.style.display = 'none'; if (ruC) ruC.style.display = 'block'; if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-ru'); if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-ru'); if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-ru'); }
-      else { if (enC) enC.style.display = 'block'; if (ruC) ruC.style.display = 'none'; if (titleEl) titleEl.innerHTML = titleEl.getAttribute('data-en'); if (metaEl) metaEl.innerHTML = metaEl.getAttribute('data-en'); if (breadEl) breadEl.innerHTML = breadEl.getAttribute('data-en'); }
-      document.querySelectorAll('[data-en]').forEach(function (el) { var t = el.getAttribute('data-' + lang); if (t) el.innerHTML = t; });
-      localStorage.setItem('lang', lang);
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free calorie and macro calculator. Not medical advice." data-ru="Бесплатный калькулятор калорий и БЖУ. Не медицинский совет.">Free calorie and macro calculator. Not medical advice.</p></div>
+    <div class="footer-links">
+      <a href="/about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="/blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="/contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="/privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="/terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('hamburger').addEventListener('click', function() { document.getElementById('siteNav').classList.toggle('open'); });
+var currentLang = 'en';
+function applyLangBlog(lang) {
+  currentLang = lang; document.documentElement.lang = lang;
+  var enC=document.getElementById('article-en'), ruC=document.getElementById('article-ru');
+  var titleEl=document.querySelector('.page-hero h1'), metaEl=document.querySelector('.page-hero .meta'), breadEl=document.querySelector('.breadcrumb');
+  if (lang==='ru') { if(enC)enC.style.display='none'; if(ruC)ruC.style.display='block'; if(titleEl)titleEl.innerHTML=titleEl.getAttribute('data-ru'); if(metaEl)metaEl.innerHTML=metaEl.getAttribute('data-ru'); if(breadEl)breadEl.innerHTML=breadEl.getAttribute('data-ru'); }
+  else { if(enC)enC.style.display='block'; if(ruC)ruC.style.display='none'; if(titleEl)titleEl.innerHTML=titleEl.getAttribute('data-en'); if(metaEl)metaEl.innerHTML=metaEl.getAttribute('data-en'); if(breadEl)breadEl.innerHTML=breadEl.getAttribute('data-en'); }
+  document.querySelectorAll('[data-en]').forEach(function(el){var t=el.getAttribute('data-'+lang);if(t)el.innerHTML=t;});
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function(){this.classList.add('active');document.getElementById('langRU').classList.remove('active');applyLangBlog('en');});
+document.getElementById('langRU').addEventListener('click', function(){this.classList.add('active');document.getElementById('langEN').classList.remove('active');applyLangBlog('ru');});
+var sl=localStorage.getItem('lang'); if(sl==='ru'){document.getElementById('langRU').classList.add('active');document.getElementById('langEN').classList.remove('active');applyLangBlog('ru');}
+(function(){var hEN=document.getElementById('headerLangEN'),hRU=document.getElementById('headerLangRU');if(sl==='ru'){hRU&&hRU.classList.add('active');hEN&&hEN.classList.remove('active');}if(hEN)hEN.addEventListener('click',function(){document.getElementById('langEN').click();});if(hRU)hRU.addEventListener('click',function(){document.getElementById('langRU').click();});})();
+</script>
+
+<!-- Scroll to top button + Reading progress -->
+<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green,#2D6A4F);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;transition:opacity 0.3s,transform 0.3s;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green,#2D6A4F);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+(function(){
+  var btn = document.getElementById('scrollTop');
+  var bar = document.getElementById('readProgress');
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollY / docH * 100) : 0;
+    bar.style.width = pct + '%';
+    if (scrollY > 400) {
+      btn.style.display = 'flex';
+      btn.style.opacity = '1';
+    } else {
+      btn.style.display = 'none';
     }
-    document.getElementById('langEN').addEventListener('click', function () { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLangBlog('en'); });
-    document.getElementById('langRU').addEventListener('click', function () { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); });
-    var sl = localStorage.getItem('lang'); if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLangBlog('ru'); }
-    (function () { var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU'); if (sl === 'ru') { hRU && hRU.classList.add('active'); hEN && hEN.classList.remove('active'); } if (hEN) hEN.addEventListener('click', function () { document.getElementById('langEN').click(); }); if (hRU) hRU.addEventListener('click', function () { document.getElementById('langRU').click(); }); })();
-  </script>
-
-  <!-- Scroll to top button + Reading progress -->
-  <div id="scrollTop"
-    style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green,#2D6A4F);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;transition:opacity 0.3s,transform 0.3s;"
-    onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
-  <div id="readProgress"
-    style="position:fixed;top:0;left:0;height:3px;background:var(--green,#2D6A4F);width:0%;z-index:9999;transition:width 0.1s;">
-  </div>
-  <script>
-    (function () {
-      var btn = document.getElementById('scrollTop');
-      var bar = document.getElementById('readProgress');
-      window.addEventListener('scroll', function () {
-        var scrollY = window.scrollY || window.pageYOffset;
-        var docH = document.documentElement.scrollHeight - window.innerHeight;
-        var pct = docH > 0 ? (scrollY / docH * 100) : 0;
-        bar.style.width = pct + '%';
-        if (scrollY > 400) {
-          btn.style.display = 'flex';
-          btn.style.opacity = '1';
-        } else {
-          btn.style.display = 'none';
-        }
-      });
-      btn.addEventListener('mouseenter', function () { this.style.transform = 'scale(1.1)'; });
-      btn.addEventListener('mouseleave', function () { this.style.transform = 'scale(1)'; });
-    })();
-  </script>
-
+  });
+  btn.addEventListener('mouseenter', function(){ this.style.transform='scale(1.1)'; });
+  btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
+})();
+</script>
 </body>
-
 </html>
