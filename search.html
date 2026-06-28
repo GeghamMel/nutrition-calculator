@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,336 +7,218 @@
   <meta name="description" content="Search all calculators, tools, and articles on Calories & Macros." />
   <link rel="canonical" href="https://calories-macros.com/search.html" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
-  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-RXLXM57ZKH');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .search-hero {
-      padding: 48px 20px 32px;
-      background: var(--green);
-    }
-
-    .search-hero h1 {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      color: white;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-
-    .search-box {
-      display: flex;
-      gap: 10px;
-      max-width: 600px;
-    }
-
-    .search-box input {
-      flex: 1;
-      padding: 14px 18px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-family: var(--font-body);
-    }
-
-    .search-box button {
-      padding: 14px 24px;
-      background: white;
-      color: var(--green);
-      border: none;
-      border-radius: 8px;
-      font-weight: 700;
-      font-family: var(--font-body);
-      cursor: pointer;
-      font-size: 0.95rem;
-    }
-
-    .result-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      padding: 20px;
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 12px;
-      text-decoration: none;
-      color: inherit;
-      transition: transform 0.15s;
-    }
-
-    .result-item:hover {
-      transform: translateY(-2px);
-    }
-
-    .result-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-      background: var(--green-pale);
-    }
-
-    .result-type {
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--green);
-      margin-bottom: 4px;
-    }
-
-    .result-title {
-      font-weight: 600;
-      font-size: 0.95rem;
-      margin-bottom: 4px;
-    }
-
-    .result-desc {
-      font-size: 0.83rem;
-      color: var(--muted);
-    }
-
-    .no-results {
-      text-align: center;
-      padding: 48px 20px;
-      color: var(--muted);
-    }
-
-    .search-filters {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 24px;
-    }
-
-    .filter-btn {
-      padding: 6px 14px;
-      border-radius: 16px;
-      border: 1.5px solid var(--border);
-      background: white;
-      color: var(--muted);
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .filter-btn.active {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-    }
+    .search-hero { padding:48px 20px 32px; background:var(--green); }
+    .search-hero h1 { font-family:var(--font-display); font-size:2rem; color:white; font-weight:400; margin-bottom:20px; }
+    .search-box { display:flex; gap:10px; max-width:600px; }
+    .search-box input { flex:1; padding:14px 18px; border:none; border-radius:8px; font-size:1rem; font-family:var(--font-body); }
+    .search-box button { padding:14px 24px; background:white; color:var(--green); border:none; border-radius:8px; font-weight:700; font-family:var(--font-body); cursor:pointer; font-size:0.95rem; }
+    .result-item { display:flex; gap:16px; align-items:flex-start; padding:20px; background:white; border-radius:var(--radius); box-shadow:var(--shadow); margin-bottom:12px; text-decoration:none; color:inherit; transition:transform 0.15s; }
+    .result-item:hover { transform:translateY(-2px); }
+    .result-icon { width:44px; height:44px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; background:var(--green-pale); }
+    .result-type { font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--green); margin-bottom:4px; }
+    .result-title { font-weight:600; font-size:0.95rem; margin-bottom:4px; }
+    .result-desc { font-size:0.83rem; color:var(--muted); }
+    .no-results { text-align:center; padding:48px 20px; color:var(--muted); }
+    .search-filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+    .filter-btn { padding:6px 14px; border-radius:16px; border:1.5px solid var(--border); background:white; color:var(--muted); font-family:var(--font-body); font-size:0.82rem; font-weight:600; cursor:pointer; }
+    .filter-btn.active { background:var(--green); color:white; border-color:var(--green); }
   </style>
 </head>
-
 <body>
 
-  <header class="site-header">
-    <div class="inner">
-      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-      <a href="/search.html"
-        style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;"
-        title="Search" aria-label="Search">🔍</a>
-      <div class="header-lang" id="headerLang">
-        <button class="active" id="headerLangEN">EN</button>
-        <button id="headerLangRU">RU</button>
-      </div>
-      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-      <nav class="site-nav" id="siteNav">
-        <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
-        <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-        <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-        <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-        <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
-      </nav>
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <a href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search" aria-label="Search">🔍</a>
+    <div class="header-lang" id="headerLang">
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
     </div>
-  </header>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
+    </nav>
+  </div>
+</header>
 
-  <div class="search-hero">
-    <div class="container">
-      <h1 data-en="Search" data-ru="Поиск">Search</h1>
-      <div class="search-box">
-        <input type="text" id="searchInput" placeholder="Search calculators, tools, articles..."
-          data-en-placeholder="Search calculators, tools, articles..."
-          data-ru-placeholder="Поиск калькуляторов, инструментов, статей..." autofocus />
-        <button onclick="doSearch()" data-en="Search" data-ru="Найти">Search</button>
-      </div>
+<div class="search-hero">
+  <div class="container">
+    <h1 data-en="Search" data-ru="Поиск">Search</h1>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search calculators, tools, articles..." data-en-placeholder="Search calculators, tools, articles..." data-ru-placeholder="Поиск калькуляторов, инструментов, статей..." autofocus />
+      <button onclick="doSearch()" data-en="Search" data-ru="Найти">Search</button>
     </div>
   </div>
+</div>
 
-  <div class="container" style="padding:32px 20px 80px;">
-    <!-- Filters -->
-    <div class="search-filters">
-      <button class="filter-btn active" data-filter="all" data-en="All" data-ru="Все">All</button>
-      <button class="filter-btn" data-filter="calculator" data-en="🧮 Calculators" data-ru="🧮 Калькуляторы">🧮
-        Calculators</button>
-      <button class="filter-btn" data-filter="article" data-en="📖 Articles" data-ru="📖 Статьи">📖 Articles</button>
-      <button class="filter-btn" data-filter="tool" data-en="🛠 Tools" data-ru="🛠 Инструменты">🛠 Tools</button>
-    </div>
-
-    <div id="resultsCount" style="font-size:0.85rem;color:var(--muted);margin-bottom:20px;"></div>
-    <div id="searchResults"></div>
+<div class="container" style="padding:32px 20px 80px;">
+  <!-- Filters -->
+  <div class="search-filters">
+    <button class="filter-btn active" data-filter="all" data-en="All" data-ru="Все">All</button>
+    <button class="filter-btn" data-filter="calculator" data-en="🧮 Calculators" data-ru="🧮 Калькуляторы">🧮 Calculators</button>
+    <button class="filter-btn" data-filter="article" data-en="📖 Articles" data-ru="📖 Статьи">📖 Articles</button>
+    <button class="filter-btn" data-filter="tool" data-en="🛠 Tools" data-ru="🛠 Инструменты">🛠 Tools</button>
   </div>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp;
-          Macros</a>
-        <p data-en="Free health calculators. Not medical advice."
-          data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.
-        </p>
-      </div>
-      <div class="footer-links">
-        <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-        <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-        <a href="faq.html">FAQ</a>
-        <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
-      </div>
+  <div id="resultsCount" style="font-size:0.85rem;color:var(--muted);margin-bottom:20px;"></div>
+  <div id="searchResults"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links">
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
     </div>
-    <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
-  </footer>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
 
-  <script>
-    var currentLang = localStorage.getItem('lang') || 'en';
-    var currentFilter = 'all';
+<script>
+var currentLang = localStorage.getItem('lang') || 'en';
+var currentFilter = 'all';
 
-    var CONTENT = [
-      // Calculators
-      { type: 'calculator', icon: '🔥', url: '/', title_en: 'Calorie & Macro Calculator', title_ru: 'Калькулятор калорий и БЖУ', desc_en: 'Calculate your daily calories, protein, carbs and fat based on your goal.', desc_ru: 'Рассчитайте суточные калории, белок, углеводы и жиры.', tags: 'calorie macro tdee bmr protein carbs fat weight loss muscle gain' },
-      { type: 'calculator', icon: '⚖️', url: 'bmi-calculator.html', title_en: 'BMI Calculator', title_ru: 'Калькулятор ИМТ', desc_en: 'Calculate your Body Mass Index and healthy weight range.', desc_ru: 'Рассчитайте индекс массы тела.', tags: 'bmi body mass index weight height' },
-      { type: 'calculator', icon: '💧', url: 'water-intake-calculator.html', title_en: 'Water Intake Calculator', title_ru: 'Калькулятор воды', desc_en: 'How much water should you drink per day?', desc_ru: 'Сколько воды нужно пить в день?', tags: 'water hydration drink daily' },
-      { type: 'calculator', icon: '🎯', url: 'ideal-weight-calculator.html', title_en: 'Ideal Weight Calculator', title_ru: 'Калькулятор идеального веса', desc_en: 'Find your ideal body weight using 4 proven formulas.', desc_ru: 'Идеальный вес по 4 формулам.', tags: 'ideal weight body divine robinson miller hamwi' },
-      { type: 'calculator', icon: '📊', url: 'body-fat-calculator.html', title_en: 'Body Fat % Calculator', title_ru: 'Калькулятор % жира', desc_en: 'Estimate your body fat percentage using the Navy method.', desc_ru: '% жира методом ВМС США.', tags: 'body fat percentage lean mass navy' },
-      { type: 'calculator', icon: '🏃', url: 'exercise-calories-calculator.html', title_en: 'Exercise Calories Calculator', title_ru: 'Калькулятор тренировок', desc_en: 'Calories burned during 20+ activities: running, cycling, swimming.', desc_ru: 'Калории при 20+ видах активности.', tags: 'exercise calories running cycling swimming workout burn' },
-      { type: 'calculator', icon: '🍺', url: 'alcohol-calories-calculator.html', title_en: 'Alcohol Calories Calculator', title_ru: 'Калькулятор алкоголя', desc_en: 'Calories in beer, wine, spirits and cocktails.', desc_ru: 'Калории в пиве, вине, коктейлях.', tags: 'alcohol calories beer wine spirits cocktail' },
-      { type: 'calculator', icon: '👩‍🍳', url: 'recipe-calculator.html', title_en: 'Recipe Nutrition Calculator', title_ru: 'Калькулятор рецептов', desc_en: 'Calculate calories and macros for any recipe.', desc_ru: 'Калории и БЖУ любого рецепта.', tags: 'recipe nutrition calculator ingredients food' },
-      { type: 'calculator', icon: '⚡', url: 'metabolism-calculator.html', title_en: 'Metabolism Calculator', title_ru: 'Калькулятор метаболизма', desc_en: 'How fast is your metabolism and how does it change with age?', desc_ru: 'Скорость метаболизма по возрасту.', tags: 'metabolism bmr age metabolic rate' },
-      { type: 'calculator', icon: '🏋️', url: 'protein-calculator.html', title_en: 'Protein Calculator for Athletes', title_ru: 'Калькулятор белка для спортсменов', desc_en: 'Optimal daily protein intake by sport type, training intensity, and goal.', desc_ru: 'Оптимальный суточный белок по типу спорта и цели.', tags: 'protein athlete sport daily intake muscle strength endurance' },
-      { type: 'calculator', icon: '👶', url: 'child-calorie-calculator.html', title_en: 'Child Calorie Calculator', title_ru: 'Детский калькулятор калорий', desc_en: 'Daily calorie needs for children aged 2–17 by age, gender and activity.', desc_ru: 'Суточная норма калорий для детей 2–17 лет.', tags: 'child kids calories daily needs age boy girl' },
-      { type: 'calculator', icon: '💊', url: 'vitamin-calculator.html', title_en: 'Daily Vitamin & Mineral Calculator', title_ru: 'Калькулятор витаминов и минералов', desc_en: 'Find your recommended daily intake for all key vitamins and minerals by age and gender.', desc_ru: 'Суточная норма витаминов и минералов по возрасту и полу.', tags: 'vitamin mineral daily rda calcium iron magnesium zinc' },
-      { type: 'calculator', icon: '🤰', url: 'pregnancy-calculator.html', title_en: 'Pregnancy Calorie Calculator', title_ru: 'Калькулятор беременности', desc_en: 'Extra calories needed per trimester during pregnancy.', desc_ru: 'Дополнительные калории по триместрам.', tags: 'pregnancy calories trimester nutrition' },
-      { type: 'calculator', icon: '📉', url: 'weight-loss-calculator.html', title_en: 'Weight Loss Calculator', title_ru: 'Калькулятор похудения', desc_en: 'How long will it take to reach your goal weight?', desc_ru: 'Сколько времени займёт похудение?', tags: 'weight loss timeline goal weeks months' },
-      // Tools
-      { type: 'tool', icon: '🍷', url: 'alcohol-calories-list.html', title_en: 'Alcohol Calories — Complete List', title_ru: 'Калории в алкоголе — полный список', desc_en: 'Calories in 80+ drinks — beer, wine, spirits, cocktails and liqueurs.', desc_ru: 'Калории в 80+ напитках — пиво, вино, крепкий алкоголь, коктейли.', tags: 'alcohol calories beer wine spirits cocktails liqueur vodka whisky' },
-      { type: 'tool', icon: '🍔', url: 'fast-food-calories.html', title_en: 'Fast Food Calories', title_ru: 'Калории в фастфуде', desc_en: "Calories for McDonald's, KFC, Burger King, Subway, Pizza Hut and more.", desc_ru: 'Калории для McDonald\'s, KFC, Burger King, Subway, Pizza Hut.', tags: 'fast food calories mcdonalds kfc burger king subway pizza' },
-      { type: 'tool', icon: '🍽️', url: 'meal-plan.html', title_en: '7-Day Meal Plans', title_ru: '7-дневные планы питания', desc_en: 'Ready-made meal plans for weight loss, muscle gain and maintenance.', desc_ru: 'Готовые планы для похудения, набора мышц и поддержания.', tags: 'meal plan weekly diet food 7 day' },
-      { type: 'tool', icon: '📋', url: 'calories-in-foods.html', title_en: 'Calories in Foods — Nutrition Table', title_ru: 'Калорийность продуктов', desc_en: 'Calories, protein, carbs and fat for 150+ foods per 100g.', desc_ru: 'Калории, белок, углеводы, жиры для 150+ продуктов.', tags: 'calories food table nutrition 100g' },
-      { type: 'tool', icon: '⚖️', url: 'diet-comparison.html', title_en: 'Diet Comparison Guide', title_ru: 'Сравнение диет', desc_en: 'Compare Keto, Mediterranean, Paleo, IF and more side by side.', desc_ru: 'Сравните Кето, Средиземноморскую, Палео и другие диеты.', tags: 'diet comparison keto mediterranean paleo intermittent fasting' },
-      { type: 'tool', icon: '❓', url: 'faq.html', title_en: 'FAQ — Frequently Asked Questions', title_ru: 'Часто задаваемые вопросы', desc_en: 'Answers to common questions about calories, macros, and nutrition.', desc_ru: 'Ответы на вопросы о калориях, БЖУ и питании.', tags: 'faq questions answers calories macros nutrition' },
-      // Articles
-      { type: 'article', icon: '📖', url: 'blog/calories-for-weight-loss.html', title_en: 'Calories for Weight Loss', title_ru: 'Калории для похудения', desc_en: 'Understanding calorie deficits and how to use them effectively.', desc_ru: 'Дефицит калорий и как его использовать.', tags: 'calories weight loss deficit fat' },
-      { type: 'article', icon: '📖', url: 'blog/macros-for-muscle-gain.html', title_en: 'Macros for Muscle Gain', title_ru: 'БЖУ для набора мышц', desc_en: 'The best macro split for building muscle.', desc_ru: 'Лучшее соотношение БЖУ для набора мышц.', tags: 'macros muscle gain protein carbs fat' },
-      { type: 'article', icon: '📖', url: 'blog/protein-intake-guide.html', title_en: 'How Much Protein Do You Need?', title_ru: 'Сколько белка нужно?', desc_en: 'Evidence-based guide to optimal protein intake.', desc_ru: 'Научно обоснованная норма белка.', tags: 'protein intake guide daily grams kg' },
-      { type: 'article', icon: '📖', url: 'blog/calorie-deficit-guide.html', title_en: 'Calorie Deficit Guide', title_ru: 'Руководство по дефициту калорий', desc_en: 'How to create a sustainable calorie deficit without starving.', desc_ru: 'Как создать дефицит без голода.', tags: 'calorie deficit guide fat loss weight' },
-      { type: 'article', icon: '📖', url: 'blog/high-protein-foods.html', title_en: 'High Protein Foods List', title_ru: 'Продукты с высоким содержанием белка', desc_en: '50 best sources of protein — animal and plant.', desc_ru: '50 лучших источников белка.', tags: 'high protein foods list animal plant' },
-      { type: 'article', icon: '📖', url: 'blog/best-foods-for-weight-loss.html', title_en: 'Best Foods for Weight Loss', title_ru: 'Лучшие продукты для похудения', desc_en: 'Top 10 science-backed foods that help you lose fat.', desc_ru: '10 продуктов для похудения.', tags: 'best foods weight loss fat burn' },
-      { type: 'article', icon: '📖', url: 'blog/how-to-increase-metabolism.html', title_en: 'How to Increase Metabolism', title_ru: 'Как ускорить метаболизм', desc_en: '8 evidence-based strategies to boost your metabolism.', desc_ru: '8 стратегий для ускорения метаболизма.', tags: 'metabolism increase boost strategies' },
-      { type: 'article', icon: '📖', url: 'blog/intermittent-fasting-guide.html', title_en: 'Intermittent Fasting Guide', title_ru: 'Интервальное голодание', desc_en: 'Complete guide to IF — methods, benefits, and how to start.', desc_ru: 'Полное руководство по ИГ.', tags: 'intermittent fasting 16 8 diet guide' },
-      { type: 'article', icon: '📖', url: 'blog/keto-diet-guide.html', title_en: 'Ketogenic Diet Guide', title_ru: 'Кетогенная диета', desc_en: 'How keto works, what to eat, and how to start safely.', desc_ru: 'Как работает кето и как начать.', tags: 'keto ketogenic diet guide carbs fat' },
-      { type: 'article', icon: '📖', url: 'blog/how-to-build-muscle.html', title_en: 'How to Build Muscle', title_ru: 'Как набрать мышечную массу', desc_en: 'Complete science-based guide to building muscle.', desc_ru: 'Полное руководство по набору мышц.', tags: 'build muscle hypertrophy training nutrition' },
-      { type: 'article', icon: '📖', url: 'blog/mediterranean-diet-guide.html', title_en: 'Mediterranean Diet Guide', title_ru: 'Средиземноморская диета', desc_en: 'The world\'s most evidence-backed diet and how to follow it.', desc_ru: 'Самая научно обоснованная диета.', tags: 'mediterranean diet guide olive oil fish' },
-    ];
+var CONTENT = [
+  // Calculators
+  {type:'calculator', icon:'🔥', url:'/', title_en:'Calorie & Macro Calculator', title_ru:'Калькулятор калорий и БЖУ', desc_en:'Calculate your daily calories, protein, carbs and fat based on your goal.', desc_ru:'Рассчитайте суточные калории, белок, углеводы и жиры.', tags:'calorie macro tdee bmr protein carbs fat weight loss muscle gain'},
+  {type:'calculator', icon:'⚖️', url:'bmi-calculator.html', title_en:'BMI Calculator', title_ru:'Калькулятор ИМТ', desc_en:'Calculate your Body Mass Index and healthy weight range.', desc_ru:'Рассчитайте индекс массы тела.', tags:'bmi body mass index weight height'},
+  {type:'calculator', icon:'💧', url:'water-intake-calculator.html', title_en:'Water Intake Calculator', title_ru:'Калькулятор воды', desc_en:'How much water should you drink per day?', desc_ru:'Сколько воды нужно пить в день?', tags:'water hydration drink daily'},
+  {type:'calculator', icon:'🎯', url:'ideal-weight-calculator.html', title_en:'Ideal Weight Calculator', title_ru:'Калькулятор идеального веса', desc_en:'Find your ideal body weight using 4 proven formulas.', desc_ru:'Идеальный вес по 4 формулам.', tags:'ideal weight body divine robinson miller hamwi'},
+  {type:'calculator', icon:'📊', url:'body-fat-calculator.html', title_en:'Body Fat % Calculator', title_ru:'Калькулятор % жира', desc_en:'Estimate your body fat percentage using the Navy method.', desc_ru:'% жира методом ВМС США.', tags:'body fat percentage lean mass navy'},
+  {type:'calculator', icon:'🏃', url:'exercise-calories-calculator.html', title_en:'Exercise Calories Calculator', title_ru:'Калькулятор тренировок', desc_en:'Calories burned during 20+ activities: running, cycling, swimming.', desc_ru:'Калории при 20+ видах активности.', tags:'exercise calories running cycling swimming workout burn'},
+  {type:'calculator', icon:'🍺', url:'alcohol-calories-calculator.html', title_en:'Alcohol Calories Calculator', title_ru:'Калькулятор алкоголя', desc_en:'Calories in beer, wine, spirits and cocktails.', desc_ru:'Калории в пиве, вине, коктейлях.', tags:'alcohol calories beer wine spirits cocktail'},
+  {type:'calculator', icon:'👩‍🍳', url:'recipe-calculator.html', title_en:'Recipe Nutrition Calculator', title_ru:'Калькулятор рецептов', desc_en:'Calculate calories and macros for any recipe.', desc_ru:'Калории и БЖУ любого рецепта.', tags:'recipe nutrition calculator ingredients food'},
+  {type:'calculator', icon:'⚡', url:'metabolism-calculator.html', title_en:'Metabolism Calculator', title_ru:'Калькулятор метаболизма', desc_en:'How fast is your metabolism and how does it change with age?', desc_ru:'Скорость метаболизма по возрасту.', tags:'metabolism bmr age metabolic rate'},
+  {type:'calculator', icon:'🏋️', url:'protein-calculator.html', title_en:'Protein Calculator for Athletes', title_ru:'Калькулятор белка для спортсменов', desc_en:'Optimal daily protein intake by sport type, training intensity, and goal.', desc_ru:'Оптимальный суточный белок по типу спорта и цели.', tags:'protein athlete sport daily intake muscle strength endurance'},
+  {type:'calculator', icon:'👶', url:'child-calorie-calculator.html', title_en:'Child Calorie Calculator', title_ru:'Детский калькулятор калорий', desc_en:'Daily calorie needs for children aged 2–17 by age, gender and activity.', desc_ru:'Суточная норма калорий для детей 2–17 лет.', tags:'child kids calories daily needs age boy girl'},
+  {type:'calculator', icon:'💊', url:'vitamin-calculator.html', title_en:'Daily Vitamin & Mineral Calculator', title_ru:'Калькулятор витаминов и минералов', desc_en:'Find your recommended daily intake for all key vitamins and minerals by age and gender.', desc_ru:'Суточная норма витаминов и минералов по возрасту и полу.', tags:'vitamin mineral daily rda calcium iron magnesium zinc'},
+  {type:'calculator', icon:'🤰', url:'pregnancy-calculator.html', title_en:'Pregnancy Calorie Calculator', title_ru:'Калькулятор беременности', desc_en:'Extra calories needed per trimester during pregnancy.', desc_ru:'Дополнительные калории по триместрам.', tags:'pregnancy calories trimester nutrition'},
+  {type:'calculator', icon:'📉', url:'weight-loss-calculator.html', title_en:'Weight Loss Calculator', title_ru:'Калькулятор похудения', desc_en:'How long will it take to reach your goal weight?', desc_ru:'Сколько времени займёт похудение?', tags:'weight loss timeline goal weeks months'},
+  // Tools
+  {type:'tool', icon:'🍷', url:'alcohol-calories-list.html', title_en:'Alcohol Calories — Complete List', title_ru:'Калории в алкоголе — полный список', desc_en:'Calories in 80+ drinks — beer, wine, spirits, cocktails and liqueurs.', desc_ru:'Калории в 80+ напитках — пиво, вино, крепкий алкоголь, коктейли.', tags:'alcohol calories beer wine spirits cocktails liqueur vodka whisky'},
+  {type:'tool', icon:'🍔', url:'fast-food-calories.html', title_en:'Fast Food Calories', title_ru:'Калории в фастфуде', desc_en:"Calories for McDonald's, KFC, Burger King, Subway, Pizza Hut and more.", desc_ru:'Калории для McDonald\'s, KFC, Burger King, Subway, Pizza Hut.', tags:'fast food calories mcdonalds kfc burger king subway pizza'},
+  {type:'tool', icon:'🍽️', url:'meal-plan.html', title_en:'7-Day Meal Plans', title_ru:'7-дневные планы питания', desc_en:'Ready-made meal plans for weight loss, muscle gain and maintenance.', desc_ru:'Готовые планы для похудения, набора мышц и поддержания.', tags:'meal plan weekly diet food 7 day'},
+  {type:'tool', icon:'📋', url:'calories-in-foods.html', title_en:'Calories in Foods — Nutrition Table', title_ru:'Калорийность продуктов', desc_en:'Calories, protein, carbs and fat for 150+ foods per 100g.', desc_ru:'Калории, белок, углеводы, жиры для 150+ продуктов.', tags:'calories food table nutrition 100g'},
+  {type:'tool', icon:'⚖️', url:'diet-comparison.html', title_en:'Diet Comparison Guide', title_ru:'Сравнение диет', desc_en:'Compare Keto, Mediterranean, Paleo, IF and more side by side.', desc_ru:'Сравните Кето, Средиземноморскую, Палео и другие диеты.', tags:'diet comparison keto mediterranean paleo intermittent fasting'},
+  {type:'tool', icon:'❓', url:'faq.html', title_en:'FAQ — Frequently Asked Questions', title_ru:'Часто задаваемые вопросы', desc_en:'Answers to common questions about calories, macros, and nutrition.', desc_ru:'Ответы на вопросы о калориях, БЖУ и питании.', tags:'faq questions answers calories macros nutrition'},
+  // Articles
+  {type:'article', icon:'📖', url:'blog/calories-for-weight-loss.html', title_en:'Calories for Weight Loss', title_ru:'Калории для похудения', desc_en:'Understanding calorie deficits and how to use them effectively.', desc_ru:'Дефицит калорий и как его использовать.', tags:'calories weight loss deficit fat'},
+  {type:'article', icon:'📖', url:'blog/macros-for-muscle-gain.html', title_en:'Macros for Muscle Gain', title_ru:'БЖУ для набора мышц', desc_en:'The best macro split for building muscle.', desc_ru:'Лучшее соотношение БЖУ для набора мышц.', tags:'macros muscle gain protein carbs fat'},
+  {type:'article', icon:'📖', url:'blog/protein-intake-guide.html', title_en:'How Much Protein Do You Need?', title_ru:'Сколько белка нужно?', desc_en:'Evidence-based guide to optimal protein intake.', desc_ru:'Научно обоснованная норма белка.', tags:'protein intake guide daily grams kg'},
+  {type:'article', icon:'📖', url:'blog/calorie-deficit-guide.html', title_en:'Calorie Deficit Guide', title_ru:'Руководство по дефициту калорий', desc_en:'How to create a sustainable calorie deficit without starving.', desc_ru:'Как создать дефицит без голода.', tags:'calorie deficit guide fat loss weight'},
+  {type:'article', icon:'📖', url:'blog/high-protein-foods.html', title_en:'High Protein Foods List', title_ru:'Продукты с высоким содержанием белка', desc_en:'50 best sources of protein — animal and plant.', desc_ru:'50 лучших источников белка.', tags:'high protein foods list animal plant'},
+  {type:'article', icon:'📖', url:'blog/best-foods-for-weight-loss.html', title_en:'Best Foods for Weight Loss', title_ru:'Лучшие продукты для похудения', desc_en:'Top 10 science-backed foods that help you lose fat.', desc_ru:'10 продуктов для похудения.', tags:'best foods weight loss fat burn'},
+  {type:'article', icon:'📖', url:'blog/how-to-increase-metabolism.html', title_en:'How to Increase Metabolism', title_ru:'Как ускорить метаболизм', desc_en:'8 evidence-based strategies to boost your metabolism.', desc_ru:'8 стратегий для ускорения метаболизма.', tags:'metabolism increase boost strategies'},
+  {type:'article', icon:'📖', url:'blog/intermittent-fasting-guide.html', title_en:'Intermittent Fasting Guide', title_ru:'Интервальное голодание', desc_en:'Complete guide to IF — methods, benefits, and how to start.', desc_ru:'Полное руководство по ИГ.', tags:'intermittent fasting 16 8 diet guide'},
+  {type:'article', icon:'📖', url:'blog/keto-diet-guide.html', title_en:'Ketogenic Diet Guide', title_ru:'Кетогенная диета', desc_en:'How keto works, what to eat, and how to start safely.', desc_ru:'Как работает кето и как начать.', tags:'keto ketogenic diet guide carbs fat'},
+  {type:'article', icon:'📖', url:'blog/how-to-build-muscle.html', title_en:'How to Build Muscle', title_ru:'Как набрать мышечную массу', desc_en:'Complete science-based guide to building muscle.', desc_ru:'Полное руководство по набору мышц.', tags:'build muscle hypertrophy training nutrition'},
+  {type:'article', icon:'📖', url:'blog/mediterranean-diet-guide.html', title_en:'Mediterranean Diet Guide', title_ru:'Средиземноморская диета', desc_en:'The world\'s most evidence-backed diet and how to follow it.', desc_ru:'Самая научно обоснованная диета.', tags:'mediterranean diet guide olive oil fish'},
+];
 
-    function doSearch() {
-      var q = document.getElementById('searchInput').value.toLowerCase().trim();
-      renderResults(q, currentFilter);
-    }
+function doSearch() {
+  var q = document.getElementById('searchInput').value.toLowerCase().trim();
+  renderResults(q, currentFilter);
+}
 
-    function renderResults(q, filter) {
-      var l = currentLang;
-      var results = CONTENT.filter(function (item) {
-        var matchFilter = filter === 'all' || item.type === filter;
-        var matchQ = !q ||
-          item.title_en.toLowerCase().includes(q) ||
-          item.title_ru.toLowerCase().includes(q) ||
-          item.desc_en.toLowerCase().includes(q) ||
-          item.desc_ru.toLowerCase().includes(q) ||
-          item.tags.toLowerCase().includes(q);
-        return matchFilter && matchQ;
-      });
+function renderResults(q, filter) {
+  var l = currentLang;
+  var results = CONTENT.filter(function(item) {
+    var matchFilter = filter === 'all' || item.type === filter;
+    var matchQ = !q || 
+      item.title_en.toLowerCase().includes(q) ||
+      item.title_ru.toLowerCase().includes(q) ||
+      item.desc_en.toLowerCase().includes(q) ||
+      item.desc_ru.toLowerCase().includes(q) ||
+      item.tags.toLowerCase().includes(q);
+    return matchFilter && matchQ;
+  });
 
-      var countEl = document.getElementById('resultsCount');
-      var container = document.getElementById('searchResults');
+  var countEl = document.getElementById('resultsCount');
+  var container = document.getElementById('searchResults');
 
-      if (!q && filter === 'all') {
-        countEl.textContent = l === 'ru' ? 'Начните вводить для поиска...' : 'Start typing to search...';
-        container.innerHTML = '';
-        return;
-      }
+  if (!q && filter === 'all') {
+    countEl.textContent = l === 'ru' ? 'Начните вводить для поиска...' : 'Start typing to search...';
+    container.innerHTML = '';
+    return;
+  }
 
-      var countText = l === 'ru'
-        ? 'Найдено: ' + results.length + ' результатов'
-        : results.length + ' result' + (results.length !== 1 ? 's' : '') + ' found';
-      countEl.textContent = countText;
+  var countText = l === 'ru' 
+    ? 'Найдено: ' + results.length + ' результатов' 
+    : results.length + ' result' + (results.length !== 1 ? 's' : '') + ' found';
+  countEl.textContent = countText;
 
-      if (results.length === 0) {
-        container.innerHTML = '<div class="no-results"><p style="font-size:1.5rem;margin-bottom:8px;">🔍</p><p>' + (l === 'ru' ? 'Ничего не найдено. Попробуйте другой запрос.' : 'No results found. Try a different search.') + '</p></div>';
-        return;
-      }
+  if (results.length === 0) {
+    container.innerHTML = '<div class="no-results"><p style="font-size:1.5rem;margin-bottom:8px;">🔍</p><p>' + (l==='ru'?'Ничего не найдено. Попробуйте другой запрос.':'No results found. Try a different search.') + '</p></div>';
+    return;
+  }
 
-      container.innerHTML = results.map(function (item) {
-        var title = l === 'ru' ? item.title_ru : item.title_en;
-        var desc = l === 'ru' ? item.desc_ru : item.desc_en;
-        var typeLabel = item.type === 'calculator' ? (l === 'ru' ? 'Калькулятор' : 'Calculator') : item.type === 'article' ? (l === 'ru' ? 'Статья' : 'Article') : (l === 'ru' ? 'Инструмент' : 'Tool');
-        return '<a href="' + item.url + '" class="result-item">' +
-          '<div class="result-icon">' + item.icon + '</div>' +
-          '<div><div class="result-type">' + typeLabel + '</div>' +
-          '<div class="result-title">' + title + '</div>' +
-          '<div class="result-desc">' + desc + '</div></div>' +
-          '</a>';
-      }).join('');
-    }
+  container.innerHTML = results.map(function(item) {
+    var title = l === 'ru' ? item.title_ru : item.title_en;
+    var desc = l === 'ru' ? item.desc_ru : item.desc_en;
+    var typeLabel = item.type === 'calculator' ? (l==='ru'?'Калькулятор':'Calculator') : item.type === 'article' ? (l==='ru'?'Статья':'Article') : (l==='ru'?'Инструмент':'Tool');
+    return '<a href="' + item.url + '" class="result-item">' +
+      '<div class="result-icon">' + item.icon + '</div>' +
+      '<div><div class="result-type">' + typeLabel + '</div>' +
+      '<div class="result-title">' + title + '</div>' +
+      '<div class="result-desc">' + desc + '</div></div>' +
+      '</a>';
+  }).join('');
+}
 
-    function applyLang(lang) {
-      currentLang = lang;
-      document.documentElement.lang = lang;
-      document.querySelectorAll('[data-en]').forEach(function (el) {
-        var t = el.getAttribute('data-' + lang);
-        if (!t) return;
-        if (t.includes('<')) el.innerHTML = t; else el.textContent = t;
-      });
-      var input = document.getElementById('searchInput');
-      input.placeholder = input.getAttribute('data-' + lang + '-placeholder') || input.placeholder;
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (t.includes('<')) el.innerHTML = t; else el.textContent = t;
+  });
+  var input = document.getElementById('searchInput');
+  input.placeholder = input.getAttribute('data-' + lang + '-placeholder') || input.placeholder;
+  doSearch();
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('siteNav').classList.toggle('open'); });
+
+  document.getElementById('searchInput').addEventListener('input', function(){ doSearch(); });
+  document.getElementById('searchInput').addEventListener('keydown', function(e){ if(e.key==='Enter') doSearch(); });
+
+  document.querySelectorAll('.filter-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+      currentFilter = this.getAttribute('data-filter');
       doSearch();
-      localStorage.setItem('lang', lang);
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById('year').textContent = new Date().getFullYear();
-      document.getElementById('hamburger').addEventListener('click', function () { document.getElementById('siteNav').classList.toggle('open'); });
-
-      document.getElementById('searchInput').addEventListener('input', function () { doSearch(); });
-      document.getElementById('searchInput').addEventListener('keydown', function (e) { if (e.key === 'Enter') doSearch(); });
-
-      document.querySelectorAll('.filter-btn').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-          document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
-          this.classList.add('active');
-          currentFilter = this.getAttribute('data-filter');
-          doSearch();
-        });
-      });
-
-      document.getElementById('langEN').addEventListener('click', function () { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
-      document.getElementById('langRU').addEventListener('click', function () { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
-      var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
-      hEN.addEventListener('click', function () { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
-      hRU.addEventListener('click', function () { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
-      if (currentLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
-
-      // Check URL params
-      var params = new URLSearchParams(window.location.search);
-      var q = params.get('q');
-      if (q) { document.getElementById('searchInput').value = q; doSearch(); }
-
-      renderResults('', 'all');
     });
-  </script>
+  });
 
+  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+
+  // Check URL params
+  var params = new URLSearchParams(window.location.search);
+  var q = params.get('q');
+  if (q) { document.getElementById('searchInput').value = q; doSearch(); }
+
+  renderResults('', 'all');
+});
+</script>
 </body>
-
 </html>
