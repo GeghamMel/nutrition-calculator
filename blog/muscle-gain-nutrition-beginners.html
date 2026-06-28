@@ -211,35 +211,34 @@ if(cl==='ru'){document.getElementById('langRU').classList.add('active');document
 
 // Mobile mega menu — tap to open
 
+
 <script>
-// Mega menu — mobile tap support
+// Mega menu mobile
 (function(){
   function initMega(){
-    // Desktop: keep hover via CSS
-    // Mobile: tap to toggle
     document.querySelectorAll('.nav-item > a').forEach(function(link){
       link.addEventListener('click', function(e){
-        if(window.innerWidth > 768) return; // desktop handled by CSS
+        if(window.innerWidth > 768) return;
         var item = this.closest('.nav-item');
-        var menu = item.querySelector('.mega-menu');
+        var menu = item ? item.querySelector('.mega-menu') : null;
         if(!menu) return;
         e.preventDefault();
         e.stopPropagation();
         var isOpen = menu.classList.contains('open');
-        // close all
-        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
-        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        // close all first
+        document.querySelectorAll('.mega-menu.open').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a.mm-open').forEach(function(a){ a.classList.remove('mm-open'); });
+        // if was closed — open it; if was open — leave closed (toggle)
         if(!isOpen){
           menu.classList.add('open');
-          this.classList.add('mm-open');
+          link.classList.add('mm-open');
         }
       });
     });
-    // close on outside click
     document.addEventListener('click', function(e){
       if(!e.target.closest('.nav-item')){
-        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
-        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        document.querySelectorAll('.mega-menu.open').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a.mm-open').forEach(function(a){ a.classList.remove('mm-open'); });
       }
     });
   }
