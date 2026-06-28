@@ -640,3 +640,65 @@ a:hover { text-decoration: underline; }
   .hero-stats { gap: 24px; }
   .steps-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ===== MEGA MENU ===== */
+.nav-item { position: relative; }
+.nav-item > a { cursor: pointer; display:flex; align-items:center; gap:4px; }
+.nav-item > a::after { content:'▾'; font-size:0.7rem; opacity:0.6; }
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  padding: 24px;
+  min-width: 560px;
+  z-index: 1000;
+  border: 1px solid var(--border);
+}
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 12px; height: 12px;
+  background: white;
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  transform: translateX(-50%) rotate(45deg);
+}
+.nav-item:hover .mega-menu,
+.nav-item:focus-within .mega-menu { display: block; }
+.mega-menu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.mega-menu-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+.mega-menu-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px; border-radius: 8px;
+  color: var(--ink); text-decoration: none;
+  font-size: 0.85rem; font-weight: 500;
+  transition: background 0.15s;
+}
+.mega-menu-item:hover { background: var(--cream); color: var(--green); text-decoration: none; }
+.mega-menu-item .mm-icon { font-size: 1.1rem; flex-shrink:0; width:24px; text-align:center; }
+.mega-menu-item .mm-text { line-height: 1.2; }
+.mega-menu-item .mm-text small { display:block; font-size:0.75rem; color:var(--muted); font-weight:400; }
+.mega-menu-title {
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; color: var(--muted);
+  padding: 0 10px 8px; margin-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+  grid-column: 1/-1;
+}
+.mega-menu-footer {
+  grid-column: 1/-1; margin-top: 8px; padding-top: 12px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+.mega-menu-footer a {
+  font-size: 0.82rem; color: var(--green); font-weight: 600;
+}
+@media(max-width:768px) { .mega-menu { display:none !important; } }
