@@ -781,3 +781,15 @@ a:hover { text-decoration: underline; }
 .mega-menu-footer a { font-size:0.82rem; color:#16a34a; font-weight:600; }
 
 .nav-item > a.mm-open::after { content:'▴'; }
+
+/* Mobile mega menu text fix */
+@media(max-width:768px) {
+  .mega-menu-item,
+  .mega-menu-item .mm-text,
+  .mega-menu-item span {
+    color: #111827 !important;
+  }
+  .mega-menu-footer a {
+    color: #16a34a !important;
+  }
+}
