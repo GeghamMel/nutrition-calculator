@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fast Food Calories — McDonald's, KFC, Burger King & More | Calories & Macros</title>
+  <meta name="description" content="Calories in fast food — complete calorie table for McDonald's, KFC, Burger King, Subway, Pizza Hut and more. Find calories in burgers, pizza, fries and drinks." />
+  <link rel="canonical" href="https://calories-macros.com/fast-food-calories.html" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+  <meta property="og:title" content="Fast Food Calories — McDonald's, KFC, Burger King & More" />
+  <meta property="og:description" content="Complete calorie table for popular fast food restaurants." />
+  <meta property="og:image" content="https://calories-macros.com/og-image.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .ff-table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+    .ff-table th { padding:10px 14px; background:var(--green); color:white; font-weight:600; text-align:left; }
+    .ff-table th:not(:first-child):not(:nth-child(2)) { text-align:right; }
+    .ff-table td { padding:10px 14px; border-bottom:1px solid var(--border); }
+    .ff-table td:not(:first-child):not(:nth-child(2)) { text-align:right; }
+    .ff-table tr:hover { background:var(--cream); }
+    .ff-table .brand-row td { background:var(--green-pale); font-weight:700; font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--green); padding:8px 14px; }
+    .kcal-high { color:#dc2626; font-weight:700; }
+    .kcal-med { color:#d97706; font-weight:700; }
+    .kcal-low { color:#16a34a; font-weight:700; }
+    .brand-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:24px; }
+    .brand-tab { padding:7px 16px; border-radius:20px; border:1.5px solid var(--border); background:white; color:var(--muted); font-family:var(--font-body); font-size:0.82rem; font-weight:600; cursor:pointer; }
+    .brand-tab.active { background:var(--green); color:white; border-color:var(--green); }
+    .search-wrap { position:relative; margin-bottom:20px; }
+    .search-wrap input { width:100%; padding:12px 16px 12px 44px; border:1.5px solid var(--border); border-radius:8px; font-size:0.95rem; font-family:var(--font-body); }
+    .search-wrap::before { content:'🔍'; position:absolute; left:14px; top:50%; transform:translateY(-50%); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <a href="search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;">🔍</a>
+    <div class="header-lang" id="headerLang">
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="siteNav">
+      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <h1 data-en="Fast Food Calories" data-ru="Калории в фастфуде">Fast Food Calories</h1>
+    <p class="meta" data-en="Complete calorie table for McDonald's, KFC, Burger King, Subway, Pizza Hut and more — with protein, carbs and fat per item." data-ru="Полная таблица калорий для McDonald's, KFC, Burger King, Subway, Pizza Hut и других — белок, углеводы и жиры на позицию.">Calories for McDonald's, KFC, Burger King, Subway, Pizza Hut and more.</p>
+  </div>
+</div>
+
+<main>
+  <div class="container" style="padding:40px 20px 80px;">
+
+    <div class="search-wrap">
+      <input type="text" id="ffSearch" placeholder="Search items..." oninput="filterFF()" />
+    </div>
+
+    <div class="brand-tabs" id="brandTabs">
+      <button class="brand-tab active" data-brand="all" data-en="All" data-ru="Все">All</button>
+      <button class="brand-tab" data-brand="mcdonalds">🍔 McDonald's</button>
+      <button class="brand-tab" data-brand="kfc">🍗 KFC</button>
+      <button class="brand-tab" data-brand="burgerking">👑 Burger King</button>
+      <button class="brand-tab" data-brand="subway">🥖 Subway</button>
+      <button class="brand-tab" data-brand="pizza">🍕 Pizza</button>
+      <button class="brand-tab" data-brand="coffee" data-en="☕ Coffee & Drinks" data-ru="☕ Кофе и напитки">☕ Coffee</button>
+    </div>
+
+    <div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;">
+      <table class="ff-table">
+        <thead>
+          <tr>
+            <th data-en="Restaurant" data-ru="Ресторан">Restaurant</th>
+            <th data-en="Item" data-ru="Позиция">Item</th>
+            <th data-en="Calories" data-ru="Калории">Calories</th>
+            <th data-en="Protein" data-ru="Белок">Protein</th>
+            <th data-en="Carbs" data-ru="Углеводы">Carbs</th>
+            <th data-en="Fat" data-ru="Жиры">Fat</th>
+          </tr>
+        </thead>
+        <tbody id="ffTbody"></tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:12px;font-size:0.8rem;color:var(--muted);" data-en="Values are approximate and may vary by region and preparation method. Source: official restaurant nutrition information." data-ru="Значения приблизительны и могут варьироваться по регионам. Источник: официальная информация о питательной ценности ресторанов.">Values are approximate. Source: official restaurant nutrition data.</p>
+
+    <!-- Tips -->
+    <div style="margin-top:40px;background:var(--cream);border-radius:var(--radius);padding:28px;">
+      <h2 style="font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:16px;" data-en="Tips for eating fast food and staying on track" data-ru="Советы по употреблению фастфуда без вреда для диеты">Tips for eating fast food and staying on track</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" id="tipsGrid"></div>
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:32px;background:var(--green-pale);border-radius:var(--radius);padding:28px;text-align:center;">
+      <h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:8px;" data-en="How does fast food fit into your daily calories?" data-ru="Как фастфуд вписывается в ваши суточные калории?">How does fast food fit into your daily calories?</h3>
+      <p style="color:var(--muted);margin-bottom:16px;font-size:0.9rem;" data-en="Use our Calorie Calculator to find your daily target, then check if your fast food order fits within your budget." data-ru="Используйте наш Калькулятор калорий для расчёта суточной нормы, затем проверьте, вписывается ли ваш заказ в бюджет.">Find your daily calorie target, then see how fast food fits in.</p>
+      <a href="/" style="display:inline-block;padding:12px 28px;background:var(--green);color:white;border-radius:8px;font-weight:600;" data-en="Calculate My Daily Calories →" data-ru="Рассчитать мои суточные калории →">Calculate My Daily Calories →</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links">
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="faq.html">FAQ</a>
+      <a href="all-calculators.html" data-en="All Calculators" data-ru="Все калькуляторы">All Calculators</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+
+<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+
+<script>
+var currentLang = localStorage.getItem('lang') || 'en';
+var currentBrand = 'all';
+
+var FF_DATA = [
+  // McDONALDS
+  {brand:'mcdonalds', name_en:'Big Mac', name_ru:'Биг Мак', kcal:550, p:25, c:46, f:30},
+  {brand:'mcdonalds', name_en:'McDouble', name_ru:'МакДабл', kcal:400, p:22, c:34, f:19},
+  {brand:'mcdonalds', name_en:'Quarter Pounder with Cheese', name_ru:'Четверть Фунтера с сыром', kcal:520, p:30, c:41, f:26},
+  {brand:'mcdonalds', name_en:'McChicken', name_ru:'МакЧикен', kcal:400, p:14, c:39, f:21},
+  {brand:'mcdonalds', name_en:'Filet-O-Fish', name_ru:'Филе-О-Фиш', kcal:390, p:15, c:38, f:19},
+  {brand:'mcdonalds', name_en:'McFlurry with Oreo (regular)', name_ru:'МакФлурри с Орео', kcal:510, p:12, c:80, f:16},
+  {brand:'mcdonalds', name_en:'Large French Fries', name_ru:'Большая картошка фри', kcal:490, p:7, c:66, f:23},
+  {brand:'mcdonalds', name_en:'Medium French Fries', name_ru:'Средняя картошка фри', kcal:320, p:4, c:44, f:15},
+  {brand:'mcdonalds', name_en:'Chicken McNuggets (6 pc)', name_ru:'Наггетсы МакНаггетс (6 шт)', kcal:270, p:15, c:16, f:16},
+  {brand:'mcdonalds', name_en:'Chicken McNuggets (20 pc)', name_ru:'Наггетсы МакНаггетс (20 шт)', kcal:890, p:50, c:53, f:53},
+  {brand:'mcdonalds', name_en:'Caesar Salad with Grilled Chicken', name_ru:'Салат Цезарь с гриль-курицей', kcal:220, p:30, c:12, f:6},
+  {brand:'mcdonalds', name_en:'Egg McMuffin', name_ru:'Яичный МакМаффин', kcal:300, p:17, c:31, f:12},
+  {brand:'mcdonalds', name_en:'Big Mac Meal (large)', name_ru:'Биг Мак Мил (большой)', kcal:1100, p:34, c:128, f:53},
+  {brand:'mcdonalds', name_en:'Chocolate Shake (medium)', name_ru:'Шоколадный шейк (средний)', kcal:530, p:13, c:88, f:14},
+  // KFC
+  {brand:'kfc', name_en:'Original Recipe Chicken Breast', name_ru:'Курица Ориджинал Рецепт (грудка)', kcal:390, p:39, c:11, f:21},
+  {brand:'kfc', name_en:'Original Recipe Chicken Thigh', name_ru:'Курица Ориджинал (бедро)', kcal:280, p:18, c:8, f:19},
+  {brand:'kfc', name_en:'Zinger Burger', name_ru:'Зингер Бургер', kcal:450, p:24, c:42, f:20},
+  {brand:'kfc', name_en:'Hot Wings (6 pc)', name_ru:'Хот Вингс (6 шт)', kcal:380, p:28, c:24, f:19},
+  {brand:'kfc', name_en:'Popcorn Chicken (large)', name_ru:'Попкорн Чикен (большой)', kcal:470, p:27, c:34, f:25},
+  {brand:'kfc', name_en:'Mashed Potato with Gravy', name_ru:'Картофельное пюре с соусом', kcal:130, p:2, c:21, f:5},
+  {brand:'kfc', name_en:'Coleslaw (regular)', name_ru:'Колслоу (обычный)', kcal:140, p:1, c:20, f:7},
+  {brand:'kfc', name_en:'Large Fries', name_ru:'Большая картошка фри', kcal:410, p:5, c:56, f:19},
+  {brand:'kfc', name_en:'Bucket of 8 (Original Recipe)', name_ru:'Ведро на 8 (Ориджинал)', kcal:2360, p:208, c:60, f:148},
+  {brand:'kfc', name_en:'Crispy Twister', name_ru:'Твистер Криспи', kcal:510, p:27, c:53, f:21},
+  // BURGER KING
+  {brand:'burgerking', name_en:'Whopper', name_ru:'Воппер', kcal:660, p:28, c:49, f:40},
+  {brand:'burgerking', name_en:'Whopper with Cheese', name_ru:'Воппер с сыром', kcal:740, p:32, c:50, f:46},
+  {brand:'burgerking', name_en:'Double Whopper', name_ru:'Двойной Воппер', kcal:900, p:48, c:49, f:58},
+  {brand:'burgerking', name_en:'Crispy Chicken Sandwich', name_ru:'Криспи Чикен Сэндвич', kcal:660, p:30, c:62, f:32},
+  {brand:'burgerking', name_en:'Chicken Fries (9 pc)', name_ru:'Чикен Фрайс (9 шт)', kcal:290, p:16, c:25, f:14},
+  {brand:'burgerking', name_en:'Onion Rings (large)', name_ru:'Луковые кольца (большие)', kcal:410, p:5, c:55, f:19},
+  {brand:'burgerking', name_en:'Large Fries', name_ru:'Большая картошка фри', kcal:430, p:5, c:59, f:20},
+  {brand:'burgerking', name_en:'Impossible Whopper', name_ru:'Импоссибл Воппер', kcal:630, p:25, c:58, f:34},
+  {brand:'burgerking', name_en:'Vanilla Shake (medium)', name_ru:'Ванильный шейк (средний)', kcal:570, p:13, c:97, f:14},
+  // SUBWAY
+  {brand:'subway', name_en:'6" Turkey Breast (white bread)', name_ru:'15см Грудка индейки (белый хлеб)', kcal:280, p:18, c:46, f:3.5},
+  {brand:'subway', name_en:'6" Chicken Teriyaki (white bread)', name_ru:'15см Терияки курица', kcal:370, p:26, c:53, f:5},
+  {brand:'subway', name_en:'6" Tuna (white bread)', name_ru:'15см Тунец', kcal:480, p:20, c:44, f:26},
+  {brand:'subway', name_en:'6" Veggie Delite', name_ru:'15см Вегги Делайт', kcal:200, p:9, c:39, f:2},
+  {brand:'subway', name_en:'Footlong Meatball Marinara', name_ru:'30см Митболл Маринара', kcal:960, p:42, c:134, f:32},
+  {brand:'subway', name_en:'Footlong Chicken Breast', name_ru:'30см Куриная грудка', kcal:560, p:46, c:92, f:8},
+  {brand:'subway', name_en:'Avocado (extra)', name_ru:'Авокадо (добавка)', kcal:60, p:1, c:3, f:6},
+  {brand:'subway', name_en:'Cookies (1 pc)', name_ru:'Печенье (1 шт)', kcal:220, p:2, c:30, f:10},
+  // PIZZA
+  {brand:'pizza', name_en:"Pizza Hut Pepperoni (1 slice, medium)", name_ru:'Pizza Hut Пепперони (1 кусок, средняя)', kcal:300, p:13, c:34, f:13},
+  {brand:'pizza', name_en:"Pizza Hut Margherita (1 slice, medium)", name_ru:'Pizza Hut Маргарита (1 кусок)', kcal:240, p:11, c:34, f:8},
+  {brand:'pizza', name_en:"Domino's Pepperoni (1 slice, large)", name_ru:"Domino's Пепперони (1 кусок, большая)", kcal:300, p:13, c:35, f:13},
+  {brand:'pizza', name_en:"Domino's Cheese (1 slice, large)", name_ru:"Domino's Сыр (1 кусок, большая)", kcal:265, p:12, c:35, f:9},
+  {brand:'pizza', name_en:'Thin Crust Pizza (1 slice avg)', name_ru:'Тонкое тесто (1 кусок, среднее)', kcal:220, p:10, c:28, f:8},
+  {brand:'pizza', name_en:'Stuffed Crust Pizza (1 slice)', name_ru:'Пицца с бортиком (1 кусок)', kcal:380, p:17, c:44, f:15},
+  {brand:'pizza', name_en:'Garlic Bread (2 slices)', name_ru:'Чесночный хлеб (2 ломтика)', kcal:290, p:8, c:38, f:13},
+  {brand:'pizza', name_en:'BBQ Chicken Wings (6 pc)', name_ru:'Крылышки BBQ (6 шт)', kcal:320, p:26, c:18, f:16},
+  // COFFEE & DRINKS
+  {brand:'coffee', name_en:'Starbucks Caffe Latte (grande, whole milk)', name_ru:'Starbucks Латте (гранде, цельное молоко)', kcal:250, p:13, c:24, f:11},
+  {brand:'coffee', name_en:'Starbucks Frappuccino (mocha, grande)', name_ru:'Starbucks Фраппуччино (мокко, гранде)', kcal:420, p:5, c:67, f:15},
+  {brand:'coffee', name_en:'Starbucks Flat White (grande)', name_ru:'Starbucks Флэт Уайт (гранде)', kcal:220, p:12, c:18, f:9},
+  {brand:'coffee', name_en:"McDonald's Latte (medium)", name_ru:"McDonald's Латте (средний)", kcal:190, p:10, c:24, f:6},
+  {brand:'coffee', name_en:"McDonald's Cappuccino (medium)", name_ru:"McDonald's Капуччино (средний)", kcal:130, p:8, c:14, f:5},
+  {brand:'coffee', name_en:'Regular Coke (medium, 400ml)', name_ru:'Кока-Кола (средняя, 400мл)', kcal:170, p:0, c:45, f:0},
+  {brand:'coffee', name_en:'Orange Juice (250ml)', name_ru:'Апельсиновый сок (250мл)', kcal:120, p:2, c:28, f:0},
+  {brand:'coffee', name_en:'Energy Drink (250ml can)', name_ru:'Энергетик (250мл банка)', kcal:110, p:1, c:28, f:0},
+];
+
+function getKcalClass(kcal) {
+  if (kcal >= 600) return 'kcal-high';
+  if (kcal >= 400) return 'kcal-med';
+  return 'kcal-low';
+}
+
+var BRAND_NAMES = {
+  mcdonalds: "McDonald's", kfc: 'KFC', burgerking: 'Burger King',
+  subway: 'Subway', pizza: 'Pizza', coffee: 'Coffee & Drinks'
+};
+
+function renderFF(brand, query) {
+  var l = currentLang;
+  var tbody = document.getElementById('ffTbody');
+  var filtered = FF_DATA.filter(function(item) {
+    var matchBrand = brand === 'all' || item.brand === brand;
+    var matchQ = !query ||
+      item.name_en.toLowerCase().includes(query) ||
+      item.name_ru.toLowerCase().includes(query);
+    return matchBrand && matchQ;
+  });
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;padding:24px;color:var(--muted);">' + (l==='ru'?'Ничего не найдено':'No results found') + '</td></tr>';
+    return;
+  }
+
+  var html = '';
+  var lastBrand = '';
+  filtered.forEach(function(item) {
+    if (item.brand !== lastBrand && brand === 'all') {
+      html += '<tr class="brand-row"><td colspan="6">' + BRAND_NAMES[item.brand] + '</td></tr>';
+      lastBrand = item.brand;
+    }
+    var name = l === 'ru' ? item.name_ru : item.name_en;
+    var kcalClass = getKcalClass(item.kcal);
+    html += '<tr>' +
+      '<td style="color:var(--muted);font-size:0.8rem;">' + BRAND_NAMES[item.brand] + '</td>' +
+      '<td style="font-weight:500;">' + name + '</td>' +
+      '<td class="' + kcalClass + '">' + item.kcal + '</td>' +
+      '<td style="text-align:right;">' + item.p + 'g</td>' +
+      '<td style="text-align:right;">' + item.c + 'g</td>' +
+      '<td style="text-align:right;">' + item.f + 'g</td>' +
+      '</tr>';
+  });
+  tbody.innerHTML = html;
+}
+
+function filterFF() {
+  var q = document.getElementById('ffSearch').value.toLowerCase().trim();
+  renderFF(currentBrand, q);
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (t.includes('<')) el.innerHTML = t; else el.textContent = t;
+  });
+  renderFF(currentBrand, document.getElementById('ffSearch').value.toLowerCase());
+  renderTips();
+  localStorage.setItem('lang', lang);
+}
+
+function renderTips() {
+  var l = currentLang;
+  var tips_en = [
+    {icon:'🥗', tip:'Choose grilled over fried — grilled chicken saves 150–200 kcal vs crispy'},
+    {icon:'🥤', tip:'Skip the soda — choose water or unsweetened drinks to save 150–300 kcal'},
+    {icon:'🍟', tip:'Order medium fries instead of large — saves 170 kcal at McDonald\'s'},
+    {icon:'🧀', tip:'Skip extra cheese and sauces — each addition adds 50–150 kcal'},
+    {icon:'🥙', tip:'At Subway, choose turkey or chicken over tuna (saves ~200 kcal)'},
+    {icon:'🍕', tip:'Thin crust pizza saves 60–100 kcal per slice vs stuffed crust'},
+  ];
+  var tips_ru = [
+    {icon:'🥗', tip:'Выбирайте гриль вместо жареного — гриль-курица экономит 150–200 ккал'},
+    {icon:'🥤', tip:'Откажитесь от газировки — вода или напитки без сахара экономят 150–300 ккал'},
+    {icon:'🍟', tip:'Берите среднюю картошку фри вместо большой — экономия 170 ккал'},
+    {icon:'🧀', tip:'Откажитесь от лишнего сыра и соусов — каждая добавка +50–150 ккал'},
+    {icon:'🥙', tip:'В Subway выбирайте индейку или курицу вместо тунца (экономия ~200 ккал)'},
+    {icon:'🍕', tip:'Тонкое тесто экономит 60–100 ккал на кусок по сравнению с бортиком'},
+  ];
+  var tips = l === 'ru' ? tips_ru : tips_en;
+  document.getElementById('tipsGrid').innerHTML = tips.map(function(t) {
+    return '<div style="display:flex;gap:10px;align-items:flex-start;">' +
+      '<span style="font-size:1.3rem;flex-shrink:0;">' + t.icon + '</span>' +
+      '<p style="font-size:0.85rem;color:var(--muted);margin:0;">' + t.tip + '</p>' +
+      '</div>';
+  }).join('');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('siteNav').classList.toggle('open'); });
+  window.addEventListener('scroll', function(){
+    var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+    document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+    document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+  });
+
+  document.querySelectorAll('.brand-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.brand-tab').forEach(function(t){ t.classList.remove('active'); });
+      this.classList.add('active');
+      currentBrand = this.getAttribute('data-brand');
+      filterFF();
+    });
+  });
+
+  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+
+  renderFF('all', '');
+  renderTips();
+});
+</script>
+</body>
+</html>
