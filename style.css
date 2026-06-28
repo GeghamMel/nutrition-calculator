@@ -701,4 +701,28 @@ a:hover { text-decoration: underline; }
 .mega-menu-footer a {
   font-size: 0.82rem; color: var(--green); font-weight: 600;
 }
-@media(max-width:768px) { .mega-menu { display:none !important; } }
+@media(max-width:768px) {
+  .mega-menu {
+    display: none;
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 8px 0 8px 16px;
+    min-width: unset;
+    background: #f8f8f5;
+    margin: 4px 0;
+  }
+  .mega-menu::before { display:none; }
+  .mega-menu.open { display: block; }
+  .mega-menu-grid, .mega-menu-grid-3 {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .mega-menu-title { display:none; }
+  .mega-menu-footer { text-align:left; padding-top:8px; margin-top:4px; }
+  .mega-menu-item { padding: 8px 10px; font-size:0.9rem; }
+  .nav-item > a::after { content:'▾'; transition: transform 0.2s; }
+  .nav-item > a.open::after { content:'▴'; }
+  .nav-item { width:100%; }
+}
