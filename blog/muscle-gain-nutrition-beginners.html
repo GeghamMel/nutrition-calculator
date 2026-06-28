@@ -199,7 +199,7 @@
 <div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
 <script>
 document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('hamburger').addEventListener('click',function(){document.getElementById('siteNav').classList.toggle('open');});
+
 window.addEventListener('scroll',function(){var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';document.getElementById('scrollTop').style.display=s>400?'flex':'none';});
 var cl=localStorage.getItem('lang')||'en';
 function al(l){cl=l;document.documentElement.lang=l;var e=document.getElementById('article-en'),r=document.getElementById('article-ru'),t=document.querySelector('.page-hero h1'),m=document.querySelector('.page-hero .meta');if(l==='ru'){if(e)e.style.display='none';if(r)r.style.display='block';if(t&&t.getAttribute('data-ru'))t.innerHTML=t.getAttribute('data-ru');if(m&&m.getAttribute('data-ru'))m.innerHTML=m.getAttribute('data-ru');}else{if(e)e.style.display='block';if(r)r.style.display='none';if(t&&t.getAttribute('data-en'))t.innerHTML=t.getAttribute('data-en');if(m&&m.getAttribute('data-en'))m.innerHTML=m.getAttribute('data-en');}document.querySelectorAll('[data-en]').forEach(function(el){var t=el.getAttribute('data-'+l);if(t)el.innerHTML=t;});localStorage.setItem('lang',l);}
@@ -213,36 +213,54 @@ if(cl==='ru'){document.getElementById('langRU').classList.add('active');document
 
 
 <script>
-/* Mega menu mobile toggle */
+/* Mega menu */
 (function(){
-  function init(){
-    var items = document.querySelectorAll('.nav-item');
-    items.forEach(function(item){
-      var trigger = item.querySelector('a');
-      var menu = item.querySelector('.mega-menu');
-      if(!trigger || !menu) return;
-      trigger.addEventListener('click', function(e){
-        if(window.innerWidth >= 769) return;
+  var hamburger = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+
+  // Hamburger open/close
+  if(hamburger && nav){
+    hamburger.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+
+  // Mega menu mobile
+  function initMega(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return; // desktop uses CSS hover
+        var item = this.closest('.nav-item');
+        var menu = item && item.querySelector('.mega-menu');
+        if(!menu) return;
         e.preventDefault();
         e.stopPropagation();
-        var opening = !menu.classList.contains('open');
-        // close all
+        var isOpen = menu.classList.contains('open');
+        // close all menus
         document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
         document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
-        if(opening){
+        // toggle
+        if(!isOpen){
           menu.classList.add('open');
-          trigger.classList.add('mm-open');
+          this.classList.add('mm-open');
         }
       });
     });
+
+    // close on outside tap
     document.addEventListener('click', function(e){
-      if(!e.target.closest('.nav-item')){
+      if(!e.target.closest('.nav-item') && !e.target.closest('#hamburger')){
         document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
         document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(nav && !e.target.closest('#siteNav')) nav.classList.remove('open');
       }
     });
   }
-  document.readyState==='loading' ? document.addEventListener('DOMContentLoaded',init) : init();
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', initMega)
+    : initMega();
 })();
 </script>
 </body>
