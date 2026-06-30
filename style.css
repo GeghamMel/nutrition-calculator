@@ -640,6 +640,7 @@ a:hover { text-decoration: underline; }
   .hero-stats { gap: 24px; }
   .steps-grid { grid-template-columns: 1fr 1fr; }
 }
+<<<<<<< HEAD
 
 
 /* ===== MEGA MENU ===== */
@@ -728,3 +729,5 @@ a:hover { text-decoration: underline; }
   border-top:1px solid #e5e7eb; text-align:center;
 }
 .mega-menu-footer a { font-size:0.82rem; color:#16a34a; font-weight:600; }
+=======
+>>>>>>> be478c928222338ae1da9bf8c55f36af12637eea
