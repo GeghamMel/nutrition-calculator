@@ -23,7 +23,7 @@
   <meta property="og:description" content="Estimate your body fat percentage using the US Navy method. No equipment needed, just a tape measure." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://calories-macros.com/body-fat-calculator.html" />
-  <meta property="og:image" content="https://calories-macros.com/og-image.svg" />
+  <meta property="og:image" content="https://calories-macros.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Calories & Macros" />
@@ -31,15 +31,15 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Body Fat Percentage Calculator | Calories & Macros" />
   <meta name="twitter:description" content="Estimate your body fat percentage using the US Navy method. No equipment needed, just a tape measure." />
-  <meta name="twitter:image" content="https://calories-macros.com/og-image.svg" />
+  <meta name="twitter:image" content="https://calories-macros.com/og-image.png" />
 </head>
 <body>
 <header class="site-header">
   <div class="inner">
     <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <a href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search" aria-label="Search">🔍</a>
     <div class="header-lang" id="headerLang"><button class="active" id="headerLangEN">EN</button><button id="headerLangRU">RU</button></div>
     <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
-<<<<<<< HEAD
         <nav class="site-nav" id="siteNav">
       <div class="nav-item">
         <a href="/all-calculators.html" data-en="Calculators" data-ru="Калькуляторы">Calculators</a>
@@ -98,13 +98,6 @@
       </div>
       <a href="/about.html" data-en="About" data-ru="О сайте">About</a>
       <a href="/contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-=======
-    <nav class="site-nav" id="siteNav">
-      <a href="/" data-en="Calculator" data-hy="Հաշվիչ" data-ru="Калькулятор">Calculator</a>
-      <a href="blog/" data-en="Blog" data-hy="Բլոգ" data-ru="Блог">Blog</a>
-      <a href="about.html" data-en="About" data-hy="Մեր մասին" data-ru="О сайте">About</a>
-      <a href="contact.html" data-en="Contact" data-hy="Կապ" data-ru="Контакт">Contact</a>
->>>>>>> be478c928222338ae1da9bf8c55f36af12637eea
       <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
     </nav>
   </div>
@@ -113,64 +106,79 @@
 <section class="hero">
   <div class="hero-content">
     <div class="hero-eyebrow" data-en="Free Health Calculator" data-ru="Бесплатный калькулятор здоровья">Free Health Calculator</div>
-    <h1 data-en="Body Fat <em>Percentage</em> Calculator" data-hy="Mаrmnаyin Chаrpi <em>Tokosy</em> Hаshvich" data-ru="Калькулятор <em>процента жира</em> в теле">Body Fat <em>Percentage</em> Calculator</h1>
-    <p data-en="Estimate your body fat percentage using the US Navy method — no equipment needed, just a tape measure." data-hy="Gnаhаtel mаrmnаyin chаrpi tokоsy VMS АMN metodov — sаrkаvorumeр petk chen, miаyn sаntimetrkаn lentа:" data-ru="Оцените процент жира методом ВМС США — нужна только сантиметровая лента.">Estimate your body fat percentage using the US Navy method — no equipment needed, just a tape measure.</p>
-    <a href="#calculator" class="btn-scroll" data-en="Calculate Body Fat ↓" data-hy="Hаshvel Mаrmnаyin Chаrpi % ↓" data-ru="Рассчитать % жира ↓">Calculate Body Fat ↓</a>
+    <h1 data-en="Body Fat <em>Percentage</em> Calculator" data-ru="Калькулятор <em>процента жира</em> в теле">Body Fat <em>Percentage</em> Calculator</h1>
+    <p data-en="Estimate your body fat percentage using the US Navy method — no equipment needed, just a tape measure." data-ru="Оцените процент жира методом ВМС США — нужна только сантиметровая лента.">Estimate your body fat percentage using the US Navy method — no equipment needed, just a tape measure.</p>
+    <a href="#calculator" class="btn-scroll" data-en="Calculate Body Fat ↓" data-ru="Рассчитать % жира ↓">Calculate Body Fat ↓</a>
   </div>
+
+
 </section>
+
+<div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;max-width:680px;margin:16px auto 0;border-radius:0 8px 8px 0;">
+  <p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;" data-en="Your saved body fat result:" data-ru="Ваш сохранённый % жира:">Your saved body fat result:</p>
+  <p style="font-size:0.85rem;color:var(--muted);" id="savedBannerText"></p>
+  <div style="display:flex;gap:10px;margin-top:10px;">
+    <button onclick="document.getElementById('savedBanner').style.display='none'" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);" data-en="Dismiss" data-ru="Закрыть">Dismiss</button>
+  </div>
+</div>
 
 <section class="calc-section" id="calculator">
   <div class="container">
-    <div class="section-label" data-en="Body Fat Calculator" data-hy="Մarmnاyin Чаrпи Hашвич" data-ru="Калькулятор % жира">Body Fat Calculator</div>
-    <h2 class="section-title" data-en="Enter your measurements" data-hy="Mutqаgrel ձer chаfаgrumerov" data-ru="Введите замеры">Enter your measurements</h2>
-    <p class="section-sub" data-en="Measure at the widest point. Use a flexible tape measure and measure in the morning." data-hy="Chаfаgrel аmene lаyn ktаom: Ogtаgorcel knrich sаntimetrаkаn lentа ev chаfаgrel аrаvoty:" data-ru="Измеряйте в самом широком месте. Используйте гибкую ленту, лучше утром.">Measure at the widest point. Use a flexible tape measure and measure in the morning.</p>
+    <div class="section-label" data-en="Body Fat Calculator" data-ru="Калькулятор % жира">Body Fat Calculator</div>
+    <h2 class="section-title" data-en="Enter your measurements" data-ru="Введите замеры">Enter your measurements</h2>
+    <p class="section-sub" data-en="Measure at the widest point. Use a flexible tape measure and measure in the morning." data-ru="Измеряйте в самом широком месте. Используйте гибкую ленту, лучше утром.">Measure at the widest point. Use a flexible tape measure and measure in the morning.</p>
 
     <div class="calc-card">
       <div class="field" style="margin-bottom:20px;">
-        <label data-en="Sex" data-hy="Սեռ" data-ru="Пол">Sex</label>
+        <label data-en="Gender" data-ru="Пол">Gender</label>
         <div class="gender-toggle">
-          <button class="gender-btn active" id="genderMale" data-en="♂ Male" data-hy="♂ Արական" data-ru="♂ Мужской">♂ Male</button>
-          <button class="gender-btn" id="genderFemale" data-en="♀ Female" data-hy="♀ Իգական" data-ru="♀ Женский">♀ Female</button>
+          <button class="gender-btn active" id="genderMale" data-en="♂ Male" data-ru="♂ Мужской">♂ Male</button>
+          <button class="gender-btn" id="genderFemale" data-en="♀ Female" data-ru="♀ Женский">♀ Female</button>
         </div>
       </div>
       <div class="calc-grid">
         <div class="field">
-          <label for="height" data-en="Height (cm)" data-hy="Հասակ (սմ)" data-ru="Рост (см)">Height (cm)</label>
+          <label for="height" data-en="Height (cm)" data-ru="Рост (см)">Height (cm)</label>
           <input type="number" id="height" min="100" max="250" placeholder="e.g. 175" />
         </div>
         <div class="field">
-          <label for="weight" data-en="Weight (kg)" data-hy="Քաշ (կգ)" data-ru="Вес (кг)">Weight (kg)</label>
+          <label for="weight" data-en="Weight (kg)" data-ru="Вес (кг)">Weight (kg)</label>
           <input type="number" id="weight" min="30" max="300" placeholder="e.g. 80" />
         </div>
         <div class="field">
-          <label for="neck" data-en="Neck circumference (cm)" data-hy="Pаrаnoci shrdjаpаtilt (сm)" data-ru="Обхват шеи (см)">Neck circumference (cm)</label>
+          <label for="neck" data-en="Neck circumference (cm)" data-ru="Обхват шеи (см)">Neck circumference (cm)</label>
           <input type="number" id="neck" min="20" max="70" placeholder="e.g. 38" />
         </div>
         <div class="field">
-          <label for="waist" data-en="Waist circumference (cm)" data-hy="Grаnki shrdjаpаtilt (сm)" data-ru="Обхват талии (см)">Waist circumference (cm)</label>
+          <label for="waist" data-en="Waist circumference (cm)" data-ru="Обхват талии (см)">Waist circumference (cm)</label>
           <input type="number" id="waist" min="40" max="200" placeholder="e.g. 85" />
         </div>
         <div class="field" id="hipField" style="display:none; grid-column:1/-1;">
-          <label for="hip" data-en="Hip circumference (cm) — women only" data-hy="Konkаyi shrdjаpаtilt (сm) — miаyn kаnаnc hаmаr" data-ru="Обхват бёдер (см) — только для женщин">Hip circumference (cm) — women only</label>
+          <label for="hip" data-en="Hip circumference (cm) — women only" data-ru="Обхват бёдер (см) — только для женщин">Hip circumference (cm) — women only</label>
           <input type="number" id="hip" min="50" max="200" placeholder="e.g. 95" />
         </div>
       </div>
-      <button class="btn-calc" id="calcBtn" data-en="Calculate Body Fat →" data-hy="Hаshvel Mаrmnаyin Chаrpi % →" data-ru="Рассчитать % жира →">Calculate Body Fat →</button>
-      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please fill in all fields correctly." data-hy="Խնդրում ենք ճիշտ լրացնել բոլոր դաշտերը:" data-ru="Пожалуйста, заполните все поля правильно.">Please fill in all fields correctly.</p>
+      <button class="btn-calc" id="calcBtn" data-en="Calculate Body Fat →" data-ru="Рассчитать % жира →">Calculate Body Fat →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please fill in all fields correctly." data-ru="Пожалуйста, заполните все поля правильно.">Please fill in all fields correctly.</p>
 
       <div class="calc-results" id="calcResults">
         <div class="calories-display" id="bfDisplay">
           <div class="kcal-number" id="bfPct">—</div>
-          <div class="kcal-label" data-en="body fat percentage" data-hy="mаrmnаyin chаrpi tokosy" data-ru="процент жира в теле">body fat percentage</div>
+          <div class="kcal-label" data-en="body fat percentage" data-ru="процент жира в теле">body fat percentage</div>
         </div>
         <div style="text-align:center; margin-bottom:20px;">
           <span style="display:inline-block; background:var(--green); color:white; padding:6px 20px; border-radius:20px; font-weight:600;" id="bfCategory">—</span>
         </div>
         <div class="macros-grid">
-          <div class="macro-item"><div class="macro-value" id="fatMass">—</div><div class="macro-name" data-en="Fat mass (kg)" data-hy="Chаrpi mаss (кg)" data-ru="Жировая масса (кг)">Fat mass (kg)</div></div>
-          <div class="macro-item"><div class="macro-value" id="leanMass">—</div><div class="macro-name" data-en="Lean mass (kg)" data-hy="Khmаbаdаtour mаss (кg)" data-ru="Сухая масса (кг)">Lean mass (kg)</div></div>
+          <div class="macro-item"><div class="macro-value" id="fatMass">—</div><div class="macro-name" data-en="Fat mass (kg)" data-ru="Жировая масса (кг)">Fat mass (kg)</div></div>
+          <div class="macro-item"><div class="macro-value" id="leanMass">—</div><div class="macro-name" data-en="Lean mass (kg)" data-ru="Сухая масса (кг)">Lean mass (kg)</div></div>
         </div>
         <div class="result-note" id="resultNote"></div>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+          <button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save results" data-ru="💾 Сохранить результаты">💾 Save results</button>
+          <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+        </div>
+        <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;" data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
       </div>
     </div>
   </div>
@@ -180,40 +188,71 @@
 
 <section class="how-section">
   <div class="container">
-    <div class="section-label" data-en="Body fat ranges" data-hy="Mаrmnаyin chаrpi diаpаzonner" data-ru="Диапазоны % жира">Body fat ranges</div>
-    <h2 class="section-title" data-en="What is a healthy body fat percentage?" data-hy="Inch е аroghch mаrmnаyin chаrpi tokоsy?" data-ru="Какой % жира считается нормой?">What is a healthy body fat percentage?</h2>
+    <div class="section-label" data-en="Body fat ranges" data-ru="Диапазоны % жира">Body fat ranges</div>
+    <h2 class="section-title" data-en="What is a healthy body fat percentage?" data-ru="Какой % жира считается нормой?">What is a healthy body fat percentage?</h2>
     <div class="steps-grid">
-      <div class="step"><div class="step-num" style="font-size:1.6rem;">🏅</div><h3 data-en="Essential fat" data-hy="Аnhrаzhesht chаrp" data-ru="Незаменимый жир">Essential fat</h3><p data-en="Men: 2–5% | Women: 10–13%. The minimum required for basic physiological functions. Below this is dangerous." data-hy="Tghаmаrdk 2–5% | Kаnik 10–13%: Binkаrаyin fiziologiаkаn gorkuntyаn hаmаr аnhrаzhesht minimum: Аyd ktcе vtsаnаli е:" data-ru="Мужчины: 2–5% | Женщины: 10–13%. Минимум для базовых физиологических функций. Ниже — опасно.">Men: 2–5% | Women: 10–13%. Minimum for basic physiological functions.</p></div>
-      <div class="step"><div class="step-num" style="font-size:1.6rem;">🏃</div><h3 data-en="Athletic" data-hy="Sporttаyin" data-ru="Спортивный">Athletic</h3><p data-en="Men: 6–13% | Women: 14–20%. Typical range for competitive athletes and highly active individuals." data-hy="Tghаmаrdk 6–13% | Kаnik 14–20%: Tipikаkаn diаpаzon sportаsenneri ev bаrd аktivutyаmb mаrdkаnc hаmаr:" data-ru="Мужчины: 6–13% | Женщины: 14–20%. Типичный диапазон для спортсменов и очень активных людей.">Men: 6–13% | Women: 14–20%. Typical for athletes and highly active individuals.</p></div>
-      <div class="step"><div class="step-num" style="font-size:1.6rem;">✅</div><h3 data-en="Fitness" data-hy="Fitnes" data-ru="Фитнес">Fitness</h3><p data-en="Men: 14–17% | Women: 21–24%. Good fitness level with a healthy appearance for most adults." data-hy="Tghаmаrdk 14–17% | Kаnik 21–24%: Lаv fitnesi mаkаrdаk аroghch teslukkov:" data-ru="Мужчины: 14–17% | Женщины: 21–24%. Хороший уровень физической формы для большинства взрослых.">Men: 14–17% | Women: 21–24%. Good fitness level for most adults.</p></div>
-      <div class="step"><div class="step-num" style="font-size:1.6rem;">⚠️</div><h3 data-en="Overweight / obese" data-hy="Kаshi аvelcuk / girаkаnutyun" data-ru="Избыток / ожирение">Overweight / obese</h3><p data-en="Men: 25%+ | Women: 32%+. Elevated health risks. Dietary changes and exercise are recommended." data-hy="Tghаmаrdk 25%+ | Kаnik 32%+: Bаrcаcvаtz аroghchutyаn risknner: Detаrkel е kerаkroi pokhоkhutyunner ev mаrzumner:" data-ru="Мужчины: 25%+ | Женщины: 32%+. Повышенный риск для здоровья. Рекомендуется изменить питание и начать тренироваться.">Men: 25%+ | Women: 32%+. Elevated health risks.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">🏅</div><h3 data-en="Essential fat" data-ru="Незаменимый жир">Essential fat</h3><p data-en="Men: 2–5% | Women: 10–13%. The minimum required for basic physiological functions. Below this is dangerous." data-ru="Мужчины: 2–5% | Женщины: 10–13%. Минимум для базовых физиологических функций. Ниже — опасно.">Men: 2–5% | Women: 10–13%. Minimum for basic physiological functions.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">🏃</div><h3 data-en="Athletic" data-ru="Спортивный">Athletic</h3><p data-en="Men: 6–13% | Women: 14–20%. Typical range for competitive athletes and highly active individuals." data-ru="Мужчины: 6–13% | Женщины: 14–20%. Типичный диапазон для спортсменов и очень активных людей.">Men: 6–13% | Women: 14–20%. Typical for athletes and highly active individuals.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">✅</div><h3 data-en="Fitness" data-ru="Фитнес">Fitness</h3><p data-en="Men: 14–17% | Women: 21–24%. Good fitness level with a healthy appearance for most adults." data-ru="Мужчины: 14–17% | Женщины: 21–24%. Хороший уровень физической формы для большинства взрослых.">Men: 14–17% | Women: 21–24%. Good fitness level for most adults.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">⚠️</div><h3 data-en="Overweight / obese" data-ru="Избыток / ожирение">Overweight / obese</h3><p data-en="Men: 25%+ | Women: 32%+. Elevated health risks. Dietary changes and exercise are recommended." data-ru="Мужчины: 25%+ | Женщины: 32%+. Повышенный риск для здоровья. Рекомендуется изменить питание и начать тренироваться.">Men: 25%+ | Women: 32%+. Elevated health risks.</p></div>
     </div>
   </div>
 </section>
 
 <section class="blog-section">
   <div class="container">
-    <div class="section-label" data-en="More calculators" data-hy="Аyl hаshvichner" data-ru="Другие калькуляторы">More calculators</div>
-    <h2 class="section-title" data-en="Related tools" data-hy="Аrrnchor gortsikner" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
     <div class="blog-grid">
-      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-hy="Кalorianer" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-hy="Kаloriаneri ev Mаkroneri Hаshvich" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-hy="Stаcel ձer orаkаn kаloriаneri ev mаkroneri npаtаknery:" data-ru="Суточная норма калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-hy="Бaцаl →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-hy="ԶՄԻ Հաշվիչ" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-hy="Stvаrаgel, аrdyok ձer kаshy аroghch chаfаgrovnerov е:" data-ru="ИМТ — индекс массы тела.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-hy="Бaцаl →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="water-intake-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Hydration" data-hy="Джриزркум" data-ru="Вода">Hydration</span><h3 data-en="Water Intake Calculator" data-hy="Ջրի հաշվիչ" data-ru="Калькулятор воды">Water Intake Calculator</h3><p data-en="Daily water intake based on your weight." data-hy="Orаkаn djri otаtrum himnvаtz ձer kаshi vrа:" data-ru="Суточная норма воды.">Daily water intake based on your weight.</p><span class="blog-read-more" data-en="Open →" data-hy="Бaцаl →" data-ru="Открыть →">Open →</span></div></a>
-      <a href="ideal-weight-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Weight" data-hy="Kаsh" data-ru="Вес">Weight</span><h3 data-en="Ideal Weight Calculator" data-hy="Իդեալական Քաշի Հաշվիչ" data-ru="Идеальный вес">Ideal Weight Calculator</h3><p data-en="Find your ideal body weight range." data-hy="Gtel ձer ideаlаkаn kаshi diаpаzony:" data-ru="Идеальный вес по 4 формулам.">Find your ideal body weight range.</p><span class="blog-read-more" data-en="Open →" data-hy="Бaцаl →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-ru="Суточная норма калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-ru="ИМТ — индекс массы тела.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="water-intake-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Hydration" data-ru="Вода">Hydration</span><h3 data-en="Water Intake Calculator" data-ru="Калькулятор воды">Water Intake Calculator</h3><p data-en="Daily water intake based on your weight." data-ru="Суточная норма воды.">Daily water intake based on your weight.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="ideal-weight-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Weight" data-ru="Вес">Weight</span><h3 data-en="Ideal Weight Calculator" data-ru="Идеальный вес">Ideal Weight Calculator</h3><p data-en="Find your ideal body weight range." data-ru="Идеальный вес по 4 формулам.">Find your ideal body weight range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-hy="Аnvchаr аroghchаkаn hаshvichner: Voch bzhshkаkаn khоrurrd:" data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
-    <div class="footer-links"><a href="about.html" data-en="About" data-hy="Մեր մասին" data-ru="О сайте">About</a><a href="blog/" data-en="Blog" data-hy="Բլոգ" data-ru="Блог">Blog</a><a href="contact.html" data-en="Contact" data-hy="Կապ" data-ru="Контакт">Contact</a><a href="privacy.html" data-en="Privacy Policy" data-hy="Գաղտնիության քաղաքականություն" data-ru="Политика конфиденциальности">Privacy Policy</a><a href="terms.html" data-en="Terms of Use" data-hy="Օգտագործման պայմաններ" data-ru="Условия использования">Terms of Use</a></div>
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links"><a href="about.html" data-en="About" data-ru="О сайте">About</a><a href="blog/" data-en="Blog" data-ru="Блог">Blog</a><a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a><a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a><a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+      <a href="faq.html" data-en="FAQ" data-ru="FAQ">FAQ</a></div>
   </div>
   <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
 <script>
+
+function savePageResults() {
+  var results = {};
+  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct').forEach(function(el, i) {
+    if (el.textContent && el.textContent !== '—') results['val_' + i] = el.textContent;
+  });
+  // Get main result text
+  var mainEl = document.querySelector('.calc-results .kcal-number, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct');
+  if (mainEl) results.mainValue = mainEl.textContent;
+  results.savedAt = new Date().toLocaleDateString();
+  localStorage.setItem('cm_saved_bodyfat', JSON.stringify(results));
+  var msg = document.getElementById('saveMsg');
+  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
+}
+
+// Show saved banner on load
+window.addEventListener('load', function() {
+  var saved = localStorage.getItem('cm_saved_bodyfat');
+  if (!saved) return;
+  try {
+    var data = JSON.parse(saved);
+    if (!data.mainValue) return;
+    var banner = document.getElementById('savedBanner');
+    var bannerText = document.getElementById('savedBannerText');
+    if (!banner || !bannerText) return;
+    var l = localStorage.getItem('lang') || 'en';
+    bannerText.textContent = (l==='ru' ? 'Результат: ' : 'Result: ') + data.mainValue + ' · ' + (l==='ru' ? 'Сохранено: ' : 'Saved: ') + data.savedAt;
+    banner.style.display = 'block';
+  } catch(e) {}
+});
 document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('hamburger').addEventListener('click', function(){document.getElementById('siteNav').classList.toggle('open');});
+
 let gender='male';
 document.getElementById('genderMale').addEventListener('click',function(){gender='male';this.classList.add('active');document.getElementById('genderFemale').classList.remove('active');document.getElementById('hipField').style.display='none';});
 document.getElementById('genderFemale').addEventListener('click',function(){gender='female';this.classList.add('active');document.getElementById('genderMale').classList.remove('active');document.getElementById('hipField').style.display='block';});
@@ -288,7 +327,6 @@ document.getElementById('calcBtn').addEventListener('click',function(){
   btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
 })();
 </script>
-<<<<<<< HEAD
 <script>
 /* Mega menu */
 (function(){
@@ -326,7 +364,5 @@ document.getElementById('calcBtn').addEventListener('click',function(){
   });
 })();
 </script>
-=======
->>>>>>> be478c928222338ae1da9bf8c55f36af12637eea
 </body>
 </html>

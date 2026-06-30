@@ -34,12 +34,12 @@
 <header class="site-header">
   <div class="inner">
     <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <a href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search" aria-label="Search">🔍</a>
     <div class="header-lang" id="headerLang">
       <button class="active" id="headerLangEN">EN</button>
       <button id="headerLangRU">RU</button>
     </div>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-<<<<<<< HEAD
         <nav class="site-nav" id="siteNav">
       <div class="nav-item">
         <a href="/all-calculators.html" data-en="Calculators" data-ru="Калькуляторы">Calculators</a>
@@ -99,17 +99,6 @@
       <a href="/about.html" data-en="About" data-ru="О сайте">About</a>
       <a href="/contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
       <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
-=======
-    <nav class="site-nav" id="siteNav">
-      <a href="/" data-en="Calculator" data-ru="Калькулятор">Calculator</a>
-      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
-      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
-      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
-      <div class="lang-toggle">
-        <button class="active" id="langEN">EN</button>
-        <button id="langRU">RU</button>
-      </div>
->>>>>>> be478c928222338ae1da9bf8c55f36af12637eea
     </nav>
   </div>
 </header>
@@ -355,7 +344,7 @@ function applyLang(lang) {
 
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('hamburger').addEventListener('click', function(){ document.getElementById('siteNav').classList.toggle('open'); });
+  
   window.addEventListener('scroll', function(){
     var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
     document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
@@ -381,7 +370,6 @@ document.addEventListener('DOMContentLoaded', function() {
   renderTable('all', '');
 });
 </script>
-<<<<<<< HEAD
 <script>
 /* Mega menu */
 (function(){
@@ -419,7 +407,5 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 })();
 </script>
-=======
->>>>>>> be478c928222338ae1da9bf8c55f36af12637eea
 </body>
 </html>
