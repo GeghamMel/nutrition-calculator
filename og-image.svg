@@ -1,0 +1,26 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2D6A4F"/>
+      <stop offset="100%" style="stop-color:#1B4332"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Decorative circles -->
+  <circle cx="1100" cy="80" r="180" fill="rgba(255,255,255,0.04)"/>
+  <circle cx="100" cy="550" r="140" fill="rgba(255,255,255,0.04)"/>
+  <circle cx="600" cy="630" r="200" fill="rgba(255,255,255,0.03)"/>
+  <!-- Logo icon -->
+  <text x="80" y="140" font-size="80" font-family="Arial">🥦</text>
+  <!-- Site name -->
+  <text x="80" y="200" font-family="Georgia, serif" font-size="32" fill="rgba(255,255,255,0.7)" font-weight="400">calories-macros.com</text>
+  <!-- Main headline -->
+  <text x="80" y="310" font-family="Georgia, serif" font-size="72" fill="white" font-weight="400">Calories &amp; Macros</text>
+  <text x="80" y="390" font-family="Georgia, serif" font-size="72" fill="#D8F3DC" font-style="italic" font-weight="400">Calculator</text>
+  <!-- Subtitle -->
+  <text x="80" y="470" font-family="Arial, sans-serif" font-size="32" fill="rgba(255,255,255,0.75)">Free TDEE · Protein · Carbs · Fat</text>
+  <!-- Stats bar -->
+  <rect x="80" y="520" width="200" height="3" fill="rgba(255,255,255,0.3)" rx="2"/>
+  <text x="80" y="570" font-family="Arial, sans-serif" font-size="26" fill="rgba(255,255,255,0.6)">No signup · Instant results · EN / RU</text>
+</svg>
