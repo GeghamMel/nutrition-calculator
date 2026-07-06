@@ -6,6 +6,14 @@
   <title>Exercise Calories Burned Calculator — Calories & Macros</title>
   <meta name="description" content="Calculate how many calories you burn during exercise. Free calculator for running, cycling, swimming, walking and 20+ other activities." />
   <link rel="canonical" href="https://calories-macros.com/exercise-calories-calculator.html" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How accurate are MET-based calorie estimates?","acceptedAnswer":{"@type":"Answer","text":"MET values are population averages, so individual results can vary by 10-20% depending on fitness level and technique. They're a solid planning tool but not a precise measurement."}},
+    {"@type":"Question","name":"Should I eat back the calories I burn exercising?","acceptedAnswer":{"@type":"Answer","text":"It depends on your goal. If maintaining or gaining, yes. If in a deficit for weight loss, eating back 100% of estimated calories can undermine progress since estimates run somewhat high."}},
+    {"@type":"Question","name":"Why does my fitness watch show a different number than this calculator?","acceptedAnswer":{"@type":"Answer","text":"Fitness watches use heart rate data and your personal profile to individualise the estimate, while this calculator uses a fixed MET value for the activity type."}},
+    {"@type":"Question","name":"Does muscle soreness mean I burned more calories?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily — muscle soreness reflects microscopic muscle damage and adaptation, not calorie burn directly."}}
+  ]}
+  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
@@ -247,17 +255,48 @@
       <div class="step">
         <div class="step-num">1</div>
         <h3 data-en="MET value" data-ru="Значение МЕТ">MET value</h3>
-        <p data-en="Each activity has a MET (Metabolic Equivalent of Task) value — a measure of how intense it is relative to rest." data-ru="Каждая активность имеет значение МЕТ — показатель интенсивности относительно состояния покоя.">Each activity has a MET value — a measure of how intense it is relative to rest.</p>
+        <p data-en="Each activity has a MET (Metabolic Equivalent of Task) value — a measure of how intense it is relative to sitting quietly, which is defined as 1 MET. Running at a moderate pace, for instance, is around 10 METs, meaning it burns roughly 10 times the energy of resting. These values come from the Compendium of Physical Activities, a research database maintained and updated by exercise scientists." data-ru="Каждая активность имеет значение МЕТ (метаболический эквивалент задачи) — показатель интенсивности относительно спокойного сидения, которое определено как 1 МЕТ. Например, бег в умеренном темпе — около 10 МЕТ, то есть сжигает примерно в 10 раз больше энергии, чем состояние покоя. Эти значения взяты из Сборника физических активностей — исследовательской базы данных, поддерживаемой и обновляемой специалистами по физическим упражнениям.">Each activity has a MET (Metabolic Equivalent of Task) value — a measure of how intense it is relative to sitting quietly, which is defined as 1 MET. Running at a moderate pace, for instance, is around 10 METs, meaning it burns roughly 10 times the energy of resting. These values come from the Compendium of Physical Activities, a research database maintained and updated by exercise scientists.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h3 data-en="Your weight" data-ru="Ваш вес">Your weight</h3>
-        <p data-en="Heavier people burn more calories doing the same activity, because it takes more energy to move a larger body." data-ru="Люди с большим весом сжигают больше калорий при той же активности, потому что для движения тела большей массы требуется больше энергии.">Heavier people burn more calories doing the same activity.</p>
+        <p data-en="Heavier people burn more calories doing the same activity, because moving a larger body mass against gravity or through water/air resistance requires more energy. This is why calorie burn calculators always need body weight as an input — a MET value alone can't tell you calories without it." data-ru="Люди с большим весом сжигают больше калорий при той же активности, потому что перемещение большей массы тела против силы тяжести или сопротивления воды/воздуха требует больше энергии. Поэтому калькуляторам сожжённых калорий всегда нужен вес тела как параметр — само по себе значение МЕТ не даёт калорий без него.">Heavier people burn more calories doing the same activity, because moving a larger body mass against gravity or through water/air resistance requires more energy. This is why calorie burn calculators always need body weight as an input — a MET value alone can't tell you calories without it.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
         <h3 data-en="Duration" data-ru="Продолжительность">Duration</h3>
-        <p data-en="The longer you exercise, the more calories you burn. The formula is: Calories = MET × weight (kg) × duration (hours)." data-ru="Чем дольше тренируетесь, тем больше калорий сжигаете. Формула: Калории = МЕТ × вес (кг) × продолжительность (часы).">The formula is: Calories = MET × weight (kg) × duration (hours).</p>
+        <p data-en="The longer you exercise, the more calories you burn, in a roughly linear relationship for steady-state activities. The formula is: Calories = MET × weight (kg) × duration (hours) × 1.05 (a standard correction constant). This is why a 60-minute run burns close to double what a 30-minute run at the same pace burns." data-ru="Чем дольше тренируетесь, тем больше калорий сжигаете — примерно линейная зависимость для активностей в устойчивом темпе. Формула: Калории = МЕТ × вес (кг) × продолжительность (часы) × 1.05 (стандартная поправочная константа). Поэтому 60-минутная пробежка сжигает почти вдвое больше, чем 30-минутная в том же темпе.">The longer you exercise, the more calories you burn, in a roughly linear relationship for steady-state activities. The formula is: Calories = MET × weight (kg) × duration (hours) × 1.05 (a standard correction constant). This is why a 60-minute run burns close to double what a 30-minute run at the same pace burns.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3 data-en="Individual variation" data-ru="Индивидуальные различия">Individual variation</h3>
+        <p data-en="MET-based estimates are population averages and don't account for individual fitness level, muscle mass, age, or exercise efficiency. A trained athlete may burn somewhat fewer calories than this estimate for the same activity because their body has become more efficient at it, while a beginner working at the same relative intensity may burn slightly more." data-ru="Оценки на основе МЕТ — это средние значения по популяции, не учитывающие индивидуальный уровень физической подготовки, мышечную массу, возраст или эффективность выполнения упражнений. Тренированный спортсмен может сжигать несколько меньше калорий, чем показывает эта оценка, при той же активности, так как его тело стало более эффективным, тогда как новичок при той же относительной интенсивности может сжигать чуть больше.">MET-based estimates are population averages and don't account for individual fitness level, muscle mass, age, or exercise efficiency. A trained athlete may burn somewhat fewer calories than this estimate for the same activity because their body has become more efficient at it, while a beginner working at the same relative intensity may burn slightly more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label" data-en="FAQ" data-ru="Вопросы">FAQ</div>
+    <h2 class="section-title" data-en="Frequently asked questions about calories burned" data-ru="Частые вопросы о сожжённых калориях">Frequently asked questions about calories burned</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" data-en="How accurate are MET-based calorie estimates?" data-ru="Насколько точны оценки на основе МЕТ?">How accurate are MET-based calorie estimates?</button>
+        <div class="faq-answer" data-en="MET values are population averages derived from lab studies, so individual results can vary by 10-20% depending on fitness level, technique efficiency, and even ambient temperature. They're a solid planning tool but shouldn't be treated as a precise measurement — a fitness tracker with a heart rate monitor will generally give a more personalised (though still imperfect) estimate." data-ru="Значения МЕТ — это средние по популяции, полученные в лабораторных исследованиях, поэтому индивидуальные результаты могут отличаться на 10-20% в зависимости от уровня подготовки, эффективности техники и даже температуры окружающей среды. Это хороший инструмент планирования, но не стоит воспринимать его как точное измерение — фитнес-трекер с пульсометром обычно даёт более персонализированную (хотя всё ещё несовершенную) оценку.">MET values are population averages derived from lab studies, so individual results can vary by 10-20% depending on fitness level, technique efficiency, and even ambient temperature. They're a solid planning tool but shouldn't be treated as a precise measurement — a fitness tracker with a heart rate monitor will generally give a more personalised (though still imperfect) estimate.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Should I eat back the calories I burn exercising?" data-ru="Стоит ли «доедать» сожжённые на тренировке калории?">Should I eat back the calories I burn exercising?</button>
+        <div class="faq-answer" data-en="It depends on your goal. If you're maintaining weight or trying to gain muscle, yes — factor exercise calories into your total intake. If you're in a calorie deficit for weight loss, most people build a buffer into their deficit calculation already, so eating back 100% of estimated exercise calories on top of that can undermine progress, especially since these estimates run somewhat high for many people." data-ru="Зависит от цели. Если вы поддерживаете вес или пытаетесь набрать мышцы — да, учитывайте калории от тренировок в общем потреблении. Если вы в дефиците калорий для похудения, большинство людей уже закладывают запас в расчёт дефицита, поэтому «доедание» 100% расчётных калорий тренировки сверх этого может подорвать прогресс, особенно учитывая, что эти оценки часто завышены для многих людей.">It depends on your goal. If you're maintaining weight or trying to gain muscle, yes — factor exercise calories into your total intake. If you're in a calorie deficit for weight loss, most people build a buffer into their deficit calculation already, so eating back 100% of estimated exercise calories on top of that can undermine progress, especially since these estimates run somewhat high for many people.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Why does my fitness watch show a different number than this calculator?" data-ru="Почему фитнес-часы показывают другое число, чем этот калькулятор?">Why does my fitness watch show a different number than this calculator?</button>
+        <div class="faq-answer" data-en="Fitness watches use heart rate data plus your personal profile (age, resting heart rate, sometimes VO2 max estimates) to individualise the estimate, while this calculator uses a fixed MET value for the activity type. Neither is perfectly accurate, but the watch's estimate is somewhat more personalised, while this calculator is useful for quick, equipment-free planning." data-ru="Фитнес-часы используют данные пульса плюс ваш личный профиль (возраст, пульс покоя, иногда оценки VO2 max) для персонализации оценки, тогда как этот калькулятор использует фиксированное значение МЕТ для типа активности. Ни один метод не идеально точен, но оценка часов немного более персонализирована, а этот калькулятор полезен для быстрого планирования без оборудования.">Fitness watches use heart rate data plus your personal profile (age, resting heart rate, sometimes VO2 max estimates) to individualise the estimate, while this calculator uses a fixed MET value for the activity type. Neither is perfectly accurate, but the watch's estimate is somewhat more personalised, while this calculator is useful for quick, equipment-free planning.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Does muscle soreness mean I burned more calories?" data-ru="Означает ли крепатура, что сожжено больше калорий?">Does muscle soreness mean I burned more calories?</button>
+        <div class="faq-answer" data-en="Not necessarily — delayed onset muscle soreness (DOMS) reflects microscopic muscle damage and adaptation, not calorie burn directly. A short, very intense strength session might leave you sore for days while burning fewer total calories than a longer, steady-state cardio session that leaves you feeling fine the next day." data-ru="Не обязательно — отсроченная мышечная боль (крепатура, DOMS) отражает микроповреждения мышц и адаптацию, а не напрямую сожжённые калории. Короткая, очень интенсивная силовая тренировка может вызвать боль на несколько дней при меньшем общем расходе калорий, чем более длинная кардио-тренировка в устойчивом темпе, после которой на следующий день вы чувствуете себя нормально.">Not necessarily — delayed onset muscle soreness (DOMS) reflects microscopic muscle damage and adaptation, not calorie burn directly. A short, very intense strength session might leave you sore for days while burning fewer total calories than a longer, steady-state cardio session that leaves you feeling fine the next day.</div>
       </div>
     </div>
   </div>
@@ -326,6 +365,15 @@ window.addEventListener('load', function() {
   } catch(e) {}
 });
 document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
 
 window.addEventListener('scroll', function(){
   var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
