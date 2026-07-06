@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Net Carbs Calculator — For Keto & Low-Carb Diets | Calories & Macros</title>
+  <meta name="description" content="Calculate net carbs from total carbs, fiber, and sugar alcohols. Essential for keto and low-carb tracking. Free calculator with EN/RU support." />
+  <link rel="canonical" href="https://calories-macros.com/net-carbs-calculator.html" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Net Carbs Calculator","url":"https://calories-macros.com/net-carbs-calculator.html","description":"Free net carbs calculator for keto and low-carb diets.","applicationCategory":"HealthApplication"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Do all sugar alcohols affect net carbs the same way?","acceptedAnswer":{"@type":"Answer","text":"No — erythritol is generally subtracted in full since it's barely absorbed, while maltitol and sorbitol are often only subtracted at half their gram value since the body absorbs more of them."}},
+    {"@type":"Question","name":"Why do some keto trackers show different net carbs for the same food?","acceptedAnswer":{"@type":"Answer","text":"Because 'net carbs' isn't an official FDA-regulated term, brands and apps sometimes apply the subtraction rule differently, especially for sugar alcohols."}},
+    {"@type":"Question","name":"Does fiber really not count toward carbs at all?","acceptedAnswer":{"@type":"Answer","text":"For most people fiber is subtracted in full since it isn't digested into glucose. But very high-fibre, low-quality processed 'net carb' products can sometimes still raise blood sugar more than the label implies."}},
+    {"@type":"Question","name":"Is net carbs the same thing as counting carbs for diabetes management?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily — diabetes carb counting for insulin dosing typically uses total carbs, not net carbs, unless a doctor or dietitian has specifically advised otherwise."}}
+  ]}
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXLXM57ZKH');
+  </script>
+  <link rel="alternate" hreflang="en" href="https://calories-macros.com/net-carbs-calculator.html" />
+  <link rel="alternate" hreflang="ru" href="https://calories-macros.com/net-carbs-calculator.html" />
+  <link rel="alternate" hreflang="x-default" href="https://calories-macros.com/net-carbs-calculator.html" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Net Carbs Calculator — For Keto & Low-Carb Diets | Calories & Macros" />
+  <meta property="og:description" content="Calculate net carbs from total carbs, fiber, and sugar alcohols. Essential for keto and low-carb tracking." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calories-macros.com/net-carbs-calculator.html" />
+  <meta property="og:image" content="https://calories-macros.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Calories & Macros" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Net Carbs Calculator — For Keto & Low-Carb Diets | Calories & Macros" />
+  <meta name="twitter:description" content="Calculate net carbs from total carbs, fiber, and sugar alcohols. Essential for keto and low-carb tracking." />
+  <meta name="twitter:image" content="https://calories-macros.com/og-image.png" />
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <a href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search" aria-label="Search">🔍</a>
+    <div class="header-lang" id="headerLang">
+      <button class="active" id="headerLangEN">EN</button>
+      <button id="headerLangRU">RU</button>
+    </div>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-item">
+        <a href="/all-calculators.html" data-en="Calculators" data-ru="Калькуляторы">Calculators</a>
+        <div class="mega-menu">
+          <div class="mega-menu-grid-3">
+            <div class="mega-menu-title">All Calculators</div>
+            <a href="/" class="mega-menu-item"><span class="mm-icon">🔥</span><span class="mm-text" data-en="Calorie & Macro" data-ru="Калории и БЖУ">Calorie & Macro</span></a>
+            <a href="/bmi-calculator.html" class="mega-menu-item"><span class="mm-icon">⚖️</span><span class="mm-text" data-en="BMI Calculator" data-ru="ИМТ">BMI Calculator</span></a>
+            <a href="/water-intake-calculator.html" class="mega-menu-item"><span class="mm-icon">💧</span><span class="mm-text" data-en="Water Intake" data-ru="Норма воды">Water Intake</span></a>
+            <a href="/ideal-weight-calculator.html" class="mega-menu-item"><span class="mm-icon">🎯</span><span class="mm-text" data-en="Ideal Weight" data-ru="Идеальный вес">Ideal Weight</span></a>
+            <a href="/body-fat-calculator.html" class="mega-menu-item"><span class="mm-icon">📊</span><span class="mm-text" data-en="Body Fat %" data-ru="% жира">Body Fat %</span></a>
+            <a href="/exercise-calories-calculator.html" class="mega-menu-item"><span class="mm-icon">🏃</span><span class="mm-text" data-en="Exercise Calories" data-ru="Тренировки">Exercise Calories</span></a>
+            <a href="/metabolism-calculator.html" class="mega-menu-item"><span class="mm-icon">⚡</span><span class="mm-text" data-en="Metabolism" data-ru="Метаболизм">Metabolism</span></a>
+            <a href="/pregnancy-calculator.html" class="mega-menu-item"><span class="mm-icon">🤰</span><span class="mm-text" data-en="Pregnancy" data-ru="Беременность">Pregnancy</span></a>
+            <a href="/weight-loss-calculator.html" class="mega-menu-item"><span class="mm-icon">📉</span><span class="mm-text" data-en="Weight Loss" data-ru="Похудение">Weight Loss</span></a>
+            <a href="/vitamin-calculator.html" class="mega-menu-item"><span class="mm-icon">💊</span><span class="mm-text" data-en="Vitamins" data-ru="Витамины">Vitamins</span></a>
+            <a href="/child-calorie-calculator.html" class="mega-menu-item"><span class="mm-icon">👶</span><span class="mm-text" data-en="Child Calories" data-ru="Дети">Child Calories</span></a>
+            <a href="/protein-calculator.html" class="mega-menu-item"><span class="mm-icon">💪</span><span class="mm-text" data-en="Protein" data-ru="Белок">Protein</span></a>
+            <a href="/net-carbs-calculator.html" class="mega-menu-item"><span class="mm-icon">🥑</span><span class="mm-text" data-en="Net Carbs" data-ru="Нетто-углеводы">Net Carbs</span></a>
+            <a href="/one-rep-max-calculator.html" class="mega-menu-item"><span class="mm-icon">🏋️</span><span class="mm-text" data-en="One Rep Max" data-ru="Максимум на 1 повтор">One Rep Max</span></a>
+            <a href="/if-timer-calculator.html" class="mega-menu-item"><span class="mm-icon">⏱️</span><span class="mm-text" data-en="Fasting Timer" data-ru="Таймер голодания">Fasting Timer</span></a>
+            <a href="/diet-tdee-calculator.html" class="mega-menu-item"><span class="mm-icon">🍽️</span><span class="mm-text" data-en="TDEE by Diet" data-ru="TDEE по диете">TDEE by Diet</span></a>
+            <div class="mega-menu-footer"><a href="/all-calculators.html" data-en="View all →" data-ru="Все →">View all →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/blog/" data-en="Blog" data-ru="Блог">Blog</a>
+        <div class="mega-menu">
+          <div class="mega-menu-grid">
+            <div class="mega-menu-title">Popular Articles</div>
+            <a href="/blog/calories-for-weight-loss.html" class="mega-menu-item"><span class="mm-icon">🔥</span><span class="mm-text" data-en="Calories for Weight Loss" data-ru="Калории для похудения">Calories for Weight Loss</span></a>
+            <a href="/blog/how-to-build-muscle.html" class="mega-menu-item"><span class="mm-icon">💪</span><span class="mm-text" data-en="How to Build Muscle" data-ru="Набор мышц">How to Build Muscle</span></a>
+            <a href="/blog/keto-diet-guide.html" class="mega-menu-item"><span class="mm-icon">🥑</span><span class="mm-text" data-en="Ketogenic Diet" data-ru="Кетогенная диета">Ketogenic Diet</span></a>
+            <a href="/blog/intermittent-fasting-guide.html" class="mega-menu-item"><span class="mm-icon">⏰</span><span class="mm-text" data-en="Intermittent Fasting" data-ru="Интервальное голодание">Intermittent Fasting</span></a>
+            <a href="/blog/best-foods-for-weight-loss.html" class="mega-menu-item"><span class="mm-icon">🥗</span><span class="mm-text" data-en="Best Foods" data-ru="Лучшие продукты">Best Foods</span></a>
+            <a href="/blog/mediterranean-diet-guide.html" class="mega-menu-item"><span class="mm-icon">🫒</span><span class="mm-text" data-en="Mediterranean Diet" data-ru="Средиземноморская">Mediterranean Diet</span></a>
+            <a href="/blog/belly-fat-diet.html" class="mega-menu-item"><span class="mm-icon">🏃</span><span class="mm-text" data-en="Belly Fat Diet" data-ru="Диета для живота">Belly Fat Diet</span></a>
+            <a href="/blog/superfoods-guide.html" class="mega-menu-item"><span class="mm-icon">⭐</span><span class="mm-text" data-en="Superfoods" data-ru="Суперфуды">Superfoods</span></a>
+            <div class="mega-menu-footer"><a href="/blog/" data-en="View all →" data-ru="Все статьи →">View all →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/all-calculators.html" data-en="Tools" data-ru="Инструменты">Tools</a>
+        <div class="mega-menu">
+          <div class="mega-menu-grid">
+            <div class="mega-menu-title">Tools & Reference</div>
+            <a href="/meal-plan.html" class="mega-menu-item"><span class="mm-icon">🍽️</span><span class="mm-text" data-en="Meal Plans" data-ru="Планы питания">Meal Plans</span></a>
+            <a href="/calories-in-foods.html" class="mega-menu-item"><span class="mm-icon">📋</span><span class="mm-text" data-en="Calories in Foods" data-ru="Калорийность">Calories in Foods</span></a>
+            <a href="/glycemic-index.html" class="mega-menu-item"><span class="mm-icon">📈</span><span class="mm-text" data-en="Glycemic Index" data-ru="ГИ">Glycemic Index</span></a>
+            <a href="/fast-food-calories.html" class="mega-menu-item"><span class="mm-icon">🍔</span><span class="mm-text" data-en="Fast Food" data-ru="Фастфуд">Fast Food</span></a>
+            <a href="/alcohol-calories-list.html" class="mega-menu-item"><span class="mm-icon">🍷</span><span class="mm-text" data-en="Alcohol Calories" data-ru="Алкоголь">Alcohol</span></a>
+            <a href="/recipes.html" class="mega-menu-item"><span class="mm-icon">👨‍🍳</span><span class="mm-text" data-en="Recipes" data-ru="Рецепты">Recipes</span></a>
+            <a href="/diet-comparison.html" class="mega-menu-item"><span class="mm-icon">⚖️</span><span class="mm-text" data-en="Diet Comparison" data-ru="Сравнение диет">Diet Comparison</span></a>
+            <a href="/faq.html" class="mega-menu-item"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+            <div class="mega-menu-footer"><a href="/all-calculators.html" data-en="View all →" data-ru="Все →">View all →</a></div>
+          </div>
+        </div>
+      </div>
+      <a href="/about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="/contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Free Nutrition Calculator" data-ru="Бесплатный калькулятор питания">Free Nutrition Calculator</div>
+    <h1 data-en="Net Carbs Calculator — <em>For Keto &amp; Low-Carb</em>" data-ru="Калькулятор <em>нетто-углеводов</em> — для кето и низкоуглеводных диет">Net Carbs Calculator — <em>For Keto &amp; Low-Carb</em></h1>
+    <p data-en="Calculate net carbs from total carbs, fiber, and sugar alcohols — the number that actually matters for staying in ketosis." data-ru="Рассчитайте нетто-углеводы из общих углеводов, клетчатки и сахарных спиртов — число, которое реально важно для поддержания кетоза.">Calculate net carbs from total carbs, fiber, and sugar alcohols — the number that actually matters for staying in ketosis.</p>
+    <a href="#calculator" class="btn-scroll" data-en="Calculate Net Carbs ↓" data-ru="Рассчитать нетто-углеводы ↓">Calculate Net Carbs ↓</a>
+  </div>
+</section>
+
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="section-label" data-en="Net Carbs Calculator" data-ru="Калькулятор нетто-углеводов">Net Carbs Calculator</div>
+    <h2 class="section-title" data-en="Enter nutrition label values" data-ru="Введите данные с этикетки">Enter nutrition label values</h2>
+    <p class="section-sub" data-en="Net Carbs = Total Carbs − Fiber − (Sugar Alcohols, per type below)." data-ru="Нетто-углеводы = Общие углеводы − Клетчатка − (Сахарные спирты, по типу ниже).">Net Carbs = Total Carbs − Fiber − (Sugar Alcohols, per type below).</p>
+
+    <div class="calc-card">
+      <div class="calc-grid">
+        <div class="field">
+          <label for="totalCarbs" data-en="Total carbs (g)" data-ru="Общие углеводы (г)">Total carbs (g)</label>
+          <input type="number" id="totalCarbs" min="0" max="500" placeholder="e.g. 25" />
+        </div>
+        <div class="field">
+          <label for="fiber" data-en="Fiber (g)" data-ru="Клетчатка (г)">Fiber (g)</label>
+          <input type="number" id="fiber" min="0" max="100" placeholder="e.g. 8" />
+        </div>
+        <div class="field">
+          <label for="sugarAlcoholType" data-en="Sugar alcohol type" data-ru="Тип сахарного спирта">Sugar alcohol type</label>
+          <select id="sugarAlcoholType">
+            <option value="none" data-en="None" data-ru="Нет">None</option>
+            <option value="erythritol" data-en="Erythritol (subtract 100%)" data-ru="Эритрит (вычитать 100%)">Erythritol (subtract 100%)</option>
+            <option value="other" data-en="Maltitol / Sorbitol / Xylitol (subtract 50%)" data-ru="Мальтит / Сорбит / Ксилит (вычитать 50%)">Maltitol / Sorbitol / Xylitol (subtract 50%)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sugarAlcoholGrams" data-en="Sugar alcohols (g)" data-ru="Сахарные спирты (г)">Sugar alcohols (g)</label>
+          <input type="number" id="sugarAlcoholGrams" min="0" max="100" placeholder="e.g. 12" />
+        </div>
+      </div>
+      <button class="btn-calc" id="calcBtn" data-en="Calculate Net Carbs →" data-ru="Рассчитать нетто-углеводы →">Calculate Net Carbs →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Total carbs must be at least fiber + sugar alcohols. Please check your numbers." data-ru="Общие углеводы должны быть не меньше клетчатки + сахарных спиртов. Проверьте цифры.">Please check your numbers.</p>
+
+      <div class="calc-results" id="calcResults">
+        <div class="calories-display" style="background:var(--green-pale);">
+          <div class="kcal-number" id="netCarbsValue">—</div>
+          <div class="kcal-label" data-en="net carbs (g)" data-ru="нетто-углеводов (г)">net carbs (g)</div>
+        </div>
+        <div class="macros-grid" style="grid-template-columns:1fr 1fr 1fr;">
+          <div class="macro-item">
+            <div class="macro-value" id="subtractedFiber">—</div>
+            <div class="macro-name" data-en="Fiber subtracted" data-ru="Вычтено клетчатки">Fiber subtracted</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-value" id="subtractedSA">—</div>
+            <div class="macro-name" data-en="Sugar alcohols subtracted" data-ru="Вычтено спиртов">Sugar alcohols subtracted</div>
+          </div>
+          <div class="macro-item">
+            <div class="macro-value" id="pctOfTotal">—</div>
+            <div class="macro-name" data-en="% of total carbs" data-ru="% от общих углеводов">% of total carbs</div>
+          </div>
+        </div>
+        <div class="result-note" id="resultNote"></div>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+          <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+
+<!-- Info section -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="Understanding net carbs" data-ru="Что такое нетто-углеводы">Understanding net carbs</div>
+    <h2 class="section-title" data-en="Why subtract fiber and sugar alcohols?" data-ru="Почему вычитают клетчатку и сахарные спирты?">Why subtract fiber and sugar alcohols?</h2>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-num" style="font-size:1.6rem;">🌾</div>
+        <h3 data-en="Fiber isn't digested into glucose" data-ru="Клетчатка не переваривается в глюкозу">Fiber isn't digested into glucose</h3>
+        <p data-en="Dietary fiber passes through the digestive system largely intact — the body lacks the enzymes to break most of it down into glucose. Since it doesn't raise blood sugar or contribute usable energy the way other carbs do, most low-carb and keto tracking methods subtract it from the total carb count." data-ru="Пищевые волокна проходят через пищеварительную систему в основном нетронутыми — у организма нет ферментов, способных расщепить большую их часть до глюкозы. Так как клетчатка не повышает сахар в крови и не даёт усваиваемую энергию, как другие углеводы, большинство методов учёта на низкоуглеводных и кето-диетах вычитают её из общего количества углеводов.">Dietary fiber passes through the digestive system largely intact — the body lacks the enzymes to break most of it down into glucose. Since it doesn't raise blood sugar or contribute usable energy the way other carbs do, most low-carb and keto tracking methods subtract it from the total carb count.</p>
+      </div>
+      <div class="step">
+        <div class="step-num" style="font-size:1.6rem;">🍬</div>
+        <h3 data-en="Sugar alcohols are absorbed differently" data-ru="Сахарные спирты усваиваются иначе">Sugar alcohols are absorbed differently</h3>
+        <p data-en="Sugar alcohols (erythritol, xylitol, maltitol, sorbitol) are sweeteners that are only partially absorbed and metabolised. Erythritol is absorbed into the bloodstream but excreted largely unchanged in urine without being metabolised, so it's typically subtracted at 100%. Others like maltitol are absorbed more completely and have a bigger effect on blood sugar, so trackers typically subtract only 50% of their grams." data-ru="Сахарные спирты (эритрит, ксилит, мальтит, сорбит) — подсластители, которые лишь частично усваиваются и метаболизируются. Эритрит всасывается в кровь, но выводится с мочой практически в неизменном виде без метаболизма, поэтому его обычно вычитают полностью (100%). Другие, например мальтит, усваиваются более полно и сильнее влияют на сахар крови, поэтому трекеры обычно вычитают только 50% их массы.">Sugar alcohols (erythritol, xylitol, maltitol, sorbitol) are sweeteners that are only partially absorbed and metabolised. Erythritol is absorbed into the bloodstream but excreted largely unchanged in urine without being metabolised, so it's typically subtracted at 100%. Others like maltitol are absorbed more completely and have a bigger effect on blood sugar, so trackers typically subtract only 50% of their grams.</p>
+      </div>
+      <div class="step">
+        <div class="step-num" style="font-size:1.6rem;">⚠️</div>
+        <h3 data-en="'Net carbs' isn't an official term" data-ru="«Нетто-углеводы» — не официальный термин">'Net carbs' isn't an official term</h3>
+        <p data-en="Unlike 'total carbohydrates', which is a regulated label term in most countries, 'net carbs' has no standardised legal definition. This is why different apps, brands, and keto influencers sometimes calculate it slightly differently — the calculation logic here (fiber subtracted fully, sugar alcohols per type) reflects the most common convention, but always check labels carefully on packaged 'keto' products, since marketing claims aren't always consistent with the actual math." data-ru="В отличие от «общих углеводов» — регулируемого термина на этикетке в большинстве стран, «нетто-углеводы» не имеют стандартизированного юридического определения. Поэтому разные приложения, бренды и кето-блогеры иногда считают их немного по-разному — логика расчёта здесь (клетчатка вычитается полностью, сахарные спирты по типу) отражает самую распространённую конвенцию, но всегда внимательно проверяйте этикетки упакованных «кето» продуктов, так как маркетинговые заявления не всегда соответствуют реальной математике.">Unlike 'total carbohydrates', which is a regulated label term in most countries, 'net carbs' has no standardised legal definition. This is why different apps, brands, and keto influencers sometimes calculate it slightly differently — the calculation logic here (fiber subtracted fully, sugar alcohols per type) reflects the most common convention, but always check labels carefully on packaged 'keto' products, since marketing claims aren't always consistent with the actual math.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology & Limitations -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="Limitations" data-ru="Ограничения">Limitations</div>
+    <h2 class="section-title" data-en="Where the net carbs concept falls short" data-ru="Где концепция нетто-углеводов даёт сбой">Where the net carbs concept falls short</h2>
+    <p data-en="Net carbs is a useful mental shortcut for keto and low-carb tracking, but it's a simplification. Individual responses to fiber and sugar alcohols vary — some people experience real blood sugar rises or digestive discomfort (bloating, gas) from sugar alcohols even when the label math says they 'don't count'. Highly processed 'net carb' snack products with lots of sugar alcohols can also be misleading: the total ingredient load may still affect some people's ketosis or digestion more than the printed net carb number suggests." data-ru="Нетто-углеводы — полезное упрощение для учёта на кето и низкоуглеводных диетах, но это упрощение. Индивидуальная реакция на клетчатку и сахарные спирты различается — у некоторых людей реально повышается сахар крови или возникает дискомфорт (вздутие, газообразование) от сахарных спиртов, даже когда математика этикетки говорит, что они «не считаются». Сильно переработанные «кето»-снеки с большим количеством сахарных спиртов также могут вводить в заблуждение: общая нагрузка ингредиентов может влиять на кетоз или пищеварение некоторых людей сильнее, чем указывает напечатанное число нетто-углеводов.">Net carbs is a useful mental shortcut for keto and low-carb tracking, but it's a simplification. Individual responses to fiber and sugar alcohols vary — some people experience real blood sugar rises or digestive discomfort (bloating, gas) from sugar alcohols even when the label math says they 'don't count'. Highly processed 'net carb' snack products with lots of sugar alcohols can also be misleading: the total ingredient load may still affect some people's ketosis or digestion more than the printed net carb number suggests.</p>
+    <p style="margin-top:16px;" data-en="If you're using net carbs to manage a medical condition like diabetes, talk to your doctor or dietitian about which counting method they want you to use — carb counting for insulin dosing typically uses total carbs, not net carbs, unless specifically advised otherwise. This calculator is an educational tool for general keto/low-carb tracking, not medical dosing guidance." data-ru="Если вы используете нетто-углеводы для контроля заболевания, например диабета, обсудите с врачом или диетологом, какой метод подсчёта они рекомендуют — подсчёт углеводов для дозирования инсулина обычно использует общие углеводы, а не нетто, если не указано иное. Этот калькулятор — образовательный инструмент для общего учёта на кето/низкоуглеводной диете, а не руководство по медицинскому дозированию.">If you're using net carbs to manage a medical condition like diabetes, talk to your doctor or dietitian about which counting method they want you to use — carb counting for insulin dosing typically uses total carbs, not net carbs, unless specifically advised otherwise. This calculator is an educational tool for general keto/low-carb tracking, not medical dosing guidance.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label" data-en="FAQ" data-ru="Вопросы">FAQ</div>
+    <h2 class="section-title" data-en="Frequently asked questions about net carbs" data-ru="Частые вопросы о нетто-углеводах">Frequently asked questions about net carbs</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" data-en="Do all sugar alcohols affect net carbs the same way?" data-ru="Все ли сахарные спирты влияют на нетто-углеводы одинаково?">Do all sugar alcohols affect net carbs the same way?</button>
+        <div class="faq-answer" data-en="No — erythritol is generally subtracted in full since it's barely absorbed or metabolised by the body. Maltitol, sorbitol, and xylitol are typically only subtracted at half their gram value, since the body absorbs and processes more of them, giving them a bigger real impact on blood sugar than erythritol." data-ru="Нет — эритрит обычно вычитается полностью, так как почти не усваивается и не метаболизируется организмом. Мальтит, сорбит и ксилит обычно вычитаются только наполовину от их массы, так как организм усваивает и перерабатывает их больше, что даёт больший реальный эффект на сахар крови по сравнению с эритритом.">No — erythritol is generally subtracted in full since it's barely absorbed or metabolised by the body. Maltitol, sorbitol, and xylitol are typically only subtracted at half their gram value, since the body absorbs and processes more of them, giving them a bigger real impact on blood sugar than erythritol.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Why do some keto trackers show different net carbs for the same food?" data-ru="Почему разные кето-трекеры показывают разные нетто-углеводы для одного продукта?">Why do some keto trackers show different net carbs for the same food?</button>
+        <div class="faq-answer" data-en="Because 'net carbs' isn't an official, FDA-regulated term, brands and apps sometimes apply the subtraction rule differently — some subtract all sugar alcohols at 100%, others use the more conservative 50% rule for non-erythritol sugar alcohols used here. Always check which convention a specific app or brand uses if the numbers seem inconsistent." data-ru="Так как «нетто-углеводы» — не официальный, регулируемый термин, бренды и приложения иногда применяют правило вычитания по-разному — некоторые вычитают все сахарные спирты на 100%, другие используют более консервативное правило 50% для сахарных спиртов, отличных от эритрита, как здесь. Всегда проверяйте, какую конвенцию использует конкретное приложение или бренд, если цифры кажутся несогласованными.">Because 'net carbs' isn't an official, FDA-regulated term, brands and apps sometimes apply the subtraction rule differently — some subtract all sugar alcohols at 100%, others use the more conservative 50% rule for non-erythritol sugar alcohols used here. Always check which convention a specific app or brand uses if the numbers seem inconsistent.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Does fiber really not count toward carbs at all?" data-ru="Правда ли, что клетчатка вообще не считается как углеводы?">Does fiber really not count toward carbs at all?</button>
+        <div class="faq-answer" data-en="For most people, subtracting fiber in full is a reasonable approximation since it isn't digested into glucose. That said, some types of fiber are partially fermented by gut bacteria into short-chain fatty acids that do provide some usable energy — a minor effect for most people, but one reason very high-fibre 'net carb' processed products don't always behave exactly as the label math implies." data-ru="Для большинства людей полное вычитание клетчатки — разумное приближение, так как она не переваривается в глюкозу. Тем не менее некоторые виды клетчатки частично ферментируются кишечными бактериями в короткоцепочечные жирные кислоты, дающие некоторую усваиваемую энергию — незначительный эффект для большинства, но одна из причин, почему сильно переработанные продукты с высоким содержанием клетчатки не всегда ведут себя точно так, как предполагает математика этикетки.">For most people, subtracting fiber in full is a reasonable approximation since it isn't digested into glucose. That said, some types of fiber are partially fermented by gut bacteria into short-chain fatty acids that do provide some usable energy — a minor effect for most people, but one reason very high-fibre 'net carb' processed products don't always behave exactly as the label math implies.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Is net carbs the same thing as counting carbs for diabetes management?" data-ru="Это то же самое, что подсчёт углеводов при диабете?">Is net carbs the same thing as counting carbs for diabetes management?</button>
+        <div class="faq-answer" data-en="Not necessarily — diabetes carb counting for insulin dosing typically uses total carbohydrates, not net carbs, unless a doctor or dietitian has specifically advised a net carb approach for your individual situation. Using net carbs instead of total carbs for insulin dosing without medical guidance could lead to under-dosing." data-ru="Не обязательно — подсчёт углеводов для дозирования инсулина при диабете обычно использует общие углеводы, а не нетто-углеводы, если врач или диетолог специально не рекомендовал подход с нетто-углеводами для вашей ситуации. Использование нетто-углеводов вместо общих для дозирования инсулина без медицинской консультации может привести к недостаточной дозе.">Not necessarily — diabetes carb counting for insulin dosing typically uses total carbohydrates, not net carbs, unless a doctor or dietitian has specifically advised a net carb approach for your individual situation. Using net carbs instead of total carbs for insulin dosing without medical guidance could lead to under-dosing.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Other calculators -->
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="blog-grid">
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span>
+          <h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3>
+          <p data-en="Calculate your daily calorie and macro targets based on your goal." data-ru="Рассчитайте суточную норму калорий и БЖУ под вашу цель.">Calculate your daily calorie and macro targets based on your goal.</p>
+          <span class="blog-read-more" data-en="Open calculator →" data-ru="Открыть →">Open calculator →</span>
+        </div>
+      </a>
+      <a href="recipe-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" data-en="Recipe" data-ru="Рецепт">Recipe</span>
+          <h3 data-en="Recipe Nutrition Calculator" data-ru="Калькулятор рецептов">Recipe Nutrition Calculator</h3>
+          <p data-en="Calculate calories and macros for any recipe by ingredients." data-ru="Рассчитайте калории и БЖУ любого рецепта по ингредиентам.">Calculate calories and macros for any recipe by ingredients.</p>
+          <span class="blog-read-more" data-en="Open calculator →" data-ru="Открыть →">Open calculator →</span>
+        </div>
+      </a>
+      <a href="glycemic-index.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" data-en="Reference" data-ru="Справочник">Reference</span>
+          <h3 data-en="Glycemic Index Table" data-ru="Таблица гликемического индекса">Glycemic Index Table</h3>
+          <p data-en="See which carbs raise blood sugar fastest." data-ru="Узнайте, какие углеводы быстрее повышают сахар.">See which carbs raise blood sugar fastest.</p>
+          <span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span>
+        </div>
+      </a>
+      <a href="diet-comparison.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" data-en="Guide" data-ru="Гид">Guide</span>
+          <h3 data-en="Diet Comparison Guide" data-ru="Сравнение диет">Diet Comparison Guide</h3>
+          <p data-en="Compare keto against other popular diets." data-ru="Сравните кето с другими популярными диетами.">Compare keto against other popular diets.</p>
+          <span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Other calculators -->
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="blog-grid">
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span>
+          <h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3>
+          <p data-en="Calculate your daily calorie and macro targets based on your goal." data-ru="Рассчитайте суточную норму калорий и БЖУ под вашу цель.">Calculate your daily calorie and macro targets based on your goal.</p>
+          <span class="blog-read-more" data-en="Open calculator →" data-ru="Открыть →">Open calculator →</span>
+        </div>
+      </a>
+      <a href="water-intake-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" data-en="Hydration" data-ru="Гидратация">Hydration</span>
+          <h3 data-en="Water Intake Calculator" data-ru="Калькулятор воды">Water Intake Calculator</h3>
+          <p data-en="Find out how much water you should drink per day." data-ru="Узнайте, сколько воды вам нужно пить в день.">Find out how much water you should drink per day.</p>
+          <span class="blog-read-more" data-en="Open calculator →" data-ru="Открыть →">Open calculator →</span>
+        </div>
+      </a>
+      <a href="ideal-weight-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" data-en="Weight" data-ru="Вес">Weight</span>
+          <h3 data-en="Ideal Weight Calculator" data-ru="Калькулятор идеального веса">Ideal Weight Calculator</h3>
+          <p data-en="Calculate your ideal body weight based on height and frame size." data-ru="Рассчитайте идеальный вес по росту и телосложению.">Calculate your ideal body weight based on height and frame size.</p>
+          <span class="blog-read-more" data-en="Open calculator →" data-ru="Открыть →">Open calculator →</span>
+        </div>
+      </a>
+      <a href="body-fat-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;">
+        <div class="blog-card-body">
+          <span class="blog-tag" data-en="Body Fat" data-ru="% жира">Body Fat</span>
+          <h3 data-en="Body Fat Percentage Calculator" data-ru="Калькулятор % жира в теле">Body Fat Percentage Calculator</h3>
+          <p data-en="Estimate your body fat percentage using body measurements." data-ru="Оцените процент жира в теле по замерам.">Estimate your body fat percentage using body measurements.</p>
+          <span class="blog-read-more" data-en="Open calculator →" data-ru="Открыть →">Open calculator →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+      <p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p>
+    </div>
+    <div class="footer-links">
+      <a href="about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="blog/" data-en="Blog" data-ru="Блог">Blog</a>
+      <a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a>
+      <a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+      <a href="faq.html" data-en="FAQ" data-ru="FAQ">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> calories-macros.com</span>
+    <span data-en="Educational estimates only." data-ru="Только образовательные оценки.">Educational estimates only.</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+let currentLang = 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (t) el.innerHTML = t;
+  });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    var t = opt.getAttribute('data-' + lang);
+    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
+  });
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+
+// Header lang sync
+(function() {
+  var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
+  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function() { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function() { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+const notes = {
+  en: {
+    zero: 'Little to no net carbs here — very keto-friendly. Still check total calories and other macros for your overall daily targets.',
+    low: 'This fits comfortably within most keto and low-carb daily budgets (typically 20–50g net carbs/day total).',
+    medium: 'A moderate amount of net carbs. Fine for low-carb diets, but keep an eye on your running total if you are strictly keto.',
+    high: 'A significant net carb contribution. On a strict keto diet (usually 20–25g net carbs/day), this could use up most or all of your daily budget in one item.'
+  },
+  ru: {
+    zero: 'Нетто-углеводов почти нет — отлично подходит для кето. Всё же проверьте калории и другие БЖУ для суточных целей.',
+    low: 'Хорошо вписывается в большинство суточных бюджетов кето и низкоуглеводных диет (обычно 20–50г нетто-углеводов/день).',
+    medium: 'Умеренное количество нетто-углеводов. Подходит для низкоуглеводных диет, но следите за суточным итогом на строгом кето.',
+    high: 'Значительный вклад в нетто-углеводы. На строгом кето (обычно 20–25г нетто-углеводов/день) это может занять большую часть или весь суточный бюджет.'
+  }
+};
+
+// --- FAQ ---
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+document.getElementById('calcBtn').addEventListener('click', function() {
+  const totalCarbs = parseFloat(document.getElementById('totalCarbs').value) || 0;
+  const fiber = parseFloat(document.getElementById('fiber').value) || 0;
+  const saType = document.getElementById('sugarAlcoholType').value;
+  const saGrams = parseFloat(document.getElementById('sugarAlcoholGrams').value) || 0;
+  const err = document.getElementById('calcError');
+
+  const saSubtracted = saType === 'erythritol' ? saGrams : saType === 'other' ? saGrams * 0.5 : 0;
+
+  if (!document.getElementById('totalCarbs').value || (fiber + saGrams) > totalCarbs) {
+    err.style.display = 'block';
+    return;
+  }
+  err.style.display = 'none';
+
+  const netCarbs = Math.max(totalCarbs - fiber - saSubtracted, 0);
+  const netCarbsRounded = Math.round(netCarbs * 10) / 10;
+  const pctOfTotal = totalCarbs > 0 ? Math.round((netCarbs / totalCarbs) * 100) : 0;
+
+  const noteKey = netCarbs <= 2 ? 'zero' : netCarbs <= 10 ? 'low' : netCarbs <= 20 ? 'medium' : 'high';
+
+  document.getElementById('netCarbsValue').textContent = netCarbsRounded;
+  document.getElementById('subtractedFiber').textContent = fiber + 'g';
+  document.getElementById('subtractedSA').textContent = (Math.round(saSubtracted * 10) / 10) + 'g';
+  document.getElementById('pctOfTotal').textContent = pctOfTotal + '%';
+  document.getElementById('resultNote').textContent = notes[currentLang][noteKey];
+
+  document.getElementById('calcResults').classList.add('visible');
+  setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+});
+</script>
+
+<!-- Scroll to top button + Reading progress -->
+<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green,#2D6A4F);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;transition:opacity 0.3s,transform 0.3s;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green,#2D6A4F);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+(function(){
+  var btn = document.getElementById('scrollTop');
+  var bar = document.getElementById('readProgress');
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollY / docH * 100) : 0;
+    bar.style.width = pct + '%';
+    if (scrollY > 400) {
+      btn.style.display = 'flex';
+      btn.style.opacity = '1';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  btn.addEventListener('mouseenter', function(){ this.style.transform='scale(1.1)'; });
+  btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
+})();
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
