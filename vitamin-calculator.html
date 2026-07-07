@@ -30,7 +30,7 @@
     .cat-header td { background:var(--green-pale); font-weight:700; font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--green); padding:8px 14px; }
     .bar-wrap { display:flex; align-items:center; gap:8px; }
     .bar-bg { flex:1; height:6px; background:#E5E7EB; border-radius:3px; overflow:hidden; max-width:80px; }
-    .bar-fill { height:100%; background:var(--green-light); border-radius:3px; }
+    .bar-fill { height:100%; background:var(--green-light); border-radius:3px; width:0; transition:width 0.6s cubic-bezier(0.16,1,0.3,1); }
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
@@ -463,9 +463,10 @@ function calculate() {
     var sources = l==='ru' ? item.sources_ru : item.sources_en;
     var name = l==='ru' ? item.name_ru : item.name_en;
     var tr = document.createElement('tr');
+    var barIdSuffix = tbody.children.length;
     tr.innerHTML =
       '<td style="font-weight:500;">' + name + '</td>' +
-      '<td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" style="width:' + barW + '%;"></div></div><strong>' + rda + '</strong></div></td>' +
+      '<td><div class="bar-wrap"><div class="bar-bg"><div class="bar-fill" data-target-width="' + barW + '" id="barFill' + barIdSuffix + '" style="width:0%;"></div></div><strong>' + rda + '</strong></div></td>' +
       '<td style="color:var(--muted);font-size:0.82rem;">' + item.unit + '</td>' +
       '<td style="font-size:0.82rem;color:var(--muted);">' + sources + '</td>';
     tbody.appendChild(tr);
@@ -473,6 +474,12 @@ function calculate() {
 
   document.getElementById('results').style.display = 'block';
   document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+
+  setTimeout(function() {
+    document.querySelectorAll('.bar-fill').forEach(function(bar) {
+      bar.style.width = bar.getAttribute('data-target-width') + '%';
+    });
+  }, 50);
 }
 
 function applyLang(lang) {

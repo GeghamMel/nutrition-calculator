@@ -331,6 +331,21 @@ window.addEventListener('load', function() {
 });
 document.getElementById('year').textContent = new Date().getFullYear();
 
+function animateNumber(el, target, decimals) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    el.textContent = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+  }
+  requestAnimationFrame(step);
+}
+
 let currentLang = 'en';
 function applyLang(lang) {
   currentLang = lang; document.documentElement.lang = lang;
@@ -366,10 +381,10 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   if (!weight || weight < 20) { err.style.display='block'; return; }
   err.style.display = 'none';
   const ml = Math.round((weight * 35 * activity + climate) / 50) * 50;
-  document.getElementById('waterLitres').textContent = (ml/1000).toFixed(1);
-  document.getElementById('waterMl').textContent = ml.toLocaleString();
-  document.getElementById('waterGlasses').textContent = Math.round(ml/250);
-  document.getElementById('waterBottles').textContent = Math.round(ml/500);
+  animateNumber(document.getElementById('waterLitres'), ml/1000, 1);
+  animateNumber(document.getElementById('waterMl'), ml, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('waterGlasses'), Math.round(ml/250), 0);
+  animateNumber(document.getElementById('waterBottles'), Math.round(ml/500), 0);
   document.getElementById('resultNote').textContent = noteText[currentLang];
   document.getElementById('calcResults').classList.add('visible');
   setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);

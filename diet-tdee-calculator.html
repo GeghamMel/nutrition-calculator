@@ -194,18 +194,26 @@
           <div class="kcal-number" id="tdeeValue">—</div>
           <div class="kcal-label" data-en="calories per day (TDEE)" data-ru="калорий в день (TDEE)">calories per day (TDEE)</div>
         </div>
+        <div style="display:flex;justify-content:center;margin:20px 0;">
+          <svg viewBox="0 0 140 140" width="150" height="150">
+            <circle cx="70" cy="70" r="55" fill="none" stroke="var(--border)" stroke-width="18"/>
+            <circle id="donutCarbs" cx="70" cy="70" r="55" fill="none" stroke="#60a5fa" stroke-width="18" stroke-dasharray="0 345.6" stroke-dashoffset="0" transform="rotate(-90 70 70)" style="transition:stroke-dasharray 0.8s cubic-bezier(0.16,1,0.3,1);"/>
+            <circle id="donutProtein" cx="70" cy="70" r="55" fill="none" stroke="#34d399" stroke-width="18" stroke-dasharray="0 345.6" stroke-dashoffset="0" transform="rotate(-90 70 70)" style="transition:stroke-dasharray 0.8s cubic-bezier(0.16,1,0.3,1);"/>
+            <circle id="donutFat" cx="70" cy="70" r="55" fill="none" stroke="#fbbf24" stroke-width="18" stroke-dasharray="0 345.6" stroke-dashoffset="0" transform="rotate(-90 70 70)" style="transition:stroke-dasharray 0.8s cubic-bezier(0.16,1,0.3,1);"/>
+          </svg>
+        </div>
         <div class="macros-grid">
           <div class="macro-item">
             <div class="macro-value" id="carbsValue">—</div>
-            <div class="macro-name" data-en="Carbs" data-ru="Углеводы">Carbs</div>
+            <div class="macro-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#60a5fa;margin-right:4px;"></span><span data-en="Carbs" data-ru="Углеводы">Carbs</span></div>
           </div>
           <div class="macro-item">
             <div class="macro-value" id="proteinValue">—</div>
-            <div class="macro-name" data-en="Protein" data-ru="Белок">Protein</div>
+            <div class="macro-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#34d399;margin-right:4px;"></span><span data-en="Protein" data-ru="Белок">Protein</span></div>
           </div>
           <div class="macro-item">
             <div class="macro-value" id="fatValue">—</div>
-            <div class="macro-name" data-en="Fat" data-ru="Жиры">Fat</div>
+            <div class="macro-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24;margin-right:4px;"></span><span data-en="Fat" data-ru="Жиры">Fat</span></div>
           </div>
         </div>
         <div class="result-note" id="resultNote" style="margin-top:16px;"></div>
@@ -417,6 +425,25 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 document.getElementById('calcBtn').addEventListener('click', function() {
   const age = parseFloat(document.getElementById('age').value);
   const weight = parseFloat(document.getElementById('weight').value);
@@ -444,11 +471,24 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   const proteinG = Math.round((tdee * split.protein) / 4);
   const fatG = Math.round((tdee * split.fat) / 9);
 
-  document.getElementById('tdeeValue').textContent = tdee;
-  document.getElementById('carbsValue').textContent = carbsG + 'g';
-  document.getElementById('proteinValue').textContent = proteinG + 'g';
-  document.getElementById('fatValue').textContent = fatG + 'g';
+  animateNumber(document.getElementById('tdeeValue'), tdee, 0);
+  animateNumber(document.getElementById('carbsValue'), carbsG, 0, v => v + 'g');
+  animateNumber(document.getElementById('proteinValue'), proteinG, 0, v => v + 'g');
+  animateNumber(document.getElementById('fatValue'), fatG, 0, v => v + 'g');
   document.getElementById('resultNote').textContent = dietNotes[currentLang][dietType];
+
+  // Donut chart segments
+  const circumference = 2 * Math.PI * 55;
+  const carbsLen = split.carbs * circumference;
+  const proteinLen = split.protein * circumference;
+  const fatLen = split.fat * circumference;
+  setTimeout(() => {
+    document.getElementById('donutCarbs').setAttribute('stroke-dasharray', carbsLen + ' ' + circumference);
+    document.getElementById('donutProtein').setAttribute('stroke-dasharray', proteinLen + ' ' + circumference);
+    document.getElementById('donutProtein').setAttribute('stroke-dashoffset', -carbsLen);
+    document.getElementById('donutFat').setAttribute('stroke-dasharray', fatLen + ' ' + circumference);
+    document.getElementById('donutFat').setAttribute('stroke-dashoffset', -(carbsLen + proteinLen));
+  }, 50);
 
   document.getElementById('calcResults').classList.add('visible');
   setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);

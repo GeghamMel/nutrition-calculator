@@ -392,6 +392,21 @@ let gender = 'male';
 document.getElementById('genderMale').addEventListener('click', function() { gender='male'; this.classList.add('active'); document.getElementById('genderFemale').classList.remove('active'); });
 document.getElementById('genderFemale').addEventListener('click', function() { gender='female'; this.classList.add('active'); document.getElementById('genderMale').classList.remove('active'); });
 
+function animateNumber(el, target, decimals) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    el.textContent = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+  }
+  requestAnimationFrame(step);
+}
+
 let currentLang = 'en';
 function applyLang(lang) {
   currentLang = lang;
@@ -472,7 +487,7 @@ document.getElementById('calcBtn').addEventListener('click', function() {
 
   const noteKey = bmi < 18.5 ? 'under' : bmi < 25 ? 'normal' : bmi < 30 ? 'over' : 'obese';
 
-  document.getElementById('bmiValue').textContent = bmiRounded;
+  animateNumber(document.getElementById('bmiValue'), bmiRounded, 1);
   document.getElementById('bmiCategory').textContent = cat.label;
   document.getElementById('bmiCategory').style.background = cat.color;
   document.getElementById('bmiCategory').style.color = cat.color === '#fbbf24' ? '#1a1a18' : 'white';
@@ -482,8 +497,8 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   // Ideal weight range (BMI 18.5–24.9)
   const minW = Math.round(18.5 * h * h * 10) / 10;
   const maxW = Math.round(24.9 * h * h * 10) / 10;
-  document.getElementById('idealWeightMin').textContent = minW + ' kg';
-  document.getElementById('idealWeightMax').textContent = maxW + ' kg';
+  animateNumber(document.getElementById('idealWeightMin'), minW, 1, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('idealWeightMax'), maxW, 1, function(v) { return v + ' kg'; });
 
   // Marker position (BMI 10–40 range mapped to 0-100%)
   const pct = Math.min(Math.max((bmi - 10) / 30 * 100, 2), 98);

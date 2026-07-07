@@ -489,6 +489,25 @@ function renderIngredients() {
   }).join('');
 }
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 500;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 function updateResults() {
   var results = document.getElementById('recipeResults');
   if (!results) return;
@@ -499,14 +518,14 @@ function updateResults() {
   var totP = ingredients.reduce(function(s,i){ return s+i.protein; }, 0);
   var totC = ingredients.reduce(function(s,i){ return s+i.carbs; }, 0);
   var totF = ingredients.reduce(function(s,i){ return s+i.fat; }, 0);
-  document.getElementById('totalKcal').textContent = Math.round(totKcal);
-  document.getElementById('totalProtein').textContent = totP.toFixed(1) + 'g';
-  document.getElementById('totalCarbs').textContent = totC.toFixed(1) + 'g';
-  document.getElementById('totalFat').textContent = totF.toFixed(1) + 'g';
-  document.getElementById('kcalPerServing').textContent = Math.round(totKcal/servings);
-  document.getElementById('proteinPerServing').textContent = (totP/servings).toFixed(1) + 'g';
-  document.getElementById('carbsPerServing').textContent = (totC/servings).toFixed(1) + 'g';
-  document.getElementById('fatPerServing').textContent = (totF/servings).toFixed(1) + 'g';
+  animateNumber(document.getElementById('totalKcal'), totKcal, 0);
+  animateNumber(document.getElementById('totalProtein'), totP, 1, v => v + 'g');
+  animateNumber(document.getElementById('totalCarbs'), totC, 1, v => v + 'g');
+  animateNumber(document.getElementById('totalFat'), totF, 1, v => v + 'g');
+  animateNumber(document.getElementById('kcalPerServing'), totKcal/servings, 0);
+  animateNumber(document.getElementById('proteinPerServing'), totP/servings, 1, v => v + 'g');
+  animateNumber(document.getElementById('carbsPerServing'), totC/servings, 1, v => v + 'g');
+  animateNumber(document.getElementById('fatPerServing'), totF/servings, 1, v => v + 'g');
   var name = document.getElementById('recipeName').value;
   var l = currentLang;
   document.getElementById('resultsTitle').textContent = name

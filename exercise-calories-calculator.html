@@ -429,6 +429,25 @@ function updateLabels() {
   document.getElementById('resultNote').textContent = notes[currentLang];
 }
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 document.getElementById('calcBtn').addEventListener('click', function() {
   const weight = parseFloat(document.getElementById('weight').value);
   const duration = parseFloat(document.getElementById('duration').value);
@@ -445,15 +464,15 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   const perHour = Math.round(met * weight);
   const fatGrams = (calories / 7.7).toFixed(1);
 
-  document.getElementById('caloriesDisplay').textContent = calories.toLocaleString();
-  document.getElementById('perMinute').textContent = perMinute;
-  document.getElementById('perHour').textContent = perHour;
-  document.getElementById('fatBurned').textContent = fatGrams + 'g';
+  animateNumber(document.getElementById('caloriesDisplay'), calories, 0, v => Number(v).toLocaleString());
+  animateNumber(document.getElementById('perMinute'), parseFloat(perMinute), 1);
+  animateNumber(document.getElementById('perHour'), perHour, 0);
+  animateNumber(document.getElementById('fatBurned'), parseFloat(fatGrams), 1, v => v + 'g');
 
   // Food equivalents
-  document.getElementById('eq1').textContent = (calories / 235).toFixed(1);  // chocolate bar ~235 kcal
-  document.getElementById('eq2').textContent = (calories / 285).toFixed(1);  // pizza slice ~285 kcal
-  document.getElementById('eq3').textContent = (calories / 80).toFixed(1);   // apple ~80 kcal
+  animateNumber(document.getElementById('eq1'), calories / 235, 1);
+  animateNumber(document.getElementById('eq2'), calories / 285, 1);
+  animateNumber(document.getElementById('eq3'), calories / 80, 1);
 
   updateLabels();
   const results = document.getElementById('calcResults');

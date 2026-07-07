@@ -299,6 +299,25 @@
 var currentLang = localStorage.getItem('lang') || 'en';
 var gender = 'boy';
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -378,10 +397,10 @@ function calculate() {
   var fat = Math.round(tdee * 0.30 / 9);
   var carbs = Math.round((tdee - protein*4 - fat*9) / 4);
 
-  document.getElementById('caloriesDisplay').textContent = tdee.toLocaleString();
-  document.getElementById('proteinTarget').textContent = protein + 'g';
-  document.getElementById('carbsTarget').textContent = carbs + 'g';
-  document.getElementById('fatTarget').textContent = fat + 'g';
+  animateNumber(document.getElementById('caloriesDisplay'), tdee, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('proteinTarget'), protein, 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('carbsTarget'), carbs, 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('fatTarget'), fat, 0, function(v) { return v + 'g'; });
 
   // Age range chart
   var ages = [3,5,7,9,11,13,15,17];

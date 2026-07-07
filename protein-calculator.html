@@ -306,6 +306,21 @@
 <script>
 var currentLang = localStorage.getItem('lang') || 'en';
 
+function animateNumber(el, target, decimals) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    el.textContent = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+  }
+  requestAnimationFrame(step);
+}
+
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -380,10 +395,10 @@ function calculate() {
   var midP = Math.round((minP + optP) / 2);
   var perKg = ((range[0] + range[1]) / 2).toFixed(1);
 
-  document.getElementById('proteinDisplay').textContent = midP;
-  document.getElementById('minProtein').textContent = minP + 'g';
-  document.getElementById('optimalProtein').textContent = optP + 'g';
-  document.getElementById('perKg').textContent = perKg + ' g/kg';
+  animateNumber(document.getElementById('proteinDisplay'), midP);
+  animateNumber(document.getElementById('minProtein'), minP, 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('optimalProtein'), optP, 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('perKg'), perKg, perKg % 1 !== 0 ? 1 : 0, function(v) { return v + ' g/kg'; });
 
   // Meal breakdown
   var meals = [3,4,5];

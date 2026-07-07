@@ -305,6 +305,25 @@
 var currentLang = localStorage.getItem('lang') || 'en';
 var gender = 'male';
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -383,9 +402,9 @@ function calculate() {
   var diff = bmr - avg;
   var diffPct = Math.round(diff / avg * 100);
 
-  document.getElementById('bmrDisplay').textContent = bmr.toLocaleString();
-  document.getElementById('tdeeDisplay').textContent = tdee.toLocaleString();
-  document.getElementById('ageAvgDisplay').textContent = avg.toLocaleString();
+  animateNumber(document.getElementById('bmrDisplay'), bmr, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('tdeeDisplay'), tdee, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('ageAvgDisplay'), avg, 0, function(v) { return Number(v).toLocaleString(); });
 
   var compareEl = document.getElementById('compareDisplay');
   var l = currentLang;

@@ -282,6 +282,21 @@
 <script>
 var currentLang = localStorage.getItem('lang') || 'en';
 
+function animateNumber(el, target, decimals) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    el.textContent = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    if (progress < 1) requestAnimationFrame(step);
+    else el.textContent = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+  }
+  requestAnimationFrame(step);
+}
+
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -343,10 +358,10 @@ function calculate() {
   targetDate.setDate(targetDate.getDate() + weeks * 7);
   var dateStr = targetDate.toLocaleDateString(l === 'ru' ? 'ru-RU' : 'en-GB', { day:'numeric', month:'long', year:'numeric' });
 
-  document.getElementById('weeksDisplay').textContent = weeks;
+  animateNumber(document.getElementById('weeksDisplay'), weeks);
   document.getElementById('targetDate').textContent = dateStr;
-  document.getElementById('tolose').textContent = toLose + ' kg';
-  document.getElementById('dailyKcal').textContent = dailyKcal;
+  animateNumber(document.getElementById('tolose'), toLose, toLose % 1 !== 0 ? 1 : 0, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('dailyKcal'), dailyKcal, 0);
 
   // Milestones
   var milestoneWeights = [];

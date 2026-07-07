@@ -175,6 +175,15 @@
           <div class="kcal-number" id="netCarbsValue">—</div>
           <div class="kcal-label" data-en="net carbs (g)" data-ru="нетто-углеводов (г)">net carbs (g)</div>
         </div>
+        <div style="margin:16px 0;">
+          <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--muted);margin-bottom:6px;">
+            <span data-en="Of a 20g strict keto daily budget" data-ru="От суточного бюджета кето (20г)">Of a 20g strict keto daily budget</span>
+            <span id="ketoBudgetPct">—</span>
+          </div>
+          <div style="position:relative;height:10px;border-radius:5px;background:var(--border);overflow:hidden;">
+            <div id="ketoBudgetBar" style="height:100%;background:var(--green);width:0%;transition:width 0.7s cubic-bezier(0.16,1,0.3,1);"></div>
+          </div>
+        </div>
         <div class="macros-grid" style="grid-template-columns:1fr 1fr 1fr;">
           <div class="macro-item">
             <div class="macro-value" id="subtractedFiber">—</div>
@@ -422,6 +431,25 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 document.getElementById('calcBtn').addEventListener('click', function() {
   const totalCarbs = parseFloat(document.getElementById('totalCarbs').value) || 0;
   const fiber = parseFloat(document.getElementById('fiber').value) || 0;
@@ -440,13 +468,20 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   const netCarbs = Math.max(totalCarbs - fiber - saSubtracted, 0);
   const netCarbsRounded = Math.round(netCarbs * 10) / 10;
   const pctOfTotal = totalCarbs > 0 ? Math.round((netCarbs / totalCarbs) * 100) : 0;
+  const ketoBudgetPct = Math.min(Math.round((netCarbs / 20) * 100), 999);
 
   const noteKey = netCarbs <= 2 ? 'zero' : netCarbs <= 10 ? 'low' : netCarbs <= 20 ? 'medium' : 'high';
 
-  document.getElementById('netCarbsValue').textContent = netCarbsRounded;
-  document.getElementById('subtractedFiber').textContent = fiber + 'g';
-  document.getElementById('subtractedSA').textContent = (Math.round(saSubtracted * 10) / 10) + 'g';
-  document.getElementById('pctOfTotal').textContent = pctOfTotal + '%';
+  animateNumber(document.getElementById('netCarbsValue'), netCarbsRounded, netCarbsRounded % 1 !== 0 ? 1 : 0);
+  animateNumber(document.getElementById('subtractedFiber'), fiber, fiber % 1 !== 0 ? 1 : 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('subtractedSA'), Math.round(saSubtracted * 10) / 10, 1, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('pctOfTotal'), pctOfTotal, 0, function(v) { return v + '%'; });
+  animateNumber(document.getElementById('ketoBudgetPct'), ketoBudgetPct, 0, function(v) { return v + '%'; });
+  const barColor = ketoBudgetPct <= 60 ? 'var(--green)' : ketoBudgetPct <= 100 ? '#f59e0b' : '#dc2626';
+  setTimeout(() => {
+    document.getElementById('ketoBudgetBar').style.width = Math.min(ketoBudgetPct, 100) + '%';
+    document.getElementById('ketoBudgetBar').style.background = barColor;
+  }, 50);
   document.getElementById('resultNote').textContent = notes[currentLang][noteKey];
 
   document.getElementById('calcResults').classList.add('visible');

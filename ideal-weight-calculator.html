@@ -302,6 +302,25 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 let gender = 'male';
 document.getElementById('genderMale').addEventListener('click', function() { gender='male'; this.classList.add('active'); document.getElementById('genderFemale').classList.remove('active'); });
 document.getElementById('genderFemale').addEventListener('click', function() { gender='female'; this.classList.add('active'); document.getElementById('genderMale').classList.remove('active'); });
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 let currentLang = 'en';
 function applyLang(lang) { currentLang=lang; document.documentElement.lang=lang; document.querySelectorAll('[data-en]').forEach(function(el){var t=el.getAttribute('data-'+lang);if(t)el.innerHTML=t;}); localStorage.setItem('lang',lang); }
 document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
@@ -322,11 +341,11 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   if (gender==='male') { dev=50+2.3*over5ft; rob=52+1.9*over5ft; mil=56.2+1.41*over5ft; ham=48+2.7*over5ft; }
   else { dev=45.5+2.3*over5ft; rob=49+1.7*over5ft; mil=53.1+1.36*over5ft; ham=45.5+2.2*over5ft; }
   const avg = Math.round((dev+rob+mil+ham)/4*10)/10;
-  document.getElementById('avgWeight').textContent = avg + ' kg';
-  document.getElementById('devine').textContent = Math.round(dev*10)/10 + ' kg';
-  document.getElementById('robinson').textContent = Math.round(rob*10)/10 + ' kg';
-  document.getElementById('miller').textContent = Math.round(mil*10)/10 + ' kg';
-  document.getElementById('hamwi').textContent = Math.round(ham*10)/10 + ' kg';
+  animateNumber(document.getElementById('avgWeight'), avg, 1, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('devine'), Math.round(dev*10)/10, 1, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('robinson'), Math.round(rob*10)/10, 1, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('miller'), Math.round(mil*10)/10, 1, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('hamwi'), Math.round(ham*10)/10, 1, function(v) { return v + ' kg'; });
   document.getElementById('resultNote').textContent = noteText[currentLang];
   document.getElementById('calcResults').classList.add('visible');
   setTimeout(()=>document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}),100);

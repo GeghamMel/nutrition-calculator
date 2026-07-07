@@ -297,6 +297,25 @@
 <script>
 var currentLang = localStorage.getItem('lang') || 'en';
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -362,10 +381,10 @@ function calculate() {
   // Protein: 1.1g/kg during pregnancy
   var protein = Math.round(weight * 1.1);
 
-  document.getElementById('totalKcal').textContent = total.toLocaleString();
-  document.getElementById('baseKcal').textContent = tdee.toLocaleString();
-  document.getElementById('extraKcal').textContent = '+' + extra;
-  document.getElementById('proteinTarget').textContent = protein + 'g';
+  animateNumber(document.getElementById('totalKcal'), total, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('baseKcal'), tdee, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('extraKcal'), extra, 0, function(v) { return '+' + v; });
+  animateNumber(document.getElementById('proteinTarget'), protein, 0, function(v) { return v + 'g'; });
 
   // Trimester bars
   var bars = document.getElementById('trimesterBars');

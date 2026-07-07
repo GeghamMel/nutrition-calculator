@@ -332,6 +332,25 @@ function savePageResults() {
   var msg = document.getElementById('saveMsg');
   if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
 }
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 document.getElementById('year').textContent = new Date().getFullYear();
 
 document.querySelectorAll('.faq-question').forEach(function(btn) {
@@ -447,10 +466,10 @@ function renderDrinks() {
 
 function updateResults() {
   var total = drinks.reduce(function(sum, d) { return sum + d.kcal * d.qty; }, 0);
-  document.getElementById('totalCalories').textContent = total.toLocaleString();
-  document.getElementById('totalAlcohol').textContent = Math.round(total / 7) + 'g';
-  document.getElementById('workoutMin').textContent = Math.round(total / 10) + ' min';
-  document.getElementById('pctOfDailyTarget').textContent = Math.round(total / 20) + '%';
+  animateNumber(document.getElementById('totalCalories'), total, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('totalAlcohol'), Math.round(total / 7), 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('workoutMin'), Math.round(total / 10), 0, function(v) { return v + ' min'; });
+  animateNumber(document.getElementById('pctOfDailyTarget'), Math.round(total / 20), 0, function(v) { return v + '%'; });
 
   var l = currentLang;
   var note = '';

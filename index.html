@@ -1079,6 +1079,25 @@ function updateResultLabels() {
   document.getElementById('kcalDisplay').parentElement.querySelector('.kcal-label').textContent = kcalLabel;
 }
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 function calculate() {
   const age    = parseFloat(document.getElementById('age').value);
   const weight = parseFloat(document.getElementById('weight').value);
@@ -1110,10 +1129,10 @@ function calculate() {
   const cPct = Math.round(carbRatio * 100);
   const fPct = Math.round(fatRatio * 100);
 
-  document.getElementById('kcalDisplay').textContent = calories.toLocaleString();
-  document.getElementById('proteinG').textContent = proteinG + 'g';
-  document.getElementById('carbsG').textContent   = carbsG + 'g';
-  document.getElementById('fatG').textContent     = fatG + 'g';
+  animateNumber(document.getElementById('kcalDisplay'), calories, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('proteinG'), proteinG, 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('carbsG'), carbsG, 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('fatG'), fatG, 0, function(v) { return v + 'g'; });
   document.getElementById('proteinPct').textContent = pPct + '%';
   document.getElementById('carbsPct').textContent   = cPct + '%';
   document.getElementById('fatPct').textContent     = fPct + '%';

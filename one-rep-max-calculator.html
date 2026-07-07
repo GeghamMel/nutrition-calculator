@@ -359,6 +359,25 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   });
 });
 
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 document.getElementById('calcBtn').addEventListener('click', function() {
   const weight = parseFloat(document.getElementById('liftWeight').value);
   const reps = parseInt(document.getElementById('liftReps').value);
@@ -370,9 +389,9 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   const brzycki = reps === 37 ? weight : weight * 36 / (37 - reps);
   const average = (epley + brzycki) / 2;
 
-  document.getElementById('ormValue').textContent = Math.round(average);
-  document.getElementById('epleyValue').textContent = Math.round(epley) + ' kg';
-  document.getElementById('brzyckiValue').textContent = Math.round(brzycki) + ' kg';
+  animateNumber(document.getElementById('ormValue'), average, 0);
+  animateNumber(document.getElementById('epleyValue'), epley, 0, v => v + ' kg');
+  animateNumber(document.getElementById('brzyckiValue'), brzycki, 0, v => v + ' kg');
   document.getElementById('resultNote').textContent = noteText[currentLang];
 
   const pctTable = document.getElementById('pctTable');
@@ -380,10 +399,11 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   pctValues.forEach(function(pct, i) {
     const val = Math.round(average * pct);
     const div = document.createElement('div');
-    div.style.cssText = 'text-align:center;background:var(--cream);border-radius:8px;padding:12px 8px;';
+    div.style.cssText = 'text-align:center;background:var(--cream);border-radius:8px;padding:12px 8px;opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;';
     div.innerHTML = '<div style="font-family:var(--font-display);font-size:1.1rem;color:var(--green);">' + val + ' kg</div>' +
       '<div style="font-size:0.72rem;color:var(--muted);">' + Math.round(pct*100) + '% · ' + pctLabels[currentLang][i] + '</div>';
     pctTable.appendChild(div);
+    setTimeout(() => { div.style.opacity = '1'; div.style.transform = 'translateY(0)'; }, 60 * i);
   });
 
   document.getElementById('calcResults').classList.add('visible');

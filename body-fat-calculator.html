@@ -188,6 +188,18 @@
         <div style="text-align:center; margin-bottom:20px;">
           <span style="display:inline-block; background:var(--green); color:white; padding:6px 20px; border-radius:20px; font-weight:600;" id="bfCategory">—</span>
         </div>
+        <div style="margin-bottom:24px;">
+          <div style="position:relative; height:12px; border-radius:6px; background:linear-gradient(to right,#60a5fa,#34d399,#a3e635,#fbbf24,#f87171); margin-bottom:8px;">
+            <div id="bfMarker" style="position:absolute; top:-4px; width:20px; height:20px; background:white; border:3px solid var(--ink); border-radius:50%; transform:translateX(-50%); transition:left 0.5s ease; left:0%;"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.68rem; color:var(--muted);">
+            <span data-en="Essential" data-ru="Незамен.">Essential</span>
+            <span data-en="Athletic" data-ru="Спорт">Athletic</span>
+            <span data-en="Fitness" data-ru="Фитнес">Fitness</span>
+            <span data-en="Average" data-ru="Средний">Average</span>
+            <span data-en="Obese" data-ru="Ожирение">Obese</span>
+          </div>
+        </div>
         <div class="macros-grid">
           <div class="macro-item"><div class="macro-value" id="fatMass">—</div><div class="macro-name" data-en="Fat mass (kg)" data-ru="Жировая масса (кг)">Fat mass (kg)</div></div>
           <div class="macro-item"><div class="macro-value" id="leanMass">—</div><div class="macro-name" data-en="Lean mass (kg)" data-ru="Сухая масса (кг)">Lean mass (kg)</div></div>
@@ -320,6 +332,25 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 let gender='male';
 document.getElementById('genderMale').addEventListener('click',function(){gender='male';this.classList.add('active');document.getElementById('genderFemale').classList.remove('active');document.getElementById('hipField').style.display='none';});
 document.getElementById('genderFemale').addEventListener('click',function(){gender='female';this.classList.add('active');document.getElementById('genderMale').classList.remove('active');document.getElementById('hipField').style.display='block';});
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
 let currentLang='en';
 function applyLang(lang){currentLang=lang;document.documentElement.lang=lang;document.querySelectorAll('[data-en]').forEach(function(el){var t=el.getAttribute('data-'+lang);if(t)el.innerHTML=t;});localStorage.setItem('lang',lang);}
 document.getElementById('langEN').addEventListener('click',function(){this.classList.add('active');document.getElementById('langRU').classList.remove('active');applyLang('en');});
@@ -355,13 +386,15 @@ document.getElementById('calcBtn').addEventListener('click',function(){
   const catLabel=currentLang==='ru'?cat.labelRu:cat.label;
   const fatMass=Math.round(w*bf/100*10)/10;
   const leanMass=Math.round((w-fatMass)*10)/10;
-  document.getElementById('bfPct').textContent=bf+'%';
+  animateNumber(document.getElementById('bfPct'), bf, 1, function(v) { return v + '%'; });
   document.getElementById('bfCategory').textContent=catLabel;
   document.getElementById('bfCategory').style.background=cat.color;
   document.getElementById('bfCategory').style.color=cat.color==='#fbbf24'||cat.color==='#a3e635'?'#1a1a18':'white';
   document.getElementById('bfDisplay').style.background=cat.color+'22';
-  document.getElementById('fatMass').textContent=fatMass+' kg';
-  document.getElementById('leanMass').textContent=leanMass+' kg';
+  const bfPct = Math.min(Math.max((bf / 40) * 100, 2), 98);
+  document.getElementById('bfMarker').style.left = bfPct + '%';
+  animateNumber(document.getElementById('fatMass'), fatMass, 1, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('leanMass'), leanMass, 1, function(v) { return v + ' kg'; });
   document.getElementById('resultNote').textContent=noteText[currentLang];
   document.getElementById('calcResults').classList.add('visible');
   setTimeout(()=>document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}),100);
