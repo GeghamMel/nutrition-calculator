@@ -34,6 +34,7 @@
     {"@type":"ListItem","position":3,"name":"Exercise Calories Burned Calculator","item":"https://calories-macros.com/exercise-calories-calculator.html"}
   ]}
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
@@ -249,6 +250,25 @@
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
           <button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save results" data-ru="💾 Сохранить результаты">💾 Save results</button>
           <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+          <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="⬇ Download card" data-ru="⬇ Скачать карточку">⬇ Download card</button>
+        </div>
+
+        <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+          <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="Calories burned" data-ru="Сожжено калорий">Calories burned</p>
+          <div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="kcal this workout" data-ru="ккал за тренировку">kcal this workout</p>
+          <div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Per hour" data-ru="В час">Per hour</p>
+              <p id="shareCardPerHour" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Fat burned" data-ru="Сожжено жира">Fat burned</p>
+              <p id="shareCardFatBurned" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+          </div>
+          <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
         </div>
         <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;" data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
       </div>
@@ -448,6 +468,16 @@ function animateNumber(el, target, decimals, formatter) {
   requestAnimationFrame(step);
 }
 
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'exercise-calories-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
 document.getElementById('calcBtn').addEventListener('click', function() {
   const weight = parseFloat(document.getElementById('weight').value);
   const duration = parseFloat(document.getElementById('duration').value);
@@ -468,6 +498,10 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   animateNumber(document.getElementById('perMinute'), parseFloat(perMinute), 1);
   animateNumber(document.getElementById('perHour'), perHour, 0);
   animateNumber(document.getElementById('fatBurned'), parseFloat(fatGrams), 1, v => v + 'g');
+
+  document.getElementById('shareCardValue').textContent = Number(calories).toLocaleString();
+  document.getElementById('shareCardPerHour').textContent = Number(perHour).toLocaleString() + ' kcal';
+  document.getElementById('shareCardFatBurned').textContent = fatGrams + 'g';
 
   // Food equivalents
   animateNumber(document.getElementById('eq1'), calories / 235, 1);

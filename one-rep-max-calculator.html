@@ -51,6 +51,7 @@
     {"@type":"ListItem","position":3,"name":"One Rep Max Calculator","item":"https://calories-macros.com/one-rep-max-calculator.html"}
   ]}
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 <header class="site-header">
@@ -180,6 +181,25 @@
         <div class="result-note" id="resultNote" style="margin-top:16px;"></div>
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
           <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+          <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="⬇ Download card" data-ru="⬇ Скачать карточку">⬇ Download card</button>
+        </div>
+
+        <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+          <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="My one-rep max" data-ru="Мой максимум на 1 повтор">My one-rep max</p>
+          <div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="kg estimated 1RM" data-ru="кг расчётный 1ПМ">kg estimated 1RM</p>
+          <div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="90% (strength)" data-ru="90% (сила)">90% (strength)</p>
+              <p id="shareCard90" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="75% (hypertrophy)" data-ru="75% (гипертрофия)">75% (hypertrophy)</p>
+              <p id="shareCard75" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+          </div>
+          <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
         </div>
       </div>
     </div>
@@ -378,6 +398,16 @@ function animateNumber(el, target, decimals, formatter) {
   requestAnimationFrame(step);
 }
 
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'one-rep-max-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
 document.getElementById('calcBtn').addEventListener('click', function() {
   const weight = parseFloat(document.getElementById('liftWeight').value);
   const reps = parseInt(document.getElementById('liftReps').value);
@@ -407,6 +437,11 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   });
 
   document.getElementById('calcResults').classList.add('visible');
+
+  document.getElementById('shareCardValue').textContent = Math.round(average);
+  document.getElementById('shareCard90').textContent = Math.round(average * 0.90) + ' kg';
+  document.getElementById('shareCard75').textContent = Math.round(average * 0.75) + ' kg';
+
   setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
 });
 </script>

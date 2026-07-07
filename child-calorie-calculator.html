@@ -28,6 +28,7 @@
     {"@type":"ListItem","position":3,"name":"Child Calorie Calculator","item":"https://calories-macros.com/child-calorie-calculator.html"}
   ]}
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
@@ -195,6 +196,29 @@
 
         <div style="display:flex;gap:10px;margin-top:16px;">
           <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print results" data-ru="🖨 Распечатать">🖨 Print results</button>
+          <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="⬇ Download card" data-ru="⬇ Скачать карточку">⬇ Download card</button>
+        </div>
+
+        <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+          <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="My child's daily calorie target" data-ru="Суточная норма калорий ребёнка">My child's daily calorie target</p>
+          <div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="calories per day" data-ru="калорий в день">calories per day</p>
+          <div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Protein" data-ru="Белок">Protein</p>
+              <p id="shareCardProtein" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Carbs" data-ru="Углеводы">Carbs</p>
+              <p id="shareCardCarbs" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Fat" data-ru="Жиры">Fat</p>
+              <p id="shareCardFat" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+          </div>
+          <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
         </div>
       </div>
     </div>
@@ -318,6 +342,16 @@ function animateNumber(el, target, decimals, formatter) {
   requestAnimationFrame(step);
 }
 
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'child-calorie-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
 function applyLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang;
@@ -401,6 +435,11 @@ function calculate() {
   animateNumber(document.getElementById('proteinTarget'), protein, 0, function(v) { return v + 'g'; });
   animateNumber(document.getElementById('carbsTarget'), carbs, 0, function(v) { return v + 'g'; });
   animateNumber(document.getElementById('fatTarget'), fat, 0, function(v) { return v + 'g'; });
+
+  document.getElementById('shareCardValue').textContent = Number(tdee).toLocaleString();
+  document.getElementById('shareCardProtein').textContent = protein + 'g';
+  document.getElementById('shareCardCarbs').textContent = carbs + 'g';
+  document.getElementById('shareCardFat').textContent = fat + 'g';
 
   // Age range chart
   var ages = [3,5,7,9,11,13,15,17];

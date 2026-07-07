@@ -51,6 +51,7 @@
     {"@type":"ListItem","position":3,"name":"Net Carbs Calculator","item":"https://calories-macros.com/net-carbs-calculator.html"}
   ]}
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 <header class="site-header">
@@ -201,6 +202,25 @@
         <div class="result-note" id="resultNote"></div>
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
           <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+          <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="⬇ Download card" data-ru="⬇ Скачать карточку">⬇ Download card</button>
+        </div>
+
+        <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+          <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="My net carbs" data-ru="Мои нетто-углеводы">My net carbs</p>
+          <div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="net carbs (g)" data-ru="нетто-углеводов (г)">net carbs (g)</p>
+          <div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Fiber subtracted" data-ru="Вычтено клетчатки">Fiber subtracted</p>
+              <p id="shareCardFiber" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="% of total carbs" data-ru="% от общих">% of total carbs</p>
+              <p id="shareCardPct" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+          </div>
+          <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
         </div>
       </div>
     </div>
@@ -450,6 +470,16 @@ function animateNumber(el, target, decimals, formatter) {
   requestAnimationFrame(step);
 }
 
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'net-carbs-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
 document.getElementById('calcBtn').addEventListener('click', function() {
   const totalCarbs = parseFloat(document.getElementById('totalCarbs').value) || 0;
   const fiber = parseFloat(document.getElementById('fiber').value) || 0;
@@ -477,6 +507,10 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   animateNumber(document.getElementById('subtractedSA'), Math.round(saSubtracted * 10) / 10, 1, function(v) { return v + 'g'; });
   animateNumber(document.getElementById('pctOfTotal'), pctOfTotal, 0, function(v) { return v + '%'; });
   animateNumber(document.getElementById('ketoBudgetPct'), ketoBudgetPct, 0, function(v) { return v + '%'; });
+
+  document.getElementById('shareCardValue').textContent = netCarbsRounded;
+  document.getElementById('shareCardFiber').textContent = fiber + 'g';
+  document.getElementById('shareCardPct').textContent = pctOfTotal + '%';
   const barColor = ketoBudgetPct <= 60 ? 'var(--green)' : ketoBudgetPct <= 100 ? '#f59e0b' : '#dc2626';
   setTimeout(() => {
     document.getElementById('ketoBudgetBar').style.width = Math.min(ketoBudgetPct, 100) + '%';

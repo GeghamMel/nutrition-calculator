@@ -48,6 +48,7 @@
     {"@type":"ListItem","position":3,"name":"Water Intake Calculator","item":"https://calories-macros.com/water-intake-calculator.html"}
   ]}
   </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 <header class="site-header">
@@ -202,6 +203,25 @@
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
           <button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save results" data-ru="💾 Сохранить результаты">💾 Save results</button>
           <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+          <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="⬇ Download card" data-ru="⬇ Скачать карточку">⬇ Download card</button>
+        </div>
+
+        <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+          <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="My daily water target" data-ru="Моя суточная норма воды">My daily water target</p>
+          <div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="litres per day" data-ru="литров в день">litres per day</p>
+          <div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Glasses" data-ru="Стаканов">Glasses</p>
+              <p id="shareCardGlasses" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Bottles (500ml)" data-ru="Бутылок (500мл)">Bottles (500ml)</p>
+              <p id="shareCardBottles" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+          </div>
+          <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
         </div>
         <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;" data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
       </div>
@@ -331,7 +351,7 @@ window.addEventListener('load', function() {
 });
 document.getElementById('year').textContent = new Date().getFullYear();
 
-function animateNumber(el, target, decimals) {
+function animateNumber(el, target, decimals, formatter) {
   decimals = decimals || 0;
   const duration = 700;
   const startTime = performance.now();
@@ -339,11 +359,25 @@ function animateNumber(el, target, decimals) {
     const progress = Math.min((now - startTime) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);
     const current = target * eased;
-    el.textContent = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
     if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
   }
   requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'water-intake-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
 }
 
 let currentLang = 'en';
@@ -386,6 +420,10 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   animateNumber(document.getElementById('waterGlasses'), Math.round(ml/250), 0);
   animateNumber(document.getElementById('waterBottles'), Math.round(ml/500), 0);
   document.getElementById('resultNote').textContent = noteText[currentLang];
+  document.getElementById('shareCardValue').textContent = (ml/1000).toFixed(1);
+  document.getElementById('shareCardGlasses').textContent = Math.round(ml/250);
+  document.getElementById('shareCardBottles').textContent = Math.round(ml/500);
+
   document.getElementById('calcResults').classList.add('visible');
   setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
 });

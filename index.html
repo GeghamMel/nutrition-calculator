@@ -26,6 +26,7 @@
   <link rel="alternate" hreflang="en" href="https://calories-macros.com/" />
   <link rel="alternate" hreflang="ru" href="https://calories-macros.com/" />
   <link rel="alternate" hreflang="x-default" href="https://calories-macros.com/" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
@@ -223,8 +224,31 @@
         <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
           <button id="saveBtn" onclick="saveResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save my results" data-ru="💾 Сохранить результаты">💾 Save my results</button>
           <button onclick="printResults()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print results" data-ru="🖨 Распечатать">🖨 Print results</button>
+          <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="⬇ Download card" data-ru="⬇ Скачать карточку">⬇ Download card</button>
         </div>
         <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;" data-en="✓ Results saved! They'll appear next time you visit." data-ru="✓ Результаты сохранены! Появятся при следующем визите.">✓ Results saved!</p>
+
+        <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+          <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="My daily nutrition target" data-ru="Моя суточная норма">My daily nutrition target</p>
+          <div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="calories per day" data-ru="калорий в день">calories per day</p>
+          <div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Protein" data-ru="Белок">Protein</p>
+              <p id="shareCardProtein" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Carbs" data-ru="Углеводы">Carbs</p>
+              <p id="shareCardCarbs" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Fat" data-ru="Жиры">Fat</p>
+              <p id="shareCardFat" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+          </div>
+          <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1098,6 +1122,16 @@ function animateNumber(el, target, decimals, formatter) {
   requestAnimationFrame(step);
 }
 
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'calorie-macro-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
 function calculate() {
   const age    = parseFloat(document.getElementById('age').value);
   const weight = parseFloat(document.getElementById('weight').value);
@@ -1133,6 +1167,11 @@ function calculate() {
   animateNumber(document.getElementById('proteinG'), proteinG, 0, function(v) { return v + 'g'; });
   animateNumber(document.getElementById('carbsG'), carbsG, 0, function(v) { return v + 'g'; });
   animateNumber(document.getElementById('fatG'), fatG, 0, function(v) { return v + 'g'; });
+
+  document.getElementById('shareCardValue').textContent = Number(calories).toLocaleString();
+  document.getElementById('shareCardProtein').textContent = proteinG + 'g';
+  document.getElementById('shareCardCarbs').textContent = carbsG + 'g';
+  document.getElementById('shareCardFat').textContent = fatG + 'g';
   document.getElementById('proteinPct').textContent = pPct + '%';
   document.getElementById('carbsPct').textContent   = cPct + '%';
   document.getElementById('fatPct').textContent     = fPct + '%';
