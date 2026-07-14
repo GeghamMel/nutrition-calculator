@@ -3,16 +3,11 @@
 <html lang="ru">
 <head><script>localStorage.setItem('lang','ru');</script>
 <meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Body Fat Percentage Calculator | Calories &amp; Macros</title>
-<meta content="Estimate your body fat percentage using the US Navy method. Enter your measurements to get your body fat % and lean mass. Free calculator." name="description"/>
+<title>Калькулятор процента жира в теле | Calories & Macros</title>
+<meta content="Оцените процент жира и сухую массу тела методом ВМС США по замерам сантиметром." name="description"/>
 <link href="https://calories-macros.com/ru/body-fat-calculator.html" rel="canonical"/>
 <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"How accurate is the US Navy method compared to a DEXA scan?","acceptedAnswer":{"@type":"Answer","text":"Studies generally find it within 3-4 percentage points of DEXA for most body types, which is reasonably good for a free, equipment-free method."}},
-    {"@type":"Question","name":"Why did I get a strange or negative result?","acceptedAnswer":{"@type":"Answer","text":"This usually happens when the waist measurement is too close to or smaller than the neck measurement relative to height. Double-check your measurement points and re-enter."}},
-    {"@type":"Question","name":"Is body fat percentage more important than weight or BMI?","acceptedAnswer":{"@type":"Answer","text":"For assessing actual health, generally yes — body fat percentage tells you what your weight is made of, which BMI and scale weight alone can't."}},
-    {"@type":"Question","name":"How often should I remeasure my body fat?","acceptedAnswer":{"@type":"Answer","text":"Every 3-4 weeks is usually enough to track meaningful change, ideally measuring at the same time of day for consistency."}}
-  ]}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Насколько метод ВМС США точен по сравнению с DEXA?","acceptedAnswer":{"@type":"Answer","text":"Исследования обычно показывают отклонение в пределах 3-4 процентных пунктов от DEXA для большинства типов телосложения, что довольно хорошо для бесплатного метода без оборудования. Если вам нужна точная цифра по медицинским или соревновательным причинам, DEXA-скан стоит своих денег — но для общего отслеживания фитнеса этот метод — хорошая бесплатная альтернатива."}},{"@type":"Question","name":"Почему я получил странный или отрицательный результат?","acceptedAnswer":{"@type":"Answer","text":"Обычно это происходит, когда обхват талии слишком близок к обхвату шеи или меньше него относительно роста, что нарушает допущения логарифмической формулы. Проверьте, что вы измерили талию на уровне пупка (а не в самом узком месте), а шею — чуть ниже гортани, и введите числа заново."}},{"@type":"Question","name":"Важнее ли процент жира, чем вес или ИМТ?","acceptedAnswer":{"@type":"Answer","text":"Для оценки реального здоровья и физической формы — как правило, да. Процент жира показывает, из чего состоит ваш вес, чего ИМТ и вес на весах сами по себе не показывают. Два человека с одинаковым ИМТ могут иметь очень разный процент жира и совершенно разное состояние здоровья. Тем не менее, процент жира по методу с сантиметром имеет свою погрешность, поэтому используйте его вместе с другими показателями, а не изолированно."}},{"@type":"Question","name":"Как часто нужно пересчитывать процент жира?","acceptedAnswer":{"@type":"Answer","text":"Обычно достаточно каждые 3-4 недели, чтобы отследить значимые изменения, а измерение в одно и то же время суток (утром, до еды) повышает точность сравнения результатов. Более частые измерения в основном фиксируют обычный шум от задержки воды, а не реальные изменения состава тела."}}]}
   </script>
 <link href="../style.css" rel="stylesheet"/>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
@@ -28,8 +23,8 @@
 <link href="https://calories-macros.com/ru/body-fat-calculator.html" hreflang="ru" rel="alternate"/>
 <link href="https://calories-macros.com/body-fat-calculator.html" hreflang="x-default" rel="alternate"/>
 <!-- Open Graph -->
-<meta content="Body Fat Percentage Calculator | Calories &amp; Macros" property="og:title"/>
-<meta content="Estimate your body fat percentage using the US Navy method. No equipment needed, just a tape measure." property="og:description"/>
+<meta content="Калькулятор процента жира в теле" property="og:title"/>
+<meta content="Оцените процент жира и сухую массу тела методом ВМС США по замерам сантиметром." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://calories-macros.com/ru/body-fat-calculator.html" property="og:url"/>
 <meta content="https://calories-macros.com/og-image.png" property="og:image"/>
@@ -38,14 +33,14 @@
 <meta content="Calories &amp; Macros" property="og:site_name"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Body Fat Percentage Calculator | Calories &amp; Macros" name="twitter:title"/>
-<meta content="Estimate your body fat percentage using the US Navy method. No equipment needed, just a tape measure." name="twitter:description"/>
+<meta content="Калькулятор процента жира в теле" name="twitter:title"/>
+<meta content="Оцените процент жира и сухую массу тела методом ВМС США по замерам сантиметром." name="twitter:description"/>
 <meta content="https://calories-macros.com/og-image.png" name="twitter:image"/>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
-    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
-    {"@type":"ListItem","position":3,"name":"Body Fat Percentage Calculator","item":"https://calories-macros.com/body-fat-calculator.html"}
+    {"@type":"ListItem","position":1,"name":"Главная","item":"https://calories-macros.com/ru/"},
+    {"@type":"ListItem","position":2,"name":"Калькуляторы","item":"https://calories-macros.com/ru/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"Калькулятор процента жира","item":"https://calories-macros.com/ru/body-fat-calculator.html"}
   ]}
   </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
