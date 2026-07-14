@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head><script>localStorage.setItem('lang','ru');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Exercise Calories Burned Calculator — Calories &amp; Macros</title>
+<meta content="Calculate how many calories you burn during exercise. Free calculator for running, cycling, swimming, walking and 20+ other activities." name="description"/>
+<link href="https://calories-macros.com/ru/exercise-calories-calculator.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How accurate are MET-based calorie estimates?","acceptedAnswer":{"@type":"Answer","text":"MET values are population averages, so individual results can vary by 10-20% depending on fitness level and technique. They're a solid planning tool but not a precise measurement."}},
+    {"@type":"Question","name":"Should I eat back the calories I burn exercising?","acceptedAnswer":{"@type":"Answer","text":"It depends on your goal. If maintaining or gaining, yes. If in a deficit for weight loss, eating back 100% of estimated calories can undermine progress since estimates run somewhat high."}},
+    {"@type":"Question","name":"Why does my fitness watch show a different number than this calculator?","acceptedAnswer":{"@type":"Answer","text":"Fitness watches use heart rate data and your personal profile to individualise the estimate, while this calculator uses a fixed MET value for the activity type."}},
+    {"@type":"Question","name":"Does muscle soreness mean I burned more calories?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily — muscle soreness reflects microscopic muscle damage and adaptation, not calorie burn directly."}}
+  ]}
+  </script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+<link href="https://calories-macros.com/exercise-calories-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://calories-macros.com/ru/exercise-calories-calculator.html" hreflang="ru" rel="alternate"/>
+<link href="https://calories-macros.com/exercise-calories-calculator.html" hreflang="x-default" rel="alternate"/>
+<meta content="Exercise Calories Burned Calculator" property="og:title"/>
+<meta content="Calculate calories burned during exercise. Free calculator for 20+ activities." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://calories-macros.com/ru/exercise-calories-calculator.html" property="og:url"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<link href="../style.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"Exercise Calories Burned Calculator","item":"https://calories-macros.com/exercise-calories-calculator.html"}
+  ]}
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a aria-label="Search" href="/ru/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="" href="/exercise-calories-calculator.html" id="headerLangEN">EN</a>
+<a class="active" href="/ru/exercise-calories-calculator.html" id="headerLangRU">RU</a>
+</div>
+<button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Калькуляторы</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/ru/"><span class="mm-icon">🔥</span><span class="mm-text">Калории и БЖУ</span></a>
+<a class="mega-menu-item" href="/ru/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">ИМТ</span></a>
+<a class="mega-menu-item" href="/ru/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Норма воды</span></a>
+<a class="mega-menu-item" href="/ru/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Идеальный вес</span></a>
+<a class="mega-menu-item" href="/ru/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">% жира</span></a>
+<a class="mega-menu-item" href="/ru/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Тренировки</span></a>
+<a class="mega-menu-item" href="/ru/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Метаболизм</span></a>
+<a class="mega-menu-item" href="/ru/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Беременность</span></a>
+<a class="mega-menu-item" href="/ru/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Похудение</span></a>
+<a class="mega-menu-item" href="/ru/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Витамины</span></a>
+<a class="mega-menu-item" href="/ru/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Дети</span></a>
+<a class="mega-menu-item" href="/ru/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Белок</span></a>
+<a class="mega-menu-item" href="/ru/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Нетто-углеводы</span></a>
+<a class="mega-menu-item" href="/ru/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">Максимум на 1 повтор</span></a>
+<a class="mega-menu-item" href="/ru/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Таймер голодания</span></a>
+<a class="mega-menu-item" href="/ru/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE по диете</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/blog/">Блог</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/ru/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Калории для похудения</span></a>
+<a class="mega-menu-item" href="/ru/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">Набор мышц</span></a>
+<a class="mega-menu-item" href="/ru/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Кетогенная диета</span></a>
+<a class="mega-menu-item" href="/ru/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Интервальное голодание</span></a>
+<a class="mega-menu-item" href="/ru/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Лучшие продукты</span></a>
+<a class="mega-menu-item" href="/ru/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Средиземноморская</span></a>
+<a class="mega-menu-item" href="/ru/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Диета для живота</span></a>
+<a class="mega-menu-item" href="/ru/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Суперфуды</span></a>
+<div class="mega-menu-footer"><a href="/ru/blog/">Все статьи →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Инструменты</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/ru/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Планы питания</span></a>
+<a class="mega-menu-item" href="/ru/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Калорийность</span></a>
+<a class="mega-menu-item" href="/ru/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">ГИ</span></a>
+<a class="mega-menu-item" href="/ru/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Фастфуд</span></a>
+<a class="mega-menu-item" href="/ru/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Алкоголь</span></a>
+<a class="mega-menu-item" href="/ru/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Рецепты</span></a>
+<a class="mega-menu-item" href="/ru/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Сравнение диет</span></a>
+<a class="mega-menu-item" href="/ru/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<a href="/ru/about.html">О сайте</a>
+<a href="/ru/contact.html">Контакт</a>
+<div class="lang-toggle"><a class="" href="/exercise-calories-calculator.html" id="langEN">EN</a><a class="active" href="/ru/exercise-calories-calculator.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Бесплатный фитнес-калькулятор</div>
+<h1>Калькулятор <em>сожжённых калорий</em> при упражнениях</h1>
+<p>Узнайте, сколько калорий вы сжигаете во время тренировки. Поддерживает 20+ видов активности: бег, велосипед, плавание и другие.</p>
+<a class="btn-scroll" href="#calculator">Рассчитать сожжённые калории ↓</a>
+</div>
+</section>
+<div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;max-width:680px;margin:16px auto 0;border-radius:0 8px 8px 0;">
+<p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;">Ваш сохранённый результат тренировки:</p>
+<p id="savedBannerText" style="font-size:0.85rem;color:var(--muted);"></p>
+<div style="display:flex;gap:10px;margin-top:10px;">
+<button onclick="document.getElementById('savedBanner').style.display='none'" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);">Закрыть</button>
+</div>
+</div>
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="section-label">Калькулятор упражнений</div>
+<h2 class="section-title">Введите данные о тренировке</h2>
+<p class="section-sub">Основано на значениях МЕТ (метаболический эквивалент) из Сборника физических активностей.</p>
+<div class="calc-card">
+<div class="calc-grid">
+<div class="field">
+<label for="weight">Ваш вес (кг)</label>
+<input id="weight" max="300" min="30" placeholder="e.g. 75" type="number"/>
+</div>
+<div class="field">
+<label for="duration">Продолжительность (минуты)</label>
+<input id="duration" max="600" min="1" placeholder="e.g. 45" type="number"/>
+</div>
+<div class="field" style="grid-column:1/-1;">
+<label for="activity">Тип активности</label>
+<select id="activity">
+<optgroup label="🏃 Running / Walking">
+<option value="3.5">Ходьба (медленно, 3 км/ч)</option>
+<option value="4.3">Ходьба (умеренно, 5 км/ч)</option>
+<option value="5.0">Ходьба (быстро, 6 км/ч)</option>
+<option value="7.0">Бег (8 км/ч)</option>
+<option value="9.8">Бег (10 км/ч)</option>
+<option value="11.0">Бег (12 км/ч)</option>
+<option value="13.5">Бег (быстро, 14+ км/ч)</option>
+</optgroup>
+<optgroup label="🚴 Cycling">
+<option value="4.0">Велосипед (неспешно, &lt;16 км/ч)</option>
+<option value="6.8">Велосипед (умеренно, 16–19 км/ч)</option>
+<option value="10.0">Велосипед (интенсивно, 20–22 км/ч)</option>
+<option value="12.0">Велосипед (гонка, 23+ км/ч)</option>
+<option value="8.5">Велотренажёр (умеренно)</option>
+</optgroup>
+<optgroup label="🏊 Swimming">
+<option value="5.8">Плавание (неспешно)</option>
+<option value="8.3">Плавание (кроль, умеренно)</option>
+<option value="10.0">Плавание (кроль, интенсивно)</option>
+</optgroup>
+<optgroup label="💪 Gym / Strength">
+<option value="3.5">Силовые тренировки (лёгкие)</option>
+<option value="5.0">Силовые тренировки (умеренные)</option>
+<option value="6.0">Силовые тренировки (интенсивные)</option>
+<option value="8.0">Круговые тренировки</option>
+<option value="7.0">Кроссфит</option>
+</optgroup>
+<optgroup label="🧘 Cardio / Classes">
+<option value="7.5">ВИИТ</option>
+<option value="5.0">Аэробика (низкая интенсивность)</option>
+<option value="7.3">Аэробика (высокая интенсивность)</option>
+<option value="3.0">Йога</option>
+<option value="4.0">Пилатес</option>
+<option value="7.8">Скакалка (умеренно)</option>
+<option value="4.5">Танцы</option>
+</optgroup>
+<optgroup label="⚽ Sports">
+<option value="7.0">Футбол</option>
+<option value="8.0">Баскетбол</option>
+<option value="7.0">Теннис (одиночный)</option>
+<option value="6.0">Волейбол</option>
+<option value="9.0">Бокс (спарринг)</option>
+</optgroup>
+</select>
+</div>
+</div>
+<button class="btn-calc" id="calcBtn">Рассчитать сожжённые калории →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Пожалуйста, заполните все поля правильно.</p>
+<div class="calc-results" id="calcResults">
+<div class="calories-display">
+<div class="kcal-number" id="caloriesDisplay">—</div>
+<div class="kcal-label" id="caloriesLabel">калорий сожжено</div>
+</div>
+<div class="macros-grid">
+<div class="macro-item">
+<div class="macro-value" id="perMinute">—</div>
+<div class="macro-name">ккал в минуту</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="perHour">—</div>
+<div class="macro-name">ккал в час</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="fatBurned">—</div>
+<div class="macro-name">грамм жира</div>
+</div>
+</div>
+<!-- Equivalents -->
+<div style="background:var(--cream);border-radius:10px;padding:20px;margin-bottom:16px;">
+<p style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">Это эквивалентно сжиганию:</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;">
+<div style="text-align:center;background:white;border-radius:8px;padding:12px;">
+<div style="font-size:1.5rem;">🍫</div>
+<div id="eq1" style="font-weight:600;color:var(--green);">—</div>
+<div style="font-size:0.75rem;color:var(--muted);">шоколадки</div>
+</div>
+<div style="text-align:center;background:white;border-radius:8px;padding:12px;">
+<div style="font-size:1.5rem;">🍕</div>
+<div id="eq2" style="font-weight:600;color:var(--green);">—</div>
+<div style="font-size:0.75rem;color:var(--muted);">кусков пиццы</div>
+</div>
+<div style="text-align:center;background:white;border-radius:8px;padding:12px;">
+<div style="font-size:1.5rem;">🍎</div>
+<div id="eq3" style="font-weight:600;color:var(--green);">—</div>
+<div style="font-size:0.75rem;color:var(--muted);">яблок</div>
+</div>
+</div>
+</div>
+<div class="result-note" id="resultNote"></div>
+<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+<button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Сохранить результаты</button>
+<button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Распечатать</button>
+<button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Скачать карточку</button>
+</div>
+<div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+<p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">Сожжено калорий</p>
+<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">ккал за тренировку</p>
+<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">В час</p>
+<p id="shareCardPerHour" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Сожжено жира</p>
+<p id="shareCardFatBurned" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+</div>
+<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+</div>
+<p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;">✓ Результаты сохранены!</p>
+</div>
+</div>
+</div>
+</section>
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+<section class="how-section">
+<div class="container">
+<div class="section-label">Как работает</div>
+<h2 class="section-title">Наука за расчётом</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num">1</div>
+<h3>Значение МЕТ</h3>
+<p>Каждая активность имеет значение МЕТ (метаболический эквивалент задачи) — показатель интенсивности относительно спокойного сидения, которое определено как 1 МЕТ. Например, бег в умеренном темпе — около 10 МЕТ, то есть сжигает примерно в 10 раз больше энергии, чем состояние покоя. Эти значения взяты из Сборника физических активностей — исследовательской базы данных, поддерживаемой и обновляемой специалистами по физическим упражнениям.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>Ваш вес</h3>
+<p>Люди с большим весом сжигают больше калорий при той же активности, потому что перемещение большей массы тела против силы тяжести или сопротивления воды/воздуха требует больше энергии. Поэтому калькуляторам сожжённых калорий всегда нужен вес тела как параметр — само по себе значение МЕТ не даёт калорий без него.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>Продолжительность</h3>
+<p>Чем дольше тренируетесь, тем больше калорий сжигаете — примерно линейная зависимость для активностей в устойчивом темпе. Формула: Калории = МЕТ × вес (кг) × продолжительность (часы) × 1.05 (стандартная поправочная константа). Поэтому 60-минутная пробежка сжигает почти вдвое больше, чем 30-минутная в том же темпе.</p>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<h3>Индивидуальные различия</h3>
+<p>Оценки на основе МЕТ — это средние значения по популяции, не учитывающие индивидуальный уровень физической подготовки, мышечную массу, возраст или эффективность выполнения упражнений. Тренированный спортсмен может сжигать несколько меньше калорий, чем показывает эта оценка, при той же активности, так как его тело стало более эффективным, тогда как новичок при той же относительной интенсивности может сжигать чуть больше.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<div class="section-label">Вопросы</div>
+<h2 class="section-title">Частые вопросы о сожжённых калориях</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">Насколько точны оценки на основе МЕТ?</button>
+<div class="faq-answer">Значения МЕТ — это средние по популяции, полученные в лабораторных исследованиях, поэтому индивидуальные результаты могут отличаться на 10-20% в зависимости от уровня подготовки, эффективности техники и даже температуры окружающей среды. Это хороший инструмент планирования, но не стоит воспринимать его как точное измерение — фитнес-трекер с пульсометром обычно даёт более персонализированную (хотя всё ещё несовершенную) оценку.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Стоит ли «доедать» сожжённые на тренировке калории?</button>
+<div class="faq-answer">Зависит от цели. Если вы поддерживаете вес или пытаетесь набрать мышцы — да, учитывайте калории от тренировок в общем потреблении. Если вы в дефиците калорий для похудения, большинство людей уже закладывают запас в расчёт дефицита, поэтому «доедание» 100% расчётных калорий тренировки сверх этого может подорвать прогресс, особенно учитывая, что эти оценки часто завышены для многих людей.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Почему фитнес-часы показывают другое число, чем этот калькулятор?</button>
+<div class="faq-answer">Фитнес-часы используют данные пульса плюс ваш личный профиль (возраст, пульс покоя, иногда оценки VO2 max) для персонализации оценки, тогда как этот калькулятор использует фиксированное значение МЕТ для типа активности. Ни один метод не идеально точен, но оценка часов немного более персонализирована, а этот калькулятор полезен для быстрого планирования без оборудования.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Означает ли крепатура, что сожжено больше калорий?</button>
+<div class="faq-answer">Не обязательно — отсроченная мышечная боль (крепатура, DOMS) отражает микроповреждения мышц и адаптацию, а не напрямую сожжённые калории. Короткая, очень интенсивная силовая тренировка может вызвать боль на несколько дней при меньшем общем расходе калорий, чем более длинная кардио-тренировка в устойчивом темпе, после которой на следующий день вы чувствуете себя нормально.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Другие калькуляторы</div>
+<h2 class="section-title">Связанные инструменты</h2>
+<div class="blog-grid">
+<a class="blog-card" href="/ru/" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Калории</span><h3>Калькулятор калорий и БЖУ</h3><p>Рассчитайте суточную норму калорий и БЖУ.</p><span class="blog-read-more">Открыть →</span></div></a>
+<a class="blog-card" href="blog/hiit-vs-steady-state-cardio.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Сравнение</span><h3>HIIT vs равномерное кардио</h3><p>Какое кардио подходит вам.</p><span class="blog-read-more">Читать →</span></div></a>
+<a class="blog-card" href="blog/cardio-vs-weights-fat-loss.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Сравнение</span><h3>Кардио vs силовые</h3><p>Что реально сжигает больше жира.</p><span class="blog-read-more">Читать →</span></div></a>
+<a class="blog-card" href="blog/running-vs-walking.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Сравнение</span><h3>Бег vs ходьба</h3><p>Что лучше для похудения.</p><span class="blog-read-more">Читать →</span></div></a>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand"><a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Бесплатные калькуляторы здоровья. Не медицинский совет.</p></div>
+<div class="footer-links">
+<a href="about.html">О сайте</a>
+<a href="blog/">Блог</a>
+<a href="contact.html">Контакт</a>
+<a href="privacy.html">Политика конфиденциальности</a>
+<a href="terms.html">Условия использования</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span><span>Только образовательные оценки.</span></div>
+</footer>
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+
+function savePageResults() {
+  var results = {};
+  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct').forEach(function(el, i) {
+    if (el.textContent && el.textContent !== '—') results['val_' + i] = el.textContent;
+  });
+  // Get main result text
+  var mainEl = document.querySelector('.calc-results .kcal-number, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct');
+  if (mainEl) results.mainValue = mainEl.textContent;
+  results.savedAt = new Date().toLocaleDateString();
+  localStorage.setItem('cm_saved_exercise', JSON.stringify(results));
+  var msg = document.getElementById('saveMsg');
+  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
+}
+
+// Show saved banner on load
+window.addEventListener('load', function() {
+  var saved = localStorage.getItem('cm_saved_exercise');
+  if (!saved) return;
+  try {
+    var data = JSON.parse(saved);
+    if (!data.mainValue) return;
+    var banner = document.getElementById('savedBanner');
+    var bannerText = document.getElementById('savedBannerText');
+    if (!banner || !bannerText) return;
+    var l = localStorage.getItem('lang') || 'en';
+    bannerText.textContent = (l==='ru' ? 'Результат: ' : 'Result: ') + data.mainValue + ' · ' + (l==='ru' ? 'Сохранено: ' : 'Saved: ') + data.savedAt;
+    banner.style.display = 'block';
+  } catch(e) {}
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+window.addEventListener('scroll', function(){
+  var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+  document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+});
+
+let currentLang = 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+    else el.textContent = t;
+  });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    var t = opt.getAttribute('data-' + lang); if (t) opt.textContent = t;
+  });
+  if (document.getElementById('calcResults').classList.contains('visible')) updateLabels();
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (sl==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+const notes = {
+  en: 'This is an estimate based on MET values. Actual calorie burn varies based on fitness level, age, muscle mass, and exercise intensity. Heart rate monitors provide more accurate measurements.',
+  ru: 'Это приблизительная оценка на основе значений МЕТ. Реальный расход калорий зависит от уровня физической подготовки, возраста, мышечной массы и интенсивности упражнений. Пульсометры дают более точные показания.'
+};
+
+function updateLabels() {
+  document.getElementById('caloriesLabel').textContent = currentLang === 'ru' ? 'калорий сожжено' : 'calories burned';
+  document.getElementById('resultNote').textContent = notes[currentLang];
+}
+
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'exercise-calories-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+document.getElementById('calcBtn').addEventListener('click', function() {
+  const weight = parseFloat(document.getElementById('weight').value);
+  const duration = parseFloat(document.getElementById('duration').value);
+  const met = parseFloat(document.getElementById('activity').value);
+  const err = document.getElementById('calcError');
+
+  if (!weight || !duration || weight < 30 || duration < 1) { err.style.display = 'block'; return; }
+  err.style.display = 'none';
+
+  // Calories = MET × weight(kg) × duration(hours)
+  const hours = duration / 60;
+  const calories = Math.round(met * weight * hours);
+  const perMinute = (met * weight / 60).toFixed(1);
+  const perHour = Math.round(met * weight);
+  const fatGrams = (calories / 7.7).toFixed(1);
+
+  animateNumber(document.getElementById('caloriesDisplay'), calories, 0, v => Number(v).toLocaleString());
+  animateNumber(document.getElementById('perMinute'), parseFloat(perMinute), 1);
+  animateNumber(document.getElementById('perHour'), perHour, 0);
+  animateNumber(document.getElementById('fatBurned'), parseFloat(fatGrams), 1, v => v + 'g');
+
+  document.getElementById('shareCardValue').textContent = Number(calories).toLocaleString();
+  document.getElementById('shareCardPerHour').textContent = Number(perHour).toLocaleString() + ' kcal';
+  document.getElementById('shareCardFatBurned').textContent = fatGrams + 'g';
+
+  // Food equivalents
+  animateNumber(document.getElementById('eq1'), calories / 235, 1);
+  animateNumber(document.getElementById('eq2'), calories / 285, 1);
+  animateNumber(document.getElementById('eq3'), calories / 80, 1);
+
+  updateLabels();
+  const results = document.getElementById('calcResults');
+  results.classList.add('visible');
+  setTimeout(() => results.scrollIntoView({behavior:'smooth',block:'start'}), 100);
+});
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

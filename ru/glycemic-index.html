@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head><script>localStorage.setItem('lang','ru');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Glycemic Index (GI) Table — Complete Food List | Calories &amp; Macros</title>
+<meta content="Complete glycemic index table for 100+ foods. Find low, medium, and high GI foods to manage blood sugar and energy levels." name="description"/>
+<link href="https://calories-macros.com/ru/glycemic-index.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does GI matter if I don't have diabetes?","acceptedAnswer":{"@type":"Answer","text":"To some degree, yes — low-GI meals tend to keep you full longer and cause fewer energy crashes. For most people, total calorie intake still matters more."}},
+    {"@type":"Question","name":"Can I lower the GI of a meal?","acceptedAnswer":{"@type":"Answer","text":"Yes — pairing a high-GI food with protein, fat, or fibre slows digestion and blunts the blood sugar spike of the meal as a whole."}},
+    {"@type":"Question","name":"Does cooking method change a food's GI?","acceptedAnswer":{"@type":"Answer","text":"Yes, noticeably in some cases. Overcooked pasta has a higher GI than al dente pasta, and riper fruit has a higher GI than unripe fruit."}},
+    {"@type":"Question","name":"Is Glycemic Load more useful than Glycemic Index?","acceptedAnswer":{"@type":"Answer","text":"Often yes for real-world decisions, since Glycemic Load factors in actual portion size rather than just the food's inherent property."}}
+  ]}
+  </script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+<meta content="Glycemic Index Table — Low, Medium &amp; High GI Foods" property="og:title"/>
+<meta content="Complete GI table for 100+ foods to manage blood sugar and energy." property="og:description"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<link href="../style.css" rel="stylesheet"/>
+<style>
+    .gi-table { width:100%; border-collapse:collapse; font-size:0.88rem; }
+    .gi-table th { padding:10px 14px; background:var(--green); color:white; text-align:left; font-weight:600; }
+    .gi-table th:not(:first-child) { text-align:right; }
+    .gi-table td { padding:10px 14px; border-bottom:1px solid var(--border); }
+    .gi-table td:not(:first-child) { text-align:right; }
+    .gi-table tr:hover { background:var(--cream); }
+    .gi-badge { display:inline-block; padding:2px 8px; border-radius:12px; font-size:0.72rem; font-weight:700; }
+    .gi-low { background:#dcfce7; color:#166534; }
+    .gi-medium { background:#fef9c3; color:#854d0e; }
+    .gi-high { background:#fee2e2; color:#991b1b; }
+    .gi-bar { display:inline-block; height:8px; border-radius:4px; vertical-align:middle; margin-right:8px; }
+    .search-wrap { position:relative; margin-bottom:20px; }
+    .search-wrap input { width:100%; padding:12px 16px 12px 44px; border:1.5px solid var(--border); border-radius:8px; font-size:0.95rem; font-family:var(--font-body); }
+    .search-wrap::before { content:'🔍'; position:absolute; left:14px; top:50%; transform:translateY(-50%); }
+  </style>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a href="search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="" href="/glycemic-index.html" id="headerLangEN">EN</a>
+<a class="active" href="/ru/glycemic-index.html" id="headerLangRU">RU</a>
+</div>
+<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Калькуляторы</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/ru/"><span class="mm-icon">🔥</span><span class="mm-text">Калории и БЖУ</span></a>
+<a class="mega-menu-item" href="/ru/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">ИМТ</span></a>
+<a class="mega-menu-item" href="/ru/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Норма воды</span></a>
+<a class="mega-menu-item" href="/ru/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Идеальный вес</span></a>
+<a class="mega-menu-item" href="/ru/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">% жира</span></a>
+<a class="mega-menu-item" href="/ru/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Тренировки</span></a>
+<a class="mega-menu-item" href="/ru/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Метаболизм</span></a>
+<a class="mega-menu-item" href="/ru/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Беременность</span></a>
+<a class="mega-menu-item" href="/ru/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Похудение</span></a>
+<a class="mega-menu-item" href="/ru/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Витамины</span></a>
+<a class="mega-menu-item" href="/ru/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Дети</span></a>
+<a class="mega-menu-item" href="/ru/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Белок</span></a>
+<a class="mega-menu-item" href="/ru/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Нетто-углеводы</span></a>
+<a class="mega-menu-item" href="/ru/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">Максимум на 1 повтор</span></a>
+<a class="mega-menu-item" href="/ru/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Таймер голодания</span></a>
+<a class="mega-menu-item" href="/ru/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE по диете</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/blog/">Блог</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/ru/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Калории для похудения</span></a>
+<a class="mega-menu-item" href="/ru/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">Набор мышц</span></a>
+<a class="mega-menu-item" href="/ru/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Кетогенная диета</span></a>
+<a class="mega-menu-item" href="/ru/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Интервальное голодание</span></a>
+<a class="mega-menu-item" href="/ru/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Лучшие продукты</span></a>
+<a class="mega-menu-item" href="/ru/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Средиземноморская</span></a>
+<a class="mega-menu-item" href="/ru/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Диета для живота</span></a>
+<a class="mega-menu-item" href="/ru/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Суперфуды</span></a>
+<div class="mega-menu-footer"><a href="/ru/blog/">Все статьи →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Инструменты</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/ru/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Планы питания</span></a>
+<a class="mega-menu-item" href="/ru/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Калорийность</span></a>
+<a class="mega-menu-item" href="/ru/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">ГИ</span></a>
+<a class="mega-menu-item" href="/ru/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Фастфуд</span></a>
+<a class="mega-menu-item" href="/ru/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Алкоголь</span></a>
+<a class="mega-menu-item" href="/ru/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Рецепты</span></a>
+<a class="mega-menu-item" href="/ru/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Сравнение диет</span></a>
+<a class="mega-menu-item" href="/ru/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<a href="/ru/about.html">О сайте</a>
+<a href="/ru/contact.html">Контакт</a>
+<div class="lang-toggle"><a class="" href="/glycemic-index.html" id="langEN">EN</a><a class="active" href="/ru/glycemic-index.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<div class="page-hero">
+<div class="container">
+<h1>Таблица гликемического индекса (ГИ)</h1>
+<p class="meta">Полная таблица ГИ для 100+ продуктов — низкий, средний и высокий гликемический индекс для контроля сахара и уровня энергии.</p>
+</div>
+</div>
+<main>
+<div class="container" style="padding:40px 20px 80px;">
+<!-- GI Scale explanation -->
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
+<div style="background:#dcfce7;border-radius:10px;padding:16px;text-align:center;">
+<div style="font-size:1.4rem;font-weight:700;color:#166534;margin-bottom:4px;">Низкий ГИ</div>
+<div style="font-size:1.8rem;font-weight:700;color:#166534;">≤ 55</div>
+<div style="font-size:0.82rem;color:#166534;margin-top:4px;">Медленное высвобождение энергии</div>
+</div>
+<div style="background:#fef9c3;border-radius:10px;padding:16px;text-align:center;">
+<div style="font-size:1.4rem;font-weight:700;color:#854d0e;margin-bottom:4px;">Средний ГИ</div>
+<div style="font-size:1.8rem;font-weight:700;color:#854d0e;">56–69</div>
+<div style="font-size:0.82rem;color:#854d0e;margin-top:4px;">Умеренный скачок сахара</div>
+</div>
+<div style="background:#fee2e2;border-radius:10px;padding:16px;text-align:center;">
+<div style="font-size:1.4rem;font-weight:700;color:#991b1b;margin-bottom:4px;">Высокий ГИ</div>
+<div style="font-size:1.8rem;font-weight:700;color:#991b1b;">≥ 70</div>
+<div style="font-size:0.82rem;color:#991b1b;margin-top:4px;">Быстрый скачок сахара</div>
+</div>
+</div>
+<!-- Search & Filter -->
+<div class="search-wrap">
+<input id="giSearch" oninput="filterGI()" placeholder="Search foods..." type="text"/>
+</div>
+<div id="giFilters" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;">
+<button class="cat-tab active" data-gi="all">Все</button>
+<button class="cat-tab" data-gi="low">🟢 Низкий ГИ (≤55)</button>
+<button class="cat-tab" data-gi="medium">🟡 Средний ГИ (56–69)</button>
+<button class="cat-tab" data-gi="high">🔴 Высокий ГИ (≥70)</button>
+</div>
+<div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;">
+<table class="gi-table">
+<thead>
+<tr>
+<th>Продукт</th>
+<th>ГИ</th>
+<th>Уровень ГИ</th>
+<th>Категория</th>
+</tr>
+</thead>
+<tbody id="giTbody"></tbody>
+</table>
+</div>
+<p style="margin-top:12px;font-size:0.8rem;color:var(--muted);">Значения ГИ приблизительны и могут варьироваться в зависимости от спелости, способа приготовления и сочетаний продуктов. Источник: Международные таблицы гликемического индекса.</p>
+<!-- What is GI -->
+<div style="margin-top:48px;">
+<h2 style="font-family:var(--font-display);font-size:1.4rem;font-weight:400;margin-bottom:20px;">Что такое гликемический индекс?</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num">1</div>
+<h3>Как измеряется ГИ</h3>
+<p>ГИ измеряет, насколько быстро продукт повышает глюкозу крови по сравнению с чистой глюкозой (ГИ = 100). Тестируется на реальных людях в течение 2 часов после стандартной порции 50г углеводов.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>Почему ГИ важен</h3>
+<p>Высокогликемические продукты вызывают резкие скачки сахара, после которых следует упадок, провоцируя голод. Низкогликемические обеспечивают стабильную энергию и лучший контроль аппетита.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>ГИ vs гликемическая нагрузка</h3>
+<p>ГИ не учитывает размер порции. Гликемическая нагрузка (ГН) = ГИ × углеводы на порцию / 100. Арбуз имеет высокий ГИ (72), но низкую ГН, так как содержит мало углеводов.</p>
+</div>
+</div>
+</div>
+<!-- FAQ -->
+<section class="faq-section" style="padding:48px 0 0;">
+<div class="section-label">Вопросы</div>
+<h2 class="section-title">Частые вопросы о гликемическом индексе</h2>
+<div class="faq-list" style="margin-left:0;">
+<div class="faq-item">
+<button class="faq-question">Важен ли ГИ, если у меня нет диабета?</button>
+<div class="faq-answer">В некоторой степени — да. Помимо контроля сахара, низкогликемические приёмы пищи обычно дольше сохраняют чувство сытости и вызывают меньше упадков энергии, что может помочь контролировать аппетит при управлении весом. Тем не менее, для людей без диабета или инсулинорезистентности общее потребление калорий и качество рациона в целом важнее, чем сам по себе ГИ.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Можно ли снизить ГИ приёма пищи?</button>
+<div class="faq-answer">Да — сочетание высокогликемического продукта с белком, жиром или клетчаткой замедляет переваривание и смягчает скачок сахара от всего приёма пищи, даже если ГИ отдельного продукта не меняется. Поэтому белый рис с овощами и белком действует мягче, чем белый рис отдельно.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Влияет ли способ приготовления на ГИ продукта?</button>
+<div class="faq-answer">Да, заметно в некоторых случаях. Переваренная паста имеет более высокий ГИ, чем паста al dente, так как больше крахмала распалось и стало легче перевариваться. Аналогично, более спелые фрукты обычно имеют более высокий ГИ, чем неспелые того же вида, так как созревание превращает крахмалы в простые сахара.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Гликемическая нагрузка полезнее гликемического индекса?</button>
+<div class="faq-answer">Для реальных решений о питании — часто да, так как ГН учитывает фактический размер порции, а не только внутреннее свойство продукта. Продукт может иметь высокий ГИ, но низкую ГН, если вы обычно едите его в небольших количествах (как арбуз), поэтому опора только на ГИ может вводить в заблуждение для продуктов, которые не едят в больших углеводных количествах.</div>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<div style="margin-top:40px;background:var(--green-pale);border-radius:var(--radius);padding:28px;text-align:center;">
+<h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:8px;">Рассчитайте суточную норму углеводов</h3>
+<p style="color:var(--muted);margin-bottom:16px;font-size:0.9rem;">Используйте наш Калькулятор для расчёта нормы углеводов, затем выбирайте низкогликемические источники.</p>
+<a href="/ru/" style="display:inline-block;padding:12px 28px;background:var(--green);color:white;border-radius:8px;font-weight:600;">Рассчитать мои БЖУ →</a>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand"><a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Бесплатные калькуляторы здоровья. Не медицинский совет.</p></div>
+<div class="footer-links">
+<a href="about.html">О сайте</a>
+<a href="blog/">Блог</a>
+<a href="faq.html">FAQ</a>
+<a href="privacy.html">Политика конфиденциальности</a>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+var currentLang = localStorage.getItem('lang') || 'en';
+var currentGiFilter = 'all';
+
+var GI_FOODS = [
+  // Grains
+  {en:'White bread',ru:'Белый хлеб',gi:75,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Whole wheat bread',ru:'Цельнозерновой хлеб',gi:69,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Sourdough bread',ru:'Хлеб на закваске',gi:54,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'White rice (cooked)',ru:'Белый рис (варёный)',gi:73,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Brown rice (cooked)',ru:'Бурый рис (варёный)',gi:55,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Basmati rice',ru:'Рис басмати',gi:58,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Oats (porridge)',ru:'Овсянка (каша)',gi:55,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Instant oats',ru:'Быстрая овсянка',gi:79,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Pasta (al dente)',ru:'Паста (аль денте)',gi:45,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Pasta (well cooked)',ru:'Паста (сильно варёная)',gi:65,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Quinoa',ru:'Киноа',gi:53,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Cornflakes',ru:'Кукурузные хлопья',gi:81,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Bran flakes',ru:'Отрубяные хлопья',gi:74,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Rye bread',ru:'Ржаной хлеб',gi:50,cat_en:'Grains',cat_ru:'Злаки'},
+  {en:'Tortilla (wheat)',ru:'Пшеничная лепёшка',gi:52,cat_en:'Grains',cat_ru:'Злаки'},
+  // Vegetables
+  {en:'Potato (boiled)',ru:'Картофель (варёный)',gi:78,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Potato (baked)',ru:'Картофель (запечённый)',gi:85,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Sweet potato (boiled)',ru:'Батат (варёный)',gi:63,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Carrot (raw)',ru:'Морковь (сырая)',gi:16,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Broccoli',ru:'Брокколи',gi:10,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Spinach',ru:'Шпинат',gi:15,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Tomato',ru:'Томат',gi:15,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Corn (cooked)',ru:'Кукуруза (варёная)',gi:52,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Peas',ru:'Горошек',gi:48,cat_en:'Vegetables',cat_ru:'Овощи'},
+  {en:'Parsnip (cooked)',ru:'Пастернак (варёный)',gi:97,cat_en:'Vegetables',cat_ru:'Овощи'},
+  // Legumes
+  {en:'Lentils (boiled)',ru:'Чечевица (варёная)',gi:32,cat_en:'Legumes',cat_ru:'Бобовые'},
+  {en:'Chickpeas (boiled)',ru:'Нут (варёный)',gi:28,cat_en:'Legumes',cat_ru:'Бобовые'},
+  {en:'Black beans',ru:'Чёрная фасоль',gi:30,cat_en:'Legumes',cat_ru:'Бобовые'},
+  {en:'Kidney beans',ru:'Красная фасоль',gi:29,cat_en:'Legumes',cat_ru:'Бобовые'},
+  {en:'Soybeans',ru:'Соевые бобы',gi:15,cat_en:'Legumes',cat_ru:'Бобовые'},
+  {en:'Hummus',ru:'Хумус',gi:6,cat_en:'Legumes',cat_ru:'Бобовые'},
+  // Fruits
+  {en:'Apple',ru:'Яблоко',gi:36,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Banana (ripe)',ru:'Банан (спелый)',gi:62,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Banana (unripe)',ru:'Банан (недозрелый)',gi:45,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Orange',ru:'Апельсин',gi:43,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Mango',ru:'Манго',gi:60,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Grapes',ru:'Виноград',gi:59,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Watermelon',ru:'Арбуз',gi:72,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Strawberries',ru:'Клубника',gi:40,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Blueberries',ru:'Черника',gi:53,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Cherries',ru:'Вишня',gi:20,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Peach',ru:'Персик',gi:42,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Pear',ru:'Груша',gi:38,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Pineapple',ru:'Ананас',gi:66,cat_en:'Fruits',cat_ru:'Фрукты'},
+  {en:'Dates',ru:'Финики',gi:42,cat_en:'Fruits',cat_ru:'Фрукты'},
+  // Dairy
+  {en:'Milk (whole)',ru:'Молоко (цельное)',gi:27,cat_en:'Dairy',cat_ru:'Молочные'},
+  {en:'Greek yoghurt',ru:'Греческий йогурт',gi:11,cat_en:'Dairy',cat_ru:'Молочные'},
+  {en:'Ice cream',ru:'Мороженое',gi:51,cat_en:'Dairy',cat_ru:'Молочные'},
+  // Snacks & Other
+  {en:'Dark chocolate (70%)',ru:'Тёмный шоколад (70%)',gi:23,cat_en:'Snacks',cat_ru:'Снеки'},
+  {en:'Milk chocolate',ru:'Молочный шоколад',gi:43,cat_en:'Snacks',cat_ru:'Снеки'},
+  {en:'Honey',ru:'Мёд',gi:61,cat_en:'Other',cat_ru:'Прочее'},
+  {en:'Sugar (white)',ru:'Сахар белый',gi:65,cat_en:'Other',cat_ru:'Прочее'},
+  {en:'Fructose',ru:'Фруктоза',gi:15,cat_en:'Other',cat_ru:'Прочее'},
+  {en:'Glucose',ru:'Глюкоза',gi:100,cat_en:'Other',cat_ru:'Прочее'},
+  {en:'Popcorn (plain)',ru:'Попкорн (без масла)',gi:65,cat_en:'Snacks',cat_ru:'Снеки'},
+  {en:'Rice cakes',ru:'Рисовые хлебцы',gi:82,cat_en:'Snacks',cat_ru:'Снеки'},
+  {en:'Potato chips',ru:'Чипсы',gi:56,cat_en:'Snacks',cat_ru:'Снеки'},
+  {en:'Sports drink (Gatorade)',ru:'Спортивный напиток',gi:78,cat_en:'Drinks',cat_ru:'Напитки'},
+  {en:'Orange juice',ru:'Апельсиновый сок',gi:50,cat_en:'Drinks',cat_ru:'Напитки'},
+];
+
+function getGiLevel(gi) {
+  if (gi <= 55) return 'low';
+  if (gi <= 69) return 'medium';
+  return 'high';
+}
+
+function renderGI(filter, query) {
+  var l = currentLang;
+  var tbody = document.getElementById('giTbody');
+  var filtered = GI_FOODS.filter(function(f) {
+    var level = getGiLevel(f.gi);
+    var matchFilter = filter === 'all' || level === filter;
+    var matchQ = !query || f.en.toLowerCase().includes(query) || f.ru.toLowerCase().includes(query);
+    return matchFilter && matchQ;
+  }).sort(function(a,b){ return a.gi - b.gi; });
+
+  var labels = {low_en:'Low', low_ru:'Низкий', medium_en:'Medium', medium_ru:'Средний', high_en:'High', high_ru:'Высокий'};
+
+  tbody.innerHTML = filtered.map(function(f) {
+    var level = getGiLevel(f.gi);
+    var name = l === 'ru' ? f.ru : f.en;
+    var cat = l === 'ru' ? f.cat_ru : f.cat_en;
+    var badgeClass = 'gi-' + level;
+    var badgeText = labels[level + '_' + l];
+    var barColor = level === 'low' ? '#166534' : level === 'medium' ? '#854d0e' : '#991b1b';
+    var barW = Math.round(f.gi / 100 * 80);
+    return '<tr>' +
+      '<td style="font-weight:500;">' + name + '</td>' +
+      '<td style="text-align:right;">' +
+        '<span class="gi-bar" style="width:' + barW + 'px;background:' + barColor + ';opacity:0.3;"></span>' +
+        '<strong>' + f.gi + '</strong>' +
+      '</td>' +
+      '<td style="text-align:right;"><span class="gi-badge ' + badgeClass + '">' + badgeText + '</span></td>' +
+      '<td style="text-align:right;color:var(--muted);font-size:0.82rem;">' + cat + '</td>' +
+      '</tr>';
+  }).join('');
+}
+
+function filterGI() {
+  var q = document.getElementById('giSearch').value.toLowerCase().trim();
+  renderGI(currentGiFilter, q);
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (t.includes('<')) el.innerHTML = t; else el.textContent = t;
+  });
+  renderGI(currentGiFilter, document.getElementById('giSearch').value.toLowerCase());
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  
+  window.addEventListener('scroll', function(){
+    var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+    document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+    document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+  });
+
+  document.querySelectorAll('#giFilters .cat-tab').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('#giFilters .cat-tab').forEach(function(b){ b.classList.remove('active'); });
+      this.classList.add('active');
+      currentGiFilter = this.getAttribute('data-gi');
+      filterGI();
+    });
+  });
+
+  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+
+  renderGI('all', '');
+});
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

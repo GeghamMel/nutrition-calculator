@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head><script>localStorage.setItem('lang','ru');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros</title>
+<meta content="Calculate your one-rep max (1RM) from any weight and rep count, with training percentages for strength, hypertrophy, and endurance." name="description"/>
+<link href="https://calories-macros.com/ru/one-rep-max-calculator.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"One Rep Max Calculator","url":"https://calories-macros.com/one-rep-max-calculator.html","description":"Free one-rep max (1RM) calculator with training percentage breakdown.","applicationCategory":"HealthApplication"}
+  </script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How accurate are 1RM prediction formulas?","acceptedAnswer":{"@type":"Answer","text":"Generally within 5-10% of your actual max for rep ranges of 2-10, but accuracy drops noticeably above 10-12 reps since the formulas were built from lower-rep data."}},
+    {"@type":"Question","name":"Which 1RM formula is most accurate?","acceptedAnswer":{"@type":"Answer","text":"No single formula is universally best — Epley tends to run slightly higher, Brzycki slightly lower, and the true value usually falls between them. We average both for a balanced estimate."}},
+    {"@type":"Question","name":"Should beginners test or estimate their 1RM?","acceptedAnswer":{"@type":"Answer","text":"Beginners should estimate rather than test a true 1RM, since maximal single-rep attempts carry higher injury risk without established technique and neuromuscular coordination under heavy load."}},
+    {"@type":"Question","name":"How often should I retest my 1RM?","acceptedAnswer":{"@type":"Answer","text":"Every 4-8 weeks is typical for intermediate lifters following a structured programme, since 1RM doesn't change dramatically week to week."}}
+  ]}
+  </script>
+<link href="../style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXLXM57ZKH');
+  </script>
+<link href="https://calories-macros.com/one-rep-max-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://calories-macros.com/ru/one-rep-max-calculator.html" hreflang="ru" rel="alternate"/>
+<link href="https://calories-macros.com/one-rep-max-calculator.html" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph -->
+<meta content="One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros" property="og:title"/>
+<meta content="Calculate your estimated one-rep max (1RM) from any weight and rep count. See training percentages for strength, hypertrophy, and endurance work." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://calories-macros.com/ru/one-rep-max-calculator.html" property="og:url"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Calories &amp; Macros" property="og:site_name"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros" name="twitter:title"/>
+<meta content="Calculate your estimated one-rep max (1RM) from any weight and rep count. See training percentages for strength, hypertrophy, and endurance work." name="twitter:description"/>
+<meta content="https://calories-macros.com/og-image.png" name="twitter:image"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"One Rep Max Calculator","item":"https://calories-macros.com/one-rep-max-calculator.html"}
+  ]}
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a aria-label="Search" href="/ru/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="" href="/one-rep-max-calculator.html" id="headerLangEN">EN</a>
+<a class="active" href="/ru/one-rep-max-calculator.html" id="headerLangRU">RU</a>
+</div>
+<button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Калькуляторы</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/ru/"><span class="mm-icon">🔥</span><span class="mm-text">Калории и БЖУ</span></a>
+<a class="mega-menu-item" href="/ru/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">ИМТ</span></a>
+<a class="mega-menu-item" href="/ru/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Норма воды</span></a>
+<a class="mega-menu-item" href="/ru/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Идеальный вес</span></a>
+<a class="mega-menu-item" href="/ru/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">% жира</span></a>
+<a class="mega-menu-item" href="/ru/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Тренировки</span></a>
+<a class="mega-menu-item" href="/ru/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Метаболизм</span></a>
+<a class="mega-menu-item" href="/ru/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Беременность</span></a>
+<a class="mega-menu-item" href="/ru/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Похудение</span></a>
+<a class="mega-menu-item" href="/ru/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Витамины</span></a>
+<a class="mega-menu-item" href="/ru/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Дети</span></a>
+<a class="mega-menu-item" href="/ru/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Белок</span></a>
+<a class="mega-menu-item" href="/ru/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Нетто-углеводы</span></a>
+<a class="mega-menu-item" href="/ru/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">Максимум на 1 повтор</span></a>
+<a class="mega-menu-item" href="/ru/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Таймер голодания</span></a>
+<a class="mega-menu-item" href="/ru/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE по диете</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/blog/">Блог</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/ru/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Калории для похудения</span></a>
+<a class="mega-menu-item" href="/ru/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">Набор мышц</span></a>
+<a class="mega-menu-item" href="/ru/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Кетогенная диета</span></a>
+<a class="mega-menu-item" href="/ru/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Интервальное голодание</span></a>
+<a class="mega-menu-item" href="/ru/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Лучшие продукты</span></a>
+<a class="mega-menu-item" href="/ru/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Средиземноморская</span></a>
+<a class="mega-menu-item" href="/ru/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Диета для живота</span></a>
+<a class="mega-menu-item" href="/ru/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Суперфуды</span></a>
+<div class="mega-menu-footer"><a href="/ru/blog/">Все статьи →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Инструменты</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/ru/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Планы питания</span></a>
+<a class="mega-menu-item" href="/ru/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Калорийность</span></a>
+<a class="mega-menu-item" href="/ru/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">ГИ</span></a>
+<a class="mega-menu-item" href="/ru/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Фастфуд</span></a>
+<a class="mega-menu-item" href="/ru/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Алкоголь</span></a>
+<a class="mega-menu-item" href="/ru/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Рецепты</span></a>
+<a class="mega-menu-item" href="/ru/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Сравнение диет</span></a>
+<a class="mega-menu-item" href="/ru/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<a href="/ru/about.html">О сайте</a>
+<a href="/ru/contact.html">Контакт</a>
+<div class="lang-toggle"><a class="" href="/one-rep-max-calculator.html" id="langEN">EN</a><a class="active" href="/ru/one-rep-max-calculator.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Бесплатный калькулятор силы</div>
+<h1>Калькулятор <em>максимума на 1 повтор</em></h1>
+<p>Оцените максимум на одно повторение (1ПМ) по любому весу и количеству повторений, плюс проценты для тренировок под любую цель.</p>
+<a class="btn-scroll" href="#calculator">Рассчитать 1ПМ ↓</a>
+</div>
+</section>
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="section-label">Калькулятор 1ПМ</div>
+<h2 class="section-title">Введите данные подхода</h2>
+<p class="section-sub">Лучше всего работает для подходов 1–10 повторений, близких к отказу.</p>
+<div class="calc-card">
+<div class="calc-grid">
+<div class="field">
+<label for="liftWeight">Поднятый вес (кг)</label>
+<input id="liftWeight" max="500" min="1" placeholder="e.g. 100" type="number"/>
+</div>
+<div class="field">
+<label for="liftReps">Выполнено повторений</label>
+<input id="liftReps" max="15" min="1" placeholder="e.g. 5" type="number"/>
+</div>
+</div>
+<button class="btn-calc" id="calcBtn">Рассчитать 1ПМ →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Введите корректный вес и число повторений (1–15).</p>
+<div class="calc-results" id="calcResults">
+<div class="calories-display" style="background:var(--green-pale);">
+<div class="kcal-number" id="ormValue">—</div>
+<div class="kcal-label">расчётный 1ПМ (кг)</div>
+</div>
+<div class="macros-grid" style="grid-template-columns:1fr 1fr;">
+<div class="macro-item">
+<div class="macro-value" id="epleyValue">—</div>
+<div class="macro-name">Формула Эпли</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="brzyckiValue">—</div>
+<div class="macro-name">Формула Бжицки</div>
+</div>
+</div>
+<div style="margin-top:24px;">
+<p style="font-size:0.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:14px;">Тренировочные проценты:</p>
+<div id="pctTable" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;"></div>
+</div>
+<div class="result-note" id="resultNote" style="margin-top:16px;"></div>
+<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+<button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Распечатать</button>
+<button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Скачать карточку</button>
+</div>
+<div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+<p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">Мой максимум на 1 повтор</p>
+<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">кг расчётный 1ПМ</p>
+<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">90% (сила)</p>
+<p id="shareCard90" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">75% (гипертрофия)</p>
+<p id="shareCard75" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+</div>
+<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+<!-- Info section -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">Тренировочные зоны</div>
+<h2 class="section-title">Что делать с тренировочными процентами</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num" style="font-size:1.6rem;">85–100%</div>
+<h3>Максимальная сила (1–5 повторений)</h3>
+<p>Этот диапазон развивает грубую силу и нервно-мышечную эффективность — способность задействовать больше мышечных волокон для данного движения. Он сильно нагружает нервную систему, поэтому обычно программируется с меньшим суммарным недельным объёмом и более долгим отдыхом между подходами (3–5 минут).</p>
+</div>
+<div class="step">
+<div class="step-num" style="font-size:1.6rem;">67–85%</div>
+<h3>Гипертрофия (6–12 повторений)</h3>
+<p>Этот диапазон обычно считается оптимальным для роста мышц, балансируя достаточное механическое напряжение на повторение с достаточным общим объёмом для адаптации. Обычен отдых 60–90 секунд, что даёт более высокую плотность тренировки без сильного ущерба качеству следующего подхода.</p>
+</div>
+<div class="step">
+<div class="step-num" style="font-size:1.6rem;">&lt;67%</div>
+<h3>Мышечная выносливость (13+ повторений)</h3>
+<p>Более лёгкие веса на большее число повторений развивают мышечную выносливость и могут способствовать гипертрофии при выполнении близко к отказу, хотя обычно с большей метаболической усталостью («жжением»), чем при тяжёлой работе. Этот диапазон также часто используют для отработки техники, разминочных подходов и реабилитации, где более тяжёлая нагрузка неуместна.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology & Limitations -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">Методология</div>
+<h2 class="section-title">Как оценивается 1ПМ и его ограничения</h2>
+<p>Этот калькулятор усредняет две широко используемые формулы прогнозирования: формулу Эпли (1ПМ = вес × (1 + повторения/30)), разработанную Бойдом Эпли для силового тренерства в 1980-х, и формулу Бжицки (1ПМ = вес × 36 / (37 − повторения)), разработанную Мэттом Бжицки примерно в то же время. Обе формулы построены путём подгонки уравнений к реальным данным о поднятии тяжестей, и они дают немного разные оценки — Эпли обычно чуть выше при большем числе повторений, Бжицки чуть ниже — поэтому усреднение даёт разумную сбалансированную среднюю оценку.</p>
+<p style="margin-top:16px;">Эти формулы наиболее точны для подходов 1–10 повторений, выполненных близко к мышечному отказу с хорошей техникой — выше 12 повторений точность прогноза заметно снижается, так как связь между числом повторений и весом становится менее линейной при очень большом их количестве. Они также не учитывают индивидуальные различия в типе мышечных волокон, тренировочном опыте или том, какое упражнение тестируется — прогноз 1ПМ обычно точнее для базовых упражнений со штангой (присед, жим, тяга), чем для тренажёров или изолирующих упражнений. Воспринимайте результат как надёжную оценку для планирования, а не гарантированное число, которое вы поднимете в реальной попытке на одно повторение.</p>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<div class="section-label">Вопросы</div>
+<h2 class="section-title">Частые вопросы о максимуме на 1 повтор</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">Насколько точны формулы прогноза 1ПМ?</button>
+<div class="faq-answer">Обычно в пределах 5-10% от вашего реального максимума для диапазона 2-10 повторений, выполненных близко к отказу, но точность заметно снижается выше 10-12 повторений, так как формулы построены преимущественно на данных с меньшим числом повторений. Индивидуальные факторы, такие как состав типов мышечных волокон, также вызывают у некоторых людей большее расхождение реального 1ПМ с прогнозом.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Какая формула 1ПМ наиболее точна?</button>
+<div class="faq-answer">Ни одна формула не является универсально лучшей — Эпли обычно даёт чуть более высокое значение при большем числе повторений, Бжицки — чуть более низкое, а реальное значение обычно находится где-то между ними. Мы усредняем обе для сбалансированной оценки, а не выбираем одну как однозначно правильную.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Стоит ли новичкам тестировать или оценивать 1ПМ?</button>
+<div class="faq-answer">Новичкам обычно стоит оценивать, а не напрямую тестировать реальный 1ПМ, так как максимальные попытки на одно повторение несут более высокий риск травмы без отработанной техники, протоколов разминки и нервно-мышечной координации под очень тяжёлой нагрузкой. Оценка по субмаксимальному подходу (например, 5 повторений с непростым, но контролируемым весом) безопаснее и всё ещё полезна для программирования тренировок.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Как часто нужно пересчитывать 1ПМ?</button>
+<div class="faq-answer">Обычно каждые 4-8 недель для лифтеров среднего уровня, следующих структурированной силовой программе, так как 1ПМ не меняется драматически неделя к неделе при обычных тренировках. У новичков рост силы может быть быстрее, и им разумно переоценивать чаще (каждые 3-4 недели), так как нервная адаптация происходит быстро в первые месяцы тренировок.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Other calculators -->
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Другие калькуляторы</div>
+<h2 class="section-title">Связанные инструменты</h2>
+<div class="blog-grid">
+<a class="blog-card" href="/ru/" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Калории</span>
+<h3>Калькулятор калорий и БЖУ</h3>
+<p>Рассчитайте суточную норму калорий и БЖУ под вашу цель.</p>
+<span class="blog-read-more">Открыть →</span>
+</div>
+</a>
+<a class="blog-card" href="blog/free-weights-vs-machines.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Сравнение</span>
+<h3>Свободные веса vs тренажёры</h3>
+<p>Что выбрать новичку.</p>
+<span class="blog-read-more">Читать →</span>
+</div>
+</a>
+<a class="blog-card" href="blog/creatine-vs-preworkout.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Сравнение</span>
+<h3>Креатин vs предтреник</h3>
+<p>Что реально работает.</p>
+<span class="blog-read-more">Читать →</span>
+</div>
+</a>
+<a class="blog-card" href="blog/how-to-build-muscle.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Гид</span>
+<h3>Как набрать мышечную массу</h3>
+<p>Полное научное руководство по набору мышц.</p>
+<span class="blog-read-more">Читать →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<p>Бесплатные калькуляторы здоровья. Не медицинский совет.</p>
+</div>
+<div class="footer-links">
+<a href="about.html">О сайте</a>
+<a href="blog/">Блог</a>
+<a href="contact.html">Контакт</a>
+<a href="privacy.html">Политика конфиденциальности</a>
+<a href="terms.html">Условия использования</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> calories-macros.com</span>
+<span>Только образовательные оценки.</span>
+</div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+let currentLang = 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (t) el.innerHTML = t;
+  });
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+
+// Header lang sync
+(function() {
+  var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
+  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function() { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function() { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+const noteText = {
+  en: 'This is an estimate, not a guaranteed max. Warm up thoroughly and use a spotter before attempting anything near your estimated 1RM.',
+  ru: 'Это оценка, а не гарантированный максимум. Тщательно разомнитесь и используйте страховку перед попытками веса, близкого к расчётному 1ПМ.'
+};
+
+const pctLabels = {
+  en: ['Warm-up', 'Endurance', 'Hypertrophy', 'Hypertrophy', 'Strength', 'Strength', 'Max effort'],
+  ru: ['Разминка', 'Выносливость', 'Гипертрофия', 'Гипертрофия', 'Сила', 'Сила', 'Максимум']
+};
+const pctValues = [0.5, 0.65, 0.75, 0.80, 0.85, 0.90, 0.95];
+
+// --- FAQ ---
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'one-rep-max-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+document.getElementById('calcBtn').addEventListener('click', function() {
+  const weight = parseFloat(document.getElementById('liftWeight').value);
+  const reps = parseInt(document.getElementById('liftReps').value);
+  const err = document.getElementById('calcError');
+  if (!weight || !reps || weight <= 0 || reps < 1 || reps > 15) { err.style.display='block'; return; }
+  err.style.display = 'none';
+
+  const epley = weight * (1 + reps / 30);
+  const brzycki = reps === 37 ? weight : weight * 36 / (37 - reps);
+  const average = (epley + brzycki) / 2;
+
+  animateNumber(document.getElementById('ormValue'), average, 0);
+  animateNumber(document.getElementById('epleyValue'), epley, 0, v => v + ' kg');
+  animateNumber(document.getElementById('brzyckiValue'), brzycki, 0, v => v + ' kg');
+  document.getElementById('resultNote').textContent = noteText[currentLang];
+
+  const pctTable = document.getElementById('pctTable');
+  pctTable.innerHTML = '';
+  pctValues.forEach(function(pct, i) {
+    const val = Math.round(average * pct);
+    const div = document.createElement('div');
+    div.style.cssText = 'text-align:center;background:var(--cream);border-radius:8px;padding:12px 8px;opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;';
+    div.innerHTML = '<div style="font-family:var(--font-display);font-size:1.1rem;color:var(--green);">' + val + ' kg</div>' +
+      '<div style="font-size:0.72rem;color:var(--muted);">' + Math.round(pct*100) + '% · ' + pctLabels[currentLang][i] + '</div>';
+    pctTable.appendChild(div);
+    setTimeout(() => { div.style.opacity = '1'; div.style.transform = 'translateY(0)'; }, 60 * i);
+  });
+
+  document.getElementById('calcResults').classList.add('visible');
+
+  document.getElementById('shareCardValue').textContent = Math.round(average);
+  document.getElementById('shareCard90').textContent = Math.round(average * 0.90) + ' kg';
+  document.getElementById('shareCard75').textContent = Math.round(average * 0.75) + ' kg';
+
+  setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+});
+</script>
+<!-- Scroll to top button + Reading progress -->
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green,#2D6A4F);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;transition:opacity 0.3s,transform 0.3s;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green,#2D6A4F);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+(function(){
+  var btn = document.getElementById('scrollTop');
+  var bar = document.getElementById('readProgress');
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollY / docH * 100) : 0;
+    bar.style.width = pct + '%';
+    if (scrollY > 400) {
+      btn.style.display = 'flex';
+      btn.style.opacity = '1';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  btn.addEventListener('mouseenter', function(){ this.style.transform='scale(1.1)'; });
+  btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
+})();
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

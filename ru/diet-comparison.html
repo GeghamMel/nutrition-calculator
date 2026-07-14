@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head><script>localStorage.setItem('lang','ru');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diet Comparison — Keto vs Mediterranean vs Low-Fat | Calories &amp; Macros</title>
+<meta content="Compare the most popular diets side by side — Keto, Mediterranean, Low-Fat, Paleo, Intermittent Fasting and more. Find the best diet for your goals." name="description"/>
+<link href="https://calories-macros.com/ru/diet-comparison.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does the specific diet matter more than calories?","acceptedAnswer":{"@type":"Answer","text":"For weight loss specifically, no — studies comparing different diets at matched calorie levels generally find similar results. Adherence matters more than the specific approach."}},
+    {"@type":"Question","name":"How do I know which diet is right for me?","acceptedAnswer":{"@type":"Answer","text":"Consider your food preferences, lifestyle, medical conditions, and how restrictive an approach you can realistically sustain for months, not weeks."}},
+    {"@type":"Question","name":"Should I consult a doctor before starting a restrictive diet?","acceptedAnswer":{"@type":"Answer","text":"Yes, especially for diets eliminating entire food groups or involving extended fasting, particularly with diabetes, medication, or pregnancy."}}
+  ]}
+  </script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+<meta content="Diet Comparison — Which Diet is Best for You?" property="og:title"/>
+<meta content="Compare Keto, Mediterranean, Low-Fat, Paleo and more side by side." property="og:description"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<link href="../style.css" rel="stylesheet"/>
+<style>
+    .diet-card { background:white; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:24px; }
+    .diet-header { padding:20px 24px; display:flex; align-items:center; gap:16px; }
+    .diet-icon { font-size:2rem; width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .diet-body { padding:0 24px 24px; }
+    .diet-macros { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:16px 0; }
+    .diet-macro { text-align:center; background:var(--cream); border-radius:8px; padding:12px; }
+    .diet-macro .val { font-family:var(--font-display); font-size:1.3rem; color:var(--green); }
+    .diet-macro .lbl { font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.05em; }
+    .pros-cons { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:16px; }
+    .pros li::before { content:'✓ '; color:var(--green); font-weight:700; }
+    .cons li::before { content:'✗ '; color:#dc2626; font-weight:700; }
+    .pros li, .cons li { font-size:0.85rem; color:var(--muted); margin-bottom:6px; list-style:none; }
+    .rating-bar { display:flex; align-items:center; gap:10px; margin-bottom:8px; font-size:0.82rem; }
+    .rating-bar .bar { flex:1; height:8px; background:#E5E7EB; border-radius:4px; overflow:hidden; }
+    .rating-bar .fill { height:100%; background:var(--green); border-radius:4px; }
+    .rating-bar .label { width:160px; color:var(--muted); }
+    .rating-bar .score { width:30px; text-align:right; font-weight:600; color:var(--green); }
+    .compare-table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+    .compare-table th { padding:10px 14px; background:var(--green); color:white; text-align:left; font-weight:600; }
+    .compare-table td { padding:10px 14px; border-bottom:1px solid var(--border); }
+    .compare-table tr:hover { background:var(--cream); }
+    .tag-best { display:inline-block; padding:2px 8px; border-radius:12px; font-size:0.72rem; font-weight:700; background:var(--green); color:white; margin-left:6px; }
+    @media(max-width:600px) { .pros-cons { grid-template-columns:1fr; } .diet-macros { grid-template-columns:repeat(3,1fr); } }
+  </style>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a aria-label="Search" href="/ru/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="" href="/diet-comparison.html" id="headerLangEN">EN</a>
+<a class="active" href="/ru/diet-comparison.html" id="headerLangRU">RU</a>
+</div>
+<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Калькуляторы</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/ru/"><span class="mm-icon">🔥</span><span class="mm-text">Калории и БЖУ</span></a>
+<a class="mega-menu-item" href="/ru/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">ИМТ</span></a>
+<a class="mega-menu-item" href="/ru/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Норма воды</span></a>
+<a class="mega-menu-item" href="/ru/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Идеальный вес</span></a>
+<a class="mega-menu-item" href="/ru/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">% жира</span></a>
+<a class="mega-menu-item" href="/ru/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Тренировки</span></a>
+<a class="mega-menu-item" href="/ru/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Метаболизм</span></a>
+<a class="mega-menu-item" href="/ru/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Беременность</span></a>
+<a class="mega-menu-item" href="/ru/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Похудение</span></a>
+<a class="mega-menu-item" href="/ru/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Витамины</span></a>
+<a class="mega-menu-item" href="/ru/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Дети</span></a>
+<a class="mega-menu-item" href="/ru/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Белок</span></a>
+<a class="mega-menu-item" href="/ru/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Нетто-углеводы</span></a>
+<a class="mega-menu-item" href="/ru/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">Максимум на 1 повтор</span></a>
+<a class="mega-menu-item" href="/ru/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Таймер голодания</span></a>
+<a class="mega-menu-item" href="/ru/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE по диете</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/blog/">Блог</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/ru/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Калории для похудения</span></a>
+<a class="mega-menu-item" href="/ru/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">Набор мышц</span></a>
+<a class="mega-menu-item" href="/ru/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Кетогенная диета</span></a>
+<a class="mega-menu-item" href="/ru/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Интервальное голодание</span></a>
+<a class="mega-menu-item" href="/ru/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Лучшие продукты</span></a>
+<a class="mega-menu-item" href="/ru/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Средиземноморская</span></a>
+<a class="mega-menu-item" href="/ru/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Диета для живота</span></a>
+<a class="mega-menu-item" href="/ru/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Суперфуды</span></a>
+<div class="mega-menu-footer"><a href="/ru/blog/">Все статьи →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Инструменты</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/ru/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Планы питания</span></a>
+<a class="mega-menu-item" href="/ru/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Калорийность</span></a>
+<a class="mega-menu-item" href="/ru/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">ГИ</span></a>
+<a class="mega-menu-item" href="/ru/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Фастфуд</span></a>
+<a class="mega-menu-item" href="/ru/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Алкоголь</span></a>
+<a class="mega-menu-item" href="/ru/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Рецепты</span></a>
+<a class="mega-menu-item" href="/ru/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Сравнение диет</span></a>
+<a class="mega-menu-item" href="/ru/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<a href="/ru/about.html">О сайте</a>
+<a href="/ru/contact.html">Контакт</a>
+<div class="lang-toggle"><a class="" href="/diet-comparison.html" id="langEN">EN</a><a class="active" href="/ru/diet-comparison.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<div class="page-hero">
+<div class="container">
+<h1>Сравнение диет</h1>
+<p class="meta">Сравните самые популярные диеты — БЖУ, доказательная база, плюсы и минусы, и кому подходит каждая.</p>
+</div>
+</div>
+<main>
+<div class="container" style="padding:40px 20px 80px;max-width:900px;">
+<p style="max-width:720px;margin:0 auto 28px;color:var(--muted);line-height:1.7;">При десятках популярных схем питания, конкурирующих за внимание, честный ответ таков: ни одна диета объективно не является «лучшей» — исследования стабильно показывают, что диета, которой вы реально можете придерживаться долгосрочно, превосходит теоретически оптимальную, от которой вы отказываетесь через три недели. Между диетами различается соотношение БЖУ, уровень ограничений, доказательная база конкретных заявлений о здоровье и то, насколько каждая схема подходит разному образу жизни, пищевым предпочтениям и целям. Это сравнение показывает БЖУ, силу доказательной базы и кому подходит каждый подход, чтобы вы могли сделать осознанный выбор, а не следовать за трендом.</p>
+<!-- Quick comparison table -->
+<div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;margin-bottom:48px;">
+<table class="compare-table">
+<thead>
+<tr>
+<th>Диета</th>
+<th>Углеводы</th>
+<th>Белок</th>
+<th>Жиры</th>
+<th>Лучше всего для</th>
+</tr>
+</thead>
+<tbody id="compareTableBody"></tbody>
+</table>
+</div>
+<!-- Diet cards -->
+<div id="dietCards"></div>
+<!-- FAQ -->
+<section class="faq-section" style="padding:40px 0 0;">
+<div class="section-label">Вопросы</div>
+<h2 class="section-title">Частые вопросы о выборе диеты</h2>
+<div class="faq-list" style="margin-left:0;">
+<div class="faq-item">
+<button class="faq-question">Важнее ли конкретная диета, чем калории?</button>
+<div class="faq-answer">Именно для похудения — нет: контролируемые исследования, сравнивающие очень разные диеты (например, низкоуглеводную и низкожировую) при одинаковом уровне калорий, обычно находят схожие результаты по потере веса. Диеты реально различаются по приверженности (насколько легко их придерживаться конкретному человеку), отдельным показателям здоровья помимо веса и качеству питания, а не каким-то уникальным «метаболическим преимуществом» одного подхода над другим.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Как понять, какая диета подходит именно мне?</button>
+<div class="faq-answer">Учитывайте пищевые предпочтения, образ жизни, наличие заболеваний и насколько строгий подход вы реально сможете выдержать месяцы, а не недели. Диета, требующая исключения целых групп продуктов, которые вам нравятся, статистически с меньшей вероятностью будет соблюдаться долгосрочно, чем более умеренный подход, даже если более строгий теоретически даёт более быстрые краткосрочные результаты.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Стоит ли консультироваться с врачом перед строгой диетой?</button>
+<div class="faq-answer">Да, особенно для диет, исключающих целые группы продуктов (например, очень низкоуглеводные или карнивор-подходы) или предполагающих длительные периоды голодания, особенно если у вас диабет, вы принимаете лекарства, беременны, кормите грудью или имели расстройства пищевого поведения в прошлом. Врач или диетолог может указать на взаимодействия и риски, которые общее сравнение вроде этого не может учесть индивидуально.</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<div style="background:var(--green-pale);border-radius:var(--radius);padding:28px;text-align:center;margin-top:48px;">
+<h3 style="font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:8px;">Какую бы диету вы ни выбрали, калории всё равно важны</h3>
+<p style="color:var(--muted);margin-bottom:16px;font-size:0.9rem;">Используйте наш бесплатный калькулятор для расчёта личной нормы калорий и БЖУ — затем применяйте их к любому подходящему стилю питания.</p>
+<a href="/ru/" style="display:inline-block;padding:12px 28px;background:var(--green);color:white;border-radius:8px;font-weight:600;">Рассчитать мои калории →</a>
+</div>
+</div>
+</main>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand"><a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Бесплатные калькуляторы здоровья. Не медицинский совет.</p></div>
+<div class="footer-links">
+<a href="about.html">О сайте</a>
+<a href="blog/">Блог</a>
+<a href="faq.html">FAQ</a>
+<a href="privacy.html">Политика конфиденциальности</a>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+var currentLang = localStorage.getItem('lang') || 'en';
+
+var DIETS = [
+  {
+    icon:'🥑', color:'#fef3c7',
+    name_en:'Ketogenic (Keto)', name_ru:'Кетогенная (Кето)',
+    carbs:'5–10%', protein:'20–25%', fat:'70–75%',
+    best_en:'Fat loss, epilepsy, blood sugar control',
+    best_ru:'Потеря жира, эпилепсия, контроль сахара',
+    desc_en:'A very low-carb, high-fat diet that forces the body into ketosis — a metabolic state where fat is burned as the primary fuel. Carbohydrates are restricted to under 50g per day.',
+    desc_ru:'Очень низкоуглеводная, высокожировая диета, переводящая организм в кетоз — состояние, при котором жир становится основным топливом. Углеводы ограничены до 50г в день.',
+    pros_en:['Rapid initial fat loss','Reduces appetite significantly','Improves blood sugar control','Effective for epilepsy (medically)'],
+    pros_ru:['Быстрая начальная потеря жира','Значительно снижает аппетит','Улучшает контроль сахара в крови','Эффективна при эпилепсии (медицински)'],
+    cons_en:['Very restrictive — hard to maintain','Keto flu in first 1–2 weeks','Low in fibre and some micronutrients','Eliminates many healthy foods'],
+    cons_ru:['Очень ограничительная — трудно соблюдать','«Кето-грипп» в первые 1–2 недели','Мало клетчатки и некоторых микронутриентов','Исключает много полезных продуктов'],
+    ratings:[
+      {label_en:'Fat loss', label_ru:'Потеря жира', score:85},
+      {label_en:'Muscle gain', label_ru:'Набор мышц', score:50},
+      {label_en:'Sustainability', label_ru:'Устойчивость', score:40},
+      {label_en:'Heart health', label_ru:'Здоровье сердца', score:55},
+      {label_en:'Evidence quality', label_ru:'Качество доказательств', score:70},
+    ]
+  },
+  {
+    icon:'🫒', color:'#f0fdf4',
+    name_en:'Mediterranean', name_ru:'Средиземноморская',
+    carbs:'45–55%', protein:'15–20%', fat:'30–40%',
+    best_en:'Heart health, longevity, overall wellness',
+    best_ru:'Здоровье сердца, долголетие, общее здоровье',
+    desc_en:'Based on the traditional eating patterns of southern European countries. Rich in vegetables, fruits, legumes, whole grains, fish, and olive oil. Widely considered the best-evidenced diet for long-term health.',
+    desc_ru:'Основана на традиционном питании стран Южной Европы. Богата овощами, фруктами, бобовыми, цельнозерновыми, рыбой и оливковым маслом. Считается лучшей доказательной диетой для долгосрочного здоровья.',
+    pros_en:['Strongest cardiovascular evidence','High in fibre and antioxidants','Sustainable long-term','Wide food variety — enjoyable'],
+    pros_ru:['Сильнейшие доказательства для сердца','Много клетчатки и антиоксидантов','Устойчива в долгосрочной перспективе','Широкое разнообразие продуктов'],
+    cons_en:['Slower fat loss than keto','Not prescriptive — easy to overeat','High in calories if olive oil overused','Less structured — hard to track macros'],
+    cons_ru:['Медленнее потеря жира, чем на кето','Нет чётких правил — легко переесть','Много калорий при избытке оливкового масла','Мало структуры — сложно считать БЖУ'],
+    ratings:[
+      {label_en:'Fat loss', label_ru:'Потеря жира', score:65},
+      {label_en:'Muscle gain', label_ru:'Набор мышц', score:60},
+      {label_en:'Sustainability', label_ru:'Устойчивость', score:90},
+      {label_en:'Heart health', label_ru:'Здоровье сердца', score:95},
+      {label_en:'Evidence quality', label_ru:'Качество доказательств', score:95},
+    ]
+  },
+  {
+    icon:'🚫', color:'#fef3c7',
+    name_en:'Low-Fat Diet', name_ru:'Низкожировая диета',
+    carbs:'55–65%', protein:'15–20%', fat:'15–25%',
+    best_en:'Cholesterol reduction, heart disease risk',
+    best_ru:'Снижение холестерина, риск сердечных заболеваний',
+    desc_en:'Restricts dietary fat to 20–30% of total calories, emphasising carbohydrates and lean proteins. Was the dominant dietary recommendation from the 1970s–2000s.',
+    desc_ru:'Ограничивает жиры до 20–30% калорий, акцентируя углеводы и нежирный белок. Была доминирующей диетической рекомендацией с 1970-х по 2000-е годы.',
+    pros_en:['Reduces LDL cholesterol effectively','Easy to implement (avoid fatty foods)','Allows large food volumes','Good for high cholesterol'],
+    pros_ru:['Эффективно снижает ЛПНП холестерин','Легко соблюдать (избегай жирного)','Позволяет большие объёмы пищи','Хороша при высоком холестерине'],
+    cons_en:['Less effective for fat loss than protein-focused diets','Can increase triglycerides if high in refined carbs','Reduces satiety (fat is satiating)','Limits healthy fats (nuts, olive oil, fish)'],
+    cons_ru:['Менее эффективна для потери жира, чем высокобелковые','Может повышать триглицериды при избытке рафинированных углеводов','Снижает насыщение (жир насыщает)','Ограничивает полезные жиры (орехи, масло, рыба)'],
+    ratings:[
+      {label_en:'Fat loss', label_ru:'Потеря жира', score:60},
+      {label_en:'Muscle gain', label_ru:'Набор мышц', score:55},
+      {label_en:'Sustainability', label_ru:'Устойчивость', score:65},
+      {label_en:'Heart health', label_ru:'Здоровье сердца', score:70},
+      {label_en:'Evidence quality', label_ru:'Качество доказательств', score:65},
+    ]
+  },
+  {
+    icon:'🥩', color:'#fef9ee',
+    name_en:'Paleo Diet', name_ru:'Палеолитическая диета',
+    carbs:'20–35%', protein:'25–35%', fat:'35–45%',
+    best_en:'Whole food eating, reducing processed foods',
+    best_ru:'Цельное питание, отказ от переработанных продуктов',
+    desc_en:'Mimics the diet of pre-agricultural humans — emphasising meat, fish, eggs, vegetables, fruits, and nuts while excluding grains, legumes, dairy, and processed foods.',
+    desc_ru:'Имитирует питание доземледельческих людей: мясо, рыба, яйца, овощи, фрукты и орехи. Исключает злаки, бобовые, молочные продукты и переработанные продукты.',
+    pros_en:['Eliminates most processed foods','High in protein and fibre','Reduces sugar intake naturally','Can improve blood sugar and inflammation'],
+    pros_ru:['Исключает большинство переработанных продуктов','Много белка и клетчатки','Естественно снижает потребление сахара','Может улучшить сахар крови и воспаление'],
+    cons_en:['Excludes healthy foods (legumes, dairy, grains)','Expensive (lots of meat and fish)','No long-term evidence for superiority','Hard to follow socially'],
+    cons_ru:['Исключает полезные продукты (бобовые, молочные, злаки)','Дорогостоящая (много мяса и рыбы)','Нет долгосрочных доказательств превосходства','Сложно соблюдать в социальных ситуациях'],
+    ratings:[
+      {label_en:'Fat loss', label_ru:'Потеря жира', score:70},
+      {label_en:'Muscle gain', label_ru:'Набор мышц', score:65},
+      {label_en:'Sustainability', label_ru:'Устойчивость', score:55},
+      {label_en:'Heart health', label_ru:'Здоровье сердца', score:60},
+      {label_en:'Evidence quality', label_ru:'Качество доказательств', score:55},
+    ]
+  },
+  {
+    icon:'⏰', color:'#eff6ff',
+    name_en:'Intermittent Fasting (16:8)', name_ru:'Интервальное голодание (16:8)',
+    carbs:'Variable', protein:'Variable', fat:'Variable',
+    best_en:'Fat loss, insulin sensitivity, simplicity',
+    best_ru:'Потеря жира, чувствительность к инсулину, простота',
+    desc_en:'Not a diet in the traditional sense — a timing pattern. You eat all your daily calories within an 8-hour window and fast for 16 hours. What you eat is not prescribed.',
+    desc_ru:'Не диета в традиционном смысле, а режим питания. Все суточные калории потребляются в 8-часовом окне, 16 часов — голодание. Состав питания не регламентируется.',
+    pros_en:['Simple — one rule to follow','No calorie counting required','Improves insulin sensitivity','May trigger cellular repair (autophagy)'],
+    pros_ru:['Просто — одно правило','Не требует подсчёта калорий','Улучшает чувствительность к инсулину','Может запускать клеточное восстановление (аутофагия)'],
+    cons_en:['Works mainly by reducing total calories','Hard for some people to skip breakfast','Not ideal for people who train in the morning','Can trigger overeating in the eating window'],
+    cons_ru:['Работает в основном за счёт снижения общих калорий','Тяжело пропускать завтрак для некоторых','Не идеально для утренних тренировок','Может провоцировать переедание в окне питания'],
+    ratings:[
+      {label_en:'Fat loss', label_ru:'Потеря жира', score:75},
+      {label_en:'Muscle gain', label_ru:'Набор мышц', score:60},
+      {label_en:'Sustainability', label_ru:'Устойчивость', score:70},
+      {label_en:'Heart health', label_ru:'Здоровье сердца', score:70},
+      {label_en:'Evidence quality', label_ru:'Качество доказательств', score:75},
+    ]
+  },
+  {
+    icon:'💪', color:'#f0fdf4',
+    name_en:'High-Protein Diet', name_ru:'Высокобелковая диета',
+    carbs:'25–40%', protein:'30–40%', fat:'25–35%',
+    best_en:'Fat loss with muscle retention, muscle building',
+    best_ru:'Потеря жира с сохранением мышц, набор мышечной массы',
+    desc_en:'Emphasises protein intake of 1.6–2.4g per kg of body weight. No specific food restrictions — focus is on hitting protein targets while managing total calories.',
+    desc_ru:'Акцент на потреблении белка 1,6–2,4 г на кг массы тела. Нет конкретных ограничений по продуктам — фокус на достижении норм белка при управлении общими калориями.',
+    pros_en:['Best evidence for muscle retention during fat loss','Most satiating macronutrient','Highest thermic effect (burns more during digestion)','Flexible — not prescriptive about food choices'],
+    pros_ru:['Лучшие доказательства сохранения мышц при похудении','Самый насыщающий макронутриент','Наибольший термический эффект','Гибкость — нет ограничений по выбору продуктов'],
+    cons_en:['Can be expensive (meat, fish, protein powder)','Requires tracking to hit protein targets','High in calories if poor food choices','Not a complete dietary pattern'],
+    cons_ru:['Может быть дорогостоящей (мясо, рыба, протеин)','Требует отслеживания для достижения норм','Много калорий при неправильном выборе продуктов','Неполная диетическая система'],
+    ratings:[
+      {label_en:'Fat loss', label_ru:'Потеря жира', score:85},
+      {label_en:'Muscle gain', label_ru:'Набор мышц', score:90},
+      {label_en:'Sustainability', label_ru:'Устойчивость', score:75},
+      {label_en:'Heart health', label_ru:'Здоровье сердца', score:70},
+      {label_en:'Evidence quality', label_ru:'Качество доказательств', score:90},
+    ]
+  },
+];
+
+function renderAll() {
+  var l = currentLang;
+
+  // Table
+  var tbody = document.getElementById('compareTableBody');
+  tbody.innerHTML = DIETS.map(function(d) {
+    return '<tr>' +
+      '<td style="font-weight:600;">' + d.icon + ' ' + (l==='ru'?d.name_ru:d.name_en) + '</td>' +
+      '<td>' + d.carbs + '</td>' +
+      '<td>' + d.protein + '</td>' +
+      '<td>' + d.fat + '</td>' +
+      '<td style="color:var(--muted);font-size:0.82rem;">' + (l==='ru'?d.best_ru:d.best_en) + '</td>' +
+      '</tr>';
+  }).join('');
+
+  // Cards
+  var cards = document.getElementById('dietCards');
+  cards.innerHTML = DIETS.map(function(d) {
+    var name = l==='ru' ? d.name_ru : d.name_en;
+    var desc = l==='ru' ? d.desc_ru : d.desc_en;
+    var pros = l==='ru' ? d.pros_ru : d.pros_en;
+    var cons = l==='ru' ? d.cons_ru : d.cons_en;
+    var prosHtml = pros.map(function(p){ return '<li>' + p + '</li>'; }).join('');
+    var consHtml = cons.map(function(c){ return '<li>' + c + '</li>'; }).join('');
+    var ratingsHtml = d.ratings.map(function(r) {
+      return '<div class="rating-bar">' +
+        '<div class="label">' + (l==='ru'?r.label_ru:r.label_en) + '</div>' +
+        '<div class="bar"><div class="fill" style="width:' + r.score + '%;"></div></div>' +
+        '<div class="score">' + r.score + '</div>' +
+        '</div>';
+    }).join('');
+
+    return '<div class="diet-card">' +
+      '<div class="diet-header" style="background:' + d.color + ';">' +
+        '<div class="diet-icon" style="background:white;">' + d.icon + '</div>' +
+        '<div><h2 style="font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:4px;">' + name + '</h2>' +
+        '<p style="font-size:0.82rem;color:var(--muted);">' + (l==='ru'?d.best_ru:d.best_en) + '</p></div>' +
+      '</div>' +
+      '<div class="diet-body">' +
+        '<p style="font-size:0.9rem;color:var(--muted);margin:16px 0;">' + desc + '</p>' +
+        '<div class="diet-macros">' +
+          '<div class="diet-macro"><div class="val">' + d.carbs + '</div><div class="lbl">' + (l==='ru'?'Углеводы':'Carbs') + '</div></div>' +
+          '<div class="diet-macro"><div class="val">' + d.protein + '</div><div class="lbl">' + (l==='ru'?'Белок':'Protein') + '</div></div>' +
+          '<div class="diet-macro"><div class="val">' + d.fat + '</div><div class="lbl">' + (l==='ru'?'Жиры':'Fat') + '</div></div>' +
+        '</div>' +
+        '<div class="pros-cons">' +
+          '<div><p style="font-size:0.78rem;font-weight:700;color:var(--green);text-transform:uppercase;margin-bottom:8px;">' + (l==='ru'?'✓ Плюсы':'✓ Pros') + '</p><ul class="pros">' + prosHtml + '</ul></div>' +
+          '<div><p style="font-size:0.78rem;font-weight:700;color:#dc2626;text-transform:uppercase;margin-bottom:8px;">' + (l==='ru'?'✗ Минусы':'✗ Cons') + '</p><ul class="cons">' + consHtml + '</ul></div>' +
+        '</div>' +
+        '<div style="margin-top:20px;padding-top:16px;border-top:1px solid var(--border);">' +
+          '<p style="font-size:0.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">' + (l==='ru'?'Рейтинги (из 100):':'Ratings (out of 100):') + '</p>' +
+          ratingsHtml +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (t.includes('<')) el.innerHTML = t; else el.textContent = t;
+  });
+  renderAll();
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  
+  window.addEventListener('scroll', function(){
+    var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+    document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+    document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+  });
+  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+  renderAll();
+});
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

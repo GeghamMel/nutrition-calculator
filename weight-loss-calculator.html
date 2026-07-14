@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><script>localStorage.setItem('lang','en');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Weight Loss Calculator — How Long to Lose Weight | Calories &amp; Macros</title>
+<meta content="Calculate how long it will take to reach your goal weight. Enter your current weight, goal weight and calorie deficit to get a realistic timeline." name="description"/>
+<link href="https://calories-macros.com/weight-loss-calculator.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Why did my weight loss stall even though I'm still in a deficit?","acceptedAnswer":{"@type":"Answer","text":"This is a plateau and is very common. As you lose weight your TDEE decreases, so a deficit that worked initially may no longer be a deficit. Recalculating TDEE at your current weight usually helps."}},
+    {"@type":"Question","name":"Is a bigger calorie deficit always better for faster results?","acceptedAnswer":{"@type":"Answer","text":"No — very large deficits increase risk of muscle loss and are harder to sustain. Moderate deficits of 500-750 kcal/day tend to produce better long-term results."}},
+    {"@type":"Question","name":"Should I recalculate my TDEE as I lose weight?","acceptedAnswer":{"@type":"Answer","text":"Yes — recalculate every 5-7 kg lost or every 4-6 weeks, since maintenance calories genuinely drop as you get lighter."}},
+    {"@type":"Question","name":"What happens after I reach my goal weight?","acceptedAnswer":{"@type":"Answer","text":"Transition gradually to your new maintenance TDEE over 2-4 weeks rather than abruptly reverting to old eating habits, which often causes rapid regain."}}
+  ]}
+  </script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+<meta content="Weight Loss Calculator — How Long to Reach Goal Weight" property="og:title"/>
+<meta content="Calculate how long it will take to lose weight based on your calorie deficit." property="og:description"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"Weight Loss Calculator","item":"https://calories-macros.com/weight-loss-calculator.html"}
+  ]}
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a aria-label="Search" href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="active" href="/weight-loss-calculator.html" id="headerLangEN">EN</a>
+<a class="" href="/ru/weight-loss-calculator.html" id="headerLangRU">RU</a>
+</div>
+<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/all-calculators.html">Calculators</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/"><span class="mm-icon">🔥</span><span class="mm-text">Calorie &amp; Macro</span></a>
+<a class="mega-menu-item" href="/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">BMI Calculator</span></a>
+<a class="mega-menu-item" href="/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Water Intake</span></a>
+<a class="mega-menu-item" href="/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Ideal Weight</span></a>
+<a class="mega-menu-item" href="/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">Body Fat %</span></a>
+<a class="mega-menu-item" href="/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Exercise Calories</span></a>
+<a class="mega-menu-item" href="/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Metabolism</span></a>
+<a class="mega-menu-item" href="/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Pregnancy</span></a>
+<a class="mega-menu-item" href="/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Weight Loss</span></a>
+<a class="mega-menu-item" href="/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Vitamins</span></a>
+<a class="mega-menu-item" href="/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Child Calories</span></a>
+<a class="mega-menu-item" href="/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Protein</span></a>
+<a class="mega-menu-item" href="/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Net Carbs</span></a>
+<a class="mega-menu-item" href="/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">One Rep Max</span></a>
+<a class="mega-menu-item" href="/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Fasting Timer</span></a>
+<a class="mega-menu-item" href="/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE by Diet</span></a>
+<div class="mega-menu-footer"><a href="/all-calculators.html">View all →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/blog/">Blog</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Calories for Weight Loss</span></a>
+<a class="mega-menu-item" href="/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">How to Build Muscle</span></a>
+<a class="mega-menu-item" href="/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Ketogenic Diet</span></a>
+<a class="mega-menu-item" href="/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Intermittent Fasting</span></a>
+<a class="mega-menu-item" href="/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Best Foods</span></a>
+<a class="mega-menu-item" href="/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Mediterranean Diet</span></a>
+<a class="mega-menu-item" href="/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Belly Fat Diet</span></a>
+<a class="mega-menu-item" href="/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Superfoods</span></a>
+<div class="mega-menu-footer"><a href="/blog/">View all →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/all-calculators.html">Tools</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Meal Plans</span></a>
+<a class="mega-menu-item" href="/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Calories in Foods</span></a>
+<a class="mega-menu-item" href="/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">Glycemic Index</span></a>
+<a class="mega-menu-item" href="/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Fast Food</span></a>
+<a class="mega-menu-item" href="/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Alcohol Calories</span></a>
+<a class="mega-menu-item" href="/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Recipes</span></a>
+<a class="mega-menu-item" href="/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Diet Comparison</span></a>
+<a class="mega-menu-item" href="/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/all-calculators.html">View all →</a></div>
+</div>
+</div>
+</div>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+<div class="lang-toggle"><a class="active" href="/weight-loss-calculator.html" id="langEN">EN</a><a class="" href="/ru/weight-loss-calculator.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Free Weight Loss Calculator</div>
+<h1>How Long Will It Take to <em>Lose Weight?</em></h1>
+<p>Enter your current weight, goal weight, and daily calorie deficit to get a realistic timeline and weekly milestones for reaching your goal.</p>
+<a class="btn-scroll" href="#calculator">Calculate Timeline ↓</a>
+</div>
+</section>
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="section-label">Weight Loss Timeline</div>
+<h2 class="section-title">Enter your details</h2>
+<div class="calc-card">
+<div class="calc-grid">
+<div class="field">
+<label for="currentWeight">Current weight (kg)</label>
+<input id="currentWeight" max="300" min="40" placeholder="e.g. 85" type="number"/>
+</div>
+<div class="field">
+<label for="goalWeight">Goal weight (kg)</label>
+<input id="goalWeight" max="300" min="40" placeholder="e.g. 70" type="number"/>
+</div>
+<div class="field">
+<label for="tdee">Your TDEE (kcal/day)</label>
+<input id="tdee" max="5000" min="1000" placeholder="e.g. 2200" type="number"/>
+<small style="color:var(--muted);font-size:0.78rem;">Don't know your TDEE? Calculate it first →</small>
+</div>
+<div class="field">
+<label for="deficit">Daily calorie deficit</label>
+<select id="deficit">
+<option value="250">250 kcal — very gentle (0.25 kg/week)</option>
+<option selected="" value="500">500 kcal — moderate (0.5 kg/week)</option>
+<option value="750">750 kcal — aggressive (0.75 kg/week)</option>
+<option value="1000">1000 kcal — very aggressive (1 kg/week)</option>
+</select>
+</div>
+</div>
+<button class="btn-calc" onclick="calculate()">Calculate My Timeline →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please fill in all fields correctly. Goal weight must be less than current weight.</p>
+<div id="results" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:28px;">
+<!-- Summary -->
+<div class="calories-display">
+<div class="kcal-number" id="weeksDisplay">—</div>
+<div class="kcal-label" id="weeksLabel">weeks to reach goal</div>
+</div>
+<div class="macros-grid" style="margin-top:16px;">
+<div class="macro-item">
+<div class="macro-value" id="targetDate">—</div>
+<div class="macro-name">Target date</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="tolose">—</div>
+<div class="macro-name">kg to lose</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="dailyKcal">—</div>
+<div class="macro-name">daily calories</div>
+</div>
+</div>
+<!-- Milestones -->
+<div style="margin-top:28px;">
+<p style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;">Your milestones:</p>
+<div id="milestones"></div>
+</div>
+<div class="result-note" id="resultNote" style="margin-top:16px;"></div>
+<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+<button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Save results</button>
+<button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Print</button>
+<button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Download card</button>
+</div>
+<div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+<p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My weight loss timeline</p>
+<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">weeks to goal</p>
+<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">To lose</p>
+<p id="shareCardToLose" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Daily target</p>
+<p id="shareCardDaily" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+</div>
+<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+</div>
+<p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;">✓ Results saved!</p>
+</div>
+</div>
+</div>
+</section>
+<section class="how-section">
+<div class="container">
+<div class="section-label">How it works</div>
+<h2 class="section-title">The science of weight loss timelines</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num">1</div>
+<h3>7700 kcal = 1 kg of fat</h3>
+<p>One kilogram of body fat contains approximately 7700 kcal of stored energy. To lose 1 kg, you need to create a total calorie deficit of 7700 kcal.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>Safe rate: 0.5–1% body weight/week</h3>
+<p>Research shows losing 0.5–1% of body weight per week minimises muscle loss. For an 80 kg person this is 0.4–0.8 kg per week — achievable with a 400–800 kcal daily deficit.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>Real results vary</h3>
+<p>In the first 1–2 weeks, weight loss is often faster due to water weight reduction. After that, results settle to the expected rate. Expect some weeks with no change — this is normal.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology & Limitations -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">Limitations</div>
+<h2 class="section-title">Why this timeline is an estimate, not a guarantee</h2>
+<p>The 7700 kcal-per-kg rule is a useful planning tool, but real-world weight loss is rarely perfectly linear. As you lose weight, your TDEE decreases too (a lighter body burns fewer calories), which means the same calorie deficit produces a slightly smaller weekly loss over time unless you periodically recalculate your TDEE. This calculator assumes a fixed deficit throughout, so treat the timeline as a reasonable estimate that will need adjusting every few weeks based on actual progress.</p>
+<p style="margin-top:16px;">Water retention, hormonal cycles, sodium intake, and how much glycogen is stored in your muscles all cause day-to-day and week-to-week scale fluctuations that have nothing to do with actual fat loss — this is why weekly averages, not single weigh-ins, are the more reliable way to track progress. If your TDEE estimate itself is off (which is common, since all formulas carry roughly 10% error), your actual timeline will differ from this projection — recalibrate using your real-world results after 2-3 weeks rather than trusting the initial number blindly.</p>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<div class="section-label">FAQ</div>
+<h2 class="section-title">Frequently asked questions about weight loss</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">Why did my weight loss stall even though I'm still in a deficit?</button>
+<div class="faq-answer">This is called a plateau and is extremely common. As you lose weight your TDEE decreases, so a deficit that worked initially may no longer be a deficit at your new, lighter weight. Water retention (from stress, sodium, or hormonal cycles) can also mask real fat loss on the scale for days or weeks at a time. Recalculating your TDEE at your current weight is the usual fix.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Is a bigger calorie deficit always better for faster results?</button>
+<div class="faq-answer">No — very large deficits (1000+ kcal/day) increase the risk of muscle loss, nutrient deficiencies, fatigue, and a higher chance of eventually abandoning the plan due to how unsustainable it feels. Research consistently shows moderate deficits (500-750 kcal/day) produce better long-term results because they're easier to maintain and preserve more lean muscle mass.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Should I recalculate my TDEE as I lose weight?</button>
+<div class="faq-answer">Yes — as a rule of thumb, recalculate every 5-7 kg lost, or every 4-6 weeks, whichever comes first. Since TDEE is based partly on body weight, your maintenance calories genuinely drop as you get lighter, and failing to adjust is one of the most common reasons weight loss progress stalls despite apparently 'following the plan'.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">What happens after I reach my goal weight?</button>
+<div class="faq-answer">Transition gradually to your new maintenance TDEE rather than immediately returning to old eating habits — a common mistake is stopping the deficit abruptly and reverting to pre-diet intake, which often leads to rapid regain. Slowly increasing calories back to maintenance over 2-4 weeks, while continuing to monitor weight trends, helps make the loss stick.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Related tools</div>
+<h2 class="section-title">More calculators</h2>
+<div class="blog-grid">
+<a class="blog-card" href="/" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Calories</span><h3>Calorie &amp; Macro Calculator</h3><p>Find your TDEE — needed for this calculator.</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="bmi-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3>BMI Calculator</h3><p>Check your BMI to set a realistic goal weight.</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="blog/cardio-vs-weights-fat-loss.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Comparison</span><h3>Cardio vs Weight Training</h3><p>Which actually burns more fat for weight loss.</p><span class="blog-read-more">Read →</span></div></a>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand"><a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Free health calculators. Not medical advice.</p></div>
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="blog/">Blog</a>
+<a href="faq.html">FAQ</a>
+<a href="privacy.html">Privacy Policy</a>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+var currentLang = localStorage.getItem('lang') || 'en';
+
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'weight-loss-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+    else el.textContent = t;
+  });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    var t = opt.getAttribute('data-' + lang);
+    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
+  });
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  
+  window.addEventListener('scroll', function(){
+    var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+    document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+    document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+  });
+  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+});
+
+function calculate() {
+  var current = parseFloat(document.getElementById('currentWeight').value);
+  var goal = parseFloat(document.getElementById('goalWeight').value);
+  var tdee = parseFloat(document.getElementById('tdee').value);
+  var deficit = parseFloat(document.getElementById('deficit').value);
+  var l = currentLang;
+  var err = document.getElementById('calcError');
+
+  if (!current || !goal || !tdee || goal >= current || current < 40 || goal < 40 || tdee < 1000) {
+    err.style.display = 'block'; return;
+  }
+  err.style.display = 'none';
+
+  var toLose = Math.round((current - goal) * 10) / 10;
+  var totalDeficitNeeded = toLose * 7700;
+  var weeks = Math.ceil(totalDeficitNeeded / (deficit * 7));
+  var dailyKcal = Math.round(tdee - deficit);
+  var targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + weeks * 7);
+  var dateStr = targetDate.toLocaleDateString(l === 'ru' ? 'ru-RU' : 'en-GB', { day:'numeric', month:'long', year:'numeric' });
+
+  animateNumber(document.getElementById('weeksDisplay'), weeks);
+  document.getElementById('targetDate').textContent = dateStr;
+  animateNumber(document.getElementById('tolose'), toLose, toLose % 1 !== 0 ? 1 : 0, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('dailyKcal'), dailyKcal, 0);
+
+  document.getElementById('shareCardValue').textContent = weeks;
+  document.getElementById('shareCardToLose').textContent = toLose + ' kg';
+  document.getElementById('shareCardDaily').textContent = Number(dailyKcal).toLocaleString() + ' kcal';
+
+  // Milestones
+  var milestoneWeights = [];
+  var step = toLose / 4;
+  for (var i = 1; i <= 4; i++) {
+    var w = Math.round((current - step * i) * 10) / 10;
+    var wks = Math.ceil((step * i * 7700) / (deficit * 7));
+    var d = new Date();
+    d.setDate(d.getDate() + wks * 7);
+    milestoneWeights.push({ weight: w, weeks: wks, date: d.toLocaleDateString(l === 'ru' ? 'ru-RU' : 'en-GB', { day:'numeric', month:'short' }) });
+  }
+
+  var ms = document.getElementById('milestones');
+  ms.innerHTML = milestoneWeights.map(function(m, i) {
+    var pct = Math.round((i + 1) / 4 * 100);
+    var isGoal = i === 3;
+    return '<div style="display:grid;grid-template-columns:80px 1fr 100px;gap:12px;align-items:center;margin-bottom:10px;">' +
+      '<div style="text-align:center;background:' + (isGoal?'var(--green)':'var(--green-pale)') + ';color:' + (isGoal?'white':'var(--green)') + ';border-radius:8px;padding:8px;font-weight:700;font-size:0.9rem;">' + m.weight + ' kg</div>' +
+      '<div style="background:#E5E7EB;border-radius:4px;height:20px;overflow:hidden;">' +
+        '<div style="width:' + pct + '%;height:100%;background:' + (isGoal?'var(--green)':'var(--green-light)') + ';border-radius:4px;"></div>' +
+      '</div>' +
+      '<div style="font-size:0.82rem;color:var(--muted);">' + m.date + ' (' + (l==='ru'?'нед.':'wk') + ' ' + m.weeks + ')</div>' +
+      '</div>';
+  }).join('');
+
+  var note_en = 'This is an estimate based on a consistent ' + deficit + ' kcal/day deficit. Real weight loss varies week to week due to water retention, hormones, and other factors. Aim for 0.5–1% of body weight per week for sustainable fat loss with minimal muscle loss.';
+  var note_ru = 'Это оценка при стабильном дефиците ' + deficit + ' ккал/день. Реальное снижение веса варьируется из-за задержки воды, гормонов. Стремитесь к 0,5–1% веса в неделю для устойчивого похудения с минимальной потерей мышц.';
+  document.getElementById('resultNote').textContent = l === 'ru' ? note_ru : note_en;
+
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function savePageResults() {
+  var weeks = document.getElementById('weeksDisplay').textContent;
+  if (!weeks || weeks === '—') return;
+  localStorage.setItem('cm_saved_weightloss', JSON.stringify({ mainValue: weeks + ' wks', savedAt: new Date().toLocaleDateString() }));
+  var msg = document.getElementById('saveMsg');
+  msg.style.display = 'block';
+  setTimeout(function(){ msg.style.display = 'none'; }, 3000);
+}
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

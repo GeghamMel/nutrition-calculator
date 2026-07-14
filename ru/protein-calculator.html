@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head><script>localStorage.setItem('lang','ru');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Protein Calculator — Daily Protein Needs | Calories &amp; Macros</title>
+<meta content="Calculate your optimal daily protein intake based on your sport, training intensity, and goal. Science-based protein calculator for athletes and active people." name="description"/>
+<link href="https://calories-macros.com/ru/protein-calculator.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is too much protein bad for my kidneys?","acceptedAnswer":{"@type":"Answer","text":"For people with healthy kidneys, current research shows no evidence that protein intakes in the 1.6–2.4 g/kg range cause kidney damage."}},
+    {"@type":"Question","name":"Do I need protein powder to hit these targets?","acceptedAnswer":{"@type":"Answer","text":"No — whole food sources like chicken, eggs, fish, dairy, and legumes can meet these targets for most people. Protein powder is just a convenient option."}},
+    {"@type":"Question","name":"What happens if I eat less protein than recommended?","acceptedAnswer":{"@type":"Answer","text":"You'll survive on the RDA of 0.8g/kg, but if you train regularly, undereating protein typically means slower recovery, reduced strength gains, and greater muscle loss during a deficit."}},
+    {"@type":"Question","name":"Is plant-based protein as effective as animal protein?","acceptedAnswer":{"@type":"Answer","text":"It can be, with adjustment. Plant proteins are often lower in leucine and less completely absorbed, so plant-based eaters are advised to target the higher end of the protein range."}}
+  ]}
+  </script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+<meta content="Protein Calculator for Athletes" property="og:title"/>
+<meta content="Calculate your optimal daily protein intake for your sport and training goal." property="og:description"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<link href="../style.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"Protein Calculator for Athletes","item":"https://calories-macros.com/protein-calculator.html"}
+  ]}
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a href="search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="" href="/protein-calculator.html" id="headerLangEN">EN</a>
+<a class="active" href="/ru/protein-calculator.html" id="headerLangRU">RU</a>
+</div>
+<button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Калькуляторы</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/ru/"><span class="mm-icon">🔥</span><span class="mm-text">Калории и БЖУ</span></a>
+<a class="mega-menu-item" href="/ru/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">ИМТ</span></a>
+<a class="mega-menu-item" href="/ru/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Норма воды</span></a>
+<a class="mega-menu-item" href="/ru/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Идеальный вес</span></a>
+<a class="mega-menu-item" href="/ru/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">% жира</span></a>
+<a class="mega-menu-item" href="/ru/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Тренировки</span></a>
+<a class="mega-menu-item" href="/ru/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Метаболизм</span></a>
+<a class="mega-menu-item" href="/ru/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Беременность</span></a>
+<a class="mega-menu-item" href="/ru/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Похудение</span></a>
+<a class="mega-menu-item" href="/ru/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Витамины</span></a>
+<a class="mega-menu-item" href="/ru/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Дети</span></a>
+<a class="mega-menu-item" href="/ru/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Белок</span></a>
+<a class="mega-menu-item" href="/ru/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Нетто-углеводы</span></a>
+<a class="mega-menu-item" href="/ru/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">Максимум на 1 повтор</span></a>
+<a class="mega-menu-item" href="/ru/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Таймер голодания</span></a>
+<a class="mega-menu-item" href="/ru/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE по диете</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/blog/">Блог</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/ru/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Калории для похудения</span></a>
+<a class="mega-menu-item" href="/ru/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">Набор мышц</span></a>
+<a class="mega-menu-item" href="/ru/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Кетогенная диета</span></a>
+<a class="mega-menu-item" href="/ru/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Интервальное голодание</span></a>
+<a class="mega-menu-item" href="/ru/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Лучшие продукты</span></a>
+<a class="mega-menu-item" href="/ru/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Средиземноморская</span></a>
+<a class="mega-menu-item" href="/ru/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Диета для живота</span></a>
+<a class="mega-menu-item" href="/ru/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Суперфуды</span></a>
+<div class="mega-menu-footer"><a href="/ru/blog/">Все статьи →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Инструменты</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/ru/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Планы питания</span></a>
+<a class="mega-menu-item" href="/ru/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Калорийность</span></a>
+<a class="mega-menu-item" href="/ru/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">ГИ</span></a>
+<a class="mega-menu-item" href="/ru/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Фастфуд</span></a>
+<a class="mega-menu-item" href="/ru/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Алкоголь</span></a>
+<a class="mega-menu-item" href="/ru/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Рецепты</span></a>
+<a class="mega-menu-item" href="/ru/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Сравнение диет</span></a>
+<a class="mega-menu-item" href="/ru/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<a href="/ru/about.html">О сайте</a>
+<a href="/ru/contact.html">Контакт</a>
+<div class="lang-toggle"><a class="" href="/protein-calculator.html" id="langEN">EN</a><a class="active" href="/ru/protein-calculator.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Бесплатный калькулятор белка</div>
+<h1>Калькулятор белка <em>для спортсменов</em></h1>
+<p>Найдите оптимальное суточное потребление белка по типу спорта, интенсивности тренировок и цели. На основе последних исследований спортивного питания и рекомендаций ISSN.</p>
+<a class="btn-scroll" href="#calculator">Рассчитать мой белок ↓</a>
+</div>
+</section>
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="section-label">Калькулятор белка</div>
+<h2 class="section-title">Введите ваши данные</h2>
+<div class="calc-card">
+<div class="calc-grid">
+<div class="field">
+<label for="weight">Масса тела (кг)</label>
+<input id="weight" max="200" min="40" placeholder="e.g. 75" type="number"/>
+</div>
+<div class="field">
+<label for="sportType">Тип спорта</label>
+<select id="sportType">
+<option value="strength">💪 Силовые тренировки (зал, пауэрлифтинг)</option>
+<option value="hypertrophy">🏋️ Бодибилдинг / набор мышц</option>
+<option value="endurance">🏃 Выносливость (бег, велосипед, плавание)</option>
+<option value="team">⚽ Командный спорт (футбол, баскетбол)</option>
+<option value="combat">🥊 Единоборства (бокс, MMA, борьба)</option>
+<option value="crossfit">🔥 Кроссфит / ВИИТ</option>
+<option value="recreational">🚶 Любительский (общий фитнес)</option>
+</select>
+</div>
+<div class="field">
+<label for="goal">Цель тренировок</label>
+<select id="goal">
+<option value="muscle">💪 Набор мышц</option>
+<option value="maintain">⚖️ Поддержание мышц и формы</option>
+<option value="cut">🔥 Похудение с сохранением мышц</option>
+<option value="endurance_perf">🏆 Максимальная выносливость</option>
+</select>
+</div>
+<div class="field">
+<label for="intensity">Частота тренировок</label>
+<select id="intensity">
+<option value="low">2–3 тренировки в неделю</option>
+<option selected="" value="medium">4–5 тренировок в неделю</option>
+<option value="high">6–7 тренировок в неделю</option>
+<option value="elite">2 раза в день / элитный уровень</option>
+</select>
+</div>
+</div>
+<button class="btn-calc" onclick="calculate()">Рассчитать мою норму белка →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Пожалуйста, введите вес тела.</p>
+<div id="results" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:28px;">
+<!-- Main result -->
+<div class="calories-display">
+<div class="kcal-number" id="proteinDisplay">—</div>
+<div class="kcal-label">граммов белка в день</div>
+</div>
+<div class="macros-grid" style="margin-top:16px;">
+<div class="macro-item">
+<div class="macro-value" id="minProtein">—</div>
+<div class="macro-name">Минимум (г/день)</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="optimalProtein" style="color:var(--green);">—</div>
+<div class="macro-name">Оптимум (г/день)</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="perKg">—</div>
+<div class="macro-name">г на кг массы тела</div>
+</div>
+</div>
+<!-- Per meal breakdown -->
+<div style="margin-top:24px;background:var(--cream);border-radius:10px;padding:20px;">
+<p style="font-size:0.85rem;font-weight:600;margin-bottom:14px;">Как распределить белок по приёмам пищи:</p>
+<div id="mealBreakdown"></div>
+</div>
+<!-- Best protein sources -->
+<div style="margin-top:20px;">
+<p style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:14px;">Лучшие источники белка для спортсменов:</p>
+<div id="proteinSources"></div>
+</div>
+<div class="result-note" id="resultNote" style="margin-top:16px;"></div>
+<div style="display:flex;gap:10px;margin-top:16px;">
+<button onclick="saveResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Сохранить</button>
+<button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Распечатать</button>
+<button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Скачать карточку</button>
+</div>
+<div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+<p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">Моя суточная норма белка</p>
+<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">граммов в день</p>
+<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Диапазон</p>
+<p id="shareCardRange" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">На кг веса</p>
+<p id="shareCardPerKg" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+</div>
+<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+</div>
+<p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;">✓ Результаты сохранены!</p>
+</div>
+</div>
+</div>
+</section>
+<section class="how-section">
+<div class="container">
+<div class="section-label">Наука о белке</div>
+<h2 class="section-title">Почему нормы белка различаются по видам спорта</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num">1</div>
+<h3>Силовым спортсменам нужно больше всего</h3>
+<p>Силовые тренировки вызывают значительный распад мышечного белка. Восстановление и рост требуют 1,6–2,4 г/кг. Выше 2,4 г/кг отдача уменьшается.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>Спортсменам на выносливость тоже нужен белок</h3>
+<p>Длительные тренировки используют аминокислоты как топливо. Спортсмены на выносливость нуждаются в 1,2–1,6 г/кг — меньше силовых, но значительно выше нормы 0,8 г/кг.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>Больше белка нужно на диете</h3>
+<p>При дефиците калорий риск потери мышц значительно возрастает. Рекомендуется 2,3–3,1 г/кг сухой массы тела при похудении для сохранения мышц.</p>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<h3>Распределите белок на 4–5 приёмов</h3>
+<p>Каждый приём пищи должен содержать 30–50г белка для максимальной стимуляции синтеза мышечного белка. 1–2 приёма в день менее эффективны.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology & Limitations -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">Методология</div>
+<h2 class="section-title">Откуда берутся эти цифры</h2>
+<p>Эти рекомендации основаны на исследованиях в области спортивного питания, в частности на позиционных документах Международного общества спортивного питания (ISSN) и систематических обзорах таких исследователей, как доктор Брэд Шёнфельд и доктор Стюарт Филлипс, изучавших потребление белка и синтез мышечного белка. Широко цитируемый диапазон 1,6–2,2 г/кг для набора мышечной массы получен из мета-анализов, объединяющих десятки контролируемых исследований — выше примерно 2,2 г/кг дополнительный белок даёт минимальную дополнительную пользу для роста мышц у большинства тренированных людей.</p>
+<p style="margin-top:16px;">Учтите, что эти цифры предполагают достаточное общее потребление калорий и силовую тренировочную нагрузку — сам по себе белок не строит мышцы без тренировочного стимула, для которого он нужен организму. Людям с заболеваниями почек следует проконсультироваться с врачом перед значительным увеличением потребления белка, так как очень высокое потребление может нагружать нарушенную функцию почек. Однако для большинства здоровых взрослых исследования не находят доказательств того, что потребление в диапазоне 1,6–2,4 г/кг создаёт риск для здоровья почек или костей.</p>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<div class="section-label">Вопросы</div>
+<h2 class="section-title">Частые вопросы о потреблении белка</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">Вреден ли избыток белка для почек?</button>
+<div class="faq-answer">Для людей со здоровыми почками текущие исследования не показывают доказательств того, что потребление белка в диапазоне 1,6–2,4 г/кг вызывает повреждение почек. Опасения в основном касаются людей с уже существующей хронической болезнью почек, которым стоит получить индивидуальную консультацию у врача, а не следовать общим рекомендациям для спортсменов.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Нужен ли протеиновый порошок для этих целей?</button>
+<div class="faq-answer">Нет — обычные продукты питания (курица, яйца, рыба, молочные продукты, бобовые) могут покрыть эти нормы у большинства людей. Протеиновый порошок — просто удобный и экономичный способ добрать норму, когда обычная еда непрактична, например сразу после тренировки или в поездке. Он не даёт никакого уникального преимущества перед едой, кроме удобства.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Что будет, если есть меньше белка, чем рекомендовано?</button>
+<div class="faq-answer">Вы всё ещё будете нормально функционировать при норме 0,8 г/кг, установленной для предотвращения дефицита у малоподвижных людей, — но если вы регулярно тренируетесь, недостаточное потребление белка относительно уровня активности обычно означает более медленное восстановление мышц, меньший прирост силы и большую потерю мышц при дефиците калорий.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Так же ли эффективен растительный белок, как животный?</button>
+<div class="faq-answer">Может быть, с некоторой корректировкой. Большинство растительных белков содержат меньше лейцина (ключевой аминокислоты для синтеза мышечного белка) и усваиваются менее полно, чем животные источники, поэтому людям на растительном питании часто рекомендуют ориентироваться на верхнюю границу диапазона белка (около 1,8–2,2 г/кг) и сочетать разные источники — бобовые, сою, злаки — в течение дня.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Связанные инструменты</div>
+<h2 class="section-title">Другие калькуляторы</h2>
+<div class="blog-grid">
+<a class="blog-card" href="/ru/" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Калории</span><h3>Калькулятор калорий и БЖУ</h3><p>Полная норма калорий и БЖУ.</p><span class="blog-read-more">Открыть →</span></div></a>
+<a class="blog-card" href="blog/whey-vs-casein-protein.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Сравнение</span><h3>Сыворотка vs казеин</h3><p>Какой протеин выбрать и когда.</p><span class="blog-read-more">Читать →</span></div></a>
+<a class="blog-card" href="blog/how-to-build-muscle.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Гид</span><h3>Как набрать мышечную массу</h3><p>Полное научное руководство по набору мышц.</p><span class="blog-read-more">Читать →</span></div></a>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand"><a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Бесплатные калькуляторы здоровья. Не медицинский совет.</p></div>
+<div class="footer-links">
+<a href="about.html">О сайте</a>
+<a href="blog/">Блог</a>
+<a href="faq.html">FAQ</a>
+<a href="all-calculators.html">Все калькуляторы</a>
+<a href="privacy.html">Политика конфиденциальности</a>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+var currentLang = localStorage.getItem('lang') || 'en';
+
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'protein-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+    else el.textContent = t;
+  });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    var t = opt.getAttribute('data-' + lang);
+    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
+  });
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  
+  window.addEventListener('scroll', function(){
+    var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+    document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+    document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+  });
+  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+});
+
+// Protein ranges per kg by sport+goal+intensity
+function getProteinRange(sport, goal, intensity) {
+  var base = {
+    strength:   {muscle:[1.8,2.4], maintain:[1.6,2.0], cut:[2.0,2.6], endurance_perf:[1.6,2.0]},
+    hypertrophy:{muscle:[2.0,2.4], maintain:[1.8,2.2], cut:[2.2,2.8], endurance_perf:[1.8,2.2]},
+    endurance:  {muscle:[1.4,1.8], maintain:[1.2,1.6], cut:[1.6,2.0], endurance_perf:[1.4,1.8]},
+    team:       {muscle:[1.6,2.0], maintain:[1.4,1.8], cut:[1.8,2.2], endurance_perf:[1.4,1.8]},
+    combat:     {muscle:[1.8,2.2], maintain:[1.6,2.0], cut:[2.0,2.6], endurance_perf:[1.6,2.0]},
+    crossfit:   {muscle:[1.8,2.4], maintain:[1.6,2.0], cut:[2.0,2.6], endurance_perf:[1.8,2.2]},
+    recreational:{muscle:[1.4,1.8], maintain:[1.2,1.6], cut:[1.6,2.0], endurance_perf:[1.2,1.6]},
+  };
+  var intensityMult = {low:0.9, medium:1.0, high:1.1, elite:1.2};
+  var range = base[sport][goal];
+  var mult = intensityMult[intensity];
+  return [range[0]*mult, range[1]*mult];
+}
+
+function calculate() {
+  var weight = parseFloat(document.getElementById('weight').value);
+  var sport = document.getElementById('sportType').value;
+  var goal = document.getElementById('goal').value;
+  var intensity = document.getElementById('intensity').value;
+  var l = currentLang;
+  var err = document.getElementById('calcError');
+
+  if (!weight || weight < 40) { err.style.display = 'block'; return; }
+  err.style.display = 'none';
+
+  var range = getProteinRange(sport, goal, intensity);
+  var minP = Math.round(range[0] * weight);
+  var optP = Math.round(range[1] * weight);
+  var midP = Math.round((minP + optP) / 2);
+  var perKg = ((range[0] + range[1]) / 2).toFixed(1);
+
+  animateNumber(document.getElementById('proteinDisplay'), midP);
+  animateNumber(document.getElementById('minProtein'), minP, 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('optimalProtein'), optP, 0, function(v) { return v + 'g'; });
+  animateNumber(document.getElementById('perKg'), perKg, perKg % 1 !== 0 ? 1 : 0, function(v) { return v + ' g/kg'; });
+
+  document.getElementById('shareCardValue').textContent = optP;
+  document.getElementById('shareCardRange').textContent = minP + '–' + optP + 'g';
+  document.getElementById('shareCardPerKg').textContent = perKg + ' g/kg';
+
+  // Meal breakdown
+  var meals = [3,4,5];
+  var breakdown = document.getElementById('mealBreakdown');
+  breakdown.innerHTML = meals.map(function(m) {
+    var perMeal = Math.round(midP / m);
+    var pct = Math.round(perMeal / 50 * 100);
+    if (pct > 100) pct = 100;
+    return '<div style="display:grid;grid-template-columns:100px 1fr 80px;gap:10px;align-items:center;margin-bottom:10px;">' +
+      '<div style="font-size:0.85rem;color:var(--muted);">' + m + ' ' + (l==='ru'?'приёмов':'meals') + '</div>' +
+      '<div style="background:#E5E7EB;border-radius:4px;height:18px;overflow:hidden;">' +
+        '<div style="width:' + pct + '%;height:100%;background:var(--green-light);border-radius:4px;"></div>' +
+      '</div>' +
+      '<div style="font-size:0.85rem;font-weight:600;color:var(--green);">~' + perMeal + 'g/' + (l==='ru'?'приём':'meal') + '</div>' +
+      '</div>';
+  }).join('');
+
+  // Protein sources
+  var sources_en = [
+    {food:'Chicken breast (cooked)', per100:'31g', serving:'150g serving = 46g protein'},
+    {food:'Greek yoghurt (0%)', per100:'10g', serving:'200g serving = 20g protein'},
+    {food:'Whey protein powder', per100:'80g', serving:'1 scoop (30g) = 24g protein'},
+    {food:'Tuna (canned)', per100:'26g', serving:'1 can (145g) = 38g protein'},
+    {food:'Eggs', per100:'13g', serving:'3 whole eggs = 18g protein'},
+    {food:'Cottage cheese', per100:'11g', serving:'200g serving = 22g protein'},
+  ];
+  var sources_ru = [
+    {food:'Куриная грудка (варёная)', per100:'31г', serving:'150г порция = 46г белка'},
+    {food:'Греческий йогурт (0%)', per100:'10г', serving:'200г порция = 20г белка'},
+    {food:'Сывороточный протеин', per100:'80г', serving:'1 ложка (30г) = 24г белка'},
+    {food:'Тунец (консервированный)', per100:'26г', serving:'1 банка (145г) = 38г белка'},
+    {food:'Яйца', per100:'13г', serving:'3 яйца = 18г белка'},
+    {food:'Творог', per100:'11г', serving:'200г порция = 22г белка'},
+  ];
+  var sources = l==='ru' ? sources_ru : sources_en;
+  document.getElementById('proteinSources').innerHTML = sources.map(function(s) {
+    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">' +
+      '<div><div style="font-weight:500;font-size:0.88rem;">' + s.food + '</div>' +
+      '<div style="font-size:0.78rem;color:var(--muted);">' + s.serving + '</div></div>' +
+      '<div style="color:var(--green);font-weight:700;font-size:0.9rem;">' + s.per100 + '/100g</div>' +
+      '</div>';
+  }).join('');
+
+  var note_en = 'Range ' + minP + '–' + optP + 'g/day based on ' + perKg + 'g per kg of body weight. These are evidence-based recommendations from the International Society of Sports Nutrition (ISSN). Protein above the optimal range provides no additional benefit for most people.';
+  var note_ru = 'Диапазон ' + minP + '–' + optP + 'г/день на основе ' + perKg + 'г на кг массы тела. Научно обоснованные рекомендации Международного общества спортивного питания (ISSN). Белок выше оптимального диапазона не даёт дополнительных преимуществ.';
+  document.getElementById('resultNote').textContent = l==='ru' ? note_ru : note_en;
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('results').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function saveResults() {
+  var p = document.getElementById('proteinDisplay').textContent;
+  if (!p || p==='—') return;
+  localStorage.setItem('cm_saved_protein', JSON.stringify({mainValue:p+'g', savedAt:new Date().toLocaleDateString()}));
+  var msg = document.getElementById('saveMsg');
+  msg.style.display='block';
+  setTimeout(function(){ msg.style.display='none'; }, 3000);
+}
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

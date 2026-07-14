@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head><script>localStorage.setItem('lang','ru');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recipe Nutrition Calculator — Calories &amp; Macros</title>
+<meta content="Calculate the calories, protein, carbs and fat in any recipe. Add ingredients and get full nutritional breakdown instantly." name="description"/>
+<link href="https://calories-macros.com/ru/recipe-calculator.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does this account for cooking losses like oil absorption?","acceptedAnswer":{"@type":"Answer","text":"Not automatically — add the oil actually absorbed as a separate ingredient for accuracy when frying."}},
+    {"@type":"Question","name":"Why isn't my exact ingredient in the database?","acceptedAnswer":{"@type":"Answer","text":"Our database covers 100+ common foods. Search for the generic version of the food for a close match."}},
+    {"@type":"Question","name":"Should I weigh ingredients raw or after cooking?","acceptedAnswer":{"@type":"Answer","text":"Weigh raw, before cooking, for the most accurate match, since our database values are based on raw weight for most items."}}
+  ]}
+  </script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+<meta content="Recipe Nutrition Calculator" property="og:title"/>
+<meta content="Calculate calories and macros in any recipe instantly." property="og:description"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<link href="../style.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"Recipe Nutrition Calculator","item":"https://calories-macros.com/recipe-calculator.html"}
+  ]}
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a aria-label="Search" href="/ru/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="" href="/recipe-calculator.html" id="headerLangEN">EN</a>
+<a class="active" href="/ru/recipe-calculator.html" id="headerLangRU">RU</a>
+</div>
+<button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Калькуляторы</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/ru/"><span class="mm-icon">🔥</span><span class="mm-text">Калории и БЖУ</span></a>
+<a class="mega-menu-item" href="/ru/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">ИМТ</span></a>
+<a class="mega-menu-item" href="/ru/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Норма воды</span></a>
+<a class="mega-menu-item" href="/ru/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Идеальный вес</span></a>
+<a class="mega-menu-item" href="/ru/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">% жира</span></a>
+<a class="mega-menu-item" href="/ru/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Тренировки</span></a>
+<a class="mega-menu-item" href="/ru/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Метаболизм</span></a>
+<a class="mega-menu-item" href="/ru/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Беременность</span></a>
+<a class="mega-menu-item" href="/ru/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Похудение</span></a>
+<a class="mega-menu-item" href="/ru/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Витамины</span></a>
+<a class="mega-menu-item" href="/ru/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Дети</span></a>
+<a class="mega-menu-item" href="/ru/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Белок</span></a>
+<a class="mega-menu-item" href="/ru/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Нетто-углеводы</span></a>
+<a class="mega-menu-item" href="/ru/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">Максимум на 1 повтор</span></a>
+<a class="mega-menu-item" href="/ru/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Таймер голодания</span></a>
+<a class="mega-menu-item" href="/ru/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE по диете</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/blog/">Блог</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/ru/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Калории для похудения</span></a>
+<a class="mega-menu-item" href="/ru/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">Набор мышц</span></a>
+<a class="mega-menu-item" href="/ru/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Кетогенная диета</span></a>
+<a class="mega-menu-item" href="/ru/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Интервальное голодание</span></a>
+<a class="mega-menu-item" href="/ru/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Лучшие продукты</span></a>
+<a class="mega-menu-item" href="/ru/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Средиземноморская</span></a>
+<a class="mega-menu-item" href="/ru/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Диета для живота</span></a>
+<a class="mega-menu-item" href="/ru/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Суперфуды</span></a>
+<div class="mega-menu-footer"><a href="/ru/blog/">Все статьи →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/ru/all-calculators.html">Инструменты</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/ru/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Планы питания</span></a>
+<a class="mega-menu-item" href="/ru/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Калорийность</span></a>
+<a class="mega-menu-item" href="/ru/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">ГИ</span></a>
+<a class="mega-menu-item" href="/ru/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Фастфуд</span></a>
+<a class="mega-menu-item" href="/ru/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Алкоголь</span></a>
+<a class="mega-menu-item" href="/ru/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Рецепты</span></a>
+<a class="mega-menu-item" href="/ru/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Сравнение диет</span></a>
+<a class="mega-menu-item" href="/ru/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/ru/all-calculators.html">Все →</a></div>
+</div>
+</div>
+</div>
+<a href="/ru/about.html">О сайте</a>
+<a href="/ru/contact.html">Контакт</a>
+<div class="lang-toggle"><a class="" href="/recipe-calculator.html" id="langEN">EN</a><a class="active" href="/ru/recipe-calculator.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Бесплатный калькулятор питания</div>
+<h1>Калькулятор <em>питательности</em> рецептов</h1>
+<p>Добавьте ингредиенты с граммами и получите полный расчёт питательности рецепта — калории, белок, углеводы и жиры на порцию.</p>
+<a class="btn-scroll" href="#calculator">Начать расчёт ↓</a>
+</div>
+</section>
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="section-label">Калькулятор рецептов</div>
+<h2 class="section-title">Добавьте ингредиенты</h2>
+<p class="section-sub">Поиск из 100+ продуктов. Введите вес в граммах для точного результата.</p>
+<div class="calc-card">
+<!-- Recipe name & servings -->
+<div class="calc-grid" style="margin-bottom:20px;">
+<div class="field">
+<label for="recipeName">Название рецепта (необязательно)</label>
+<input id="recipeName" placeholder="e.g. Chicken salad" type="text"/>
+</div>
+<div class="field">
+<label for="servings">Количество порций</label>
+<input id="servings" max="50" min="1" type="number" value="1"/>
+</div>
+</div>
+<!-- Ingredient search -->
+<div class="field" style="margin-bottom:8px;">
+<label for="ingredientSearch">Поиск ингредиента</label>
+<input autocomplete="off" id="ingredientSearch" placeholder="e.g. chicken, banana, oats..." type="text"/>
+</div>
+<!-- Food buttons grid -->
+<div id="foodGrid" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;max-height:180px;overflow-y:auto;padding:4px 0;"></div>
+<div class="calc-grid" style="margin-bottom:16px;">
+<div class="field">
+<label>Выбранный продукт:</label>
+<div id="selectedDisplay" style="padding:11px 14px;border:1.5px solid var(--border);border-radius:8px;background:var(--cream);color:var(--muted);font-size:0.9rem;min-height:44px;">— нажмите на кнопку продукта выше —</div>
+</div>
+<div class="field">
+<label for="ingredientGrams">Вес (граммы)</label>
+<input id="ingredientGrams" max="5000" min="1" placeholder="e.g. 150" type="number"/>
+</div>
+</div>
+<button class="btn-calc" onclick="addIngredient()">+ Добавить ингредиент</button>
+<p id="addError" style="color:#dc2626;font-size:0.85rem;margin-top:8px;display:none;">Нажмите на кнопку продукта и введите вес.</p>
+<!-- Ingredients list -->
+<div id="ingredientsList" style="display:none;margin-top:24px;">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+<h3 id="ingredientsTitle" style="font-size:1rem;font-weight:600;">Ингредиенты:</h3>
+<button onclick="clearRecipe()" style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:0.85rem;font-family:var(--font-body);">Очистить всё</button>
+</div>
+<div id="ingredientsItems"></div>
+</div>
+<!-- Results -->
+<div id="recipeResults" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:28px;">
+<p class="results-headline" id="resultsTitle" style="margin-bottom:20px;"></p>
+<!-- Per serving -->
+<div style="margin-bottom:20px;">
+<p id="perServingLabel" style="font-size:0.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">На порцию:</p>
+<div class="calories-display" style="margin-bottom:16px;">
+<div class="kcal-number" id="kcalPerServing">—</div>
+<div class="kcal-label">калорий</div>
+</div>
+<div class="macros-grid">
+<div class="macro-item">
+<div class="macro-value" id="proteinPerServing">—</div>
+<div class="macro-name">Белок</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="carbsPerServing">—</div>
+<div class="macro-name">Углеводы</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="fatPerServing">—</div>
+<div class="macro-name">Жиры</div>
+</div>
+</div>
+</div>
+<!-- Total recipe -->
+<div style="background:var(--cream);border-radius:10px;padding:16px 20px;">
+<p id="totalLabel" style="font-size:0.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px;">Весь рецепт:</p>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:center;">
+<div><div id="totalKcal" style="font-family:var(--font-display);font-size:1.3rem;color:var(--green);">—</div><div style="font-size:0.75rem;color:var(--muted);">ккал</div></div>
+<div><div id="totalProtein" style="font-family:var(--font-display);font-size:1.3rem;">—</div><div style="font-size:0.75rem;color:var(--muted);">белок</div></div>
+<div><div id="totalCarbs" style="font-family:var(--font-display);font-size:1.3rem;">—</div><div style="font-size:0.75rem;color:var(--muted);">углеводы</div></div>
+<div><div id="totalFat" style="font-family:var(--font-display);font-size:1.3rem;">—</div><div style="font-size:0.75rem;color:var(--muted);">жиры</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="how-section">
+<div class="container">
+<div class="section-label">Как работает</div>
+<h2 class="section-title">Рассчитайте любой рецепт за 3 шага</h2>
+<div class="steps-grid">
+<div class="step"><div class="step-num">1</div><h3>Найдите ингредиенты</h3><p>Введите название продукта и выберите его из более чем 100 распространённых ингредиентов в нашей базе, охватывающей мясо, молочные продукты, злаки, овощи, фрукты и основные продукты кладовой. Каждое добавление отслеживается отдельно, чтобы вы могли просмотреть или удалить отдельные ингредиенты перед завершением рецепта.</p></div>
+<div class="step"><div class="step-num">2</div><h3>Введите вес в граммах</h3><p>Взвесьте ингредиенты на кухонных весах для наиболее точных результатов — это важнее, чем может показаться, так как визуальная оценка порций — одна из главных причин ошибок при домашнем учёте питания. Базовые цифровые кухонные весы стоят недорого и быстро окупаются точностью учёта.</p></div>
+<div class="step"><div class="step-num">3</div><h3>Получите мгновенный результат</h3><p>Автоматически видите калории и БЖУ для всего рецепта и на порцию, в зависимости от указанного количества порций. Это упрощает сравнение того, как рецепт вписывается в суточную норму калорий или белка, а также масштабирование рецепта при сохранении точности чисел на порцию.</p></div>
+</div>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<div class="section-label">Вопросы</div>
+<h2 class="section-title">Частые вопросы о расчёте питательности рецептов</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">Учитывает ли это потери при готовке, например впитывание масла?</button>
+<div class="faq-answer">Не автоматически — этот калькулятор суммирует добавленные вами сырые ингредиенты, поэтому если вы что-то жарите на масле, добавьте фактически впитавшееся масло (обычно часть использованного) как отдельный ингредиент для точности. Аналогично, если рецепт значительно уваривается при готовке (например, соус), общая калорийность остаётся той же, но становится более концентрированной на грамм в готовом блюде.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Почему в базе нет моего точного ингредиента?</button>
+<div class="faq-answer">Наша база охватывает 100+ распространённых продуктов, но не может включать каждый бренд или региональный вариант. Для близкого совпадения ищите общую версию продукта (например, «куриная грудка» вместо конкретного бренда) — значения будут очень близки для большинства необработанных продуктов, хотя упакованные товары могут отличаться сильнее из-за добавленных ингредиентов.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Взвешивать ингредиенты сырыми или после готовки?</button>
+<div class="faq-answer">Взвешивайте в сыром виде, до готовки, для наиболее точного соответствия значениям в нашей базе, которые для большинства позиций (мясо, рис) основаны на сыром весе. Если у вас есть только вес после готовки, учтите, что мясо обычно теряет 20-25% веса при готовке, а рис/паста увеличивается в весе примерно в 2-3 раза за счёт впитывания воды — скорректируйте соответственно, если вводите вес готового продукта.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Другие калькуляторы</div>
+<h2 class="section-title">Связанные инструменты</h2>
+<div class="blog-grid">
+<a class="blog-card" href="/ru/" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Калории</span><h3>Калькулятор калорий и БЖУ</h3><p>Получите суточную норму калорий и БЖУ.</p><span class="blog-read-more">Открыть →</span></div></a>
+<a class="blog-card" href="exercise-calories-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Тренировки</span><h3>Калькулятор тренировок</h3><p>Сколько калорий сжигается на тренировке?</p><span class="blog-read-more">Открыть →</span></div></a>
+<a class="blog-card" href="blog/meal-prep-vs-eating-out.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Сравнение</span><h3>Готовка впрок vs еда вне дома</h3><p>Деньги, калории и время.</p><span class="blog-read-more">Читать →</span></div></a>
+</div>
+</div>
+</section>
+<div style="max-width:680px;margin:0 auto 32px;padding:0 20px;display:flex;gap:10px;flex-wrap:wrap;">
+<button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Сохранить результаты</button>
+<button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Распечатать</button>
+<button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Скачать карточку</button>
+<p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;width:100%;text-align:center;">✓ Результаты сохранены!</p>
+</div>
+<div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+<p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">Мой рецепт, на порцию</p>
+<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">калорий на порцию</p>
+<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Белок</p>
+<p id="shareCardProtein" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Углеводы</p>
+<p id="shareCardCarbs" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Жиры</p>
+<p id="shareCardFat" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+</div>
+<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+</div>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand"><a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Бесплатные калькуляторы здоровья. Не медицинский совет.</p></div>
+<div class="footer-links">
+<a href="about.html">О сайте</a>
+<a href="blog/">Блог</a>
+<a href="contact.html">Контакт</a>
+<a href="privacy.html">Политика конфиденциальности</a>
+<a href="terms.html">Условия использования</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+
+function savePageResults() {
+  var results = {};
+  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value').forEach(function(el, i) {
+    results['val_' + i] = el.textContent;
+  });
+  results.savedAt = new Date().toLocaleDateString();
+  var key = 'cm_saved_' + window.location.pathname.replace(/[^a-z]/gi,'_');
+  localStorage.setItem(key, JSON.stringify(results));
+  var msg = document.getElementById('saveMsg');
+  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
+}
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+window.addEventListener('scroll', function(){
+  var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+  document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+});
+
+var currentLang = localStorage.getItem('lang') || 'en';
+var FOODS = {
+  'Chicken breast (raw)':[120,22.5,0,2.6],'Chicken breast (cooked)':[165,31,0,3.6],
+  'Ground beef (lean)':[215,26,0,12],'Salmon (raw)':[208,20,0,13],
+  'Tuna (canned in water)':[116,26,0,1],'Egg (whole)':[155,13,1.1,11],
+  'Egg whites':[52,11,0.7,0.2],'Shrimp':[99,24,0.2,0.3],
+  'Turkey breast':[157,30,0,1],'Cod':[105,23,0,0.9],
+  'Greek yoghurt (0% fat)':[59,10,3.6,0.4],'Cottage cheese (low fat)':[72,11,3.4,1],
+  'Milk (whole)':[61,3.2,4.8,3.3],'Cheddar cheese':[403,25,1.3,33],
+  'Butter':[717,0.9,0.1,81],'White rice (cooked)':[130,2.7,28,0.3],
+  'Brown rice (cooked)':[112,2.6,23,0.9],'Oats (dry)':[389,17,66,7],
+  'Pasta (cooked)':[131,5,25,1.1],'White bread':[265,9,49,3.2],
+  'Whole wheat bread':[247,13,41,4.2],'Quinoa (cooked)':[120,4.4,21,1.9],
+  'Broccoli':[34,2.8,7,0.4],'Spinach':[23,2.9,3.6,0.4],
+  'Sweet potato (raw)':[86,1.6,20,0.1],'White potato (raw)':[77,2,17,0.1],
+  'Carrot':[41,0.9,10,0.2],'Tomato':[18,0.9,3.9,0.2],
+  'Cucumber':[15,0.7,3.6,0.1],'Bell pepper':[31,1,6,0.3],
+  'Onion':[40,1.1,9.3,0.1],'Garlic':[149,6.4,33,0.5],
+  'Avocado':[160,2,9,15],'Mushrooms':[22,3.1,3.3,0.3],
+  'Lentils (cooked)':[116,9,20,0.4],'Chickpeas (cooked)':[164,9,27,2.6],
+  'Black beans (cooked)':[132,8.9,24,0.5],'Tofu (firm)':[76,8,1.9,4.8],
+  'Almonds':[579,21,22,50],'Peanut butter':[588,25,20,50],
+  'Chia seeds':[486,17,42,31],'Banana':[89,1.1,23,0.3],
+  'Apple':[52,0.3,14,0.2],'Blueberries':[57,0.7,14,0.3],
+  'Strawberries':[33,0.7,8,0.3],'Orange':[47,0.9,12,0.1],
+  'Mango':[60,0.8,15,0.4],'Olive oil':[884,0,0,100],
+  'Honey':[304,0.3,82,0],'Sugar (white)':[387,0,100,0],
+  'Dark chocolate (70%)':[598,8,46,43],'Protein powder (whey)':[400,80,8,4],
+};
+var FOODS_RU = {
+  'Chicken breast (raw)':'Куриная грудка (сырая)','Chicken breast (cooked)':'Куриная грудка (варёная)',
+  'Ground beef (lean)':'Говяжий фарш (нежирный)','Salmon (raw)':'Лосось (сырой)',
+  'Tuna (canned in water)':'Тунец (консервированный)','Egg (whole)':'Яйцо (целое)',
+  'Egg whites':'Яичные белки','Shrimp':'Креветки',
+  'Turkey breast':'Индейка','Cod':'Треска',
+  'Greek yoghurt (0% fat)':'Греческий йогурт (0%)','Cottage cheese (low fat)':'Творог (нежирный)',
+  'Milk (whole)':'Молоко (цельное)','Cheddar cheese':'Сыр чеддер',
+  'Butter':'Сливочное масло','White rice (cooked)':'Белый рис (варёный)',
+  'Brown rice (cooked)':'Бурый рис (варёный)','Oats (dry)':'Овсянка (сухая)',
+  'Pasta (cooked)':'Паста (варёная)','White bread':'Белый хлеб',
+  'Whole wheat bread':'Цельнозерновой хлеб','Quinoa (cooked)':'Киноа (варёная)',
+  'Broccoli':'Брокколи','Spinach':'Шпинат',
+  'Sweet potato (raw)':'Батат (сырой)','White potato (raw)':'Картофель (сырой)',
+  'Carrot':'Морковь','Tomato':'Томат',
+  'Cucumber':'Огурец','Bell pepper':'Болгарский перец',
+  'Onion':'Лук','Garlic':'Чеснок',
+  'Avocado':'Авокадо','Mushrooms':'Грибы',
+  'Lentils (cooked)':'Чечевица (варёная)','Chickpeas (cooked)':'Нут (варёный)',
+  'Black beans (cooked)':'Чёрная фасоль','Tofu (firm)':'Тофу (твёрдый)',
+  'Almonds':'Миндаль','Peanut butter':'Арахисовая паста',
+  'Chia seeds':'Семена чиа','Banana':'Банан',
+  'Apple':'Яблоко','Blueberries':'Черника',
+  'Strawberries':'Клубника','Orange':'Апельсин',
+  'Mango':'Манго','Olive oil':'Оливковое масло',
+  'Honey':'Мёд','Sugar (white)':'Сахар',
+  'Dark chocolate (70%)':'Тёмный шоколад (70%)','Protein powder (whey)':'Сывороточный протеин',
+};
+
+var ingredients = [];
+var selectedFood = null;
+
+// Language
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+    else el.textContent = t;
+  });
+  renderFoodGrid(document.getElementById('ingredientSearch').value);
+  renderIngredients();
+  updateResults();
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+if (currentLang === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); }
+(function(){
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  if (currentLang==='ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+// Food grid
+function renderFoodGrid(query) {
+  var grid = document.getElementById('foodGrid');
+  if (!grid) return;
+  var q = (query || '').toLowerCase().trim();
+  var allFoods = Object.keys(FOODS);
+  var filtered = q ? allFoods.filter(function(f) {
+    return f.toLowerCase().includes(q) || (FOODS_RU[f]||'').toLowerCase().includes(q);
+  }) : allFoods;
+  grid.innerHTML = '';
+  filtered.slice(0,50).forEach(function(f) {
+    var name = currentLang === 'ru' ? (FOODS_RU[f]||f) : f;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.textContent = name;
+    var isSelected = selectedFood === f;
+    btn.style.cssText = 'padding:6px 12px;border-radius:20px;border:1.5px solid ' + (isSelected?'var(--green)':'var(--border)') + ';background:' + (isSelected?'var(--green)':'white') + ';color:' + (isSelected?'white':'var(--muted)') + ';cursor:pointer;font-size:0.82rem;font-family:var(--font-body);white-space:nowrap;';
+    btn.onclick = function() { selectFood(f); };
+    grid.appendChild(btn);
+  });
+}
+
+document.getElementById('ingredientSearch').addEventListener('input', function() {
+  renderFoodGrid(this.value);
+});
+
+function selectFood(name) {
+  selectedFood = name;
+  var displayName = currentLang === 'ru' ? (FOODS_RU[name]||name) : name;
+  var disp = document.getElementById('selectedDisplay');
+  disp.textContent = '✓ ' + displayName;
+  disp.style.color = 'var(--green)';
+  disp.style.fontWeight = '600';
+  disp.style.borderColor = 'var(--green-light)';
+  renderFoodGrid(document.getElementById('ingredientSearch').value);
+  document.getElementById('ingredientGrams').focus();
+}
+
+function addIngredient() {
+  var grams = parseFloat(document.getElementById('ingredientGrams').value);
+  var err = document.getElementById('addError');
+  if (!selectedFood || !grams || grams <= 0) { err.style.display = 'block'; return; }
+  err.style.display = 'none';
+  var data = FOODS[selectedFood];
+  var factor = grams / 100;
+  ingredients.push({
+    name_en: selectedFood, name_ru: FOODS_RU[selectedFood]||selectedFood,
+    grams: grams,
+    kcal: Math.round(data[0]*factor),
+    protein: Math.round(data[1]*factor*10)/10,
+    carbs: Math.round(data[2]*factor*10)/10,
+    fat: Math.round(data[3]*factor*10)/10,
+  });
+  // Reset
+  selectedFood = null;
+  document.getElementById('ingredientGrams').value = '';
+  document.getElementById('selectedDisplay').textContent = currentLang==='ru' ? '— нажмите на продукт выше —' : '— click a food above —';
+  document.getElementById('selectedDisplay').style.color = 'var(--muted)';
+  document.getElementById('selectedDisplay').style.fontWeight = 'normal';
+  document.getElementById('selectedDisplay').style.borderColor = 'var(--border)';
+  renderFoodGrid(document.getElementById('ingredientSearch').value);
+  renderIngredients();
+  updateResults();
+}
+
+function removeIngredient(i) {
+  ingredients.splice(i, 1);
+  renderIngredients();
+  updateResults();
+}
+
+function clearRecipe() {
+  ingredients = [];
+  renderIngredients();
+  updateResults();
+}
+
+function renderIngredients() {
+  var list = document.getElementById('ingredientsItems');
+  var container = document.getElementById('ingredientsList');
+  if (!list) return;
+  if (ingredients.length === 0) { container.style.display = 'none'; return; }
+  container.style.display = 'block';
+  list.innerHTML = ingredients.map(function(ing, i) {
+    var name = currentLang === 'ru' ? ing.name_ru : ing.name_en;
+    return '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;background:var(--cream);border-radius:8px;margin-bottom:8px;flex-wrap:wrap;gap:8px;">' +
+      '<div><span style="font-weight:600;font-size:0.9rem;">' + name + '</span><span style="color:var(--muted);font-size:0.82rem;"> — ' + ing.grams + 'g</span></div>' +
+      '<div style="display:flex;align-items:center;gap:10px;font-size:0.82rem;">' +
+      '<span style="color:var(--green);font-weight:600;">' + ing.kcal + ' kcal</span>' +
+      '<span style="color:var(--muted);">P:' + ing.protein + 'g C:' + ing.carbs + 'g F:' + ing.fat + 'g</span>' +
+      '<button onclick="removeIngredient(' + i + ')" style="background:none;border:none;cursor:pointer;color:var(--muted);font-size:1.1rem;padding:0 4px;">×</button>' +
+      '</div></div>';
+  }).join('');
+}
+
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 500;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'recipe-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+function updateResults() {
+  var results = document.getElementById('recipeResults');
+  if (!results) return;
+  if (ingredients.length === 0) { results.style.display = 'none'; return; }
+  results.style.display = 'block';
+  var servings = parseFloat(document.getElementById('servings').value) || 1;
+  var totKcal = ingredients.reduce(function(s,i){ return s+i.kcal; }, 0);
+  var totP = ingredients.reduce(function(s,i){ return s+i.protein; }, 0);
+  var totC = ingredients.reduce(function(s,i){ return s+i.carbs; }, 0);
+  var totF = ingredients.reduce(function(s,i){ return s+i.fat; }, 0);
+  animateNumber(document.getElementById('totalKcal'), totKcal, 0);
+  animateNumber(document.getElementById('totalProtein'), totP, 1, v => v + 'g');
+  animateNumber(document.getElementById('totalCarbs'), totC, 1, v => v + 'g');
+  animateNumber(document.getElementById('totalFat'), totF, 1, v => v + 'g');
+  animateNumber(document.getElementById('kcalPerServing'), totKcal/servings, 0);
+  animateNumber(document.getElementById('proteinPerServing'), totP/servings, 1, v => v + 'g');
+  animateNumber(document.getElementById('carbsPerServing'), totC/servings, 1, v => v + 'g');
+  animateNumber(document.getElementById('fatPerServing'), totF/servings, 1, v => v + 'g');
+
+  document.getElementById('shareCardValue').textContent = Math.round(totKcal/servings);
+  document.getElementById('shareCardProtein').textContent = (Math.round(totP/servings*10)/10) + 'g';
+  document.getElementById('shareCardCarbs').textContent = (Math.round(totC/servings*10)/10) + 'g';
+  document.getElementById('shareCardFat').textContent = (Math.round(totF/servings*10)/10) + 'g';
+  var name = document.getElementById('recipeName').value;
+  var l = currentLang;
+  document.getElementById('resultsTitle').textContent = name
+    ? (l==='ru' ? 'Результаты для «'+name+'»:' : 'Results for "'+name+'":')
+    : (l==='ru' ? 'Результаты рецепта:' : 'Recipe results:');
+}
+
+document.getElementById('servings').addEventListener('input', updateResults);
+
+// Init
+renderFoodGrid('');
+if (currentLang === 'ru') applyLang('ru');
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

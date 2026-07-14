@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><script>localStorage.setItem('lang','en');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>TDEE by Diet Type — Keto, Vegan, Paleo | Calories &amp; Macros</title>
+<meta content="Calculate your daily calories and macros for keto, vegan, paleo, Mediterranean, or a balanced diet. Free TDEE calculator with diet-specific macro splits." name="description"/>
+<link href="https://calories-macros.com/diet-tdee-calculator.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"TDEE by Diet Type Calculator","url":"https://calories-macros.com/diet-tdee-calculator.html","description":"Free calorie and macro calculator with diet-specific splits for keto, vegan, paleo, and Mediterranean diets.","applicationCategory":"HealthApplication"}
+  </script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Does my TDEE change depending on which diet I follow?","acceptedAnswer":{"@type":"Answer","text":"No — your total daily energy expenditure is determined by your body stats and activity level, not by which diet you follow. What changes between diets is how those same calories are split between protein, carbs, and fat."}},
+    {"@type":"Question","name":"Why is the keto macro split so different from vegan?","acceptedAnswer":{"@type":"Answer","text":"Keto deliberately restricts carbs to induce ketosis, replacing those calories mostly with fat. Vegan diets tend to be naturally higher in carbs since many plant-based staples (grains, legumes, fruit) are carb-dense."}},
+    {"@type":"Question","name":"Can I hit these macros on a vegan or vegetarian diet?","acceptedAnswer":{"@type":"Answer","text":"Yes, with planning — combining varied plant protein sources across the day (legumes, soy, seitan, quinoa) can meet the protein target, though it may take more deliberate meal planning than an omnivorous diet."}},
+    {"@type":"Question","name":"Which diet type should I choose?","acceptedAnswer":{"@type":"Answer","text":"The diet you can sustain long-term generally matters more for results than the specific macro split, since research shows similar weight outcomes across diets at matched calorie levels."}}
+  ]}
+  </script>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXLXM57ZKH');
+  </script>
+<link href="https://calories-macros.com/diet-tdee-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://calories-macros.com/ru/diet-tdee-calculator.html" hreflang="ru" rel="alternate"/>
+<link href="https://calories-macros.com/diet-tdee-calculator.html" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph -->
+<meta content="TDEE by Diet Type — Keto, Vegan, Paleo | Calories &amp; Macros" property="og:title"/>
+<meta content="Calculate your daily calories and macros for keto, vegan, paleo, Mediterranean, or a balanced diet." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://calories-macros.com/diet-tdee-calculator.html" property="og:url"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Calories &amp; Macros" property="og:site_name"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="TDEE by Diet Type — Keto, Vegan, Paleo | Calories &amp; Macros" name="twitter:title"/>
+<meta content="Calculate your daily calories and macros for keto, vegan, paleo, Mediterranean, or a balanced diet." name="twitter:description"/>
+<meta content="https://calories-macros.com/og-image.png" name="twitter:image"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"TDEE by Diet Type","item":"https://calories-macros.com/diet-tdee-calculator.html"}
+  ]}
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a aria-label="Search" href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="active" href="/diet-tdee-calculator.html" id="headerLangEN">EN</a>
+<a class="" href="/ru/diet-tdee-calculator.html" id="headerLangRU">RU</a>
+</div>
+<button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/all-calculators.html">Calculators</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/"><span class="mm-icon">🔥</span><span class="mm-text">Calorie &amp; Macro</span></a>
+<a class="mega-menu-item" href="/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">BMI Calculator</span></a>
+<a class="mega-menu-item" href="/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Water Intake</span></a>
+<a class="mega-menu-item" href="/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Ideal Weight</span></a>
+<a class="mega-menu-item" href="/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">Body Fat %</span></a>
+<a class="mega-menu-item" href="/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Exercise Calories</span></a>
+<a class="mega-menu-item" href="/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Metabolism</span></a>
+<a class="mega-menu-item" href="/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Pregnancy</span></a>
+<a class="mega-menu-item" href="/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Weight Loss</span></a>
+<a class="mega-menu-item" href="/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Vitamins</span></a>
+<a class="mega-menu-item" href="/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Child Calories</span></a>
+<a class="mega-menu-item" href="/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Protein</span></a>
+<a class="mega-menu-item" href="/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Net Carbs</span></a>
+<a class="mega-menu-item" href="/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">One Rep Max</span></a>
+<a class="mega-menu-item" href="/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Fasting Timer</span></a>
+<a class="mega-menu-item" href="/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE by Diet</span></a>
+<div class="mega-menu-footer"><a href="/all-calculators.html">View all →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/blog/">Blog</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Calories for Weight Loss</span></a>
+<a class="mega-menu-item" href="/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">How to Build Muscle</span></a>
+<a class="mega-menu-item" href="/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Ketogenic Diet</span></a>
+<a class="mega-menu-item" href="/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Intermittent Fasting</span></a>
+<a class="mega-menu-item" href="/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Best Foods</span></a>
+<a class="mega-menu-item" href="/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Mediterranean Diet</span></a>
+<a class="mega-menu-item" href="/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Belly Fat Diet</span></a>
+<a class="mega-menu-item" href="/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Superfoods</span></a>
+<div class="mega-menu-footer"><a href="/blog/">View all →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/all-calculators.html">Tools</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Meal Plans</span></a>
+<a class="mega-menu-item" href="/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Calories in Foods</span></a>
+<a class="mega-menu-item" href="/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">Glycemic Index</span></a>
+<a class="mega-menu-item" href="/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Fast Food</span></a>
+<a class="mega-menu-item" href="/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Alcohol Calories</span></a>
+<a class="mega-menu-item" href="/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Recipes</span></a>
+<a class="mega-menu-item" href="/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Diet Comparison</span></a>
+<a class="mega-menu-item" href="/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/all-calculators.html">View all →</a></div>
+</div>
+</div>
+</div>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+<div class="lang-toggle"><a class="active" href="/diet-tdee-calculator.html" id="langEN">EN</a><a class="" href="/ru/diet-tdee-calculator.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Free Nutrition Calculator</div>
+<h1>TDEE by <em>Diet Type</em></h1>
+<p>Get your daily calories split into macros for keto, vegan, paleo, Mediterranean, or a standard balanced diet.</p>
+<a class="btn-scroll" href="#calculator">Calculate My Macros ↓</a>
+</div>
+</section>
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="section-label">TDEE by Diet Type</div>
+<h2 class="section-title">Enter your details</h2>
+<p class="section-sub">Same calorie calculation, macros split according to your chosen diet.</p>
+<div class="calc-card">
+<div class="field" style="margin-bottom:20px;">
+<label>Gender</label>
+<div class="gender-toggle">
+<button class="gender-btn active" id="genderMale">♂ Male</button>
+<button class="gender-btn" id="genderFemale">♀ Female</button>
+</div>
+</div>
+<div class="calc-grid">
+<div class="field">
+<label for="age">Age</label>
+<input id="age" max="100" min="15" placeholder="e.g. 30" type="number"/>
+</div>
+<div class="field">
+<label for="weight">Weight (kg)</label>
+<input id="weight" max="300" min="30" placeholder="e.g. 75" type="number"/>
+</div>
+<div class="field">
+<label for="height">Height (cm)</label>
+<input id="height" max="250" min="100" placeholder="e.g. 175" type="number"/>
+</div>
+<div class="field">
+<label for="activity">Activity level</label>
+<select id="activity">
+<option value="1.2">Sedentary</option>
+<option value="1.375">Light (1–3 workouts/week)</option>
+<option selected="" value="1.55">Moderate (3–5 workouts/week)</option>
+<option value="1.725">Active (6–7 workouts/week)</option>
+<option value="1.9">Very active</option>
+</select>
+</div>
+<div class="field" style="grid-column:1/-1;">
+<label for="dietType">Diet type</label>
+<select id="dietType">
+<option value="balanced">⚖️ Balanced (40% carbs / 30% protein / 30% fat)</option>
+<option value="keto">🥑 Keto (5% carbs / 25% protein / 70% fat)</option>
+<option value="vegan">🌱 Vegan (55% carbs / 20% protein / 25% fat)</option>
+<option value="paleo">🍖 Paleo (25% carbs / 35% protein / 40% fat)</option>
+<option value="mediterranean">🫒 Mediterranean (45% carbs / 20% protein / 35% fat)</option>
+</select>
+</div>
+</div>
+<button class="btn-calc" id="calcBtn">Calculate My Macros →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please fill in all fields correctly.</p>
+<div class="calc-results" id="calcResults">
+<div class="calories-display" style="background:var(--green-pale);">
+<div class="kcal-number" id="tdeeValue">—</div>
+<div class="kcal-label">calories per day (TDEE)</div>
+</div>
+<div style="display:flex;justify-content:center;margin:20px 0;">
+<svg height="150" viewbox="0 0 140 140" width="150">
+<circle cx="70" cy="70" fill="none" r="55" stroke="var(--border)" stroke-width="18"></circle>
+<circle cx="70" cy="70" fill="none" id="donutCarbs" r="55" stroke="#60a5fa" stroke-dasharray="0 345.6" stroke-dashoffset="0" stroke-width="18" style="transition:stroke-dasharray 0.8s cubic-bezier(0.16,1,0.3,1);" transform="rotate(-90 70 70)"></circle>
+<circle cx="70" cy="70" fill="none" id="donutProtein" r="55" stroke="#34d399" stroke-dasharray="0 345.6" stroke-dashoffset="0" stroke-width="18" style="transition:stroke-dasharray 0.8s cubic-bezier(0.16,1,0.3,1);" transform="rotate(-90 70 70)"></circle>
+<circle cx="70" cy="70" fill="none" id="donutFat" r="55" stroke="#fbbf24" stroke-dasharray="0 345.6" stroke-dashoffset="0" stroke-width="18" style="transition:stroke-dasharray 0.8s cubic-bezier(0.16,1,0.3,1);" transform="rotate(-90 70 70)"></circle>
+</svg>
+</div>
+<div class="macros-grid">
+<div class="macro-item">
+<div class="macro-value" id="carbsValue">—</div>
+<div class="macro-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#60a5fa;margin-right:4px;"></span><span>Carbs</span></div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="proteinValue">—</div>
+<div class="macro-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#34d399;margin-right:4px;"></span><span>Protein</span></div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="fatValue">—</div>
+<div class="macro-name"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:#fbbf24;margin-right:4px;"></span><span>Fat</span></div>
+</div>
+</div>
+<div class="result-note" id="resultNote" style="margin-top:16px;"></div>
+<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+<button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Print</button>
+<button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Download card</button>
+</div>
+<div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+<p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+<p id="shareCardSubtitle" style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My daily nutrition target</p>
+<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">calories per day</p>
+<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Carbs</p>
+<p id="shareCardCarbs" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Protein</p>
+<p id="shareCardProtein" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Fat</p>
+<p id="shareCardFat" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+</div>
+<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+<!-- Info section -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">Diet macro splits</div>
+<h2 class="section-title">Why the same calories look different by diet</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num" style="font-size:1.6rem;">🥑</div>
+<h3>Keto: fat replaces carbs</h3>
+<p>Keto deliberately restricts carbs to roughly 20-50g per day (often under 10% of calories) to shift the body toward burning fat and ketones for fuel instead of glucose. Protein stays moderate rather than high, since excess protein can be converted to glucose and interfere with ketosis for some people, and the freed-up calories are made up almost entirely with fat.</p>
+</div>
+<div class="step">
+<div class="step-num" style="font-size:1.6rem;">🌱</div>
+<h3>Vegan: naturally higher carb</h3>
+<p>Plant-based staples like grains, legumes, and fruit are naturally more carb-dense than animal proteins and fats, so vegan diets tend to land higher in carbs by default rather than by deliberate design. Getting adequate protein requires more intentional planning, since plant proteins are generally less concentrated per 100g than animal sources and need to be combined across varied sources.</p>
+</div>
+<div class="step">
+<div class="step-num" style="font-size:1.6rem;">🍖</div>
+<h3>Paleo: higher protein, no grains</h3>
+<p>Paleo excludes grains, legumes, and dairy, replacing those calories with more meat, fish, vegetables, nuts, and fruit — which naturally shifts the split toward higher protein and fat with moderate carbs, mostly from vegetables and fruit rather than grains. The higher protein target also supports satiety, which is one reason many people find paleo easier to stick to for weight management.</p>
+</div>
+<div class="step">
+<div class="step-num" style="font-size:1.6rem;">🫒</div>
+<h3>Mediterranean: balanced with healthy fats</h3>
+<p>The Mediterranean pattern emphasises olive oil, fish, whole grains, vegetables, and legumes, landing on a moderate carb, moderate protein, and moderately-high fat split — with an emphasis on unsaturated fat sources over saturated. It's consistently one of the most researched diets for long-term cardiovascular health outcomes, not just weight management.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology & Limitations -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">Methodology</div>
+<h2 class="section-title">How this calculator works</h2>
+<p>This calculator first estimates your Total Daily Energy Expenditure (TDEE) using the Mifflin-St Jeor equation for BMR, multiplied by an activity factor — the same underlying calculation as our main Calorie &amp; Macro Calculator. Your total daily calories don't change based on which diet you pick; only how those calories are allocated across protein, carbs, and fat changes, using published macro ranges typically associated with each dietary pattern.</p>
+<p style="margin-top:16px;">The percentages used here represent typical, commonly cited ranges for each diet — individual keto practitioners, for instance, may run anywhere from 5-10% carbs, and 'paleo' isn't a single standardised ratio either. Treat these splits as a reasonable starting template to adjust based on your own results and preferences, not an exact prescription. If you have a medical condition (particularly diabetes or kidney disease), consult a doctor or dietitian before adopting a restrictive diet pattern like keto or carnivore-adjacent paleo.</p>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<div class="section-label">FAQ</div>
+<h2 class="section-title">Frequently asked questions about diet-specific TDEE</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">Does my TDEE change depending on which diet I follow?</button>
+<div class="faq-answer">No — your total daily energy expenditure is determined by your body stats (age, weight, height) and activity level, not by which diet you follow. What changes between diets is how those same total calories get split between protein, carbs, and fat, not the total number itself.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Why is the keto macro split so different from vegan?</button>
+<div class="faq-answer">Keto deliberately restricts carbs to induce ketosis, replacing those calories mostly with fat. Vegan diets tend to be naturally higher in carbs since many plant-based protein and calorie sources (grains, legumes, fruit) are inherently more carb-dense than the animal-based fats and proteins that keto relies on.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Can I hit these macros on a vegan or vegetarian diet?</button>
+<div class="faq-answer">Yes, with planning — combining varied plant protein sources across the day (legumes, soy products like tofu and tempeh, seitan, quinoa) can meet the protein target, though it typically takes more deliberate meal planning than an omnivorous diet, since individual plant proteins are usually less concentrated and less 'complete' (missing some essential amino acids) than animal sources.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Which diet type should I choose?</button>
+<div class="faq-answer">The diet you can sustain long-term generally matters more for results than the specific macro split, since research comparing different diets at matched calorie levels usually finds similar weight outcomes. Consider your food preferences, any medical conditions, and lifestyle fit over chasing a particular macro ratio that a specific diet culture claims is superior.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Other calculators -->
+<section class="blog-section">
+<div class="container">
+<div class="section-label">More calculators</div>
+<h2 class="section-title">Related tools</h2>
+<div class="blog-grid">
+<a class="blog-card" href="/" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Calories</span>
+<h3>Calorie &amp; Macro Calculator</h3>
+<p>Our standard calorie and macro calculator for any goal.</p>
+<span class="blog-read-more">Open calculator →</span>
+</div>
+</a>
+<a class="blog-card" href="net-carbs-calculator.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Keto</span>
+<h3>Net Carbs Calculator</h3>
+<p>Calculate net carbs from total carbs, fiber, and sugar alcohols.</p>
+<span class="blog-read-more">Open calculator →</span>
+</div>
+</a>
+<a class="blog-card" href="blog/bulking-vs-cutting.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Comparison</span>
+<h3>Bulking vs Cutting</h3>
+<p>Which phase should you start with.</p>
+<span class="blog-read-more">Read →</span>
+</div>
+</a>
+<a class="blog-card" href="blog/keto-diet-guide.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Keto</span>
+<h3>Ketogenic Diet Guide</h3>
+<p>Everything you need to know about starting and maintaining keto.</p>
+<span class="blog-read-more">Read →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<p>Free health calculators. Not medical advice.</p>
+</div>
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="blog/">Blog</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Use</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> calories-macros.com</span>
+<span>Educational estimates only.</span>
+</div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+let gender = 'male';
+document.getElementById('genderMale').addEventListener('click', function() { gender='male'; this.classList.add('active'); document.getElementById('genderFemale').classList.remove('active'); });
+document.getElementById('genderFemale').addEventListener('click', function() { gender='female'; this.classList.add('active'); document.getElementById('genderMale').classList.remove('active'); });
+
+let currentLang = 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (t) el.innerHTML = t;
+  });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    var t = opt.getAttribute('data-' + lang);
+    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
+  });
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+
+// Header lang sync
+(function() {
+  var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
+  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function() { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function() { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+const dietSplits = {
+  balanced: { carbs: 0.40, protein: 0.30, fat: 0.30 },
+  keto: { carbs: 0.05, protein: 0.25, fat: 0.70 },
+  vegan: { carbs: 0.55, protein: 0.20, fat: 0.25 },
+  paleo: { carbs: 0.25, protein: 0.35, fat: 0.40 },
+  mediterranean: { carbs: 0.45, protein: 0.20, fat: 0.35 }
+};
+
+const dietNotes = {
+  en: {
+    balanced: 'A balanced macro split suitable for general health and most fitness goals.',
+    keto: 'Very low carb to support ketosis. Track net carbs closely — see our Net Carbs Calculator.',
+    vegan: 'Higher carb by nature of plant-based staples. Combine varied protein sources across the day.',
+    paleo: 'Higher protein and fat, no grains or legumes. Carbs come mainly from vegetables and fruit.',
+    mediterranean: 'Emphasises unsaturated fats (olive oil, fish) over saturated fat sources.'
+  },
+  ru: {
+    balanced: 'Сбалансированное соотношение БЖУ, подходящее для общего здоровья и большинства фитнес-целей.',
+    keto: 'Очень мало углеводов для поддержания кетоза. Внимательно считайте нетто-углеводы — см. наш калькулятор нетто-углеводов.',
+    vegan: 'Больше углеводов из-за природы растительных продуктов. Сочетайте разные источники белка в течение дня.',
+    paleo: 'Больше белка и жира, без злаков и бобовых. Углеводы в основном из овощей и фруктов.',
+    mediterranean: 'Акцент на ненасыщенных жирах (оливковое масло, рыба) вместо насыщенных источников.'
+  }
+};
+
+// --- FAQ ---
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'diet-tdee-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+document.getElementById('calcBtn').addEventListener('click', function() {
+  const age = parseFloat(document.getElementById('age').value);
+  const weight = parseFloat(document.getElementById('weight').value);
+  const height = parseFloat(document.getElementById('height').value);
+  const activity = parseFloat(document.getElementById('activity').value);
+  const dietType = document.getElementById('dietType').value;
+  const err = document.getElementById('calcError');
+
+  if (!age || !weight || !height || age < 15 || weight < 30 || height < 100) {
+    err.style.display = 'block';
+    return;
+  }
+  err.style.display = 'none';
+
+  let bmr;
+  if (gender === 'male') {
+    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+  } else {
+    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+  }
+  const tdee = Math.round(bmr * activity);
+
+  const split = dietSplits[dietType];
+  const carbsG = Math.round((tdee * split.carbs) / 4);
+  const proteinG = Math.round((tdee * split.protein) / 4);
+  const fatG = Math.round((tdee * split.fat) / 9);
+
+  animateNumber(document.getElementById('tdeeValue'), tdee, 0);
+  animateNumber(document.getElementById('carbsValue'), carbsG, 0, v => v + 'g');
+  animateNumber(document.getElementById('proteinValue'), proteinG, 0, v => v + 'g');
+  animateNumber(document.getElementById('fatValue'), fatG, 0, v => v + 'g');
+
+  document.getElementById('shareCardValue').textContent = Number(tdee).toLocaleString();
+  document.getElementById('shareCardCarbs').textContent = carbsG + 'g';
+  document.getElementById('shareCardProtein').textContent = proteinG + 'g';
+  document.getElementById('shareCardFat').textContent = fatG + 'g';
+  document.getElementById('resultNote').textContent = dietNotes[currentLang][dietType];
+
+  // Donut chart segments
+  const circumference = 2 * Math.PI * 55;
+  const carbsLen = split.carbs * circumference;
+  const proteinLen = split.protein * circumference;
+  const fatLen = split.fat * circumference;
+  setTimeout(() => {
+    document.getElementById('donutCarbs').setAttribute('stroke-dasharray', carbsLen + ' ' + circumference);
+    document.getElementById('donutProtein').setAttribute('stroke-dasharray', proteinLen + ' ' + circumference);
+    document.getElementById('donutProtein').setAttribute('stroke-dashoffset', -carbsLen);
+    document.getElementById('donutFat').setAttribute('stroke-dasharray', fatLen + ' ' + circumference);
+    document.getElementById('donutFat').setAttribute('stroke-dashoffset', -(carbsLen + proteinLen));
+  }, 50);
+
+  document.getElementById('calcResults').classList.add('visible');
+  setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+});
+</script>
+<!-- Scroll to top button + Reading progress -->
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green,#2D6A4F);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;transition:opacity 0.3s,transform 0.3s;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green,#2D6A4F);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+(function(){
+  var btn = document.getElementById('scrollTop');
+  var bar = document.getElementById('readProgress');
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollY / docH * 100) : 0;
+    bar.style.width = pct + '%';
+    if (scrollY > 400) {
+      btn.style.display = 'flex';
+      btn.style.opacity = '1';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  btn.addEventListener('mouseenter', function(){ this.style.transform='scale(1.1)'; });
+  btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
+})();
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

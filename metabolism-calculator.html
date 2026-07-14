@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><script>localStorage.setItem('lang','en');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Metabolism Calculator — BMR by Age | Calories &amp; Macros</title>
+<meta content="Calculate your metabolic rate and see how it changes with age. Find out how fast your metabolism is and what you can do to speed it up." name="description"/>
+<link href="https://calories-macros.com/metabolism-calculator.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Can I actually boost my metabolism?","acceptedAnswer":{"@type":"Answer","text":"To a modest degree, yes — building muscle through resistance training is the most reliable lever, since muscle burns more calories at rest than fat."}},
+    {"@type":"Question","name":"Does eating fewer calories slow my metabolism?","acceptedAnswer":{"@type":"Answer","text":"Yes, to some extent — this is called adaptive thermogenesis, where the body reduces energy expenditure during a prolonged deficit beyond what weight loss alone would predict."}},
+    {"@type":"Question","name":"Is BMR the same as TDEE?","acceptedAnswer":{"@type":"Answer","text":"No. BMR is calories burned at complete rest. TDEE adds calories from daily activity, exercise, and digestion, and is typically 20-80% higher than BMR."}},
+    {"@type":"Question","name":"Can a medical condition explain a slow metabolism?","acceptedAnswer":{"@type":"Answer","text":"Yes, conditions like hypothyroidism can measurably lower BMR. If your actual calorie burn seems far below the estimate, it's worth discussing with a doctor."}}
+  ]}
+  </script>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
+<meta content="Metabolism Calculator — BMR by Age" property="og:title"/>
+<meta content="Calculate your metabolic rate and see how it changes with age." property="og:description"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<link href="style.css" rel="stylesheet"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"Metabolism Calculator","item":"https://calories-macros.com/metabolism-calculator.html"}
+  ]}
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a aria-label="Search" href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="active" href="/metabolism-calculator.html" id="headerLangEN">EN</a>
+<a class="" href="/ru/metabolism-calculator.html" id="headerLangRU">RU</a>
+</div>
+<button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/all-calculators.html">Calculators</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/"><span class="mm-icon">🔥</span><span class="mm-text">Calorie &amp; Macro</span></a>
+<a class="mega-menu-item" href="/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">BMI Calculator</span></a>
+<a class="mega-menu-item" href="/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Water Intake</span></a>
+<a class="mega-menu-item" href="/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Ideal Weight</span></a>
+<a class="mega-menu-item" href="/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">Body Fat %</span></a>
+<a class="mega-menu-item" href="/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Exercise Calories</span></a>
+<a class="mega-menu-item" href="/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Metabolism</span></a>
+<a class="mega-menu-item" href="/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Pregnancy</span></a>
+<a class="mega-menu-item" href="/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Weight Loss</span></a>
+<a class="mega-menu-item" href="/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Vitamins</span></a>
+<a class="mega-menu-item" href="/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Child Calories</span></a>
+<a class="mega-menu-item" href="/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Protein</span></a>
+<a class="mega-menu-item" href="/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Net Carbs</span></a>
+<a class="mega-menu-item" href="/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">One Rep Max</span></a>
+<a class="mega-menu-item" href="/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Fasting Timer</span></a>
+<a class="mega-menu-item" href="/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE by Diet</span></a>
+<div class="mega-menu-footer"><a href="/all-calculators.html">View all →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/blog/">Blog</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Calories for Weight Loss</span></a>
+<a class="mega-menu-item" href="/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">How to Build Muscle</span></a>
+<a class="mega-menu-item" href="/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Ketogenic Diet</span></a>
+<a class="mega-menu-item" href="/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Intermittent Fasting</span></a>
+<a class="mega-menu-item" href="/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Best Foods</span></a>
+<a class="mega-menu-item" href="/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Mediterranean Diet</span></a>
+<a class="mega-menu-item" href="/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Belly Fat Diet</span></a>
+<a class="mega-menu-item" href="/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Superfoods</span></a>
+<div class="mega-menu-footer"><a href="/blog/">View all →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/all-calculators.html">Tools</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Meal Plans</span></a>
+<a class="mega-menu-item" href="/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Calories in Foods</span></a>
+<a class="mega-menu-item" href="/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">Glycemic Index</span></a>
+<a class="mega-menu-item" href="/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Fast Food</span></a>
+<a class="mega-menu-item" href="/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Alcohol Calories</span></a>
+<a class="mega-menu-item" href="/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Recipes</span></a>
+<a class="mega-menu-item" href="/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Diet Comparison</span></a>
+<a class="mega-menu-item" href="/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/all-calculators.html">View all →</a></div>
+</div>
+</div>
+</div>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+<div class="lang-toggle"><a class="active" href="/metabolism-calculator.html" id="langEN">EN</a><a class="" href="/ru/metabolism-calculator.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Free Metabolism Calculator</div>
+<h1>Metabolism Calculator — <em>BMR by Age</em></h1>
+<p>Find out how fast your metabolism is, how it compares to average for your age, and how it will change over time.</p>
+<a class="btn-scroll" href="#calculator">Calculate My Metabolism ↓</a>
+</div>
+</section>
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="section-label">Metabolism Calculator</div>
+<h2 class="section-title">Enter your details</h2>
+<p class="section-sub">Uses the Mifflin-St Jeor formula — the most accurate BMR equation for healthy adults.</p>
+<div class="calc-card">
+<div class="calc-grid">
+<!-- Gender -->
+<div class="field" style="grid-column:1/-1;">
+<label>Gender</label>
+<div class="gender-toggle">
+<button class="gender-btn active" id="genderMale">♂ Male</button>
+<button class="gender-btn" id="genderFemale">♀ Female</button>
+</div>
+</div>
+<div class="field">
+<label for="age">Age</label>
+<input id="age" max="90" min="18" placeholder="e.g. 35" type="number"/>
+</div>
+<div class="field">
+<label for="weight">Weight (kg)</label>
+<input id="weight" max="300" min="30" placeholder="e.g. 75" type="number"/>
+</div>
+<div class="field">
+<label for="height">Height (cm)</label>
+<input id="height" max="250" min="100" placeholder="e.g. 175" type="number"/>
+</div>
+<div class="field">
+<label for="activity">Activity level</label>
+<select id="activity">
+<option value="1.2">Sedentary (desk job, no exercise)</option>
+<option value="1.375">Light (1–3 workouts/week)</option>
+<option selected="" value="1.55">Moderate (3–5 workouts/week)</option>
+<option value="1.725">Active (6–7 workouts/week)</option>
+<option value="1.9">Very active (physical job + training)</option>
+</select>
+</div>
+</div>
+<button class="btn-calc" onclick="calculate()">Calculate My Metabolism →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please fill in all fields correctly.</p>
+<!-- Results -->
+<div id="results" style="display:none;margin-top:28px;border-top:1px solid var(--border);padding-top:28px;">
+<!-- Main BMR -->
+<div class="calories-display">
+<div class="kcal-number" id="bmrDisplay">—</div>
+<div class="kcal-label" id="bmrLabel">calories burned at rest (BMR)</div>
+</div>
+<div class="macros-grid" style="margin-top:16px;">
+<div class="macro-item">
+<div class="macro-value" id="tdeeDisplay">—</div>
+<div class="macro-name" id="tdeeLabel">TDEE (daily total)</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="ageAvgDisplay">—</div>
+<div class="macro-name" id="ageAvgLabel">avg BMR for your age</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="compareDisplay" style="color:var(--green);">—</div>
+<div class="macro-name" id="compareLabel">vs average</div>
+</div>
+</div>
+<!-- BMR over time chart -->
+<div style="margin-top:28px;">
+<p id="chartTitle" style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:16px;">How your BMR changes with age:</p>
+<div id="ageChart" style="display:grid;gap:8px;"></div>
+</div>
+<!-- Tips -->
+<div style="margin-top:24px;background:var(--cream);border-radius:10px;padding:20px;">
+<p id="tipsTitle" style="font-size:0.85rem;font-weight:600;margin-bottom:12px;">How to maintain your metabolic rate:</p>
+<div id="tipsList"></div>
+</div>
+<div class="result-note" id="resultNote" style="margin-top:16px;"></div>
+<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+<button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Save results</button>
+<button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Print</button>
+<button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Download card</button>
+</div>
+<div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+<p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My metabolism result</p>
+<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">BMR (kcal/day at rest)</p>
+<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">TDEE</p>
+<p id="shareCardTdee" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+</div>
+<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+</div>
+<p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;">✓ Results saved!</p>
+</div>
+</div>
+</div>
+</section>
+<section class="how-section">
+<div class="container">
+<div class="section-label">About metabolism</div>
+<h2 class="section-title">Why metabolism slows with age</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num">1</div>
+<h3>Muscle loss (sarcopenia)</h3>
+<p>After age 30, adults lose 3–8% of muscle mass per decade without resistance training. Since muscle burns more calories than fat, this directly reduces BMR.</p>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<h3>Hormonal changes</h3>
+<p>Declining levels of testosterone (men) and oestrogen (women) with age reduce anabolic drive, making it harder to maintain muscle mass and metabolic rate.</p>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<h3>Reduced physical activity</h3>
+<p>NEAT (non-exercise movement) tends to decrease with age — less spontaneous movement, walking, and fidgeting. This can reduce total daily calorie burn by 200–400 kcal.</p>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<h3>How to fight back</h3>
+<p>Resistance training 2–4 times per week, adequate protein intake (1.6–2.2g/kg), staying physically active, and good sleep are the most effective interventions to maintain metabolic rate with age.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology & Limitations -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">Methodology</div>
+<h2 class="section-title">How BMR and TDEE are calculated</h2>
+<p>This calculator uses the Mifflin-St Jeor equation, published in 1990, which is generally considered the most accurate formula available for estimating Basal Metabolic Rate (BMR) — the calories your body burns at complete rest just to keep vital functions running (breathing, circulation, cell repair). Independent validation studies have found it more accurate than older formulas like Harris-Benedict for most modern populations. Your Total Daily Energy Expenditure (TDEE) is then calculated by multiplying BMR by an activity multiplier that accounts for exercise and daily movement.</p>
+<p style="margin-top:16px;">Even the best formulas carry a margin of error of around 10% for the general population, since BMR is also influenced by genetics, muscle mass, thyroid function, and other factors that a simple age/weight/height formula can't capture. Use the result as a starting point: track your actual weight trend against your intake for 2-3 weeks and adjust the number up or down by 100-150 kcal based on real-world results rather than treating the calculator's output as exact.</p>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<div class="section-label">FAQ</div>
+<h2 class="section-title">Frequently asked questions about metabolism</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">Can I actually 'boost' my metabolism?</button>
+<div class="faq-answer">To a modest degree, yes. Building muscle through resistance training is the most reliable lever, since muscle tissue burns more calories at rest than fat tissue. Eating enough protein, staying active throughout the day (not just during workouts), and getting adequate sleep all support a healthy metabolic rate — but claims about specific 'metabolism-boosting foods' dramatically changing your BMR are generally overstated.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Does eating fewer calories slow my metabolism?</button>
+<div class="faq-answer">Yes, to some extent — this is called adaptive thermogenesis. During a prolonged calorie deficit, the body reduces energy expenditure somewhat beyond what would be expected from weight loss alone, partly as an evolutionary response to perceived scarcity. This is one reason very aggressive, long-term calorie deficits often backfire; a moderate, sustainable deficit tends to preserve metabolic rate better.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Is BMR the same as TDEE?</button>
+<div class="faq-answer">No. BMR is only the calories burned at complete rest. TDEE (Total Daily Energy Expenditure) adds in calories burned through daily activity, exercise, and digesting food (the thermic effect of food) — TDEE is typically 20-80% higher than BMR depending on activity level, and it's the number you should use for calorie planning, not BMR alone.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Can a medical condition explain a slow metabolism?</button>
+<div class="faq-answer">Yes, conditions like hypothyroidism can measurably lower BMR, and certain medications can affect metabolic rate too. If you consistently feel your actual calorie burn is far below what this calculator estimates despite an accurate activity level, it's worth discussing with a doctor rather than assuming the calculator is simply wrong.</div>
+</div>
+</div>
+</div>
+</section>
+<section class="blog-section">
+<div class="container">
+<div class="section-label">Related tools</div>
+<h2 class="section-title">More calculators</h2>
+<div class="blog-grid">
+<a class="blog-card" href="/" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Calories</span><h3>Calorie &amp; Macro Calculator</h3><p>Get your full daily calorie and macro targets.</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="exercise-calories-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Exercise</span><h3>Exercise Calories Calculator</h3><p>How many calories do you burn working out?</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="blog/how-to-increase-metabolism.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Guide</span><h3>How to Increase Your Metabolism</h3><p>8 evidence-based strategies to boost metabolism.</p><span class="blog-read-more">Read →</span></div></a>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand"><a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Free health calculators. Not medical advice.</p></div>
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="blog/">Blog</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+var currentLang = localStorage.getItem('lang') || 'en';
+var gender = 'male';
+
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'metabolism-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (!t) return;
+    if (el.querySelector('em') || t.includes('<')) el.innerHTML = t;
+    else el.textContent = t;
+  });
+  document.querySelectorAll('select option[data-en]').forEach(function(opt) {
+    var t = opt.getAttribute('data-' + lang);
+    if (t) { var v = opt.value; opt.textContent = t; opt.value = v; }
+  });
+  localStorage.setItem('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+  
+  window.addEventListener('scroll', function(){
+    var s=window.scrollY,d=document.documentElement.scrollHeight-window.innerHeight;
+    document.getElementById('readProgress').style.width=(d>0?s/d*100:0)+'%';
+    document.getElementById('scrollTop').style.display=s>400?'flex':'none';
+  });
+
+  document.getElementById('genderMale').addEventListener('click', function(){ gender='male'; this.classList.add('active'); document.getElementById('genderFemale').classList.remove('active'); });
+  document.getElementById('genderFemale').addEventListener('click', function(){ gender='female'; this.classList.add('active'); document.getElementById('genderMale').classList.remove('active'); });
+
+  document.getElementById('langEN').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+  document.getElementById('langRU').addEventListener('click', function(){ this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+  var hEN=document.getElementById('headerLangEN'), hRU=document.getElementById('headerLangRU');
+  hEN.addEventListener('click', function(){ document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function(){ document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+  if (currentLang==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); hRU.classList.add('active'); hEN.classList.remove('active'); applyLang('ru'); }
+});
+
+function calcBMR(g, w, h, a) {
+  if (g === 'male') return 10*w + 6.25*h - 5*a + 5;
+  return 10*w + 6.25*h - 5*a - 161;
+}
+
+// Average BMR by age group (approximate)
+function avgBMR(g, a) {
+  var base = g === 'male' ? 1700 : 1400;
+  if (a < 25) return base + 100;
+  if (a < 35) return base + 50;
+  if (a < 45) return base;
+  if (a < 55) return base - 80;
+  if (a < 65) return base - 150;
+  return base - 220;
+}
+
+function calculate() {
+  var age = parseInt(document.getElementById('age').value);
+  var weight = parseFloat(document.getElementById('weight').value);
+  var height = parseFloat(document.getElementById('height').value);
+  var activity = parseFloat(document.getElementById('activity').value);
+  var err = document.getElementById('calcError');
+
+  if (!age || !weight || !height || age < 18 || age > 90 || weight < 30 || height < 100) {
+    err.style.display = 'block'; return;
+  }
+  err.style.display = 'none';
+
+  var bmr = Math.round(calcBMR(gender, weight, height, age));
+  var tdee = Math.round(bmr * activity);
+  var avg = avgBMR(gender, age);
+  var diff = bmr - avg;
+  var diffPct = Math.round(diff / avg * 100);
+
+  animateNumber(document.getElementById('bmrDisplay'), bmr, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('tdeeDisplay'), tdee, 0, function(v) { return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('ageAvgDisplay'), avg, 0, function(v) { return Number(v).toLocaleString(); });
+
+  document.getElementById('shareCardValue').textContent = Number(bmr).toLocaleString();
+  document.getElementById('shareCardTdee').textContent = Number(tdee).toLocaleString() + ' kcal';
+
+  var compareEl = document.getElementById('compareDisplay');
+  var l = currentLang;
+  if (diff >= 0) {
+    compareEl.textContent = '+' + Math.abs(diffPct) + '%';
+    compareEl.style.color = 'var(--green)';
+  } else {
+    compareEl.textContent = '-' + Math.abs(diffPct) + '%';
+    compareEl.style.color = '#d97706';
+  }
+
+  // Age chart - show BMR from age 20 to 80 in 10-year steps
+  var chart = document.getElementById('ageChart');
+  chart.innerHTML = '';
+  var ages = [20, 30, 40, 50, 60, 70, 80];
+  var bmrs = ages.map(function(a) { return Math.round(calcBMR(gender, weight, height, a)); });
+  var maxBMR = Math.max.apply(null, bmrs);
+
+  ages.forEach(function(a, i) {
+    var b = bmrs[i];
+    var pct = Math.round(b / maxBMR * 100);
+    var isCurrentAge = Math.abs(a - age) < 6;
+    var row = document.createElement('div');
+    row.style.cssText = 'display:grid;grid-template-columns:50px 1fr 70px;gap:12px;align-items:center;';
+    row.innerHTML =
+      '<div style="font-size:0.85rem;color:var(--muted);text-align:right;">' + (l==='ru'?'возр.':'age') + ' ' + a + '</div>' +
+      '<div style="background:#E5E7EB;border-radius:4px;height:20px;overflow:hidden;">' +
+        '<div style="width:' + pct + '%;height:100%;background:' + (isCurrentAge ? 'var(--green)' : 'var(--green-light)') + ';border-radius:4px;transition:width 0.5s;"></div>' +
+      '</div>' +
+      '<div style="font-size:0.85rem;font-weight:' + (isCurrentAge?'700':'400') + ';color:' + (isCurrentAge?'var(--green)':'var(--muted)') + ';">' + b + ' kcal</div>';
+    chart.appendChild(row);
+  });
+
+  // Tips
+  var tips_en = [
+    '💪 Do resistance training 2–4× per week to preserve muscle mass',
+    '🥩 Eat 1.6–2.2g of protein per kg of body weight daily',
+    '🚶 Stay active throughout the day — aim for 8,000+ steps',
+    '😴 Prioritise 7–9 hours of sleep per night',
+    '☕ Caffeine temporarily boosts metabolism by 3–11%'
+  ];
+  var tips_ru = [
+    '💪 Силовые тренировки 2–4 раза в неделю для сохранения мышц',
+    '🥩 Ешьте 1,6–2,2 г белка на кг массы тела в день',
+    '🚶 Оставайтесь активными — стремитесь к 8 000+ шагам в день',
+    '😴 Придерживайтесь 7–9 часов сна в ночь',
+    '☕ Кофеин временно ускоряет метаболизм на 3–11%'
+  ];
+  var tips = l === 'ru' ? tips_ru : tips_en;
+  document.getElementById('tipsList').innerHTML = tips.map(function(t) {
+    return '<p style="font-size:0.85rem;color:var(--muted);margin-bottom:8px;">' + t + '</p>';
+  }).join('');
+
+  // Note
+  var note_en = 'BMR is the calories your body burns at complete rest. Your TDEE (' + tdee + ' kcal) is your total daily burn including activity. Eat at TDEE to maintain weight, below to lose fat, above to gain muscle.';
+  var note_ru = 'BMR — это калории, которые организм сжигает в покое. Ваш TDEE (' + tdee + ' ккал) — общий суточный расход с учётом активности. Ешьте на уровне TDEE для поддержания веса, ниже — для потери жира, выше — для набора мышц.';
+  document.getElementById('resultNote').textContent = l === 'ru' ? note_ru : note_en;
+
+  document.getElementById('results').style.display = 'block';
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function savePageResults() {
+  var bmr = document.getElementById('bmrDisplay').textContent;
+  if (!bmr || bmr === '—') return;
+  localStorage.setItem('cm_saved_metabolism', JSON.stringify({ mainValue: bmr, savedAt: new Date().toLocaleDateString() }));
+  var msg = document.getElementById('saveMsg');
+  msg.style.display = 'block';
+  setTimeout(function(){ msg.style.display = 'none'; }, 3000);
+}
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

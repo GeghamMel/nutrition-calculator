@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head><script>localStorage.setItem('lang','en');</script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BMI Calculator — Body Mass Index | Calories &amp; Macros</title>
+<meta content="Calculate your Body Mass Index (BMI) instantly. Find out if your weight is in a healthy range for your height. Free BMI calculator with EN/RU support." name="description"/>
+<link href="https://calories-macros.com/bmi-calculator.html" rel="canonical"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"BMI Calculator","url":"https://calories-macros.com/bmi-calculator.html","description":"Free Body Mass Index calculator.","applicationCategory":"HealthApplication"}
+  </script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Is BMI accurate for muscular or athletic people?","acceptedAnswer":{"@type":"Answer","text":"No — BMI only accounts for total weight relative to height, not what that weight is made of. Since muscle is denser than fat, athletes and bodybuilders often score in the 'overweight' or even 'obese' range despite having low body fat."}},
+    {"@type":"Question","name":"What's a healthy BMI for my age?","acceptedAnswer":{"@type":"Answer","text":"For most adults aged 18–65, the standard healthy range (18.5–24.9) applies regardless of age. For adults over 65, a slightly higher BMI (up to around 27) may actually be protective. Children and teenagers are assessed with age- and sex-specific percentile charts instead."}},
+    {"@type":"Question","name":"Can BMI be used during pregnancy?","acceptedAnswer":{"@type":"Answer","text":"Standard BMI categories don't apply during pregnancy, since healthy weight gain is expected and varies by trimester. Doctors instead use pre-pregnancy BMI to set individualised weight gain targets."}},
+    {"@type":"Question","name":"How often should I recheck my BMI?","acceptedAnswer":{"@type":"Answer","text":"Checking BMI once a month is usually enough for tracking progress, since daily weight fluctuations from water retention or meal timing won't meaningfully change your BMI category."}}
+  ]}
+  </script>
+<link href="style.css" rel="stylesheet"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
+<!-- Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXLXM57ZKH');
+  </script>
+<link href="https://calories-macros.com/bmi-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://calories-macros.com/ru/bmi-calculator.html" hreflang="ru" rel="alternate"/>
+<link href="https://calories-macros.com/bmi-calculator.html" hreflang="x-default" rel="alternate"/>
+<!-- Open Graph -->
+<meta content="BMI Calculator — Body Mass Index | Calories &amp; Macros" property="og:title"/>
+<meta content="Calculate your Body Mass Index instantly. Find out if your weight is in a healthy range for your height." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://calories-macros.com/bmi-calculator.html" property="og:url"/>
+<meta content="https://calories-macros.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Calories &amp; Macros" property="og:site_name"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="BMI Calculator — Body Mass Index | Calories &amp; Macros" name="twitter:title"/>
+<meta content="Calculate your Body Mass Index instantly. Find out if your weight is in a healthy range for your height." name="twitter:description"/>
+<meta content="https://calories-macros.com/og-image.png" name="twitter:image"/>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"BMI Calculator","item":"https://calories-macros.com/bmi-calculator.html"}
+  ]}
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+<div class="inner">
+<a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<a aria-label="Search" href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<div class="header-lang" id="headerLang">
+<a class="active" href="/bmi-calculator.html" id="headerLangEN">EN</a>
+<a class="" href="/ru/bmi-calculator.html" id="headerLangRU">RU</a>
+</div>
+<button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+<nav class="site-nav" id="siteNav">
+<div class="nav-item">
+<a href="/all-calculators.html">Calculators</a>
+<div class="mega-menu">
+<div class="mega-menu-grid-3">
+<div class="mega-menu-title">All Calculators</div>
+<a class="mega-menu-item" href="/"><span class="mm-icon">🔥</span><span class="mm-text">Calorie &amp; Macro</span></a>
+<a class="mega-menu-item" href="/bmi-calculator.html"><span class="mm-icon">⚖️</span><span class="mm-text">BMI Calculator</span></a>
+<a class="mega-menu-item" href="/water-intake-calculator.html"><span class="mm-icon">💧</span><span class="mm-text">Water Intake</span></a>
+<a class="mega-menu-item" href="/ideal-weight-calculator.html"><span class="mm-icon">🎯</span><span class="mm-text">Ideal Weight</span></a>
+<a class="mega-menu-item" href="/body-fat-calculator.html"><span class="mm-icon">📊</span><span class="mm-text">Body Fat %</span></a>
+<a class="mega-menu-item" href="/exercise-calories-calculator.html"><span class="mm-icon">🏃</span><span class="mm-text">Exercise Calories</span></a>
+<a class="mega-menu-item" href="/metabolism-calculator.html"><span class="mm-icon">⚡</span><span class="mm-text">Metabolism</span></a>
+<a class="mega-menu-item" href="/pregnancy-calculator.html"><span class="mm-icon">🤰</span><span class="mm-text">Pregnancy</span></a>
+<a class="mega-menu-item" href="/weight-loss-calculator.html"><span class="mm-icon">📉</span><span class="mm-text">Weight Loss</span></a>
+<a class="mega-menu-item" href="/vitamin-calculator.html"><span class="mm-icon">💊</span><span class="mm-text">Vitamins</span></a>
+<a class="mega-menu-item" href="/child-calorie-calculator.html"><span class="mm-icon">👶</span><span class="mm-text">Child Calories</span></a>
+<a class="mega-menu-item" href="/protein-calculator.html"><span class="mm-icon">💪</span><span class="mm-text">Protein</span></a>
+<a class="mega-menu-item" href="/net-carbs-calculator.html"><span class="mm-icon">🥑</span><span class="mm-text">Net Carbs</span></a>
+<a class="mega-menu-item" href="/one-rep-max-calculator.html"><span class="mm-icon">🏋️</span><span class="mm-text">One Rep Max</span></a>
+<a class="mega-menu-item" href="/if-timer-calculator.html"><span class="mm-icon">⏱️</span><span class="mm-text">Fasting Timer</span></a>
+<a class="mega-menu-item" href="/diet-tdee-calculator.html"><span class="mm-icon">🍽️</span><span class="mm-text">TDEE by Diet</span></a>
+<div class="mega-menu-footer"><a href="/all-calculators.html">View all →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/blog/">Blog</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Popular Articles</div>
+<a class="mega-menu-item" href="/blog/calories-for-weight-loss.html"><span class="mm-icon">🔥</span><span class="mm-text">Calories for Weight Loss</span></a>
+<a class="mega-menu-item" href="/blog/how-to-build-muscle.html"><span class="mm-icon">💪</span><span class="mm-text">How to Build Muscle</span></a>
+<a class="mega-menu-item" href="/blog/keto-diet-guide.html"><span class="mm-icon">🥑</span><span class="mm-text">Ketogenic Diet</span></a>
+<a class="mega-menu-item" href="/blog/intermittent-fasting-guide.html"><span class="mm-icon">⏰</span><span class="mm-text">Intermittent Fasting</span></a>
+<a class="mega-menu-item" href="/blog/best-foods-for-weight-loss.html"><span class="mm-icon">🥗</span><span class="mm-text">Best Foods</span></a>
+<a class="mega-menu-item" href="/blog/mediterranean-diet-guide.html"><span class="mm-icon">🫒</span><span class="mm-text">Mediterranean Diet</span></a>
+<a class="mega-menu-item" href="/blog/belly-fat-diet.html"><span class="mm-icon">🏃</span><span class="mm-text">Belly Fat Diet</span></a>
+<a class="mega-menu-item" href="/blog/superfoods-guide.html"><span class="mm-icon">⭐</span><span class="mm-text">Superfoods</span></a>
+<div class="mega-menu-footer"><a href="/blog/">View all →</a></div>
+</div>
+</div>
+</div>
+<div class="nav-item">
+<a href="/all-calculators.html">Tools</a>
+<div class="mega-menu">
+<div class="mega-menu-grid">
+<div class="mega-menu-title">Tools &amp; Reference</div>
+<a class="mega-menu-item" href="/meal-plan.html"><span class="mm-icon">🍽️</span><span class="mm-text">Meal Plans</span></a>
+<a class="mega-menu-item" href="/calories-in-foods.html"><span class="mm-icon">📋</span><span class="mm-text">Calories in Foods</span></a>
+<a class="mega-menu-item" href="/glycemic-index.html"><span class="mm-icon">📈</span><span class="mm-text">Glycemic Index</span></a>
+<a class="mega-menu-item" href="/fast-food-calories.html"><span class="mm-icon">🍔</span><span class="mm-text">Fast Food</span></a>
+<a class="mega-menu-item" href="/alcohol-calories-list.html"><span class="mm-icon">🍷</span><span class="mm-text">Alcohol Calories</span></a>
+<a class="mega-menu-item" href="/recipes.html"><span class="mm-icon">👨‍🍳</span><span class="mm-text">Recipes</span></a>
+<a class="mega-menu-item" href="/diet-comparison.html"><span class="mm-icon">⚖️</span><span class="mm-text">Diet Comparison</span></a>
+<a class="mega-menu-item" href="/faq.html"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+<div class="mega-menu-footer"><a href="/all-calculators.html">View all →</a></div>
+</div>
+</div>
+</div>
+<a href="/about.html">About</a>
+<a href="/contact.html">Contact</a>
+<div class="lang-toggle"><a class="active" href="/bmi-calculator.html" id="langEN">EN</a><a class="" href="/ru/bmi-calculator.html" id="langRU">RU</a></div>
+</nav>
+</div>
+</header>
+<section class="hero">
+<div class="hero-content">
+<div class="hero-eyebrow">Free Health Calculator</div>
+<h1>BMI Calculator — <em>Body Mass Index</em></h1>
+<p>Find out if your weight is in a healthy range for your height. Instant results, no signup required.</p>
+<a class="btn-scroll" href="#calculator">Calculate BMI ↓</a>
+</div>
+</section>
+<div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;max-width:680px;margin:16px auto 0;border-radius:0 8px 8px 0;">
+<p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;">Your saved BMI result:</p>
+<p id="savedBannerText" style="font-size:0.85rem;color:var(--muted);"></p>
+<div style="display:flex;gap:10px;margin-top:10px;">
+<button onclick="document.getElementById('savedBanner').style.display='none'" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);">Dismiss</button>
+</div>
+</div>
+<section class="calc-section" id="calculator">
+<div class="container">
+<div class="section-label">BMI Calculator</div>
+<h2 class="section-title">Enter your measurements</h2>
+<p class="section-sub">BMI is calculated as weight (kg) divided by height (m) squared.</p>
+<div class="calc-card">
+<div class="field" style="margin-bottom:20px;">
+<label>Gender</label>
+<div class="gender-toggle">
+<button class="gender-btn active" id="genderMale">♂ Male</button>
+<button class="gender-btn" id="genderFemale">♀ Female</button>
+</div>
+</div>
+<div class="calc-grid">
+<div class="field">
+<label for="age">Age</label>
+<input id="age" max="120" min="2" placeholder="e.g. 30" type="number"/>
+</div>
+<div class="field">
+<label for="weight">Weight (kg)</label>
+<input id="weight" max="400" min="10" placeholder="e.g. 75" type="number"/>
+</div>
+<div class="field" style="grid-column: 1 / -1;">
+<label for="height">Height (cm)</label>
+<input id="height" max="250" min="50" placeholder="e.g. 175" type="number"/>
+</div>
+</div>
+<button class="btn-calc" id="calcBtn">Calculate BMI →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please fill in all fields correctly.</p>
+<div class="calc-results" id="calcResults">
+<div class="calories-display" id="bmiDisplay" style="background:var(--green-pale);">
+<div class="kcal-number" id="bmiValue">—</div>
+<div class="kcal-label" id="bmiLabel">Your BMI</div>
+</div>
+<div style="text-align:center; margin-bottom:20px;">
+<span id="bmiCategory" style="display:inline-block; background:var(--green); color:white; padding:6px 20px; border-radius:20px; font-weight:600; font-size:0.95rem;">—</span>
+</div>
+<!-- BMI Scale -->
+<div style="margin-bottom:24px;">
+<div style="position:relative; height:12px; border-radius:6px; background:linear-gradient(to right,#60a5fa,#34d399,#fbbf24,#f87171,#dc2626); margin-bottom:8px;">
+<div id="bmiMarker" style="position:absolute; top:-4px; width:20px; height:20px; background:white; border:3px solid var(--ink); border-radius:50%; transform:translateX(-50%); transition:left 0.5s ease;"></div>
+</div>
+<div style="display:flex; justify-content:space-between; font-size:0.72rem; color:var(--muted);">
+<span>Underweight</span>
+<span>Normal</span>
+<span>Overweight</span>
+<span>Obese</span>
+</div>
+</div>
+<div class="macros-grid" style="grid-template-columns:1fr 1fr;">
+<div class="macro-item">
+<div class="macro-value" id="idealWeightMin">—</div>
+<div class="macro-name">Healthy weight min</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="idealWeightMax">—</div>
+<div class="macro-name">Healthy weight max</div>
+</div>
+</div>
+<div class="result-note" id="resultNote"></div>
+<div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+<button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Save results</button>
+<button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Print</button>
+<button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Download card</button>
+</div>
+<div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+<p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+<p id="shareCardSubtitle" style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My BMI result</p>
+<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<div id="shareCardCategory" style="display:inline-block;background:#D8F3DC;color:#173404;padding:6px 18px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:20px;">—</div>
+<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Healthy range</p>
+<p id="shareCardRange" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+<div>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Height</p>
+<p id="shareCardHeight" style="font-size:15px;font-weight:600;margin:0;">—</p>
+</div>
+</div>
+<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+</div>
+<p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;">✓ Results saved!</p>
+</div>
+</div>
+</div>
+</section>
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+<!-- Info section -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">About BMI</div>
+<h2 class="section-title">BMI categories explained</h2>
+<div class="steps-grid">
+<div class="step">
+<div class="step-num" style="color:#60a5fa; font-size:2rem;">＜18.5</div>
+<h3>Underweight</h3>
+<p>A BMI below 18.5 may point to insufficient calorie intake, an underlying health condition, or a naturally lean build. Common risks include reduced immune function, fatigue, and in women, irregular menstrual cycles. If this applies to you, a gradual calorie surplus of 300–500 kcal per day combined with strength training is usually recommended over rapid weight gain.</p>
+</div>
+<div class="step">
+<div class="step-num" style="color:#34d399; font-size:2rem;">18.5–24.9</div>
+<h3>Normal weight</h3>
+<p>This range is associated with the lowest statistical risk of cardiovascular disease, type 2 diabetes, and other weight-related conditions for most adults. Being in this range doesn't guarantee good health on its own — body composition, diet quality, and activity level still matter — but it's a reasonable target for general wellbeing.</p>
+</div>
+<div class="step">
+<div class="step-num" style="color:#fbbf24; font-size:2rem;">25–29.9</div>
+<h3>Overweight</h3>
+<p>A BMI in this range is linked to a moderately elevated risk of high blood pressure, joint strain, and metabolic issues, though the risk varies a lot depending on where fat is stored and overall fitness. A modest calorie deficit of 300–500 kcal per day, paired with regular movement, is typically enough to shift the trend over a few months.</p>
+</div>
+<div class="step">
+<div class="step-num" style="color:#f87171; font-size:2rem;">≥30</div>
+<h3>Obese</h3>
+<p>This range is associated with a significantly higher risk of heart disease, type 2 diabetes, sleep apnea, and joint problems. The good news: even a modest reduction of 5–10% of body weight has been shown to meaningfully improve blood pressure and blood sugar markers. We'd recommend working with a doctor or registered dietitian to build a sustainable plan rather than pursuing rapid weight loss.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology & Limitations -->
+<section class="how-section">
+<div class="container">
+<div class="section-label">Methodology</div>
+<h2 class="section-title">How BMI is calculated, and where it falls short</h2>
+<p>Body Mass Index was developed in the 1830s by Belgian statistician Adolphe Quetelet as a way to describe body weight relative to height across large populations — not to assess any one individual's health. The formula is simple: weight in kilograms divided by height in metres squared (kg/m²). Its main appeal is that it requires no special equipment, just a scale and a tape measure, which is why it's still used as a quick screening tool by doctors and health organisations worldwide.</p>
+<p style="margin-top:16px;">BMI's biggest limitation is that it can't distinguish muscle from fat. A muscular athlete and a sedentary person of the same height and weight will get the identical BMI score, even though their health profiles are completely different — this is why bodybuilders and strength athletes are frequently classified as 'overweight' or 'obese' despite low body fat. BMI is also less reliable for people over 65 (where some extra weight is protective), for pregnant women, for children and teenagers (who need age- and sex-specific growth charts instead), and it doesn't account for ethnic differences in body composition. If any of these apply to you, treat your BMI result as one data point among several — not a diagnosis.</p>
+</div>
+</section>
+<!-- FAQ -->
+<section class="faq-section">
+<div class="container">
+<div class="section-label">FAQ</div>
+<h2 class="section-title">Frequently asked questions about BMI</h2>
+<div class="faq-list">
+<div class="faq-item">
+<button class="faq-question">Is BMI accurate for muscular or athletic people?</button>
+<div class="faq-answer">No — BMI only accounts for total weight relative to height, not what that weight is made of. Since muscle is denser than fat, athletes and bodybuilders often score in the 'overweight' or even 'obese' range despite having low body fat. If you train regularly, our Body Fat Percentage Calculator will give you a more accurate picture than BMI alone.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">What's a healthy BMI for my age?</button>
+<div class="faq-answer">For most adults aged 18–65, the standard healthy range (18.5–24.9) applies regardless of age. For adults over 65, research suggests a slightly higher BMI (up to around 27) may actually be protective against illness and mortality. For children and teenagers, BMI is interpreted differently using age- and sex-specific percentile charts rather than fixed cutoffs — use our Child Calorie Calculator for age-appropriate guidance instead.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">Can BMI be used during pregnancy?</button>
+<div class="faq-answer">Standard BMI categories don't apply during pregnancy, since healthy weight gain is expected and varies by trimester and pre-pregnancy weight. Instead, doctors use pre-pregnancy BMI to set individualised weight gain targets. Use our dedicated Pregnancy Calculator, which accounts for these differences rather than applying standard BMI brackets.</div>
+</div>
+<div class="faq-item">
+<button class="faq-question">How often should I recheck my BMI?</button>
+<div class="faq-answer">Since BMI only changes meaningfully with weight or height changes, checking it once a month is usually enough for tracking progress — daily fluctuations in body weight (water retention, meal timing) won't produce a meaningful change in the BMI category. If you're actively trying to gain or lose weight, pair monthly BMI checks with weekly weigh-ins for a fuller picture.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Other calculators -->
+<section class="blog-section">
+<div class="container">
+<div class="section-label">More calculators</div>
+<h2 class="section-title">Related tools</h2>
+<div class="blog-grid">
+<a class="blog-card" href="/" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Calories</span>
+<h3>Calorie &amp; Macro Calculator</h3>
+<p>Calculate your daily calorie and macro targets based on your goal.</p>
+<span class="blog-read-more">Open calculator →</span>
+</div>
+</a>
+<a class="blog-card" href="blog/bmi-vs-body-fat-percentage.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Comparison</span>
+<h3>BMI vs Body Fat Percentage</h3>
+<p>Which measurement actually matters more.</p>
+<span class="blog-read-more">Read →</span>
+</div>
+</a>
+<a class="blog-card" href="ideal-weight-calculator.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Weight</span>
+<h3>Ideal Weight Calculator</h3>
+<p>Calculate your ideal body weight based on height and frame size.</p>
+<span class="blog-read-more">Open calculator →</span>
+</div>
+</a>
+<a class="blog-card" href="body-fat-calculator.html" style="text-decoration:none;color:inherit;">
+<div class="blog-card-body">
+<span class="blog-tag">Body Fat</span>
+<h3>Body Fat Percentage Calculator</h3>
+<p>Estimate your body fat percentage using body measurements.</p>
+<span class="blog-read-more">Open calculator →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<div class="footer-inner">
+<div class="footer-brand">
+<a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+<p>Free health calculators. Not medical advice.</p>
+</div>
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="blog/">Blog</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Use</a>
+<a href="faq.html">FAQ</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© <span id="year"></span> calories-macros.com</span>
+<span>Educational estimates only.</span>
+</div>
+</footer>
+<script>
+
+function savePageResults() {
+  var results = {};
+  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct').forEach(function(el, i) {
+    if (el.textContent && el.textContent !== '—') results['val_' + i] = el.textContent;
+  });
+  // Get main result text
+  var mainEl = document.querySelector('.calc-results .kcal-number, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct');
+  if (mainEl) results.mainValue = mainEl.textContent;
+  results.savedAt = new Date().toLocaleDateString();
+  localStorage.setItem('cm_saved_bmi', JSON.stringify(results));
+  var msg = document.getElementById('saveMsg');
+  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
+}
+
+// Show saved banner on load
+window.addEventListener('load', function() {
+  var saved = localStorage.getItem('cm_saved_bmi');
+  if (!saved) return;
+  try {
+    var data = JSON.parse(saved);
+    if (!data.mainValue) return;
+    var banner = document.getElementById('savedBanner');
+    var bannerText = document.getElementById('savedBannerText');
+    if (!banner || !bannerText) return;
+    var l = localStorage.getItem('lang') || 'en';
+    bannerText.textContent = (l==='ru' ? 'Результат: ' : 'Result: ') + data.mainValue + ' · ' + (l==='ru' ? 'Сохранено: ' : 'Saved: ') + data.savedAt;
+    banner.style.display = 'block';
+  } catch(e) {}
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+
+
+let gender = 'male';
+document.getElementById('genderMale').addEventListener('click', function() { gender='male'; this.classList.add('active'); document.getElementById('genderFemale').classList.remove('active'); });
+document.getElementById('genderFemale').addEventListener('click', function() { gender='female'; this.classList.add('active'); document.getElementById('genderMale').classList.remove('active'); });
+
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+let currentLang = 'en';
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-en]').forEach(function(el) {
+    var t = el.getAttribute('data-' + lang);
+    if (t) el.innerHTML = t;
+  });
+  localStorage.setItem('lang', lang);
+}
+document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
+document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
+var sl = localStorage.getItem('lang');
+if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
+
+// Header lang sync
+(function() {
+  var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
+  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
+  hEN.addEventListener('click', function() { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
+  hRU.addEventListener('click', function() { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
+})();
+
+const categories = {
+  en: [
+    {max:18.5, label:'Underweight', color:'#60a5fa'},
+    {max:24.9, label:'Normal weight', color:'#34d399'},
+    {max:29.9, label:'Overweight', color:'#fbbf24'},
+    {max:999,  label:'Obese', color:'#f87171'}
+  ],
+  ru: [
+    {max:18.5, label:'Дефицит веса', color:'#60a5fa'},
+    {max:24.9, label:'Нормальный вес', color:'#34d399'},
+    {max:29.9, label:'Избыточный вес', color:'#fbbf24'},
+    {max:999,  label:'Ожирение', color:'#f87171'}
+  ]
+};
+
+const notes = {
+  en: {
+    under: 'Your BMI suggests you may be underweight. This can affect energy levels and immune function. Consider speaking with a healthcare professional.',
+    normal: 'Your BMI is in the healthy range. Maintaining a balanced diet and regular physical activity will help you stay here.',
+    over: 'Your BMI is slightly above the healthy range. A moderate calorie deficit and regular exercise can help bring it to a healthy level.',
+    obese: 'Your BMI indicates obesity. We recommend consulting a healthcare provider for personalised guidance on diet and lifestyle changes.'
+  },
+  ru: {
+    under: 'Ваш ИМТ указывает на дефицит веса. Это может влиять на уровень энергии и иммунитет. Рекомендуется консультация врача.',
+    normal: 'Ваш ИМТ в норме. Сбалансированное питание и регулярные физические нагрузки помогут поддерживать его на этом уровне.',
+    over: 'Ваш ИМТ немного выше нормы. Умеренный дефицит калорий и регулярные упражнения помогут его снизить.',
+    obese: 'Ваш ИМТ указывает на ожирение. Рекомендуем проконсультироваться с врачом для получения персональных рекомендаций.'
+  }
+};
+
+// --- FAQ ---
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+document.getElementById('calcBtn').addEventListener('click', function() {
+  const weight = parseFloat(document.getElementById('weight').value);
+  const height = parseFloat(document.getElementById('height').value);
+  const err = document.getElementById('calcError');
+  if (!weight || !height || weight < 10 || height < 50) { err.style.display='block'; return; }
+  err.style.display = 'none';
+
+  const h = height / 100;
+  const bmi = weight / (h * h);
+  const bmiRounded = Math.round(bmi * 10) / 10;
+
+  const cats = categories[currentLang];
+  let cat = cats[cats.length-1];
+  for (let c of cats) { if (bmi < c.max) { cat = c; break; } }
+
+  const noteKey = bmi < 18.5 ? 'under' : bmi < 25 ? 'normal' : bmi < 30 ? 'over' : 'obese';
+
+  animateNumber(document.getElementById('bmiValue'), bmiRounded, 1);
+  document.getElementById('bmiCategory').textContent = cat.label;
+  document.getElementById('bmiCategory').style.background = cat.color;
+  document.getElementById('bmiCategory').style.color = cat.color === '#fbbf24' ? '#1a1a18' : 'white';
+  document.getElementById('bmiDisplay').style.background = cat.color + '22';
+  document.getElementById('resultNote').textContent = notes[currentLang][noteKey];
+
+  // Ideal weight range (BMI 18.5–24.9)
+  const minW = Math.round(18.5 * h * h * 10) / 10;
+  const maxW = Math.round(24.9 * h * h * 10) / 10;
+  animateNumber(document.getElementById('idealWeightMin'), minW, 1, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('idealWeightMax'), maxW, 1, function(v) { return v + ' kg'; });
+
+  // Marker position (BMI 10–40 range mapped to 0-100%)
+  const pct = Math.min(Math.max((bmi - 10) / 30 * 100, 2), 98);
+  document.getElementById('bmiMarker').style.left = pct + '%';
+
+  document.getElementById('shareCardValue').textContent = bmiRounded;
+  document.getElementById('shareCardCategory').textContent = cat.label;
+  document.getElementById('shareCardCategory').style.background = cat.color + '33';
+  document.getElementById('shareCardCategory').style.color = cat.color;
+  document.getElementById('shareCardRange').textContent = minW + '–' + maxW + ' kg';
+  document.getElementById('shareCardHeight').textContent = height + ' cm';
+
+  document.getElementById('calcResults').classList.add('visible');
+  setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
+});
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'bmi-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+</script>
+<!-- Scroll to top button + Reading progress -->
+<div id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green,#2D6A4F);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;transition:opacity 0.3s,transform 0.3s;">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green,#2D6A4F);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+(function(){
+  var btn = document.getElementById('scrollTop');
+  var bar = document.getElementById('readProgress');
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollY / docH * 100) : 0;
+    bar.style.width = pct + '%';
+    if (scrollY > 400) {
+      btn.style.display = 'flex';
+      btn.style.opacity = '1';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  btn.addEventListener('mouseenter', function(){ this.style.transform='scale(1.1)'; });
+  btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
+})();
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
