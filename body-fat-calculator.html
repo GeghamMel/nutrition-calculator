@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Body Fat Percentage Calculator | Calories & Macros</title>
+  <meta name="description" content="Estimate your body fat percentage using the US Navy method. Enter your measurements to get your body fat % and lean mass. Free calculator." />
+  <link rel="canonical" href="https://calories-macros.com/body-fat-calculator.html" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How accurate is the US Navy method compared to a DEXA scan?","acceptedAnswer":{"@type":"Answer","text":"Studies generally find it within 3-4 percentage points of DEXA for most body types, which is reasonably good for a free, equipment-free method."}},
+    {"@type":"Question","name":"Why did I get a strange or negative result?","acceptedAnswer":{"@type":"Answer","text":"This usually happens when the waist measurement is too close to or smaller than the neck measurement relative to height. Double-check your measurement points and re-enter."}},
+    {"@type":"Question","name":"Is body fat percentage more important than weight or BMI?","acceptedAnswer":{"@type":"Answer","text":"For assessing actual health, generally yes — body fat percentage tells you what your weight is made of, which BMI and scale weight alone can't."}},
+    {"@type":"Question","name":"How often should I remeasure my body fat?","acceptedAnswer":{"@type":"Answer","text":"Every 3-4 weeks is usually enough to track meaningful change, ideally measuring at the same time of day for consistency."}}
+  ]}
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599" crossorigin="anonymous"></script>
+<!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RXLXM57ZKH');
+  </script>
+  <link rel="alternate" hreflang="en" href="https://calories-macros.com/body-fat-calculator.html" />
+  <link rel="alternate" hreflang="ru" href="https://calories-macros.com/body-fat-calculator.html" />
+  <link rel="alternate" hreflang="x-default" href="https://calories-macros.com/body-fat-calculator.html" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Body Fat Percentage Calculator | Calories & Macros" />
+  <meta property="og:description" content="Estimate your body fat percentage using the US Navy method. No equipment needed, just a tape measure." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://calories-macros.com/body-fat-calculator.html" />
+  <meta property="og:image" content="https://calories-macros.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Calories & Macros" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Body Fat Percentage Calculator | Calories & Macros" />
+  <meta name="twitter:description" content="Estimate your body fat percentage using the US Navy method. No equipment needed, just a tape measure." />
+  <meta name="twitter:image" content="https://calories-macros.com/og-image.png" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
+    {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
+    {"@type":"ListItem","position":3,"name":"Body Fat Percentage Calculator","item":"https://calories-macros.com/body-fat-calculator.html"}
+  ]}
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="inner">
+    <a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
+    <a href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search" aria-label="Search">🔍</a>
+    <div class="header-lang" id="headerLang"><button class="active" id="headerLangEN">EN</button><button id="headerLangRU">RU</button></div>
+    <button class="hamburger" aria-label="Open menu" id="hamburger"><span></span><span></span><span></span></button>
+        <nav class="site-nav" id="siteNav">
+      <div class="nav-item">
+        <a href="/all-calculators.html" data-en="Calculators" data-ru="Калькуляторы">Calculators</a>
+        <div class="mega-menu">
+          <div class="mega-menu-grid-3">
+            <div class="mega-menu-title">All Calculators</div>
+            <a href="/" class="mega-menu-item"><span class="mm-icon">🔥</span><span class="mm-text" data-en="Calorie & Macro" data-ru="Калории и БЖУ">Calorie & Macro</span></a>
+            <a href="/bmi-calculator.html" class="mega-menu-item"><span class="mm-icon">⚖️</span><span class="mm-text" data-en="BMI Calculator" data-ru="ИМТ">BMI Calculator</span></a>
+            <a href="/water-intake-calculator.html" class="mega-menu-item"><span class="mm-icon">💧</span><span class="mm-text" data-en="Water Intake" data-ru="Норма воды">Water Intake</span></a>
+            <a href="/ideal-weight-calculator.html" class="mega-menu-item"><span class="mm-icon">🎯</span><span class="mm-text" data-en="Ideal Weight" data-ru="Идеальный вес">Ideal Weight</span></a>
+            <a href="/body-fat-calculator.html" class="mega-menu-item"><span class="mm-icon">📊</span><span class="mm-text" data-en="Body Fat %" data-ru="% жира">Body Fat %</span></a>
+            <a href="/exercise-calories-calculator.html" class="mega-menu-item"><span class="mm-icon">🏃</span><span class="mm-text" data-en="Exercise Calories" data-ru="Тренировки">Exercise Calories</span></a>
+            <a href="/metabolism-calculator.html" class="mega-menu-item"><span class="mm-icon">⚡</span><span class="mm-text" data-en="Metabolism" data-ru="Метаболизм">Metabolism</span></a>
+            <a href="/pregnancy-calculator.html" class="mega-menu-item"><span class="mm-icon">🤰</span><span class="mm-text" data-en="Pregnancy" data-ru="Беременность">Pregnancy</span></a>
+            <a href="/weight-loss-calculator.html" class="mega-menu-item"><span class="mm-icon">📉</span><span class="mm-text" data-en="Weight Loss" data-ru="Похудение">Weight Loss</span></a>
+            <a href="/vitamin-calculator.html" class="mega-menu-item"><span class="mm-icon">💊</span><span class="mm-text" data-en="Vitamins" data-ru="Витамины">Vitamins</span></a>
+            <a href="/child-calorie-calculator.html" class="mega-menu-item"><span class="mm-icon">👶</span><span class="mm-text" data-en="Child Calories" data-ru="Дети">Child Calories</span></a>
+            <a href="/protein-calculator.html" class="mega-menu-item"><span class="mm-icon">💪</span><span class="mm-text" data-en="Protein" data-ru="Белок">Protein</span></a>
+            <a href="/net-carbs-calculator.html" class="mega-menu-item"><span class="mm-icon">🥑</span><span class="mm-text" data-en="Net Carbs" data-ru="Нетто-углеводы">Net Carbs</span></a>
+            <a href="/one-rep-max-calculator.html" class="mega-menu-item"><span class="mm-icon">🏋️</span><span class="mm-text" data-en="One Rep Max" data-ru="Максимум на 1 повтор">One Rep Max</span></a>
+            <a href="/if-timer-calculator.html" class="mega-menu-item"><span class="mm-icon">⏱️</span><span class="mm-text" data-en="Fasting Timer" data-ru="Таймер голодания">Fasting Timer</span></a>
+            <a href="/diet-tdee-calculator.html" class="mega-menu-item"><span class="mm-icon">🍽️</span><span class="mm-text" data-en="TDEE by Diet" data-ru="TDEE по диете">TDEE by Diet</span></a>
+            <div class="mega-menu-footer"><a href="/all-calculators.html" data-en="View all →" data-ru="Все →">View all →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/blog/" data-en="Blog" data-ru="Блог">Blog</a>
+        <div class="mega-menu">
+          <div class="mega-menu-grid">
+            <div class="mega-menu-title">Popular Articles</div>
+            <a href="/blog/calories-for-weight-loss.html" class="mega-menu-item"><span class="mm-icon">🔥</span><span class="mm-text" data-en="Calories for Weight Loss" data-ru="Калории для похудения">Calories for Weight Loss</span></a>
+            <a href="/blog/how-to-build-muscle.html" class="mega-menu-item"><span class="mm-icon">💪</span><span class="mm-text" data-en="How to Build Muscle" data-ru="Набор мышц">How to Build Muscle</span></a>
+            <a href="/blog/keto-diet-guide.html" class="mega-menu-item"><span class="mm-icon">🥑</span><span class="mm-text" data-en="Ketogenic Diet" data-ru="Кетогенная диета">Ketogenic Diet</span></a>
+            <a href="/blog/intermittent-fasting-guide.html" class="mega-menu-item"><span class="mm-icon">⏰</span><span class="mm-text" data-en="Intermittent Fasting" data-ru="Интервальное голодание">Intermittent Fasting</span></a>
+            <a href="/blog/best-foods-for-weight-loss.html" class="mega-menu-item"><span class="mm-icon">🥗</span><span class="mm-text" data-en="Best Foods" data-ru="Лучшие продукты">Best Foods</span></a>
+            <a href="/blog/mediterranean-diet-guide.html" class="mega-menu-item"><span class="mm-icon">🫒</span><span class="mm-text" data-en="Mediterranean Diet" data-ru="Средиземноморская">Mediterranean Diet</span></a>
+            <a href="/blog/belly-fat-diet.html" class="mega-menu-item"><span class="mm-icon">🏃</span><span class="mm-text" data-en="Belly Fat Diet" data-ru="Диета для живота">Belly Fat Diet</span></a>
+            <a href="/blog/superfoods-guide.html" class="mega-menu-item"><span class="mm-icon">⭐</span><span class="mm-text" data-en="Superfoods" data-ru="Суперфуды">Superfoods</span></a>
+            <div class="mega-menu-footer"><a href="/blog/" data-en="View all →" data-ru="Все статьи →">View all →</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/all-calculators.html" data-en="Tools" data-ru="Инструменты">Tools</a>
+        <div class="mega-menu">
+          <div class="mega-menu-grid">
+            <div class="mega-menu-title">Tools & Reference</div>
+            <a href="/meal-plan.html" class="mega-menu-item"><span class="mm-icon">🍽️</span><span class="mm-text" data-en="Meal Plans" data-ru="Планы питания">Meal Plans</span></a>
+            <a href="/calories-in-foods.html" class="mega-menu-item"><span class="mm-icon">📋</span><span class="mm-text" data-en="Calories in Foods" data-ru="Калорийность">Calories in Foods</span></a>
+            <a href="/glycemic-index.html" class="mega-menu-item"><span class="mm-icon">📈</span><span class="mm-text" data-en="Glycemic Index" data-ru="ГИ">Glycemic Index</span></a>
+            <a href="/fast-food-calories.html" class="mega-menu-item"><span class="mm-icon">🍔</span><span class="mm-text" data-en="Fast Food" data-ru="Фастфуд">Fast Food</span></a>
+            <a href="/alcohol-calories-list.html" class="mega-menu-item"><span class="mm-icon">🍷</span><span class="mm-text" data-en="Alcohol Calories" data-ru="Алкоголь">Alcohol</span></a>
+            <a href="/recipes.html" class="mega-menu-item"><span class="mm-icon">👨‍🍳</span><span class="mm-text" data-en="Recipes" data-ru="Рецепты">Recipes</span></a>
+            <a href="/diet-comparison.html" class="mega-menu-item"><span class="mm-icon">⚖️</span><span class="mm-text" data-en="Diet Comparison" data-ru="Сравнение диет">Diet Comparison</span></a>
+            <a href="/faq.html" class="mega-menu-item"><span class="mm-icon">❓</span><span class="mm-text">FAQ</span></a>
+            <div class="mega-menu-footer"><a href="/all-calculators.html" data-en="View all →" data-ru="Все →">View all →</a></div>
+          </div>
+        </div>
+      </div>
+      <a href="/about.html" data-en="About" data-ru="О сайте">About</a>
+      <a href="/contact.html" data-en="Contact" data-ru="Контакт">Contact</a>
+      <div class="lang-toggle"><button class="active" id="langEN">EN</button><button id="langRU">RU</button></div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-en="Free Health Calculator" data-ru="Бесплатный калькулятор здоровья">Free Health Calculator</div>
+    <h1 data-en="Body Fat <em>Percentage</em> Calculator" data-ru="Калькулятор <em>процента жира</em> в теле">Body Fat <em>Percentage</em> Calculator</h1>
+    <p data-en="Estimate your body fat percentage using the US Navy method — no equipment needed, just a tape measure." data-ru="Оцените процент жира методом ВМС США — нужна только сантиметровая лента.">Estimate your body fat percentage using the US Navy method — no equipment needed, just a tape measure.</p>
+    <a href="#calculator" class="btn-scroll" data-en="Calculate Body Fat ↓" data-ru="Рассчитать % жира ↓">Calculate Body Fat ↓</a>
+  </div>
+
+
+</section>
+
+<div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;max-width:680px;margin:16px auto 0;border-radius:0 8px 8px 0;">
+  <p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;" data-en="Your saved body fat result:" data-ru="Ваш сохранённый % жира:">Your saved body fat result:</p>
+  <p style="font-size:0.85rem;color:var(--muted);" id="savedBannerText"></p>
+  <div style="display:flex;gap:10px;margin-top:10px;">
+    <button onclick="document.getElementById('savedBanner').style.display='none'" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);" data-en="Dismiss" data-ru="Закрыть">Dismiss</button>
+  </div>
+</div>
+
+<section class="calc-section" id="calculator">
+  <div class="container">
+    <div class="section-label" data-en="Body Fat Calculator" data-ru="Калькулятор % жира">Body Fat Calculator</div>
+    <h2 class="section-title" data-en="Enter your measurements" data-ru="Введите замеры">Enter your measurements</h2>
+    <p class="section-sub" data-en="Measure at the widest point. Use a flexible tape measure and measure in the morning." data-ru="Измеряйте в самом широком месте. Используйте гибкую ленту, лучше утром.">Measure at the widest point. Use a flexible tape measure and measure in the morning.</p>
+
+    <div class="calc-card">
+      <div class="field" style="margin-bottom:20px;">
+        <label data-en="Gender" data-ru="Пол">Gender</label>
+        <div class="gender-toggle">
+          <button class="gender-btn active" id="genderMale" data-en="♂ Male" data-ru="♂ Мужской">♂ Male</button>
+          <button class="gender-btn" id="genderFemale" data-en="♀ Female" data-ru="♀ Женский">♀ Female</button>
+        </div>
+      </div>
+      <div class="calc-grid">
+        <div class="field">
+          <label for="height" data-en="Height (cm)" data-ru="Рост (см)">Height (cm)</label>
+          <input type="number" id="height" min="100" max="250" placeholder="e.g. 175" />
+        </div>
+        <div class="field">
+          <label for="weight" data-en="Weight (kg)" data-ru="Вес (кг)">Weight (kg)</label>
+          <input type="number" id="weight" min="30" max="300" placeholder="e.g. 80" />
+        </div>
+        <div class="field">
+          <label for="neck" data-en="Neck circumference (cm)" data-ru="Обхват шеи (см)">Neck circumference (cm)</label>
+          <input type="number" id="neck" min="20" max="70" placeholder="e.g. 38" />
+        </div>
+        <div class="field">
+          <label for="waist" data-en="Waist circumference (cm)" data-ru="Обхват талии (см)">Waist circumference (cm)</label>
+          <input type="number" id="waist" min="40" max="200" placeholder="e.g. 85" />
+        </div>
+        <div class="field" id="hipField" style="display:none; grid-column:1/-1;">
+          <label for="hip" data-en="Hip circumference (cm) — women only" data-ru="Обхват бёдер (см) — только для женщин">Hip circumference (cm) — women only</label>
+          <input type="number" id="hip" min="50" max="200" placeholder="e.g. 95" />
+        </div>
+      </div>
+      <button class="btn-calc" id="calcBtn" data-en="Calculate Body Fat →" data-ru="Рассчитать % жира →">Calculate Body Fat →</button>
+      <p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;" data-en="Please fill in all fields correctly." data-ru="Пожалуйста, заполните все поля правильно.">Please fill in all fields correctly.</p>
+
+      <div class="calc-results" id="calcResults">
+        <div class="calories-display" id="bfDisplay">
+          <div class="kcal-number" id="bfPct">—</div>
+          <div class="kcal-label" data-en="body fat percentage" data-ru="процент жира в теле">body fat percentage</div>
+        </div>
+        <div style="text-align:center; margin-bottom:20px;">
+          <span style="display:inline-block; background:var(--green); color:white; padding:6px 20px; border-radius:20px; font-weight:600;" id="bfCategory">—</span>
+        </div>
+        <div style="margin-bottom:24px;">
+          <div style="position:relative; height:12px; border-radius:6px; background:linear-gradient(to right,#60a5fa,#34d399,#a3e635,#fbbf24,#f87171); margin-bottom:8px;">
+            <div id="bfMarker" style="position:absolute; top:-4px; width:20px; height:20px; background:white; border:3px solid var(--ink); border-radius:50%; transform:translateX(-50%); transition:left 0.5s ease; left:0%;"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:0.68rem; color:var(--muted);">
+            <span data-en="Essential" data-ru="Незамен.">Essential</span>
+            <span data-en="Athletic" data-ru="Спорт">Athletic</span>
+            <span data-en="Fitness" data-ru="Фитнес">Fitness</span>
+            <span data-en="Average" data-ru="Средний">Average</span>
+            <span data-en="Obese" data-ru="Ожирение">Obese</span>
+          </div>
+        </div>
+        <div class="macros-grid">
+          <div class="macro-item"><div class="macro-value" id="fatMass">—</div><div class="macro-name" data-en="Fat mass (kg)" data-ru="Жировая масса (кг)">Fat mass (kg)</div></div>
+          <div class="macro-item"><div class="macro-value" id="leanMass">—</div><div class="macro-name" data-en="Lean mass (kg)" data-ru="Сухая масса (кг)">Lean mass (kg)</div></div>
+        </div>
+        <div class="result-note" id="resultNote"></div>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+          <button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="💾 Save results" data-ru="💾 Сохранить результаты">💾 Save results</button>
+          <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="🖨 Print" data-ru="🖨 Распечатать">🖨 Print</button>
+          <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;" data-en="⬇ Download card" data-ru="⬇ Скачать карточку">⬇ Download card</button>
+        </div>
+
+        <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
+          <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
+          <p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;" data-en="My body fat result" data-ru="Мой результат по жиру">My body fat result</p>
+          <div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+          <div id="shareCardCategory" style="display:inline-block;background:#D8F3DC;color:#173404;padding:6px 18px;border-radius:20px;font-size:14px;font-weight:600;margin-bottom:20px;">—</div>
+          <div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Fat mass" data-ru="Жировая масса">Fat mass</p>
+              <p id="shareCardFatMass" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+            <div>
+              <p style="font-size:11px;color:#888780;margin:0 0 2px;" data-en="Lean mass" data-ru="Сухая масса">Lean mass</p>
+              <p id="shareCardLeanMass" style="font-size:15px;font-weight:600;margin:0;">—</p>
+            </div>
+          </div>
+          <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
+        </div>
+        <p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;" data-en="✓ Results saved!" data-ru="✓ Результаты сохранены!">✓ Results saved!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
+
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="Body fat ranges" data-ru="Диапазоны % жира">Body fat ranges</div>
+    <h2 class="section-title" data-en="What is a healthy body fat percentage?" data-ru="Какой % жира считается нормой?">What is a healthy body fat percentage?</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">🏅</div><h3 data-en="Essential fat" data-ru="Незаменимый жир">Essential fat</h3><p data-en="Men: 2–5% | Women: 10–13%. This is the minimum fat required for basic physiological functions like hormone production, vitamin storage, and organ protection. Going below this range for extended periods is genuinely dangerous and can disrupt hormonal balance — it's not a goal to aim for, even for aesthetic reasons." data-ru="Мужчины: 2–5% | Женщины: 10–13%. Это минимум жира, необходимый для базовых физиологических функций: производства гормонов, хранения витаминов, защиты органов. Длительное нахождение ниже этого диапазона действительно опасно и может нарушить гормональный баланс — это не цель, к которой стоит стремиться даже из эстетических соображений.">Men: 2–5% | Women: 10–13%. This is the minimum fat required for basic physiological functions like hormone production, vitamin storage, and organ protection. Going below this range for extended periods is genuinely dangerous and can disrupt hormonal balance — it's not a goal to aim for, even for aesthetic reasons.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">🏃</div><h3 data-en="Athletic" data-ru="Спортивный">Athletic</h3><p data-en="Men: 6–13% | Women: 14–20%. This is the typical range seen in competitive athletes and bodybuilders, especially close to competition. It requires very disciplined nutrition and training to reach and, for most people, is difficult to maintain year-round without significant lifestyle sacrifice." data-ru="Мужчины: 6–13% | Женщины: 14–20%. Типичный диапазон для спортсменов и бодибилдеров, особенно ближе к соревнованиям. Требует очень дисциплинированного питания и тренировок, и для большинства людей сложно поддерживать круглый год без значительных жертв в образе жизни.">Men: 6–13% | Women: 14–20%. This is the typical range seen in competitive athletes and bodybuilders, especially close to competition. It requires very disciplined nutrition and training to reach and, for most people, is difficult to maintain year-round without significant lifestyle sacrifice.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">✅</div><h3 data-en="Fitness" data-ru="Фитнес">Fitness</h3><p data-en="Men: 14–17% | Women: 21–24%. This range represents a visibly fit, healthy body composition that's realistically maintainable long-term for most active adults with consistent training and reasonable diet discipline — a sensible target for general fitness goals rather than competition-level leanness." data-ru="Мужчины: 14–17% | Женщины: 21–24%. Этот диапазон отражает видимо подтянутое, здоровое телосложение, реалистично поддерживаемое в долгосрочной перспективе большинством активных взрослых при регулярных тренировках и разумной дисциплине в питании — разумная цель для общего фитнеса, а не соревновательной сухости.">Men: 14–17% | Women: 21–24%. This range represents a visibly fit, healthy body composition that's realistically maintainable long-term for most active adults with consistent training and reasonable diet discipline — a sensible target for general fitness goals rather than competition-level leanness.</p></div>
+      <div class="step"><div class="step-num" style="font-size:1.6rem;">⚠️</div><h3 data-en="Overweight / obese" data-ru="Избыток / ожирение">Overweight / obese</h3><p data-en="Men: 25%+ | Women: 32%+. This range is associated with elevated risk of type 2 diabetes, cardiovascular disease, and metabolic syndrome, particularly when excess fat is stored around the abdomen (visceral fat). A moderate, sustained calorie deficit combined with resistance training to preserve muscle is the recommended approach." data-ru="Мужчины: 25%+ | Женщины: 32%+. Этот диапазон связан с повышенным риском диабета 2 типа, сердечно-сосудистых заболеваний и метаболического синдрома, особенно если избыточный жир откладывается в области живота (висцеральный жир). Рекомендуется умеренный, устойчивый дефицит калорий в сочетании с силовыми тренировками для сохранения мышц.">Men: 25%+ | Women: 32%+. This range is associated with elevated risk of type 2 diabetes, cardiovascular disease, and metabolic syndrome, particularly when excess fat is stored around the abdomen (visceral fat). A moderate, sustained calorie deficit combined with resistance training to preserve muscle is the recommended approach.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology & Limitations -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-label" data-en="Methodology" data-ru="Методология">Methodology</div>
+    <h2 class="section-title" data-en="The US Navy method: how it works and its limits" data-ru="Метод ВМС США: как он работает и его ограничения">The US Navy method: how it works and its limits</h2>
+    <p data-en="This calculator uses the circumference-based formula developed by the U.S. Navy in the 1980s as a fast field method for estimating body fat without specialised equipment like calipers or DEXA scanning. It uses neck, waist, and (for women) hip measurements, plus height, in a logarithmic equation. Studies comparing it against more precise methods like hydrostatic weighing generally find it accurate within about 3-4 percentage points for most people — reasonably good for a tape-measure method." data-ru="Этот калькулятор использует формулу на основе обхватов, разработанную ВМС США в 1980-х годах как быстрый полевой метод оценки жира в теле без специального оборудования вроде калиперов или DEXA-сканирования. Используются обхват шеи, талии и (для женщин) бёдер, а также рост, в логарифмическом уравнении. Исследования, сравнивающие его с более точными методами, такими как гидростатическое взвешивание, обычно показывают точность в пределах 3-4 процентных пунктов для большинства людей — неплохо для метода с сантиметровой лентой.">This calculator uses the circumference-based formula developed by the U.S. Navy in the 1980s as a fast field method for estimating body fat without specialised equipment like calipers or DEXA scanning. It uses neck, waist, and (for women) hip measurements, plus height, in a logarithmic equation. Studies comparing it against more precise methods like hydrostatic weighing generally find it accurate within about 3-4 percentage points for most people — reasonably good for a tape-measure method.</p>
+    <p style="margin-top:16px;" data-en="The method is less reliable for people with body shapes far from the average build it was calibrated on — very muscular athletes tend to get overestimated body fat because the formula can't tell dense muscle from fat around the waist, while people carrying fat mainly in areas the formula doesn't measure may get underestimated results. For a more precise reading, DEXA scans, hydrostatic weighing, or Bod Pod testing (all requiring specialist equipment) remain the gold standard." data-ru="Метод менее надёжен для людей с телосложением, значительно отличающимся от среднего, на которое он был откалиброван — у очень мускулистых спортсменов процент жира часто завышается, так как формула не может отличить плотную мышечную ткань от жира в области талии, а у людей, откладывающих жир в основном в местах, которые формула не измеряет, результат может занижаться. Для более точного результата золотым стандартом остаются DEXA-сканирование, гидростатическое взвешивание или Bod Pod (все требуют специального оборудования).">The method is less reliable for people with body shapes far from the average build it was calibrated on — very muscular athletes tend to get overestimated body fat because the formula can't tell dense muscle from fat around the waist, while people carrying fat mainly in areas the formula doesn't measure may get underestimated results. For a more precise reading, DEXA scans, hydrostatic weighing, or Bod Pod testing (all requiring specialist equipment) remain the gold standard.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="section-label" data-en="FAQ" data-ru="Вопросы">FAQ</div>
+    <h2 class="section-title" data-en="Frequently asked questions about body fat" data-ru="Частые вопросы о проценте жира">Frequently asked questions about body fat</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" data-en="How accurate is the US Navy method compared to a DEXA scan?" data-ru="Насколько метод ВМС США точен по сравнению с DEXA?">How accurate is the US Navy method compared to a DEXA scan?</button>
+        <div class="faq-answer" data-en="Studies generally find it within 3-4 percentage points of DEXA for most body types, which is reasonably good for a free, equipment-free method. If you need a precise number for medical or competitive reasons, a DEXA scan is worth the cost — but for general fitness tracking, this method is a solid, free alternative." data-ru="Исследования обычно показывают отклонение в пределах 3-4 процентных пунктов от DEXA для большинства типов телосложения, что довольно хорошо для бесплатного метода без оборудования. Если вам нужна точная цифра по медицинским или соревновательным причинам, DEXA-скан стоит своих денег — но для общего отслеживания фитнеса этот метод — хорошая бесплатная альтернатива.">Studies generally find it within 3-4 percentage points of DEXA for most body types, which is reasonably good for a free, equipment-free method. If you need a precise number for medical or competitive reasons, a DEXA scan is worth the cost — but for general fitness tracking, this method is a solid, free alternative.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Why did I get a strange or negative result?" data-ru="Почему я получил странный или отрицательный результат?">Why did I get a strange or negative result?</button>
+        <div class="faq-answer" data-en="This usually happens when the waist measurement is too close to or smaller than the neck measurement relative to height, which breaks the logarithmic formula's assumptions. Double-check that you measured your waist at the navel level (not the narrowest point) and your neck just below the larynx, and re-enter the numbers." data-ru="Обычно это происходит, когда обхват талии слишком близок к обхвату шеи или меньше него относительно роста, что нарушает допущения логарифмической формулы. Проверьте, что вы измерили талию на уровне пупка (а не в самом узком месте), а шею — чуть ниже гортани, и введите числа заново.">This usually happens when the waist measurement is too close to or smaller than the neck measurement relative to height, which breaks the logarithmic formula's assumptions. Double-check that you measured your waist at the navel level (not the narrowest point) and your neck just below the larynx, and re-enter the numbers.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="Is body fat percentage more important than weight or BMI?" data-ru="Важнее ли процент жира, чем вес или ИМТ?">Is body fat percentage more important than weight or BMI?</button>
+        <div class="faq-answer" data-en="For assessing actual health and fitness, generally yes — body fat percentage tells you what your weight is made of, which BMI and scale weight alone can't. Two people with identical BMI can have very different body fat percentages and very different health profiles. That said, body fat percentage from tape-measure methods has its own error margin, so use it alongside other metrics rather than in isolation." data-ru="Для оценки реального здоровья и физической формы — как правило, да. Процент жира показывает, из чего состоит ваш вес, чего ИМТ и вес на весах сами по себе не показывают. Два человека с одинаковым ИМТ могут иметь очень разный процент жира и совершенно разное состояние здоровья. Тем не менее, процент жира по методу с сантиметром имеет свою погрешность, поэтому используйте его вместе с другими показателями, а не изолированно.">For assessing actual health and fitness, generally yes — body fat percentage tells you what your weight is made of, which BMI and scale weight alone can't. Two people with identical BMI can have very different body fat percentages and very different health profiles. That said, body fat percentage from tape-measure methods has its own error margin, so use it alongside other metrics rather than in isolation.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" data-en="How often should I remeasure my body fat?" data-ru="Как часто нужно пересчитывать процент жира?">How often should I remeasure my body fat?</button>
+        <div class="faq-answer" data-en="Every 3-4 weeks is usually enough to track meaningful change, and measuring at the same time of day (morning, before eating) improves consistency between readings. Measuring more frequently than this mostly captures normal day-to-day water retention noise rather than genuine body composition change." data-ru="Обычно достаточно каждые 3-4 недели, чтобы отследить значимые изменения, а измерение в одно и то же время суток (утром, до еды) повышает точность сравнения результатов. Более частые измерения в основном фиксируют обычный шум от задержки воды, а не реальные изменения состава тела.">Every 3-4 weeks is usually enough to track meaningful change, and measuring at the same time of day (morning, before eating) improves consistency between readings. Measuring more frequently than this mostly captures normal day-to-day water retention noise rather than genuine body composition change.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="blog-section">
+  <div class="container">
+    <div class="section-label" data-en="More calculators" data-ru="Другие калькуляторы">More calculators</div>
+    <h2 class="section-title" data-en="Related tools" data-ru="Связанные инструменты">Related tools</h2>
+    <div class="blog-grid">
+      <a href="/" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Calories" data-ru="Калории">Calories</span><h3 data-en="Calorie & Macro Calculator" data-ru="Калькулятор калорий и БЖУ">Calorie & Macro Calculator</h3><p data-en="Get your daily calorie and macro targets." data-ru="Суточная норма калорий и БЖУ.">Get your daily calorie and macro targets.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="bmi-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3 data-en="BMI Calculator" data-ru="Калькулятор ИМТ">BMI Calculator</h3><p data-en="Check if your weight is in a healthy range." data-ru="ИМТ — индекс массы тела.">Check if your weight is in a healthy range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+      <a href="blog/bmi-vs-body-fat-percentage.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Comparison" data-ru="Сравнение">Comparison</span><h3 data-en="BMI vs Body Fat Percentage" data-ru="ИМТ vs процент жира">BMI vs Body Fat Percentage</h3><p data-en="Which measurement actually matters more." data-ru="Какой показатель важнее.">Which measurement actually matters more.</p><span class="blog-read-more" data-en="Read →" data-ru="Читать →">Read →</span></div></a>
+      <a href="ideal-weight-calculator.html" class="blog-card" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag" data-en="Weight" data-ru="Вес">Weight</span><h3 data-en="Ideal Weight Calculator" data-ru="Идеальный вес">Ideal Weight Calculator</h3><p data-en="Find your ideal body weight range." data-ru="Идеальный вес по 4 формулам.">Find your ideal body weight range.</p><span class="blog-read-more" data-en="Open →" data-ru="Открыть →">Open →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand"><a href="/" class="site-logo"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p data-en="Free health calculators. Not medical advice." data-ru="Бесплатные калькуляторы здоровья. Не медицинский совет.">Free health calculators. Not medical advice.</p></div>
+    <div class="footer-links"><a href="about.html" data-en="About" data-ru="О сайте">About</a><a href="blog/" data-en="Blog" data-ru="Блог">Blog</a><a href="contact.html" data-en="Contact" data-ru="Контакт">Contact</a><a href="privacy.html" data-en="Privacy Policy" data-ru="Политика конфиденциальности">Privacy Policy</a><a href="terms.html" data-en="Terms of Use" data-ru="Условия использования">Terms of Use</a>
+      <a href="faq.html" data-en="FAQ" data-ru="FAQ">FAQ</a></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
+</footer>
+<script>
+
+function savePageResults() {
+  var results = {};
+  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct').forEach(function(el, i) {
+    if (el.textContent && el.textContent !== '—') results['val_' + i] = el.textContent;
+  });
+  // Get main result text
+  var mainEl = document.querySelector('.calc-results .kcal-number, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct');
+  if (mainEl) results.mainValue = mainEl.textContent;
+  results.savedAt = new Date().toLocaleDateString();
+  localStorage.setItem('cm_saved_bodyfat', JSON.stringify(results));
+  var msg = document.getElementById('saveMsg');
+  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
+}
+
+// Show saved banner on load
+window.addEventListener('load', function() {
+  var saved = localStorage.getItem('cm_saved_bodyfat');
+  if (!saved) return;
+  try {
+    var data = JSON.parse(saved);
+    if (!data.mainValue) return;
+    var banner = document.getElementById('savedBanner');
+    var bannerText = document.getElementById('savedBannerText');
+    if (!banner || !bannerText) return;
+    var l = localStorage.getItem('lang') || 'en';
+    bannerText.textContent = (l==='ru' ? 'Результат: ' : 'Result: ') + data.mainValue + ' · ' + (l==='ru' ? 'Сохранено: ' : 'Saved: ') + data.savedAt;
+    banner.style.display = 'block';
+  } catch(e) {}
+});
+document.getElementById('year').textContent = new Date().getFullYear();
+
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+let gender='male';
+document.getElementById('genderMale').addEventListener('click',function(){gender='male';this.classList.add('active');document.getElementById('genderFemale').classList.remove('active');document.getElementById('hipField').style.display='none';});
+document.getElementById('genderFemale').addEventListener('click',function(){gender='female';this.classList.add('active');document.getElementById('genderMale').classList.remove('active');document.getElementById('hipField').style.display='block';});
+function animateNumber(el, target, decimals, formatter) {
+  decimals = decimals || 0;
+  const duration = 700;
+  const startTime = performance.now();
+  function step(now) {
+    const progress = Math.min((now - startTime) / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = target * eased;
+    const val = decimals > 0 ? current.toFixed(decimals) : Math.round(current);
+    el.textContent = formatter ? formatter(val) : val;
+    if (progress < 1) requestAnimationFrame(step);
+    else {
+      const finalVal = decimals > 0 ? target.toFixed(decimals) : Math.round(target);
+      el.textContent = formatter ? formatter(finalVal) : finalVal;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'body-fat-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+let currentLang='en';
+function applyLang(lang){currentLang=lang;document.documentElement.lang=lang;document.querySelectorAll('[data-en]').forEach(function(el){var t=el.getAttribute('data-'+lang);if(t)el.innerHTML=t;});localStorage.setItem('lang',lang);}
+document.getElementById('langEN').addEventListener('click',function(){this.classList.add('active');document.getElementById('langRU').classList.remove('active');applyLang('en');});
+document.getElementById('langRU').addEventListener('click',function(){this.classList.add('active');document.getElementById('langEN').classList.remove('active');applyLang('ru');});
+var sl=localStorage.getItem('lang');if(sl==='ru'){document.getElementById('langRU').classList.add('active');document.getElementById('langEN').classList.remove('active');applyLang('ru');}
+(function(){var hEN=document.getElementById('headerLangEN'),hRU=document.getElementById('headerLangRU');if(sl==='ru'){hRU.classList.add('active');hEN.classList.remove('active');}hEN.addEventListener('click',function(){document.getElementById('langEN').click();hEN.classList.add('active');hRU.classList.remove('active');});hRU.addEventListener('click',function(){document.getElementById('langRU').click();hRU.classList.add('active');hEN.classList.remove('active');});})();
+
+const cats={
+  male:[{max:5,label:'Essential fat',labelRu:'Незаменимый жир',color:'#60a5fa'},{max:13,label:'Athletic',labelRu:'Спортивный',color:'#34d399'},{max:17,label:'Fitness',labelRu:'Фитнес',color:'#a3e635'},{max:24,label:'Average',labelRu:'Средний',color:'#fbbf24'},{max:999,label:'Obese',labelRu:'Ожирение',color:'#f87171'}],
+  female:[{max:13,label:'Essential fat',labelRu:'Незаменимый жир',color:'#60a5fa'},{max:20,label:'Athletic',labelRu:'Спортивный',color:'#34d399'},{max:24,label:'Fitness',labelRu:'Фитнес',color:'#a3e635'},{max:31,label:'Average',labelRu:'Средний',color:'#fbbf24'},{max:999,label:'Obese',labelRu:'Ожирение',color:'#f87171'}]
+};
+const noteText={en:'This estimate uses the US Navy circumference method (error ±3–4%). For precise measurement, consider DEXA scan or hydrostatic weighing.',ru:'Оценка по методу ВМС США (погрешность ±3–4%). Для точного измерения используйте DEXA-сканирование или гидростатическое взвешивание.'};
+
+document.getElementById('calcBtn').addEventListener('click',function(){
+  const h=parseFloat(document.getElementById('height').value);
+  const w=parseFloat(document.getElementById('weight').value);
+  const neck=parseFloat(document.getElementById('neck').value);
+  const waist=parseFloat(document.getElementById('waist').value);
+  const hip=parseFloat(document.getElementById('hip').value)||0;
+  const err=document.getElementById('calcError');
+  if(!h||!w||!neck||!waist||(gender==='female'&&!hip)){err.style.display='block';return;}
+  err.style.display='none';
+  let bf;
+  if(gender==='male'){
+    bf=495/(1.0324-0.19077*Math.log10(waist-neck)+0.15456*Math.log10(h))-450;
+  } else {
+    bf=495/(1.29579-0.35004*Math.log10(waist+hip-neck)+0.22100*Math.log10(h))-450;
+  }
+  bf=Math.round(bf*10)/10;
+  const catList=cats[gender];
+  let cat=catList[catList.length-1];
+  for(let c of catList){if(bf<c.max){cat=c;break;}}
+  const catLabel=currentLang==='ru'?cat.labelRu:cat.label;
+  const fatMass=Math.round(w*bf/100*10)/10;
+  const leanMass=Math.round((w-fatMass)*10)/10;
+  animateNumber(document.getElementById('bfPct'), bf, 1, function(v) { return v + '%'; });
+  document.getElementById('bfCategory').textContent=catLabel;
+  document.getElementById('bfCategory').style.background=cat.color;
+  document.getElementById('bfCategory').style.color=cat.color==='#fbbf24'||cat.color==='#a3e635'?'#1a1a18':'white';
+  document.getElementById('bfDisplay').style.background=cat.color+'22';
+  const bfPct = Math.min(Math.max((bf / 40) * 100, 2), 98);
+  document.getElementById('bfMarker').style.left = bfPct + '%';
+  animateNumber(document.getElementById('fatMass'), fatMass, 1, function(v) { return v + ' kg'; });
+  animateNumber(document.getElementById('leanMass'), leanMass, 1, function(v) { return v + ' kg'; });
+
+  document.getElementById('shareCardValue').textContent = bf + '%';
+  document.getElementById('shareCardCategory').textContent = catLabel;
+  document.getElementById('shareCardCategory').style.background = cat.color + '33';
+  document.getElementById('shareCardCategory').style.color = cat.color;
+  document.getElementById('shareCardFatMass').textContent = fatMass + ' kg';
+  document.getElementById('shareCardLeanMass').textContent = leanMass + ' kg';
+  document.getElementById('resultNote').textContent=noteText[currentLang];
+  document.getElementById('calcResults').classList.add('visible');
+  setTimeout(()=>document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}),100);
+});
+</script>
+
+<!-- Scroll to top button + Reading progress -->
+<div id="scrollTop" style="display:none;position:fixed;bottom:28px;right:24px;z-index:999;width:44px;height:44px;background:var(--green,#2D6A4F);color:white;border-radius:50%;border:none;cursor:pointer;font-size:1.2rem;box-shadow:0 4px 16px rgba(0,0,0,0.2);align-items:center;justify-content:center;transition:opacity 0.3s,transform 0.3s;" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<div id="readProgress" style="position:fixed;top:0;left:0;height:3px;background:var(--green,#2D6A4F);width:0%;z-index:9999;transition:width 0.1s;"></div>
+<script>
+(function(){
+  var btn = document.getElementById('scrollTop');
+  var bar = document.getElementById('readProgress');
+  window.addEventListener('scroll', function(){
+    var scrollY = window.scrollY || window.pageYOffset;
+    var docH = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docH > 0 ? (scrollY / docH * 100) : 0;
+    bar.style.width = pct + '%';
+    if (scrollY > 400) {
+      btn.style.display = 'flex';
+      btn.style.opacity = '1';
+    } else {
+      btn.style.display = 'none';
+    }
+  });
+  btn.addEventListener('mouseenter', function(){ this.style.transform='scale(1.1)'; });
+  btn.addEventListener('mouseleave', function(){ this.style.transform='scale(1)'; });
+})();
+</script>
+<script>
+/* Mega menu */
+(function(){
+  // Hamburger
+  var hbtn = document.getElementById('hamburger');
+  var nav = document.getElementById('siteNav');
+  if(hbtn && nav){
+    hbtn.addEventListener('click', function(e){
+      e.stopPropagation();
+      nav.classList.toggle('open');
+    });
+  }
+  // Mobile mega menu tap
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.nav-item > a').forEach(function(link){
+      link.addEventListener('click', function(e){
+        if(window.innerWidth >= 769) return;
+        var menu = this.closest('.nav-item').querySelector('.mega-menu');
+        if(!menu) return;
+        e.preventDefault();
+        e.stopPropagation();
+        var isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+        if(!isOpen){ menu.classList.add('open'); this.classList.add('mm-open'); }
+      }.bind(link));
+    });
+    document.addEventListener('click', function(e){
+      if(!e.target.closest('#siteNav')){
+        if(nav) nav.classList.remove('open');
+        document.querySelectorAll('.mega-menu').forEach(function(m){ m.classList.remove('open'); });
+        document.querySelectorAll('.nav-item > a').forEach(function(a){ a.classList.remove('mm-open'); });
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
