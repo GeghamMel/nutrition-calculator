@@ -229,7 +229,7 @@ a:hover { text-decoration: underline; }
 .field input:focus, .field select:focus {
   outline: none;
   border-color: var(--green-light);
-  background: white;
+  background: var(--white);
 }
 
 .gender-toggle {
@@ -548,7 +548,7 @@ a:hover { text-decoration: underline; }
 .static-body h2 {
   font-size: 1.15rem; font-weight: 600; margin: 36px 0 12px;
 }
-.static-body p, .static-body li { color: #374151; line-height: 1.75; margin-bottom: 14px; }
+.static-body p, .static-body li { color: var(--ink); line-height: 1.75; margin-bottom: 14px; }
 .static-body ul { margin-left: 24px; }
 
 /* Contact form */
@@ -566,7 +566,7 @@ a:hover { text-decoration: underline; }
   color: var(--ink);
 }
 .contact-form textarea:focus {
-  outline: none; border-color: var(--green-light); background: white;
+  outline: none; border-color: var(--green-light); background: var(--white);
 }
 .btn-submit {
   background: var(--green); color: white;
@@ -620,7 +620,7 @@ a:hover { text-decoration: underline; }
   .site-nav {
     display: none;
     position: fixed; inset: 60px 0 0 0;
-    background: white; flex-direction: column;
+    background: var(--white); flex-direction: column;
     padding: 32px 24px; gap: 16px; z-index: 99;
     border-top: 1px solid var(--border);
   }
@@ -675,13 +675,13 @@ a:hover { text-decoration: underline; }
     top: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
-    background: white;
+    background: var(--white);
     border-radius: 12px;
     box-shadow: 0 8px 40px rgba(0,0,0,0.15);
     padding: 20px 24px 16px;
     min-width: 540px;
     z-index: 1000;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border);
   }
   .mega-menu::before {
     content: '';
@@ -690,7 +690,7 @@ a:hover { text-decoration: underline; }
     transform: translateX(-50%);
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid white;
+    border-bottom: 8px solid var(--white);
   }
   .nav-item::before {
     content: '';
@@ -699,26 +699,26 @@ a:hover { text-decoration: underline; }
     height: 16px;
   }
   .nav-item:hover .mega-menu { display: block; }
-  .mega-menu-item { color: #1f2937 !important; }
-  .mega-menu-item .mm-text { color: #1f2937 !important; }
-  .mega-menu-item:hover { background:#f0fdf4 !important; }
-  .mega-menu-item:hover .mm-text { color:#16a34a !important; }
+  .mega-menu-item { color: var(--ink) !important; }
+  .mega-menu-item .mm-text { color: var(--ink) !important; }
+  .mega-menu-item:hover { background: var(--green-pale) !important; }
+  .mega-menu-item:hover .mm-text { color: var(--green) !important; }
 }
 
 /* Mobile only - tap */
 @media(max-width:768px) {
   .mega-menu {
     display: none;
-    background: #f9f7f2;
-    border: 1px solid #e5e7eb;
+    background: var(--white);
+    border: 1px solid var(--border);
     border-radius: 10px;
     padding: 8px;
     margin: 4px 0 8px 0;
   }
   .mega-menu.open { display: block; }
-  .mega-menu-item { color: #111827 !important; }
-  .mega-menu-item .mm-text { color: #111827 !important; }
-  .mega-menu-item:hover { background: #f0fdf4 !important; }
+  .mega-menu-item { color: var(--ink) !important; }
+  .mega-menu-item .mm-text { color: var(--ink) !important; }
+  .mega-menu-item:hover { background: var(--green-pale) !important; }
 }
 
 .mega-menu-grid { display:grid; grid-template-columns:1fr 1fr; gap:4px; }
@@ -728,9 +728,9 @@ a:hover { text-decoration: underline; }
 }
 .mega-menu-title {
   font-size:0.7rem; font-weight:700; text-transform:uppercase;
-  letter-spacing:0.06em; color:#6b7280;
+  letter-spacing:0.06em; color:var(--muted);
   padding:0 8px 8px; margin-bottom:4px;
-  border-bottom:1px solid #e5e7eb;
+  border-bottom:1px solid var(--border);
   grid-column:1/-1;
 }
 @media(max-width:768px) { .mega-menu-title { display:none; } }
@@ -744,6 +744,6 @@ a:hover { text-decoration: underline; }
 .mega-menu-item .mm-icon { font-size:1rem; width:22px; text-align:center; flex-shrink:0; }
 .mega-menu-footer {
   grid-column:1/-1; margin-top:8px; padding-top:10px;
-  border-top:1px solid #e5e7eb; text-align:center;
+  border-top:1px solid var(--border); text-align:center;
 }
-.mega-menu-footer a { font-size:0.82rem; color:#16a34a; font-weight:600; }
+.mega-menu-footer a { font-size:0.82rem; color:var(--green); font-weight:600; }
