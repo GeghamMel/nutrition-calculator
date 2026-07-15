@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="ru">
-<head><script>localStorage.setItem('lang','ru');</script>
+<head><script>localStorage.setItem('lang','ru');</script><script>(function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Калькулятор нетто-углеводов — для кето | Calories & Macros</title>
@@ -55,6 +55,7 @@
 <div class="inner">
 <a class="site-logo" href="/ru/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
 <a aria-label="Search" href="/ru/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
+<button aria-label="Toggle dark mode" id="themeToggle" onclick="toggleTheme()" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;border:none;cursor:pointer;font-size:1rem;flex-shrink:0;">🌙</button>
 <div class="header-lang" id="headerLang">
 <a class="" href="/net-carbs-calculator.html" id="headerLangEN">EN</a>
 <a class="active" href="/ru/net-carbs-calculator.html" id="headerLangRU">RU</a>
@@ -612,6 +613,22 @@ document.getElementById('calcBtn').addEventListener('click', function() {
   var r = document.getElementById('cookieRejectBtn');
   if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
   if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
+})();
+</script>
+<script>
+function toggleTheme(){
+  var cur = document.documentElement.getAttribute('data-theme');
+  var next = cur === 'dark' ? 'light' : 'dark';
+  if (next === 'dark') { document.documentElement.setAttribute('data-theme','dark'); }
+  else { document.documentElement.removeAttribute('data-theme'); }
+  localStorage.setItem('theme', next);
+  var btns = document.querySelectorAll('#themeToggle');
+  btns.forEach(function(b){ b.textContent = next === 'dark' ? '☀️' : '🌙'; });
+}
+(function(){
+  var t = localStorage.getItem('theme');
+  var btns = document.querySelectorAll('#themeToggle');
+  if (t === 'dark') { btns.forEach(function(b){ b.textContent = '☀️'; }); }
 })();
 </script>
 </body>
