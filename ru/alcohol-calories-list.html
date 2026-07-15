@@ -10,6 +10,7 @@
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Стоит ли учитывать калории алкоголя в суточной норме?","acceptedAnswer":{"@type":"Answer","text":"Да, если управление весом — ваша цель: калории алкоголя учитываются так же, как любые другие, для общего энергетического баланса. Сложность в том, что алкоголь также влияет на то, как организм перерабатывает другую еду, съеденную примерно в то же время, так как приоритет отдаётся ему как топливу, поэтому практический эффект может быть несколько больше, чем предполагает сама калорийность."}},{"@type":"Question","name":"Что менее калорийно — пиво или вино?","acceptedAnswer":{"@type":"Answer","text":"Зависит от размера порции и типа. Стандартный бокал сухого вина 150мл (120-130 ккал) обычно менее калориен, чем стандартная порция обычного пива 355-500мл (150-200 ккал), но лёгкое пиво может быть менее калорийным, чем вино на порцию. Больший фактор обычно — сколько именно вы пьёте каждого напитка — на практике бокалы вина часто наливают больше «стандартной» порции."}},{"@type":"Question","name":"Добавляют ли миксеры значительное количество калорий?","acceptedAnswer":{"@type":"Answer","text":"Часто да, и это один из самых больших скрытых источников калорий от алкоголя. Обычная газировка, тоник и фруктовые соки могут добавить 100-150+ калорий на напиток сверх самого спирта, тогда как содовая вода, диетические миксеры или немного свежего лайма добавляют почти ноль. Смена миксера часто самый простой способ сократить калории, не меняя количество выпитого."}},{"@type":"Question","name":"Влияет ли алкоголь на жиросжигание, даже если я укладываюсь в бюджет калорий?","acceptedAnswer":{"@type":"Answer","text":"Потенциально да. Даже при том же общем потреблении калорий алкоголь может временно сместить организм к сжиганию алкоголя как топлива вместо запасённого жира, что может немного замедлить потерю жира во время и вскоре после употребления, независимо от подсчёта калорий. Этот эффект обычно умеренный при редком, умеренном употреблении, но более значим при частом или обильном."}}]}
   </script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var _cc=localStorage.getItem('cookie_consent');var _cg=_cc==='accepted'?'granted':'denied';gtag('consent','default',{'ad_storage':_cg,'ad_user_data':_cg,'ad_personalization':_cg,'analytics_storage':_cg,'wait_for_update':500});</script>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
@@ -459,6 +460,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+})();
+</script>
+<div id="cookieConsentBanner" style="position:fixed;bottom:0;left:0;right:0;background:#1A1A18;color:#F9F6F0;padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:10000;box-shadow:0 -2px 12px rgba(0,0,0,0.15);font-family:inherit;">
+<p style="margin:0;font-size:0.85rem;flex:1;min-width:240px;">Мы используем cookies для аналитики и показа релевантной рекламы. <a href="/ru/privacy.html" style="color:#9FD8B8;text-decoration:underline;">Подробнее</a></p>
+<div style="display:flex;gap:10px;flex-shrink:0;">
+<button id="cookieRejectBtn" style="padding:9px 18px;background:transparent;color:#F9F6F0;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Отклонить</button>
+<button id="cookieAcceptBtn" style="padding:9px 18px;background:#52B788;color:#0D2818;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Принять</button>
+</div>
+</div>
+<script>
+(function(){
+  var stored = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookieConsentBanner');
+  if (!stored && banner) { banner.style.display = 'flex'; }
+  function setConsent(state){
+    localStorage.setItem('cookie_consent', state);
+    if (banner) banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      var granted = state === 'accepted' ? 'granted' : 'denied';
+      gtag('consent', 'update', {'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted});
+    }
+  }
+  var a = document.getElementById('cookieAcceptBtn');
+  var r = document.getElementById('cookieRejectBtn');
+  if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
 })();
 </script>
 </body>

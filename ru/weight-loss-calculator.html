@@ -10,6 +10,7 @@
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему вес перестал снижаться, хотя дефицит сохраняется?","acceptedAnswer":{"@type":"Answer","text":"Это называется плато и встречается очень часто. По мере снижения веса ваш TDEE тоже снижается, поэтому дефицит, работавший изначально, может перестать быть дефицитом при новом, более лёгком весе. Задержка воды (из-за стресса, натрия или гормональных циклов) также может маскировать реальную потерю жира на весах на дни или недели. Обычное решение — пересчитать TDEE при текущем весе."}},{"@type":"Question","name":"Всегда ли больший дефицит калорий даёт более быстрый результат?","acceptedAnswer":{"@type":"Answer","text":"Нет — очень большие дефициты (1000+ ккал/день) повышают риск потери мышц, дефицита нутриентов, усталости и большей вероятности в итоге бросить план из-за его неустойчивости. Исследования стабильно показывают, что умеренные дефициты (500-750 ккал/день) дают лучшие долгосрочные результаты, так как их легче поддерживать и они сохраняют больше сухой мышечной массы."}},{"@type":"Question","name":"Нужно ли пересчитывать TDEE по мере похудения?","acceptedAnswer":{"@type":"Answer","text":"Да — как правило, пересчитывайте каждые 5-7 кг потерянного веса или каждые 4-6 недель, в зависимости от того, что наступит раньше. Так как TDEE частично зависит от веса тела, поддерживающие калории действительно снижаются по мере похудения, и отказ от корректировки — одна из самых частых причин остановки прогресса, несмотря на видимое «следование плану»."}},{"@type":"Question","name":"Что делать после достижения целевого веса?","acceptedAnswer":{"@type":"Answer","text":"Постепенно переходите к новому поддерживающему TDEE, а не сразу возвращайтесь к старым привычкам питания — частая ошибка: резко прекратить дефицит и вернуться к дозиетическому потреблению, что часто приводит к быстрому восстановлению веса. Медленное увеличение калорий до поддерживающего уровня в течение 2-4 недель при продолжении отслеживания динамики веса помогает закрепить результат."}}]}
   </script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var _cc=localStorage.getItem('cookie_consent');var _cg=_cc==='accepted'?'granted':'denied';gtag('consent','default',{'ad_storage':_cg,'ad_user_data':_cg,'ad_personalization':_cg,'analytics_storage':_cg,'wait_for_update':500});</script>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
@@ -477,6 +478,32 @@ function savePageResults() {
       }
     });
   });
+})();
+</script>
+<div id="cookieConsentBanner" style="position:fixed;bottom:0;left:0;right:0;background:#1A1A18;color:#F9F6F0;padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:10000;box-shadow:0 -2px 12px rgba(0,0,0,0.15);font-family:inherit;">
+<p style="margin:0;font-size:0.85rem;flex:1;min-width:240px;">Мы используем cookies для аналитики и показа релевантной рекламы. <a href="/ru/privacy.html" style="color:#9FD8B8;text-decoration:underline;">Подробнее</a></p>
+<div style="display:flex;gap:10px;flex-shrink:0;">
+<button id="cookieRejectBtn" style="padding:9px 18px;background:transparent;color:#F9F6F0;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Отклонить</button>
+<button id="cookieAcceptBtn" style="padding:9px 18px;background:#52B788;color:#0D2818;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Принять</button>
+</div>
+</div>
+<script>
+(function(){
+  var stored = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookieConsentBanner');
+  if (!stored && banner) { banner.style.display = 'flex'; }
+  function setConsent(state){
+    localStorage.setItem('cookie_consent', state);
+    if (banner) banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      var granted = state === 'accepted' ? 'granted' : 'denied';
+      gtag('consent', 'update', {'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted});
+    }
+  }
+  var a = document.getElementById('cookieAcceptBtn');
+  var r = document.getElementById('cookieRejectBtn');
+  if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
 })();
 </script>
 </body>

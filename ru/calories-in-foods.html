@@ -10,6 +10,7 @@
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему на разных сайтах разная калорийность одного продукта?","acceptedAnswer":{"@type":"Answer","text":"Небольшие расхождения (обычно 5-10%) — это нормально и связаны с естественной вариацией самого продукта, разными справочными базами данных, а иногда с тем, включена ли кожа, кости или способ приготовления (сырое или готовое). Для точного учёта важны вес после приготовления и способ — калорийность продукта меняется при потере воды во время готовки."}},{"@type":"Question","name":"Взвешивать еду сырой или готовой?","acceptedAnswer":{"@type":"Answer","text":"Будьте последовательны и проверяйте, на какой основе использует данные база. Мясо теряет 20-30% веса при готовке (в основном воду), поэтому 100г сырой курицы и 100г готовой курицы имеют разную калорийность на грамм — готовое мясо калорийнее по весу, так как содержание воды ниже. Большинство приложений для учёта питания по умолчанию используют сырой вес мяса, поэтому стоит уточнить, какой конвенции вы придерживаетесь."}},{"@type":"Question","name":"Как оценить размер порции без весов?","acceptedAnswer":{"@type":"Answer","text":"Оценка по руке — довольно хороший стартовый ориентир: порция мяса размером с ладонь — примерно 100-120г, горсть риса или пасты — около 80-100г готового, порция овощей размером с кулак — примерно 150г. Это не точно, но кухонные весы недороги и дают гораздо более точный результат, если точность важна для ваших целей."}},{"@type":"Question","name":"«Калории в продукте» и «усвоенные калории» — это одно и то же?","acceptedAnswer":{"@type":"Answer","text":"Не совсем, хотя разница обычно невелика для большинства продуктов. Продукты с высоким содержанием клетчатки и орехи, например, усваиваются немного менее полно, чем предполагает этикетка, так как часть калорий проходит непереваренной. Для большинства практических целей и типичных рационов значения в этой таблице — надёжная рабочая оценка, но именно поэтому диеты с очень высоким содержанием клетчатки иногда показывают немного меньшее реальное усвоение калорий, чем предполагают цифры."}}]}
   </script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var _cc=localStorage.getItem('cookie_consent');var _cg=_cc==='accepted'?'granted':'denied';gtag('consent','default',{'ad_storage':_cg,'ad_user_data':_cg,'ad_personalization':_cg,'analytics_storage':_cg,'wait_for_update':500});</script>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
@@ -481,6 +482,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+})();
+</script>
+<div id="cookieConsentBanner" style="position:fixed;bottom:0;left:0;right:0;background:#1A1A18;color:#F9F6F0;padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:10000;box-shadow:0 -2px 12px rgba(0,0,0,0.15);font-family:inherit;">
+<p style="margin:0;font-size:0.85rem;flex:1;min-width:240px;">Мы используем cookies для аналитики и показа релевантной рекламы. <a href="/ru/privacy.html" style="color:#9FD8B8;text-decoration:underline;">Подробнее</a></p>
+<div style="display:flex;gap:10px;flex-shrink:0;">
+<button id="cookieRejectBtn" style="padding:9px 18px;background:transparent;color:#F9F6F0;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Отклонить</button>
+<button id="cookieAcceptBtn" style="padding:9px 18px;background:#52B788;color:#0D2818;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Принять</button>
+</div>
+</div>
+<script>
+(function(){
+  var stored = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookieConsentBanner');
+  if (!stored && banner) { banner.style.display = 'flex'; }
+  function setConsent(state){
+    localStorage.setItem('cookie_consent', state);
+    if (banner) banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      var granted = state === 'accepted' ? 'granted' : 'denied';
+      gtag('consent', 'update', {'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted});
+    }
+  }
+  var a = document.getElementById('cookieAcceptBtn');
+  var r = document.getElementById('cookieRejectBtn');
+  if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
 })();
 </script>
 </body>

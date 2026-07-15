@@ -10,6 +10,7 @@
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Почему в салатах иногда больше калорий, чем в бургерах?","acceptedAnswer":{"@type":"Answer","text":"Заправки, сыр, гренки и сливочные добавки могут добавить 200-400+ калорий поверх базового салата, иногда превышая простой бургер. Салат с лёгкой винегретной заправкой действительно менее калориен, но салат с ранч-соусом и жареной курицей может легко обогнать по калориям обычный бургер — само слово «салат» не гарантирует низкокалорийный выбор."}},{"@type":"Question","name":"Насколько точна информация о питательности в ресторанах?","acceptedAnswer":{"@type":"Answer","text":"Обычно надёжна для стандартизированных сетевых позиций, так как крупные сети используют единообразные порции и рецепты, протестированные в лабораториях, и во многих странах законодательно обязаны публиковать точные цифры. Тем не менее, вариации порций в конкретной точке (чуть больше ложка, лишний соус) могут сместить фактические калории на 5-15% от опубликованного числа в любую сторону."}},{"@type":"Question","name":"Какая замена лучше всего снижает калории в фастфуде?","acceptedAnswer":{"@type":"Answer","text":"Отказ от сладких напитков и картошки фри или уменьшение их порции обычно даёт наибольший эффект, так как только большая газировка может содержать 300-400 калорий по сути чистого сахара, а картошка фри добавляет ещё 300-500 в зависимости от размера — часто больше, чем сам сэндвич или бургер. Замена большого напитка на воду или диетический вариант — обычно самое простое доступное снижение калорий."}},{"@type":"Question","name":"Можно ли похудеть, если иногда есть фастфуд?","acceptedAnswer":{"@type":"Answer","text":"Да — похудение зависит от общего баланса калорий за дни и недели, а не от одного приёма пищи. Проверка калорийности вашего обычного заказа и его вписывание в суточную норму время от времени обычно более устойчиво в долгосрочной перспективе, чем полный отказ от фастфуда, что часто даёт обратный эффект у многих людей."}}]}
   </script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var _cc=localStorage.getItem('cookie_consent');var _cg=_cc==='accepted'?'granted':'denied';gtag('consent','default',{'ad_storage':_cg,'ad_user_data':_cg,'ad_personalization':_cg,'analytics_storage':_cg,'wait_for_update':500});</script>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
@@ -471,6 +472,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+})();
+</script>
+<div id="cookieConsentBanner" style="position:fixed;bottom:0;left:0;right:0;background:#1A1A18;color:#F9F6F0;padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:10000;box-shadow:0 -2px 12px rgba(0,0,0,0.15);font-family:inherit;">
+<p style="margin:0;font-size:0.85rem;flex:1;min-width:240px;">Мы используем cookies для аналитики и показа релевантной рекламы. <a href="/ru/privacy.html" style="color:#9FD8B8;text-decoration:underline;">Подробнее</a></p>
+<div style="display:flex;gap:10px;flex-shrink:0;">
+<button id="cookieRejectBtn" style="padding:9px 18px;background:transparent;color:#F9F6F0;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Отклонить</button>
+<button id="cookieAcceptBtn" style="padding:9px 18px;background:#52B788;color:#0D2818;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Принять</button>
+</div>
+</div>
+<script>
+(function(){
+  var stored = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookieConsentBanner');
+  if (!stored && banner) { banner.style.display = 'flex'; }
+  function setConsent(state){
+    localStorage.setItem('cookie_consent', state);
+    if (banner) banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      var granted = state === 'accepted' ? 'granted' : 'denied';
+      gtag('consent', 'update', {'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted});
+    }
+  }
+  var a = document.getElementById('cookieAcceptBtn');
+  var r = document.getElementById('cookieRejectBtn');
+  if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
 })();
 </script>
 </body>

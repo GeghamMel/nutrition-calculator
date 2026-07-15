@@ -10,6 +10,7 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Насколько метод ВМС США точен по сравнению с DEXA?","acceptedAnswer":{"@type":"Answer","text":"Исследования обычно показывают отклонение в пределах 3-4 процентных пунктов от DEXA для большинства типов телосложения, что довольно хорошо для бесплатного метода без оборудования. Если вам нужна точная цифра по медицинским или соревновательным причинам, DEXA-скан стоит своих денег — но для общего отслеживания фитнеса этот метод — хорошая бесплатная альтернатива."}},{"@type":"Question","name":"Почему я получил странный или отрицательный результат?","acceptedAnswer":{"@type":"Answer","text":"Обычно это происходит, когда обхват талии слишком близок к обхвату шеи или меньше него относительно роста, что нарушает допущения логарифмической формулы. Проверьте, что вы измерили талию на уровне пупка (а не в самом узком месте), а шею — чуть ниже гортани, и введите числа заново."}},{"@type":"Question","name":"Важнее ли процент жира, чем вес или ИМТ?","acceptedAnswer":{"@type":"Answer","text":"Для оценки реального здоровья и физической формы — как правило, да. Процент жира показывает, из чего состоит ваш вес, чего ИМТ и вес на весах сами по себе не показывают. Два человека с одинаковым ИМТ могут иметь очень разный процент жира и совершенно разное состояние здоровья. Тем не менее, процент жира по методу с сантиметром имеет свою погрешность, поэтому используйте его вместе с другими показателями, а не изолированно."}},{"@type":"Question","name":"Как часто нужно пересчитывать процент жира?","acceptedAnswer":{"@type":"Answer","text":"Обычно достаточно каждые 3-4 недели, чтобы отследить значимые изменения, а измерение в одно и то же время суток (утром, до еды) повышает точность сравнения результатов. Более частые измерения в основном фиксируют обычный шум от задержки воды, а не реальные изменения состава тела."}}]}
   </script>
 <link href="../style.css" rel="stylesheet"/>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var _cc=localStorage.getItem('cookie_consent');var _cg=_cc==='accepted'?'granted':'denied';gtag('consent','default',{'ad_storage':_cg,'ad_user_data':_cg,'ad_personalization':_cg,'analytics_storage':_cg,'wait_for_update':500});</script>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
 <!-- Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
@@ -500,6 +501,32 @@ document.getElementById('calcBtn').addEventListener('click',function(){
       }
     });
   });
+})();
+</script>
+<div id="cookieConsentBanner" style="position:fixed;bottom:0;left:0;right:0;background:#1A1A18;color:#F9F6F0;padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:10000;box-shadow:0 -2px 12px rgba(0,0,0,0.15);font-family:inherit;">
+<p style="margin:0;font-size:0.85rem;flex:1;min-width:240px;">Мы используем cookies для аналитики и показа релевантной рекламы. <a href="/ru/privacy.html" style="color:#9FD8B8;text-decoration:underline;">Подробнее</a></p>
+<div style="display:flex;gap:10px;flex-shrink:0;">
+<button id="cookieRejectBtn" style="padding:9px 18px;background:transparent;color:#F9F6F0;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Отклонить</button>
+<button id="cookieAcceptBtn" style="padding:9px 18px;background:#52B788;color:#0D2818;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Принять</button>
+</div>
+</div>
+<script>
+(function(){
+  var stored = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookieConsentBanner');
+  if (!stored && banner) { banner.style.display = 'flex'; }
+  function setConsent(state){
+    localStorage.setItem('cookie_consent', state);
+    if (banner) banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      var granted = state === 'accepted' ? 'granted' : 'denied';
+      gtag('consent', 'update', {'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted});
+    }
+  }
+  var a = document.getElementById('cookieAcceptBtn');
+  var r = document.getElementById('cookieRejectBtn');
+  if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
 })();
 </script>
 </body>

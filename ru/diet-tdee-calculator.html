@@ -14,6 +14,7 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Меняется ли мой TDEE в зависимости от диеты?","acceptedAnswer":{"@type":"Answer","text":"Нет — ваш общий суточный расход энергии определяется параметрами тела (возраст, вес, рост) и уровнем активности, а не диетой. Между диетами меняется то, как эти же общие калории распределяются между белком, углеводами и жирами, а не само общее число."}},{"@type":"Question","name":"Почему БЖУ кето так сильно отличается от веган?","acceptedAnswer":{"@type":"Answer","text":"Кето намеренно ограничивает углеводы для вхождения в кетоз, заменяя эти калории в основном жиром. Веганские диеты обычно естественно выше по углеводам, так как многие растительные источники белка и калорий (злаки, бобовые, фрукты) изначально более углеводистые, чем животные жиры и белки, на которые опирается кето."}},{"@type":"Question","name":"Можно ли достичь этих БЖУ на веганской или вегетарианской диете?","acceptedAnswer":{"@type":"Answer","text":"Да, при планировании — сочетание разных источников растительного белка в течение дня (бобовые, соевые продукты вроде тофу и темпе, сейтан, киноа) может покрыть цель по белку, хотя обычно требует более осознанного планирования питания, чем всеядная диета, так как отдельные растительные белки обычно менее концентрированы и менее «полноценны» (не хватает некоторых незаменимых аминокислот), чем животные источники."}},{"@type":"Question","name":"Какой тип диеты выбрать?","acceptedAnswer":{"@type":"Answer","text":"Диета, которую вы можете придерживаться долгосрочно, обычно важнее для результата, чем конкретное соотношение БЖУ, так как исследования, сравнивающие разные диеты при одинаковом уровне калорий, обычно находят схожие результаты по весу. Учитывайте пищевые предпочтения, заболевания и соответствие образу жизни, а не гонитесь за конкретным соотношением БЖУ, которое определённая диетическая культура называет превосходящим."}}]}
   </script>
 <link href="../style.css" rel="stylesheet"/>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var _cc=localStorage.getItem('cookie_consent');var _cg=_cc==='accepted'?'granted':'denied';gtag('consent','default',{'ad_storage':_cg,'ad_user_data':_cg,'ad_personalization':_cg,'analytics_storage':_cg,'wait_for_update':500});</script>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
 <!-- Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
@@ -598,6 +599,32 @@ document.getElementById('calcBtn').addEventListener('click', function() {
       }
     });
   });
+})();
+</script>
+<div id="cookieConsentBanner" style="position:fixed;bottom:0;left:0;right:0;background:#1A1A18;color:#F9F6F0;padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:10000;box-shadow:0 -2px 12px rgba(0,0,0,0.15);font-family:inherit;">
+<p style="margin:0;font-size:0.85rem;flex:1;min-width:240px;">Мы используем cookies для аналитики и показа релевантной рекламы. <a href="/ru/privacy.html" style="color:#9FD8B8;text-decoration:underline;">Подробнее</a></p>
+<div style="display:flex;gap:10px;flex-shrink:0;">
+<button id="cookieRejectBtn" style="padding:9px 18px;background:transparent;color:#F9F6F0;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Отклонить</button>
+<button id="cookieAcceptBtn" style="padding:9px 18px;background:#52B788;color:#0D2818;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Принять</button>
+</div>
+</div>
+<script>
+(function(){
+  var stored = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookieConsentBanner');
+  if (!stored && banner) { banner.style.display = 'flex'; }
+  function setConsent(state){
+    localStorage.setItem('cookie_consent', state);
+    if (banner) banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      var granted = state === 'accepted' ? 'granted' : 'denied';
+      gtag('consent', 'update', {'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted});
+    }
+  }
+  var a = document.getElementById('cookieAcceptBtn');
+  var r = document.getElementById('cookieRejectBtn');
+  if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
 })();
 </script>
 </body>

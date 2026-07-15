@@ -14,6 +14,7 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Ломает ли чёрный кофе голодание?","acceptedAnswer":{"@type":"Answer","text":"Обычный чёрный кофе и чай содержат незначительное количество калорий (менее 5 ккал) и обычно считаются приемлемыми во время голодания большинством практикующих интервальное голодание и исследователей. Они имеют лёгкий физиологический эффект (кофеин может немного подавлять аппетит и влиять на чувствительность к инсулину), но не «ломают» голодание так, как это делает еда. Однако добавление молока, сливок или сахара вносит реальные калории."}},{"@type":"Question","name":"Какой протокол лучше для начинающих?","acceptedAnswer":{"@type":"Answer","text":"16:8 обычно самая простая отправная точка, так как чаще всего это означает пропуск завтрака и первый приём пищи около полудня — большинство людей адаптируются к этому за одну-две недели. Прямой переход к OMAD или 20:4 без постепенного наращивания обычно сложнее поддерживать и повышает риск переедания в более коротком окне питания."}},{"@type":"Question","name":"Замедлит ли интервальное голодание метаболизм?","acceptedAnswer":{"@type":"Answer","text":"Кратковременные окна голодания 16-24 часа не замедляют метаболизм заметно для большинства людей — некоторые исследования даже предполагают, что кратковременное голодание может немного повысить норадреналин и метаболизм в краткосрочной перспективе. Длительное, серьёзное ограничение калорий на протяжении многих недель — другой вопрос и может привести к метаболической адаптации, но это функция самого дефицита калорий, а не конкретно окна голодания."}},{"@type":"Question","name":"Можно ли тренироваться во время голодания?","acceptedAnswer":{"@type":"Answer","text":"Многие люди тренируются натощак без проблем, особенно при низкой-умеренной интенсивности, как ходьба, йога или лёгкое кардио. Очень интенсивные или длительные тренировки могут ощущаться заметно тяжелее без топлива для некоторых людей, особенно поначалу, пока организм не адаптировался. Если результативность страдает, разумной корректировкой будет планировать более тяжёлые тренировки ближе к окну питания или внутри него."}}]}
   </script>
 <link href="../style.css" rel="stylesheet"/>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var _cc=localStorage.getItem('cookie_consent');var _cg=_cc==='accepted'?'granted':'denied';gtag('consent','default',{'ad_storage':_cg,'ad_user_data':_cg,'ad_personalization':_cg,'analytics_storage':_cg,'wait_for_update':500});</script>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
 <!-- Google Analytics -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
@@ -500,6 +501,32 @@ document.getElementById('calcBtn').addEventListener('click', function() {
       }
     });
   });
+})();
+</script>
+<div id="cookieConsentBanner" style="position:fixed;bottom:0;left:0;right:0;background:#1A1A18;color:#F9F6F0;padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:10000;box-shadow:0 -2px 12px rgba(0,0,0,0.15);font-family:inherit;">
+<p style="margin:0;font-size:0.85rem;flex:1;min-width:240px;">Мы используем cookies для аналитики и показа релевантной рекламы. <a href="/ru/privacy.html" style="color:#9FD8B8;text-decoration:underline;">Подробнее</a></p>
+<div style="display:flex;gap:10px;flex-shrink:0;">
+<button id="cookieRejectBtn" style="padding:9px 18px;background:transparent;color:#F9F6F0;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Отклонить</button>
+<button id="cookieAcceptBtn" style="padding:9px 18px;background:#52B788;color:#0D2818;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Принять</button>
+</div>
+</div>
+<script>
+(function(){
+  var stored = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookieConsentBanner');
+  if (!stored && banner) { banner.style.display = 'flex'; }
+  function setConsent(state){
+    localStorage.setItem('cookie_consent', state);
+    if (banner) banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      var granted = state === 'accepted' ? 'granted' : 'denied';
+      gtag('consent', 'update', {'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted});
+    }
+  }
+  var a = document.getElementById('cookieAcceptBtn');
+  var r = document.getElementById('cookieRejectBtn');
+  if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
 })();
 </script>
 </body>

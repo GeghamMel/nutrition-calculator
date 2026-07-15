@@ -10,6 +10,7 @@
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Можно ли реально «ускорить» метаболизм?","acceptedAnswer":{"@type":"Answer","text":"В умеренной степени — да. Наращивание мышечной массы через силовые тренировки — самый надёжный рычаг, так как мышечная ткань сжигает больше калорий в покое, чем жировая. Достаточное потребление белка, активность в течение всего дня (не только на тренировках) и качественный сон поддерживают здоровый метаболизм — но заявления о конкретных «ускоряющих метаболизм продуктах», кардинально меняющих BMR, обычно сильно преувеличены."}},{"@type":"Question","name":"Замедляет ли снижение калорий метаболизм?","acceptedAnswer":{"@type":"Answer","text":"Да, в некоторой степени — это называется адаптивный термогенез. При длительном дефиците калорий организм снижает расход энергии несколько больше, чем можно было бы ожидать только от потери веса, отчасти как эволюционная реакция на воспринимаемый дефицит ресурсов. Это одна из причин, почему очень агрессивные, длительные дефициты калорий часто дают обратный эффект; умеренный, устойчивый дефицит обычно лучше сохраняет метаболизм."}},{"@type":"Question","name":"BMR и TDEE — это одно и то же?","acceptedAnswer":{"@type":"Answer","text":"Нет. BMR — это только калории, сжигаемые в полном покое. TDEE (общий суточный расход энергии) добавляет калории, сжигаемые через повседневную активность, тренировки и переваривание пищи (термический эффект пищи) — TDEE обычно на 20-80% выше BMR в зависимости от уровня активности, и именно это число нужно использовать для планирования питания, а не только BMR."}},{"@type":"Question","name":"Может ли заболевание объяснять медленный метаболизм?","acceptedAnswer":{"@type":"Answer","text":"Да, такие состояния, как гипотиреоз, могут заметно снижать BMR, а некоторые лекарства также влияют на скорость метаболизма. Если вы постоянно чувствуете, что ваш реальный расход калорий намного ниже расчёта этого калькулятора при точно указанном уровне активности, стоит обсудить это с врачом, а не считать, что калькулятор просто ошибается."}}]}
   </script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var _cc=localStorage.getItem('cookie_consent');var _cg=_cc==='accepted'?'granted':'denied';gtag('consent','default',{'ad_storage':_cg,'ad_user_data':_cg,'ad_personalization':_cg,'analytics_storage':_cg,'wait_for_update':500});</script>
 <script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6528076410139599"></script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-RXLXM57ZKH"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-RXLXM57ZKH');</script>
@@ -539,6 +540,32 @@ function savePageResults() {
       }
     });
   });
+})();
+</script>
+<div id="cookieConsentBanner" style="position:fixed;bottom:0;left:0;right:0;background:#1A1A18;color:#F9F6F0;padding:16px 20px;display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;z-index:10000;box-shadow:0 -2px 12px rgba(0,0,0,0.15);font-family:inherit;">
+<p style="margin:0;font-size:0.85rem;flex:1;min-width:240px;">Мы используем cookies для аналитики и показа релевантной рекламы. <a href="/ru/privacy.html" style="color:#9FD8B8;text-decoration:underline;">Подробнее</a></p>
+<div style="display:flex;gap:10px;flex-shrink:0;">
+<button id="cookieRejectBtn" style="padding:9px 18px;background:transparent;color:#F9F6F0;border:1.5px solid rgba(255,255,255,0.3);border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Отклонить</button>
+<button id="cookieAcceptBtn" style="padding:9px 18px;background:#52B788;color:#0D2818;border:none;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;">Принять</button>
+</div>
+</div>
+<script>
+(function(){
+  var stored = localStorage.getItem('cookie_consent');
+  var banner = document.getElementById('cookieConsentBanner');
+  if (!stored && banner) { banner.style.display = 'flex'; }
+  function setConsent(state){
+    localStorage.setItem('cookie_consent', state);
+    if (banner) banner.style.display = 'none';
+    if (typeof gtag === 'function') {
+      var granted = state === 'accepted' ? 'granted' : 'denied';
+      gtag('consent', 'update', {'ad_storage':granted,'ad_user_data':granted,'ad_personalization':granted,'analytics_storage':granted});
+    }
+  }
+  var a = document.getElementById('cookieAcceptBtn');
+  var r = document.getElementById('cookieRejectBtn');
+  if (a) a.addEventListener('click', function(){ setConsent('accepted'); });
+  if (r) r.addEventListener('click', function(){ setConsent('rejected'); });
 })();
 </script>
 </body>
