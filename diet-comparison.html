@@ -23,7 +23,7 @@
 <meta content="https://calories-macros.com/og-image.png" property="og:image"/>
 <link href="style.css" rel="stylesheet"/>
 <style>
-    .diet-card { background:white; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:24px; }
+    .diet-card { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:24px; }
     .diet-header { padding:20px 24px; display:flex; align-items:center; gap:16px; }
     .diet-icon { font-size:2rem; width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .diet-body { padding:0 24px 24px; }
@@ -158,7 +158,7 @@
 <div class="container" style="padding:40px 20px 80px;max-width:900px;">
 <p style="max-width:720px;margin:0 auto 28px;color:var(--muted);line-height:1.7;">With dozens of popular eating patterns competing for attention, the honest answer is that no single diet is objectively 'best' — research consistently shows that the diet you can actually stick to long-term outperforms a theoretically optimal one you abandon after three weeks. What varies between diets is the macro split, the level of restriction, the evidence base behind specific health claims, and how well each pattern fits different lifestyles, food preferences, and goals. This comparison lays out the macro breakdown, strength of evidence, and who each approach tends to suit, so you can make an informed choice rather than following whichever diet is trending.</p>
 <!-- Quick comparison table -->
-<div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;margin-bottom:48px;">
+<div style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;margin-bottom:48px;">
 <table class="compare-table">
 <thead>
 <tr>
@@ -375,7 +375,7 @@ function renderAll() {
 
     return '<div class="diet-card">' +
       '<div class="diet-header" style="background:' + d.color + ';">' +
-        '<div class="diet-icon" style="background:white;">' + d.icon + '</div>' +
+        '<div class="diet-icon" style="background:var(--white);">' + d.icon + '</div>' +
         '<div><h2 style="font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:4px;">' + name + '</h2>' +
         '<p style="font-size:0.82rem;color:var(--muted);">' + (l==='ru'?d.best_ru:d.best_en) + '</p></div>' +
       '</div>' +

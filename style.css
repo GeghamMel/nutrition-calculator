@@ -23,6 +23,7 @@
   --shadow: 0 2px 12px rgba(0,0,0,0.07);
   --max-w: 860px;
   --max-w-wide: 1100px;
+  --footer-bg: #1A1A18;
 }
 
 :root[data-theme="dark"] {
@@ -39,6 +40,7 @@
 }
 :root[data-theme="dark"] img:not([id^="shareCard"] img) { filter: brightness(0.92); }
 :root[data-theme="dark"] .lang-toggle, :root[data-theme="dark"] .header-lang { background: rgba(255,255,255,0.08); }
+:root[data-theme="dark"] .blog-tag[style] { background: var(--green-pale) !important; color: var(--green-light) !important; }
 
 /* --- Reset --- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -441,7 +443,7 @@ a:hover { text-decoration: underline; }
    FOOTER
    ========================================= */
 .site-footer {
-  background: var(--ink);
+  background: var(--footer-bg);
   color: rgba(255,255,255,0.6);
   padding: 48px 20px 32px;
   font-size: 0.85rem;
@@ -500,11 +502,11 @@ a:hover { text-decoration: underline; }
   font-size: 1.05rem; font-weight: 600;
   margin: 28px 0 10px;
 }
-.article-body p { margin-bottom: 18px; color: #374151; }
+.article-body p { margin-bottom: 18px; color: var(--ink); }
 .article-body ul, .article-body ol {
   margin: 0 0 18px 24px;
 }
-.article-body li { margin-bottom: 6px; color: #374151; }
+.article-body li { margin-bottom: 6px; color: var(--ink); }
 .article-body .callout {
   background: var(--green-pale);
   border-left: 4px solid var(--green);

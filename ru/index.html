@@ -481,11 +481,11 @@
 <!-- Filter tabs -->
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
 <button class="protein-filter active" data-filter="all" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--green);background:var(--green);color:white;font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">Все</button>
-<button class="protein-filter" data-filter="animal" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🥩 Животные</button>
-<button class="protein-filter" data-filter="plant" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🌱 Растительные</button>
-<button class="protein-filter" data-filter="dairy" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🥛 Молочные</button>
+<button class="protein-filter" data-filter="animal" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🥩 Животные</button>
+<button class="protein-filter" data-filter="plant" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🌱 Растительные</button>
+<button class="protein-filter" data-filter="dairy" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🥛 Молочные</button>
 </div>
-<div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch;">
+<div style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch;">
 <table id="proteinTable" style="width:100%;min-width:480px;border-collapse:collapse;font-size:0.9rem;">
 <thead>
 <tr style="background:var(--green);color:white;">
@@ -503,7 +503,7 @@
 </table>
 </div>
 <!-- Expanded detail panel -->
-<div id="proteinDetail" style="display:none;margin-top:16px;background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;">
+<div id="proteinDetail" style="display:none;margin-top:16px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;">
 <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
 <h3 id="detailName" style="font-size:1.1rem;font-weight:600;"></h3>
 <button onclick="document.getElementById('proteinDetail').style.display='none'" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);">×</button>
@@ -626,12 +626,12 @@
 <p class="section-sub">Углеводы на 100г — отсортировано по содержанию. Нажмите на строку для подробностей.</p>
 <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;">
 <button class="carb-filter active" data-filter="all" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--green);background:var(--green);color:white;font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">Все</button>
-<button class="carb-filter" data-filter="grains" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🌾 Злаки</button>
-<button class="carb-filter" data-filter="fruits" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🍎 Фрукты</button>
-<button class="carb-filter" data-filter="veggies" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🥦 Овощи</button>
-<button class="carb-filter" data-filter="legumes" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:white;color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🫘 Бобовые</button>
+<button class="carb-filter" data-filter="grains" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🌾 Злаки</button>
+<button class="carb-filter" data-filter="fruits" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🍎 Фрукты</button>
+<button class="carb-filter" data-filter="veggies" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🥦 Овощи</button>
+<button class="carb-filter" data-filter="legumes" style="padding:7px 18px;border-radius:20px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);font-family:var(--font-body);font-size:0.85rem;font-weight:600;cursor:pointer;">🫘 Бобовые</button>
 </div>
-<div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;">
+<div style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;">
 <table style="width:100%;min-width:480px;border-collapse:collapse;font-size:0.9rem;">
 <thead>
 <tr style="background:var(--green);color:white;">
@@ -646,7 +646,7 @@
 <tbody id="carbsTbody"></tbody>
 </table>
 </div>
-<div id="carbsDetail" style="display:none;margin-top:16px;background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;">
+<div id="carbsDetail" style="display:none;margin-top:16px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;">
 <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
 <h3 id="carbsDetailName" style="font-size:1.1rem;font-weight:600;"></h3>
 <button onclick="document.getElementById('carbsDetail').style.display='none'" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);">×</button>

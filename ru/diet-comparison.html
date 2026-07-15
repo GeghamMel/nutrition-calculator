@@ -19,7 +19,7 @@
 <meta content="https://calories-macros.com/og-image.png" property="og:image"/>
 <link href="../style.css" rel="stylesheet"/>
 <style>
-    .diet-card { background:white; border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:24px; }
+    .diet-card { background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin-bottom:24px; }
     .diet-header { padding:20px 24px; display:flex; align-items:center; gap:16px; }
     .diet-icon { font-size:2rem; width:56px; height:56px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .diet-body { padding:0 24px 24px; }
@@ -154,7 +154,7 @@
 <div class="container" style="padding:40px 20px 80px;max-width:900px;">
 <p style="max-width:720px;margin:0 auto 28px;color:var(--muted);line-height:1.7;">При десятках популярных схем питания, конкурирующих за внимание, честный ответ таков: ни одна диета объективно не является «лучшей» — исследования стабильно показывают, что диета, которой вы реально можете придерживаться долгосрочно, превосходит теоретически оптимальную, от которой вы отказываетесь через три недели. Между диетами различается соотношение БЖУ, уровень ограничений, доказательная база конкретных заявлений о здоровье и то, насколько каждая схема подходит разному образу жизни, пищевым предпочтениям и целям. Это сравнение показывает БЖУ, силу доказательной базы и кому подходит каждый подход, чтобы вы могли сделать осознанный выбор, а не следовать за трендом.</p>
 <!-- Quick comparison table -->
-<div style="background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;margin-bottom:48px;">
+<div style="background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;overflow-x:auto;margin-bottom:48px;">
 <table class="compare-table">
 <thead>
 <tr>
@@ -371,7 +371,7 @@ function renderAll() {
 
     return '<div class="diet-card">' +
       '<div class="diet-header" style="background:' + d.color + ';">' +
-        '<div class="diet-icon" style="background:white;">' + d.icon + '</div>' +
+        '<div class="diet-icon" style="background:var(--white);">' + d.icon + '</div>' +
         '<div><h2 style="font-family:var(--font-display);font-size:1.3rem;font-weight:400;margin-bottom:4px;">' + name + '</h2>' +
         '<p style="font-size:0.82rem;color:var(--muted);">' + (l==='ru'?d.best_ru:d.best_en) + '</p></div>' +
       '</div>' +
