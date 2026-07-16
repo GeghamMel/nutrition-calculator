@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-
+<!DOCTYPE HTML>
 <html lang="en">
 <head><script>localStorage.setItem('lang','en');</script><script>(function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Water Intake Calculator — Daily Water Needs | Calories &amp; Macros</title>
-<meta content="Calculate how much water you should drink per day based on your weight, activity level, and climate. Free daily water intake calculator." name="description"/>
-<link href="https://calories-macros.com/water-intake-calculator.html" rel="canonical"/>
+<title>Calorie Cycling Calculator — High/Low Day Split | Calories &amp; Macros</title>
+<meta content="Calculate your high-calorie and low-calorie day targets for calorie cycling, while keeping your weekly average on track. Free calorie cycling calculator." name="description"/>
+<link href="https://calories-macros.com/calorie-cycling-calculator.html" rel="canonical"/>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"Can you drink too much water?","acceptedAnswer":{"@type":"Answer","text":"Yes — drinking excessive amounts in a short time can cause hyponatremia (dangerously low blood sodium), though this is rare and usually only seen in endurance athletes or extreme water-drinking challenges."}},
-    {"@type":"Question","name":"Do coffee and tea count toward my water intake?","acceptedAnswer":{"@type":"Answer","text":"Yes, largely. The old idea that caffeinated drinks are dehydrating is mostly outdated — the mild diuretic effect of caffeine is offset by the water content of the drink itself."}},
-    {"@type":"Question","name":"How do I know if I'm dehydrated?","acceptedAnswer":{"@type":"Answer","text":"The simplest indicator is urine colour — pale straw yellow means good hydration, while dark yellow or amber suggests you need more fluids."}},
-    {"@type":"Question","name":"Does water intake affect weight loss?","acceptedAnswer":{"@type":"Answer","text":"Indirectly, yes. Water has no calories, but drinking it before meals can reduce how much you eat, and staying hydrated supports metabolism and exercise performance."}}
+    {"@type":"Question","name":"What is calorie cycling?","acceptedAnswer":{"@type":"Answer","text":"Calorie cycling means eating more calories on some days (often training days) and fewer on others (often rest days), while keeping your weekly average the same as a standard flat daily target."}},
+    {"@type":"Question","name":"Does calorie cycling work better than eating the same calories every day?","acceptedAnswer":{"@type":"Answer","text":"For weight loss specifically, research doesn't show a clear advantage over a flat daily target at the same weekly average — total weekly calories matter most. The benefit of cycling is largely about adherence and matching intake to training demands, not a unique metabolic effect."}},
+    {"@type":"Question","name":"Should I eat more on workout days or rest days?","acceptedAnswer":{"@type":"Answer","text":"Most people cycle higher calories on training days, when the body can use the extra energy and carbohydrates for performance and recovery, and lower calories on rest days when energy demands are naturally reduced."}},
+    {"@type":"Question","name":"How big should the swing be between high and low days?","acceptedAnswer":{"@type":"Answer","text":"A common range is 10-25% above and below your average, though this is a preference rather than a strict rule — extreme swings can make low days feel unpleasantly restrictive without added benefit."}}
   ]}
   </script>
 <link href="style.css" rel="stylesheet"/>
@@ -26,31 +25,33 @@
     gtag('js', new Date());
     gtag('config', 'G-RXLXM57ZKH');
   </script>
-<link href="https://calories-macros.com/water-intake-calculator.html" hreflang="en" rel="alternate"/>
-<link href="https://calories-macros.com/ru/water-intake-calculator.html" hreflang="ru" rel="alternate"/>
-<link href="https://calories-macros.com/water-intake-calculator.html" hreflang="x-default" rel="alternate"/>
+<link href="https://calories-macros.com/calorie-cycling-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://calories-macros.com/ru/calorie-cycling-calculator.html" hreflang="ru" rel="alternate"/>
+<link href="https://calories-macros.com/calorie-cycling-calculator.html" hreflang="x-default" rel="alternate"/>
 <!-- Open Graph -->
-<meta content="Water Intake Calculator — Daily Hydration | Calories &amp; Macros" property="og:title"/>
-<meta content="Calculate how much water you should drink per day based on your weight, activity level, and climate." property="og:description"/>
+<meta content="Calorie Cycling Calculator — High/Low Day Split" property="og:title"/>
+<meta content="Calculate your high-calorie and low-calorie day targets for calorie cycling." property="og:description"/>
 <meta content="website" property="og:type"/>
-<meta content="https://calories-macros.com/water-intake-calculator.html" property="og:url"/>
+<meta content="https://calories-macros.com/calorie-cycling-calculator.html" property="og:url"/>
 <meta content="https://calories-macros.com/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="Calories &amp; Macros" property="og:site_name"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Water Intake Calculator — Daily Hydration | Calories &amp; Macros" name="twitter:title"/>
-<meta content="Calculate how much water you should drink per day based on your weight, activity level, and climate." name="twitter:description"/>
+<meta content="Calorie Cycling Calculator — High/Low Day Split" name="twitter:title"/>
+<meta content="Calculate your high and low calorie day targets for calorie cycling." name="twitter:description"/>
 <meta content="https://calories-macros.com/og-image.png" name="twitter:image"/>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
     {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
-    {"@type":"ListItem","position":3,"name":"Water Intake Calculator","item":"https://calories-macros.com/water-intake-calculator.html"}
+    {"@type":"ListItem","position":3,"name":"Calorie Cycling Calculator","item":"https://calories-macros.com/calorie-cycling-calculator.html"}
   ]}
   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Calorie Cycling Calculator","url":"https://calories-macros.com/calorie-cycling-calculator.html","description":"Free calorie cycling calculator for high and low calorie day targets.","applicationCategory":"HealthApplication"}
+  </script>
 </head>
 <body>
 <header class="site-header">
@@ -59,8 +60,8 @@
 <a aria-label="Search" href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
 <button aria-label="Toggle dark mode" id="themeToggle" onclick="toggleTheme()" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;border:none;cursor:pointer;font-size:1rem;flex-shrink:0;">🌙</button>
 <div class="header-lang" id="headerLang">
-<a class="active" href="/water-intake-calculator.html" id="headerLangEN">EN</a>
-<a class="" href="/ru/water-intake-calculator.html" id="headerLangRU">RU</a>
+<a class="active" href="/calorie-cycling-calculator.html" id="headerLangEN">EN</a>
+<a class="" href="/ru/calorie-cycling-calculator.html" id="headerLangRU">RU</a>
 </div>
 <button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 <nav class="site-nav" id="siteNav">
@@ -152,20 +153,20 @@
 </div>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
-<div class="lang-toggle"><a class="active" href="/water-intake-calculator.html" id="langEN">EN</a><a class="" href="/ru/water-intake-calculator.html" id="langRU">RU</a></div>
+<div class="lang-toggle"><a class="active" href="/calorie-cycling-calculator.html" id="langEN">EN</a><a class="" href="/ru/calorie-cycling-calculator.html" id="langRU">RU</a></div>
 </nav>
 </div>
 </header>
 <section class="hero">
 <div class="hero-content">
 <div class="hero-eyebrow">Free Health Calculator</div>
-<h1>Water Intake Calculator — <em>Daily Hydration</em></h1>
-<p>Find out exactly how much water you should drink per day based on your weight, activity, and climate.</p>
-<a class="btn-scroll" href="#calculator">Calculate Water Needs ↓</a>
+<h1>Calorie Cycling <em>Calculator</em></h1>
+<p>Find your high-day and low-day calorie targets for calorie cycling, while keeping your weekly average exactly on track.</p>
+<a class="btn-scroll" href="#calculator">Calculate My Cycle ↓</a>
 </div>
 </section>
 <div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;max-width:680px;margin:16px auto 0;border-radius:0 8px 8px 0;">
-<p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;">Your saved water intake:</p>
+<p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;">Your saved cycling plan:</p>
 <p id="savedBannerText" style="font-size:0.85rem;color:var(--muted);"></p>
 <div style="display:flex;gap:10px;margin-top:10px;">
 <button onclick="document.getElementById('savedBanner').style.display='none'" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);">Dismiss</button>
@@ -173,56 +174,48 @@
 </div>
 <section class="calc-section" id="calculator">
 <div class="container">
-<div class="section-label">Water Intake Calculator</div>
-<h2 class="section-title">Enter your details</h2>
-<p class="section-sub">Based on the standard 35 ml/kg formula adjusted for activity and climate.</p>
+<div class="section-label">Calorie Cycling Calculator</div>
+<h2 class="section-title">Enter your average daily target</h2>
+<p class="section-sub">Not sure of your average? Use our <a href="/" style="color:var(--green);">Calorie &amp; Macro Calculator</a> first to find it.</p>
 <div class="calc-card">
 <div class="calc-grid">
 <div class="field">
-<label for="weight">Weight (kg)</label>
-<input id="weight" max="300" min="20" placeholder="e.g. 75" type="number"/>
+<label for="avgCalories">Average daily calories</label>
+<input id="avgCalories" max="6000" min="800" placeholder="e.g. 2200" type="number"/>
 </div>
 <div class="field">
-<label for="activity">Activity level</label>
-<select id="activity">
-<option value="1.0">Sedentary (little or no exercise)</option>
-<option value="1.1">Light (1–3 workouts/week)</option>
-<option selected="" value="1.2">Moderate (3–5 workouts/week)</option>
-<option value="1.35">Active (6–7 workouts/week)</option>
-<option value="1.5">Very active (physical job + training)</option>
-</select>
-</div>
-<div class="field" style="grid-column:1/-1;">
-<label for="climate">Climate / environment</label>
-<select id="climate">
-<option value="0">Cool / temperate (office, mild weather)</option>
-<option selected="" value="200">Warm (typical outdoor environment)</option>
-<option value="400">Hot / humid (summer, tropical climate)</option>
+<label for="highDays">High-calorie days per week</label>
+<select id="highDays">
+<option value="1">1 day</option>
+<option value="2">2 days</option>
+<option selected="" value="3">3 days</option>
+<option value="4">4 days</option>
+<option value="5">5 days</option>
 </select>
 </div>
 </div>
-<button class="btn-calc" id="calcBtn">Calculate →</button>
-<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please enter your weight.</p>
+<div class="field" style="margin-top:20px;">
+<label for="swingPct">Swing between high and low days</label>
+<select id="swingPct">
+<option value="10">10% (mild)</option>
+<option selected="" value="20">20% (moderate)</option>
+<option value="30">30% (aggressive)</option>
+</select>
+</div>
+<button class="btn-calc" id="calcBtn" style="margin-top:16px;">Calculate →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please enter your average daily calories.</p>
 <div class="calc-results" id="calcResults">
-<div class="calories-display">
-<div class="kcal-number" id="waterLitres">—</div>
-<div class="kcal-label">litres per day</div>
-</div>
-<div class="macros-grid">
-<div class="macro-item">
-<div class="macro-value" id="waterMl">—</div>
-<div class="macro-name">ml / day</div>
+<div class="macros-grid" style="grid-template-columns:1fr 1fr;">
+<div class="macro-item" style="background:var(--green-pale);">
+<div class="macro-value" id="highDayCals" style="color:var(--green);">—</div>
+<div class="macro-name">kcal on high days</div>
 </div>
 <div class="macro-item">
-<div class="macro-value" id="waterGlasses">—</div>
-<div class="macro-name">glasses (250ml)</div>
-</div>
-<div class="macro-item">
-<div class="macro-value" id="waterBottles">—</div>
-<div class="macro-name">bottles (500ml)</div>
+<div class="macro-value" id="lowDayCals">—</div>
+<div class="macro-name">kcal on low days</div>
 </div>
 </div>
-<div class="result-note" id="resultNote"></div>
+<div class="result-note" id="resultNote" style="margin-top:16px;"></div>
 <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
 <button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Save results</button>
 <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Print</button>
@@ -230,17 +223,15 @@
 </div>
 <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
 <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
-<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My daily water target</p>
-<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
-<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">litres per day</p>
-<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My calorie cycling plan</p>
+<div style="display:flex;justify-content:space-around;">
 <div>
-<p style="font-size:11px;color:#888780;margin:0 0 2px;">Glasses</p>
-<p id="shareCardGlasses" style="font-size:15px;font-weight:600;margin:0;">—</p>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">High days</p>
+<p id="shareCardHigh" style="font-size:26px;font-weight:600;color:#2D6A4F;margin:0;">—</p>
 </div>
 <div>
-<p style="font-size:11px;color:#888780;margin:0 0 2px;">Bottles (500ml)</p>
-<p id="shareCardBottles" style="font-size:15px;font-weight:600;margin:0;">—</p>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Low days</p>
+<p id="shareCardLow" style="font-size:26px;font-weight:600;margin:0;">—</p>
 </div>
 </div>
 <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
@@ -253,28 +244,28 @@
 <div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
 <section class="how-section">
 <div class="container">
-<div class="section-label">Hydration tips</div>
-<h2 class="section-title">How to stay hydrated</h2>
+<div class="section-label">Calorie cycling tips</div>
+<h2 class="section-title">How to make cycling work for you</h2>
 <div class="steps-grid">
 <div class="step">
-<div class="step-num">💧</div>
-<h3>Start your morning</h3>
-<p>Drink 400–500 ml of water first thing in the morning to replenish overnight losses. You lose roughly 300–500 ml of water overnight through breathing and skin evaporation alone, so this simple habit corrects the deficit before your day even starts and helps kick-start digestion.</p>
+<div class="step-num">🏋️</div>
+<h3>Match high days to training</h3>
+<p>Schedule your high-calorie days on days you train, particularly heavy strength sessions or long cardio. This aligns extra energy intake with the days your body can actually use it for performance and recovery.</p>
 </div>
 <div class="step">
-<div class="step-num">🏋️</div>
-<h3>Around workouts</h3>
-<p>Drink 500 ml before exercise and 200–300 ml every 15–20 minutes during training. For sessions longer than 60 minutes, or in hot conditions, consider adding electrolytes (sodium, potassium) since sweat carries out more than just water — plain water alone can dilute sodium levels during very long or intense efforts.</p>
+<div class="step-num">📅</div>
+<h3>Keep the weekly average fixed</h3>
+<p>The entire point of cycling is that your weekly total stays the same as a flat daily approach — it's a redistribution, not extra or fewer total calories. Track your week, not just individual days, to confirm you're on target.</p>
 </div>
 <div class="step">
 <div class="step-num">🍽️</div>
-<h3>With meals</h3>
-<p>Drinking water with meals aids digestion and helps you feel fuller, naturally reducing calorie intake. Research on pre-meal water consumption suggests drinking roughly 500 ml about 30 minutes before eating can modestly reduce the amount of food eaten, particularly for weight management goals.</p>
+<h3>Adjust carbs more than protein</h3>
+<p>Many people cycling calories keep protein fairly constant across high and low days, and adjust mostly carbohydrates (and sometimes fat) to create the swing — since protein needs don't change much based on daily training status.</p>
 </div>
 <div class="step">
-<div class="step-num">🌡️</div>
-<h3>Hot weather</h3>
-<p>In hot or humid conditions, increase your intake by 500–1000 ml per day above your baseline. Heat and humidity both raise sweat rate even without exercise, and the effect compounds if you're also physically active outdoors — check your urine colour as a quick guide: pale yellow means you're well hydrated.</p>
+<div class="step-num">🧠</div>
+<h3>Use low days strategically</h3>
+<p>Placing low-calorie days on rest days or lighter training days, when hunger and energy needs are naturally somewhat reduced, tends to make the lower intake feel more manageable than an arbitrary low day unrelated to activity.</p>
 </div>
 </div>
 </div>
@@ -284,31 +275,31 @@
 <div class="container">
 <div class="section-label">Methodology</div>
 <h2 class="section-title">How this calculator works, and its limits</h2>
-<p>This calculator uses the widely cited 35 ml per kilogram of body weight formula as a baseline, then adjusts upward for activity level and climate. For a 75 kg adult at moderate activity in a warm climate, that works out to roughly 2.8–3 litres per day — broadly in line with the general guidance from health authorities like the U.S. National Academies of Sciences, which recommends around 2.7 litres/day for women and 3.7 litres/day for men from all beverages and food combined.</p>
-<p style="margin-top:16px;">Keep in mind that roughly 20% of daily water intake typically comes from food (especially fruits, vegetables, and soups), so this result already accounts for that in the multiplier. This formula is a general estimate, not a medical prescription: people with kidney disease, heart failure, or those on fluid-restriction medication should follow their doctor's specific guidance rather than a generic calculator. Athletes doing very long endurance events should also account for sweat rate testing rather than relying on a flat formula.</p>
+<p>This calculator takes your average daily calorie target and redistributes it across the week so that high-calorie days sit above your average by the swing percentage you select, while low-calorie days are adjusted downward just enough to keep the weekly total mathematically identical to eating your average every day. For example, an average of 2200 kcal with a 20% swing and 3 high days produces high days around 2640 kcal and low days around 1980 kcal, while the 7-day total still equals exactly what a flat 2200 kcal/day approach would produce.</p>
+<p style="margin-top:16px;">Calorie cycling is a redistribution strategy, not a way to eat more or less overall — research doesn't show a unique metabolic advantage over a flat daily target at the same weekly average for weight loss specifically. Its main practical benefit is aligning intake with training demands and potentially improving adherence for people who find a completely flat daily target harder to sustain. If you have a diagnosed eating disorder history or a complicated relationship with food, a flatter, more consistent daily approach is often a safer and more sustainable choice — discuss with a doctor or dietitian if unsure.</p>
 </div>
 </section>
 <!-- FAQ -->
 <section class="faq-section">
 <div class="container">
 <div class="section-label">FAQ</div>
-<h2 class="section-title">Frequently asked questions about water intake</h2>
+<h2 class="section-title">Frequently asked questions about calorie cycling</h2>
 <div class="faq-list">
 <div class="faq-item">
-<button class="faq-question">Can you drink too much water?</button>
-<div class="faq-answer">Yes — drinking excessive amounts in a short time can cause hyponatremia (dangerously low blood sodium), though this is rare and usually only seen in endurance athletes or extreme water-drinking challenges. For most people spreading their daily intake across the day rather than chugging large amounts at once, this isn't a practical concern.</div>
+<button class="faq-question">What is calorie cycling?</button>
+<div class="faq-answer">Calorie cycling means eating more calories on some days (often training days) and fewer on others (often rest days), while keeping your weekly average the same as a standard flat daily target.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Do coffee and tea count toward my water intake?</button>
-<div class="faq-answer">Yes, largely. The old idea that caffeinated drinks are dehydrating is mostly outdated — for regular coffee/tea drinkers, the mild diuretic effect of caffeine is offset by the water content of the drink itself. That said, water and herbal teas remain the best default choice since they add no calories or caffeine load.</div>
+<button class="faq-question">Does calorie cycling work better than eating the same calories every day?</button>
+<div class="faq-answer">For weight loss specifically, research doesn't show a clear advantage over a flat daily target at the same weekly average — total weekly calories matter most. The benefit of cycling is largely about adherence and matching intake to training demands, not a unique metabolic effect.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">How do I know if I'm dehydrated?</button>
-<div class="faq-answer">The simplest indicator is urine colour — pale straw yellow means good hydration, while dark yellow or amber suggests you need more fluids. Other signs include thirst (a late signal — you're already mildly dehydrated by the time you feel thirsty), headache, fatigue, and dry mouth.</div>
+<button class="faq-question">Should I eat more on workout days or rest days?</button>
+<div class="faq-answer">Most people cycle higher calories on training days, when the body can use the extra energy and carbohydrates for performance and recovery, and lower calories on rest days when energy demands are naturally reduced.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Does water intake affect weight loss?</button>
-<div class="faq-answer">Indirectly, yes. Water itself has no calories, but drinking it before meals can reduce how much you eat, and staying well hydrated supports metabolism and exercise performance. It's not a magic weight-loss tool on its own, but it's a low-effort habit that supports a calorie deficit — pair it with our Weight Loss Calculator for a full plan.</div>
+<button class="faq-question">How big should the swing be between high and low days?</button>
+<div class="faq-answer">A common range is 10-25% above and below your average, though this is a preference rather than a strict rule — extreme swings can make low days feel unpleasantly restrictive without added benefit.</div>
 </div>
 </div>
 </div>
@@ -319,9 +310,9 @@
 <h2 class="section-title">Related tools</h2>
 <div class="blog-grid">
 <a class="blog-card" href="/" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Calories</span><h3>Calorie &amp; Macro Calculator</h3><p>Get your daily calorie and macro targets.</p><span class="blog-read-more">Open →</span></div></a>
-<a class="blog-card" href="bmi-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">BMI</span><h3>BMI Calculator</h3><p>Check if your weight is in a healthy range.</p><span class="blog-read-more">Open →</span></div></a>
-<a class="blog-card" href="ideal-weight-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Weight</span><h3>Ideal Weight Calculator</h3><p>Find your ideal body weight range.</p><span class="blog-read-more">Open →</span></div></a>
-<a class="blog-card" href="body-fat-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Body Fat</span><h3>Body Fat % Calculator</h3><p>Estimate your body fat percentage.</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="diet-tdee-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Diets</span><h3>TDEE by Diet Type</h3><p>Daily calories and macros for keto, vegan, paleo, or Mediterranean.</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="weight-loss-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Weight</span><h3>Weight Loss Calculator</h3><p>How long it will take to reach your goal weight.</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="blog/calorie-deficit-guide.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Guide</span><h3>Calorie Deficit Guide</h3><p>6 science-backed strategies for a sustainable deficit.</p><span class="blog-read-more">Read →</span></div></a>
 </div>
 </div>
 </section>
@@ -336,22 +327,19 @@
 <script>
 
 function savePageResults() {
+  var high = document.getElementById('highDayCals').textContent;
+  var low = document.getElementById('lowDayCals').textContent;
   var results = {};
-  document.querySelectorAll('.calc-results .kcal-number, .calc-results .macro-value, .calc-results .result-value, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct').forEach(function(el, i) {
-    if (el.textContent && el.textContent !== '—') results['val_' + i] = el.textContent;
-  });
-  // Get main result text
-  var mainEl = document.querySelector('.calc-results .kcal-number, #caloriesDisplay, #bmiValue, #litresDisplay, #avgWeight, #fatPct');
-  if (mainEl) results.mainValue = mainEl.textContent;
+  if (high !== '—') results.mainValue = high + ' / ' + low + ' kcal';
   results.savedAt = new Date().toLocaleDateString();
-  localStorage.setItem('cm_saved_water', JSON.stringify(results));
+  localStorage.setItem('cm_saved_cycling', JSON.stringify(results));
   var msg = document.getElementById('saveMsg');
   if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
 }
 
 // Show saved banner on load
 window.addEventListener('load', function() {
-  var saved = localStorage.getItem('cm_saved_water');
+  var saved = localStorage.getItem('cm_saved_cycling');
   if (!saved) return;
   try {
     var data = JSON.parse(saved);
@@ -359,12 +347,30 @@ window.addEventListener('load', function() {
     var banner = document.getElementById('savedBanner');
     var bannerText = document.getElementById('savedBannerText');
     if (!banner || !bannerText) return;
-    var l = localStorage.getItem('lang') || 'en';
-    bannerText.textContent = (l==='ru' ? 'Результат: ' : 'Result: ') + data.mainValue + ' · ' + (l==='ru' ? 'Сохранено: ' : 'Saved: ') + data.savedAt;
+    bannerText.textContent = 'Result: ' + data.mainValue + ' · Saved: ' + data.savedAt;
     banner.style.display = 'block';
   } catch(e) {}
 });
 document.getElementById('year').textContent = new Date().getFullYear();
+
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'calorie-cycling-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
+}
+
+document.querySelectorAll('.faq-question').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    const item = this.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
 
 function animateNumber(el, target, decimals, formatter) {
   decimals = decimals || 0;
@@ -385,59 +391,26 @@ function animateNumber(el, target, decimals, formatter) {
   requestAnimationFrame(step);
 }
 
-function downloadResultCard() {
-  var card = document.getElementById('shareCard');
-  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
-    var link = document.createElement('a');
-    link.download = 'water-intake-result.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  });
-}
-
-let currentLang = 'en';
-function applyLang(lang) {
-  currentLang = lang; document.documentElement.lang = lang;
-  document.querySelectorAll('[data-en]').forEach(function(el) { var t=el.getAttribute('data-'+lang); if(t) el.innerHTML=t; });
-  document.querySelectorAll('select option[data-en]').forEach(function(opt){ var t=opt.getAttribute('data-'+lang); if(t) opt.textContent=t; });
-  localStorage.setItem('lang', lang);
-}
-document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
-document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
-var sl = localStorage.getItem('lang');
-if (sl==='ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
-(function(){ var hEN=document.getElementById('headerLangEN'),hRU=document.getElementById('headerLangRU'); if(sl==='ru'){hRU.classList.add('active');hEN.classList.remove('active');} hEN.addEventListener('click',function(){document.getElementById('langEN').click();hEN.classList.add('active');hRU.classList.remove('active');}); hRU.addEventListener('click',function(){document.getElementById('langRU').click();hRU.classList.add('active');hEN.classList.remove('active');}); })();
-
-const noteText = {
-  en: 'This is your estimated daily water intake. Remember that food also provides about 20% of total water intake. Adjust upward if you feel thirsty, your urine is dark, or you exercise heavily.',
-  ru: 'Это ваша расчётная суточная норма воды. Помните, что ещё около 20% воды поступает из еды. Увеличивайте норму, если чувствуете жажду, моча тёмная или вы много тренируетесь.'
-};
-
-document.querySelectorAll('.faq-question').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    const item = this.closest('.faq-item');
-    const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
-  });
-});
-
 document.getElementById('calcBtn').addEventListener('click', function() {
-  const weight = parseFloat(document.getElementById('weight').value);
-  const activity = parseFloat(document.getElementById('activity').value);
-  const climate = parseFloat(document.getElementById('climate').value);
+  const avg = parseFloat(document.getElementById('avgCalories').value);
+  const highDays = parseInt(document.getElementById('highDays').value);
+  const swingPct = parseFloat(document.getElementById('swingPct').value) / 100;
   const err = document.getElementById('calcError');
-  if (!weight || weight < 20) { err.style.display='block'; return; }
+
+  if (!avg || avg < 800) { err.style.display='block'; return; }
   err.style.display = 'none';
-  const ml = Math.round((weight * 35 * activity + climate) / 50) * 50;
-  animateNumber(document.getElementById('waterLitres'), ml/1000, 1);
-  animateNumber(document.getElementById('waterMl'), ml, 0, function(v) { return Number(v).toLocaleString(); });
-  animateNumber(document.getElementById('waterGlasses'), Math.round(ml/250), 0);
-  animateNumber(document.getElementById('waterBottles'), Math.round(ml/500), 0);
-  document.getElementById('resultNote').textContent = noteText[currentLang];
-  document.getElementById('shareCardValue').textContent = (ml/1000).toFixed(1);
-  document.getElementById('shareCardGlasses').textContent = Math.round(ml/250);
-  document.getElementById('shareCardBottles').textContent = Math.round(ml/500);
+
+  const lowDays = 7 - highDays;
+  const highCal = avg * (1 + swingPct);
+  const lowCal = (avg * 7 - highDays * highCal) / lowDays;
+
+  animateNumber(document.getElementById('highDayCals'), Math.round(highCal/10)*10, 0, function(v){ return Number(v).toLocaleString(); });
+  animateNumber(document.getElementById('lowDayCals'), Math.round(lowCal/10)*10, 0, function(v){ return Number(v).toLocaleString(); });
+
+  document.getElementById('resultNote').textContent = highDays + ' high day' + (highDays>1?'s':'') + ' at ~' + Math.round(highCal) + ' kcal + ' + lowDays + ' low day' + (lowDays>1?'s':'') + ' at ~' + Math.round(lowCal) + ' kcal averages to exactly ' + Math.round(avg) + ' kcal/day across the week.';
+
+  document.getElementById('shareCardHigh').textContent = Math.round(highCal/10)*10;
+  document.getElementById('shareCardLow').textContent = Math.round(lowCal/10)*10;
 
   document.getElementById('calcResults').classList.add('visible');
   setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
