@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-
+<!DOCTYPE HTML>
 <html lang="en">
 <head><script>localStorage.setItem('lang','en');</script><script>(function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros</title>
-<meta content="Calculate your one-rep max (1RM) from any weight and rep count, with training percentages for strength, hypertrophy, and endurance." name="description"/>
-<link href="https://calories-macros.com/one-rep-max-calculator.html" rel="canonical"/>
-<script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"One Rep Max Calculator","url":"https://calories-macros.com/one-rep-max-calculator.html","description":"Free one-rep max (1RM) calculator with training percentage breakdown.","applicationCategory":"HealthApplication"}
-  </script>
+<title>Pace Calculator — Running Pace, Speed &amp; Race Predictor | Calories &amp; Macros</title>
+<meta content="Calculate your running pace per km or mile, speed, and predicted race times for 5K, 10K, half marathon, and marathon. Free pace calculator." name="description"/>
+<link href="https://calories-macros.com/pace-calculator.html" rel="canonical"/>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"How accurate are 1RM prediction formulas?","acceptedAnswer":{"@type":"Answer","text":"Generally within 5-10% of your actual max for rep ranges of 2-10, but accuracy drops noticeably above 10-12 reps since the formulas were built from lower-rep data."}},
-    {"@type":"Question","name":"Which 1RM formula is most accurate?","acceptedAnswer":{"@type":"Answer","text":"No single formula is universally best — Epley tends to run slightly higher, Brzycki slightly lower, and the true value usually falls between them. We average both for a balanced estimate."}},
-    {"@type":"Question","name":"Should beginners test or estimate their 1RM?","acceptedAnswer":{"@type":"Answer","text":"Beginners should estimate rather than test a true 1RM, since maximal single-rep attempts carry higher injury risk without established technique and neuromuscular coordination under heavy load."}},
-    {"@type":"Question","name":"How often should I retest my 1RM?","acceptedAnswer":{"@type":"Answer","text":"Every 4-8 weeks is typical for intermediate lifters following a structured programme, since 1RM doesn't change dramatically week to week."}}
+    {"@type":"Question","name":"How do I calculate my running pace?","acceptedAnswer":{"@type":"Answer","text":"Divide your total time by your total distance. For example, running 5 km in 25 minutes gives a pace of 5 minutes per km (25 ÷ 5)."}},
+    {"@type":"Question","name":"How accurate are the predicted race times?","acceptedAnswer":{"@type":"Answer","text":"Predicted times use the Riegel formula, a widely used method based on your current fitness at one distance. It's a reasonable estimate for similar training levels, but actual race performance depends heavily on training specificity, pacing, and race-day conditions."}},
+    {"@type":"Question","name":"What's a good pace for a beginner runner?","acceptedAnswer":{"@type":"Answer","text":"There's no universal answer since pace depends heavily on individual fitness, but many beginner runners fall somewhere between 6:00-8:00 per km (roughly 10-13 minutes per mile). Consistency matters far more than hitting a specific number early on."}},
+    {"@type":"Question","name":"Why does my pace differ between training runs and races?","acceptedAnswer":{"@type":"Answer","text":"Race-day adrenaline, tapering, cooler weather, and course support typically allow a faster pace than equivalent-effort training runs, which is part of why race times are usually faster than training paces at the same perceived effort."}}
   ]}
   </script>
 <link href="style.css" rel="stylesheet"/>
@@ -29,31 +25,33 @@
     gtag('js', new Date());
     gtag('config', 'G-RXLXM57ZKH');
   </script>
-<link href="https://calories-macros.com/one-rep-max-calculator.html" hreflang="en" rel="alternate"/>
-<link href="https://calories-macros.com/ru/one-rep-max-calculator.html" hreflang="ru" rel="alternate"/>
-<link href="https://calories-macros.com/one-rep-max-calculator.html" hreflang="x-default" rel="alternate"/>
+<link href="https://calories-macros.com/pace-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://calories-macros.com/ru/pace-calculator.html" hreflang="ru" rel="alternate"/>
+<link href="https://calories-macros.com/pace-calculator.html" hreflang="x-default" rel="alternate"/>
 <!-- Open Graph -->
-<meta content="One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros" property="og:title"/>
-<meta content="Calculate your estimated one-rep max (1RM) from any weight and rep count. See training percentages for strength, hypertrophy, and endurance work." property="og:description"/>
+<meta content="Pace Calculator — Running Pace, Speed &amp; Race Predictor" property="og:title"/>
+<meta content="Calculate your running pace per km or mile, speed, and predicted race times for 5K, 10K, half marathon, and marathon." property="og:description"/>
 <meta content="website" property="og:type"/>
-<meta content="https://calories-macros.com/one-rep-max-calculator.html" property="og:url"/>
+<meta content="https://calories-macros.com/pace-calculator.html" property="og:url"/>
 <meta content="https://calories-macros.com/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="Calories &amp; Macros" property="og:site_name"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros" name="twitter:title"/>
-<meta content="Calculate your estimated one-rep max (1RM) from any weight and rep count. See training percentages for strength, hypertrophy, and endurance work." name="twitter:description"/>
+<meta content="Pace Calculator — Running Pace, Speed &amp; Race Predictor" name="twitter:title"/>
+<meta content="Calculate your running pace per km or mile, speed, and predicted race times." name="twitter:description"/>
 <meta content="https://calories-macros.com/og-image.png" name="twitter:image"/>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
     {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
-    {"@type":"ListItem","position":3,"name":"One Rep Max Calculator","item":"https://calories-macros.com/one-rep-max-calculator.html"}
+    {"@type":"ListItem","position":3,"name":"Pace Calculator","item":"https://calories-macros.com/pace-calculator.html"}
   ]}
   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Pace Calculator","url":"https://calories-macros.com/pace-calculator.html","description":"Free running pace calculator with race time predictor.","applicationCategory":"HealthApplication"}
+  </script>
 </head>
 <body>
 <header class="site-header">
@@ -62,8 +60,8 @@
 <a aria-label="Search" href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
 <button aria-label="Toggle dark mode" id="themeToggle" onclick="toggleTheme()" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;border:none;cursor:pointer;font-size:1rem;flex-shrink:0;">🌙</button>
 <div class="header-lang" id="headerLang">
-<a class="active" href="/one-rep-max-calculator.html" id="headerLangEN">EN</a>
-<a class="" href="/ru/one-rep-max-calculator.html" id="headerLangRU">RU</a>
+<a class="active" href="/pace-calculator.html" id="headerLangEN">EN</a>
+<a class="" href="/ru/pace-calculator.html" id="headerLangRU">RU</a>
 </div>
 <button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 <nav class="site-nav" id="siteNav">
@@ -153,102 +151,128 @@
 </div>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
-<div class="lang-toggle"><a class="active" href="/one-rep-max-calculator.html" id="langEN">EN</a><a class="" href="/ru/one-rep-max-calculator.html" id="langRU">RU</a></div>
+<div class="lang-toggle"><a class="active" href="/pace-calculator.html" id="langEN">EN</a><a class="" href="/ru/pace-calculator.html" id="langRU">RU</a></div>
 </nav>
 </div>
 </header>
 <section class="hero">
 <div class="hero-content">
-<div class="hero-eyebrow">Free Strength Calculator</div>
-<h1>One Rep Max <em>Calculator</em></h1>
-<p>Estimate your one-rep max (1RM) from any weight and rep count, plus training percentages for every goal.</p>
-<a class="btn-scroll" href="#calculator">Calculate 1RM ↓</a>
+<div class="hero-eyebrow">Free Health Calculator</div>
+<h1>Pace Calculator — <em>Running Pace &amp; Race Predictor</em></h1>
+<p>Calculate your running pace, speed, and predicted finish times for 5K, 10K, half marathon, and marathon distances.</p>
+<a class="btn-scroll" href="#calculator">Calculate My Pace ↓</a>
 </div>
 </section>
+<div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;max-width:680px;margin:16px auto 0;border-radius:0 8px 8px 0;">
+<p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;">Your saved pace result:</p>
+<p id="savedBannerText" style="font-size:0.85rem;color:var(--muted);"></p>
+<div style="display:flex;gap:10px;margin-top:10px;">
+<button onclick="document.getElementById('savedBanner').style.display='none'" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);">Dismiss</button>
+</div>
+</div>
 <section class="calc-section" id="calculator">
 <div class="container">
-<div class="section-label">One Rep Max Calculator</div>
-<h2 class="section-title">Enter your lift</h2>
-<p class="section-sub">Works best for sets of 1–10 reps performed close to failure.</p>
+<div class="section-label">Pace Calculator</div>
+<h2 class="section-title">Enter your distance and time</h2>
+<p class="section-sub">Get your pace, speed, and predicted times for other race distances.</p>
 <div class="calc-card">
+<div class="field" style="margin-bottom:20px;">
+<label for="raceDistance">Distance</label>
+<select id="raceDistance">
+<option value="5">5K</option>
+<option selected="" value="10">10K</option>
+<option value="21.0975">Half Marathon (21.1 km)</option>
+<option value="42.195">Marathon (42.2 km)</option>
+<option value="custom">Custom distance</option>
+</select>
+</div>
+<div class="field" id="customDistanceField" style="margin-bottom:20px;display:none;">
+<label for="customDistance">Distance (km)</label>
+<input id="customDistance" max="500" min="0.1" placeholder="e.g. 15" step="0.1" type="number"/>
+</div>
+<label style="font-size:0.85rem;font-weight:600;color:var(--muted);margin-bottom:8px;display:block;">Finish time</label>
 <div class="calc-grid">
 <div class="field">
-<label for="liftWeight">Weight lifted (kg)</label>
-<input id="liftWeight" max="500" min="1" placeholder="e.g. 100" type="number"/>
+<label for="raceHours">Hours</label>
+<input id="raceHours" max="20" min="0" placeholder="0" type="number"/>
 </div>
 <div class="field">
-<label for="liftReps">Reps performed</label>
-<input id="liftReps" max="15" min="1" placeholder="e.g. 5" type="number"/>
+<label for="raceMinutes">Minutes</label>
+<input id="raceMinutes" max="59" min="0" placeholder="45" type="number"/>
+</div>
+<div class="field">
+<label for="raceSeconds">Seconds</label>
+<input id="raceSeconds" max="59" min="0" placeholder="0" type="number"/>
 </div>
 </div>
-<button class="btn-calc" id="calcBtn">Calculate 1RM →</button>
-<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please enter a valid weight and rep count (1–15).</p>
+<button class="btn-calc" id="calcBtn" style="margin-top:16px;">Calculate →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please enter a valid time.</p>
 <div class="calc-results" id="calcResults">
-<div class="calories-display" style="background:var(--green-pale);">
-<div class="kcal-number" id="ormValue">—</div>
-<div class="kcal-label">estimated one-rep max (kg)</div>
+<div class="calories-display">
+<div class="kcal-number" id="paceMinKm">—</div>
+<div class="kcal-label">min/km</div>
 </div>
-<div class="macros-grid" style="grid-template-columns:1fr 1fr;">
+<div class="macros-grid">
 <div class="macro-item">
-<div class="macro-value" id="epleyValue">—</div>
-<div class="macro-name">Epley formula</div>
+<div class="macro-value" id="paceMinMile">—</div>
+<div class="macro-name">min/mile</div>
 </div>
 <div class="macro-item">
-<div class="macro-value" id="brzyckiValue">—</div>
-<div class="macro-name">Brzycki formula</div>
+<div class="macro-value" id="speedKmh">—</div>
+<div class="macro-name">km/h</div>
+</div>
+<div class="macro-item">
+<div class="macro-value" id="speedMph">—</div>
+<div class="macro-name">mph</div>
 </div>
 </div>
-<div style="margin-top:24px;">
-<p style="font-size:0.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:14px;">Training percentages:</p>
-<div id="pctTable" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;"></div>
+<div style="margin-top:20px;">
+<p style="font-weight:600;color:var(--ink);margin-bottom:10px;font-size:0.95rem;">Predicted times at this fitness level</p>
+<div id="predictedTimesList"></div>
+<p style="font-size:0.75rem;color:var(--muted);margin-top:8px;">Based on the Riegel formula — an estimate, not a guarantee.</p>
 </div>
-<div class="result-note" id="resultNote" style="margin-top:16px;"></div>
 <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+<button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Save results</button>
 <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Print</button>
 <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Download card</button>
 </div>
 <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
 <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
-<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My one-rep max</p>
-<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
-<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">kg estimated 1RM</p>
-<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
-<div>
-<p style="font-size:11px;color:#888780;margin:0 0 2px;">90% (strength)</p>
-<p id="shareCard90" style="font-size:15px;font-weight:600;margin:0;">—</p>
+<p id="shareCardSubtitle" style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My running pace</p>
+<div id="shareCardValue" style="font-size:44px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">min/km</p>
+<p style="font-size:11px;color:#888780;margin-top:8px;">calories-macros.com</p>
 </div>
-<div>
-<p style="font-size:11px;color:#888780;margin:0 0 2px;">75% (hypertrophy)</p>
-<p id="shareCard75" style="font-size:15px;font-weight:600;margin:0;">—</p>
-</div>
-</div>
-<p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
-</div>
+<p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;">✓ Results saved!</p>
 </div>
 </div>
 </div>
 </section>
 <div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
-<!-- Info section -->
 <section class="how-section">
 <div class="container">
-<div class="section-label">Training zones</div>
-<h2 class="section-title">What to do with your training percentages</h2>
+<div class="section-label">Running tips</div>
+<h2 class="section-title">How to improve your pace</h2>
 <div class="steps-grid">
 <div class="step">
-<div class="step-num" style="font-size:1.6rem;">85–100%</div>
-<h3>Max strength (1–5 reps)</h3>
-<p>This range builds raw strength and neuromuscular efficiency — the ability to recruit more muscle fibres for a given movement. It's demanding on the nervous system, so it's typically programmed for lower total weekly volume with longer rest periods (3–5 minutes) between sets.</p>
+<div class="step-num">🐢</div>
+<h3>Train slower to race faster</h3>
+<p>Most of your weekly running volume, roughly 80%, should be done at an easy, conversational pace. Counterintuitively, spending most of your training time slower — not faster — builds the aerobic base that ultimately allows faster race-day paces.</p>
 </div>
 <div class="step">
-<div class="step-num" style="font-size:1.6rem;">67–85%</div>
-<h3>Hypertrophy (6–12 reps)</h3>
-<p>This range is generally considered the sweet spot for muscle growth, balancing enough mechanical tension per rep with enough total volume to drive adaptation. Rest periods of 60–90 seconds are common, allowing for higher training density without fully compromising the next set's quality.</p>
+<div class="step-num">⚡</div>
+<h3>Add structured speed work</h3>
+<p>Once a solid aerobic base is established, adding one weekly session of intervals or tempo running teaches your body to sustain faster paces for longer. This is the remaining 20% of training volume that directly targets race pace improvement.</p>
 </div>
 <div class="step">
-<div class="step-num" style="font-size:1.6rem;">&lt;67%</div>
-<h3>Muscular endurance (13+ reps)</h3>
-<p>Lighter loads for higher reps build muscular endurance and can still contribute to hypertrophy when taken close to failure, though typically with more metabolic fatigue (the 'burn') than heavier work. This range is also commonly used for technique practice, warm-up sets, and rehabilitation contexts where heavier loading isn't appropriate.</p>
+<div class="step-num">👟</div>
+<h3>Increase mileage gradually</h3>
+<p>A commonly cited guideline is increasing weekly mileage by no more than 10% per week, to reduce injury risk while still progressively building fitness. Rapid increases in volume are one of the most common causes of running injuries.</p>
+</div>
+<div class="step">
+<div class="step-num">🏃</div>
+<h3>Practice race-specific pacing</h3>
+<p>Running some training miles at your actual goal race pace helps your body and mind learn what that effort level feels like, making it easier to hold steady during the race itself rather than starting too fast and fading.</p>
 </div>
 </div>
 </div>
@@ -257,135 +281,94 @@
 <section class="how-section">
 <div class="container">
 <div class="section-label">Methodology</div>
-<h2 class="section-title">How 1RM is estimated, and its limits</h2>
-<p>This calculator averages two widely used prediction formulas: the Epley formula (1RM = weight × (1 + reps/30)), developed by Boyd Epley for strength coaching in the 1980s, and the Brzycki formula (1RM = weight × 36 / (37 − reps)), developed by Matt Brzycki around the same era. Both formulas were built by fitting equations to real lifting data, and they tend to produce slightly different estimates — Epley generally runs a bit higher at higher rep counts, Brzycki a bit lower — so averaging them gives a reasonably balanced middle estimate.</p>
-<p style="margin-top:16px;">These formulas are most accurate for sets of 1–10 reps performed close to muscular failure with good technique — above 12 reps, prediction accuracy drops noticeably since the relationship between reps and load becomes less linear at very high rep counts. They also don't account for individual differences in muscle fibre type, training experience, or which exercise is being tested — 1RM prediction tends to be more accurate for compound barbell lifts (squat, bench, deadlift) than for machines or isolation exercises. Treat the result as a solid planning estimate, not a guaranteed number you'd hit on an actual single-rep attempt.</p>
+<h2 class="section-title">How this calculator works, and its limits</h2>
+<p>Your pace is calculated simply by dividing your total time by your total distance. The predicted times for other distances use the Riegel formula, a widely cited method in exercise science: T2 = T1 × (D2 ÷ D1)<sup>1.06</sup>, where T1 and D1 are your known time and distance, and T2 is the predicted time for a new distance D2. This formula accounts for the fact that pace naturally slows somewhat as distance increases, rather than assuming a flat linear relationship.</p>
+<p style="margin-top:16px;">This prediction assumes broadly similar training and conditions across distances, which won't always hold true. A strong 5K runner without any endurance-specific training may not hit their Riegel-predicted marathon time without dedicated long-run training, since marathon performance depends heavily on endurance-specific adaptations that a 5K time alone doesn't fully capture. Treat these predictions as a reasonable starting estimate for goal-setting, not a guarantee of race-day performance.</p>
 </div>
 </section>
 <!-- FAQ -->
 <section class="faq-section">
 <div class="container">
 <div class="section-label">FAQ</div>
-<h2 class="section-title">Frequently asked questions about one-rep max</h2>
+<h2 class="section-title">Frequently asked questions about running pace</h2>
 <div class="faq-list">
 <div class="faq-item">
-<button class="faq-question">How accurate are 1RM prediction formulas?</button>
-<div class="faq-answer">Generally within 5-10% of your actual max for rep ranges of 2-10 performed close to failure, but accuracy drops noticeably above 10-12 reps since the formulas were built primarily from lower-rep lifting data. Individual factors like muscle fibre type composition also cause some people's real 1RM to differ more from the prediction than others.</div>
+<button class="faq-question">How do I calculate my running pace?</button>
+<div class="faq-answer">Divide your total time by your total distance. For example, running 5 km in 25 minutes gives a pace of 5 minutes per km (25 ÷ 5). This calculator does the conversion automatically, including between km and mile paces.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Which 1RM formula is most accurate?</button>
-<div class="faq-answer">No single formula is universally best — Epley tends to run slightly higher at higher rep counts, Brzycki slightly lower, and an individual's true value usually falls somewhere between the two. We average both here for a balanced estimate rather than picking one as definitively correct.</div>
+<button class="faq-question">How accurate are the predicted race times?</button>
+<div class="faq-answer">Predicted times use the Riegel formula, a widely used method based on your current fitness at one distance. It's a reasonable estimate for similar training levels, but actual race performance depends heavily on training specificity, pacing, and race-day conditions.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Should beginners test or estimate their 1RM?</button>
-<div class="faq-answer">Beginners should generally estimate rather than test a true 1RM directly, since maximal single-rep attempts carry higher injury risk without established technique, warm-up protocols, and neuromuscular coordination under very heavy load. Estimating from a submaximal set (like 5 reps at a challenging but controlled weight) is safer and still useful for programming.</div>
+<button class="faq-question">What's a good pace for a beginner runner?</button>
+<div class="faq-answer">There's no universal answer since pace depends heavily on individual fitness, but many beginner runners fall somewhere between 6:00-8:00 per km (roughly 10-13 minutes per mile). Consistency matters far more than hitting a specific number early on.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">How often should I retest my 1RM?</button>
-<div class="faq-answer">Every 4-8 weeks is typical for intermediate lifters following a structured strength programme, since 1RM doesn't change dramatically week to week under normal training. Beginners may see faster strength gains and could reasonably re-estimate more often (every 3-4 weeks) as neural adaptations happen quickly in the first months of training.</div>
+<button class="faq-question">Why does my pace differ between training runs and races?</button>
+<div class="faq-answer">Race-day adrenaline, tapering, cooler weather, and course support typically allow a faster pace than equivalent-effort training runs, which is part of why race times are usually faster than training paces at the same perceived effort.</div>
 </div>
 </div>
 </div>
 </section>
-<!-- Other calculators -->
 <section class="blog-section">
 <div class="container">
 <div class="section-label">More calculators</div>
 <h2 class="section-title">Related tools</h2>
 <div class="blog-grid">
-<a class="blog-card" href="/" style="text-decoration:none;color:inherit;">
-<div class="blog-card-body">
-<span class="blog-tag">Calories</span>
-<h3>Calorie &amp; Macro Calculator</h3>
-<p>Calculate your daily calorie and macro targets based on your goal.</p>
-<span class="blog-read-more">Open calculator →</span>
-</div>
-</a>
-<a class="blog-card" href="blog/free-weights-vs-machines.html" style="text-decoration:none;color:inherit;">
-<div class="blog-card-body">
-<span class="blog-tag">Comparison</span>
-<h3>Free Weights vs Machines</h3>
-<p>Which should beginners use.</p>
-<span class="blog-read-more">Read →</span>
-</div>
-</a>
-<a class="blog-card" href="blog/creatine-vs-preworkout.html" style="text-decoration:none;color:inherit;">
-<div class="blog-card-body">
-<span class="blog-tag">Comparison</span>
-<h3>Creatine vs Pre-Workout</h3>
-<p>Which supplement actually works.</p>
-<span class="blog-read-more">Read →</span>
-</div>
-</a>
-<a class="blog-card" href="blog/how-to-build-muscle.html" style="text-decoration:none;color:inherit;">
-<div class="blog-card-body">
-<span class="blog-tag">Guide</span>
-<h3>How to Build Muscle</h3>
-<p>Complete science-based muscle building guide.</p>
-<span class="blog-read-more">Read →</span>
-</div>
-</a>
+<a class="blog-card" href="exercise-calories-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Exercise</span><h3>Exercise Calories Calculator</h3><p>How many calories do you burn running or working out?</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="blog/running-vs-walking.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Comparison</span><h3>Running vs Walking</h3><p>Which is better for weight loss.</p><span class="blog-read-more">Read →</span></div></a>
+<a class="blog-card" href="blog/hiit-vs-steady-state-cardio.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Comparison</span><h3>HIIT vs Steady-State Cardio</h3><p>Which is better for fat loss.</p><span class="blog-read-more">Read →</span></div></a>
+<a class="blog-card" href="metabolism-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Metabolism</span><h3>Metabolism Calculator</h3><p>Calculate your BMR and daily calorie burn.</p><span class="blog-read-more">Open →</span></div></a>
 </div>
 </div>
 </section>
 <footer class="site-footer">
 <div class="footer-inner">
-<div class="footer-brand">
-<a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-<p>Free health calculators. Not medical advice.</p>
+<div class="footer-brand"><a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Free health calculators. Not medical advice.</p></div>
+<div class="footer-links"><a href="about.html">About</a><a href="blog/">Blog</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a>
+<a href="faq.html">FAQ</a></div>
 </div>
-<div class="footer-links">
-<a href="about.html">About</a>
-<a href="blog/">Blog</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy Policy</a>
-<a href="terms.html">Terms of Use</a>
-<a href="faq.html">FAQ</a>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© <span id="year"></span> calories-macros.com</span>
-<span>Educational estimates only.</span>
-</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
 <script>
+
+function savePageResults() {
+  var mainEl = document.getElementById('paceMinKm');
+  var results = {};
+  if (mainEl) results.mainValue = mainEl.textContent + ' min/km';
+  results.savedAt = new Date().toLocaleDateString();
+  localStorage.setItem('cm_saved_pace', JSON.stringify(results));
+  var msg = document.getElementById('saveMsg');
+  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
+}
+
+// Show saved banner on load
+window.addEventListener('load', function() {
+  var saved = localStorage.getItem('cm_saved_pace');
+  if (!saved) return;
+  try {
+    var data = JSON.parse(saved);
+    if (!data.mainValue) return;
+    var banner = document.getElementById('savedBanner');
+    var bannerText = document.getElementById('savedBannerText');
+    if (!banner || !bannerText) return;
+    bannerText.textContent = 'Result: ' + data.mainValue + ' · Saved: ' + data.savedAt;
+    banner.style.display = 'block';
+  } catch(e) {}
+});
 document.getElementById('year').textContent = new Date().getFullYear();
 
-let currentLang = 'en';
-function applyLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-en]').forEach(function(el) {
-    var t = el.getAttribute('data-' + lang);
-    if (t) el.innerHTML = t;
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'pace-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
   });
-  localStorage.setItem('lang', lang);
 }
-document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
-document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
-var sl = localStorage.getItem('lang');
-if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
 
-// Header lang sync
-(function() {
-  var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
-  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
-  hEN.addEventListener('click', function() { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
-  hRU.addEventListener('click', function() { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
-})();
-
-const noteText = {
-  en: 'This is an estimate, not a guaranteed max. Warm up thoroughly and use a spotter before attempting anything near your estimated 1RM.',
-  ru: 'Это оценка, а не гарантированный максимум. Тщательно разомнитесь и используйте страховку перед попытками веса, близкого к расчётному 1ПМ.'
-};
-
-const pctLabels = {
-  en: ['Warm-up', 'Endurance', 'Hypertrophy', 'Hypertrophy', 'Strength', 'Strength', 'Max effort'],
-  ru: ['Разминка', 'Выносливость', 'Гипертрофия', 'Гипертрофия', 'Сила', 'Сила', 'Максимум']
-};
-const pctValues = [0.5, 0.65, 0.75, 0.80, 0.85, 0.90, 0.95];
-
-// --- FAQ ---
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {
     const item = this.closest('.faq-item');
@@ -414,50 +397,73 @@ function animateNumber(el, target, decimals, formatter) {
   requestAnimationFrame(step);
 }
 
-function downloadResultCard() {
-  var card = document.getElementById('shareCard');
-  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
-    var link = document.createElement('a');
-    link.download = 'one-rep-max-result.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  });
+document.getElementById('raceDistance').addEventListener('change', function(){
+  document.getElementById('customDistanceField').style.display = this.value === 'custom' ? 'block' : 'none';
+});
+
+function formatPace(totalSeconds) {
+  const m = Math.floor(totalSeconds / 60);
+  const s = Math.round(totalSeconds % 60);
+  return m + ':' + (s < 10 ? '0' : '') + s;
 }
 
+function formatFinishTime(totalSeconds) {
+  const h = Math.floor(totalSeconds / 3600);
+  const m = Math.floor((totalSeconds % 3600) / 60);
+  const s = Math.round(totalSeconds % 60);
+  if (h > 0) return h + ':' + (m<10?'0':'') + m + ':' + (s<10?'0':'') + s;
+  return m + ':' + (s<10?'0':'') + s;
+}
+
+const raceDistances = [
+  {label: '5K', km: 5},
+  {label: '10K', km: 10},
+  {label: 'Half Marathon', km: 21.0975},
+  {label: 'Marathon', km: 42.195}
+];
+
 document.getElementById('calcBtn').addEventListener('click', function() {
-  const weight = parseFloat(document.getElementById('liftWeight').value);
-  const reps = parseInt(document.getElementById('liftReps').value);
+  const distSelect = document.getElementById('raceDistance').value;
+  let distanceKm;
+  if (distSelect === 'custom') {
+    distanceKm = parseFloat(document.getElementById('customDistance').value);
+  } else {
+    distanceKm = parseFloat(distSelect);
+  }
+  const h = parseFloat(document.getElementById('raceHours').value) || 0;
+  const m = parseFloat(document.getElementById('raceMinutes').value) || 0;
+  const s = parseFloat(document.getElementById('raceSeconds').value) || 0;
+  const totalSeconds = h*3600 + m*60 + s;
   const err = document.getElementById('calcError');
-  if (!weight || !reps || weight <= 0 || reps < 1 || reps > 15) { err.style.display='block'; return; }
+
+  if (!distanceKm || distanceKm <= 0 || totalSeconds <= 0) { err.style.display='block'; return; }
   err.style.display = 'none';
 
-  const epley = weight * (1 + reps / 30);
-  const brzycki = reps === 37 ? weight : weight * 36 / (37 - reps);
-  const average = (epley + brzycki) / 2;
+  const paceSecPerKm = totalSeconds / distanceKm;
+  const paceSecPerMile = paceSecPerKm * 1.60934;
+  const speedKmh = distanceKm / (totalSeconds / 3600);
+  const speedMph = speedKmh / 1.60934;
 
-  animateNumber(document.getElementById('ormValue'), average, 0);
-  animateNumber(document.getElementById('epleyValue'), epley, 0, v => v + ' kg');
-  animateNumber(document.getElementById('brzyckiValue'), brzycki, 0, v => v + ' kg');
-  document.getElementById('resultNote').textContent = noteText[currentLang];
+  animateNumber(document.getElementById('paceMinKm'), paceSecPerKm/60, 2, function(v){ return formatPace(v*60); });
+  document.getElementById('paceMinMile').textContent = formatPace(paceSecPerMile);
+  animateNumber(document.getElementById('speedKmh'), speedKmh, 1);
+  animateNumber(document.getElementById('speedMph'), speedMph, 1);
 
-  const pctTable = document.getElementById('pctTable');
-  pctTable.innerHTML = '';
-  pctValues.forEach(function(pct, i) {
-    const val = Math.round(average * pct);
-    const div = document.createElement('div');
-    div.style.cssText = 'text-align:center;background:var(--cream);border-radius:8px;padding:12px 8px;opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;';
-    div.innerHTML = '<div style="font-family:var(--font-display);font-size:1.1rem;color:var(--green);">' + val + ' kg</div>' +
-      '<div style="font-size:0.72rem;color:var(--muted);">' + Math.round(pct*100) + '% · ' + pctLabels[currentLang][i] + '</div>';
-    pctTable.appendChild(div);
-    setTimeout(() => { div.style.opacity = '1'; div.style.transform = 'translateY(0)'; }, 60 * i);
+  // Riegel formula predictions for other distances
+  let listHtml = '';
+  raceDistances.forEach(function(r){
+    if (Math.abs(r.km - distanceKm) < 0.05) return; // skip the one just calculated
+    const predictedSeconds = totalSeconds * Math.pow(r.km / distanceKm, 1.06);
+    listHtml += '<div style="display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:var(--cream);border-radius:8px;margin-bottom:6px;">'
+      + '<span style="font-weight:600;color:var(--ink);">' + r.label + '</span>'
+      + '<span style="font-weight:700;color:var(--green);">' + formatFinishTime(predictedSeconds) + '</span>'
+      + '</div>';
   });
+  document.getElementById('predictedTimesList').innerHTML = listHtml;
+
+  document.getElementById('shareCardValue').textContent = formatPace(paceSecPerKm);
 
   document.getElementById('calcResults').classList.add('visible');
-
-  document.getElementById('shareCardValue').textContent = Math.round(average);
-  document.getElementById('shareCard90').textContent = Math.round(average * 0.90) + ' kg';
-  document.getElementById('shareCard75').textContent = Math.round(average * 0.75) + ' kg';
-
   setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
 });
 </script>
