@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-
+<!DOCTYPE HTML>
 <html lang="en">
 <head><script>localStorage.setItem('lang','en');</script><script>(function(){var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros</title>
-<meta content="Calculate your one-rep max (1RM) from any weight and rep count, with training percentages for strength, hypertrophy, and endurance." name="description"/>
-<link href="https://calories-macros.com/one-rep-max-calculator.html" rel="canonical"/>
-<script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"WebApplication","name":"One Rep Max Calculator","url":"https://calories-macros.com/one-rep-max-calculator.html","description":"Free one-rep max (1RM) calculator with training percentage breakdown.","applicationCategory":"HealthApplication"}
-  </script>
+<title>Supplement Cost Calculator — Compare Cost Per Serving | Calories &amp; Macros</title>
+<meta content="Compare two supplements by cost per serving and cost per month to find the better value. Free supplement cost comparison calculator." name="description"/>
+<link href="https://calories-macros.com/supplement-cost-calculator.html" rel="canonical"/>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"How accurate are 1RM prediction formulas?","acceptedAnswer":{"@type":"Answer","text":"Generally within 5-10% of your actual max for rep ranges of 2-10, but accuracy drops noticeably above 10-12 reps since the formulas were built from lower-rep data."}},
-    {"@type":"Question","name":"Which 1RM formula is most accurate?","acceptedAnswer":{"@type":"Answer","text":"No single formula is universally best — Epley tends to run slightly higher, Brzycki slightly lower, and the true value usually falls between them. We average both for a balanced estimate."}},
-    {"@type":"Question","name":"Should beginners test or estimate their 1RM?","acceptedAnswer":{"@type":"Answer","text":"Beginners should estimate rather than test a true 1RM, since maximal single-rep attempts carry higher injury risk without established technique and neuromuscular coordination under heavy load."}},
-    {"@type":"Question","name":"How often should I retest my 1RM?","acceptedAnswer":{"@type":"Answer","text":"Every 4-8 weeks is typical for intermediate lifters following a structured programme, since 1RM doesn't change dramatically week to week."}}
+    {"@type":"Question","name":"Why does cost per serving matter more than total price?","acceptedAnswer":{"@type":"Answer","text":"A larger, more expensive container can still be the better value if it has proportionally more servings. Cost per serving lets you compare products of different sizes on equal footing."}},
+    {"@type":"Question","name":"Should I always buy the cheapest cost-per-serving option?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily — ingredient quality, third-party testing, and whether the dose per serving actually matches your needs matter too. Cost per serving is one factor among several, not the only one."}},
+    {"@type":"Question","name":"How do I compare products with different serving sizes?","acceptedAnswer":{"@type":"Answer","text":"If two products have different amounts of active ingredient per serving (e.g., 3g vs 5g of creatine), comparing cost per gram of active ingredient, not just cost per serving, gives a more accurate value comparison."}},
+    {"@type":"Question","name":"Is buying in bulk always cheaper per serving?","acceptedAnswer":{"@type":"Answer","text":"Usually, but not always — check the actual math rather than assuming, since some larger containers carry a smaller discount than expected, or none at all."}}
   ]}
   </script>
 <link href="style.css" rel="stylesheet"/>
@@ -29,31 +25,33 @@
     gtag('js', new Date());
     gtag('config', 'G-RXLXM57ZKH');
   </script>
-<link href="https://calories-macros.com/one-rep-max-calculator.html" hreflang="en" rel="alternate"/>
-<link href="https://calories-macros.com/ru/one-rep-max-calculator.html" hreflang="ru" rel="alternate"/>
-<link href="https://calories-macros.com/one-rep-max-calculator.html" hreflang="x-default" rel="alternate"/>
+<link href="https://calories-macros.com/supplement-cost-calculator.html" hreflang="en" rel="alternate"/>
+<link href="https://calories-macros.com/ru/supplement-cost-calculator.html" hreflang="ru" rel="alternate"/>
+<link href="https://calories-macros.com/supplement-cost-calculator.html" hreflang="x-default" rel="alternate"/>
 <!-- Open Graph -->
-<meta content="One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros" property="og:title"/>
-<meta content="Calculate your estimated one-rep max (1RM) from any weight and rep count. See training percentages for strength, hypertrophy, and endurance work." property="og:description"/>
+<meta content="Supplement Cost Calculator — Compare Cost Per Serving" property="og:title"/>
+<meta content="Compare two supplements by cost per serving and cost per month to find the better value." property="og:description"/>
 <meta content="website" property="og:type"/>
-<meta content="https://calories-macros.com/one-rep-max-calculator.html" property="og:url"/>
+<meta content="https://calories-macros.com/supplement-cost-calculator.html" property="og:url"/>
 <meta content="https://calories-macros.com/og-image.png" property="og:image"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="Calories &amp; Macros" property="og:site_name"/>
 <!-- Twitter Card -->
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="One Rep Max Calculator — 1RM Estimator | Calories &amp; Macros" name="twitter:title"/>
-<meta content="Calculate your estimated one-rep max (1RM) from any weight and rep count. See training percentages for strength, hypertrophy, and endurance work." name="twitter:description"/>
+<meta content="Supplement Cost Calculator" name="twitter:title"/>
+<meta content="Compare two supplements by cost per serving to find the better value." name="twitter:description"/>
 <meta content="https://calories-macros.com/og-image.png" name="twitter:image"/>
 <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://calories-macros.com/"},
     {"@type":"ListItem","position":2,"name":"Calculators","item":"https://calories-macros.com/all-calculators.html"},
-    {"@type":"ListItem","position":3,"name":"One Rep Max Calculator","item":"https://calories-macros.com/one-rep-max-calculator.html"}
+    {"@type":"ListItem","position":3,"name":"Supplement Cost Calculator","item":"https://calories-macros.com/supplement-cost-calculator.html"}
   ]}
   </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Supplement Cost Calculator","url":"https://calories-macros.com/supplement-cost-calculator.html","description":"Free supplement cost comparison calculator by cost per serving.","applicationCategory":"HealthApplication"}
+  </script>
 </head>
 <body>
 <header class="site-header">
@@ -62,8 +60,8 @@
 <a aria-label="Search" href="/search.html" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;text-decoration:none;font-size:1rem;flex-shrink:0;" title="Search">🔍</a>
 <button aria-label="Toggle dark mode" id="themeToggle" onclick="toggleTheme()" style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.15);color:white;border:none;cursor:pointer;font-size:1rem;flex-shrink:0;">🌙</button>
 <div class="header-lang" id="headerLang">
-<a class="active" href="/one-rep-max-calculator.html" id="headerLangEN">EN</a>
-<a class="" href="/ru/one-rep-max-calculator.html" id="headerLangRU">RU</a>
+<a class="active" href="/supplement-cost-calculator.html" id="headerLangEN">EN</a>
+<a class="" href="/ru/supplement-cost-calculator.html" id="headerLangRU">RU</a>
 </div>
 <button aria-label="Open menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
 <nav class="site-nav" id="siteNav">
@@ -158,102 +156,127 @@
 </div>
 <a href="/about.html">About</a>
 <a href="/contact.html">Contact</a>
-<div class="lang-toggle"><a class="active" href="/one-rep-max-calculator.html" id="langEN">EN</a><a class="" href="/ru/one-rep-max-calculator.html" id="langRU">RU</a></div>
+<div class="lang-toggle"><a class="active" href="/supplement-cost-calculator.html" id="langEN">EN</a><a class="" href="/ru/supplement-cost-calculator.html" id="langRU">RU</a></div>
 </nav>
 </div>
 </header>
 <section class="hero">
 <div class="hero-content">
-<div class="hero-eyebrow">Free Strength Calculator</div>
-<h1>One Rep Max <em>Calculator</em></h1>
-<p>Estimate your one-rep max (1RM) from any weight and rep count, plus training percentages for every goal.</p>
-<a class="btn-scroll" href="#calculator">Calculate 1RM ↓</a>
+<div class="hero-eyebrow">Free Health Calculator</div>
+<h1>Supplement Cost <em>Calculator</em></h1>
+<p>Compare two supplements by cost per serving and cost per month to find the better value.</p>
+<a class="btn-scroll" href="#calculator">Compare Costs ↓</a>
 </div>
 </section>
+<div id="savedBanner" style="display:none;background:var(--green-pale);border-left:4px solid var(--green);padding:14px 20px;max-width:680px;margin:16px auto 0;border-radius:0 8px 8px 0;">
+<p style="font-size:0.9rem;color:var(--green);font-weight:600;margin-bottom:4px;">Your saved comparison:</p>
+<p id="savedBannerText" style="font-size:0.85rem;color:var(--muted);"></p>
+<div style="display:flex;gap:10px;margin-top:10px;">
+<button onclick="document.getElementById('savedBanner').style.display='none'" style="padding:6px 16px;background:none;border:1.5px solid var(--border);border-radius:6px;font-family:var(--font-body);font-size:0.85rem;cursor:pointer;color:var(--muted);">Dismiss</button>
+</div>
+</div>
 <section class="calc-section" id="calculator">
 <div class="container">
-<div class="section-label">One Rep Max Calculator</div>
-<h2 class="section-title">Enter your lift</h2>
-<p class="section-sub">Works best for sets of 1–10 reps performed close to failure.</p>
+<div class="section-label">Supplement Cost Calculator</div>
+<h2 class="section-title">Compare two products</h2>
+<p class="section-sub">Enter the price and number of servings for each product.</p>
 <div class="calc-card">
+<p style="font-weight:600;color:var(--green);margin-bottom:12px;">Product A</p>
 <div class="calc-grid">
 <div class="field">
-<label for="liftWeight">Weight lifted (kg)</label>
-<input id="liftWeight" max="500" min="1" placeholder="e.g. 100" type="number"/>
+<label for="priceA">Price ($)</label>
+<input id="priceA" min="0.01" placeholder="e.g. 29.99" step="0.01" type="number"/>
 </div>
 <div class="field">
-<label for="liftReps">Reps performed</label>
-<input id="liftReps" max="15" min="1" placeholder="e.g. 5" type="number"/>
+<label for="servingsA">Servings per container</label>
+<input id="servingsA" min="1" placeholder="e.g. 30" type="number"/>
 </div>
 </div>
-<button class="btn-calc" id="calcBtn">Calculate 1RM →</button>
-<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please enter a valid weight and rep count (1–15).</p>
+<p style="font-weight:600;color:var(--green);margin:24px 0 12px;">Product B</p>
+<div class="calc-grid">
+<div class="field">
+<label for="priceB">Price ($)</label>
+<input id="priceB" min="0.01" placeholder="e.g. 45.99" step="0.01" type="number"/>
+</div>
+<div class="field">
+<label for="servingsB">Servings per container</label>
+<input id="servingsB" min="1" placeholder="e.g. 60" type="number"/>
+</div>
+</div>
+<div class="field" style="margin-top:20px;">
+<label for="servingsPerDay">Servings per day (your usage)</label>
+<input id="servingsPerDay" min="1" placeholder="e.g. 1" type="number" value="1"/>
+</div>
+<button class="btn-calc" id="calcBtn" style="margin-top:16px;">Compare →</button>
+<p id="calcError" style="color:#dc2626;font-size:0.85rem;margin-top:10px;display:none;">Please fill in all fields for both products.</p>
 <div class="calc-results" id="calcResults">
-<div class="calories-display" style="background:var(--green-pale);">
-<div class="kcal-number" id="ormValue">—</div>
-<div class="kcal-label">estimated one-rep max (kg)</div>
-</div>
 <div class="macros-grid" style="grid-template-columns:1fr 1fr;">
-<div class="macro-item">
-<div class="macro-value" id="epleyValue">—</div>
-<div class="macro-name">Epley formula</div>
+<div class="macro-item" id="cardA">
+<div class="macro-value" id="perServingA">—</div>
+<div class="macro-name">Product A — per serving</div>
 </div>
-<div class="macro-item">
-<div class="macro-value" id="brzyckiValue">—</div>
-<div class="macro-name">Brzycki formula</div>
+<div class="macro-item" id="cardB">
+<div class="macro-value" id="perServingB">—</div>
+<div class="macro-name">Product B — per serving</div>
 </div>
 </div>
-<div style="margin-top:24px;">
-<p style="font-size:0.8rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;margin-bottom:14px;">Training percentages:</p>
-<div id="pctTable" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;"></div>
+<div style="margin-top:16px;display:flex;justify-content:space-between;padding:12px 16px;background:var(--cream);border-radius:8px;">
+<span style="color:var(--muted);">Product A per month</span><span id="perMonthA" style="font-weight:700;color:var(--ink);">—</span>
 </div>
-<div class="result-note" id="resultNote" style="margin-top:16px;"></div>
+<div style="margin-top:8px;display:flex;justify-content:space-between;padding:12px 16px;background:var(--cream);border-radius:8px;">
+<span style="color:var(--muted);">Product B per month</span><span id="perMonthB" style="font-weight:700;color:var(--ink);">—</span>
+</div>
+<div class="result-note" id="resultNote" style="margin-top:16px;font-weight:600;"></div>
 <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+<button onclick="savePageResults()" style="flex:1;padding:11px 20px;background:var(--green-pale);color:var(--green);border:1.5px solid var(--green-light);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">💾 Save results</button>
 <button onclick="window.print()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">🖨 Print</button>
 <button onclick="downloadResultCard()" style="flex:1;padding:11px 20px;background:var(--cream);color:var(--muted);border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.9rem;font-weight:600;cursor:pointer;">⬇ Download card</button>
 </div>
 <div id="shareCard" style="position:absolute;left:-9999px;top:0;width:380px;background:#ffffff;border-radius:16px;padding:32px;text-align:center;font-family:'Poppins',sans-serif;">
 <p style="font-size:11px;letter-spacing:0.05em;color:#888780;margin:0 0 4px;text-transform:uppercase;">Calories &amp; Macros</p>
-<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">My one-rep max</p>
-<div id="shareCardValue" style="font-size:52px;font-weight:600;color:#2D6A4F;margin-bottom:4px;">—</div>
-<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">kg estimated 1RM</p>
-<div style="border-top:1px solid #eee;padding-top:16px;display:flex;justify-content:space-around;">
+<p style="font-size:13px;color:#5F5E5A;margin:0 0 20px;">Supplement cost comparison</p>
+<div style="display:flex;justify-content:space-around;">
 <div>
-<p style="font-size:11px;color:#888780;margin:0 0 2px;">90% (strength)</p>
-<p id="shareCard90" style="font-size:15px;font-weight:600;margin:0;">—</p>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Product A</p>
+<p id="shareCardA" style="font-size:22px;font-weight:600;color:#2D6A4F;margin:0;">—</p>
 </div>
 <div>
-<p style="font-size:11px;color:#888780;margin:0 0 2px;">75% (hypertrophy)</p>
-<p id="shareCard75" style="font-size:15px;font-weight:600;margin:0;">—</p>
+<p style="font-size:11px;color:#888780;margin:0 0 2px;">Product B</p>
+<p id="shareCardB" style="font-size:22px;font-weight:600;margin:0;">—</p>
 </div>
 </div>
 <p style="font-size:11px;color:#888780;margin-top:20px;">calories-macros.com</p>
 </div>
+<p id="saveMsg" style="display:none;color:var(--green);font-size:0.85rem;margin-top:8px;text-align:center;">✓ Results saved!</p>
 </div>
 </div>
 </div>
 </section>
 <div class="container"><div class="ad-slot ad-slot--leaderboard"></div></div>
-<!-- Info section -->
 <section class="how-section">
 <div class="container">
-<div class="section-label">Training zones</div>
-<h2 class="section-title">What to do with your training percentages</h2>
+<div class="section-label">Smart supplement shopping</div>
+<h2 class="section-title">Getting real value for money</h2>
 <div class="steps-grid">
 <div class="step">
-<div class="step-num" style="font-size:1.6rem;">85–100%</div>
-<h3>Max strength (1–5 reps)</h3>
-<p>This range builds raw strength and neuromuscular efficiency — the ability to recruit more muscle fibres for a given movement. It's demanding on the nervous system, so it's typically programmed for lower total weekly volume with longer rest periods (3–5 minutes) between sets.</p>
+<div class="step-num">🔍</div>
+<h3>Check the actual dose per serving</h3>
+<p>A cheaper cost per serving isn't a genuine bargain if the serving size is smaller or the active ingredient dose is lower. Compare labels closely, not just shelf price, to see what you're actually paying for per gram of active ingredient.</p>
 </div>
 <div class="step">
-<div class="step-num" style="font-size:1.6rem;">67–85%</div>
-<h3>Hypertrophy (6–12 reps)</h3>
-<p>This range is generally considered the sweet spot for muscle growth, balancing enough mechanical tension per rep with enough total volume to drive adaptation. Rest periods of 60–90 seconds are common, allowing for higher training density without fully compromising the next set's quality.</p>
+<div class="step-num">📦</div>
+<h3>Bulk isn't always cheaper</h3>
+<p>Larger containers often offer a better cost per serving, but not universally — some brands price larger sizes with only a marginal discount, or none at all. Always do the actual per-serving math rather than assuming size equals savings.</p>
 </div>
 <div class="step">
-<div class="step-num" style="font-size:1.6rem;">&lt;67%</div>
-<h3>Muscular endurance (13+ reps)</h3>
-<p>Lighter loads for higher reps build muscular endurance and can still contribute to hypertrophy when taken close to failure, though typically with more metabolic fatigue (the 'burn') than heavier work. This range is also commonly used for technique practice, warm-up sets, and rehabilitation contexts where heavier loading isn't appropriate.</p>
+<div class="step-num">✅</div>
+<h3>Factor in third-party testing</h3>
+<p>Products verified by independent testing organizations (like NSF Certified for Sport or Informed Sport) may cost more per serving, but this reflects a real quality and safety assurance that a cheaper untested alternative doesn't offer.</p>
+</div>
+<div class="step">
+<div class="step-num">📅</div>
+<h3>Think in monthly cost, not just container price</h3>
+<p>A larger container costs more upfront but may work out cheaper per month at your actual usage rate. Comparing monthly cost, based on your real daily serving amount, gives a more useful long-term picture than sticker price alone.</p>
 </div>
 </div>
 </div>
@@ -262,135 +285,95 @@
 <section class="how-section">
 <div class="container">
 <div class="section-label">Methodology</div>
-<h2 class="section-title">How 1RM is estimated, and its limits</h2>
-<p>This calculator averages two widely used prediction formulas: the Epley formula (1RM = weight × (1 + reps/30)), developed by Boyd Epley for strength coaching in the 1980s, and the Brzycki formula (1RM = weight × 36 / (37 − reps)), developed by Matt Brzycki around the same era. Both formulas were built by fitting equations to real lifting data, and they tend to produce slightly different estimates — Epley generally runs a bit higher at higher rep counts, Brzycki a bit lower — so averaging them gives a reasonably balanced middle estimate.</p>
-<p style="margin-top:16px;">These formulas are most accurate for sets of 1–10 reps performed close to muscular failure with good technique — above 12 reps, prediction accuracy drops noticeably since the relationship between reps and load becomes less linear at very high rep counts. They also don't account for individual differences in muscle fibre type, training experience, or which exercise is being tested — 1RM prediction tends to be more accurate for compound barbell lifts (squat, bench, deadlift) than for machines or isolation exercises. Treat the result as a solid planning estimate, not a guaranteed number you'd hit on an actual single-rep attempt.</p>
+<h2 class="section-title">How this calculator works, and its limits</h2>
+<p>This calculator divides each product's price by its number of servings to get cost per serving, then multiplies that by your daily serving count and roughly 30.4 days to estimate a monthly cost at your actual usage rate. This lets you compare products of different container sizes, prices, and serving counts on equal footing, rather than being misled by total price alone.</p>
+<p style="margin-top:16px;">This calculator compares cost per serving only — it doesn't account for differences in ingredient quality, dose per serving, third-party testing, or other factors that might justify a price difference. If two products have meaningfully different doses of the active ingredient per serving, a true value comparison should also account for cost per gram of that ingredient, not just cost per serving alone.</p>
 </div>
 </section>
 <!-- FAQ -->
 <section class="faq-section">
 <div class="container">
 <div class="section-label">FAQ</div>
-<h2 class="section-title">Frequently asked questions about one-rep max</h2>
+<h2 class="section-title">Frequently asked questions about supplement costs</h2>
 <div class="faq-list">
 <div class="faq-item">
-<button class="faq-question">How accurate are 1RM prediction formulas?</button>
-<div class="faq-answer">Generally within 5-10% of your actual max for rep ranges of 2-10 performed close to failure, but accuracy drops noticeably above 10-12 reps since the formulas were built primarily from lower-rep lifting data. Individual factors like muscle fibre type composition also cause some people's real 1RM to differ more from the prediction than others.</div>
+<button class="faq-question">Why does cost per serving matter more than total price?</button>
+<div class="faq-answer">A larger, more expensive container can still be the better value if it has proportionally more servings. Cost per serving lets you compare products of different sizes on equal footing.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Which 1RM formula is most accurate?</button>
-<div class="faq-answer">No single formula is universally best — Epley tends to run slightly higher at higher rep counts, Brzycki slightly lower, and an individual's true value usually falls somewhere between the two. We average both here for a balanced estimate rather than picking one as definitively correct.</div>
+<button class="faq-question">Should I always buy the cheapest cost-per-serving option?</button>
+<div class="faq-answer">Not necessarily — ingredient quality, third-party testing, and whether the dose per serving actually matches your needs matter too. Cost per serving is one factor among several, not the only one.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">Should beginners test or estimate their 1RM?</button>
-<div class="faq-answer">Beginners should generally estimate rather than test a true 1RM directly, since maximal single-rep attempts carry higher injury risk without established technique, warm-up protocols, and neuromuscular coordination under very heavy load. Estimating from a submaximal set (like 5 reps at a challenging but controlled weight) is safer and still useful for programming.</div>
+<button class="faq-question">How do I compare products with different serving sizes?</button>
+<div class="faq-answer">If two products have different amounts of active ingredient per serving (e.g., 3g vs 5g of creatine), comparing cost per gram of active ingredient, not just cost per serving, gives a more accurate value comparison.</div>
 </div>
 <div class="faq-item">
-<button class="faq-question">How often should I retest my 1RM?</button>
-<div class="faq-answer">Every 4-8 weeks is typical for intermediate lifters following a structured strength programme, since 1RM doesn't change dramatically week to week under normal training. Beginners may see faster strength gains and could reasonably re-estimate more often (every 3-4 weeks) as neural adaptations happen quickly in the first months of training.</div>
+<button class="faq-question">Is buying in bulk always cheaper per serving?</button>
+<div class="faq-answer">Usually, but not always — check the actual math rather than assuming, since some larger containers carry a smaller discount than expected, or none at all.</div>
 </div>
 </div>
 </div>
 </section>
-<!-- Other calculators -->
 <section class="blog-section">
 <div class="container">
 <div class="section-label">More calculators</div>
 <h2 class="section-title">Related tools</h2>
 <div class="blog-grid">
-<a class="blog-card" href="/" style="text-decoration:none;color:inherit;">
-<div class="blog-card-body">
-<span class="blog-tag">Calories</span>
-<h3>Calorie &amp; Macro Calculator</h3>
-<p>Calculate your daily calorie and macro targets based on your goal.</p>
-<span class="blog-read-more">Open calculator →</span>
-</div>
-</a>
-<a class="blog-card" href="blog/free-weights-vs-machines.html" style="text-decoration:none;color:inherit;">
-<div class="blog-card-body">
-<span class="blog-tag">Comparison</span>
-<h3>Free Weights vs Machines</h3>
-<p>Which should beginners use.</p>
-<span class="blog-read-more">Read →</span>
-</div>
-</a>
-<a class="blog-card" href="blog/creatine-vs-preworkout.html" style="text-decoration:none;color:inherit;">
-<div class="blog-card-body">
-<span class="blog-tag">Comparison</span>
-<h3>Creatine vs Pre-Workout</h3>
-<p>Which supplement actually works.</p>
-<span class="blog-read-more">Read →</span>
-</div>
-</a>
-<a class="blog-card" href="blog/how-to-build-muscle.html" style="text-decoration:none;color:inherit;">
-<div class="blog-card-body">
-<span class="blog-tag">Guide</span>
-<h3>How to Build Muscle</h3>
-<p>Complete science-based muscle building guide.</p>
-<span class="blog-read-more">Read →</span>
-</div>
-</a>
+<a class="blog-card" href="creatine-dosage-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Supplements</span><h3>Creatine Dosage</h3><p>Ideal dose by body weight, with or without loading.</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="protein-calculator.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Protein</span><h3>Protein Calculator</h3><p>Find your daily protein needs.</p><span class="blog-read-more">Open →</span></div></a>
+<a class="blog-card" href="blog/whey-vs-casein-protein.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Comparison</span><h3>Whey vs Casein Protein</h3><p>Which protein powder to choose, and when.</p><span class="blog-read-more">Read →</span></div></a>
+<a class="blog-card" href="blog/creatine-vs-preworkout.html" style="text-decoration:none;color:inherit;"><div class="blog-card-body"><span class="blog-tag">Comparison</span><h3>Creatine vs Pre-Workout</h3><p>Which supplement actually works.</p><span class="blog-read-more">Read →</span></div></a>
 </div>
 </div>
 </section>
 <footer class="site-footer">
 <div class="footer-inner">
-<div class="footer-brand">
-<a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a>
-<p>Free health calculators. Not medical advice.</p>
+<div class="footer-brand"><a class="site-logo" href="/"><span class="logo-icon">🥦</span> Calories &amp; Macros</a><p>Free health calculators. Not medical advice.</p></div>
+<div class="footer-links"><a href="about.html">About</a><a href="blog/">Blog</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a>
+<a href="faq.html">FAQ</a></div>
 </div>
-<div class="footer-links">
-<a href="about.html">About</a>
-<a href="blog/">Blog</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy Policy</a>
-<a href="terms.html">Terms of Use</a>
-<a href="faq.html">FAQ</a>
-</div>
-</div>
-<div class="footer-bottom">
-<span>© <span id="year"></span> calories-macros.com</span>
-<span>Educational estimates only.</span>
-</div>
+<div class="footer-bottom"><span>© <span id="year"></span> calories-macros.com</span></div>
 </footer>
 <script>
+
+function savePageResults() {
+  var a = document.getElementById('perServingA').textContent;
+  var b = document.getElementById('perServingB').textContent;
+  var results = {};
+  if (a !== '—') results.mainValue = 'A: ' + a + ' vs B: ' + b;
+  results.savedAt = new Date().toLocaleDateString();
+  localStorage.setItem('cm_saved_supcost', JSON.stringify(results));
+  var msg = document.getElementById('saveMsg');
+  if (msg) { msg.style.display='block'; setTimeout(function(){ msg.style.display='none'; },3000); }
+}
+
+// Show saved banner on load
+window.addEventListener('load', function() {
+  var saved = localStorage.getItem('cm_saved_supcost');
+  if (!saved) return;
+  try {
+    var data = JSON.parse(saved);
+    if (!data.mainValue) return;
+    var banner = document.getElementById('savedBanner');
+    var bannerText = document.getElementById('savedBannerText');
+    if (!banner || !bannerText) return;
+    bannerText.textContent = 'Result: ' + data.mainValue + ' · Saved: ' + data.savedAt;
+    banner.style.display = 'block';
+  } catch(e) {}
+});
 document.getElementById('year').textContent = new Date().getFullYear();
 
-let currentLang = 'en';
-function applyLang(lang) {
-  currentLang = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-en]').forEach(function(el) {
-    var t = el.getAttribute('data-' + lang);
-    if (t) el.innerHTML = t;
+function downloadResultCard() {
+  var card = document.getElementById('shareCard');
+  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
+    var link = document.createElement('a');
+    link.download = 'supplement-cost-result.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
   });
-  localStorage.setItem('lang', lang);
 }
-document.getElementById('langEN').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langRU').classList.remove('active'); applyLang('en'); });
-document.getElementById('langRU').addEventListener('click', function() { this.classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); });
-var sl = localStorage.getItem('lang');
-if (sl === 'ru') { document.getElementById('langRU').classList.add('active'); document.getElementById('langEN').classList.remove('active'); applyLang('ru'); }
 
-// Header lang sync
-(function() {
-  var hEN = document.getElementById('headerLangEN'), hRU = document.getElementById('headerLangRU');
-  if (sl === 'ru') { hRU.classList.add('active'); hEN.classList.remove('active'); }
-  hEN.addEventListener('click', function() { document.getElementById('langEN').click(); hEN.classList.add('active'); hRU.classList.remove('active'); });
-  hRU.addEventListener('click', function() { document.getElementById('langRU').click(); hRU.classList.add('active'); hEN.classList.remove('active'); });
-})();
-
-const noteText = {
-  en: 'This is an estimate, not a guaranteed max. Warm up thoroughly and use a spotter before attempting anything near your estimated 1RM.',
-  ru: 'Это оценка, а не гарантированный максимум. Тщательно разомнитесь и используйте страховку перед попытками веса, близкого к расчётному 1ПМ.'
-};
-
-const pctLabels = {
-  en: ['Warm-up', 'Endurance', 'Hypertrophy', 'Hypertrophy', 'Strength', 'Strength', 'Max effort'],
-  ru: ['Разминка', 'Выносливость', 'Гипертрофия', 'Гипертрофия', 'Сила', 'Сила', 'Максимум']
-};
-const pctValues = [0.5, 0.65, 0.75, 0.80, 0.85, 0.90, 0.95];
-
-// --- FAQ ---
 document.querySelectorAll('.faq-question').forEach(function(btn) {
   btn.addEventListener('click', function() {
     const item = this.closest('.faq-item');
@@ -419,50 +402,50 @@ function animateNumber(el, target, decimals, formatter) {
   requestAnimationFrame(step);
 }
 
-function downloadResultCard() {
-  var card = document.getElementById('shareCard');
-  html2canvas(card, {scale: 2, backgroundColor: '#ffffff'}).then(function(canvas) {
-    var link = document.createElement('a');
-    link.download = 'one-rep-max-result.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  });
-}
-
 document.getElementById('calcBtn').addEventListener('click', function() {
-  const weight = parseFloat(document.getElementById('liftWeight').value);
-  const reps = parseInt(document.getElementById('liftReps').value);
+  const priceA = parseFloat(document.getElementById('priceA').value);
+  const servingsA = parseFloat(document.getElementById('servingsA').value);
+  const priceB = parseFloat(document.getElementById('priceB').value);
+  const servingsB = parseFloat(document.getElementById('servingsB').value);
+  const perDay = parseFloat(document.getElementById('servingsPerDay').value) || 1;
   const err = document.getElementById('calcError');
-  if (!weight || !reps || weight <= 0 || reps < 1 || reps > 15) { err.style.display='block'; return; }
+
+  if (!priceA || !servingsA || !priceB || !servingsB) { err.style.display='block'; return; }
   err.style.display = 'none';
 
-  const epley = weight * (1 + reps / 30);
-  const brzycki = reps === 37 ? weight : weight * 36 / (37 - reps);
-  const average = (epley + brzycki) / 2;
+  const perServingA = priceA / servingsA;
+  const perServingB = priceB / servingsB;
+  const perMonthA = perServingA * perDay * 30.4;
+  const perMonthB = perServingB * perDay * 30.4;
 
-  animateNumber(document.getElementById('ormValue'), average, 0);
-  animateNumber(document.getElementById('epleyValue'), epley, 0, v => v + ' kg');
-  animateNumber(document.getElementById('brzyckiValue'), brzycki, 0, v => v + ' kg');
-  document.getElementById('resultNote').textContent = noteText[currentLang];
+  animateNumber(document.getElementById('perServingA'), perServingA, 2, function(v){ return '$' + v; });
+  animateNumber(document.getElementById('perServingB'), perServingB, 2, function(v){ return '$' + v; });
+  document.getElementById('perMonthA').textContent = '$' + perMonthA.toFixed(2);
+  document.getElementById('perMonthB').textContent = '$' + perMonthB.toFixed(2);
 
-  const pctTable = document.getElementById('pctTable');
-  pctTable.innerHTML = '';
-  pctValues.forEach(function(pct, i) {
-    const val = Math.round(average * pct);
-    const div = document.createElement('div');
-    div.style.cssText = 'text-align:center;background:var(--cream);border-radius:8px;padding:12px 8px;opacity:0;transform:translateY(6px);transition:opacity 0.4s ease,transform 0.4s ease;';
-    div.innerHTML = '<div style="font-family:var(--font-display);font-size:1.1rem;color:var(--green);">' + val + ' kg</div>' +
-      '<div style="font-size:0.72rem;color:var(--muted);">' + Math.round(pct*100) + '% · ' + pctLabels[currentLang][i] + '</div>';
-    pctTable.appendChild(div);
-    setTimeout(() => { div.style.opacity = '1'; div.style.transform = 'translateY(0)'; }, 60 * i);
-  });
+  const cardA = document.getElementById('cardA');
+  const cardB = document.getElementById('cardB');
+  cardA.style.background = '';
+  cardB.style.background = '';
+
+  let note;
+  if (Math.abs(perServingA - perServingB) < 0.001) {
+    note = 'Both products cost the same per serving — choose based on other factors like ingredient quality or testing.';
+  } else if (perServingA < perServingB) {
+    const pctCheaper = ((perServingB - perServingA) / perServingB * 100).toFixed(0);
+    note = 'Product A is the better value — ' + pctCheaper + '% cheaper per serving than Product B.';
+    cardA.style.background = 'var(--green-pale)';
+  } else {
+    const pctCheaper = ((perServingA - perServingB) / perServingA * 100).toFixed(0);
+    note = 'Product B is the better value — ' + pctCheaper + '% cheaper per serving than Product A.';
+    cardB.style.background = 'var(--green-pale)';
+  }
+  document.getElementById('resultNote').textContent = note;
+
+  document.getElementById('shareCardA').textContent = '$' + perServingA.toFixed(2);
+  document.getElementById('shareCardB').textContent = '$' + perServingB.toFixed(2);
 
   document.getElementById('calcResults').classList.add('visible');
-
-  document.getElementById('shareCardValue').textContent = Math.round(average);
-  document.getElementById('shareCard90').textContent = Math.round(average * 0.90) + ' kg';
-  document.getElementById('shareCard75').textContent = Math.round(average * 0.75) + ' kg';
-
   setTimeout(() => document.getElementById('calcResults').scrollIntoView({behavior:'smooth',block:'start'}), 100);
 });
 </script>
